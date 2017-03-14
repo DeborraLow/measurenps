@@ -1,0 +1,115 @@
+
+ [ MASC / NEUT ATTRACTION EFFECT ]
+
+ [ Correlation ]
+
+
+	Pearson's product-moment correlation
+
+data:  mn.props.kind.cl and mn.assocs.kind.cl
+t = 3.3107, df = 62, p-value = 0.001554
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1567169 0.5783065
+sample estimates:
+      cor 
+0.3875951 
+
+
+ [ ... bootstrap CI ]
+
+
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+
+Call:
+boot(data = cbind(mn.props.kind.cl, mn.assocs.kind.cl), statistic = boot.cor, 
+    R = 1e+05, parallel = "multicore", ncpus = 8)
+
+
+Bootstrap Statistics :
+     original       bias    std. error
+t1* 0.3875951 -0.001584153   0.1024256
+BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
+Based on 100000 bootstrap replicates
+
+CALL : 
+boot.ci(boot.out = mn.cor.boot, conf = 0.95, type = "bca")
+
+Intervals : 
+Level       BCa          
+95%   ( 0.1749,  0.5740 )  
+Calculations and Intervals on Original Scale
+
+ [ FEM ATTRACTION EFFECT ]
+
+ [ Correlation ]
+
+
+	Pearson's product-moment correlation
+
+data:  fem.props.kind.cl and fem.assocs.kind.cl
+t = 0.23266, df = 17, p-value = 0.8188
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.4083190  0.4978095
+sample estimates:
+       cor 
+0.05633907 
+
+
+ [ ... bootstrap CI ]
+
+
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+
+Call:
+boot(data = cbind(fem.props.kind.cl, fem.assocs.kind.cl), statistic = boot.cor, 
+    R = 1e+05, parallel = "multicore", ncpus = 8)
+
+
+Bootstrap Statistics :
+      original     bias    std. error
+t1* 0.05633907 0.02158793   0.2330286
+BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
+Based on 100000 bootstrap replicates
+
+CALL : 
+boot.ci(boot.out = fem.cor.boot, conf = 0.95, type = "bca")
+
+Intervals : 
+Level       BCa          
+95%   (-0.4006,  0.5022 )  
+Calculations and Intervals on Original Scale
+
+ [ PL ATTRACTION EFFECT ]
+
+ [ Correlation ]
+
+
+	Pearson's product-moment correlation
+
+data:  pl.props.kind.cl and pl.assocs.kind.cl
+t = 4.9609, df = 509, p-value = 9.582e-07
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.130446 0.295984
+sample estimates:
+      cor 
+0.2147568 
+
+
+ [ ... bootstrap CI ]
+
+
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+
+Call:
+boot(data = cbind(pl.props.kind.cl, pl.assocs.kind.cl), statistic = boot.cor, 
+    R = 1e+05, parallel = "multicore", ncpus = 8)
+
+
+Bootstrap Statistics :
+WARNING: All values of t1* are NA

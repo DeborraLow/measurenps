@@ -1,0 +1,574 @@
+\documentclass[USenglish]{article}
+
+%\usepackage[utf8]{inputenc}
+\RequirePackage[no-math]{fontspec}
+
+\usepackage[small]{dgruyter}
+\usepackage{microtype}
+
+\newcommand{\wrt}{w.\,r.\,t.\ }
+\newcommand{\Wrt}{W.\,r.\,t.\ }
+
+\newcommand{\eg}{e.\,g.,}
+\newcommand{\Eg}{E.\,g.,}
+
+\newcommand{\ie}{i.\,e.,}
+\newcommand{\Ie}{I.\,e.,}
+
+\newcommand{\CxMdn}{\ensuremath{\mathsf{Ms_{[DN]}}}}
+\newcommand{\CxMn}{\ensuremath{\mathsf{Ms_{[N]}}}}
+\newcommand{\CxMan}{\ensuremath{\mathsf{Ms_{[AN]}}}}
+
+\newcommand{\Sub}[1]{\ensuremath{\mathrm{_{#1}}}}
+\newcommand{\Sup}[1]{\ensuremath{\mathrm{^{#1}}}}
+\newcommand{\Subsf}[1]{\ensuremath{\mathsf{_{#1}}}}
+\newcommand{\Supsf}[1]{\ensuremath{\mathsf{^{#1}}}}
+
+\newcommand*\Rot{\rotatebox{75}}
+
+\usepackage{gb4e-}
+
+\usepackage{bbding}
+\newcommand{\CheckIt}{\CheckmarkBold}
+
+
+\usepackage{natbib}
+\bibliographystyle{./unified}
+
+\begin{document}
+
+  %\articletype{...}
+
+  \author*[1]{Roland Schäfer}
+  %\runningauthor{...}
+  \affil[1]{Freie Universität Berlin}
+  \title{Competing Constructions for German Measure Phrases}
+  \runningtitle{Competing Constructions for German Measure Phrases}
+  %\subtitle{...}
+  \abstract{In German, nominal morpho-syntax\ldots}
+  \keywords{alternations, hierarchical models, corpus methods and experimental methods, measure constructions, German}
+  %\classification[PACS]{...}
+  %\communicated{...}
+  %\dedication{...}
+  %\received{...}
+  %\accepted{...}
+  \journalname{Submitted to Cognitive Linguistics}
+  \journalyear{2017}
+  %\journalvolume{...}
+  %\journalissue{...}
+  %\startpage{...}
+  %\aop
+  %\DOI{...}
+
+
+  
+\maketitle
+
+
+
+\section{Case assignment in German measure NPs}
+\label{sec:germanmeasurenps}
+
+This paper deals with a morpho-syntactic alternation that occurs only in a very specific syntactic measure noun phrase construction.
+By \textit{alternation} I refer to a situation where two or more forms or constructions are available with no clear difference in acceptability, function, or meaning.%
+\footnote{In German grammar, the term \textit{Zweifelsfälle} `cases of doubt' is often used \citep{Klein2009}.}
+I use it as an example case to introduce a protocol for the estimation and validation of corpus-based models in cognitively oriented corpus linguistics.
+Therefore, I briefly introduce and illustrate the relevant construction (sub-)types in this section.
+I also review the small body of existing literature on this specific alternation phenomenon, which is mostly descriptive.
+
+I use the term \textit{measure noun phrase} (MNP) to refer to noun phrases (NPs) where a kind-denoting (count or mass) noun depends on another noun specifying a quantity of the objects or the substance denoted by the kind noun.
+I call the kind-denoting noun simply the \textit{kind noun} and the quantity-denoting noun the \textit{measure noun}.%
+\footnote{It would be more technically appropriate---but also more cumbersome---to speak of the \textit{kind noun phrase} because the embedded noun can be modified.}
+Measure nouns can be all sorts of nouns which genuinely denote a quantity (such as \textit{litre} or \textit{amount}) but also nouns denoting containers, collections, etc. (such as \textit{glass} or \textit{bucket}).
+Descriptively, three different situations need to be distinguished \wrt case assignment in German measure noun phrases.
+If the kind noun comes with a determiner, the construction resembles (and is usually called) a \textit{pseudo-partitive} (on partitives and pseudo-partitives, e.\,g., \citealp{Barker1998,Selkirk1977,Stickney2007,Vos1999}; for a recent application of the terminology to German, see \citealp{Gerstenberger2015}), where the kind noun phrase is always in the genitive.
+The embedded kind noun cannot agree in case with the measure head noun in this case.
+I use * to denote general unacceptability, and the acceptability judgements given in (\ref{ex:intro:pseudopartitive}) are completely undisputed.
+I refer to the construction in (\ref{ex:intro:pseudopartitive1}) as the \textit{Pseudo-partitive Genitive Construction} (PGC).
+
+\begin{exe}
+  \ex\label{ex:intro:pseudopartitive}
+  \begin{xlist}
+    \ex[ ]{\label{ex:intro:pseudopartitive1}\gll Wir trinken [[eine Tasse]\Sub{Acc} [des leckeren Kaffees]\Sub{Gen}]\Sub{Acc}.\\
+    we drink a cup the tasty coffee\\
+    \glt We drink a cup of the tasty coffee.}
+    \ex[*]{\label{ex:intro:pseudopartitive2} Wir trinken [[eine Tasse]\Sub{Acc} [den leckeren Kaffee]\Sub{Acc}]\Sub{Acc}.}
+  \end{xlist}
+\end{exe}
+
+When the kind noun is bare---\ie, when it comes without a determiner and without pre-nominal modification---the acceptability of the case patterns is reversed, and the only acceptable construction is usually classified as a \textit{Narrow Apposition Construction} \citep{Loebel1986}, henceforth NAC, where the kind noun agrees in case with the measure noun, see (\ref{ex:intro:narrowapposition}).
+
+\begin{exe}
+  \ex\label{ex:intro:narrowapposition}
+  \begin{xlist}
+    \ex[*]{\label{ex:intro:narrowapposition1} Wir trinken [[eine Tasse]\Sub{Acc} [Kaffees]\Sub{Gen}]\Sub{Acc}.}
+    \ex[ ]{\label{ex:intro:narrowapposition2}\gll Wir trinken [[eine Tasse]\Sub{Acc} [Kaffee]\Sub{Acc}]\Sub{Acc}.\\
+    we drink a cup coffee\\
+    \glt We drink a cup of coffee.}
+  \end{xlist}
+\end{exe}
+
+The construction as in (\ref{ex:intro:narrowapposition2}) is also referred to as the \textit{Direct Partitive Construction} for other Germanic languages where the PGC with the synthetic genitive is not available.
+This nomenclature makes sense in contrast to the \textit{Indirect Partitive Construction} with the prepositional linkers translating to `of'---\ie, analytic genitives---in such languages, see \cite{HankamerMikkelsen2008} for Danish.
+For German, this terminology is not distinctive enough, which is why I use the terms NAC and PGC.
+
+The actual alternation can be observed \textit{only} when the kind noun occurs with an attributive adjective but without a determiner, as in (\ref{ex:intro:alternation}), where both the NAC in (\ref{ex:intro:alternation1}) and the PGC in (\ref{ex:intro:alternation2}) are not only both acceptable but also functionally and semantically identical.%
+\footnote{Some more normative grammars take stronger positions w.\,r.\,t. the grammaticality of these two options.
+  See \cite{Eschenbach1993,Zimmer2015} for analyses of the stances taken in more or less descriptive or normative grammars of German.
+  As the usage and experimental data presented below should render it clear, there might be preferences, but we cannot assume either construction to be \textit{ungrammatical} or, for those who reject the notion of grammaticality, \textit{(virtually) unanimously unacceptable}.}
+
+\begin{exe}
+  \ex\label{ex:intro:alternation}
+  \begin{xlist}
+    \ex[ ]{\label{ex:intro:alternation2}\gll Wir trinken [[eine Tasse]\Sub{Acc} [heißen Kaffee]\Sub{Acc}]\Sub{Acc}.\\
+    we drink a cup hot coffee\\
+    \glt We drink a cup of hot coffee.}
+    \ex[ ]{\label{ex:intro:alternation1} Wir trinken [[eine Tasse]\Sub{Acc} [heißen Kaffees]\Sub{Gen}]\Sub{Acc}.}
+  \end{xlist}
+\end{exe}
+
+The distribution of the case patterns of NAC (case identity between measure noun and kind noun) an PGC (genitive on kind noun) depending on the structure of the kind NP are summarised in Table~\ref{tab:constructions}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lccc}
+    \multicolumn{1}{r}{kind NP:} & bare noun & with adjective & with determiner \\
+    \midrule
+    narrow apposition         & \CheckIt & \CheckIt & \\
+    pseudo-partitive genitive &          & \CheckIt & \CheckIt \\
+  \end{tabular}
+  \caption{Distribution of the NAC and PGC constructions in different NP structures}
+  \label{tab:constructions}
+\end{table}
+
+In the remainder of this chapter, I briefly discuss some questions regarding the situation shown in Table~\ref{tab:constructions}, given existing literature.
+First, a major interest in generatively oriented linguistics (and formal semantics) is to determine the syntactic structure of the constructions in question.
+In the case at hand, the question 
+
+% left/right-headed (Vos: DPC and DCC)
+% role of the adjective in the NP
+% everything-as-measure-noun and grammaticalisation (Brems)
+% factors influencing (Hentschel)
+% some remarks on the history: Zimmer
+
+% Cite
+% q-as-a-functional-category-loebel
+% eschenbach__massangaben-im-kontext_KOMMENTIERT
+% hentschel_1993_zfgl.1993.21.3.320
+% loebel__apposition-in-der-quantifizierung
+% Bergenholtz_1985_PPN345203720_0107_log9
+% brems_ijcl2003-measure-nouns
+% [] FUNKTIONALE KATEGORIEN IN NOMINALPHRASEN
+% gallmann-2004
+% Rutkowski_Grammaticalized_Partitives_Pseudo-Partitives
+% Vater_H_2006
+
+% On Case-OCP (from Götz Keydana):
+% Und da habe ich dann auch einen Verweis auf den locus classicus gefunden:
+% STEFAN A. FRISCH, JANET B. PIERREHUMBERT and MICHAEL B. BROE: SIMILARITY AVOIDANCE AND THE OCP. Natural Language & Linguistic Theory 22: 179–228, 2004.
+% Dazu gäbe es dann noch, ebenfalls von Pierrehumbert,
+% Dissimilarity in the Arabic Verbal Roots. In Amy Schafer, ed.,Proceedings of NELS 23 Amherst, MA: Graduate Linguistics Student Association. 1993. pp 367-381 
+% Darin stellt sie wohl erstmals explizit einen Zusammenahng zwischen OCP und Kognition her.
+
+% Brems (Language Sciences 53 (2016) 160–176) also on grammaticalisation of SINGLE measure noun.
+
+%\footnote{More work on the syntax of such constructions from various theoretical points of view can be found in \cite{Bhatt1990}, \cite{GallmannLindauer1994}, \cite{Demske2001}, \cite{Gerstenberger2015}, etc.}
+%\footnote{A similar broad notion of measure noun is used, for example, in \cite{Brems2003}.}
+%\footnote{In many cases, a construction with \textit{von} `of' is also possible and maybe even more natural.
+%I do not consider this construction because it is structurally different from the cases where the alternation occurs, cf.\ below.
+%Interestingly, constructions of the type \textit{NP of\slash von NP} are the ones mostly discussed in the literature on (pseudo-)partitives and }
+
+\section{Theory and method}
+
+\subsection{Cognitively oriented corpus linguistics}
+\label{ssec:cocl}
+
+Following the descriptive introduction to the measure noun phrase alternation in Section~\ref{sec:germanmeasurenps}, this section situates the work presented here within the broader theoretical context of what can be called \textit{cognitively oriented corpus linguistics}.
+
+Unless there are strong, numeric, and cognitively motivated hypotheses, some experimental validation is required to make a corpus study \textit{cognitive} in any sense.
+Assuming the \textit{corpus as input} hypothesis without experimental validation is completely unsound in as much as researcher could extract any arbitrary---often spurious---usage pattern from a (usually noisy) corpus and claim that it has a cognitive reality.
+
+% Cite:
+% [Cognitive Linguistics] Similarity in linguistic categorization- The importance of necessary properties
+% 10.1.1.980.9935
+% __IMP__Measurenouns__cog-2015-0101
+% Entrenchment_Stefanowitsch and Flach for submission
+
+
+% Maybe:
+% [Cognitive Linguistics] The processing of verb-argument constructions is sensitive to form, function, frequency, contingency and prototypicality
+% [Cognitive Linguistics] Alternation-based generalizations are stored in the mental grammar- Evidence from a sorting task experiment //// along with CApelle's allostructions
+
+
+% Method:
+% Noble
+
+\subsection{Statistical issues}
+\label{ssec:issuesstatistics}
+
+% Cite:
+% __IMP__Measurenouns__cog-2015-0054 (Levshina)
+% [Cognitive Linguistics] Towards cognitively plausible data science in language research (NDL)
+
+
+% Stats:
+% BarrEa_RandomEffectsStructure_2014_JMemLang
+% ContentServer (1)
+% importatn_quotes
+% Menard_2000-Coefficients_of_Determination_for_Multiple_Logistic_Regression_Analysis
+
+In the following, I examine the case alternation in German measure NPs under a cognitively oriented corpus linguistic perspective.
+Since, however, the statistical tool kit (hierarchical generalised linear models, general tools such as $p$ values and confidence intervals, resampling techniques, model selection and model evaluation strategies, alternative algorithms for estimation, etc.) is heterogeneous and often criticised (especially under noisy conditions and when researcher run the risk of doing data mining instead of proper theory testing) I present a careful protocol for specifying, estimating, validating, and interpreting such models in Section \ref{sec:corpusmodels}.
+Before working out the models, I show how I made sure that the relevant data is contained in the sample in Section \ref{sec:gettingdata}.
+Furthermore, to provide external validation, I present two experiments in Section \ref{sec:externalvalidation} in which I attempted to find correlations between the corpus-based findings and speakers' behaviour.
+
+\section{Getting the right data}
+\label{sec:gettingdata}
+
+% TODO Quote:
+% Brems (2016:171--175) for using GOOGLE data, including COUNTS!
+
+Before I turn to the concrete sampling procedure, a few words are in order regarding the choice of the corpus.
+I used the German \textit{Corpus from the Web} (COW) DECOW14A (\citealp{SchaeferBildhauer2012shorti,Schaefer2015b} and \citealp{BiemannEa2013,SchaeferBildhauer2013} for overviews of web corpora in general and the methodology of their construction), which contains 21 billion tokens, for two main reasons.%
+\footnote{The corpora are made available for free at \url{https://www.webcorpora.org}.
+At the time of this writing, the DECOW16A corpus had already been released.}
+First, the external validity of the study is increased through a higher heterogeneity of the sample \citep[30]{MaxwellDelaney2004}, and the DECOW14 corpus has clearly a much more heterogeneous composition compared to the only other very large corpus of German, the DeReKo \citep{KupietzEa2010} of the Institute for the German Language (IDS), which contains almost exclusively newspaper texts.%
+\footnote{It was shown as a by-product in \cite{W16-2601} that, for example, the spread of topics is much smaller in DeReKo compared to DECOW14.}
+Second, it was already mentioned that normative grammars disagree on whether both NAC and PGC are grammatical in the case at hand.
+Thus, newspaper text or any other text that conforms strongly to normative standards might not represent the alternation phenomenon fully.
+Web corpora, on the other hand, contain at least some amount of non-standard language from forums and similar sources.
+For these or similar reasons, COW corpora have been used in a number of peer-reviewed publications, for example \cite{VanGoethemHiligsmann2014,VanGoethemHuening2015,MuellerS2014,Schaefer2016c,SchaeferSayatz2014,SchaeferSayatz2016,StefanowitschFlach2016,Zimmer2015}. 
+Therefore, DECOW14A can be considered the obvious choice for this study.
+
+In Section~\ref{sec:germanmeasurenps} it was mentioned that there are vague intuitions about lemma-specific preference effects (related to the kind noun) for either the genitive or the appositive construction to be used in measure NPs.
+There are no previous empirical studies or substantive theoretical hypotheses that would justify taking a corpus sample based on a predetermined list of lemmas, neither for the measure noun nor the kind noun slot.
+Instead, it appears necessary to obtain sample in which all (or at least most of the highly frequent) actually occurring combinations of kind noun and measure noun are represented.
+This section describes the three-stage bootstrap process that was used to obtain such a sample, which was then used to estimate the influences of various contextual factors on the alternation (cf.\ Section~\ref{sec:corpusmodels}).
+The bootstrap process takes into account the problems of imperfect automatically generated annotations.
+
+Automatically generated annotations (such as lemma, part-of-speech, or morphological information) are never perfect, especially if the material deviates from the standard as understood by the creators of the tools used for the annotation (cf. \citealp{BeisswengerEa2016,GiesbrechtEvert2009} and chapter 4 of \citealp{SchaeferBildhauer2013}).
+For examining grammatical alternations, relying on existing annotations is therefore unwise because there is no systematic way of assessing the accuracy of the annotation tools on the target constructions.
+Therefore, I did not rely on the annotations for part-of-speech, noun phrase chunks, or noun case available in DECOW14A wherever it was crucial to sample with a near-perfect recall.%
+\footnote{The recall is the percentage of retrieved data relative to the data that should have been found.
+If, for example, the corpus contains one hundred targets and a query retrieves only 80 of them, the recall is 80\% (or 0.8).}
+
+Instead, I bootstrapped a sample which most likely contained all reasonably frequent combinations of measure nouns and mass nouns, and which was almost perfectly clean (\ie it did contain virtually no erroneous non-target results).
+The bootstrapping consisted of three steps:\\
+
+
+\begin{enumerate}
+  \item\label{enum:data:step1} bootstrapping a list of the one hundred most frequent mass nouns,
+  \item\label{enum:data:step2} bootstrapping a list of all measure nouns with which the mass nouns co-occur in the unambiguous measure construction with a determiner, and
+  \item\label{enum:data:step3} sampling the target constructions by querying each combination of mass noun and measure noun found in step \ref{enum:data:step2}.
+\end{enumerate}
+
+In step \ref{enum:data:step1}, I sampled a list of all nouns in the DECOW14A01 corpus sorted by their token frequency and manually went through it from the most frequent noun downwards, selecting the first one hundred mass nouns that occurred in the list.%
+\footnote{DECOW14A01 is the first slice (roughly a twentieth) of the complete DECOW14A corpus.
+It contains just over one billion tokens.
+The creators assigned the documents randomly to the slices, such that each slice can be considered representative of the whole corpus \cite{Schaefer2015b}.}
+For this step, I relied on the noun part-of-speech label because for frequent nouns, high tagging accuracy can be expected, especially given the fact that German nouns are always spelled with an initial capital letter.
+Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.%
+\footnote{They behave like mass nouns mostly in that they occur without a determiner in the singular.}
+The hundredth selected mass noun was \textit{Schmuck} `jewelry’, which is the 3,054th most frequent noun in the original frequency list.
+
+This resulting list of mass nouns was used in step \ref{enum:data:step2} to bootstrap a list of measure nouns co-occurring with the mass nouns from DECOW14A01.
+In order to generate this list, I utilized the fact that a direct sequence of two bare nouns very often instantiates the bare-noun NAC if the second noun is a mass noun.
+In other words, I searched for all combinations [N\Sub{1} N\Sub{2}] with N\Sub{2} instantiated as a mass noun lemma.
+Then, the resulting lists of noun--noun combinations were each sorted by frequency in descending order and sieved manually to remove erroneous hits.%
+\footnote{In order to speed up the procedure without losing much material, I stopped when I had reached noun–noun combinations with an absolute frequency of 1 if twenty combinations for the respective mass noun (with a frequency of one or higher) had already been found.}
+The result was a list of 2,365 individual combinations of measure nouns and mass nouns.
+
+In step \ref{enum:data:step3}, each of these 2,365 noun–noun combinations was queried in the target construction individually in each of the first ten slices of DECOW14A (roughly 10 billion tokens).
+The scripts generating the actual queries were crafted so as to make sure that adjectives and nouns were searched in the appropriate forms.
+(\ref{ex:data:query01}) shows an example query for a neuter mass noun like \textit{Wasser} (`water’) which finds relevant sequences such as the ones shown in (\ref{ex:data:query02}), which all mean `litre of clear water’.
+The versions with the genitive singular \textit{Liters} and the dative plural \textit{Litern} are not shown in (2) for space reasons but are also found by the query in (1).
+In terms of context, single sentences containing the target were exported.
+
+\begin{exe}
+  \ex{\label{ex:data:query01} \texttt{\small[ lemma="Liter" ] [ pos="ADJA" \& word=".+(en|em|es)" ] [ lemma="Wasser" ]}}
+  \ex\label{ex:data:query02}
+  \begin{xlist}
+    \ex{\label{ex:data:query02a} Liter [klaren Wassers]\Sub{Gen}}
+    \ex{\label{ex:data:query02b} Liter [klares Wasser]\Sub{Nom\slash Acc}}
+    \ex{\label{ex:data:query02c} Liter [klarem Wasser]\Sub{Dat}}
+  \end{xlist}
+\end{exe}
+
+To reduce the sample size for the manual annotation process, the final concordance was sampled from the results of these 2,365 queries.
+Since the mass nouns in the sample were distributed according to the usual power law, I used all hits for mass nouns occurring less than one hundred times, but randomly sampled one hundred hits for each mass noun that occurred one hundred or more times.
+The final sample contained 7,547 sentences.
+Given the careful bootstrapping and sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target construction.
+
+%%%  TODO  %%%
+% – excluded "zwei Glas Wein" etc. because not part of alternation; NOT disambiguated for "ein Glas" (Vos 1999)
+
+
+\section{Corpus-based models}
+\label{sec:corpusmodels}
+
+\subsection{Tools for modelling alternations}
+\label{sec:righttools}
+
+In this section, I discuss the relevant statistical approaches to modelling alternations based on corpus data.
+I mainly focus on well-established Generalised Linear Models (GLMs) and their \textit{multi-level} or \textit{hierarchical} extensions, which are also called \textit{mixed models} (GLMMs).
+
+% TODO CONTENT HERE
+
+In Section~\ref{ssec:corpusnonhierarchicalmodel}, I briefly discuss why a non-hierarchical model -- while it is an option in principle -- has serious disadvantages for the data set under discussion (and similar data sets).
+In Section~\ref{ssec:corpushierarchicalmodel}, I present the hierarchical model which is actually interpreted as the primary result of this study.
+Section~\ref{ssec:bayesian} takes a short detour and shows (by example) that results from Bayesian estimation are not intrinsically different from those obtained from Maximum Likelihood methods, although Bayesian approaches have recently been touted to solve various problems facing applied statistics in various fields, even including cognitively oriented corpus linguistics.
+Finally, I summarise and interpret the results of the corpus study in Section~\ref{ssec:modelssummary}.
+
+
+
+\subsection{Descriptive statstics and non-hierarchical models}
+\label{ssec:corpusnonhierarchicalmodel}
+
+% > summary(pl$Casedrop)
+%   0   1 
+%  67 794 
+% > summary(fem$Casedrop)
+%   0   1 
+% 652 462 
+% > summary(mn$Genitive)
+%    0    1 
+% 3277  672 
+
+% Why didn't we use "mit einem Liter guten Benzin"?
+% Generally noisy sample, impossible to tell whether it's an omitted genitive -s on the noun!
+% If ChZ did automatic queries, most likely incorrect results because of noise.
+
+\subsection{Hierarchical models}
+\label{ssec:corpushierarchicalmodel}
+
+In this section, I apply standard Maximum Likelihood methods for estimating the parameters of a multilevel model.
+As suggested in Section~\ref{ssec:corpusnonhierarchicalmodel}, hierarchical models are better suited than non-hierarchical models given that we can expect lemma-specific effects, and that the respective factors have a high number of levels.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/corpus/04_glmm_fixef.pdf}
+\caption{Fixed effects in GLMMs for Masculine\slash Neuter and Feminine with 95\% bootstrapped confidence intervals (1,000 replicates)}
+\label{fig:glmmfixef}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/corpus/04_glmm_fixeff_mn_Measureclass}
+\caption{Effect plot for the masculine\slash neuter GLMM: Measure lemma class effect}
+\label{fig:glmm:fixef:measureclass}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Attraction}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Attraction}
+\caption{Effect plot for the two GLMMs: attraction effect (centered and standardised) from the NAC construction with a bare kind noun and the PGC with a determiner; scales are not aligned between left and right panel}
+\label{fig:glmm:fixef:attraction}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Matchlength}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Matchlength}
+\caption{Effect plot for the two GLMMs: effect of the (centered and standardised) length of the whole construction; scales are not aligned between left and right panel}
+\label{fig:glmm:fixef:matchlength}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Measurecase}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Measurecase}
+\caption{Effect plot for the two GLMMs: effects of the case of the head (kind) noun; scales are not aligned between left and right panel}
+\label{fig:glmm:fixef:measureclass}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Measurenumber}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Measurenumber}
+\caption{Effect plot for the two GLMMs: effect of the grammatical number of the head (kind) noun; scales are not aligned between left and right panel}
+\label{fig:glmm:fixef:measurenumber}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Minus1pos}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Minus1pos}
+\caption{Effect plot for the two GLMMs: effect of part-of-speech preceding the construction; C = cardinal, D = determiner, O = \textit{other}, A = adjective, P = preposition; scales are not aligned between left and right panel}
+\label{fig:glmm:fixef:minus1pos}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/corpus/04_glmm_raneff_mn}~\hspace{0.05\textwidth}~\includegraphics[width=0.5\textwidth]{figures/corpus/04_glmm_raneff_fem}
+\caption{Sample random effects for the masculine\slash neuter and feminine GLMMs}
+\label{fig:glmm:fixef:minus1pos}
+\end{figure}
+
+
+
+
+\subsection{A note on Bayesian estimation}
+\label{ssec:bayesian}
+
+
+
+\subsection{Summary and conclusions}
+\label{ssec:modelssummary}
+
+\input{bigtable}
+
+
+
+\section{Experimental cross-check of the corpus-based models}
+\label{sec:externalvalidation}
+
+% TODO SURPRISAL
+%
+% Bybee, Joan und Thompson, Sandra. 1997. “Three Frequency Effects in Syntax”, Proceedings of the Twenty-Third Annual Meeting of the Berkeley Linguistics Society, 378-388.
+% Bybee, Joan. 2006. “From Usage to Grammar: The Mind‘s Response to Repetition”. Language 82(4): 711-733.
+% Levy, Roger .2008. “Expectation-based syntactic comprehension.” Cognition 106: 1126–1177.
+% Smith, Nathaniel, and Levy, Roger. 2013. “The effect of word predictability on reading time is logarithmic.” Cognition 128: 302–319.
+
+\subsection{Experiment 1: forced choice}
+
+As was pointed out in Section \ref{ssec:cocl}, there can be substantial doubt that corpus linguistic methods in themselves can be called \textit{cognitively oriented} in any meaningful way.
+At the same time, it is a highly plausible assumption in a usage-based framework that large and varied corpora ideally represent language users' relevant input of (at least) written language, and that there should be reflexes of the distributions found in such corpora in the linguistic behaviour of language users.
+Therefore, this section and the next present the results of two experiments wherein I cross-checked the corpus-based findings.
+
+First, a very simple computer-aided forced-choice experiment was conducted.%
+\footnote{The experiment is \textit{simple} compared to the sophisticated origins of forced choice experiments and their interpretation in psychophysics \citep[166--179]{MacmillanCreelman2005}.}
+From a linguistic point of view, the forced choice setting has the advantage over rating studies that is does not force participants into making an absolute acceptability judgement on some scale.
+Instead, they express a preference for one of two constructions (or words, etc.) both of which are acceptable.
+While this does not totally exclude normative thinking---to which native speakers of German in so-called \textit{cases of doubt} are typically prone---
+
+There were 24 participants aged 19 to 30 who were recruited from introductory linguistics courses at Freie Universität Berlin.
+Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper explicit knowledge of linguistics or grammar.%
+\footnote{Even though the ratio of target sentences to fillers was relatively high (see below) and some of the fillers were also related to case alternations, no participant used the word \textit{Kasus} `case' when asked whether they had an idea what the experiment was about in informal interviews after the experiment.}
+Only participants with an L1 background in German were recruited.
+
+As stimuli, I used attested (but simplified) sentences from the corpus study in an approach similar to the one taken in \cite{DivjakEa2016}.
+The rationale was that it is virtually impossible to test the large and complex sets of regressors used in the corpus study in a traditional randomized experiments where usually just one relevant factor (ideally something like treatment vs.\ non-treatment) is of interest.
+Therefore, attested sentences were used, and the predictions of the corpus models were tested against participants' preferences.
+
+Concretely, I sampled 16 attested sentences from the corpus and simplified them (mostly removing embedded clauses, complex adverbials, etc.) and standardized their orthography.
+It was made sure that the simplifications and normalisations did not affect any of the regressors used in the corpus study, of course.
+Eight sentences contained masculine or neuter kind nouns, the other eight contained feminine kind nouns.
+Furthermore, in each of the M\slash N and F groups, four sentences with a case drop (\ie genitive or oblique case on the kind noun) and four withe case identity were chosen.
+More precisely, the four sentences were sampled as highly prototypical examples of case drop (high logits) and case identity (low logits), respectively, according to the corpus based models.%
+\footnote{Sentences were sorted by their corresponding $\hat{y}$ calculated from the model.
+For the M\slash N sentences, sentences were sampled from the top and bottom 15\% of the resulting vector.
+For the F sentences, the top and bottom 25\% were used because the overall sample size was smaller.}
+It was made sure that the highly predictive features according to Section \ref{ssec:modelssummary} occurred in unique combinations among the four sentences in each cell.
+This is summarised in Table \ref{tab:experiment1:design}.
+
+\begin{table}
+  \centering
+  \begin{tabular}[h]{rcc}
+     & M\slash N & F \\
+     \midrule
+     \textbf{high prob.\ for case drop} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
+     \textbf{low prob.\ for case drop} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
+  \end{tabular}
+  \caption{The four groups of attested sentences chosen as stimuli (\Supsf{a}Among the 4 sentences, combinations of important factor values were made unique.)}
+  \label{tab:experiment1:design}
+\end{table}
+
+The pairs of stimuli were the original attested sentence containing the preferred construction and a modified version containing the dispreferred construction.
+They were presented next to each other, and a 20 second time limit for each choice was set.%
+\footnote{No participant ever exceeded the time limit.}
+The position on the screen (left\slash right) and the order of sentences were randomized for each participant.
+As fillers, 23 pairs of sentences exemplifying similar alternation phenomena from German morpho-syntax were used.
+Thus, participants saw 39 pairs of sentences and 78 sentences in total.
+They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
+The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/experiment/2afc_proportions}
+\caption{Participants' responses in the forced-choice task plotted against the predictions from the corpus-based model}
+\label{fig:afc:proportions}
+\end{figure}
+
+Descriptively, Figure \ref{fig:afc:proportions} shows the relationship between the logits calculated from the corpus-based model and the proportional choices made by participants.
+Visually, it looks like there is a close correlation between the corpus-derived preferences and preferences in the forced choice experiment.
+
+Then, a multilevel logistic regression was specified as in Equation \ref{eq:model:afc}.
+
+\begin{equation}
+  \begin{split}
+  Pr(y_i=1) & = logit^{-1}(\beta^0+\beta^1\cdot x_i^1+\beta^2\cdot x_i^2+\beta^{1.2}\cdot x_i^1\cdot x_i^2+ \\
+  & + \alpha^{\text{Item}}_{j_i} + \alpha^{\text{Participant}}_{k_i}) \\
+  \text{where}\ \ & x^1 = \text{\it Modelpred} \\
+  & x^2 = \text{\it KindgenderMN} \\
+  %ResponseDrop~Modelpred*Kindgender+(1|Item)+(1|Participant)
+  \end{split}
+  \label{eq:model:afc}
+\end{equation}
+
+Coefficients were estimated using Maximum Likelihood, and the coefficient table is given in Table \ref{tab:afc:model}, where instead of approximate standard errors and $z$ and $p$ values the lower and the upper bound of a bootstrapped 95\% confidence interval are specified.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lrrr}
+    Effect & Estimate & 95\% CI lower & 95\% CI upper \\
+    \midrule
+    (Intercept)            &  0.748  &  0.242  &  1.265 \\
+    Modelpred              &  1.154  &  0.905  &  1.497 \\
+    KindgenderMN           &  0.135  & -0.416  &  0.632 \\
+    Modelpred:KindgenderMN & -0.567  & -0.843  & -0.298 \\
+  \end{tabular}
+  \caption{Coefficient table for the GLMM specified in equation \ref{eq:model:afc}, analysing the results of the forced choice experiment}
+  \label{tab:afc:model}
+\end{table}
+
+The number of observations was $n=768$.
+The random effects for participant ($\sigma=0.7841$, 24 groups) and item ($\sigma=0.4869$, 16 groups) show considerable variance.
+Accordingly, there is a notable difference between the marginal and conditional Nakagawa \& Schielzeth's $R^2_{m}=0.383$ and $R^2_{c}=0.510$, while both values are quite high.
+Dropping the term of interest ($\beta^1\cdot x_i^1+\beta^2\cdot x_i^2+\beta^{1.2}\cdot x_i^1\cdot x_i^2$) leads to a significantly worse fit of the nested model both in a traditional Likelihood Ratio Test ($LR=55.172$, $p<0.0001$) and its bootstrapped PB alternative ($p = 0.002$, 493 of 500 requested samples used).
+The effect display for the term is given in Figure \ref{fig:afc:effects}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/experiment/2afc_effects}
+\caption{Effect plot for the multilevel logistic regression in the forced-choice experiment: predictability of participants' choices from the logits of the corpus-based GLMM (cf.\ Section~\ref{ssec:corpushierarchicalmodel})}
+\label{fig:afc:effects}
+\end{figure}
+
+In summary, the forced choice experiment clearly succeeded in validating the results from the corpus study in as much as the preferences extracted from the corpus correspond to native speakers' choices.
+We can take this as an indication that there is some relation between the process generating the corpus data and the behaviour of individual speakers.
+In the next section, I report the results of a self-paced reading experiment which yielded (maybe expectedly) less clear results.
+
+
+\subsection{Experiment 2: self-paced reading}
+
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.6\textwidth]{figures/experiment/spr_effects_modelPredDichotomousReg}
+%\caption{Effect plot for the LMM in the self-paced reading experiment: modeling participants' residualised log reading times on the dichotomised predictions of the corpus-based GLMM (cf.\ Section~\ref{ssec:corpushierarchicalmodel})}
+%\label{fig:spr:dichotomous:effects}
+%\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/experiment/spr_effects_case+modelPred+gender}
+\caption{Effect plot for the LMM in the self-paced reading experiment: modeling participants' residualised log reading times on the predictions (logits) of the corpus-based GLMM (cf.\ Section~\ref{ssec:corpushierarchicalmodel})}
+\label{fig:spr:continuous:effects}
+\end{figure}
+
+
+
+\section{Conclusions}
+
+
+
+
+\begin{acknowledgement}
+  I want to thank (in alphabetical order) Felix Bildhauer, Götz Keydana, and Ulrike Sayatz for stimulating discussions on relevant aspects of this paper.
+  I also thank Ulrike Sayatz for recruiting the participants for the experiments.
+  I am grateful to Kim Maser for her work on the annotation of the concordances.
+  Furthermore, Samuel Reichert substantially helped to develop the guiding ideas behind this study by writing an excellent BA theses on the subject under my supervision.
+  The research presented here was made possible in part through funding from the \textit{Deutsche Forschungsgemeinschaft} (DFG, personal grant SCHA1916/1-1).
+\end{acknowledgement}
+
+
+
+\bibliography{rs,cow}
+\end{document}

@@ -1,0 +1,965 @@
+
+
+
+MASCULINE
+
+
+Call:
+glm(formula = Genitive ~ 1 + Measurelemma + Genitives + Minus1pos + 
+    Matchlength + Measureabbreviated + Measurelength + Attraction + 
+    Measurenumber + Kindfinal + Kindedible + Badness + Kindconsistency + 
+    Kindorigin + Kindfreq + Measurecase + Kindint + Kindgender, 
+    family = binomial(link = logit), data = mn)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.3200  -0.4616  -0.2234  -0.0545   3.2405  
+
+Coefficients: (2 not defined because of singularities)
+                               Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                   -17.64690 6522.63994  -0.003  0.99784    
+MeasurelemmaBeutel             -0.62598 7836.82203   0.000  0.99994    
+MeasurelemmaBlatt               1.23323 7111.56364   0.000  0.99986    
+MeasurelemmaBund               -1.60168 9224.40488   0.000  0.99986    
+MeasurelemmaCent                0.31840 7975.65552   0.000  0.99997    
+MeasurelemmaZentimeter         -0.56884 6578.85405   0.000  0.99993    
+MeasurelemmaMark               -1.88318 7052.22935   0.000  0.99979    
+MeasurelemmaExtraportion       -0.30293 7961.83218   0.000  0.99997    
+MeasurelemmaFleck              -2.27246 9224.40488   0.000  0.99980    
+MeasurelemmaFontäne            -6.18295 9224.40488  -0.001  0.99947    
+MeasurelemmaFranc              -1.57174 9224.40492   0.000  0.99986    
+MeasurelemmaFranke             -2.27658 7465.65588   0.000  0.99976    
+MeasurelemmaFuhre               0.36343 9224.40487   0.000  0.99997    
+MeasurelemmaGroschen           -0.58421 9224.40492   0.000  0.99995    
+MeasurelemmaHektar             -1.10541 6713.24826   0.000  0.99987    
+MeasurelemmaHälmchen            0.30128 9224.40488   0.000  0.99997    
+MeasurelemmaHappen              0.83881 7896.66375   0.000  0.99992    
+MeasurelemmaHäuflein           -1.16965 7959.80335   0.000  0.99988    
+MeasurelemmaKanister           -2.67152 7262.61830   0.000  0.99971    
+MeasurelemmaKante               0.02001 7403.08808   0.000  1.00000    
+MeasurelemmaKarton             -1.17119 9224.40488   0.000  0.99990    
+MeasurelemmaKelle              -1.84346 9224.40488   0.000  0.99984    
+MeasurelemmaKilometer          -0.68410 7147.23043   0.000  0.99992    
+MeasurelemmaKlafter            -2.94906 9224.40488   0.000  0.99974    
+MeasurelemmaKlecks              1.87421 7959.68848   0.000  0.99981    
+MeasurelemmaKorb                1.22096 9224.40488   0.000  0.99989    
+MeasurelemmaKorn               -0.23675 9224.40489   0.000  0.99998    
+MeasurelemmaKugel              -0.81552 7351.60422   0.000  0.99991    
+MeasurelemmaLadung             -3.33220 6711.59641   0.000  0.99960    
+MeasurelemmaLöffel             -0.88050 6673.11133   0.000  0.99989    
+MeasurelemmaMesserspitze       -0.09125 6645.74556   0.000  0.99999    
+MeasurelemmaMolekül            -1.96695 9224.40488   0.000  0.99983    
+MeasurelemmaPäckchen            0.28619 9224.40489   0.000  0.99998    
+MeasurelemmaPackung            -0.75618 6940.72145   0.000  0.99991    
+MeasurelemmaPaket              -1.05616 7835.81710   0.000  0.99989    
+MeasurelemmaQuadratkilometer   -3.60223 7803.52197   0.000  0.99963    
+MeasurelemmaRaummeter          -0.93275 9224.40488   0.000  0.99992    
+MeasurelemmaRiesenportion       0.35341 7948.36089   0.000  0.99996    
+MeasurelemmaScheffel           -1.24861 9224.40488   0.000  0.99989    
+MeasurelemmaScheibchen          0.93712 9224.40489   0.000  0.99992    
+MeasurelemmaScheit             -2.09981 7453.99260   0.000  0.99978    
+MeasurelemmaSechserpack        -3.01948 9224.40490   0.000  0.99974    
+MeasurelemmaTeelöffel          -0.51217 6565.06863   0.000  0.99994    
+MeasurelemmaThermoskanne       -1.71959 7869.79426   0.000  0.99983    
+MeasurelemmaTube                1.69000 7100.07921   0.000  0.99981    
+MeasurelemmaTütchen            -2.60552 7987.11874   0.000  0.99974    
+MeasurelemmaTüte                1.18663 9224.40488   0.000  0.99990    
+MeasurelemmaUnze               -0.84469 7201.36030   0.000  0.99991    
+MeasurelemmaViertelliter       -1.73491 9224.40490   0.000  0.99985    
+MeasurelemmaGramm              14.45265 6522.63989   0.002  0.99823    
+MeasurelemmaEsslöffel          14.14271 6522.63996   0.002  0.99827    
+MeasurelemmaMeter              12.88842 6522.63996   0.002  0.99842    
+MeasurelemmaMillimeter         14.01570 6522.63997   0.002  0.99829    
+MeasurelemmaMilliliter         13.38443 6522.63993   0.002  0.99836    
+MeasurelemmaKilogramm          14.65692 6522.63988   0.002  0.99821    
+MeasurelemmaPortion            14.93594 6522.63990   0.002  0.99817    
+MeasurelemmaQuadratmeter       13.82486 6522.63992   0.002  0.99831    
+MeasurelemmaSchüssel           15.37627 6522.63992   0.002  0.99812    
+MeasurelemmaPrise              15.63542 6522.63992   0.002  0.99809    
+MeasurelemmaSack               15.13042 6522.63997   0.002  0.99815    
+MeasurelemmaLiter              14.48032 6522.63988   0.002  0.99823    
+MeasurelemmaTasse              14.79400 6522.63989   0.002  0.99819    
+MeasurelemmaTeller             16.84214 6522.63997   0.003  0.99794    
+MeasurelemmaDose               15.92266 6522.63993   0.002  0.99805    
+MeasurelemmaMilligramm         15.10008 6522.63993   0.002  0.99815    
+MeasurelemmaHauch              17.02560 6522.63993   0.003  0.99792    
+MeasurelemmaEimer              15.51444 6522.63992   0.002  0.99810    
+MeasurelemmaKiste              14.82577 6522.63998   0.002  0.99819    
+MeasurelemmaStück              15.11202 6522.63988   0.002  0.99815    
+MeasurelemmaTonne              14.47995 6522.63987   0.002  0.99823    
+MeasurelemmaPfund              16.13310 6522.63990   0.002  0.99803    
+MeasurelemmaEuro               13.54142 6522.63996   0.002  0.99834    
+MeasurelemmaStückchen          16.02351 6522.63990   0.002  0.99804    
+MeasurelemmaDollar             12.83562 6522.64005   0.002  0.99843    
+MeasurelemmaGallone            14.04369 6522.64000   0.002  0.99828    
+MeasurelemmaKrug               14.71900 6522.63999   0.002  0.99820    
+MeasurelemmaGläschen           14.18221 6522.63996   0.002  0.99827    
+MeasurelemmaBecher             16.40866 6522.63993   0.003  0.99799    
+MeasurelemmaBrocken            15.79898 6522.64001   0.002  0.99807    
+MeasurelemmaRest               16.23371 6522.63996   0.002  0.99801    
+MeasurelemmaUnmenge            14.33310 6522.63995   0.002  0.99825    
+MeasurelemmaGlas               15.21672 6522.63989   0.002  0.99814    
+MeasurelemmaKubikmeter         14.26858 6522.63989   0.002  0.99825    
+MeasurelemmaHaufe              15.78674 6522.63988   0.002  0.99807    
+MeasurelemmaScheibe            16.72459 6522.63989   0.003  0.99795    
+MeasurelemmaSchuss             15.27230 6522.63997   0.002  0.99813    
+MeasurelemmaMenge              15.39779 6522.63988   0.002  0.99812    
+MeasurelemmaSchicht            15.69256 6522.63988   0.002  0.99808    
+MeasurelemmaBatzen             15.46026 6522.64007   0.002  0.99811    
+MeasurelemmaBerg               15.77030 6522.63996   0.002  0.99807    
+MeasurelemmaBiss               16.96262 6522.64002   0.003  0.99793    
+MeasurelemmaGulden             16.77726 6522.64006   0.003  0.99795    
+MeasurelemmaSchluck            16.21155 6522.63990   0.002  0.99802    
+MeasurelemmaZentner            15.96618 6522.64004   0.002  0.99805    
+MeasurelemmaFlasche            14.94920 6522.63989   0.002  0.99817    
+MeasurelemmaLage               15.95165 6522.63993   0.002  0.99805    
+MeasurelemmaKanne              16.51640 6522.63992   0.003  0.99798    
+MeasurelemmaBüschel            17.03339 6522.63990   0.003  0.99792    
+MeasurelemmaStreifen           16.10462 6522.63991   0.002  0.99803    
+MeasurelemmaHandvoll           16.61357 6522.63990   0.003  0.99797    
+MeasurelemmaBlock              17.03822 6522.64003   0.003  0.99792    
+MeasurelemmaBüchse             17.11214 6522.64004   0.003  0.99791    
+MeasurelemmaBündel             18.50390 6522.63996   0.003  0.99774    
+MeasurelemmaDosis              16.67584 6522.64005   0.003  0.99796    
+MeasurelemmaFläschchen         16.54764 6522.64004   0.003  0.99798    
+MeasurelemmaHektoliter         15.70895 6522.64006   0.002  0.99808    
+MeasurelemmaKännchen           16.59067 6522.64005   0.003  0.99797    
+MeasurelemmaMass               16.62258 6522.64008   0.003  0.99797    
+MeasurelemmaSchoppen           14.10025 6522.64004   0.002  0.99828    
+MeasurelemmaStapel             15.72662 6522.64016   0.002  0.99808    
+MeasurelemmaTopf               16.36540 6522.63996   0.003  0.99800    
+MeasurelemmaTropfen            16.28519 6522.63988   0.002  0.99801    
+MeasurelemmaKlumpen            16.53886 6522.63990   0.003  0.99798    
+MeasurelemmaHäufchen           18.22276 6522.64001   0.003  0.99777    
+MeasurelemmaTaler              18.57318 6522.64008   0.003  0.99773    
+MeasurelemmaTröpfchen          15.93443 6522.64000   0.002  0.99805    
+MeasurelemmaUnsumme            16.20691 6522.64002   0.002  0.99802    
+MeasurelemmaLache              17.72801 6522.63999   0.003  0.99783    
+MeasurelemmaSchwall            18.34269 6522.63999   0.003  0.99776    
+MeasurelemmaFetzen             17.91853 6522.63998   0.003  0.99781    
+MeasurelemmaLaib               20.72298 6522.63997   0.003  0.99747    
+MeasurelemmaBarrel             33.02075 7980.40053   0.004  0.99670    
+MeasurelemmaEinheit            36.56035 9224.40488   0.004  0.99684    
+MeasurelemmaFass               34.40327 7460.60805   0.005  0.99632    
+MeasurelemmaFeinunze           36.38293 9224.40487   0.004  0.99685    
+MeasurelemmaLawine             35.86265 9224.40487   0.004  0.99690    
+MeasurelemmaPfütze             34.19077 9224.40488   0.004  0.99704    
+MeasurelemmaRinnsal            34.87580 7144.90640   0.005  0.99611    
+MeasurelemmaSpritzer           33.96589 9224.40488   0.004  0.99706    
+MeasurelemmaTankfüllung        33.26540 9224.40489   0.004  0.99712    
+MeasurelemmaTässchen           34.71540 7776.74641   0.004  0.99644    
+Genitives                      -0.68435    0.06177 -11.078  < 2e-16 ***
+Minus1posD                      1.09134    0.25384   4.299 1.71e-05 ***
+Minus1posO                      1.30343    0.27985   4.658 3.20e-06 ***
+Minus1posA                      2.47503    0.26270   9.422  < 2e-16 ***
+Minus1posP                      1.81355    0.38749   4.680 2.87e-06 ***
+Matchlength                     0.69236    0.07564   9.154  < 2e-16 ***
+Measureabbreviated0             0.15204    0.51262   0.297  0.76678    
+Measurelength                  -0.17238    0.18395  -0.937  0.34871    
+Attraction                      0.73515    0.14839   4.954 7.26e-07 ***
+MeasurenumberSg                -0.88550    0.18922  -4.680 2.87e-06 ***
+Kindfinalm                      0.28902    0.64395   0.449  0.65356    
+Kindfinalh                     -0.15724    0.73640  -0.214  0.83092    
+Kindfinale                     -0.06048    0.58692  -0.103  0.91792    
+Kindfinalr                      0.16253    0.54145   0.300  0.76405    
+Kindfinalz                      0.54779    0.60946   0.899  0.36875    
+Kindfinals                      0.91796    0.54408   1.687  0.09157 .  
+Kindfinalf                      0.19989    0.56960   0.351  0.72564    
+Kindfinalg                      1.39156    0.54889   2.535  0.01124 *  
+Kindfinald                     -0.03771    0.63448  -0.059  0.95261    
+Kindfinalt                     -0.26462    0.53781  -0.492  0.62270    
+Kindfinall                      0.12547    0.54847   0.229  0.81906    
+Kindfinaln                      1.08811    0.50538   2.153  0.03131 *  
+Kindfinalb                     -0.56499    0.77250  -0.731  0.46455    
+Kindedible0                     0.72945    0.24620   2.963  0.00305 ** 
+Badness                        -0.19526    0.06342  -3.079  0.00208 ** 
+KindconsistencySoft            -1.24615    0.66440  -1.876  0.06071 .  
+KindconsistencyPowder          -0.92321    0.73513  -1.256  0.20917    
+KindconsistencyMixed           -1.73935    0.73957  -2.352  0.01868 *  
+KindconsistencyHard            -0.92177    0.66946  -1.377  0.16854    
+KindconsistencyLiquid          -0.64703    0.65943  -0.981  0.32650    
+KindconsistencyImmaterial      -1.77968    1.05527  -1.686  0.09171 .  
+KindconsistencyGaseous         -2.23873    0.80356  -2.786  0.00534 ** 
+KindoriginManmade              -0.24751    0.29484  -0.839  0.40120    
+KindoriginInapplicable          1.69057    0.53320   3.171  0.00152 ** 
+KindoriginNatural              -0.11815    0.21158  -0.558  0.57656    
+KindoriginCultural                   NA         NA      NA       NA    
+KindoriginResidue               0.77919    0.40365   1.930  0.05356 .  
+Kindfreq                        0.06192    0.12808   0.483  0.62880    
+MeasurecaseAcc                 -0.05524    0.13164  -0.420  0.67475    
+MeasurecaseDat                  0.72717    0.15305   4.751 2.02e-06 ***
+KindintNonint                        NA         NA      NA       NA    
+KindgenderNeut                 -0.31363    0.19995  -1.569  0.11676    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3602.7  on 3948  degrees of freedom
+Residual deviance: 2212.9  on 3778  degrees of freedom
+AIC: 2554.9
+
+Number of Fisher Scoring iterations: 17
+
+
+
+[1] 0.4957935
+
+
+correct 0.8761712
+
+λ 0.2723214
+
+
+
+
+FEMININE
+
+
+Call:
+glm(formula = Casedrop ~ 1 + Measurelemma + Measureclass + Minus1pos + 
+    Measureabbreviated + Kindconsistency + Matchlength + Genitives + 
+    Kindedible + Kindorigin + Measurelength + Measuregender + 
+    Measurenumber + Kindint + Badness + Minus1pos + Measurefreq + 
+    Measurecase + Kindfreq, family = binomial(link = logit), 
+    data = fem)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.6834  -0.6033  -0.1243   0.5842   2.9435  
+
+Coefficients: (13 not defined because of singularities)
+                                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                    -18.20277 3956.18095  -0.005 0.996329    
+MeasurelemmaBecher               1.28518 4188.93849   0.000 0.999755    
+MeasurelemmaEsslöffel            1.51445 5594.88470   0.000 0.999784    
+MeasurelemmaExtraportion         2.33501 4770.30013   0.000 0.999609    
+MeasurelemmaKoffer               1.01107 5594.88422   0.000 0.999856    
+MeasurelemmaLage                 0.08621 5594.88414   0.000 0.999988    
+MeasurelemmaMeter                1.08381 5594.88407   0.000 0.999845    
+MeasurelemmaMegawatt             1.93733 5594.88470   0.000 0.999724    
+MeasurelemmaMegawattstunde       1.89221 5594.88556   0.000 0.999730    
+MeasurelemmaPackung              1.33034 4704.35599   0.000 0.999774    
+MeasurelemmaPfund               -1.44722 4730.67905   0.000 0.999756    
+MeasurelemmaPortion             -1.40122 4368.85723   0.000 0.999744    
+MeasurelemmaPott                -0.04539 4564.87691   0.000 0.999992    
+MeasurelemmaQuadratmeter        -0.01512 4819.43919   0.000 0.999997    
+MeasurelemmaQuadratzentimeter    1.74059 4559.99367   0.000 0.999695    
+MeasurelemmaRiegel               1.20978 5594.88449   0.000 0.999827    
+MeasurelemmaSchälchen            2.85747 5594.88499   0.001 0.999592    
+MeasurelemmaSchluck              0.91708 5594.88494   0.000 0.999869    
+MeasurelemmaStich                1.29831 5594.88442   0.000 0.999815    
+MeasurelemmaUnze                 3.09489 5594.88494   0.001 0.999559    
+MeasurelemmaWatt                -0.55238 5594.88428   0.000 0.999921    
+MeasurelemmaGramm               13.73557 3956.18082   0.003 0.997230    
+MeasurelemmaGlas                15.47825 3956.18075   0.004 0.996878    
+MeasurelemmaTasse               16.06500 3956.18095   0.004 0.996760    
+MeasurelemmaTafel               15.99571 3956.18092   0.004 0.996774    
+MeasurelemmaLiter               31.31946 5594.88438   0.006 0.995534    
+MeasurelemmaMilliliter          32.44328 5594.88471   0.006 0.995373    
+MeasurelemmaDose                15.31599 3956.18106   0.004 0.996911    
+MeasurelemmaZentimeter          16.41030 3956.18082   0.004 0.996690    
+MeasurelemmaTeller              17.93189 3956.18089   0.005 0.996383    
+MeasurelemmaKilogramm           15.15225 3956.18076   0.004 0.996944    
+MeasurelemmaStückchen           16.97165 3956.18106   0.004 0.996577    
+MeasurelemmaEimer               15.82591 3956.18107   0.004 0.996808    
+MeasurelemmaKilowatt            15.55190 3956.18163   0.004 0.996863    
+MeasurelemmaStück               15.32320 3956.18065   0.004 0.996910    
+MeasurelemmaKilowattstunde      16.62276 3956.18140   0.004 0.996648    
+MeasurelemmaLadung              17.86543 3956.18101   0.005 0.996397    
+MeasurelemmaKubikmeter          33.27307 5594.88480   0.006 0.995255    
+MeasurelemmaTonne               15.96063 3956.18069   0.004 0.996781    
+MeasurelemmaHandvoll            17.21431 3956.18124   0.004 0.996528    
+MeasurelemmaLöffel              19.11544 3956.18124   0.005 0.996145    
+MeasurelemmaStrahl              17.63124 3956.18154   0.004 0.996444    
+MeasurelemmaStreifen            16.98653 3956.18114   0.004 0.996574    
+MeasurelemmaSchicht             15.92515 3956.18072   0.004 0.996788    
+MeasurelemmaTopf                18.62183 3956.18086   0.005 0.996244    
+MeasurelemmaMenge               16.27584 3956.18060   0.004 0.996717    
+MeasurelemmaHäuflein            19.15205 3956.18249   0.005 0.996137    
+MeasurelemmaScheibe             19.73592 3956.18085   0.005 0.996020    
+MeasurelemmaSchüssel            19.84193 3956.18113   0.005 0.995998    
+MeasurelemmaFleckchen           19.20034 3956.18176   0.005 0.996128    
+MeasurelemmaTropfen             18.59615 3956.18091   0.005 0.996250    
+MeasurelemmaUnmenge             17.54572 3956.18123   0.004 0.996461    
+MeasurelemmaHaufe               18.10378 3956.18079   0.005 0.996349    
+MeasurelemmaStapel              19.17347 3956.18119   0.005 0.996133    
+MeasurelemmaSchwall             21.19161 3956.18204   0.005 0.995726    
+MeasurelemmaHäufchen            20.37527 3956.18180   0.005 0.995891    
+MeasurelemmaBerg                19.30323 3956.18073   0.005 0.996107    
+MeasurelemmaBiss                34.59748 4844.36301   0.007 0.994302    
+MeasurelemmaBündel              35.36163 4461.48271   0.008 0.993676    
+MeasurelemmaDosis               34.64351 4813.70669   0.007 0.994258    
+MeasurelemmaEinheit             29.69601 5594.88419   0.005 0.995765    
+MeasurelemmaFleck               33.94731 4525.49319   0.008 0.994015    
+MeasurelemmaHauch               34.44473 4785.92714   0.007 0.994258    
+MeasurelemmaKlecks              34.22000 4276.61688   0.008 0.993616    
+MeasurelemmaKlumpen             34.59623 5594.88488   0.006 0.995066    
+MeasurelemmaKorb                34.17189 5594.88436   0.006 0.995127    
+MeasurelemmaKübel               35.03127 5594.88474   0.006 0.995004    
+MeasurelemmaMasse               31.46107 5594.88410   0.006 0.995513    
+MeasurelemmaRest                34.72938 5594.88409   0.006 0.995047    
+MeasurelemmaSpritzer            35.13740 5594.88495   0.006 0.994989    
+MeasurelemmaTeilchen            34.07232 4547.62027   0.007 0.994022    
+MeasurelemmaTupfer              35.77968 5594.88534   0.006 0.994898    
+MeasurelemmaÜbermass            35.17727 5594.88479   0.006 0.994983    
+MeasureclassWeight                    NA         NA      NA       NA    
+MeasureclassCapacity           -15.91936 3956.18054  -0.004 0.996789    
+MeasureclassLength                    NA         NA      NA       NA    
+MeasureclassPhysical                  NA         NA      NA       NA    
+MeasureclassVessel                    NA         NA      NA       NA    
+MeasureclassAmount                    NA         NA      NA       NA    
+MeasureclassLayer                     NA         NA      NA       NA    
+MeasureclassPortion                   NA         NA      NA       NA    
+MeasureclassRest                      NA         NA      NA       NA    
+Minus1posD                       1.20400    0.47546   2.532 0.011332 *  
+Minus1posO                       2.08697    0.49735   4.196 2.71e-05 ***
+Minus1posA                       2.09434    0.47717   4.389 1.14e-05 ***
+Minus1posP                       5.63916    1.31204   4.298 1.72e-05 ***
+Measureabbreviated0              0.29163    1.17250   0.249 0.803574    
+KindconsistencyHard             -0.94241    0.95603  -0.986 0.324252    
+KindconsistencyLiquid            0.17812    0.90929   0.196 0.844696    
+KindconsistencySoft             -0.18867    0.86656  -0.218 0.827644    
+KindconsistencyImmaterial       -2.02855    1.09330  -1.855 0.063533 .  
+KindconsistencyGaseous          -1.61059    0.98119  -1.641 0.100700    
+KindconsistencyMixed            -0.53570    0.96262  -0.557 0.577866    
+KindconsistencyPowder           -0.46736    1.07822  -0.433 0.664689    
+Matchlength                      0.75765    0.13609   5.567 2.59e-08 ***
+Genitives                       -0.59897    0.10028  -5.973 2.33e-09 ***
+Kindedible0                      1.47537    0.39577   3.728 0.000193 ***
+KindoriginManmade               -1.13381    0.53375  -2.124 0.033652 *  
+KindoriginNatural               -0.78825    0.40488  -1.947 0.051546 .  
+KindoriginInapplicable                NA         NA      NA       NA    
+KindoriginResidue                     NA         NA      NA       NA    
+Measurelength                   -0.48342    0.37378  -1.293 0.195904    
+MeasuregenderMasc                     NA         NA      NA       NA    
+MeasuregenderFem                      NA         NA      NA       NA    
+MeasurenumberSg                 -0.75964    0.34310  -2.214 0.026825 *  
+KindintNonint                         NA         NA      NA       NA    
+Badness                         -0.10945    0.10120  -1.082 0.279459    
+Measurefreq                      0.66134    1.07267   0.617 0.537539    
+MeasurecaseAcc                   0.21382    0.18981   1.127 0.259951    
+Kindfreq                         0.03276    0.18364   0.178 0.858426    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1511.77  on 1113  degrees of freedom
+Residual deviance:  861.96  on 1017  degrees of freedom
+AIC: 1056
+
+Number of Fisher Scoring iterations: 16
+
+
+
+[1] 0.5951564
+
+
+correct 0.8168761
+
+λ 0.5584416
+
+
+
+
+PLURAL
+
+
+Call:
+glm(formula = Casedrop ~ 1 + Kindlemma + Genitives + Measurecase + 
+    Badness + Kindlength + Measuregender, family = binomial(link = logit), 
+    data = pl)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-2.45749   0.00001   0.00002   0.00002   1.86741  
+
+Coefficients:
+                                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                   -2.182e+01  8.874e+05   0.000    1.000    
+KindlemmaAnforderung           3.201e+00  6.816e+04   0.000    1.000    
+KindlemmaAnteil               -5.915e-01  4.146e+05   0.000    1.000    
+KindlemmaArgument              1.437e+00  2.810e+05   0.000    1.000    
+KindlemmaBackstein            -9.184e-01  2.155e+05   0.000    1.000    
+KindlemmaBlüte                 4.946e+00  4.820e+05   0.000    1.000    
+KindlemmaEi                    4.016e+00  6.172e+05   0.000    1.000    
+KindlemmaErinnerung           -3.265e+00  9.639e+04   0.000    1.000    
+KindlemmaFell                  2.933e+00  5.495e+05   0.000    1.000    
+KindlemmaGabe                  2.768e+00  5.485e+05   0.000    1.000    
+KindlemmaGesellschaftsspiel    3.539e-01  4.146e+05   0.000    1.000    
+KindlemmaGrund                 3.602e+00  4.820e+05   0.000    1.000    
+KindlemmaGummibärchen          1.506e+00  9.639e+04   0.000    1.000    
+KindlemmaHimbeere              3.116e+00  2.810e+05   0.000    1.000    
+KindlemmaKartoffel            -2.920e-01  2.155e+05   0.000    1.000    
+KindlemmaKomödie               4.701e+00  3.475e+05   0.000    1.000    
+KindlemmaMade                  3.862e+00  5.495e+05   0.000    1.000    
+KindlemmaMandel                4.448e+00  4.132e+05   0.000    1.000    
+KindlemmaMine                 -1.758e+00  5.495e+05   0.000    1.000    
+KindlemmaMiniatur             -2.934e+00  2.155e+05   0.000    1.000    
+KindlemmaMinister             -2.769e+00  3.475e+05   0.000    1.000    
+KindlemmaMoped                 3.443e+00  4.820e+05   0.000    1.000    
+KindlemmaPhoto                -1.181e+00  4.820e+05   0.000    1.000    
+KindlemmaPunkt                 1.606e+00  4.820e+05   0.000    1.000    
+KindlemmaRisiko               -1.762e-01  4.146e+05   0.000    1.000    
+KindlemmaRosine                5.180e+00  4.146e+05   0.000    1.000    
+KindlemmaSchaf                 2.693e+00  4.820e+05   0.000    1.000    
+KindlemmaScheibe               2.686e+00  3.475e+05   0.000    1.000    
+KindlemmaSignal                3.697e+00  4.146e+05   0.000    1.000    
+KindlemmaSonnenblumenkern      3.622e+00  2.810e+05   0.000    1.000    
+KindlemmaSpitze                2.768e+00  4.146e+05   0.000    1.000    
+KindlemmaStehplatz             4.200e+00  2.155e+05   0.000    1.000    
+KindlemmaStrom                -3.310e-01  4.820e+05   0.000    1.000    
+KindlemmaSubstanz              4.615e+00  2.155e+05   0.000    1.000    
+KindlemmaTrikot                4.527e+00  4.146e+05   0.000    1.000    
+KindlemmaVerbot                3.618e+00  4.146e+05   0.000    1.000    
+KindlemmaWurzel               -2.350e+00  4.146e+05   0.000    1.000    
+KindlemmaZigarette             2.441e+00  2.155e+05   0.000    1.000    
+KindlemmaZöllner               2.353e+00  4.146e+05   0.000    1.000    
+KindlemmaÄnderung              2.346e+01  2.101e+05   0.000    1.000    
+KindlemmaBohne                 2.365e+01  4.795e+05   0.000    1.000    
+KindlemmaDetail                2.518e+01  4.118e+05   0.000    1.000    
+KindlemmaGetränk               2.287e+01  3.442e+05   0.000    1.000    
+KindlemmaGurke                 2.227e+01  4.795e+05   0.000    1.000    
+KindlemmaKraut                 2.621e+01  4.118e+05   0.000    1.000    
+KindlemmaLand                  2.512e+01  4.795e+05   0.000    1.000    
+KindlemmaNeuigkeit             2.433e+01  1.446e+05   0.000    1.000    
+KindlemmaPirat                 2.394e+01  4.118e+05   0.000    1.000    
+KindlemmaPreis                 2.437e+01  4.795e+05   0.000    1.000    
+KindlemmaStück                 2.475e+01  4.795e+05   0.000    1.000    
+KindlemmaTeil                  2.457e+01  5.474e+05   0.000    1.000    
+KindlemmaTourist               2.370e+01  2.769e+05   0.000    1.000    
+KindlemmaVeranstaltung         2.416e+01  1.446e+05   0.000    1.000    
+KindlemmaWaffe                 2.270e+01  4.795e+05   0.000    1.000    
+KindlemmaNudel                 2.393e+01  4.795e+05   0.000    1.000    
+KindlemmaScreenshot            2.524e+01  1.446e+05   0.000    1.000    
+KindlemmaDing                  2.578e+01  5.474e+05   0.000    1.000    
+KindlemmaFisch                 2.524e+01  4.795e+05   0.000    1.000    
+KindlemmaText                  2.584e+01  5.474e+05   0.000    1.000    
+KindlemmaKind                  2.613e+01  4.795e+05   0.000    1.000    
+KindlemmaInformation           2.454e+01  4.820e+04   0.001    1.000    
+KindlemmaBild                  2.671e+01  4.795e+05   0.000    1.000    
+KindlemmaAbbildung             4.553e+01  1.524e+05   0.000    1.000    
+KindlemmaAbenteuer             4.654e+01  2.810e+05   0.000    1.000    
+KindlemmaAbiturient            4.599e+01  8.999e+04   0.001    1.000    
+KindlemmaAbmessung             4.646e+01  1.524e+05   0.000    1.000    
+KindlemmaAbstecher             4.477e+01  2.810e+05   0.000    1.000    
+KindlemmaAffe                  4.876e+01  5.479e+05   0.000    1.000    
+KindlemmaAffenmensch           4.624e+01  6.816e+04   0.001    0.999    
+KindlemmaAgentur               4.657e+01  2.810e+05   0.000    1.000    
+KindlemmaAktfotografie         4.297e+01  9.639e+04   0.000    1.000    
+KindlemmaAktiengesellschaft    4.280e+01  4.820e+05   0.000    1.000    
+KindlemmaAmazone               4.663e+01  3.459e+05   0.000    1.000    
+KindlemmaAnalphabet            4.446e+01  9.639e+04   0.000    1.000    
+KindlemmaAnfänger              4.462e+01  3.459e+05   0.000    1.000    
+KindlemmaAngabe                4.454e+01  4.146e+05   0.000    1.000    
+KindlemmaAngebot               4.470e+01  3.452e+05   0.000    1.000    
+KindlemmaAnhänger              4.363e+01  3.459e+05   0.000    1.000    
+KindlemmaAnruf                 4.543e+01  4.820e+05   0.000    1.000    
+KindlemmaAnschlag              4.453e+01  2.810e+05   0.000    1.000    
+KindlemmaApparatur             4.834e+01  1.524e+05   0.000    1.000    
+KindlemmaArbeiter              4.430e+01  3.475e+05   0.000    1.000    
+KindlemmaArbeitsplatz          4.446e+01  5.882e+04   0.001    0.999    
+KindlemmaArie                  4.581e+01  5.495e+05   0.000    1.000    
+KindlemmaArschloch             4.715e+01  1.524e+05   0.000    1.000    
+KindlemmaArt                   4.469e+01  5.484e+05   0.000    1.000    
+KindlemmaArtikel               4.914e+01  4.126e+05   0.000    1.000    
+KindlemmaArzneimittel          4.816e+01  9.639e+04   0.000    1.000    
+KindlemmaAssoziation           4.392e+01  5.868e+04   0.001    0.999    
+KindlemmaAst                   4.728e+01  6.172e+05   0.000    1.000    
+KindlemmaAthlet                4.740e+01  3.475e+05   0.000    1.000    
+KindlemmaAtom                  4.563e+01  5.495e+05   0.000    1.000    
+KindlemmaAttacke               4.780e+01  3.475e+05   0.000    1.000    
+KindlemmaAufführung            4.446e+01  9.639e+04   0.000    1.000    
+KindlemmaAufgabe               4.669e+01  3.453e+05   0.000    1.000    
+KindlemmaAuftritt              4.228e+01  2.810e+05   0.000    1.000    
+KindlemmaAusflugsziel          4.472e+01  5.813e+04   0.001    0.999    
+KindlemmaAusgabe               4.387e+01  3.475e+05   0.000    1.000    
+KindlemmaAusländer             4.345e+01  2.810e+05   0.000    1.000    
+KindlemmaAussage               4.401e+01  3.458e+05   0.000    1.000    
+KindlemmaAuswirkung            4.688e+01  9.639e+04   0.000    1.000    
+KindlemmaAutor                 4.782e+01  4.146e+05   0.000    1.000    
+KindlemmaAutorin               4.338e+01  2.155e+05   0.000    1.000    
+KindlemmaBank                  5.000e+01  4.820e+05   0.000    1.000    
+KindlemmaBanknote              4.758e+01  2.810e+05   0.000    1.000    
+KindlemmaBatterie              4.866e+01  2.810e+05   0.000    1.000    
+KindlemmaBau                   4.387e+01  4.808e+05   0.000    1.000    
+KindlemmaBauarbeiter           4.546e+01  1.524e+05   0.000    1.000    
+KindlemmaBauer                 4.464e+01  4.801e+05   0.000    1.000    
+KindlemmaBauhandwerker         4.337e+01  6.816e+04   0.001    0.999    
+KindlemmaBauteil               4.796e+01  3.458e+05   0.000    1.000    
+KindlemmaBauwerk               4.740e+01  3.475e+05   0.000    1.000    
+KindlemmaBegegnung             4.586e+01  1.482e+05   0.000    1.000    
+KindlemmaBegriff               4.655e+01  3.475e+05   0.000    1.000    
+KindlemmaBehauptung            4.454e+01  9.639e+04   0.000    1.000    
+KindlemmaBehausung             4.439e+01  1.524e+05   0.000    1.000    
+KindlemmaBeispiel              4.260e+01  2.810e+05   0.000    1.000    
+KindlemmaBeitrag               4.775e+01  3.457e+05   0.000    1.000    
+KindlemmaBengel                4.547e+01  4.820e+05   0.000    1.000    
+KindlemmaBeobachtung           4.539e+01  6.816e+04   0.001    0.999    
+KindlemmaBerg                  4.597e+01  5.495e+05   0.000    1.000    
+KindlemmaBerufskollege         4.077e+01  9.639e+04   0.000    1.000    
+KindlemmaBesucher              4.755e+01  3.448e+05   0.000    1.000    
+KindlemmaBewohner              4.361e+01  3.475e+05   0.000    1.000    
+KindlemmaBewohnerin            4.292e+01  5.902e+04   0.001    0.999    
+KindlemmaBiene                 4.236e+01  4.820e+05   0.000    1.000    
+KindlemmaBier                  4.706e+01  5.495e+05   0.000    1.000    
+KindlemmaBierbauch             4.304e+01  2.155e+05   0.000    1.000    
+KindlemmaBiskuit               4.657e+01  3.475e+05   0.000    1.000    
+KindlemmaBlech                 4.681e+01  4.820e+05   0.000    1.000    
+KindlemmaBlock                 4.369e+01  4.820e+05   0.000    1.000    
+KindlemmaBlog                  4.656e+01  5.495e+05   0.000    1.000    
+KindlemmaBlogger               4.422e+01  4.146e+05   0.000    1.000    
+KindlemmaBlume                 4.718e+01  4.803e+05   0.000    1.000    
+KindlemmaBonbon                4.494e+01  4.146e+05   0.000    1.000    
+KindlemmaBote                  4.394e+01  5.495e+05   0.000    1.000    
+KindlemmaBrennelement          4.691e+01  6.816e+04   0.001    0.999    
+KindlemmaBrötchen              4.774e+01  3.475e+05   0.000    1.000    
+KindlemmaBrummbär              4.732e+01  2.155e+05   0.000    1.000    
+KindlemmaBuch                  4.442e+01  4.801e+05   0.000    1.000    
+KindlemmaBürger                4.354e+01  4.820e+05   0.000    1.000    
+KindlemmaChance                4.676e+01  4.132e+05   0.000    1.000    
+KindlemmaCharakter             4.789e+01  2.155e+05   0.000    1.000    
+KindlemmaChip                  5.008e+01  5.495e+05   0.000    1.000    
+KindlemmaChor                  4.580e+01  5.495e+05   0.000    1.000    
+KindlemmaChrist                4.479e+01  3.475e+05   0.000    1.000    
+KindlemmaClown                 4.773e+01  4.820e+05   0.000    1.000    
+KindlemmaDackel                4.858e+01  4.820e+05   0.000    1.000    
+KindlemmaDame                  4.864e+01  5.484e+05   0.000    1.000    
+KindlemmaDamm                  4.486e+01  5.485e+05   0.000    1.000    
+KindlemmaDatum                 4.404e+01  5.481e+05   0.000    1.000    
+KindlemmaDepp                  4.595e+01  4.820e+05   0.000    1.000    
+KindlemmaDesign                4.579e+01  4.146e+05   0.000    1.000    
+KindlemmaDesigner              4.547e+01  3.475e+05   0.000    1.000    
+KindlemmaDienstleistung        4.892e+01  2.155e+05   0.000    1.000    
+KindlemmaDienstwaffe           4.515e+01  9.639e+04   0.000    1.000    
+KindlemmaDinosaurier           4.741e+01  1.524e+05   0.000    1.000    
+KindlemmaDokument              4.766e+01  2.810e+05   0.000    1.000    
+KindlemmaDorfbewohner          4.599e+01  9.639e+04   0.000    1.000    
+KindlemmaEbene                 4.339e+01  4.820e+05   0.000    1.000    
+KindlemmaEffekt                4.673e+01  4.146e+05   0.000    1.000    
+KindlemmaEhrengast             4.463e+01  2.155e+05   0.000    1.000    
+KindlemmaEindruck              4.866e+01  2.810e+05   0.000    1.000    
+KindlemmaEinrichtung           4.235e+01  6.816e+04   0.001    1.000    
+KindlemmaEinstellung           4.322e+01  6.816e+04   0.001    0.999    
+KindlemmaEinwohner             4.665e+01  2.810e+05   0.000    1.000    
+KindlemmaEinzelheit            4.320e+01  9.639e+04   0.000    1.000    
+KindlemmaEisen                 4.386e+01  5.495e+05   0.000    1.000    
+KindlemmaEiskristall           4.421e+01  9.639e+04   0.000    1.000    
+KindlemmaElektron              4.429e+01  2.155e+05   0.000    1.000    
+KindlemmaElektronik            4.547e+01  2.155e+05   0.000    1.000    
+KindlemmaElfe                  4.555e+01  5.495e+05   0.000    1.000    
+KindlemmaEmotion               4.553e+01  2.810e+05   0.000    1.000    
+KindlemmaEmpfehlung            4.354e+01  9.639e+04   0.000    1.000    
+KindlemmaEngel                 4.791e+01  5.495e+05   0.000    1.000    
+KindlemmaEngländer             4.740e+01  2.810e+05   0.000    1.000    
+KindlemmaEntdeckung            4.431e+01  9.639e+04   0.000    1.000    
+KindlemmaEntscheidung          4.657e+01  8.958e+04   0.001    1.000    
+KindlemmaEreignis              4.882e+01  2.155e+05   0.000    1.000    
+KindlemmaErfahrung             4.867e+01  1.467e+05   0.000    1.000    
+KindlemmaErfolg                4.446e+01  4.146e+05   0.000    1.000    
+KindlemmaErkenntnis            4.446e+01  9.639e+04   0.000    1.000    
+KindlemmaErkrankung            4.403e+01  8.972e+04   0.000    1.000    
+KindlemmaErlebnis              4.378e+01  2.155e+05   0.000    1.000    
+KindlemmaErweiterung           4.732e+01  6.816e+04   0.001    0.999    
+KindlemmaEsel                  4.704e+01  6.172e+05   0.000    1.000    
+KindlemmaEssay                 4.096e+01  4.820e+05   0.000    1.000    
+KindlemmaEvent                 4.749e+01  4.820e+05   0.000    1.000    
+KindlemmaExemplar              4.866e+01  2.810e+05   0.000    1.000    
+KindlemmaExkursion             4.461e+01  1.524e+05   0.000    1.000    
+KindlemmaExperte               4.337e+01  3.475e+05   0.000    1.000    
+KindlemmaExponat               4.379e+01  3.475e+05   0.000    1.000    
+KindlemmaFabrikat              4.866e+01  2.810e+05   0.000    1.000    
+KindlemmaFachbegriff           4.346e+01  9.639e+04   0.000    1.000    
+KindlemmaFachkraft             4.584e+01  2.125e+05   0.000    1.000    
+KindlemmaFahrer                4.385e+01  4.820e+05   0.000    1.000    
+KindlemmaFaktum                4.704e+01  4.806e+05   0.000    1.000    
+KindlemmaFall                  4.488e+01  5.495e+05   0.000    1.000    
+KindlemmaFan                   4.690e+01  6.158e+05   0.000    1.000    
+KindlemmaFarbe                 4.796e+01  4.820e+05   0.000    1.000    
+KindlemmaFassung               4.360e+01  2.810e+05   0.000    1.000    
+KindlemmaFaulenzer             4.548e+01  2.810e+05   0.000    1.000    
+KindlemmaFeature               4.470e+01  3.475e+05   0.000    1.000    
+KindlemmaFehler                4.403e+01  4.820e+05   0.000    1.000    
+KindlemmaFeind                 4.496e+01  4.820e+05   0.000    1.000    
+KindlemmaFigur                 4.710e+01  4.129e+05   0.000    1.000    
+KindlemmaFilm                  4.154e+01  5.495e+05   0.000    1.000    
+KindlemmaFirma                 4.528e+01  4.806e+05   0.000    1.000    
+KindlemmaFlasche               4.613e+01  3.458e+05   0.000    1.000    
+KindlemmaFlecken               4.544e+01  4.131e+05   0.000    1.000    
+KindlemmaFlüchtling            4.328e+01  1.524e+05   0.000    1.000    
+KindlemmaFlug                  4.664e+01  5.495e+05   0.000    1.000    
+KindlemmaFolge                 4.822e+01  4.820e+05   0.000    1.000    
+KindlemmaFördermittel          4.369e+01  9.639e+04   0.000    1.000    
+KindlemmaForderung             4.370e+01  1.524e+05   0.000    1.000    
+KindlemmaFoto                  4.809e+01  5.481e+05   0.000    1.000    
+KindlemmaFrage                 4.668e+01  4.806e+05   0.000    1.000    
+KindlemmaFranzose              4.898e+01  2.790e+05   0.000    1.000    
+KindlemmaFrau                  4.885e+01  4.806e+05   0.000    1.000    
+KindlemmaFremde                4.656e+01  4.146e+05   0.000    1.000    
+KindlemmaFresko                4.403e+01  4.146e+05   0.000    1.000    
+KindlemmaFreund                4.756e+01  4.132e+05   0.000    1.000    
+KindlemmaFrucht                4.796e+01  4.131e+05   0.000    1.000    
+KindlemmaFundament             4.688e+01  2.155e+05   0.000    1.000    
+KindlemmaFunktion              4.890e+01  2.155e+05   0.000    1.000    
+KindlemmaGanove                4.519e+01  4.146e+05   0.000    1.000    
+KindlemmaGans                  4.777e+01  5.480e+05   0.000    1.000    
+KindlemmaGartenhaus            4.648e+01  9.639e+04   0.000    1.000    
+KindlemmaGast                  4.908e+01  5.478e+05   0.000    1.000    
+KindlemmaGebäude               4.618e+01  4.121e+05   0.000    1.000    
+KindlemmaGebiet                4.387e+01  4.146e+05   0.000    1.000    
+KindlemmaGedanke               4.765e+01  3.454e+05   0.000    1.000    
+KindlemmaGedicht               4.802e+01  3.456e+05   0.000    1.000    
+KindlemmaGegenstand            4.486e+01  1.524e+05   0.000    1.000    
+KindlemmaGegner                4.822e+01  4.820e+05   0.000    1.000    
+KindlemmaGeist                 4.718e+01  4.124e+05   0.000    1.000    
+KindlemmaGelenk                4.470e+01  4.146e+05   0.000    1.000    
+KindlemmaGemeinde              4.640e+01  2.810e+05   0.000    1.000    
+KindlemmaGemeinschaft          4.234e+01  9.639e+04   0.000    1.000    
+KindlemmaGenauigkeit           4.486e+01  1.524e+05   0.000    1.000    
+KindlemmaGenosse               4.387e+01  3.475e+05   0.000    1.000    
+KindlemmaGerät                 4.401e+01  4.808e+05   0.000    1.000    
+KindlemmaGericht               4.575e+01  3.459e+05   0.000    1.000    
+KindlemmaGeschäft              4.664e+01  2.785e+05   0.000    1.000    
+KindlemmaGeschirrtuch          4.833e+01  9.017e+04   0.001    1.000    
+KindlemmaGeselle               4.748e+01  3.475e+05   0.000    1.000    
+KindlemmaGesetz                4.548e+01  4.132e+05   0.000    1.000    
+KindlemmaGesicht               4.570e+01  2.810e+05   0.000    1.000    
+KindlemmaGesinnung             4.236e+01  1.524e+05   0.000    1.000    
+KindlemmaGespräch              4.732e+01  2.810e+05   0.000    1.000    
+KindlemmaGewalttat             4.514e+01  1.524e+05   0.000    1.000    
+KindlemmaGewebe                4.496e+01  4.820e+05   0.000    1.000    
+KindlemmaGewinn                4.446e+01  4.146e+05   0.000    1.000    
+KindlemmaGiftzahn              4.445e+01  2.810e+05   0.000    1.000    
+KindlemmaGläubiger             4.492e+01  2.789e+05   0.000    1.000    
+KindlemmaGolfspieler           4.925e+01  1.524e+05   0.000    1.000    
+KindlemmaGrab                  4.369e+01  4.820e+05   0.000    1.000    
+KindlemmaGras                  4.403e+01  4.820e+05   0.000    1.000    
+KindlemmaGrausamkeit           4.397e+01  6.816e+04   0.001    0.999    
+KindlemmaGrundschule           4.723e+01  9.639e+04   0.000    1.000    
+KindlemmaGut                   4.700e+01  5.482e+05   0.000    1.000    
+KindlemmaHandbuch              4.539e+01  2.155e+05   0.000    1.000    
+KindlemmaHandlung              4.445e+01  2.155e+05   0.000    1.000    
+KindlemmaHandwerker            4.850e+01  2.155e+05   0.000    1.000    
+KindlemmaHaus                  4.555e+01  4.820e+05   0.000    1.000    
+KindlemmaHeft                  4.883e+01  5.495e+05   0.000    1.000    
+KindlemmaHeimchen              4.975e+01  3.475e+05   0.000    1.000    
+KindlemmaHelferin              4.824e+01  1.524e+05   0.000    1.000    
+KindlemmaHerausforderung       4.556e+01  2.810e+05   0.000    1.000    
+KindlemmaHerr                  4.454e+01  4.820e+05   0.000    1.000    
+KindlemmaHersteller            4.757e+01  2.155e+05   0.000    1.000    
+KindlemmaHerz                  4.502e+01  4.820e+05   0.000    1.000    
+KindlemmaHilfsmittel           4.455e+01  1.524e+05   0.000    1.000    
+KindlemmaHindernis             4.221e+01  1.524e+05   0.000    1.000    
+KindlemmaHirte                 4.478e+01  4.808e+05   0.000    1.000    
+KindlemmaHochkultur            4.367e+01  9.003e+04   0.000    1.000    
+KindlemmaHöhepunkt             4.447e+01  2.155e+05   0.000    1.000    
+KindlemmaHormon                4.705e+01  4.146e+05   0.000    1.000    
+KindlemmaHotel                 4.496e+01  4.820e+05   0.000    1.000    
+KindlemmaHügel                 4.613e+01  5.495e+05   0.000    1.000    
+KindlemmaHuhn                  4.858e+01  4.820e+05   0.000    1.000    
+KindlemmaHund                  4.563e+01  5.495e+05   0.000    1.000    
+KindlemmaIdee                  4.728e+01  5.483e+05   0.000    1.000    
+KindlemmaIndianer              4.643e+01  3.459e+05   0.000    1.000    
+KindlemmaIndikator             4.640e+01  1.524e+05   0.000    1.000    
+KindlemmaIndustrieunternehmen  4.357e+01  4.820e+05   0.000    1.000    
+KindlemmaInfanterist           4.698e+01  5.903e+04   0.001    0.999    
+KindlemmaInfo                  4.681e+01  5.495e+05   0.000    1.000    
+KindlemmaInhalt                4.608e+01  4.131e+05   0.000    1.000    
+KindlemmaInhaltsstoff          4.529e+01  6.816e+04   0.001    0.999    
+KindlemmaInitiative            4.741e+01  1.524e+05   0.000    1.000    
+KindlemmaInsekt                4.524e+01  3.458e+05   0.000    1.000    
+KindlemmaInsel                 4.377e+01  4.820e+05   0.000    1.000    
+KindlemmaInstrument            4.531e+01  9.639e+04   0.000    1.000    
+KindlemmaInszenierung          4.489e+01  9.639e+04   0.000    1.000    
+KindlemmaIntervention          4.218e+01  9.639e+04   0.000    1.000    
+KindlemmaJacke                 4.363e+01  4.820e+05   0.000    1.000    
+KindlemmaJäger                 4.899e+01  5.495e+05   0.000    1.000    
+KindlemmaJournalist            4.917e+01  9.639e+04   0.001    1.000    
+KindlemmaJude                  4.656e+01  5.478e+05   0.000    1.000    
+KindlemmaJunge                 4.865e+01  4.820e+05   0.000    1.000    
+KindlemmaKabinett              4.640e+01  2.810e+05   0.000    1.000    
+KindlemmaKäfer                 4.866e+01  5.495e+05   0.000    1.000    
+KindlemmaKämpfer               4.286e+01  4.146e+05   0.000    1.000    
+KindlemmaKandidat              4.749e+01  2.155e+05   0.000    1.000    
+KindlemmaKatholik              4.354e+01  2.155e+05   0.000    1.000    
+KindlemmaKennzeichen           4.368e+01  1.524e+05   0.000    1.000    
+KindlemmaKerze                 4.555e+01  4.820e+05   0.000    1.000    
+KindlemmaKicker                4.556e+01  4.820e+05   0.000    1.000    
+KindlemmaKies                  4.486e+01  5.495e+05   0.000    1.000    
+KindlemmaKinderfilm            4.463e+01  1.524e+05   0.000    1.000    
+KindlemmaKirche                4.571e+01  4.146e+05   0.000    1.000    
+KindlemmaKlang                 4.806e+01  4.820e+05   0.000    1.000    
+KindlemmaKlecks                4.664e+01  4.146e+05   0.000    1.000    
+KindlemmaKleidungsstück        4.451e+01  1.524e+05   0.000    1.000    
+KindlemmaKlinik                4.377e+01  3.475e+05   0.000    1.000    
+KindlemmaKneipe                4.496e+01  4.146e+05   0.000    1.000    
+KindlemmaKnochen               4.361e+01  4.146e+05   0.000    1.000    
+KindlemmaKochwäsche            4.866e+01  2.155e+05   0.000    1.000    
+KindlemmaKoffer                5.000e+01  4.820e+05   0.000    1.000    
+KindlemmaKommentar             4.315e+01  2.127e+05   0.000    1.000    
+KindlemmaKommunikationsmittel  4.388e+01  4.820e+05   0.000    1.000    
+KindlemmaKomponente            4.687e+01  1.483e+05   0.000    1.000    
+KindlemmaKopf                  4.594e+01  5.495e+05   0.000    1.000    
+KindlemmaKraft                 4.379e+01  4.820e+05   0.000    1.000    
+KindlemmaKraftfahrzeug         4.515e+01  9.639e+04   0.000    1.000    
+KindlemmaKram                  4.520e+01  6.172e+05   0.000    1.000    
+KindlemmaKreatur               4.716e+01  2.789e+05   0.000    1.000    
+KindlemmaKredit                4.387e+01  4.146e+05   0.000    1.000    
+KindlemmaKreuz                 4.346e+01  4.820e+05   0.000    1.000    
+KindlemmaKrieger               4.579e+01  4.146e+05   0.000    1.000    
+KindlemmaKriegsveteran         4.422e+01  1.524e+05   0.000    1.000    
+KindlemmaKugel                 4.480e+01  4.820e+05   0.000    1.000    
+KindlemmaKultur                4.394e+01  3.475e+05   0.000    1.000    
+KindlemmaKunde                 4.874e+01  4.799e+05   0.000    1.000    
+KindlemmaKünstler              4.522e+01  3.475e+05   0.000    1.000    
+KindlemmaKunstwerk             4.528e+01  2.127e+05   0.000    1.000    
+KindlemmaLagerstätte           4.320e+01  9.639e+04   0.000    1.000    
+KindlemmaLebensmittel          4.858e+01  8.882e+04   0.001    1.000    
+KindlemmaLeberwurst            4.447e+01  1.524e+05   0.000    1.000    
+KindlemmaLebewesen             4.627e+01  2.789e+05   0.000    1.000    
+KindlemmaLehrer                4.628e+01  4.807e+05   0.000    1.000    
+KindlemmaLehrgang              4.570e+01  2.810e+05   0.000    1.000    
+KindlemmaLeib                  4.717e+01  4.807e+05   0.000    1.000    
+KindlemmaLeistung              4.579e+01  2.124e+05   0.000    1.000    
+KindlemmaLeute                 4.801e+01  5.475e+05   0.000    1.000    
+KindlemmaLicht                 4.976e+01  4.146e+05   0.000    1.000    
+KindlemmaLied                  4.395e+01  4.820e+05   0.000    1.000    
+KindlemmaLieferant             4.933e+01  1.524e+05   0.000    1.000    
+KindlemmaLink                  4.552e+01  5.484e+05   0.000    1.000    
+KindlemmaLungenentzündung      4.262e+01  3.475e+05   0.000    1.000    
+KindlemmaMädchen               4.768e+01  4.122e+05   0.000    1.000    
+KindlemmaMädel                 5.000e+01  4.820e+05   0.000    1.000    
+KindlemmaMahlzeit              4.647e+01  2.155e+05   0.000    1.000    
+KindlemmaMail                  5.024e+01  5.495e+05   0.000    1.000    
+KindlemmaManager               4.371e+01  4.146e+05   0.000    1.000    
+KindlemmaMann                  4.663e+01  4.797e+05   0.000    1.000    
+KindlemmaMännchen              4.950e+01  3.475e+05   0.000    1.000    
+KindlemmaManuskript            4.304e+01  1.524e+05   0.000    1.000    
+KindlemmaMarke                 4.594e+01  4.807e+05   0.000    1.000    
+KindlemmaMaschine              4.758e+01  2.810e+05   0.000    1.000    
+KindlemmaMaterial              4.522e+01  1.524e+05   0.000    1.000    
+KindlemmaMaterie               4.377e+01  4.146e+05   0.000    1.000    
+KindlemmaMedikament            4.474e+01  1.483e+05   0.000    1.000    
+KindlemmaMedium                4.726e+01  4.807e+05   0.000    1.000    
+KindlemmaMensch                4.708e+01  3.443e+05   0.000    1.000    
+KindlemmaMikroorganismus       4.522e+01  1.524e+05   0.000    1.000    
+KindlemmaMilitär               4.409e+01  3.458e+05   0.000    1.000    
+KindlemmaMiliz                 4.657e+01  4.146e+05   0.000    1.000    
+KindlemmaMinderheit            4.707e+01  9.639e+04   0.000    1.000    
+KindlemmaMineralstoff          4.648e+01  6.816e+04   0.001    0.999    
+KindlemmaMitarbeiter           4.603e+01  1.472e+05   0.000    1.000    
+KindlemmaMitbewohner           4.816e+01  1.524e+05   0.000    1.000    
+KindlemmaMitesser              4.556e+01  3.475e+05   0.000    1.000    
+KindlemmaMitglied              4.416e+01  2.119e+05   0.000    1.000    
+KindlemmaMittel                4.705e+01  4.820e+05   0.000    1.000    
+KindlemmaMöglichkeit           4.607e+01  5.094e+04   0.001    0.999    
+KindlemmaMonster               4.753e+01  4.132e+05   0.000    1.000    
+KindlemmaMotiv                 4.649e+01  4.802e+05   0.000    1.000    
+KindlemmaMuseum                4.387e+01  4.820e+05   0.000    1.000    
+KindlemmaMusiker               4.874e+01  4.126e+05   0.000    1.000    
+KindlemmaMusikerin             4.739e+01  9.639e+04   0.000    1.000    
+KindlemmaMuskel                4.898e+01  4.128e+05   0.000    1.000    
+KindlemmaNadel                 4.286e+01  4.820e+05   0.000    1.000    
+KindlemmaNation                4.355e+01  3.475e+05   0.000    1.000    
+KindlemmaNeuzugang             4.724e+01  2.155e+05   0.000    1.000    
+KindlemmaNominierung           4.530e+01  6.816e+04   0.001    0.999    
+KindlemmaNörgler               4.958e+01  4.146e+05   0.000    1.000    
+KindlemmaNuance                4.395e+01  4.146e+05   0.000    1.000    
+KindlemmaObjekt                4.595e+01  4.130e+05   0.000    1.000    
+KindlemmaOffizier              4.338e+01  2.810e+05   0.000    1.000    
+KindlemmaÖl                    4.580e+01  6.850e+05   0.000    1.000    
+KindlemmaOpfer                 4.618e+01  5.484e+05   0.000    1.000    
+KindlemmaOrange                4.620e+01  4.146e+05   0.000    1.000    
+KindlemmaOrchidee              4.663e+01  2.810e+05   0.000    1.000    
+KindlemmaOrganisation          4.406e+01  9.639e+04   0.000    1.000    
+KindlemmaÖsterreicher          4.514e+01  9.639e+04   0.000    1.000    
+KindlemmaPaar                  4.471e+01  5.495e+05   0.000    1.000    
+KindlemmaPaket                 4.454e+01  4.820e+05   0.000    1.000    
+KindlemmaPanne                 4.672e+01  4.820e+05   0.000    1.000    
+KindlemmaPanzer                4.690e+01  4.820e+05   0.000    1.000    
+KindlemmaPapagei               4.639e+01  2.810e+05   0.000    1.000    
+KindlemmaPatient               4.563e+01  2.778e+05   0.000    1.000    
+KindlemmaPatientin             4.336e+01  9.639e+04   0.000    1.000    
+KindlemmaPenis                 4.849e+01  4.146e+05   0.000    1.000    
+KindlemmaPerson                4.697e+01  3.447e+05   0.000    1.000    
+KindlemmaPerspektive           4.545e+01  9.639e+04   0.000    1.000    
+KindlemmaPfefferkorn           4.341e+01  6.816e+04   0.001    0.999    
+KindlemmaPflanzengesellschaft  4.263e+01  6.172e+05   0.000    1.000    
+KindlemmaPille                 4.883e+01  4.820e+05   0.000    1.000    
+KindlemmaPlanet                4.564e+01  3.475e+05   0.000    1.000    
+KindlemmaPlatte                4.462e+01  4.146e+05   0.000    1.000    
+KindlemmaPlatz                 4.581e+01  4.820e+05   0.000    1.000    
+KindlemmaPointe                4.891e+01  4.146e+05   0.000    1.000    
+KindlemmaPolohemd              4.975e+01  2.155e+05   0.000    1.000    
+KindlemmaPosition              4.463e+01  2.155e+05   0.000    1.000    
+KindlemmaProblem               4.601e+01  3.457e+05   0.000    1.000    
+KindlemmaProdukt               4.774e+01  3.475e+05   0.000    1.000    
+KindlemmaProduzent             4.354e+01  1.524e+05   0.000    1.000    
+KindlemmaProjekt               4.329e+01  3.475e+05   0.000    1.000    
+KindlemmaProvider              4.514e+01  3.459e+05   0.000    1.000    
+KindlemmaPrügelknabe           4.461e+01  9.639e+04   0.000    1.000    
+KindlemmaPub                   4.564e+01  6.172e+05   0.000    1.000    
+KindlemmaPublikation           4.337e+01  6.816e+04   0.001    0.999    
+KindlemmaQuelle                4.488e+01  4.146e+05   0.000    1.000    
+KindlemmaRadfahrer             4.843e+01  2.784e+05   0.000    1.000    
+KindlemmaRandalierer           4.522e+01  1.524e+05   0.000    1.000    
+KindlemmaRang                  4.409e+01  5.495e+05   0.000    1.000    
+KindlemmaRaubtier              4.477e+01  2.810e+05   0.000    1.000    
+KindlemmaReceiver              4.663e+01  3.475e+05   0.000    1.000    
+KindlemmaRegenwald             4.328e+01  1.524e+05   0.000    1.000    
+KindlemmaRegion                4.379e+01  3.475e+05   0.000    1.000    
+KindlemmaRegister              4.472e+01  3.475e+05   0.000    1.000    
+KindlemmaReiter                4.345e+01  4.820e+05   0.000    1.000    
+KindlemmaReiz                  4.411e+01  5.495e+05   0.000    1.000    
+KindlemmaRekrut                4.623e+01  3.475e+05   0.000    1.000    
+KindlemmaReporter              4.950e+01  3.475e+05   0.000    1.000    
+KindlemmaResultat              4.362e+01  2.810e+05   0.000    1.000    
+KindlemmaRettungsschwimmer     4.506e+01  2.790e+05   0.000    1.000    
+KindlemmaRezept                4.462e+01  4.146e+05   0.000    1.000    
+KindlemmaRüde                  4.874e+01  5.495e+05   0.000    1.000    
+KindlemmaSache                 4.877e+01  4.804e+05   0.000    1.000    
+KindlemmaSachverhalt           4.245e+01  9.639e+04   0.000    1.000    
+KindlemmaSahne                 4.915e+01  5.495e+05   0.000    1.000    
+KindlemmaSammlung              4.647e+01  2.155e+05   0.000    1.000    
+KindlemmaSatz                  4.547e+01  5.495e+05   0.000    1.000    
+KindlemmaSchauspieler          4.620e+01  8.798e+04   0.001    1.000    
+KindlemmaSchausteller          4.850e+01  9.017e+04   0.001    1.000    
+KindlemmaSchein                4.834e+01  4.132e+05   0.000    1.000    
+KindlemmaSchicht               4.297e+01  2.810e+05   0.000    1.000    
+KindlemmaSchiff                4.690e+01  4.131e+05   0.000    1.000    
+KindlemmaSchimpanse            4.640e+01  1.524e+05   0.000    1.000    
+KindlemmaSchlafplatz           4.716e+01  9.639e+04   0.000    1.000    
+KindlemmaSchlagzeile           4.808e+01  9.639e+04   0.000    1.000    
+KindlemmaSchnecke              4.455e+01  2.810e+05   0.000    1.000    
+KindlemmaSchönheit             4.330e+01  1.524e+05   0.000    1.000    
+KindlemmaSchuld                4.880e+01  3.454e+05   0.000    1.000    
+KindlemmaSchule                4.588e+01  4.146e+05   0.000    1.000    
+KindlemmaSchüler               4.779e+01  4.126e+05   0.000    1.000    
+KindlemmaSchwaden              4.875e+01  3.475e+05   0.000    1.000    
+KindlemmaSchwarzarbeiter       4.682e+01  1.524e+05   0.000    1.000    
+KindlemmaSchwester             4.514e+01  2.155e+05   0.000    1.000    
+KindlemmaSeeleute              4.345e+01  3.475e+05   0.000    1.000    
+KindlemmaSehenswürdigkeit      4.480e+01  3.475e+05   0.000    1.000    
+KindlemmaSeite                 5.008e+01  4.808e+05   0.000    1.000    
+KindlemmaSemmel                4.644e+01  4.132e+05   0.000    1.000    
+KindlemmaSiedlung              4.673e+01  2.122e+05   0.000    1.000    
+KindlemmaSilbe                 4.982e+01  4.820e+05   0.000    1.000    
+KindlemmaSkinhead              4.957e+01  2.810e+05   0.000    1.000    
+KindlemmaSklave                4.628e+01  4.146e+05   0.000    1.000    
+KindlemmaSoldat                4.713e+01  3.445e+05   0.000    1.000    
+KindlemmaSöldner               4.514e+01  4.130e+05   0.000    1.000    
+KindlemmaSong                  4.611e+01  5.495e+05   0.000    1.000    
+KindlemmaSorte                 4.820e+01  4.820e+05   0.000    1.000    
+KindlemmaSound                 5.014e+01  4.820e+05   0.000    1.000    
+KindlemmaSpiel                 4.794e+01  4.803e+05   0.000    1.000    
+KindlemmaSpieler               4.800e+01  4.125e+05   0.000    1.000    
+KindlemmaSpielzeug             4.749e+01  2.155e+05   0.000    1.000    
+KindlemmaSplitter              4.875e+01  3.475e+05   0.000    1.000    
+KindlemmaSportart              4.354e+01  2.155e+05   0.000    1.000    
+KindlemmaSprache               4.596e+01  3.475e+05   0.000    1.000    
+KindlemmaSprechblase           4.304e+01  9.639e+04   0.000    1.000    
+KindlemmaSpruch                4.958e+01  4.146e+05   0.000    1.000    
+KindlemmaStadt                 4.379e+01  4.808e+05   0.000    1.000    
+KindlemmaStandard              4.358e+01  2.790e+05   0.000    1.000    
+KindlemmaSteigerung            4.313e+01  9.639e+04   0.000    1.000    
+KindlemmaStein                 4.782e+01  4.807e+05   0.000    1.000    
+KindlemmaStern                 4.553e+01  4.803e+05   0.000    1.000    
+KindlemmaStil                  4.587e+01  5.495e+05   0.000    1.000    
+KindlemmaStimmzettel           4.715e+01  1.524e+05   0.000    1.000    
+KindlemmaStrategie             4.572e+01  2.155e+05   0.000    1.000    
+KindlemmaStudent               4.543e+01  2.779e+05   0.000    1.000    
+KindlemmaStudentin             4.816e+01  9.639e+04   0.000    1.000    
+KindlemmaSystem                4.568e+01  4.132e+05   0.000    1.000    
+KindlemmaTapete                4.796e+01  4.146e+05   0.000    1.000    
+KindlemmaTat                   4.688e+01  5.495e+05   0.000    1.000    
+KindlemmaTechnik               4.975e+01  2.810e+05   0.000    1.000    
+KindlemmaTechnologie           4.346e+01  9.639e+04   0.000    1.000    
+KindlemmaTeilchen              4.377e+01  3.475e+05   0.000    1.000    
+KindlemmaTeilgebiet            4.370e+01  1.524e+05   0.000    1.000    
+KindlemmaTeilnehmer            4.669e+01  2.125e+05   0.000    1.000    
+KindlemmaTermin                4.794e+01  4.128e+05   0.000    1.000    
+KindlemmaTerrorist             4.429e+01  1.524e+05   0.000    1.000    
+KindlemmaThema                 4.486e+01  4.803e+05   0.000    1.000    
+KindlemmaTier                  4.837e+01  5.484e+05   0.000    1.000    
+KindlemmaTitel                 4.362e+01  5.495e+05   0.000    1.000    
+KindlemmaTodesfall             4.360e+01  2.155e+05   0.000    1.000    
+KindlemmaTool                  4.403e+01  5.495e+05   0.000    1.000    
+KindlemmaTraktat               4.355e+01  3.475e+05   0.000    1.000    
+KindlemmaTrick                 4.798e+01  4.820e+05   0.000    1.000    
+KindlemmaTropfen               4.547e+01  4.146e+05   0.000    1.000    
+KindlemmaUltra                 4.765e+01  4.820e+05   0.000    1.000    
+KindlemmaUngar                 4.596e+01  4.820e+05   0.000    1.000    
+KindlemmaUnterkunft            4.704e+01  1.524e+05   0.000    1.000    
+KindlemmaUntermieter           4.523e+01  1.524e+05   0.000    1.000    
+KindlemmaUnterstellung         4.607e+01  1.524e+05   0.000    1.000    
+KindlemmaUser                  4.908e+01  6.160e+05   0.000    1.000    
+KindlemmaVampir                4.464e+01  4.146e+05   0.000    1.000    
+KindlemmaVasall                4.572e+01  3.475e+05   0.000    1.000    
+KindlemmaVerein                4.865e+01  4.146e+05   0.000    1.000    
+KindlemmaVerfärbung            4.632e+01  9.639e+04   0.000    1.000    
+KindlemmaVerhaltensweise       4.573e+01  2.155e+05   0.000    1.000    
+KindlemmaVerlag                4.764e+01  4.146e+05   0.000    1.000    
+KindlemmaVerrücktheit          4.454e+01  9.639e+04   0.000    1.000    
+KindlemmaVerweis               4.387e+01  3.475e+05   0.000    1.000    
+KindlemmaVisitenkarte          4.505e+01  6.816e+04   0.001    0.999    
+KindlemmaVitamin               4.689e+01  3.475e+05   0.000    1.000    
+KindlemmaVogel                 4.880e+01  5.480e+05   0.000    1.000    
+KindlemmaVogelart              4.471e+01  2.155e+05   0.000    1.000    
+KindlemmaVoraussage            4.330e+01  1.524e+05   0.000    1.000    
+KindlemmaWährung               4.253e+01  2.810e+05   0.000    1.000    
+KindlemmaWaldameise            4.632e+01  1.524e+05   0.000    1.000    
+KindlemmaWanderer              4.817e+01  3.475e+05   0.000    1.000    
+KindlemmaWandersleute          4.747e+01  9.639e+04   0.000    1.000    
+KindlemmaWare                  4.502e+01  5.495e+05   0.000    1.000    
+KindlemmaWasserbombe           4.808e+01  9.639e+04   0.000    1.000    
+KindlemmaWeg                   4.825e+01  6.161e+05   0.000    1.000    
+KindlemmaWein                  4.686e+01  5.479e+05   0.000    1.000    
+KindlemmaWerk                  4.748e+01  5.495e+05   0.000    1.000    
+KindlemmaWerkzeug              4.619e+01  2.810e+05   0.000    1.000    
+KindlemmaWert                  4.507e+01  5.483e+05   0.000    1.000    
+KindlemmaWesen                 4.471e+01  5.485e+05   0.000    1.000    
+KindlemmaWiderspruch           4.244e+01  9.639e+04   0.000    1.000    
+KindlemmaWohnsitz              4.548e+01  2.810e+05   0.000    1.000    
+KindlemmaWort                  4.354e+01  5.146e+05   0.000    1.000    
+KindlemmaWurf                  4.403e+01  5.495e+05   0.000    1.000    
+KindlemmaZahl                  4.713e+01  4.820e+05   0.000    1.000    
+KindlemmaZahnarzt              4.244e+01  2.810e+05   0.000    1.000    
+KindlemmaZeit                  4.858e+01  4.820e+05   0.000    1.000    
+KindlemmaZelle                 4.439e+01  4.807e+05   0.000    1.000    
+KindlemmaZeremonie             4.522e+01  2.155e+05   0.000    1.000    
+KindlemmaZettel                4.363e+01  4.820e+05   0.000    1.000    
+KindlemmaZeuge                 4.411e+01  4.820e+05   0.000    1.000    
+KindlemmaZeugnis               4.477e+01  2.810e+05   0.000    1.000    
+KindlemmaZiel                  4.605e+01  5.495e+05   0.000    1.000    
+KindlemmaZigeuner              4.522e+01  3.475e+05   0.000    1.000    
+KindlemmaZivilist              4.631e+01  2.155e+05   0.000    1.000    
+KindlemmaZug                   4.479e+01  6.172e+05   0.000    1.000    
+KindlemmaZuschauer             4.588e+01  2.789e+05   0.000    1.000    
+KindlemmaZuschrift             4.555e+01  1.524e+05   0.000    1.000    
+Genitives                     -1.967e+00  4.913e-01  -4.004 6.23e-05 ***
+MeasurecaseNom                 2.570e-01  9.039e-01   0.284    0.776    
+Badness                       -1.607e-01  5.931e-01  -0.271    0.786    
+Kindlength                     8.260e-02  6.816e+04   0.000    1.000    
+MeasuregenderFem              -2.575e+00  2.177e+00  -1.183    0.237    
+MeasuregenderMasc             -1.401e+00  2.530e+00  -0.554    0.580    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 470.801  on 860  degrees of freedom
+Residual deviance:  63.987  on 295  degrees of freedom
+AIC: 1196
+
+Number of Fisher Scoring iterations: 21
+
+
+
+[1] 0.8939872
+
+
+correct 0.9837398
+
+λ 0.7910448
+

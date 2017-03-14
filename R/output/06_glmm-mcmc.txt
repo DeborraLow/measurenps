@@ -1,0 +1,2023 @@
+
+Bayesian estimation of GLMMs with MCMC
+
+stan_glmer(formula = Genitive ~ 1 + (1 | Measurelemma) + (1 | 
+    Kindlemma) + Genitives + Minus1pos + Measureclass + Matchlength + 
+    Measureabbreviated + Attraction + Measurenumber + Kindfinal + 
+    Kindedible + Badness + Kindfreq + Measurecase + Kindint + 
+    Measurefreq, data = mn, family = binomial(link = logit), 
+    chains = chains, seed = seed, iter = iter, prior = normal(0, 
+        2.5), prior_intercept = normal(0, 10), prior_ops = prior_options(prior_scale_for_dispersion = 5, 
+        min_prior_scale = 1e-12, scaled = TRUE), prior_covariance = decov(regularization = 1, 
+        concentration = 1, shape = 1, scale = 1), prior_PD = F)
+
+Family: binomial (logit)
+Algorithm: sampling
+Posterior sample size: 2000
+Observations: 3949
+Groups: Measurelemma 131, Kindlemma 68
+
+Estimates:
+                                               mean    sd      2.5%    25%     50%     75%     97.5%
+(Intercept)                                     -5.0     0.8    -6.5    -5.5    -5.0    -4.5    -3.5
+Genitives                                       -0.7     0.1    -0.8    -0.7    -0.7    -0.6    -0.6
+Minus1posD                                       1.2     0.2     0.8     1.1     1.2     1.4     1.7
+Minus1posO                                       1.3     0.3     0.8     1.1     1.3     1.5     1.8
+Minus1posA                                       2.5     0.2     2.0     2.3     2.5     2.7     3.0
+Minus1posP                                       1.5     0.4     0.8     1.3     1.6     1.8     2.2
+MeasureclassSquare                              -0.9     1.0    -3.0    -1.6    -0.9    -0.2     0.9
+MeasureclassWeight                               0.9     0.6    -0.4     0.5     0.9     1.3     2.1
+MeasureclassCapacity                             0.3     0.6    -1.0    -0.2     0.2     0.7     1.5
+MeasureclassVessel                               1.0     0.6    -0.2     0.6     1.0     1.4     2.2
+MeasureclassCurrency                            -0.1     0.8    -1.8    -0.6    -0.1     0.4     1.4
+MeasureclassRest                                 0.9     0.7    -0.6     0.4     0.9     1.4     2.3
+MeasureclassAmount                               1.4     0.6     0.1     1.0     1.4     1.8     2.6
+MeasureclassPortion                              1.8     0.6     0.7     1.4     1.8     2.2     3.1
+MeasureclassLayer                                1.7     0.8     0.2     1.2     1.7     2.2     3.2
+Matchlength                                      0.6     0.1     0.5     0.6     0.6     0.7     0.8
+Measureabbreviated0                              0.1     0.3    -0.6    -0.1     0.1     0.3     0.8
+Attraction                                       0.6     0.2     0.2     0.4     0.6     0.7     0.9
+MeasurenumberSg                                 -0.8     0.2    -1.1    -0.9    -0.8    -0.6    -0.4
+Kindfinalm                                       0.6     0.7    -0.7     0.2     0.7     1.1     2.0
+Kindfinalh                                      -0.8     0.8    -2.3    -1.3    -0.8    -0.3     0.7
+Kindfinale                                       0.1     0.6    -0.9    -0.2     0.1     0.5     1.3
+Kindfinalr                                       0.1     0.5    -0.9    -0.2     0.1     0.5     1.1
+Kindfinalz                                       0.0     0.6    -1.2    -0.4     0.0     0.4     1.4
+Kindfinals                                       0.0     0.5    -1.0    -0.3     0.0     0.4     1.1
+Kindfinalf                                      -0.6     0.6    -1.8    -1.1    -0.6    -0.2     0.5
+Kindfinalg                                       1.3     0.6     0.2     0.9     1.3     1.7     2.4
+Kindfinald                                      -0.6     0.6    -1.9    -1.0    -0.6    -0.2     0.6
+Kindfinalt                                       0.2     0.5    -0.8    -0.1     0.2     0.5     1.3
+Kindfinall                                       0.3     0.5    -0.7    -0.1     0.3     0.6     1.2
+Kindfinaln                                       1.0     0.5     0.0     0.7     1.0     1.4     2.0
+Kindfinalb                                       0.3     0.8    -1.3    -0.3     0.3     0.8     1.8
+Kindedible0                                      0.7     0.3     0.1     0.5     0.7     0.9     1.2
+Badness                                         -0.2     0.1    -0.3    -0.3    -0.2    -0.2    -0.1
+Kindfreq                                         0.2     0.2    -0.1     0.1     0.2     0.3     0.5
+MeasurecaseAcc                                   0.0     0.1    -0.3    -0.1     0.0     0.1     0.2
+MeasurecaseDat                                   0.7     0.2     0.4     0.6     0.7     0.8     1.0
+KindintNonint                                    0.3     0.2    -0.2     0.1     0.3     0.4     0.8
+Measurefreq                                     -0.2     0.1    -0.4    -0.3    -0.2    -0.1     0.0
+b[(Intercept) Measurelemma:Barren]               0.0     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Beutel]               0.0     0.5    -1.2    -0.3     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Blatt]               -0.1     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Bund]                -0.1     0.5    -1.3    -0.4     0.0     0.2     0.9
+b[(Intercept) Measurelemma:Cent]                 0.0     0.5    -1.1    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Zentimeter]          -0.2     0.5    -1.5    -0.5    -0.1     0.1     0.6
+b[(Intercept) Measurelemma:Mark]                -0.1     0.5    -1.2    -0.4    -0.1     0.1     0.7
+b[(Intercept) Measurelemma:Extraportion]        -0.1     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Fleck]               -0.1     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Fontäne]             -0.2     0.5    -1.5    -0.5    -0.1     0.1     0.7
+b[(Intercept) Measurelemma:Franc]                0.0     0.5    -1.1    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Franke]              -0.1     0.5    -1.2    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Fuhre]                0.0     0.5    -1.1    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Groschen]             0.0     0.5    -1.1    -0.3     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Hektar]              -0.1     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Hälmchen]            -0.1     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Happen]              -0.1     0.5    -1.1    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Häuflein]            -0.2     0.5    -1.3    -0.4    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Kanister]            -0.2     0.5    -1.4    -0.5    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Kante]               -0.1     0.5    -1.3    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Karton]               0.0     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Kelle]                0.0     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Kilometer]            0.0     0.5    -1.2    -0.3     0.0     0.2     1.1
+b[(Intercept) Measurelemma:Klafter]             -0.1     0.5    -1.3    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Klecks]               0.0     0.5    -1.0    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Korb]                 0.0     0.6    -1.1    -0.3     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Korn]                 0.0     0.6    -1.2    -0.3     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Kugel]               -0.1     0.5    -1.3    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Ladung]              -0.5     0.6    -1.8    -0.8    -0.4    -0.1     0.4
+b[(Intercept) Measurelemma:Löffel]              -0.2     0.5    -1.4    -0.5    -0.2     0.1     0.6
+b[(Intercept) Measurelemma:Messerspitze]        -0.4     0.5    -1.6    -0.6    -0.3     0.0     0.5
+b[(Intercept) Measurelemma:Molekül]             -0.1     0.5    -1.3    -0.4     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Päckchen]             0.0     0.5    -1.1    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Packung]             -0.1     0.5    -1.3    -0.4    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Paket]                0.0     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Quadratkilometer]    -0.2     0.5    -1.3    -0.4    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Raummeter]            0.0     0.5    -1.2    -0.3     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Riesenportion]       -0.1     0.5    -1.2    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Scheffel]             0.0     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Scheibchen]           0.0     0.5    -1.2    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Scheit]              -0.2     0.5    -1.5    -0.5    -0.2     0.1     0.7
+b[(Intercept) Measurelemma:Sechserpack]         -0.1     0.5    -1.3    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Teelöffel]           -0.6     0.5    -1.9    -0.9    -0.5    -0.2     0.2
+b[(Intercept) Measurelemma:Thermoskanne]        -0.1     0.5    -1.3    -0.4    -0.1     0.2     0.8
+b[(Intercept) Measurelemma:Tube]                 0.0     0.5    -1.2    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Tütchen]             -0.2     0.5    -1.4    -0.4    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Tüte]                 0.0     0.5    -1.1    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Unze]                -0.1     0.5    -1.4    -0.4    -0.1     0.2     0.8
+b[(Intercept) Measurelemma:Viertelliter]        -0.1     0.5    -1.2    -0.3     0.0     0.2     1.0
+b[(Intercept) Measurelemma:Gramm]               -0.2     0.4    -1.1    -0.4    -0.1     0.1     0.5
+b[(Intercept) Measurelemma:Esslöffel]           -0.2     0.4    -1.3    -0.5    -0.2     0.1     0.5
+b[(Intercept) Measurelemma:Meter]               -0.2     0.5    -1.4    -0.5    -0.1     0.1     0.6
+b[(Intercept) Measurelemma:Millimeter]           0.0     0.5    -1.1    -0.3     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Milliliter]          -0.2     0.4    -1.2    -0.5    -0.2     0.1     0.6
+b[(Intercept) Measurelemma:Kilogramm]           -0.2     0.4    -1.0    -0.4    -0.1     0.0     0.5
+b[(Intercept) Measurelemma:Portion]             -0.5     0.4    -1.5    -0.8    -0.5    -0.2     0.1
+b[(Intercept) Measurelemma:Quadratmeter]         0.1     0.5    -0.9    -0.1     0.1     0.4     1.3
+b[(Intercept) Measurelemma:Schüssel]            -0.1     0.4    -1.1    -0.4    -0.1     0.1     0.7
+b[(Intercept) Measurelemma:Prise]               -0.1     0.4    -1.0    -0.3    -0.1     0.1     0.6
+b[(Intercept) Measurelemma:Sack]                 0.0     0.5    -1.0    -0.2     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Liter]                0.3     0.4    -0.4     0.0     0.3     0.5     1.1
+b[(Intercept) Measurelemma:Tasse]               -0.2     0.3    -0.9    -0.4    -0.2     0.0     0.4
+b[(Intercept) Measurelemma:Teller]               0.2     0.5    -0.8    -0.1     0.1     0.4     1.2
+b[(Intercept) Measurelemma:Dose]                 0.2     0.5    -0.7    -0.1     0.2     0.5     1.3
+b[(Intercept) Measurelemma:Milligramm]           0.0     0.5    -0.9    -0.2     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Hauch]                0.2     0.4    -0.6    -0.1     0.1     0.4     1.2
+b[(Intercept) Measurelemma:Eimer]                0.1     0.5    -0.8    -0.1     0.1     0.4     1.2
+b[(Intercept) Measurelemma:Kiste]                0.0     0.5    -1.0    -0.3     0.0     0.2     0.8
+b[(Intercept) Measurelemma:Stück]               -0.2     0.3    -0.9    -0.4    -0.2     0.0     0.5
+b[(Intercept) Measurelemma:Tonne]               -0.2     0.3    -0.9    -0.4    -0.1     0.0     0.4
+b[(Intercept) Measurelemma:Pfund]                0.3     0.4    -0.5     0.0     0.3     0.6     1.3
+b[(Intercept) Measurelemma:Euro]                 0.1     0.4    -0.8    -0.2     0.0     0.3     0.9
+b[(Intercept) Measurelemma:Stückchen]            0.0     0.4    -0.8    -0.2     0.0     0.2     0.8
+b[(Intercept) Measurelemma:Dollar]              -0.2     0.5    -1.3    -0.5    -0.1     0.1     0.7
+b[(Intercept) Measurelemma:Gallone]             -0.1     0.5    -1.1    -0.3    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Krug]                -0.1     0.5    -1.1    -0.4    -0.1     0.2     0.8
+b[(Intercept) Measurelemma:Gläschen]            -0.3     0.5    -1.5    -0.6    -0.3     0.0     0.5
+b[(Intercept) Measurelemma:Becher]               0.3     0.5    -0.5     0.0     0.2     0.6     1.3
+b[(Intercept) Measurelemma:Brocken]             -0.1     0.5    -1.2    -0.3     0.0     0.2     0.9
+b[(Intercept) Measurelemma:Rest]                 0.2     0.5    -0.7    -0.1     0.1     0.5     1.4
+b[(Intercept) Measurelemma:Unmenge]             -0.2     0.5    -1.3    -0.5    -0.2     0.1     0.6
+b[(Intercept) Measurelemma:Glas]                 0.2     0.3    -0.3     0.0     0.2     0.4     0.9
+b[(Intercept) Measurelemma:Kubikmeter]          -0.1     0.4    -0.8    -0.3    -0.1     0.1     0.6
+b[(Intercept) Measurelemma:Haufe]               -0.1     0.3    -0.7    -0.3    -0.1     0.1     0.4
+b[(Intercept) Measurelemma:Scheibe]              0.2     0.4    -0.6    -0.1     0.1     0.4     1.0
+b[(Intercept) Measurelemma:Schuss]              -0.1     0.5    -1.2    -0.4    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Menge]                0.2     0.3    -0.5     0.0     0.2     0.4     0.8
+b[(Intercept) Measurelemma:Schicht]              0.0     0.5    -0.9    -0.2     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Batzen]              -0.1     0.5    -1.2    -0.4    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Berg]                 0.0     0.5    -1.0    -0.2     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Biss]                 0.0     0.5    -1.0    -0.3     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Gulden]               0.1     0.5    -0.9    -0.2     0.1     0.3     1.2
+b[(Intercept) Measurelemma:Schluck]             -0.1     0.4    -0.9    -0.3    -0.1     0.1     0.6
+b[(Intercept) Measurelemma:Zentner]              0.1     0.5    -0.9    -0.2     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Flasche]             -0.1     0.3    -0.8    -0.3    -0.1     0.1     0.5
+b[(Intercept) Measurelemma:Lage]                 0.1     0.5    -0.9    -0.2     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Kanne]                0.3     0.5    -0.5     0.0     0.3     0.6     1.4
+b[(Intercept) Measurelemma:Büschel]              0.1     0.4    -0.6    -0.1     0.1     0.4     1.0
+b[(Intercept) Measurelemma:Streifen]             0.0     0.4    -0.8    -0.2     0.0     0.3     0.8
+b[(Intercept) Measurelemma:Handvoll]             0.2     0.4    -0.5     0.0     0.2     0.4     1.0
+b[(Intercept) Measurelemma:Block]                0.1     0.5    -0.8    -0.2     0.1     0.4     1.3
+b[(Intercept) Measurelemma:Büchse]               0.1     0.5    -0.9    -0.1     0.1     0.4     1.3
+b[(Intercept) Measurelemma:Bündel]               0.3     0.5    -0.6    -0.1     0.2     0.5     1.5
+b[(Intercept) Measurelemma:Dosis]                0.0     0.5    -0.9    -0.2     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Fläschchen]           0.1     0.5    -0.9    -0.2     0.1     0.4     1.2
+b[(Intercept) Measurelemma:Hektoliter]           0.1     0.5    -0.9    -0.2     0.0     0.4     1.2
+b[(Intercept) Measurelemma:Kännchen]             0.0     0.5    -1.0    -0.2     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Mass]                 0.1     0.5    -0.9    -0.2     0.1     0.4     1.2
+b[(Intercept) Measurelemma:Schoppen]            -0.2     0.5    -1.4    -0.4    -0.1     0.1     0.8
+b[(Intercept) Measurelemma:Stapel]               0.0     0.5    -1.0    -0.3     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Topf]                 0.3     0.5    -0.5     0.0     0.2     0.6     1.4
+b[(Intercept) Measurelemma:Tropfen]              0.2     0.3    -0.4     0.0     0.2     0.4     0.8
+b[(Intercept) Measurelemma:Klumpen]              0.0     0.4    -0.8    -0.3     0.0     0.2     0.7
+b[(Intercept) Measurelemma:Häufchen]             0.3     0.5    -0.7    -0.1     0.2     0.5     1.5
+b[(Intercept) Measurelemma:Taler]                0.3     0.6    -0.6     0.0     0.2     0.6     1.8
+b[(Intercept) Measurelemma:Tröpfchen]           -0.1     0.5    -1.1    -0.3    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Unsumme]              0.1     0.5    -0.9    -0.2     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Lache]                0.2     0.5    -0.6    -0.1     0.1     0.4     1.2
+b[(Intercept) Measurelemma:Schwall]              0.5     0.6    -0.3     0.1     0.4     0.8     2.0
+b[(Intercept) Measurelemma:Fetzen]               0.3     0.5    -0.5     0.0     0.2     0.6     1.4
+b[(Intercept) Measurelemma:Laib]                 0.9     0.7    -0.1     0.4     0.8     1.4     2.5
+b[(Intercept) Measurelemma:Barrel]               0.3     0.5    -0.7    -0.1     0.2     0.5     1.5
+b[(Intercept) Measurelemma:Einheit]              0.2     0.6    -0.8    -0.1     0.2     0.5     1.5
+b[(Intercept) Measurelemma:Fass]                 0.4     0.6    -0.5     0.0     0.3     0.7     1.8
+b[(Intercept) Measurelemma:Feinunze]             0.2     0.5    -0.7    -0.1     0.1     0.5     1.4
+b[(Intercept) Measurelemma:Lawine]               0.3     0.6    -0.6    -0.1     0.2     0.5     1.6
+b[(Intercept) Measurelemma:Pfütze]               0.1     0.5    -1.0    -0.2     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Rinnsal]              0.4     0.6    -0.5     0.0     0.3     0.7     1.8
+b[(Intercept) Measurelemma:Spritzer]             0.1     0.5    -1.0    -0.2     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Tankfüllung]          0.0     0.5    -1.0    -0.2     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Tässchen]             0.2     0.5    -0.7    -0.1     0.2     0.5     1.5
+b[(Intercept) Kindlemma:Diesel]                 -0.2     0.5    -1.4    -0.6    -0.2     0.1     0.7
+b[(Intercept) Kindlemma:Draht]                  -0.4     0.5    -1.4    -0.7    -0.3     0.0     0.6
+b[(Intercept) Kindlemma:Lack]                   -0.5     0.6    -1.7    -0.8    -0.4    -0.1     0.5
+b[(Intercept) Kindlemma:Mehl]                   -0.3     0.5    -1.4    -0.6    -0.3     0.1     0.7
+b[(Intercept) Kindlemma:Senf]                   -0.1     0.6    -1.2    -0.5    -0.1     0.3     1.0
+b[(Intercept) Kindlemma:Reis]                   -0.2     0.5    -1.2    -0.5    -0.2     0.1     0.7
+b[(Intercept) Kindlemma:Gemüse]                 -0.9     0.5    -2.0    -1.2    -0.9    -0.6     0.0
+b[(Intercept) Kindlemma:Mais]                   -0.3     0.5    -1.2    -0.6    -0.2     0.1     0.7
+b[(Intercept) Kindlemma:Käse]                   -0.1     0.5    -1.0    -0.4    -0.1     0.2     0.8
+b[(Intercept) Kindlemma:Rasen]                  -0.4     0.5    -1.4    -0.7    -0.4    -0.1     0.5
+b[(Intercept) Kindlemma:Fisch]                  -0.2     0.5    -1.3    -0.6    -0.2     0.1     0.8
+b[(Intercept) Kindlemma:Zucker]                 -0.3     0.4    -1.2    -0.6    -0.3     0.0     0.6
+b[(Intercept) Kindlemma:Pfeffer]                 0.2     0.5    -0.7    -0.1     0.2     0.5     1.1
+b[(Intercept) Kindlemma:Spielzeug]              -0.8     0.5    -1.8    -1.1    -0.7    -0.4     0.1
+b[(Intercept) Kindlemma:Salat]                  -0.2     0.5    -1.1    -0.5    -0.1     0.1     0.7
+b[(Intercept) Kindlemma:Honig]                   0.0     0.5    -0.9    -0.3     0.0     0.3     0.9
+b[(Intercept) Kindlemma:Fett]                    0.0     0.5    -0.8    -0.3     0.0     0.3     0.9
+b[(Intercept) Kindlemma:Kram]                    0.1     0.5    -0.9    -0.2     0.1     0.4     1.1
+b[(Intercept) Kindlemma:Kunststoff]             -0.2     0.5    -1.2    -0.5    -0.2     0.2     0.7
+b[(Intercept) Kindlemma:Gepäck]                  0.1     0.5    -0.8    -0.2     0.1     0.5     1.1
+b[(Intercept) Kindlemma:Plastik]                -0.1     0.4    -0.9    -0.4    -0.1     0.2     0.7
+b[(Intercept) Kindlemma:Saft]                    0.2     0.5    -0.7    -0.1     0.2     0.5     1.1
+b[(Intercept) Kindlemma:Sand]                   -0.2     0.5    -1.1    -0.5    -0.2     0.1     0.7
+b[(Intercept) Kindlemma:Futter]                 -0.5     0.4    -1.3    -0.8    -0.5    -0.2     0.3
+b[(Intercept) Kindlemma:Wasser]                 -0.6     0.5    -1.6    -1.0    -0.6    -0.3     0.2
+b[(Intercept) Kindlemma:Stahl]                   0.2     0.5    -0.7    -0.1     0.2     0.5     1.1
+b[(Intercept) Kindlemma:Tee]                     0.3     0.4    -0.5     0.0     0.3     0.6     1.2
+b[(Intercept) Kindlemma:Eis]                    -0.1     0.4    -1.0    -0.4    -0.1     0.2     0.8
+b[(Intercept) Kindlemma:Salz]                    0.4     0.5    -0.4     0.1     0.4     0.7     1.4
+b[(Intercept) Kindlemma:Eiweiss]                 0.1     0.4    -0.8    -0.2     0.1     0.4     0.9
+b[(Intercept) Kindlemma:Fell]                    0.1     0.5    -0.9    -0.2     0.1     0.4     1.1
+b[(Intercept) Kindlemma:Brot]                   -0.1     0.4    -0.9    -0.3    -0.1     0.2     0.7
+b[(Intercept) Kindlemma:Dreck]                   0.3     0.5    -0.6     0.0     0.3     0.6     1.3
+b[(Intercept) Kindlemma:Fleisch]                 0.1     0.5    -0.9    -0.2     0.1     0.5     1.1
+b[(Intercept) Kindlemma:Lohn]                    0.0     0.5    -1.0    -0.3     0.0     0.4     1.1
+b[(Intercept) Kindlemma:Sauerstoff]             -0.2     0.5    -1.2    -0.5    -0.2     0.1     0.7
+b[(Intercept) Kindlemma:Schnee]                  0.3     0.5    -0.7    -0.1     0.2     0.6     1.2
+b[(Intercept) Kindlemma:Schrott]                 0.1     0.4    -0.8    -0.1     0.1     0.4     1.0
+b[(Intercept) Kindlemma:Trinkwasser]             0.4     0.4    -0.3     0.2     0.4     0.7     1.2
+b[(Intercept) Kindlemma:Getreide]               -0.1     0.4    -0.9    -0.4    -0.1     0.2     0.8
+b[(Intercept) Kindlemma:Aluminium]              -0.1     0.5    -1.1    -0.4    -0.1     0.3     0.9
+b[(Intercept) Kindlemma:Öl]                     -0.1     0.4    -0.9    -0.3    -0.1     0.2     0.8
+b[(Intercept) Kindlemma:Holz]                   -0.4     0.5    -1.4    -0.8    -0.4    -0.1     0.5
+b[(Intercept) Kindlemma:Gold]                    0.6     0.5    -0.3     0.2     0.5     0.8     1.5
+b[(Intercept) Kindlemma:Bier]                    0.2     0.4    -0.5    -0.1     0.2     0.4     0.9
+b[(Intercept) Kindlemma:Beton]                   0.1     0.4    -0.7    -0.1     0.1     0.4     1.0
+b[(Intercept) Kindlemma:Eisen]                  -0.1     0.4    -0.8    -0.3    -0.1     0.2     0.7
+b[(Intercept) Kindlemma:Gehalt]                  0.6     0.6    -0.4     0.2     0.6     1.0     1.8
+b[(Intercept) Kindlemma:Vermögen]               -0.5     0.5    -1.6    -0.8    -0.5    -0.2     0.5
+b[(Intercept) Kindlemma:Benzin]                  0.1     0.4    -0.8    -0.2     0.1     0.3     0.9
+b[(Intercept) Kindlemma:Alkohol]                 0.6     0.4    -0.2     0.3     0.6     0.8     1.4
+b[(Intercept) Kindlemma:Kaffee]                  0.5     0.4    -0.2     0.3     0.5     0.8     1.3
+b[(Intercept) Kindlemma:Leder]                   0.6     0.5    -0.3     0.3     0.6     0.9     1.5
+b[(Intercept) Kindlemma:Müll]                    0.0     0.3    -0.6    -0.2     0.0     0.2     0.7
+b[(Intercept) Kindlemma:Gras]                    0.3     0.4    -0.5     0.0     0.2     0.5     1.1
+b[(Intercept) Kindlemma:Geld]                   -0.4     0.5    -1.4    -0.7    -0.4    -0.1     0.5
+b[(Intercept) Kindlemma:Zeug]                    0.4     0.4    -0.4     0.1     0.4     0.7     1.2
+b[(Intercept) Kindlemma:Metall]                 -0.3     0.4    -1.0    -0.5    -0.3    -0.1     0.4
+b[(Intercept) Kindlemma:Stoff]                   0.5     0.5    -0.4     0.1     0.5     0.8     1.5
+b[(Intercept) Kindlemma:Teig]                    0.4     0.5    -0.5     0.1     0.4     0.7     1.4
+b[(Intercept) Kindlemma:Gift]                   -0.2     0.5    -1.3    -0.5    -0.2     0.1     0.8
+b[(Intercept) Kindlemma:Glas]                    0.7     0.5    -0.1     0.4     0.7     1.0     1.7
+b[(Intercept) Kindlemma:Abfall]                  0.0     0.3    -0.6    -0.2     0.0     0.2     0.7
+b[(Intercept) Kindlemma:Staub]                   0.0     0.6    -1.2    -0.4     0.0     0.4     1.2
+b[(Intercept) Kindlemma:Gas]                    -0.4     0.4    -1.4    -0.7    -0.4    -0.1     0.4
+b[(Intercept) Kindlemma:Wein]                    0.5     0.4    -0.3     0.2     0.5     0.8     1.3
+b[(Intercept) Kindlemma:Blut]                   -0.1     0.4    -0.9    -0.4    -0.1     0.1     0.6
+b[(Intercept) Kindlemma:Regen]                   0.4     0.5    -0.5     0.0     0.3     0.6     1.4
+mean_PPD                                         0.2     0.0     0.2     0.2     0.2     0.2     0.2
+log-posterior                                -1523.4    15.2 -1553.6 -1533.8 -1523.3 -1513.1 -1494.8
+
+Diagnostics:
+                                             mcse Rhat n_eff
+(Intercept)                                  0.0  1.0   718 
+Genitives                                    0.0  1.0  2000 
+Minus1posD                                   0.0  1.0  2000 
+Minus1posO                                   0.0  1.0  2000 
+Minus1posA                                   0.0  1.0  2000 
+Minus1posP                                   0.0  1.0  2000 
+MeasureclassSquare                           0.0  1.0  1124 
+MeasureclassWeight                           0.0  1.0   451 
+MeasureclassCapacity                         0.0  1.0   698 
+MeasureclassVessel                           0.0  1.0   666 
+MeasureclassCurrency                         0.0  1.0   942 
+MeasureclassRest                             0.0  1.0   699 
+MeasureclassAmount                           0.0  1.0   615 
+MeasureclassPortion                          0.0  1.0   422 
+MeasureclassLayer                            0.0  1.0   782 
+Matchlength                                  0.0  1.0  2000 
+Measureabbreviated0                          0.0  1.0  2000 
+Attraction                                   0.0  1.0  1184 
+MeasurenumberSg                              0.0  1.0  2000 
+Kindfinalm                                   0.0  1.0  1046 
+Kindfinalh                                   0.0  1.0   741 
+Kindfinale                                   0.0  1.0   589 
+Kindfinalr                                   0.0  1.0   586 
+Kindfinalz                                   0.0  1.0   818 
+Kindfinals                                   0.0  1.0   585 
+Kindfinalf                                   0.0  1.0   790 
+Kindfinalg                                   0.0  1.0   734 
+Kindfinald                                   0.0  1.0   685 
+Kindfinalt                                   0.0  1.0   607 
+Kindfinall                                   0.0  1.0   641 
+Kindfinaln                                   0.0  1.0   651 
+Kindfinalb                                   0.0  1.0  1042 
+Kindedible0                                  0.0  1.0  1330 
+Badness                                      0.0  1.0  2000 
+Kindfreq                                     0.0  1.0  1057 
+MeasurecaseAcc                               0.0  1.0  2000 
+MeasurecaseDat                               0.0  1.0  2000 
+KindintNonint                                0.0  1.0  1435 
+Measurefreq                                  0.0  1.0  1452 
+b[(Intercept) Measurelemma:Barren]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Beutel]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Blatt]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Bund]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Cent]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Zentimeter]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Mark]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Extraportion]     0.0  1.0  2000 
+b[(Intercept) Measurelemma:Fleck]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Fontäne]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Franc]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Franke]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Fuhre]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Groschen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Hektar]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Hälmchen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Happen]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Häuflein]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kanister]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kante]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Karton]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kelle]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kilometer]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Klafter]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Klecks]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Korb]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Korn]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kugel]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Ladung]           0.0  1.0   681 
+b[(Intercept) Measurelemma:Löffel]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Messerspitze]     0.0  1.0  2000 
+b[(Intercept) Measurelemma:Molekül]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Päckchen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Packung]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Paket]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Quadratkilometer] 0.0  1.0  2000 
+b[(Intercept) Measurelemma:Raummeter]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Riesenportion]    0.0  1.0  2000 
+b[(Intercept) Measurelemma:Scheffel]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Scheibchen]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Scheit]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Sechserpack]      0.0  1.0  2000 
+b[(Intercept) Measurelemma:Teelöffel]        0.0  1.0   599 
+b[(Intercept) Measurelemma:Thermoskanne]     0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tube]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tütchen]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tüte]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Unze]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Viertelliter]     0.0  1.0  2000 
+b[(Intercept) Measurelemma:Gramm]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Esslöffel]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Meter]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Millimeter]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Milliliter]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kilogramm]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Portion]          0.0  1.0   694 
+b[(Intercept) Measurelemma:Quadratmeter]     0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schüssel]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Prise]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Sack]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Liter]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tasse]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Teller]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Dose]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Milligramm]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Hauch]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Eimer]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kiste]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Stück]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tonne]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Pfund]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Euro]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Stückchen]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Dollar]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Gallone]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Krug]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Gläschen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Becher]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Brocken]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Rest]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Unmenge]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Glas]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kubikmeter]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Haufe]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Scheibe]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schuss]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Menge]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schicht]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Batzen]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Berg]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Biss]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Gulden]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schluck]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Zentner]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Flasche]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Lage]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kanne]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Büschel]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Streifen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Handvoll]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Block]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Büchse]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Bündel]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Dosis]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Fläschchen]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Hektoliter]       0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kännchen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Mass]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schoppen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Stapel]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Topf]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tropfen]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Klumpen]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Häufchen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Taler]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tröpfchen]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Unsumme]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Lache]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schwall]          0.0  1.0   582 
+b[(Intercept) Measurelemma:Fetzen]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Laib]             0.0  1.0   396 
+b[(Intercept) Measurelemma:Barrel]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Einheit]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Fass]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Feinunze]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Lawine]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Pfütze]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Rinnsal]          0.0  1.0   748 
+b[(Intercept) Measurelemma:Spritzer]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tankfüllung]      0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tässchen]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Diesel]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Draht]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lack]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mehl]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Senf]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Reis]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gemüse]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mais]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Käse]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Rasen]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fisch]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zucker]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Pfeffer]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Spielzeug]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Salat]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Honig]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fett]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kram]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kunststoff]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gepäck]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Plastik]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Saft]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sand]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Futter]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wasser]              0.0  1.0  1657 
+b[(Intercept) Kindlemma:Stahl]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Tee]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Eis]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Salz]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Eiweiss]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fell]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Brot]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dreck]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fleisch]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lohn]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sauerstoff]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schnee]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schrott]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Trinkwasser]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Getreide]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Aluminium]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Öl]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Holz]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gold]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bier]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Beton]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Eisen]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gehalt]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Vermögen]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Benzin]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Alkohol]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kaffee]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Leder]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Müll]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gras]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Geld]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zeug]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Metall]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Stoff]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Teig]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gift]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Glas]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Abfall]              0.0  1.0  1252 
+b[(Intercept) Kindlemma:Staub]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gas]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wein]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Blut]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Regen]               0.0  1.0  2000 
+mean_PPD                                     0.0  1.0  2000 
+log-posterior                                0.8  1.0   327 
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
+stan_glmer(formula = Casedrop ~ 1 + (1 | Measurelemma) + (1 | 
+    Kindlemma) + Minus1pos + Measureabbreviated + Kindconsistency + 
+    Matchlength + Genitives + Kindedible + Measuregender + Measurenumber + 
+    Kindint + Badness + Measurefreq + Measurecase + Kindfreq + 
+    Attraction, data = fem, family = binomial(link = logit), 
+    chains = chains, seed = seed, iter = iter, prior = normal(0, 
+        2.5), prior_intercept = normal(0, 10), prior_ops = prior_options(prior_scale_for_dispersion = 5, 
+        min_prior_scale = 1e-12, scaled = TRUE), prior_covariance = decov(regularization = 1, 
+        concentration = 1, shape = 1, scale = 1), prior_PD = F)
+
+Family: binomial (logit)
+Algorithm: sampling
+Posterior sample size: 2000
+Observations: 1114
+Groups: Measurelemma 73, Kindlemma 19
+
+Estimates:
+                                                mean   sd     2.5%   25%    50%    75%    97.5%
+(Intercept)                                     -2.8    0.9   -4.6   -3.4   -2.9   -2.2   -1.1 
+Minus1posD                                       1.4    0.4    0.5    1.1    1.4    1.6    2.2 
+Minus1posO                                       2.3    0.4    1.4    2.0    2.2    2.6    3.2 
+Minus1posA                                       2.3    0.4    1.5    2.0    2.3    2.6    3.1 
+Minus1posP                                       4.7    1.0    2.9    4.0    4.7    5.3    6.8 
+Measureabbreviated0                             -0.5    0.6   -1.6   -0.9   -0.5   -0.1    0.6 
+KindconsistencyHard                             -0.4    0.8   -1.9   -0.9   -0.4    0.1    1.2 
+KindconsistencyLiquid                            0.9    0.7   -0.4    0.5    0.9    1.3    2.2 
+KindconsistencySoft                              0.3    0.6   -1.0   -0.2    0.3    0.7    1.5 
+KindconsistencyImmaterial                       -1.1    0.9   -2.8   -1.7   -1.1   -0.5    0.7 
+KindconsistencyGaseous                          -0.2    0.8   -1.9   -0.7   -0.2    0.4    1.4 
+KindconsistencyMixed                             0.9    0.7   -0.6    0.4    0.9    1.4    2.3 
+KindconsistencyPowder                            1.1    0.9   -0.6    0.6    1.1    1.7    2.8 
+Matchlength                                      0.7    0.1    0.4    0.6    0.7    0.8    1.0 
+Genitives                                       -0.6    0.1   -0.7   -0.6   -0.6   -0.5   -0.4 
+Kindedible0                                      1.5    0.4    0.6    1.2    1.5    1.8    2.4 
+MeasuregenderMasc                                0.7    0.5   -0.2    0.4    0.7    1.1    1.7 
+MeasuregenderFem                                -0.1    0.5   -1.1   -0.4   -0.1    0.3    1.0 
+MeasurenumberSg                                 -0.4    0.3   -1.0   -0.6   -0.4   -0.2    0.2 
+KindintNonint                                   -0.2    0.4   -0.9   -0.4   -0.2    0.1    0.6 
+Badness                                         -0.1    0.1   -0.3   -0.2   -0.1   -0.1    0.1 
+Measurefreq                                      0.1    0.2   -0.3   -0.1    0.1    0.2    0.5 
+MeasurecaseAcc                                   0.2    0.2   -0.1    0.1    0.2    0.3    0.6 
+Kindfreq                                         0.0    0.2   -0.4   -0.1    0.0    0.2    0.5 
+Attraction                                       0.0    0.2   -0.4   -0.1    0.0    0.1    0.4 
+b[(Intercept) Measurelemma:Euro]                -0.3    1.0   -2.4   -0.9   -0.3    0.4    1.8 
+b[(Intercept) Measurelemma:Becher]              -1.0    0.9   -3.0   -1.6   -1.0   -0.4    0.6 
+b[(Intercept) Measurelemma:Esslöffel]           -0.3    1.1   -2.4   -1.0   -0.2    0.4    1.7 
+b[(Intercept) Measurelemma:Extraportion]        -0.6    1.0   -2.6   -1.2   -0.5    0.1    1.2 
+b[(Intercept) Measurelemma:Koffer]              -0.3    1.1   -2.6   -1.0   -0.3    0.4    1.6 
+b[(Intercept) Measurelemma:Lage]                -0.2    1.1   -2.4   -0.9   -0.1    0.5    1.9 
+b[(Intercept) Measurelemma:Meter]               -0.2    1.1   -2.5   -0.9   -0.1    0.6    1.9 
+b[(Intercept) Measurelemma:Megawatt]            -0.1    1.1   -2.3   -0.8   -0.1    0.6    2.0 
+b[(Intercept) Measurelemma:Megawattstunde]      -0.5    1.0   -2.6   -1.1   -0.5    0.2    1.5 
+b[(Intercept) Measurelemma:Packung]             -0.3    1.0   -2.5   -0.9   -0.2    0.4    1.7 
+b[(Intercept) Measurelemma:Pfund]               -0.6    1.0   -2.7   -1.3   -0.6    0.1    1.3 
+b[(Intercept) Measurelemma:Portion]             -1.2    1.0   -3.2   -1.8   -1.1   -0.5    0.6 
+b[(Intercept) Measurelemma:Pott]                -1.0    1.0   -3.3   -1.6   -0.9   -0.3    0.6 
+b[(Intercept) Measurelemma:Quadratmeter]        -0.8    1.0   -2.9   -1.4   -0.7   -0.1    1.1 
+b[(Intercept) Measurelemma:Quadratzentimeter]   -1.6    1.0   -3.8   -2.2   -1.5   -0.9    0.1 
+b[(Intercept) Measurelemma:Riegel]              -0.2    1.1   -2.4   -0.9   -0.2    0.5    1.8 
+b[(Intercept) Measurelemma:Schälchen]           -0.3    1.1   -2.6   -1.0   -0.3    0.4    1.7 
+b[(Intercept) Measurelemma:Schluck]             -0.5    1.0   -2.7   -1.2   -0.5    0.2    1.4 
+b[(Intercept) Measurelemma:Stich]               -0.1    1.1   -2.5   -0.8   -0.1    0.6    2.1 
+b[(Intercept) Measurelemma:Unze]                 0.0    1.1   -2.3   -0.8    0.0    0.8    2.1 
+b[(Intercept) Measurelemma:Watt]                -0.3    1.1   -2.6   -0.9   -0.2    0.5    1.7 
+b[(Intercept) Measurelemma:Gramm]               -1.2    0.7   -2.7   -1.7   -1.1   -0.6    0.2 
+b[(Intercept) Measurelemma:Glas]                -0.3    0.7   -1.8   -0.8   -0.3    0.2    1.1 
+b[(Intercept) Measurelemma:Tasse]               -0.1    0.7   -1.4   -0.5   -0.1    0.4    1.2 
+b[(Intercept) Measurelemma:Tafel]                0.1    0.8   -1.4   -0.3    0.2    0.6    1.7 
+b[(Intercept) Measurelemma:Liter]               -1.1    0.5   -2.2   -1.5   -1.1   -0.8   -0.2 
+b[(Intercept) Measurelemma:Milliliter]          -0.4    0.7   -1.8   -0.8   -0.3    0.1    0.9 
+b[(Intercept) Measurelemma:Dose]                -0.4    0.8   -2.2   -0.9   -0.4    0.2    1.2 
+b[(Intercept) Measurelemma:Zentimeter]          -1.1    0.7   -2.5   -1.6   -1.1   -0.6    0.1 
+b[(Intercept) Measurelemma:Teller]              -0.4    0.5   -1.4   -0.8   -0.4    0.0    0.7 
+b[(Intercept) Measurelemma:Kilogramm]           -0.8    0.6   -2.1   -1.2   -0.8   -0.4    0.4 
+b[(Intercept) Measurelemma:Stückchen]           -0.5    0.7   -1.9   -0.9   -0.4    0.0    0.8 
+b[(Intercept) Measurelemma:Eimer]               -1.2    0.6   -2.3   -1.6   -1.2   -0.8   -0.1 
+b[(Intercept) Measurelemma:Kilowatt]            -0.4    0.9   -2.2   -1.0   -0.4    0.2    1.3 
+b[(Intercept) Measurelemma:Stück]               -0.1    0.6   -1.4   -0.5   -0.1    0.3    1.0 
+b[(Intercept) Measurelemma:Kilowattstunde]      -0.8    0.8   -2.4   -1.4   -0.8   -0.3    0.8 
+b[(Intercept) Measurelemma:Ladung]               0.3    0.8   -1.3   -0.3    0.2    0.8    2.0 
+b[(Intercept) Measurelemma:Kubikmeter]          -0.5    0.7   -1.8   -0.9   -0.4    0.0    0.8 
+b[(Intercept) Measurelemma:Tonne]               -0.1    0.5   -1.2   -0.5   -0.1    0.3    0.9 
+b[(Intercept) Measurelemma:Handvoll]            -0.2    0.8   -1.8   -0.7   -0.2    0.3    1.4 
+b[(Intercept) Measurelemma:Löffel]               0.5    0.8   -1.1    0.0    0.5    1.0    2.2 
+b[(Intercept) Measurelemma:Strahl]              -0.1    0.9   -1.9   -0.7   -0.1    0.5    1.7 
+b[(Intercept) Measurelemma:Streifen]            -0.3    1.0   -2.3   -0.9   -0.3    0.3    1.6 
+b[(Intercept) Measurelemma:Schicht]             -0.5    0.6   -1.8   -0.9   -0.5   -0.1    0.7 
+b[(Intercept) Measurelemma:Topf]                 0.8    0.6   -0.4    0.4    0.8    1.2    2.1 
+b[(Intercept) Measurelemma:Menge]                0.6    0.5   -0.4    0.3    0.6    1.0    1.7 
+b[(Intercept) Measurelemma:Häuflein]             0.3    1.0   -1.6   -0.4    0.2    0.9    2.2 
+b[(Intercept) Measurelemma:Scheibe]              1.3    1.0   -0.6    0.6    1.2    1.9    3.2 
+b[(Intercept) Measurelemma:Schüssel]             0.8    0.9   -0.9    0.2    0.8    1.4    2.7 
+b[(Intercept) Measurelemma:Fleckchen]            0.5    0.8   -1.0    0.0    0.5    1.1    2.1 
+b[(Intercept) Measurelemma:Tropfen]              0.7    0.7   -0.7    0.2    0.7    1.2    2.3 
+b[(Intercept) Measurelemma:Unmenge]              0.3    0.8   -1.2   -0.3    0.3    0.8    1.8 
+b[(Intercept) Measurelemma:Haufe]                0.5    0.5   -0.5    0.2    0.4    0.7    1.4 
+b[(Intercept) Measurelemma:Stapel]               0.6    0.7   -0.7    0.2    0.6    1.1    2.1 
+b[(Intercept) Measurelemma:Schwall]              1.9    0.7    0.7    1.5    1.9    2.3    3.3 
+b[(Intercept) Measurelemma:Häufchen]             1.3    0.8   -0.3    0.7    1.2    1.8    3.0 
+b[(Intercept) Measurelemma:Berg]                 1.6    0.8    0.2    1.1    1.6    2.1    3.3 
+b[(Intercept) Measurelemma:Biss]                 0.7    1.0   -1.0    0.0    0.6    1.3    2.8 
+b[(Intercept) Measurelemma:Bündel]               1.2    0.9   -0.5    0.5    1.1    1.7    3.2 
+b[(Intercept) Measurelemma:Dosis]                1.0    1.0   -0.7    0.3    0.9    1.6    3.1 
+b[(Intercept) Measurelemma:Einheit]              0.1    1.2   -2.2   -0.6    0.1    0.9    2.5 
+b[(Intercept) Measurelemma:Fleck]                0.7    1.0   -1.1    0.0    0.6    1.3    2.8 
+b[(Intercept) Measurelemma:Hauch]                0.7    1.0   -1.0    0.0    0.7    1.3    2.8 
+b[(Intercept) Measurelemma:Klecks]               0.7    1.0   -1.0    0.1    0.7    1.3    2.8 
+b[(Intercept) Measurelemma:Klumpen]              0.2    1.1   -1.8   -0.5    0.2    0.9    2.5 
+b[(Intercept) Measurelemma:Korb]                 0.3    1.1   -1.6   -0.4    0.2    1.0    2.5 
+b[(Intercept) Measurelemma:Kübel]                0.5    1.0   -1.4   -0.2    0.5    1.1    2.6 
+b[(Intercept) Measurelemma:Masse]                0.2    1.1   -2.0   -0.5    0.2    0.9    2.4 
+b[(Intercept) Measurelemma:Rest]                 0.5    1.0   -1.4   -0.2    0.5    1.1    2.6 
+b[(Intercept) Measurelemma:Spritzer]             0.4    1.1   -1.7   -0.3    0.3    1.0    2.6 
+b[(Intercept) Measurelemma:Teilchen]             0.8    0.9   -0.8    0.2    0.8    1.4    2.8 
+b[(Intercept) Measurelemma:Tupfer]               0.4    1.0   -1.4   -0.3    0.4    1.1    2.5 
+b[(Intercept) Measurelemma:Übermass]             0.5    1.1   -1.6   -0.2    0.5    1.2    2.6 
+b[(Intercept) Kindlemma:Butter]                  0.0    0.3   -0.8   -0.2    0.0    0.1    0.7 
+b[(Intercept) Kindlemma:Wurst]                   0.0    0.3   -0.8   -0.2    0.0    0.1    0.7 
+b[(Intercept) Kindlemma:Schokolade]              0.0    0.3   -0.6   -0.1    0.0    0.2    0.8 
+b[(Intercept) Kindlemma:Milch]                   0.1    0.3   -0.4    0.0    0.1    0.3    0.8 
+b[(Intercept) Kindlemma:Haut]                   -0.2    0.3   -0.9   -0.3   -0.1    0.0    0.3 
+b[(Intercept) Kindlemma:Suppe]                   0.0    0.3   -0.5   -0.1    0.0    0.2    0.7 
+b[(Intercept) Kindlemma:Kohle]                   0.0    0.4   -0.8   -0.1    0.0    0.2    0.9 
+b[(Intercept) Kindlemma:Creme]                   0.0    0.3   -0.7   -0.2    0.0    0.1    0.7 
+b[(Intercept) Kindlemma:Kleidung]               -0.2    0.3   -0.9   -0.3   -0.1    0.0    0.4 
+b[(Intercept) Kindlemma:Nahrung]                 0.0    0.3   -0.8   -0.1    0.0    0.2    0.7 
+b[(Intercept) Kindlemma:Flüssigkeit]            -0.2    0.4   -1.1   -0.3   -0.1    0.0    0.3 
+b[(Intercept) Kindlemma:Energie]                 0.0    0.4   -0.8   -0.2    0.0    0.1    0.7 
+b[(Intercept) Kindlemma:Luft]                    0.0    0.4   -0.8   -0.2    0.0    0.1    0.8 
+b[(Intercept) Kindlemma:Farbe]                   0.0    0.4   -0.6   -0.1    0.0    0.2    0.9 
+b[(Intercept) Kindlemma:Erde]                    0.2    0.3   -0.4    0.0    0.1    0.3    1.0 
+b[(Intercept) Kindlemma:Wäsche]                  0.0    0.3   -0.6   -0.1    0.0    0.2    0.7 
+b[(Intercept) Kindlemma:Scheisse]                0.1    0.3   -0.5    0.0    0.1    0.3    0.9 
+b[(Intercept) Kindlemma:Asche]                   0.0    0.4   -0.7   -0.1    0.0    0.2    0.8 
+b[(Intercept) Kindlemma:Materie]                 0.0    0.3   -0.7   -0.1    0.0    0.2    0.7 
+mean_PPD                                         0.4    0.0    0.4    0.4    0.4    0.4    0.4 
+log-posterior                                 -648.5    9.6 -667.8 -655.0 -648.1 -642.0 -630.7 
+
+Diagnostics:
+                                              mcse Rhat n_eff
+(Intercept)                                   0.0  1.0   911 
+Minus1posD                                    0.0  1.0  1535 
+Minus1posO                                    0.0  1.0  2000 
+Minus1posA                                    0.0  1.0  1606 
+Minus1posP                                    0.0  1.0  2000 
+Measureabbreviated0                           0.0  1.0  1437 
+KindconsistencyHard                           0.0  1.0  1094 
+KindconsistencyLiquid                         0.0  1.0  1055 
+KindconsistencySoft                           0.0  1.0   896 
+KindconsistencyImmaterial                     0.0  1.0  1093 
+KindconsistencyGaseous                        0.0  1.0   876 
+KindconsistencyMixed                          0.0  1.0   912 
+KindconsistencyPowder                         0.0  1.0  1223 
+Matchlength                                   0.0  1.0  2000 
+Genitives                                     0.0  1.0  2000 
+Kindedible0                                   0.0  1.0  1395 
+MeasuregenderMasc                             0.0  1.0  1259 
+MeasuregenderFem                              0.0  1.0  1207 
+MeasurenumberSg                               0.0  1.0  2000 
+KindintNonint                                 0.0  1.0  1245 
+Badness                                       0.0  1.0  2000 
+Measurefreq                                   0.0  1.0   932 
+MeasurecaseAcc                                0.0  1.0  2000 
+Kindfreq                                      0.0  1.0  1146 
+Attraction                                    0.0  1.0  1297 
+b[(Intercept) Measurelemma:Euro]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Becher]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Esslöffel]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Extraportion]      0.0  1.0  2000 
+b[(Intercept) Measurelemma:Koffer]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Lage]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Meter]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Megawatt]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Megawattstunde]    0.0  1.0  2000 
+b[(Intercept) Measurelemma:Packung]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Pfund]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Portion]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Pott]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Quadratmeter]      0.0  1.0  2000 
+b[(Intercept) Measurelemma:Quadratzentimeter] 0.0  1.0  2000 
+b[(Intercept) Measurelemma:Riegel]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schälchen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schluck]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Stich]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Unze]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Watt]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Gramm]             0.0  1.0  1543 
+b[(Intercept) Measurelemma:Glas]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tasse]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tafel]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Liter]             0.0  1.0  1351 
+b[(Intercept) Measurelemma:Milliliter]        0.0  1.0  1630 
+b[(Intercept) Measurelemma:Dose]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Zentimeter]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Teller]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kilogramm]         0.0  1.0  1590 
+b[(Intercept) Measurelemma:Stückchen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Eimer]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kilowatt]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Stück]             0.0  1.0   866 
+b[(Intercept) Measurelemma:Kilowattstunde]    0.0  1.0  2000 
+b[(Intercept) Measurelemma:Ladung]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kubikmeter]        0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tonne]             0.0  1.0  1370 
+b[(Intercept) Measurelemma:Handvoll]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Löffel]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Strahl]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Streifen]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schicht]           0.0  1.0  1597 
+b[(Intercept) Measurelemma:Topf]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Menge]             0.0  1.0  1004 
+b[(Intercept) Measurelemma:Häuflein]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Scheibe]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schüssel]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Fleckchen]         0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tropfen]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Unmenge]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Haufe]             0.0  1.0  1673 
+b[(Intercept) Measurelemma:Stapel]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Schwall]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Häufchen]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Berg]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Biss]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Bündel]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Dosis]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Einheit]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Fleck]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Hauch]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Klecks]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Klumpen]           0.0  1.0  2000 
+b[(Intercept) Measurelemma:Korb]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Kübel]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Masse]             0.0  1.0  2000 
+b[(Intercept) Measurelemma:Rest]              0.0  1.0  2000 
+b[(Intercept) Measurelemma:Spritzer]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Teilchen]          0.0  1.0  2000 
+b[(Intercept) Measurelemma:Tupfer]            0.0  1.0  2000 
+b[(Intercept) Measurelemma:Übermass]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Butter]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wurst]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schokolade]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Milch]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Haut]                 0.0  1.0  1164 
+b[(Intercept) Kindlemma:Suppe]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kohle]                0.0  1.0  1537 
+b[(Intercept) Kindlemma:Creme]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kleidung]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Nahrung]              0.0  1.0  1481 
+b[(Intercept) Kindlemma:Flüssigkeit]          0.0  1.0  1275 
+b[(Intercept) Kindlemma:Energie]              0.0  1.0  1416 
+b[(Intercept) Kindlemma:Luft]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Farbe]                0.0  1.0  1710 
+b[(Intercept) Kindlemma:Erde]                 0.0  1.0  1548 
+b[(Intercept) Kindlemma:Wäsche]               0.0  1.0  1527 
+b[(Intercept) Kindlemma:Scheisse]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Asche]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Materie]              0.0  1.0  2000 
+mean_PPD                                      0.0  1.0  1996 
+log-posterior                                 0.4  1.0   498 
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
+stan_glmer(formula = Casedrop ~ 1 + (1 | Kindlemma) + Attraction + 
+    Measurefreq + Measurelength + Measuregender, data = pl, family = binomial(link = logit), 
+    chains = chains, seed = seed, iter = iter, prior = normal(0, 
+        2.5), prior_intercept = normal(0, 10), prior_ops = prior_options(prior_scale_for_dispersion = 5, 
+        min_prior_scale = 1e-12, scaled = TRUE), prior_covariance = decov(regularization = 1, 
+        concentration = 1, shape = 1, scale = 1), prior_PD = F)
+
+Family: binomial (logit)
+Algorithm: sampling
+Posterior sample size: 2000
+Observations: 861
+Groups: Kindlemma 560
+
+Estimates:
+                                                mean    sd      2.5%    25%     50%     75%     97.5%
+(Intercept)                                       4.7     1.2     2.5     3.9     4.6     5.5     7.3
+Attraction                                        1.4     0.3     0.8     1.1     1.3     1.5     2.1
+Measurefreq                                      -0.6     0.2    -1.1    -0.8    -0.6    -0.5    -0.2
+Measurelength                                     0.3     0.2    -0.1     0.2     0.3     0.5     0.8
+MeasuregenderFem                                 -0.7     1.0    -2.8    -1.4    -0.7    -0.1     1.2
+MeasuregenderMasc                                -0.2     1.1    -2.3    -0.9    -0.2     0.5     1.9
+b[(Intercept) Kindlemma:Anbieterin]              -2.8     2.1    -7.1    -4.1    -2.6    -1.4     0.6
+b[(Intercept) Kindlemma:Anforderung]             -1.8     1.7    -5.6    -2.7    -1.6    -0.6     1.0
+b[(Intercept) Kindlemma:Anteil]                  -2.4     1.8    -6.6    -3.6    -2.3    -1.2     0.7
+b[(Intercept) Kindlemma:Argument]                -1.2     1.6    -4.7    -2.2    -1.1    -0.2     1.6
+b[(Intercept) Kindlemma:Backstein]               -2.5     1.9    -6.7    -3.6    -2.3    -1.1     0.6
+b[(Intercept) Kindlemma:Blüte]                   -2.5     2.0    -6.8    -3.6    -2.3    -1.1     0.8
+b[(Intercept) Kindlemma:Ei]                      -2.1     1.8    -5.9    -3.1    -2.0    -0.8     0.8
+b[(Intercept) Kindlemma:Erinnerung]              -2.7     2.0    -7.0    -3.8    -2.5    -1.3     0.7
+b[(Intercept) Kindlemma:Fell]                    -2.3     1.9    -6.4    -3.4    -2.2    -1.0     0.6
+b[(Intercept) Kindlemma:Gabe]                    -4.1     2.0    -8.3    -5.3    -4.0    -2.8    -0.5
+b[(Intercept) Kindlemma:Gesellschaftsspiel]      -1.5     1.6    -5.2    -2.4    -1.3    -0.4     1.3
+b[(Intercept) Kindlemma:Grund]                   -2.3     1.9    -6.5    -3.4    -2.1    -1.1     0.8
+b[(Intercept) Kindlemma:Gummibärchen]            -2.8     2.1    -7.7    -4.1    -2.6    -1.3     0.8
+b[(Intercept) Kindlemma:Himbeere]                -2.5     2.0    -6.9    -3.6    -2.3    -1.1     0.8
+b[(Intercept) Kindlemma:Kartoffel]               -0.9     1.6    -4.4    -1.8    -0.8     0.1     1.9
+b[(Intercept) Kindlemma:Komödie]                 -2.1     1.8    -6.1    -3.2    -1.9    -0.8     1.1
+b[(Intercept) Kindlemma:Made]                    -2.5     1.8    -6.6    -3.6    -2.3    -1.2     0.6
+b[(Intercept) Kindlemma:Mandel]                  -2.2     1.5    -5.6    -3.2    -2.1    -1.2     0.2
+b[(Intercept) Kindlemma:Mine]                    -2.7     2.0    -6.9    -4.0    -2.5    -1.3     0.6
+b[(Intercept) Kindlemma:Miniatur]                -2.6     2.0    -7.0    -3.9    -2.5    -1.2     0.7
+b[(Intercept) Kindlemma:Minister]                -2.7     2.0    -7.0    -3.9    -2.6    -1.2     0.6
+b[(Intercept) Kindlemma:Moped]                   -1.9     1.7    -5.6    -3.0    -1.8    -0.7     1.0
+b[(Intercept) Kindlemma:Photo]                   -1.4     1.6    -4.9    -2.4    -1.3    -0.3     1.4
+b[(Intercept) Kindlemma:Punkt]                   -1.9     1.7    -5.5    -2.9    -1.7    -0.7     1.1
+b[(Intercept) Kindlemma:Risiko]                  -1.4     1.6    -4.8    -2.3    -1.2    -0.4     1.3
+b[(Intercept) Kindlemma:Rosine]                  -1.9     1.7    -5.7    -2.9    -1.8    -0.7     1.0
+b[(Intercept) Kindlemma:Schaf]                   -1.7     1.7    -5.4    -2.7    -1.6    -0.5     1.1
+b[(Intercept) Kindlemma:Scheibe]                 -2.5     1.9    -6.8    -3.7    -2.3    -1.1     0.7
+b[(Intercept) Kindlemma:Signal]                  -2.1     1.8    -6.0    -3.2    -1.9    -0.8     0.8
+b[(Intercept) Kindlemma:Sonnenblumenkern]        -2.4     1.9    -6.6    -3.5    -2.2    -1.0     0.6
+b[(Intercept) Kindlemma:Spitze]                  -2.1     1.7    -5.7    -3.2    -1.9    -0.9     0.9
+b[(Intercept) Kindlemma:Stehplatz]               -2.0     1.7    -5.5    -3.0    -1.8    -0.8     0.9
+b[(Intercept) Kindlemma:Strom]                   -2.3     1.9    -6.5    -3.4    -2.1    -1.0     0.8
+b[(Intercept) Kindlemma:Substanz]                -2.7     2.0    -7.0    -3.8    -2.5    -1.2     0.6
+b[(Intercept) Kindlemma:Trikot]                  -2.6     1.9    -6.8    -3.7    -2.4    -1.2     0.6
+b[(Intercept) Kindlemma:Verbot]                  -1.6     1.7    -5.5    -2.6    -1.4    -0.4     1.4
+b[(Intercept) Kindlemma:Wurzel]                  -2.4     1.8    -6.5    -3.5    -2.3    -1.1     0.7
+b[(Intercept) Kindlemma:Zigarette]               -1.3     1.7    -4.9    -2.2    -1.1    -0.2     1.7
+b[(Intercept) Kindlemma:Zöllner]                 -2.6     1.9    -6.6    -3.8    -2.5    -1.2     0.8
+b[(Intercept) Kindlemma:Änderung]                -1.9     1.7    -5.4    -3.0    -1.8    -0.8     1.1
+b[(Intercept) Kindlemma:Bohne]                   -1.3     1.4    -4.0    -2.1    -1.2    -0.3     1.3
+b[(Intercept) Kindlemma:Detail]                  -1.3     1.3    -3.9    -2.2    -1.3    -0.4     1.2
+b[(Intercept) Kindlemma:Getränk]                 -2.9     1.4    -5.8    -3.8    -2.8    -1.9    -0.3
+b[(Intercept) Kindlemma:Gurke]                   -0.7     1.0    -2.8    -1.4    -0.7     0.0     1.3
+b[(Intercept) Kindlemma:Kraut]                   -1.5     1.5    -4.5    -2.4    -1.4    -0.5     1.3
+b[(Intercept) Kindlemma:Land]                    -1.5     1.4    -4.3    -2.4    -1.4    -0.5     1.1
+b[(Intercept) Kindlemma:Neuigkeit]               -0.2     1.3    -2.9    -1.0    -0.2     0.6     2.3
+b[(Intercept) Kindlemma:Pirat]                   -2.0     1.6    -5.3    -3.0    -1.9    -1.0     0.8
+b[(Intercept) Kindlemma:Preis]                   -1.1     1.3    -3.9    -1.9    -1.0    -0.2     1.5
+b[(Intercept) Kindlemma:Stück]                   -2.2     1.7    -6.0    -3.3    -2.1    -1.1     0.8
+b[(Intercept) Kindlemma:Teil]                    -1.8     1.5    -5.0    -2.7    -1.7    -0.8     1.1
+b[(Intercept) Kindlemma:Tourist]                 -0.7     1.3    -3.5    -1.5    -0.7     0.1     1.7
+b[(Intercept) Kindlemma:Veranstaltung]           -1.3     1.3    -4.0    -2.2    -1.3    -0.4     1.1
+b[(Intercept) Kindlemma:Waffe]                   -1.5     1.4    -4.3    -2.4    -1.5    -0.5     1.2
+b[(Intercept) Kindlemma:Nudel]                    0.0     1.2    -2.1    -0.7     0.0     0.7     2.5
+b[(Intercept) Kindlemma:Screenshot]              -0.9     1.3    -3.2    -1.7    -0.9     0.0     1.6
+b[(Intercept) Kindlemma:Ding]                    -1.5     1.1    -3.6    -2.3    -1.6    -0.8     0.5
+b[(Intercept) Kindlemma:Fisch]                   -2.0     1.6    -5.2    -2.9    -1.9    -0.8     0.9
+b[(Intercept) Kindlemma:Text]                    -2.0     1.7    -5.5    -3.1    -2.0    -0.9     0.9
+b[(Intercept) Kindlemma:Kind]                    -1.1     1.3    -3.5    -1.9    -1.1    -0.2     1.4
+b[(Intercept) Kindlemma:Information]             -0.7     1.2    -3.0    -1.5    -0.7     0.0     1.6
+b[(Intercept) Kindlemma:Bild]                    -1.1     1.2    -3.6    -1.9    -1.1    -0.2     1.2
+b[(Intercept) Kindlemma:Abbildung]                0.1     1.9    -3.5    -1.1     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Abenteuer]                0.1     1.8    -3.4    -1.0     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Abiturient]               0.3     1.7    -3.0    -0.8     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Abmessung]                0.1     1.8    -3.6    -1.0     0.1     1.1     4.0
+b[(Intercept) Kindlemma:Abstecher]                0.2     1.8    -3.2    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Affe]                     1.1     1.4    -1.4     0.1     0.9     1.9     4.3
+b[(Intercept) Kindlemma:Affenmensch]              0.2     1.8    -3.3    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Agentur]                  0.2     1.9    -3.3    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Aktfotografie]            0.3     1.7    -3.0    -0.8     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Aktiengesellschaft]       0.2     1.8    -3.4    -1.0     0.2     1.2     4.1
+b[(Intercept) Kindlemma:Amazone]                  0.4     1.7    -2.5    -0.7     0.3     1.4     4.3
+b[(Intercept) Kindlemma:Analphabet]               0.1     1.9    -3.6    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Anfänger]                 0.3     1.7    -2.9    -0.8     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Angabe]                   0.1     1.9    -3.6    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Angebot]                  0.1     1.8    -3.4    -1.0     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Anhänger]                 0.2     1.8    -3.1    -0.9     0.2     1.3     4.1
+b[(Intercept) Kindlemma:Anruf]                    0.1     1.9    -3.7    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Anschlag]                 0.1     1.9    -3.6    -1.0     0.1     1.1     4.1
+b[(Intercept) Kindlemma:Apparatur]                0.0     1.9    -3.9    -1.1     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Arbeiter]                 0.3     1.7    -3.0    -0.8     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Arbeitsplatz]             0.2     1.8    -3.3    -0.9     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Arie]                     0.3     1.8    -3.0    -0.9     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Arschloch]                0.3     1.7    -2.8    -0.7     0.2     1.3     4.1
+b[(Intercept) Kindlemma:Art]                      0.0     1.9    -3.8    -1.2     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Artikel]                  0.4     1.8    -2.7    -0.7     0.3     1.4     4.2
+b[(Intercept) Kindlemma:Arzneimittel]             0.1     1.9    -3.5    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Assoziation]              0.1     1.8    -3.5    -1.0     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Ast]                      0.1     1.8    -3.3    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Athlet]                   0.1     1.8    -3.5    -1.1     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Atom]                     0.3     1.7    -3.0    -0.8     0.3     1.4     4.0
+b[(Intercept) Kindlemma:Attacke]                  0.1     1.9    -3.5    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Aufführung]               0.2     1.7    -3.2    -0.9     0.1     1.1     3.8
+b[(Intercept) Kindlemma:Aufgabe]                  0.4     1.6    -2.5    -0.7     0.3     1.3     3.6
+b[(Intercept) Kindlemma:Auftritt]                 0.0     1.9    -3.7    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Ausflugsziel]             0.3     1.7    -2.7    -0.8     0.3     1.4     3.8
+b[(Intercept) Kindlemma:Ausgabe]                  0.1     1.9    -3.7    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Ausländer]                0.3     1.7    -2.9    -0.8     0.3     1.4     4.0
+b[(Intercept) Kindlemma:Aussage]                  0.1     1.8    -3.6    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Auswirkung]               0.1     1.9    -3.4    -1.1     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Autor]                    0.6     1.6    -2.5    -0.4     0.5     1.6     4.1
+b[(Intercept) Kindlemma:Autorin]                  0.1     1.9    -3.5    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Bank]                     0.3     1.7    -3.0    -0.8     0.3     1.3     4.0
+b[(Intercept) Kindlemma:Banknote]                 0.2     1.7    -3.1    -0.8     0.2     1.2     3.6
+b[(Intercept) Kindlemma:Batterie]                 0.2     1.9    -3.5    -0.9     0.1     1.2     4.4
+b[(Intercept) Kindlemma:Bau]                      0.4     1.7    -2.6    -0.7     0.3     1.4     4.2
+b[(Intercept) Kindlemma:Bauarbeiter]              0.3     1.8    -2.8    -0.8     0.3     1.4     4.0
+b[(Intercept) Kindlemma:Bauer]                    1.0     1.5    -1.4     0.1     0.9     1.8     4.3
+b[(Intercept) Kindlemma:Bauhandwerker]            0.2     1.8    -3.3    -1.0     0.1     1.3     3.7
+b[(Intercept) Kindlemma:Bauteil]                  0.4     1.7    -2.7    -0.7     0.2     1.4     4.0
+b[(Intercept) Kindlemma:Bauwerk]                  0.1     1.9    -3.6    -1.0     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Begegnung]                0.2     1.9    -3.6    -1.0     0.2     1.2     4.1
+b[(Intercept) Kindlemma:Begriff]                  0.1     1.8    -3.7    -1.0     0.1     1.1     3.9
+b[(Intercept) Kindlemma:Behauptung]               0.1     1.8    -3.5    -1.0     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Behausung]                0.2     1.7    -2.9    -0.9     0.2     1.2     3.8
+b[(Intercept) Kindlemma:Beispiel]                 0.1     1.8    -3.4    -1.0     0.1     1.1     3.9
+b[(Intercept) Kindlemma:Beitrag]                  0.1     1.8    -3.4    -1.0     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Bengel]                   0.2     1.9    -3.7    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Beobachtung]              0.1     1.8    -3.4    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Berg]                     0.1     1.9    -3.6    -1.1     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Berufskollege]            0.1     1.8    -3.5    -0.9     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Besucher]                 0.3     1.8    -3.1    -0.8     0.3     1.4     4.2
+b[(Intercept) Kindlemma:Bewohner]                 0.3     1.8    -3.1    -0.8     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Bewohnerin]               0.1     1.8    -3.3    -1.0     0.1     1.1     4.0
+b[(Intercept) Kindlemma:Biene]                    0.2     1.7    -2.9    -0.9     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Bier]                     0.0     1.9    -3.8    -1.2     0.0     1.1     4.1
+b[(Intercept) Kindlemma:Bierbauch]                0.1     1.8    -3.4    -1.0     0.1     1.2     3.6
+b[(Intercept) Kindlemma:Biskuit]                  0.1     1.9    -3.6    -1.1     0.0     1.3     4.2
+b[(Intercept) Kindlemma:Blech]                    0.2     1.8    -3.2    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Block]                    0.0     1.9    -3.9    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Blog]                     0.3     1.7    -3.0    -0.9     0.3     1.4     3.8
+b[(Intercept) Kindlemma:Blogger]                  0.3     1.9    -3.0    -1.0     0.2     1.4     4.2
+b[(Intercept) Kindlemma:Blume]                    0.2     1.7    -3.1    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Bonbon]                   0.6     1.7    -2.4    -0.5     0.4     1.5     4.4
+b[(Intercept) Kindlemma:Bote]                     0.1     1.8    -3.3    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Brennelement]             0.2     1.8    -3.3    -1.0     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Brötchen]                 0.1     1.9    -3.4    -1.0     0.0     1.2     4.4
+b[(Intercept) Kindlemma:Brummbär]                 0.1     1.9    -3.5    -1.0     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Buch]                     0.2     1.7    -3.1    -0.9     0.2     1.2     3.7
+b[(Intercept) Kindlemma:Bürger]                   0.3     1.6    -2.7    -0.7     0.2     1.3     3.7
+b[(Intercept) Kindlemma:Chance]                   0.3     1.7    -2.9    -0.8     0.2     1.4     4.0
+b[(Intercept) Kindlemma:Charakter]                0.1     1.8    -3.5    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Chip]                     1.2     1.7    -1.8     0.2     1.1     2.2     4.8
+b[(Intercept) Kindlemma:Chor]                     0.1     1.8    -3.2    -1.0     0.0     1.2     3.9
+b[(Intercept) Kindlemma:Christ]                   0.3     1.7    -2.9    -0.8     0.2     1.4     3.9
+b[(Intercept) Kindlemma:Clown]                    0.2     1.7    -3.2    -0.9     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Dackel]                   0.3     1.8    -3.2    -0.9     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Dame]                     0.4     1.7    -2.5    -0.7     0.3     1.5     4.1
+b[(Intercept) Kindlemma:Damm]                     0.5     1.6    -2.4    -0.5     0.3     1.4     4.2
+b[(Intercept) Kindlemma:Datum]                    0.4     1.7    -2.7    -0.8     0.3     1.4     4.4
+b[(Intercept) Kindlemma:Depp]                     0.1     1.9    -3.6    -1.1     0.1     1.3     3.7
+b[(Intercept) Kindlemma:Design]                   0.2     1.7    -3.1    -0.9     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Designer]                 0.4     1.6    -2.6    -0.8     0.3     1.3     3.8
+b[(Intercept) Kindlemma:Dienstleistung]           0.1     1.9    -3.5    -1.0     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Dienstwaffe]              0.1     1.9    -3.6    -1.1     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Dinosaurier]              0.2     1.7    -3.1    -0.9     0.2     1.2     3.8
+b[(Intercept) Kindlemma:Dokument]                 0.4     1.7    -2.6    -0.6     0.3     1.5     4.0
+b[(Intercept) Kindlemma:Dorfbewohner]             0.4     1.8    -2.9    -0.7     0.3     1.4     4.4
+b[(Intercept) Kindlemma:Ebene]                    0.1     1.8    -3.5    -1.0     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Effekt]                   0.0     1.9    -3.6    -1.2     0.0     1.2     4.2
+b[(Intercept) Kindlemma:Ehrengast]                0.1     1.8    -3.5    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Eindruck]                 0.0     1.9    -3.6    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Einrichtung]              0.1     1.9    -3.7    -1.0     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Einstellung]              0.1     1.9    -3.6    -1.0     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Einwohner]                0.0     1.9    -3.9    -1.2     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Einzelheit]               0.1     1.9    -3.6    -1.0     0.1     1.1     4.2
+b[(Intercept) Kindlemma:Eisen]                    0.4     1.7    -2.8    -0.7     0.3     1.3     4.2
+b[(Intercept) Kindlemma:Eiskristall]              0.1     1.8    -3.5    -1.0     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Elektron]                 0.1     1.9    -3.3    -1.1     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Elektronik]               0.4     1.7    -2.7    -0.8     0.3     1.4     4.1
+b[(Intercept) Kindlemma:Elfe]                     0.2     1.8    -3.0    -0.9     0.1     1.3     4.4
+b[(Intercept) Kindlemma:Emotion]                  0.3     1.7    -2.9    -0.8     0.2     1.4     4.2
+b[(Intercept) Kindlemma:Empfehlung]               0.1     1.8    -3.4    -1.1     0.1     1.3     3.8
+b[(Intercept) Kindlemma:Engel]                    0.1     1.9    -3.6    -1.1     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Engländer]                0.1     1.8    -3.4    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Entdeckung]               0.1     1.8    -3.5    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Entscheidung]             0.7     1.7    -2.2    -0.4     0.5     1.7     4.5
+b[(Intercept) Kindlemma:Ereignis]                 0.0     2.0    -4.1    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Erfahrung]                1.4     1.5    -1.0     0.3     1.2     2.2     5.0
+b[(Intercept) Kindlemma:Erfolg]                   0.1     1.9    -3.7    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Erkenntnis]               0.1     1.9    -3.6    -1.1     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Erkrankung]               0.2     1.8    -3.3    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Erlebnis]                 0.1     2.0    -3.6    -1.0     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Erweiterung]              0.2     1.7    -3.0    -0.9     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Esel]                     0.3     1.8    -3.1    -0.9     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Essay]                    0.3     1.8    -3.1    -0.8     0.2     1.4     3.9
+b[(Intercept) Kindlemma:Event]                    0.2     1.8    -3.2    -0.9     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Exemplar]                 0.1     1.9    -3.7    -1.0     0.0     1.1     4.1
+b[(Intercept) Kindlemma:Exkursion]                0.2     1.7    -3.2    -0.9     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Experte]                  0.4     1.7    -2.9    -0.7     0.3     1.3     4.1
+b[(Intercept) Kindlemma:Exponat]                  0.0     1.9    -3.7    -1.1     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Fabrikat]                 0.0     1.9    -3.9    -1.1     0.0     1.1     4.1
+b[(Intercept) Kindlemma:Fachbegriff]              0.1     1.8    -3.5    -1.0     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Fachkraft]                0.1     1.8    -3.4    -1.1     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Fahrer]                   0.1     1.9    -3.6    -1.0     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Faktum]                   0.7     1.6    -2.1    -0.4     0.5     1.5     4.1
+b[(Intercept) Kindlemma:Fall]                     0.0     1.9    -3.6    -1.2     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Fan]                      1.0     1.5    -1.7     0.0     0.8     1.9     4.5
+b[(Intercept) Kindlemma:Farbe]                    0.3     1.8    -3.2    -0.9     0.2     1.4     4.2
+b[(Intercept) Kindlemma:Fassung]                  0.3     1.8    -3.0    -0.8     0.2     1.4     4.1
+b[(Intercept) Kindlemma:Faulenzer]                0.3     1.7    -3.0    -0.8     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Feature]                  0.1     1.9    -3.6    -1.1     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Fehler]                   0.2     1.9    -3.4    -0.9     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Feind]                    0.1     1.7    -3.3    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Figur]                    0.1     1.9    -3.6    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Film]                     0.3     1.8    -3.2    -0.8     0.2     1.3     4.1
+b[(Intercept) Kindlemma:Firma]                    0.2     1.8    -3.2    -0.9     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Flasche]                  0.2     1.8    -3.3    -1.0     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Flecken]                  0.6     1.7    -2.4    -0.5     0.5     1.5     4.4
+b[(Intercept) Kindlemma:Flüchtling]               0.4     1.7    -2.8    -0.8     0.3     1.4     4.1
+b[(Intercept) Kindlemma:Flug]                     0.1     1.9    -3.5    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Folge]                    0.2     1.8    -3.2    -1.0     0.1     1.3     3.8
+b[(Intercept) Kindlemma:Fördermittel]             0.1     1.7    -3.2    -0.9     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Forderung]                0.1     1.9    -3.5    -1.0     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Foto]                     1.2     1.5    -1.3     0.2     1.0     2.0     5.0
+b[(Intercept) Kindlemma:Frage]                    1.4     1.6    -1.3     0.3     1.2     2.3     4.8
+b[(Intercept) Kindlemma:Franzose]                 0.2     1.8    -3.4    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Frau]                     0.3     1.7    -2.8    -0.8     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Fremde]                   0.5     1.7    -2.6    -0.6     0.4     1.6     4.2
+b[(Intercept) Kindlemma:Fresko]                   0.2     1.8    -3.2    -0.9     0.2     1.3     4.1
+b[(Intercept) Kindlemma:Freund]                   0.2     1.8    -3.1    -1.0     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Frucht]                   0.5     1.6    -2.4    -0.5     0.4     1.5     3.9
+b[(Intercept) Kindlemma:Fundament]                0.1     1.8    -3.2    -1.0     0.0     1.3     3.9
+b[(Intercept) Kindlemma:Funktion]                 0.1     1.9    -3.7    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Ganove]                   0.1     1.9    -3.6    -1.0     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Gans]                     0.7     1.6    -2.2    -0.3     0.5     1.6     4.2
+b[(Intercept) Kindlemma:Gartenhaus]               0.1     1.8    -3.5    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Gast]                     0.2     1.8    -3.3    -0.9     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Gebäude]                  0.6     1.6    -2.2    -0.4     0.5     1.5     4.1
+b[(Intercept) Kindlemma:Gebiet]                   0.1     1.7    -3.3    -1.0     0.1     1.1     3.3
+b[(Intercept) Kindlemma:Gedanke]                  0.2     1.8    -3.2    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Gedicht]                  0.1     1.9    -3.6    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Gegenstand]               0.0     1.9    -3.8    -1.1     0.0     1.2     3.9
+b[(Intercept) Kindlemma:Gegner]                   0.4     1.7    -2.8    -0.7     0.3     1.3     3.8
+b[(Intercept) Kindlemma:Geist]                    0.3     1.8    -3.0    -0.8     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Gelenk]                   0.1     1.8    -3.3    -1.0     0.1     1.1     4.2
+b[(Intercept) Kindlemma:Gemeinde]                 0.1     1.9    -3.6    -1.0     0.1     1.2     4.3
+b[(Intercept) Kindlemma:Gemeinschaft]             0.2     1.9    -3.4    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Genauigkeit]              0.4     1.8    -2.9    -0.7     0.3     1.4     4.4
+b[(Intercept) Kindlemma:Genosse]                  0.0     1.9    -3.5    -1.2     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Gerät]                    0.4     1.7    -2.7    -0.8     0.3     1.4     4.0
+b[(Intercept) Kindlemma:Gericht]                  0.0     2.0    -3.8    -1.2     0.0     1.3     3.9
+b[(Intercept) Kindlemma:Geschäft]                 0.1     1.8    -3.3    -0.9     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Geschirrtuch]             0.3     1.8    -3.1    -0.9     0.2     1.4     4.1
+b[(Intercept) Kindlemma:Geselle]                  0.2     1.9    -3.3    -1.0     0.1     1.4     4.2
+b[(Intercept) Kindlemma:Gesetz]                   0.1     1.9    -3.5    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Gesicht]                  0.2     1.8    -3.1    -0.9     0.1     1.3     4.3
+b[(Intercept) Kindlemma:Gesinnung]                0.1     1.9    -3.6    -1.1     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Gespräch]                 0.4     1.8    -3.0    -0.8     0.2     1.4     4.3
+b[(Intercept) Kindlemma:Gewalttat]                0.1     1.9    -3.7    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Gewebe]                   0.2     1.8    -3.2    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Gewinn]                   0.1     1.8    -3.4    -1.1     0.0     1.1     3.7
+b[(Intercept) Kindlemma:Giftzahn]                 0.3     1.7    -3.0    -0.8     0.2     1.4     3.8
+b[(Intercept) Kindlemma:Gläubiger]                0.3     1.6    -2.8    -0.7     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Golfspieler]              0.1     1.8    -3.3    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Grab]                     0.1     1.8    -3.5    -1.0     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Gras]                     0.2     1.8    -3.2    -1.0     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Grausamkeit]              0.3     1.7    -3.2    -0.8     0.2     1.2     4.0
+b[(Intercept) Kindlemma:Grundschule]              0.1     1.9    -3.5    -1.0     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Gut]                      0.7     1.6    -2.1    -0.3     0.6     1.6     4.1
+b[(Intercept) Kindlemma:Handbuch]                 0.1     1.8    -3.3    -0.9     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Handlung]                 0.3     1.7    -3.0    -0.8     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Handwerker]               0.5     1.6    -2.4    -0.5     0.4     1.4     4.3
+b[(Intercept) Kindlemma:Haus]                     0.0     2.0    -4.1    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Heft]                     0.1     1.9    -3.5    -1.1     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Heimchen]                 0.1     1.7    -3.1    -0.9     0.1     1.1     3.7
+b[(Intercept) Kindlemma:Helferin]                 0.0     1.9    -3.8    -1.1     0.0     1.1     4.1
+b[(Intercept) Kindlemma:Herausforderung]          0.2     1.8    -3.0    -0.9     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Herr]                     0.3     1.8    -3.0    -0.9     0.2     1.4     4.1
+b[(Intercept) Kindlemma:Hersteller]               0.1     1.9    -3.5    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Herz]                     0.2     1.8    -3.4    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Hilfsmittel]              0.0     1.8    -3.5    -1.1     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Hindernis]                0.3     1.7    -2.8    -0.8     0.2     1.3     4.1
+b[(Intercept) Kindlemma:Hirte]                    0.2     1.7    -3.2    -0.8     0.2     1.2     3.9
+b[(Intercept) Kindlemma:Hochkultur]               0.5     1.7    -2.6    -0.7     0.4     1.5     4.2
+b[(Intercept) Kindlemma:Höhepunkt]                0.3     1.8    -3.1    -0.8     0.2     1.3     4.4
+b[(Intercept) Kindlemma:Hormon]                   0.1     1.8    -3.5    -1.0     0.0     1.1     3.7
+b[(Intercept) Kindlemma:Hotel]                    0.0     1.9    -3.9    -1.2     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Hügel]                    0.0     1.9    -3.5    -1.1     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Huhn]                     0.4     1.6    -2.5    -0.6     0.3     1.4     3.9
+b[(Intercept) Kindlemma:Hund]                     0.1     1.8    -3.3    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Idee]                     0.1     1.8    -3.5    -1.1     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Indianer]                 0.5     1.7    -2.6    -0.5     0.4     1.4     4.0
+b[(Intercept) Kindlemma:Indikator]                0.3     1.7    -2.9    -0.9     0.2     1.4     4.0
+b[(Intercept) Kindlemma:Industrieunternehmen]     0.2     1.9    -3.4    -1.0     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Infanterist]              0.4     1.7    -2.7    -0.8     0.3     1.5     4.0
+b[(Intercept) Kindlemma:Info]                     0.2     1.8    -3.4    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Inhalt]                   0.0     1.9    -3.7    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Inhaltsstoff]             0.0     1.9    -4.0    -1.2     0.0     1.2     3.9
+b[(Intercept) Kindlemma:Initiative]               0.7     1.7    -2.1    -0.4     0.6     1.7     4.4
+b[(Intercept) Kindlemma:Insekt]                   0.2     1.7    -3.0    -0.9     0.2     1.2     3.8
+b[(Intercept) Kindlemma:Insel]                    0.1     1.9    -3.4    -1.1     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Instrument]               0.7     1.6    -2.2    -0.4     0.6     1.6     4.2
+b[(Intercept) Kindlemma:Inszenierung]             0.2     1.8    -3.5    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Intervention]             0.2     1.8    -3.2    -0.9     0.2     1.3     3.8
+b[(Intercept) Kindlemma:Jacke]                    0.1     1.8    -3.3    -1.1     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Jäger]                    0.1     1.8    -3.5    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Journalist]               0.1     1.8    -3.4    -1.1     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Jude]                     0.2     1.7    -2.9    -0.8     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Junge]                    0.4     1.8    -3.1    -0.7     0.3     1.4     4.4
+b[(Intercept) Kindlemma:Kabinett]                 0.1     1.8    -3.6    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Käfer]                    0.3     1.7    -2.9    -0.8     0.2     1.4     4.1
+b[(Intercept) Kindlemma:Kämpfer]                  0.2     1.8    -3.3    -0.9     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Kandidat]                 0.0     1.9    -3.7    -1.1     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Katholik]                 0.1     1.8    -3.4    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Kennzeichen]              0.3     1.8    -3.1    -0.8     0.3     1.3     4.2
+b[(Intercept) Kindlemma:Kerze]                    0.2     1.8    -3.5    -0.9     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Kicker]                   0.2     1.8    -3.2    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Kies]                     0.0     1.9    -3.9    -1.1     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Kinderfilm]               0.2     1.8    -3.0    -0.9     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Kirche]                   0.1     1.8    -3.3    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Klang]                    0.1     1.8    -3.4    -0.9     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Klecks]                   0.1     1.8    -3.6    -1.0     0.1     1.1     3.9
+b[(Intercept) Kindlemma:Kleidungsstück]           0.2     1.8    -3.3    -0.9     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Klinik]                   0.3     1.8    -3.3    -0.8     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Kneipe]                   0.1     1.9    -3.6    -1.1     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Knochen]                  0.0     1.9    -4.0    -1.1     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Kochwäsche]               0.1     1.8    -3.3    -0.9     0.1     1.1     3.8
+b[(Intercept) Kindlemma:Koffer]                   0.1     1.8    -3.6    -1.0     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Kommentar]                0.1     1.9    -3.7    -1.1     0.1     1.1     3.9
+b[(Intercept) Kindlemma:Kommunikationsmittel]     0.2     1.8    -3.3    -0.9     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Komponente]               0.0     1.9    -3.8    -1.2     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Kopf]                     0.2     1.8    -3.3    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Kraft]                    0.1     1.8    -3.5    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Kraftfahrzeug]            0.1     1.9    -3.8    -1.1     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Kram]                     0.5     1.7    -2.7    -0.6     0.5     1.4     4.2
+b[(Intercept) Kindlemma:Kreatur]                  0.1     1.9    -3.5    -1.0     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Kredit]                   0.1     1.9    -3.6    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Kreuz]                    0.0     1.9    -3.8    -1.1     0.0     1.3     3.9
+b[(Intercept) Kindlemma:Krieger]                  0.2     1.8    -3.3    -0.9     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Kriegsveteran]            0.2     1.8    -3.1    -0.8     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Kugel]                    0.1     1.9    -3.8    -1.0     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Kultur]                   0.0     1.8    -3.5    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Kunde]                    0.2     1.8    -3.2    -0.9     0.2     1.2     4.1
+b[(Intercept) Kindlemma:Künstler]                 0.1     1.9    -3.5    -1.1     0.2     1.2     4.1
+b[(Intercept) Kindlemma:Kunstwerk]                0.1     1.9    -3.5    -1.1     0.1     1.2     4.3
+b[(Intercept) Kindlemma:Lagerstätte]              0.3     1.8    -2.9    -0.8     0.3     1.4     4.1
+b[(Intercept) Kindlemma:Lebensmittel]             0.2     1.8    -3.1    -0.9     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Leberwurst]               0.1     1.9    -3.4    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Lebewesen]                0.2     1.8    -3.2    -0.8     0.2     1.2     4.2
+b[(Intercept) Kindlemma:Lehrer]                   0.3     1.7    -2.8    -0.8     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Lehrgang]                 0.2     1.9    -3.4    -1.1     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Leib]                     0.2     1.7    -3.2    -0.9     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Leistung]                 0.1     1.9    -3.5    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Leute]                    2.2     1.3     0.2     1.3     2.0     2.9     5.3
+b[(Intercept) Kindlemma:Licht]                    0.8     1.7    -2.2    -0.3     0.7     1.8     4.7
+b[(Intercept) Kindlemma:Lied]                     0.1     1.8    -3.4    -1.0     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Lieferant]                0.0     2.0    -4.1    -1.2     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Link]                     0.8     1.6    -1.9    -0.2     0.7     1.7     4.4
+b[(Intercept) Kindlemma:Lungenentzündung]         0.0     1.9    -3.7    -1.1     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Mädchen]                  0.5     1.6    -2.5    -0.6     0.4     1.5     4.0
+b[(Intercept) Kindlemma:Mädel]                    0.2     1.9    -3.5    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Mahlzeit]                 0.0     1.9    -3.8    -1.1     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Mail]                     0.6     1.7    -2.4    -0.6     0.5     1.6     4.2
+b[(Intercept) Kindlemma:Manager]                  0.2     1.9    -3.5    -0.9     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Mann]                     0.5     1.6    -2.3    -0.5     0.4     1.4     4.0
+b[(Intercept) Kindlemma:Männchen]                 0.1     1.9    -3.6    -1.1     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Manuskript]               0.1     1.9    -3.6    -1.1     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Marke]                    0.1     1.8    -3.6    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Maschine]                 0.3     1.8    -3.1    -0.8     0.2     1.3     4.1
+b[(Intercept) Kindlemma:Material]                 0.1     2.0    -3.9    -1.1     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Materie]                  0.1     1.8    -3.3    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Medikament]               0.2     1.7    -2.9    -1.0     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Medium]                   0.0     1.9    -3.8    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Mensch]                   0.9     1.5    -1.7    -0.2     0.7     1.7     4.4
+b[(Intercept) Kindlemma:Mikroorganismus]          0.0     1.8    -3.5    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Militär]                  0.4     1.6    -2.5    -0.6     0.3     1.4     3.9
+b[(Intercept) Kindlemma:Miliz]                    0.1     1.9    -3.5    -1.0     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Minderheit]               0.1     1.9    -3.6    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Mineralstoff]             0.2     1.7    -3.2    -0.9     0.2     1.2     3.6
+b[(Intercept) Kindlemma:Mitarbeiter]              1.1     1.5    -1.4     0.1     1.0     2.0     4.6
+b[(Intercept) Kindlemma:Mitbewohner]              0.1     1.7    -3.0    -1.1     0.0     1.2     3.7
+b[(Intercept) Kindlemma:Mitesser]                 0.2     1.9    -3.3    -1.0     0.2     1.4     4.1
+b[(Intercept) Kindlemma:Mitglied]                 0.1     1.9    -3.6    -1.1     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Mittel]                   0.0     1.9    -4.0    -1.2     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Möglichkeit]              0.6     1.6    -2.2    -0.5     0.5     1.5     4.1
+b[(Intercept) Kindlemma:Monster]                  0.7     1.5    -2.0    -0.3     0.6     1.6     4.1
+b[(Intercept) Kindlemma:Motiv]                    0.1     1.8    -3.3    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Museum]                   0.9     1.6    -1.9    -0.1     0.8     1.9     4.2
+b[(Intercept) Kindlemma:Musiker]                  1.0     1.5    -1.5    -0.1     0.8     1.9     4.7
+b[(Intercept) Kindlemma:Musikerin]                0.1     1.8    -3.5    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Muskel]                   0.6     1.6    -2.3    -0.5     0.4     1.6     4.2
+b[(Intercept) Kindlemma:Nadel]                    0.2     1.8    -3.1    -1.0     0.1     1.4     4.1
+b[(Intercept) Kindlemma:Nation]                   0.2     1.8    -3.2    -0.9     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Neuzugang]                0.1     1.8    -3.4    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Nominierung]              0.2     1.8    -3.2    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Nörgler]                  0.1     1.9    -3.9    -1.0     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Nuance]                   0.7     1.6    -2.2    -0.4     0.6     1.7     4.3
+b[(Intercept) Kindlemma:Objekt]                   0.2     1.8    -3.3    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Offizier]                 0.3     1.8    -3.2    -0.8     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Öl]                       0.3     1.8    -3.2    -0.8     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Opfer]                    0.1     1.9    -3.8    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Orange]                   0.4     1.8    -3.0    -0.7     0.3     1.5     4.0
+b[(Intercept) Kindlemma:Orchidee]                 0.1     1.9    -3.6    -1.0     0.0     1.1     4.1
+b[(Intercept) Kindlemma:Organisation]             0.2     1.9    -3.5    -1.0     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Österreicher]             0.1     1.9    -3.6    -1.0     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Paar]                     0.3     1.7    -3.1    -0.8     0.3     1.4     4.0
+b[(Intercept) Kindlemma:Paket]                    0.2     1.8    -3.3    -1.0     0.1     1.3     3.7
+b[(Intercept) Kindlemma:Panne]                    0.2     1.8    -3.3    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Panzer]                   0.2     1.9    -3.3    -1.0     0.1     1.2     4.4
+b[(Intercept) Kindlemma:Papagei]                  0.3     1.8    -3.1    -0.8     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Patient]                  0.3     1.8    -3.1    -0.8     0.2     1.4     4.0
+b[(Intercept) Kindlemma:Patientin]                0.0     1.9    -3.5    -1.1     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Penis]                    0.2     1.8    -3.4    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Person]                   0.3     1.7    -2.9    -0.8     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Perspektive]              0.1     1.9    -3.8    -1.0     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Pfefferkorn]              0.5     1.7    -2.7    -0.7     0.3     1.6     4.0
+b[(Intercept) Kindlemma:Pflanzengesellschaft]     0.2     1.8    -3.2    -1.0     0.1     1.4     4.1
+b[(Intercept) Kindlemma:Pille]                    0.1     1.9    -3.4    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Planet]                   0.1     1.9    -3.3    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Platte]                   0.2     1.8    -3.4    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Platz]                    0.0     1.9    -3.8    -1.2     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Pointe]                   0.1     1.9    -3.7    -1.1     0.0     1.2     3.9
+b[(Intercept) Kindlemma:Polohemd]                 0.3     1.8    -3.3    -0.9     0.2     1.4     4.2
+b[(Intercept) Kindlemma:Position]                 0.1     1.8    -3.5    -1.0     0.2     1.2     3.8
+b[(Intercept) Kindlemma:Problem]                  1.2     1.6    -1.5     0.1     1.0     2.0     4.8
+b[(Intercept) Kindlemma:Produkt]                  0.0     1.9    -3.8    -1.2     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Produzent]                0.2     1.8    -3.3    -0.9     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Projekt]                  0.0     1.9    -3.7    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Provider]                 0.2     1.9    -3.6    -1.0     0.1     1.3     4.3
+b[(Intercept) Kindlemma:Prügelknabe]              0.1     1.8    -3.4    -1.1     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Pub]                      0.1     1.7    -3.2    -1.0     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Publikation]              0.1     1.8    -3.6    -1.0     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Quelle]                   0.1     1.8    -3.4    -1.1     0.0     1.2     3.8
+b[(Intercept) Kindlemma:Radfahrer]                0.6     1.6    -2.4    -0.5     0.4     1.6     4.1
+b[(Intercept) Kindlemma:Randalierer]              0.5     1.8    -2.8    -0.7     0.3     1.5     4.1
+b[(Intercept) Kindlemma:Rang]                     0.2     1.9    -3.6    -1.0     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Raubtier]                 0.0     1.9    -3.8    -1.1     0.0     1.2     3.7
+b[(Intercept) Kindlemma:Receiver]                 0.1     1.8    -3.4    -1.1     0.0     1.2     3.9
+b[(Intercept) Kindlemma:Regenwald]                0.1     1.9    -3.4    -1.1     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Region]                   0.1     1.8    -3.6    -1.1     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Register]                 0.2     1.9    -3.3    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Reiter]                   0.4     1.8    -3.0    -0.7     0.3     1.3     4.2
+b[(Intercept) Kindlemma:Reiz]                     0.2     1.8    -3.4    -1.0     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Rekrut]                   0.3     1.8    -2.9    -0.8     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Reporter]                 0.2     1.8    -3.2    -0.9     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Resultat]                 0.1     1.8    -3.5    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Rettungsschwimmer]        0.3     1.7    -2.8    -0.8     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Rezept]                   0.2     1.8    -3.3    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Rüde]                     0.2     1.9    -3.4    -1.0     0.1     1.3     4.4
+b[(Intercept) Kindlemma:Sache]                    0.6     1.6    -2.3    -0.5     0.5     1.6     4.1
+b[(Intercept) Kindlemma:Sachverhalt]              0.2     1.8    -3.2    -0.9     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Sahne]                    0.1     1.9    -3.5    -1.1     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Sammlung]                 0.0     1.9    -3.6    -1.3     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Satz]                     0.3     1.7    -3.0    -0.8     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Schauspieler]             0.7     1.6    -2.0    -0.3     0.6     1.6     4.4
+b[(Intercept) Kindlemma:Schausteller]             0.6     1.6    -2.3    -0.5     0.4     1.5     4.2
+b[(Intercept) Kindlemma:Schein]                   0.3     1.7    -2.9    -0.9     0.2     1.3     3.8
+b[(Intercept) Kindlemma:Schicht]                  0.1     1.8    -3.5    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Schiff]                   0.0     1.9    -3.9    -1.0     0.0     1.1     3.9
+b[(Intercept) Kindlemma:Schimpanse]               0.4     1.7    -2.7    -0.7     0.3     1.4     4.4
+b[(Intercept) Kindlemma:Schlafplatz]              0.1     1.8    -3.4    -1.0     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Schlagzeile]              0.9     1.7    -2.0    -0.2     0.7     1.8     4.9
+b[(Intercept) Kindlemma:Schnecke]                 0.1     1.8    -3.3    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Schönheit]                0.0     1.9    -3.9    -1.1     0.0     1.1     4.1
+b[(Intercept) Kindlemma:Schuld]                   0.6     1.6    -2.1    -0.4     0.5     1.5     4.1
+b[(Intercept) Kindlemma:Schule]                   0.0     1.9    -3.8    -1.2     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Schüler]                  0.4     1.7    -2.6    -0.6     0.3     1.5     4.1
+b[(Intercept) Kindlemma:Schwaden]                 0.1     1.8    -3.4    -1.1     0.0     1.2     3.7
+b[(Intercept) Kindlemma:Schwarzarbeiter]          0.3     1.8    -3.1    -0.9     0.2     1.4     4.0
+b[(Intercept) Kindlemma:Schwester]                0.2     1.8    -3.3    -0.9     0.1     1.2     4.1
+b[(Intercept) Kindlemma:Seeleute]                 0.2     1.8    -3.4    -0.9     0.2     1.3     4.1
+b[(Intercept) Kindlemma:Sehenswürdigkeit]         0.3     1.8    -2.9    -0.8     0.3     1.4     4.2
+b[(Intercept) Kindlemma:Seite]                    0.7     1.7    -2.2    -0.4     0.5     1.7     4.3
+b[(Intercept) Kindlemma:Semmel]                   0.6     1.6    -2.3    -0.5     0.4     1.5     4.0
+b[(Intercept) Kindlemma:Siedlung]                 0.2     1.9    -3.2    -1.0     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Silbe]                    0.1     1.8    -3.5    -1.0     0.0     1.2     3.6
+b[(Intercept) Kindlemma:Skinhead]                 0.4     1.8    -3.1    -0.8     0.3     1.4     4.3
+b[(Intercept) Kindlemma:Sklave]                   0.1     1.8    -3.2    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Soldat]                   0.6     1.6    -2.4    -0.5     0.5     1.6     4.1
+b[(Intercept) Kindlemma:Söldner]                  0.2     1.8    -3.3    -0.8     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Song]                     0.1     1.9    -3.5    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Sorte]                    0.0     1.8    -3.8    -1.1     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Sound]                    0.2     1.9    -3.3    -1.0     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Spiel]                    1.0     1.5    -1.5    -0.1     0.8     1.9     4.6
+b[(Intercept) Kindlemma:Spieler]                  0.2     1.8    -3.2    -0.9     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Spielzeug]                0.2     1.8    -3.3    -1.0     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Splitter]                 0.2     1.8    -3.3    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Sportart]                 0.3     1.7    -2.8    -0.8     0.3     1.3     3.8
+b[(Intercept) Kindlemma:Sprache]                  0.2     1.8    -3.1    -0.9     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Sprechblase]              0.2     1.9    -3.3    -1.0     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Spruch]                   0.1     1.9    -3.8    -1.1     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Stadt]                    0.1     1.7    -3.2    -0.9     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Standard]                 0.4     1.6    -2.4    -0.7     0.3     1.5     3.8
+b[(Intercept) Kindlemma:Steigerung]               0.1     1.9    -3.7    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Stein]                    0.3     1.6    -2.6    -0.7     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Stern]                    0.2     1.8    -3.3    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Stil]                     0.1     1.9    -3.6    -1.2     0.0     1.3     3.8
+b[(Intercept) Kindlemma:Stimmzettel]              0.3     1.8    -3.0    -0.9     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Strategie]                0.2     1.7    -3.1    -0.9     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Student]                  0.7     1.7    -2.3    -0.4     0.5     1.6     4.4
+b[(Intercept) Kindlemma:Studentin]                0.4     1.6    -2.6    -0.7     0.3     1.3     4.0
+b[(Intercept) Kindlemma:System]                   0.0     1.9    -3.8    -1.1     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Tapete]                   0.3     1.7    -3.0    -0.9     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Tat]                      0.0     1.9    -3.9    -1.0     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Technik]                  0.5     1.7    -2.6    -0.6     0.4     1.4     4.5
+b[(Intercept) Kindlemma:Technologie]              0.1     1.8    -3.5    -1.0     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Teilchen]                 0.0     2.0    -3.9    -1.1     0.0     1.1     4.4
+b[(Intercept) Kindlemma:Teilgebiet]               0.1     1.8    -3.4    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Teilnehmer]               0.1     1.8    -3.3    -0.9     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Termin]                   1.0     1.6    -1.8    -0.1     0.9     1.9     4.5
+b[(Intercept) Kindlemma:Terrorist]                0.5     1.7    -2.6    -0.6     0.4     1.5     4.2
+b[(Intercept) Kindlemma:Thema]                    0.1     1.8    -3.6    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Tier]                     0.0     1.9    -3.8    -1.1     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Titel]                    0.1     1.9    -3.3    -1.0     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Todesfall]                0.0     1.9    -3.9    -1.2     0.0     1.2     3.9
+b[(Intercept) Kindlemma:Tool]                     0.8     1.7    -2.0    -0.3     0.6     1.8     4.5
+b[(Intercept) Kindlemma:Traktat]                  0.1     1.9    -3.8    -1.1     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Trick]                    0.2     1.9    -3.3    -1.0     0.0     1.2     4.2
+b[(Intercept) Kindlemma:Tropfen]                  0.1     1.8    -3.7    -1.1     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Ultra]                    0.1     1.8    -3.3    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Ungar]                    0.1     1.8    -3.5    -1.1     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Unterkunft]               0.1     1.9    -3.7    -1.1     0.0     1.2     4.0
+b[(Intercept) Kindlemma:Untermieter]              0.1     1.9    -3.5    -1.1     0.0     1.3     3.9
+b[(Intercept) Kindlemma:Unterstellung]            0.1     1.9    -3.5    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:User]                     0.2     1.8    -3.3    -0.9     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Vampir]                   0.4     1.8    -2.8    -0.8     0.2     1.4     4.2
+b[(Intercept) Kindlemma:Vasall]                   0.1     1.8    -3.6    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Verein]                   0.3     1.7    -3.0    -0.9     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Verfärbung]               0.2     1.7    -3.2    -0.9     0.1     1.3     3.8
+b[(Intercept) Kindlemma:Verhaltensweise]          0.1     1.8    -3.3    -1.0     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Verlag]                   0.1     1.8    -3.5    -1.1     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Verrücktheit]             0.2     1.8    -3.1    -1.0     0.1     1.3     4.1
+b[(Intercept) Kindlemma:Verweis]                  0.0     1.8    -3.7    -1.1     0.0     1.1     3.5
+b[(Intercept) Kindlemma:Visitenkarte]             0.0     2.0    -3.9    -1.1     0.0     1.1     4.0
+b[(Intercept) Kindlemma:Vitamin]                  0.3     1.7    -2.9    -0.8     0.2     1.3     3.9
+b[(Intercept) Kindlemma:Vogel]                    0.2     1.7    -3.0    -0.8     0.2     1.2     3.7
+b[(Intercept) Kindlemma:Vogelart]                 0.0     2.0    -4.0    -1.1     0.0     1.1     4.2
+b[(Intercept) Kindlemma:Voraussage]               0.3     1.8    -3.0    -0.9     0.2     1.3     4.0
+b[(Intercept) Kindlemma:Währung]                  0.2     1.9    -3.5    -1.0     0.1     1.3     4.0
+b[(Intercept) Kindlemma:Waldameise]               0.0     1.8    -3.7    -1.1     0.0     1.0     3.8
+b[(Intercept) Kindlemma:Wanderer]                 0.1     1.8    -3.6    -1.1     0.1     1.3     3.8
+b[(Intercept) Kindlemma:Wandersleute]             0.1     1.8    -3.4    -1.0     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Ware]                     0.1     1.9    -3.6    -1.1     0.0     1.2     4.2
+b[(Intercept) Kindlemma:Wasserbombe]              0.1     1.8    -3.4    -1.0     0.2     1.2     3.9
+b[(Intercept) Kindlemma:Weg]                      0.4     1.6    -2.6    -0.6     0.3     1.4     3.9
+b[(Intercept) Kindlemma:Wein]                     0.4     1.8    -2.9    -0.8     0.3     1.4     4.4
+b[(Intercept) Kindlemma:Werk]                     0.1     1.9    -3.5    -1.1     0.0     1.2     3.9
+b[(Intercept) Kindlemma:Werkzeug]                 0.1     1.9    -3.7    -1.0     0.1     1.2     4.2
+b[(Intercept) Kindlemma:Wert]                     0.1     2.0    -3.7    -1.1     0.1     1.2     4.3
+b[(Intercept) Kindlemma:Wesen]                    0.2     1.7    -3.0    -0.9     0.1     1.2     3.9
+b[(Intercept) Kindlemma:Widerspruch]              0.2     1.8    -3.2    -0.9     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Wohnsitz]                 0.0     1.9    -3.8    -1.1     0.0     1.1     4.1
+b[(Intercept) Kindlemma:Wort]                     0.3     1.7    -2.9    -0.8     0.3     1.4     4.0
+b[(Intercept) Kindlemma:Wurf]                     0.1     1.9    -3.5    -1.1     0.0     1.2     4.1
+b[(Intercept) Kindlemma:Zahl]                     0.1     1.9    -3.5    -1.0     0.1     1.3     4.2
+b[(Intercept) Kindlemma:Zahnarzt]                 0.1     1.8    -3.4    -1.0     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Zeit]                     0.2     1.8    -3.4    -1.0     0.1     1.3     3.9
+b[(Intercept) Kindlemma:Zelle]                    0.3     1.7    -3.0    -0.9     0.2     1.4     3.8
+b[(Intercept) Kindlemma:Zeremonie]                0.3     1.8    -3.1    -0.9     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Zettel]                   0.3     1.7    -2.9    -0.7     0.2     1.3     4.2
+b[(Intercept) Kindlemma:Zeuge]                    0.1     1.8    -3.5    -1.1     0.1     1.2     3.7
+b[(Intercept) Kindlemma:Zeugnis]                  0.1     1.9    -3.6    -1.0     0.1     1.1     4.0
+b[(Intercept) Kindlemma:Ziel]                     0.0     1.9    -3.7    -1.0     0.0     1.1     3.8
+b[(Intercept) Kindlemma:Zigeuner]                 0.1     1.8    -3.3    -0.9     0.1     1.1     3.9
+b[(Intercept) Kindlemma:Zivilist]                 0.1     1.8    -3.4    -1.0     0.1     1.2     3.8
+b[(Intercept) Kindlemma:Zug]                      0.1     1.8    -3.5    -1.1     0.1     1.2     4.0
+b[(Intercept) Kindlemma:Zuschauer]                0.4     1.6    -2.6    -0.7     0.3     1.3     3.8
+b[(Intercept) Kindlemma:Zuschrift]                0.3     1.9    -3.2    -0.9     0.2     1.3     4.1
+mean_PPD                                          0.9     0.0     0.9     0.9     0.9     0.9     0.9
+log-posterior                                  -959.7    25.6 -1009.4  -976.7  -959.9  -942.4  -908.4
+
+Diagnostics:
+                                              mcse Rhat n_eff
+(Intercept)                                   0.1  1.0   467 
+Attraction                                    0.0  1.0   323 
+Measurefreq                                   0.0  1.0   799 
+Measurelength                                 0.0  1.0   757 
+MeasuregenderFem                              0.0  1.0  1043 
+MeasuregenderMasc                             0.0  1.0  1057 
+b[(Intercept) Kindlemma:Anbieterin]           0.1  1.0   429 
+b[(Intercept) Kindlemma:Anforderung]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Anteil]               0.1  1.0   460 
+b[(Intercept) Kindlemma:Argument]             0.0  1.0  1198 
+b[(Intercept) Kindlemma:Backstein]            0.1  1.0   507 
+b[(Intercept) Kindlemma:Blüte]                0.1  1.0   493 
+b[(Intercept) Kindlemma:Ei]                   0.1  1.0   502 
+b[(Intercept) Kindlemma:Erinnerung]           0.1  1.0   405 
+b[(Intercept) Kindlemma:Fell]                 0.1  1.0   482 
+b[(Intercept) Kindlemma:Gabe]                 0.1  1.0   268 
+b[(Intercept) Kindlemma:Gesellschaftsspiel]   0.0  1.0  2000 
+b[(Intercept) Kindlemma:Grund]                0.1  1.0   554 
+b[(Intercept) Kindlemma:Gummibärchen]         0.1  1.0   391 
+b[(Intercept) Kindlemma:Himbeere]             0.1  1.0   496 
+b[(Intercept) Kindlemma:Kartoffel]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Komödie]              0.1  1.0   527 
+b[(Intercept) Kindlemma:Made]                 0.1  1.0   460 
+b[(Intercept) Kindlemma:Mandel]               0.1  1.0   665 
+b[(Intercept) Kindlemma:Mine]                 0.1  1.0   454 
+b[(Intercept) Kindlemma:Miniatur]             0.1  1.0   400 
+b[(Intercept) Kindlemma:Minister]             0.1  1.0   410 
+b[(Intercept) Kindlemma:Moped]                0.1  1.0   545 
+b[(Intercept) Kindlemma:Photo]                0.1  1.0   805 
+b[(Intercept) Kindlemma:Punkt]                0.1  1.0   727 
+b[(Intercept) Kindlemma:Risiko]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Rosine]               0.1  1.0   593 
+b[(Intercept) Kindlemma:Schaf]                0.1  1.0   746 
+b[(Intercept) Kindlemma:Scheibe]              0.1  1.0   394 
+b[(Intercept) Kindlemma:Signal]               0.1  1.0   662 
+b[(Intercept) Kindlemma:Sonnenblumenkern]     0.1  1.0   447 
+b[(Intercept) Kindlemma:Spitze]               0.1  1.0   691 
+b[(Intercept) Kindlemma:Stehplatz]            0.1  1.0   628 
+b[(Intercept) Kindlemma:Strom]                0.1  1.0   443 
+b[(Intercept) Kindlemma:Substanz]             0.1  1.0   409 
+b[(Intercept) Kindlemma:Trikot]               0.1  1.0   442 
+b[(Intercept) Kindlemma:Verbot]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wurzel]               0.1  1.0   438 
+b[(Intercept) Kindlemma:Zigarette]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zöllner]              0.1  1.0   448 
+b[(Intercept) Kindlemma:Änderung]             0.1  1.0   595 
+b[(Intercept) Kindlemma:Bohne]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Detail]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Getränk]              0.1  1.0   381 
+b[(Intercept) Kindlemma:Gurke]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kraut]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Land]                 0.1  1.0   766 
+b[(Intercept) Kindlemma:Neuigkeit]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Pirat]                0.1  1.0   532 
+b[(Intercept) Kindlemma:Preis]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Stück]                0.1  1.0   487 
+b[(Intercept) Kindlemma:Teil]                 0.1  1.0   533 
+b[(Intercept) Kindlemma:Tourist]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Veranstaltung]        0.0  1.0  2000 
+b[(Intercept) Kindlemma:Waffe]                0.0  1.0   915 
+b[(Intercept) Kindlemma:Nudel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Screenshot]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ding]                 0.0  1.0   860 
+b[(Intercept) Kindlemma:Fisch]                0.1  1.0   589 
+b[(Intercept) Kindlemma:Text]                 0.1  1.0   401 
+b[(Intercept) Kindlemma:Kind]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Information]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bild]                 0.0  1.0   631 
+b[(Intercept) Kindlemma:Abbildung]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Abenteuer]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Abiturient]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Abmessung]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Abstecher]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Affe]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Affenmensch]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Agentur]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Aktfotografie]        0.0  1.0  2000 
+b[(Intercept) Kindlemma:Aktiengesellschaft]   0.0  1.0  2000 
+b[(Intercept) Kindlemma:Amazone]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Analphabet]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Anfänger]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Angabe]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Angebot]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Anhänger]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Anruf]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Anschlag]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Apparatur]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Arbeiter]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Arbeitsplatz]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Arie]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Arschloch]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Art]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Artikel]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Arzneimittel]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Assoziation]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ast]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Athlet]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Atom]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Attacke]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Aufführung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Aufgabe]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Auftritt]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ausflugsziel]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ausgabe]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ausländer]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Aussage]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Auswirkung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Autor]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Autorin]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bank]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Banknote]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Batterie]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bau]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bauarbeiter]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bauer]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bauhandwerker]        0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bauteil]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bauwerk]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Begegnung]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Begriff]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Behauptung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Behausung]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Beispiel]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Beitrag]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bengel]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Beobachtung]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Berg]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Berufskollege]        0.0  1.0  2000 
+b[(Intercept) Kindlemma:Besucher]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bewohner]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bewohnerin]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Biene]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bier]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bierbauch]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Biskuit]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Blech]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Block]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Blog]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Blogger]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Blume]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bonbon]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bote]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Brennelement]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Brötchen]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Brummbär]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Buch]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Bürger]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Chance]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Charakter]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Chip]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Chor]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Christ]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Clown]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dackel]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dame]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Damm]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Datum]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Depp]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Design]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Designer]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dienstleistung]       0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dienstwaffe]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dinosaurier]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dokument]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Dorfbewohner]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ebene]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Effekt]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ehrengast]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Eindruck]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Einrichtung]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Einstellung]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Einwohner]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Einzelheit]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Eisen]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Eiskristall]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Elektron]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Elektronik]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Elfe]                 0.0  1.0  1971 
+b[(Intercept) Kindlemma:Emotion]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Empfehlung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Engel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Engländer]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Entdeckung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Entscheidung]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ereignis]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Erfahrung]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Erfolg]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Erkenntnis]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Erkrankung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Erlebnis]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Erweiterung]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Esel]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Essay]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Event]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Exemplar]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Exkursion]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Experte]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Exponat]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fabrikat]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fachbegriff]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fachkraft]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fahrer]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Faktum]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fall]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fan]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Farbe]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fassung]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Faulenzer]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Feature]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fehler]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Feind]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Figur]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Film]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Firma]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Flasche]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Flecken]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Flüchtling]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Flug]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Folge]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fördermittel]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Forderung]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Foto]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Frage]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Franzose]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Frau]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fremde]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fresko]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Freund]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Frucht]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Fundament]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Funktion]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ganove]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gans]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gartenhaus]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gast]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gebäude]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gebiet]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gedanke]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gedicht]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gegenstand]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gegner]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Geist]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gelenk]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gemeinde]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gemeinschaft]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Genauigkeit]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Genosse]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gerät]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gericht]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Geschäft]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Geschirrtuch]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Geselle]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gesetz]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gesicht]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gesinnung]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gespräch]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gewalttat]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gewebe]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gewinn]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Giftzahn]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gläubiger]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Golfspieler]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Grab]                 0.0  1.0  1995 
+b[(Intercept) Kindlemma:Gras]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Grausamkeit]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Grundschule]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Gut]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Handbuch]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Handlung]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Handwerker]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Haus]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Heft]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Heimchen]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Helferin]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Herausforderung]      0.0  1.0  2000 
+b[(Intercept) Kindlemma:Herr]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hersteller]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Herz]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hilfsmittel]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hindernis]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hirte]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hochkultur]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Höhepunkt]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hormon]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hotel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hügel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Huhn]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Hund]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Idee]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Indianer]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Indikator]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Industrieunternehmen] 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Infanterist]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Info]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Inhalt]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Inhaltsstoff]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Initiative]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Insekt]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Insel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Instrument]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Inszenierung]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Intervention]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Jacke]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Jäger]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Journalist]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Jude]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Junge]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kabinett]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Käfer]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kämpfer]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kandidat]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Katholik]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kennzeichen]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kerze]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kicker]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kies]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kinderfilm]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kirche]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Klang]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Klecks]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kleidungsstück]       0.0  1.0  2000 
+b[(Intercept) Kindlemma:Klinik]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kneipe]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Knochen]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kochwäsche]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Koffer]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kommentar]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kommunikationsmittel] 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Komponente]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kopf]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kraft]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kraftfahrzeug]        0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kram]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kreatur]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kredit]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kreuz]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Krieger]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kriegsveteran]        0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kugel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kultur]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kunde]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Künstler]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Kunstwerk]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lagerstätte]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lebensmittel]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Leberwurst]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lebewesen]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lehrer]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lehrgang]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Leib]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Leistung]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Leute]                0.0  1.0   963 
+b[(Intercept) Kindlemma:Licht]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lied]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lieferant]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Link]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Lungenentzündung]     0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mädchen]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mädel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mahlzeit]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mail]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Manager]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mann]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Männchen]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Manuskript]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Marke]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Maschine]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Material]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Materie]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Medikament]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Medium]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mensch]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mikroorganismus]      0.0  1.0  2000 
+b[(Intercept) Kindlemma:Militär]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Miliz]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Minderheit]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mineralstoff]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mitarbeiter]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mitbewohner]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mitesser]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mitglied]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Mittel]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Möglichkeit]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Monster]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Motiv]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Museum]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Musiker]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Musikerin]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Muskel]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Nadel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Nation]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Neuzugang]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Nominierung]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Nörgler]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Nuance]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Objekt]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Offizier]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Öl]                   0.0  1.0  2000 
+b[(Intercept) Kindlemma:Opfer]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Orange]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Orchidee]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Organisation]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Österreicher]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Paar]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Paket]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Panne]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Panzer]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Papagei]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Patient]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Patientin]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Penis]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Person]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Perspektive]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Pfefferkorn]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Pflanzengesellschaft] 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Pille]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Planet]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Platte]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Platz]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Pointe]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Polohemd]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Position]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Problem]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Produkt]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Produzent]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Projekt]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Provider]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Prügelknabe]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Pub]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Publikation]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Quelle]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Radfahrer]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Randalierer]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Rang]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Raubtier]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Receiver]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Regenwald]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Region]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Register]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Reiter]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Reiz]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Rekrut]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Reporter]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Resultat]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Rettungsschwimmer]    0.0  1.0  2000 
+b[(Intercept) Kindlemma:Rezept]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Rüde]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sache]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sachverhalt]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sahne]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sammlung]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Satz]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schauspieler]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schausteller]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schein]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schicht]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schiff]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schimpanse]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schlafplatz]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schlagzeile]          0.0  1.0  1151 
+b[(Intercept) Kindlemma:Schnecke]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schönheit]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schuld]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schule]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schüler]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schwaden]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schwarzarbeiter]      0.0  1.0  2000 
+b[(Intercept) Kindlemma:Schwester]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Seeleute]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sehenswürdigkeit]     0.0  1.0  2000 
+b[(Intercept) Kindlemma:Seite]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Semmel]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Siedlung]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Silbe]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Skinhead]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sklave]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Soldat]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Söldner]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Song]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sorte]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sound]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Spiel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Spieler]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Spielzeug]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Splitter]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sportart]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sprache]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Sprechblase]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Spruch]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Stadt]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Standard]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Steigerung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Stein]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Stern]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Stil]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Stimmzettel]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Strategie]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Student]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Studentin]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:System]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Tapete]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Tat]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Technik]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Technologie]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Teilchen]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Teilgebiet]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Teilnehmer]           0.0  1.0  1887 
+b[(Intercept) Kindlemma:Termin]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Terrorist]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Thema]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Tier]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Titel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Todesfall]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Tool]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Traktat]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Trick]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Tropfen]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ultra]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ungar]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Unterkunft]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Untermieter]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Unterstellung]        0.0  1.0  2000 
+b[(Intercept) Kindlemma:User]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Vampir]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Vasall]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Verein]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Verfärbung]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Verhaltensweise]      0.0  1.0  2000 
+b[(Intercept) Kindlemma:Verlag]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Verrücktheit]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Verweis]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Visitenkarte]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Vitamin]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Vogel]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Vogelart]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Voraussage]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Währung]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Waldameise]           0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wanderer]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wandersleute]         0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ware]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wasserbombe]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Weg]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wein]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Werk]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Werkzeug]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wert]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wesen]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Widerspruch]          0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wohnsitz]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wort]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Wurf]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zahl]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zahnarzt]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zeit]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zelle]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zeremonie]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zettel]               0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zeuge]                0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zeugnis]              0.0  1.0  2000 
+b[(Intercept) Kindlemma:Ziel]                 0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zigeuner]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zivilist]             0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zug]                  0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zuschauer]            0.0  1.0  2000 
+b[(Intercept) Kindlemma:Zuschrift]            0.0  1.0  2000 
+mean_PPD                                      0.0  1.0  1863 
+log-posterior                                 1.7  1.0   222 
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
+
+
+Table comparing coefficient estimates across relevant models
+
+                          MNCoef MNCIBootLo MNCIBootHi MNCIBootWidth MNCIBootEx0 MNCIWald MNCoefMcmc MNCIMcmcLo MNCIMcmcHi MNCIMcmcWidth MNCIMcmcEx0 FCoef FCIBootLo FCIBootHi
+Attraction                  0.51       0.26       0.77          0.51           †        †       0.55       0.24       0.88          0.64           †  0.05     -0.23      0.37
+Badness                    -0.21      -0.33      -0.09          0.24           †        †      -0.21      -0.33      -0.09          0.24           † -0.12     -0.29      0.06
+Genitives                  -0.67      -0.79      -0.56          0.22           †        †      -0.68       -0.8      -0.57          0.23           † -0.52     -0.68     -0.35
+KindconsistencyGaseous      <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA>  0.17     -1.33      1.97
+KindconsistencyHard         <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA> -0.12     -1.55      1.61
+KindconsistencyImmaterial   <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA> -0.86     -2.31      1.16
+KindconsistencyLiquid       <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA>  1.03     -0.13      2.52
+KindconsistencyMixed        <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA>  1.15     -0.06      2.73
+KindconsistencyPowder       <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA>  1.33     -0.18      3.12
+KindconsistencySoft         <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA>   0.5     -0.66      2.02
+Kindedible0                 0.63        0.2       1.06          0.86           †        †       0.67       0.12       1.22           1.1           †  1.53      0.91      2.13
+Kindfinalb                   0.4      -0.77       1.89          2.65                            0.26      -1.27       1.83           3.1              <NA>      <NA>      <NA>
+Kindfinald                 -0.49      -1.55       0.81          2.36                           -0.61      -1.87        0.6          2.47              <NA>      <NA>      <NA>
+Kindfinale                  0.19      -0.76       1.44          2.19                            0.14      -0.94       1.26           2.2              <NA>      <NA>      <NA>
+Kindfinalf                 -0.43      -1.46       0.82          2.28                           -0.64      -1.84       0.54          2.38              <NA>      <NA>      <NA>
+Kindfinalg                  1.45       0.47       2.68          2.21           †        †       1.32       0.19       2.41          2.22           †  <NA>      <NA>      <NA>
+Kindfinalh                 -0.76      -2.18       0.77          2.95                           -0.82       -2.3       0.66          2.96              <NA>      <NA>      <NA>
+Kindfinall                  0.38      -0.45        1.5          1.95                            0.27      -0.74       1.22          1.97              <NA>      <NA>      <NA>
+Kindfinalm                  0.79      -0.48       2.05          2.53                            0.65      -0.75       2.02          2.76              <NA>      <NA>      <NA>
+Kindfinaln                  1.14       0.25       2.27          2.02           †        †       1.01       0.02       2.05          2.03           †  <NA>      <NA>      <NA>
+Kindfinalr                  0.14      -0.72       1.31          2.04                            0.11      -0.91       1.13          2.04              <NA>      <NA>      <NA>
+Kindfinals                  0.19      -0.73        1.4          2.13                            0.04      -0.99       1.09          2.08              <NA>      <NA>      <NA>
+Kindfinalt                  0.32      -0.54        1.5          2.04                             0.2      -0.85       1.28          2.12              <NA>      <NA>      <NA>
+Kindfinalz                 -0.08      -1.16       1.24           2.4                               0      -1.24       1.35          2.59              <NA>      <NA>      <NA>
+Kindfreq                    0.22      -0.02       0.47          0.49                            0.21      -0.11       0.52          0.63             -0.03      -0.4      0.28
+KindintNonint               0.18       -0.2       0.55          0.74                            0.27      -0.21       0.76          0.97             -0.28      -0.9      0.32
+Matchlength                 0.55       0.43       0.68          0.25           †        †       0.61       0.48       0.75          0.27           †  0.63      0.42      0.85
+Measureabbreviated0         0.14      -0.43       0.85          1.27                            0.08      -0.59       0.79          1.38              -0.5     -1.42      0.57
+MeasurecaseAcc             -0.02      -0.26       0.23          0.49                           -0.02      -0.27       0.23          0.51              0.17     -0.14      0.51
+MeasurecaseDat              0.63       0.37       0.94          0.57           †        †       0.67       0.38       0.98           0.6           †  <NA>      <NA>      <NA>
+MeasureclassAmount          1.91       0.79      15.81         15.02           †        †       1.43       0.14       2.64           2.5           †  <NA>      <NA>      <NA>
+MeasureclassCapacity         0.9      -0.31      14.83         15.14                            0.25      -0.99       1.47          2.46              <NA>      <NA>      <NA>
+MeasureclassCurrency        0.34       -1.1      14.54         15.64                           -0.12      -1.82       1.42          3.24              <NA>      <NA>      <NA>
+MeasureclassLayer           2.29       1.01      16.26         15.24           †        †        1.7       0.15       3.23          3.08           †  <NA>      <NA>      <NA>
+MeasureclassPortion         2.33       1.22      16.24         15.02           †        †       1.84       0.72       3.05          2.33           †  <NA>      <NA>      <NA>
+MeasureclassRest            1.52       0.03      15.68         15.65           †                0.87      -0.63       2.32          2.96              <NA>      <NA>      <NA>
+MeasureclassSquare         -0.15     -14.94      14.02         28.96                           -0.91      -2.97       0.86          3.83              <NA>      <NA>      <NA>
+MeasureclassVessel          1.55        0.4      15.55         15.16           †                1.04      -0.17       2.25          2.41              <NA>      <NA>      <NA>
+MeasureclassWeight          1.27       0.13      15.12            15           †                0.87      -0.36       2.13          2.49              <NA>      <NA>      <NA>
+Measurefreq                -0.18      -0.34      -0.03          0.31           †        †      -0.19      -0.38          0          0.38              0.05      -0.3      0.38
+MeasuregenderFem            <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA>     0      -0.9       0.9
+MeasuregenderMasc           <NA>       <NA>       <NA>          <NA>        <NA>     <NA>       <NA>       <NA>       <NA>          <NA>        <NA>  0.75     -0.12      1.55
+MeasurenumberSg             -0.8       -1.1      -0.49           0.6           †        †      -0.75      -1.07      -0.43          0.64           † -0.41        -1      0.15
+Minus1posA                  2.46       2.01       2.93          0.92           †        †        2.5       2.05       2.99          0.94           †  2.42      1.66      3.22
+Minus1posD                  1.23       0.77        1.7          0.93           †        †       1.21       0.76       1.66           0.9           †  1.53      0.76      2.28
+Minus1posO                  1.21       0.69       1.72          1.03           †        †       1.32       0.82       1.85          1.03           †  2.34      1.52      3.26
+Minus1posP                  1.56       0.78       2.25          1.47           †        †       1.55       0.82       2.24          1.43           †  5.02      3.28     19.79
+                          FCIBootWidth FCIBootEx0 FCIWald FCoefMcmc FCIMcmcLo FCIMcmcHi FCIMcmcWidth FCIMcmcEx0
+Attraction                         0.6                         0.02     -0.36      0.39         0.75           
+Badness                           0.36                        -0.12     -0.31      0.06         0.37           
+Genitives                         0.34          †       †     -0.55     -0.74     -0.36         0.37          †
+KindconsistencyGaseous             3.3                        -0.18     -1.85       1.4         3.25           
+KindconsistencyHard               3.16                        -0.39     -1.95       1.2         3.15           
+KindconsistencyImmaterial         3.46                        -1.08     -2.79      0.71          3.5           
+KindconsistencyLiquid             2.66                         0.93     -0.39      2.25         2.64           
+KindconsistencyMixed              2.79                          0.9      -0.6      2.31          2.9           
+KindconsistencyPowder              3.3                         1.12     -0.63      2.78         3.41           
+KindconsistencySoft               2.68                         0.27     -0.97      1.53          2.5           
+Kindedible0                       1.22          †       †      1.52      0.64      2.37         1.73          †
+Kindfinalb                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinald                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinale                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinalf                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinalg                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinalh                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinall                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinalm                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinaln                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinalr                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinals                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinalt                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfinalz                        <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Kindfreq                          0.68                         0.03     -0.44       0.5         0.94           
+KindintNonint                     1.22                        -0.17     -0.89      0.63         1.52           
+Matchlength                       0.43          †       †      0.69      0.45      0.95          0.5          †
+Measureabbreviated0               1.99                         -0.5     -1.64      0.61         2.25           
+MeasurecaseAcc                    0.65                          0.2     -0.13      0.55         0.68           
+MeasurecaseDat                    <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassAmount                <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassCapacity              <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassCurrency              <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassLayer                 <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassPortion               <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassRest                  <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassSquare                <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassVessel                <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+MeasureclassWeight                <NA>       <NA>    <NA>      <NA>      <NA>      <NA>         <NA>       <NA>
+Measurefreq                       0.68                         0.08     -0.32      0.51         0.83           
+MeasuregenderFem                   1.8                        -0.07     -1.15      0.98         2.12           
+MeasuregenderMasc                 1.67                         0.74      -0.2      1.68         1.87           
+MeasurenumberSg                   1.15                        -0.39     -0.96      0.16         1.12           
+Minus1posA                        1.56          †       †       2.3      1.51       3.1         1.59          †
+Minus1posD                        1.52          †       †      1.37      0.55      2.18         1.64          †
+Minus1posO                        1.74          †       †      2.26      1.38      3.16         1.78          †
+Minus1posP                       16.52          †       †      4.71      2.94      6.78         3.84          †
