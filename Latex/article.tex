@@ -6,20 +6,14 @@
 \usepackage[small]{dgruyter}
 \usepackage{microtype}
 \usepackage{enumerate}
+\usepackage{bm}
 
 \newcommand{\wrt}{w.\,r.\,t.\ }
 \newcommand{\Wrt}{W.\,r.\,t.\ }
-
 \newcommand{\eg}{e.\,g.,}
 \newcommand{\Eg}{E.\,g.,}
-
 \newcommand{\ie}{i.\,e.,}
 \newcommand{\Ie}{I.\,e.,}
-
-\newcommand{\CxMdn}{\ensuremath{\mathsf{Ms_{[DN]}}}}
-\newcommand{\CxMn}{\ensuremath{\mathsf{Ms_{[N]}}}}
-\newcommand{\CxMan}{\ensuremath{\mathsf{Ms_{[AN]}}}}
-
 \newcommand{\Sub}[1]{\ensuremath{\mathrm{_{#1}}}}
 \newcommand{\Sup}[1]{\ensuremath{\mathrm{^{#1}}}}
 \newcommand{\Subsf}[1]{\ensuremath{\mathsf{_{#1}}}}
@@ -254,7 +248,7 @@ This concludes the descriptive overview of the alternation.
 \subsection{Analyses of the constructions}
 
 As stated in Section~\ref{sec:cogocl}, I consider it essential not to disregard generalisations discovered in descriptive, generative or formal frameworks, even if the accompanying formulations do not fit into probabilistic settings.
-This section therefore reviews some existing analyses of the OGC-NAC alternation or related issues, including generative approaches.
+This section therefore reviews some existing analyses of the PGC-NAC alternation or related issues, including generative approaches.
 
 % Grammaticalisation (Brems, Rutkowski)
 % Syntactic structure: headedness (Galmann>Löbel, Eschenbach p. 213, Vos: DPC/DCC), difference to English (Brems)
@@ -437,6 +431,23 @@ Finally, I summarise and interpret the results of the corpus study in Section~\r
 
 In this section, I apply standard Maximum Likelihood methods for estimating the parameters of a multilevel model.
 As suggested in Section~\ref{ssec:corpusnonhierarchicalmodel}, hierarchical models are better suited than non-hierarchical models given that we can expect lemma-specific effects, and that the respective factors have a high number of levels.
+
+
+
+\begin{equation}
+  \begin{split}
+    Pr(y_i=1)       & = logit^{-1}(\pmb{\beta}\mathbf{X_i} + \alpha^{\text{measurelemma}}_{j_i} + \alpha^{\text{kindlemma}}_{k_i}) \\
+    \text{where}\ \ & \mathbf{X_i}\ \text{is a vector of values for Badness, Genitives, } \\
+                    & \text{Matchlength, Measureabbreviated, Measurecase,} \\
+                    & \text{Measeurenumber, Minus1pos for}\ i \\
+    \text{and}\ \   & \pmb{\beta}\ \text{a corresponding coefficient vector} \\
+    \text{and}\ \   & \alpha^{\text{measurelemma}}_{j_i}\sim\mathcal{N}(\mu_j,\sigma_1) \\
+    \text{and}\ \   & \alpha^{\text{kindlemma}}_{k_i}\sim\mathcal{N}(\mu_k,\sigma_2) \\
+    \text{with}\ \  & \mu_1 \\
+  \end{split}
+  \label{eq:model:mnglmm}
+\end{equation}
+
 
 \begin{figure}[h]
 \centering
