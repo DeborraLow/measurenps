@@ -222,7 +222,7 @@ They are typical measure nouns like \textit{Gramm} `gram', \textit{Pfund} `pound
 A non-inflected variant \textit{zwei Glas roter Wein} `two glasses of wine' and an inflected variant \textit{zwei Gläser roter Wein} co-exist.
 The non-inflected variant denotes the quantity of wine fitting into two glasses, the inflected variant denotes two glasses filled with wine.}
 I treat these cases like any other measure noun because they enter into both the NAC as in (\ref{ex:uninflectedmeasures:a}) and the PGC as in (\ref{ex:uninflectedmeasures:b}).
-The statistical models presented in Section~\ref{sec:corpusmodels} will, however, show whether they (or other highly grammaticalised measure nouns) favor the NAC or the PGC through the estimation of lemma-specific random intercepts.
+See also Section~\ref{sec:analyses}.
 
 \begin{exe}
   \ex\label{ex:uninflectedmeasures}
@@ -274,7 +274,7 @@ This concludes the descriptive overview of the alternation.
 
 This section reviews some existing analyses of the PGC-NAC alternation or related issues.
 I do \textit{not} review any of the semantics literature on partitives vs.\ pseudo-partitives because the constructions of interest here are all semantically pseudo-partitives, and thus none of the variance in the choice of the PGC and NAC can be expected to be explained by a discussion along these lines.
-The same is mostly true for the work on the grammaticalisation paths leading to the formation of pseudo-partitives (\eg\ \citealp{Brems2003,DeclerckBrems2016,Koptjevskaja2001,Rutkowski2007}).
+The same is mostly true for the work on the grammaticalisation of pseudo-partitives and measure noun constructions (\eg\ \citealp{Brems2003,DeclerckBrems2016,Koptjevskaja2001,Rutkowski2007}).
 It is often assumed that pseudo-partitives arise as a form of grammaticalised partitives (\eg\ \citealp[536--539]{Koptjevskaja2001} for Finnish and Estonian, \citealp[559]{Koptjevskaja2001} for European languages per se).%
 \footnote{Notice that the description of German in \cite[547--549]{Koptjevskaja2001} (mostly referring \citealp{Eschenbach1993}) is partly incorrect, maybe because her main source \cite{Eschenbach1993} is not as clear as it could be (see also Footnote \ref{fn:eschenbash} above).
 Her example (29b) from \cite[71]{Eschenbach1993}, repeated here verbatim as (\ref{ex:koptjewskaja}) is misclassified as a clear case of a dative on the measure noun and a genitive on the kind noun.
@@ -288,16 +288,22 @@ Her example (29b) from \cite[71]{Eschenbach1993}, repeated here verbatim as (\re
 It could, however, equally well be a genitive on the measure noun because of the syncretisms discussed here on p.\ \ref{page:femininesyncretism} and an ambiguity of the preposition \textit{troz}.
 Then, she does not clearly distinguish acceptable from non-acceptable constructions (cf.\ Section \ref{sec:descriptive}) on her pp.\ 548 and 549, including a rather confusing \textit{???} rating of her (31b), which is clearly a non-acceptable construction of the type illustrated in (\ref{ex:analyticalpartitive:b}) above.
 }
+Since the alternating constructions are both clearly pseudo-partitives and not in any way partitives, this diachronic development (now completed) is not expected to have any effect on the alternation.
+More pertinent are approaches like \cite{Brems2003,DeclerckBrems2016}.
+In English -- \cite{Brems2003} argues based on a view from \cite{Langacker1991} -- strongly lexicalised and thus semantically bleached measure nouns become quantifiers instead of nouns, leading to a reanalysis of the NP wherein the kind noun becomes the head.
+This is supported by convincing syntactic evidence, for example subject-verb agreement.
+In German MNPs, the measure noun remains the head, however (see immediately below), and I know of no strong hypotheses stating that the degree of grammaticalisation of the measure noun influences the alternation in any way.
+The statistical models presented in Section~\ref{sec:corpusmodels} could in principle show, however, whether they (or other highly grammaticalised measure nouns) favor the NAC or the PGC through the estimation of lemma-specific random intercepts.
 
+A major interest in generatively oriented linguistics (and formal semantics) is to determine the syntactic structure of the constructions in question.
+In the case at hand, the question
 
 % Syntactic structure: headedness (Galmann>Löbel, Eschenbach p. 213, Vos: DPC/DCC), difference to English (Brems)
 % Syntactic structure: adjectives-as-determiners and layers in NP, role assignment to nouns in PGC/NAC
 %     Gallmann>Bhatt1990 DP[gen] vs NP[agree]
+%     Mention problem of no case assigner for NAC, so sub-syntactic process or theta theory wrong
 % Influencing factors: Hentschel, Zimmer
 % Squeeze in Anttila & Fong
-
-A major interest in generatively oriented linguistics (and formal semantics) is to determine the syntactic structure of the constructions in question.
-In the case at hand, the question
 
 % Final statement: This is about choosing case in a specific configuration, not about choosing one construction from a broader range of constructions expressing quantification/measure. Maybe mention variable/variant and suggest alternation vs. variation as terminology. Mention that there are NO specific hypotheses about socio-linguistic influences and maybe weaker style/register hypotheses MIXED with semantic hypotheses about classes of kind nouns (which leads nicely to next section).
 
@@ -305,6 +311,10 @@ In the case at hand, the question
 
 \subsection{Cognitively oriented corpus linguistics}
 \label{ssec:cocl}
+
+% Mention: Corpus-as-input is OK as a hypothesis but NOT as a research hypothesis
+%  => otherwise any spurious pattern found in corpora (meeting certain criteria)
+%  => is automatically "cognitive"
 
 Following the descriptive introduction to the measure noun phrase alternation in Section~\ref{sec:germanmeasurenps}, this section situates the work presented here within the broader theoretical context of what can be called \textit{cognitively oriented corpus linguistics}.
 
@@ -324,7 +334,7 @@ Assuming the \textit{corpus as input} hypothesis without experimental validation
 % Method:
 % Noble
 
-\subsection{The right statistics}
+\subsection{There are no right statistics!}
 \label{ssec:rightstatistics}
 
 In this section, I briefly motivate the choice of statistical models which I use later in Section~\ref{sec:corpusmodels}.
