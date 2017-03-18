@@ -6,20 +6,20 @@ http://orcid.org/0000-0003-3233-787
 Full results of corpus analysis as produced by R.
 Run 'wrapper.R' for 100% reproducible results!
 
-This run BEGAN at [1] "2017-02-18 15:32:07 UTC"
+This run BEGAN at [1] "2017-03-18 01:39:32 UTC"
 
 
 DONE.
 
  Time statistics:
 
-Total: 5.384464... Loading: 6.942324 
-... Attraction: 20.70821 
-... Exploring: 1.57138 
-... GLMs: 9.855749 
-... GLMMs: 5.200508 
-... MCMC: 8.84085 
+Total: 5.758079... Loading: 7.313338 
+... Attraction: 55.14078 
+... Exploring: 1.609806 
+... GLMs: 9.961668 
+... GLMMs: 5.537378 
+... MCMC: 10.42535 
 
 
 
-This run ENDED at [1] "2017-02-18 20:55:11 UTC"
+This run ENDED at [1] "2017-03-18 07:25:01 UTC"

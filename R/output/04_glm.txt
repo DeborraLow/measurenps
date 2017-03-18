@@ -6,190 +6,191 @@ MASCULINE
 
 Call:
 glm(formula = Genitive ~ 1 + Measurelemma + Genitives + Minus1pos + 
-    Matchlength + Measureabbreviated + Measurelength + Attraction + 
-    Measurenumber + Kindfinal + Kindedible + Badness + Kindconsistency + 
-    Kindorigin + Kindfreq + Measurecase + Kindint + Kindgender, 
-    family = binomial(link = logit), data = mn)
+    Matchlength + Measureabbreviated + Measureattraction + Measurelength + 
+    Kindattraction + Measurenumber + Kindfinal + Kindedible + 
+    Badness + Kindconsistency + Kindorigin + Kindfreq + Measurecase + 
+    Kindint + Kindgender, family = binomial(link = logit), data = mn)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
 -2.3200  -0.4616  -0.2234  -0.0545   3.2405  
 
-Coefficients: (2 not defined because of singularities)
+Coefficients: (3 not defined because of singularities)
                                Estimate Std. Error z value Pr(>|z|)    
-(Intercept)                   -17.64690 6522.63994  -0.003  0.99784    
-MeasurelemmaBeutel             -0.62598 7836.82203   0.000  0.99994    
-MeasurelemmaBlatt               1.23323 7111.56364   0.000  0.99986    
-MeasurelemmaBund               -1.60168 9224.40488   0.000  0.99986    
-MeasurelemmaCent                0.31840 7975.65552   0.000  0.99997    
-MeasurelemmaZentimeter         -0.56884 6578.85405   0.000  0.99993    
-MeasurelemmaMark               -1.88318 7052.22935   0.000  0.99979    
-MeasurelemmaExtraportion       -0.30293 7961.83218   0.000  0.99997    
-MeasurelemmaFleck              -2.27246 9224.40488   0.000  0.99980    
-MeasurelemmaFontäne            -6.18295 9224.40488  -0.001  0.99947    
-MeasurelemmaFranc              -1.57174 9224.40492   0.000  0.99986    
-MeasurelemmaFranke             -2.27658 7465.65588   0.000  0.99976    
-MeasurelemmaFuhre               0.36343 9224.40487   0.000  0.99997    
-MeasurelemmaGroschen           -0.58421 9224.40492   0.000  0.99995    
-MeasurelemmaHektar             -1.10541 6713.24826   0.000  0.99987    
-MeasurelemmaHälmchen            0.30128 9224.40488   0.000  0.99997    
-MeasurelemmaHappen              0.83881 7896.66375   0.000  0.99992    
-MeasurelemmaHäuflein           -1.16965 7959.80335   0.000  0.99988    
-MeasurelemmaKanister           -2.67152 7262.61830   0.000  0.99971    
-MeasurelemmaKante               0.02001 7403.08808   0.000  1.00000    
-MeasurelemmaKarton             -1.17119 9224.40488   0.000  0.99990    
-MeasurelemmaKelle              -1.84346 9224.40488   0.000  0.99984    
-MeasurelemmaKilometer          -0.68410 7147.23043   0.000  0.99992    
-MeasurelemmaKlafter            -2.94906 9224.40488   0.000  0.99974    
-MeasurelemmaKlecks              1.87421 7959.68848   0.000  0.99981    
-MeasurelemmaKorb                1.22096 9224.40488   0.000  0.99989    
-MeasurelemmaKorn               -0.23675 9224.40489   0.000  0.99998    
-MeasurelemmaKugel              -0.81552 7351.60422   0.000  0.99991    
-MeasurelemmaLadung             -3.33220 6711.59641   0.000  0.99960    
-MeasurelemmaLöffel             -0.88050 6673.11133   0.000  0.99989    
-MeasurelemmaMesserspitze       -0.09125 6645.74556   0.000  0.99999    
-MeasurelemmaMolekül            -1.96695 9224.40488   0.000  0.99983    
-MeasurelemmaPäckchen            0.28619 9224.40489   0.000  0.99998    
-MeasurelemmaPackung            -0.75618 6940.72145   0.000  0.99991    
-MeasurelemmaPaket              -1.05616 7835.81710   0.000  0.99989    
-MeasurelemmaQuadratkilometer   -3.60223 7803.52197   0.000  0.99963    
-MeasurelemmaRaummeter          -0.93275 9224.40488   0.000  0.99992    
-MeasurelemmaRiesenportion       0.35341 7948.36089   0.000  0.99996    
-MeasurelemmaScheffel           -1.24861 9224.40488   0.000  0.99989    
-MeasurelemmaScheibchen          0.93712 9224.40489   0.000  0.99992    
-MeasurelemmaScheit             -2.09981 7453.99260   0.000  0.99978    
-MeasurelemmaSechserpack        -3.01948 9224.40490   0.000  0.99974    
-MeasurelemmaTeelöffel          -0.51217 6565.06863   0.000  0.99994    
-MeasurelemmaThermoskanne       -1.71959 7869.79426   0.000  0.99983    
-MeasurelemmaTube                1.69000 7100.07921   0.000  0.99981    
-MeasurelemmaTütchen            -2.60552 7987.11874   0.000  0.99974    
-MeasurelemmaTüte                1.18663 9224.40488   0.000  0.99990    
-MeasurelemmaUnze               -0.84469 7201.36030   0.000  0.99991    
-MeasurelemmaViertelliter       -1.73491 9224.40490   0.000  0.99985    
-MeasurelemmaGramm              14.45265 6522.63989   0.002  0.99823    
-MeasurelemmaEsslöffel          14.14271 6522.63996   0.002  0.99827    
-MeasurelemmaMeter              12.88842 6522.63996   0.002  0.99842    
-MeasurelemmaMillimeter         14.01570 6522.63997   0.002  0.99829    
-MeasurelemmaMilliliter         13.38443 6522.63993   0.002  0.99836    
-MeasurelemmaKilogramm          14.65692 6522.63988   0.002  0.99821    
-MeasurelemmaPortion            14.93594 6522.63990   0.002  0.99817    
-MeasurelemmaQuadratmeter       13.82486 6522.63992   0.002  0.99831    
-MeasurelemmaSchüssel           15.37627 6522.63992   0.002  0.99812    
-MeasurelemmaPrise              15.63542 6522.63992   0.002  0.99809    
-MeasurelemmaSack               15.13042 6522.63997   0.002  0.99815    
-MeasurelemmaLiter              14.48032 6522.63988   0.002  0.99823    
-MeasurelemmaTasse              14.79400 6522.63989   0.002  0.99819    
-MeasurelemmaTeller             16.84214 6522.63997   0.003  0.99794    
-MeasurelemmaDose               15.92266 6522.63993   0.002  0.99805    
-MeasurelemmaMilligramm         15.10008 6522.63993   0.002  0.99815    
-MeasurelemmaHauch              17.02560 6522.63993   0.003  0.99792    
-MeasurelemmaEimer              15.51444 6522.63992   0.002  0.99810    
-MeasurelemmaKiste              14.82577 6522.63998   0.002  0.99819    
-MeasurelemmaStück              15.11202 6522.63988   0.002  0.99815    
-MeasurelemmaTonne              14.47995 6522.63987   0.002  0.99823    
-MeasurelemmaPfund              16.13310 6522.63990   0.002  0.99803    
-MeasurelemmaEuro               13.54142 6522.63996   0.002  0.99834    
-MeasurelemmaStückchen          16.02351 6522.63990   0.002  0.99804    
-MeasurelemmaDollar             12.83562 6522.64005   0.002  0.99843    
-MeasurelemmaGallone            14.04369 6522.64000   0.002  0.99828    
-MeasurelemmaKrug               14.71900 6522.63999   0.002  0.99820    
-MeasurelemmaGläschen           14.18221 6522.63996   0.002  0.99827    
-MeasurelemmaBecher             16.40866 6522.63993   0.003  0.99799    
-MeasurelemmaBrocken            15.79898 6522.64001   0.002  0.99807    
-MeasurelemmaRest               16.23371 6522.63996   0.002  0.99801    
-MeasurelemmaUnmenge            14.33310 6522.63995   0.002  0.99825    
-MeasurelemmaGlas               15.21672 6522.63989   0.002  0.99814    
-MeasurelemmaKubikmeter         14.26858 6522.63989   0.002  0.99825    
-MeasurelemmaHaufe              15.78674 6522.63988   0.002  0.99807    
-MeasurelemmaScheibe            16.72459 6522.63989   0.003  0.99795    
-MeasurelemmaSchuss             15.27230 6522.63997   0.002  0.99813    
-MeasurelemmaMenge              15.39779 6522.63988   0.002  0.99812    
-MeasurelemmaSchicht            15.69256 6522.63988   0.002  0.99808    
-MeasurelemmaBatzen             15.46026 6522.64007   0.002  0.99811    
-MeasurelemmaBerg               15.77030 6522.63996   0.002  0.99807    
-MeasurelemmaBiss               16.96262 6522.64002   0.003  0.99793    
-MeasurelemmaGulden             16.77726 6522.64006   0.003  0.99795    
-MeasurelemmaSchluck            16.21155 6522.63990   0.002  0.99802    
-MeasurelemmaZentner            15.96618 6522.64004   0.002  0.99805    
-MeasurelemmaFlasche            14.94920 6522.63989   0.002  0.99817    
-MeasurelemmaLage               15.95165 6522.63993   0.002  0.99805    
-MeasurelemmaKanne              16.51640 6522.63992   0.003  0.99798    
-MeasurelemmaBüschel            17.03339 6522.63990   0.003  0.99792    
-MeasurelemmaStreifen           16.10462 6522.63991   0.002  0.99803    
-MeasurelemmaHandvoll           16.61357 6522.63990   0.003  0.99797    
-MeasurelemmaBlock              17.03822 6522.64003   0.003  0.99792    
-MeasurelemmaBüchse             17.11214 6522.64004   0.003  0.99791    
-MeasurelemmaBündel             18.50390 6522.63996   0.003  0.99774    
-MeasurelemmaDosis              16.67584 6522.64005   0.003  0.99796    
-MeasurelemmaFläschchen         16.54764 6522.64004   0.003  0.99798    
-MeasurelemmaHektoliter         15.70895 6522.64006   0.002  0.99808    
-MeasurelemmaKännchen           16.59067 6522.64005   0.003  0.99797    
-MeasurelemmaMass               16.62258 6522.64008   0.003  0.99797    
-MeasurelemmaSchoppen           14.10025 6522.64004   0.002  0.99828    
-MeasurelemmaStapel             15.72662 6522.64016   0.002  0.99808    
-MeasurelemmaTopf               16.36540 6522.63996   0.003  0.99800    
-MeasurelemmaTropfen            16.28519 6522.63988   0.002  0.99801    
-MeasurelemmaKlumpen            16.53886 6522.63990   0.003  0.99798    
-MeasurelemmaHäufchen           18.22276 6522.64001   0.003  0.99777    
-MeasurelemmaTaler              18.57318 6522.64008   0.003  0.99773    
-MeasurelemmaTröpfchen          15.93443 6522.64000   0.002  0.99805    
-MeasurelemmaUnsumme            16.20691 6522.64002   0.002  0.99802    
-MeasurelemmaLache              17.72801 6522.63999   0.003  0.99783    
-MeasurelemmaSchwall            18.34269 6522.63999   0.003  0.99776    
-MeasurelemmaFetzen             17.91853 6522.63998   0.003  0.99781    
-MeasurelemmaLaib               20.72298 6522.63997   0.003  0.99747    
-MeasurelemmaBarrel             33.02075 7980.40053   0.004  0.99670    
-MeasurelemmaEinheit            36.56035 9224.40488   0.004  0.99684    
-MeasurelemmaFass               34.40327 7460.60805   0.005  0.99632    
-MeasurelemmaFeinunze           36.38293 9224.40487   0.004  0.99685    
-MeasurelemmaLawine             35.86265 9224.40487   0.004  0.99690    
-MeasurelemmaPfütze             34.19077 9224.40488   0.004  0.99704    
-MeasurelemmaRinnsal            34.87580 7144.90640   0.005  0.99611    
-MeasurelemmaSpritzer           33.96589 9224.40488   0.004  0.99706    
-MeasurelemmaTankfüllung        33.26540 9224.40489   0.004  0.99712    
-MeasurelemmaTässchen           34.71540 7776.74641   0.004  0.99644    
-Genitives                      -0.68435    0.06177 -11.078  < 2e-16 ***
-Minus1posD                      1.09134    0.25384   4.299 1.71e-05 ***
-Minus1posO                      1.30343    0.27985   4.658 3.20e-06 ***
-Minus1posA                      2.47503    0.26270   9.422  < 2e-16 ***
-Minus1posP                      1.81355    0.38749   4.680 2.87e-06 ***
-Matchlength                     0.69236    0.07564   9.154  < 2e-16 ***
-Measureabbreviated0             0.15204    0.51262   0.297  0.76678    
-Measurelength                  -0.17238    0.18395  -0.937  0.34871    
-Attraction                      0.73515    0.14839   4.954 7.26e-07 ***
-MeasurenumberSg                -0.88550    0.18922  -4.680 2.87e-06 ***
-Kindfinalm                      0.28902    0.64395   0.449  0.65356    
-Kindfinalh                     -0.15724    0.73640  -0.214  0.83092    
-Kindfinale                     -0.06048    0.58692  -0.103  0.91792    
-Kindfinalr                      0.16253    0.54145   0.300  0.76405    
-Kindfinalz                      0.54779    0.60946   0.899  0.36875    
-Kindfinals                      0.91796    0.54408   1.687  0.09157 .  
-Kindfinalf                      0.19989    0.56960   0.351  0.72564    
-Kindfinalg                      1.39156    0.54889   2.535  0.01124 *  
-Kindfinald                     -0.03771    0.63448  -0.059  0.95261    
-Kindfinalt                     -0.26462    0.53781  -0.492  0.62270    
-Kindfinall                      0.12547    0.54847   0.229  0.81906    
-Kindfinaln                      1.08811    0.50538   2.153  0.03131 *  
-Kindfinalb                     -0.56499    0.77250  -0.731  0.46455    
-Kindedible0                     0.72945    0.24620   2.963  0.00305 ** 
-Badness                        -0.19526    0.06342  -3.079  0.00208 ** 
-KindconsistencySoft            -1.24615    0.66440  -1.876  0.06071 .  
-KindconsistencyPowder          -0.92321    0.73513  -1.256  0.20917    
-KindconsistencyMixed           -1.73935    0.73957  -2.352  0.01868 *  
-KindconsistencyHard            -0.92177    0.66946  -1.377  0.16854    
-KindconsistencyLiquid          -0.64703    0.65943  -0.981  0.32650    
-KindconsistencyImmaterial      -1.77968    1.05527  -1.686  0.09171 .  
-KindconsistencyGaseous         -2.23873    0.80356  -2.786  0.00534 ** 
-KindoriginManmade              -0.24751    0.29484  -0.839  0.40120    
-KindoriginInapplicable          1.69057    0.53320   3.171  0.00152 ** 
-KindoriginNatural              -0.11815    0.21158  -0.558  0.57656    
+(Intercept)                  -1.765e+01  6.531e+03  -0.003  0.99784    
+MeasurelemmaBeutel           -6.536e-01  7.881e+03   0.000  0.99993    
+MeasurelemmaBlatt             1.460e+00  7.006e+03   0.000  0.99983    
+MeasurelemmaBund             -1.483e+00  8.974e+03   0.000  0.99987    
+MeasurelemmaCent              3.265e-01  7.976e+03   0.000  0.99997    
+MeasurelemmaZentimeter       -5.056e-01  6.584e+03   0.000  0.99994    
+MeasurelemmaMark             -1.666e+00  6.961e+03   0.000  0.99981    
+MeasurelemmaExtraportion      1.543e+00  6.779e+03   0.000  0.99982    
+MeasurelemmaFleck            -2.485e+00  9.770e+03   0.000  0.99980    
+MeasurelemmaFontäne          -7.484e+00  1.412e+04  -0.001  0.99958    
+MeasurelemmaFranc            -1.728e+00  9.619e+03   0.000  0.99986    
+MeasurelemmaFranke           -2.129e+00  7.353e+03   0.000  0.99977    
+MeasurelemmaFuhre             5.427e-01  8.850e+03   0.000  0.99995    
+MeasurelemmaGroschen         -9.087e-01  1.008e+04   0.000  0.99993    
+MeasurelemmaHektar           -1.592e+00  6.839e+03   0.000  0.99981    
+MeasurelemmaHälmchen         -1.046e-01  1.033e+04   0.000  0.99999    
+MeasurelemmaHappen            1.068e+00  7.646e+03   0.000  0.99989    
+MeasurelemmaHäuflein         -7.136e-01  7.476e+03   0.000  0.99992    
+MeasurelemmaKanister         -2.764e+00  7.341e+03   0.000  0.99970    
+MeasurelemmaKante             9.757e-02  7.351e+03   0.000  0.99999    
+MeasurelemmaKarton           -9.584e-01  8.783e+03   0.000  0.99991    
+MeasurelemmaKelle             1.107e+00  6.700e+03   0.000  0.99987    
+MeasurelemmaKilometer        -2.274e-01  6.934e+03   0.000  0.99997    
+MeasurelemmaKlafter          -2.904e+00  9.135e+03   0.000  0.99975    
+MeasurelemmaKlecks            2.020e+00  7.790e+03   0.000  0.99979    
+MeasurelemmaKorb              1.114e+00  9.494e+03   0.000  0.99991    
+MeasurelemmaKorn             -3.882e+00  4.094e+04   0.000  0.99992    
+MeasurelemmaKugel            -6.484e-01  7.240e+03   0.000  0.99993    
+MeasurelemmaLadung           -3.376e+00  6.729e+03  -0.001  0.99960    
+MeasurelemmaLöffel           -9.001e-01  6.685e+03   0.000  0.99989    
+MeasurelemmaMesserspitze      2.675e-02  6.641e+03   0.000  1.00000    
+MeasurelemmaMolekül          -1.291e+00  8.022e+03   0.000  0.99987    
+MeasurelemmaPäckchen          4.183e-01  8.946e+03   0.000  0.99996    
+MeasurelemmaPackung          -7.798e-01  6.960e+03   0.000  0.99991    
+MeasurelemmaPaket            -1.381e+00  8.296e+03   0.000  0.99987    
+MeasurelemmaQuadratkilometer -3.140e+00  7.366e+03   0.000  0.99966    
+MeasurelemmaRaummeter        -3.613e-01  8.170e+03   0.000  0.99996    
+MeasurelemmaRiesenportion    -6.901e-01  1.007e+04   0.000  0.99995    
+MeasurelemmaScheffel         -2.460e+00  1.364e+04   0.000  0.99986    
+MeasurelemmaScheibchen        3.701e+00  6.734e+03   0.001  0.99956    
+MeasurelemmaScheit           -1.100e+00  6.889e+03   0.000  0.99987    
+MeasurelemmaSechserpack      -1.929e+00  7.549e+03   0.000  0.99980    
+MeasurelemmaTeelöffel        -3.592e-01  6.568e+03   0.000  0.99996    
+MeasurelemmaThermoskanne     -1.822e+00  8.012e+03   0.000  0.99982    
+MeasurelemmaTube              2.594e+00  6.772e+03   0.000  0.99969    
+MeasurelemmaTütchen          -3.157e+00  8.924e+03   0.000  0.99972    
+MeasurelemmaTüte              1.145e+00  9.334e+03   0.000  0.99990    
+MeasurelemmaUnze             -1.110e+00  7.405e+03   0.000  0.99988    
+MeasurelemmaViertelliter     -6.618e-01  7.566e+03   0.000  0.99993    
+MeasurelemmaGramm             1.446e+01  6.531e+03   0.002  0.99823    
+MeasurelemmaEsslöffel         1.415e+01  6.531e+03   0.002  0.99827    
+MeasurelemmaMeter             1.289e+01  6.531e+03   0.002  0.99843    
+MeasurelemmaMillimeter        1.402e+01  6.531e+03   0.002  0.99829    
+MeasurelemmaMilliliter        1.339e+01  6.531e+03   0.002  0.99836    
+MeasurelemmaKilogramm         1.466e+01  6.531e+03   0.002  0.99821    
+MeasurelemmaPortion           1.494e+01  6.531e+03   0.002  0.99818    
+MeasurelemmaQuadratmeter      1.383e+01  6.531e+03   0.002  0.99831    
+MeasurelemmaSchüssel          1.538e+01  6.531e+03   0.002  0.99812    
+MeasurelemmaPrise             1.564e+01  6.531e+03   0.002  0.99809    
+MeasurelemmaSack              1.513e+01  6.531e+03   0.002  0.99815    
+MeasurelemmaLiter             1.448e+01  6.531e+03   0.002  0.99823    
+MeasurelemmaTasse             1.480e+01  6.531e+03   0.002  0.99819    
+MeasurelemmaTeller            1.684e+01  6.531e+03   0.003  0.99794    
+MeasurelemmaDose              1.593e+01  6.531e+03   0.002  0.99805    
+MeasurelemmaMilligramm        1.510e+01  6.531e+03   0.002  0.99816    
+MeasurelemmaHauch             1.703e+01  6.531e+03   0.003  0.99792    
+MeasurelemmaEimer             1.552e+01  6.531e+03   0.002  0.99810    
+MeasurelemmaKiste             1.483e+01  6.531e+03   0.002  0.99819    
+MeasurelemmaStück             1.511e+01  6.531e+03   0.002  0.99815    
+MeasurelemmaTonne             1.448e+01  6.531e+03   0.002  0.99823    
+MeasurelemmaPfund             1.614e+01  6.531e+03   0.002  0.99803    
+MeasurelemmaEuro              1.354e+01  6.531e+03   0.002  0.99835    
+MeasurelemmaStückchen         1.603e+01  6.531e+03   0.002  0.99804    
+MeasurelemmaDollar            1.284e+01  6.531e+03   0.002  0.99843    
+MeasurelemmaGallone           1.405e+01  6.531e+03   0.002  0.99828    
+MeasurelemmaKrug              1.472e+01  6.531e+03   0.002  0.99820    
+MeasurelemmaGläschen          1.418e+01  6.531e+03   0.002  0.99827    
+MeasurelemmaBecher            1.641e+01  6.531e+03   0.003  0.99800    
+MeasurelemmaBrocken           1.580e+01  6.531e+03   0.002  0.99807    
+MeasurelemmaRest              1.624e+01  6.531e+03   0.002  0.99802    
+MeasurelemmaUnmenge           1.434e+01  6.531e+03   0.002  0.99825    
+MeasurelemmaGlas              1.522e+01  6.531e+03   0.002  0.99814    
+MeasurelemmaKubikmeter        1.427e+01  6.531e+03   0.002  0.99826    
+MeasurelemmaHaufe             1.579e+01  6.531e+03   0.002  0.99807    
+MeasurelemmaScheibe           1.673e+01  6.531e+03   0.003  0.99796    
+MeasurelemmaSchuss            1.527e+01  6.531e+03   0.002  0.99813    
+MeasurelemmaMenge             1.540e+01  6.531e+03   0.002  0.99812    
+MeasurelemmaSchicht           1.570e+01  6.531e+03   0.002  0.99808    
+MeasurelemmaBatzen            1.546e+01  6.531e+03   0.002  0.99811    
+MeasurelemmaBerg              1.577e+01  6.531e+03   0.002  0.99807    
+MeasurelemmaBiss              1.697e+01  6.531e+03   0.003  0.99793    
+MeasurelemmaGulden            1.678e+01  6.531e+03   0.003  0.99795    
+MeasurelemmaSchluck           1.621e+01  6.531e+03   0.002  0.99802    
+MeasurelemmaZentner           1.597e+01  6.531e+03   0.002  0.99805    
+MeasurelemmaFlasche           1.495e+01  6.531e+03   0.002  0.99817    
+MeasurelemmaLage              1.595e+01  6.531e+03   0.002  0.99805    
+MeasurelemmaKanne             1.652e+01  6.531e+03   0.003  0.99798    
+MeasurelemmaBüschel           1.704e+01  6.531e+03   0.003  0.99792    
+MeasurelemmaStreifen          1.611e+01  6.531e+03   0.002  0.99803    
+MeasurelemmaHandvoll          1.662e+01  6.531e+03   0.003  0.99797    
+MeasurelemmaBlock             1.704e+01  6.531e+03   0.003  0.99792    
+MeasurelemmaBüchse            1.711e+01  6.531e+03   0.003  0.99791    
+MeasurelemmaBündel            1.851e+01  6.531e+03   0.003  0.99774    
+MeasurelemmaDosis             1.668e+01  6.531e+03   0.003  0.99796    
+MeasurelemmaFläschchen        1.655e+01  6.531e+03   0.003  0.99798    
+MeasurelemmaHektoliter        1.571e+01  6.531e+03   0.002  0.99808    
+MeasurelemmaKännchen          1.659e+01  6.531e+03   0.003  0.99797    
+MeasurelemmaMass              1.663e+01  6.531e+03   0.003  0.99797    
+MeasurelemmaSchoppen          1.410e+01  6.531e+03   0.002  0.99828    
+MeasurelemmaStapel            1.573e+01  6.531e+03   0.002  0.99808    
+MeasurelemmaTopf              1.637e+01  6.531e+03   0.003  0.99800    
+MeasurelemmaTropfen           1.629e+01  6.531e+03   0.002  0.99801    
+MeasurelemmaKlumpen           1.654e+01  6.531e+03   0.003  0.99798    
+MeasurelemmaHäufchen          1.823e+01  6.531e+03   0.003  0.99777    
+MeasurelemmaTaler             1.858e+01  6.531e+03   0.003  0.99773    
+MeasurelemmaTröpfchen         1.594e+01  6.531e+03   0.002  0.99805    
+MeasurelemmaUnsumme           1.621e+01  6.531e+03   0.002  0.99802    
+MeasurelemmaLache             1.773e+01  6.531e+03   0.003  0.99783    
+MeasurelemmaSchwall           1.835e+01  6.531e+03   0.003  0.99776    
+MeasurelemmaFetzen            1.792e+01  6.531e+03   0.003  0.99781    
+MeasurelemmaLaib              2.073e+01  6.531e+03   0.003  0.99747    
+MeasurelemmaBarrel            3.302e+01  7.986e+03   0.004  0.99670    
+MeasurelemmaEinheit           3.656e+01  9.233e+03   0.004  0.99684    
+MeasurelemmaFass              3.440e+01  7.466e+03   0.005  0.99632    
+MeasurelemmaFeinunze          3.638e+01  9.226e+03   0.004  0.99685    
+MeasurelemmaLawine            3.586e+01  9.229e+03   0.004  0.99690    
+MeasurelemmaPfütze            3.419e+01  9.227e+03   0.004  0.99704    
+MeasurelemmaRinnsal           3.488e+01  7.152e+03   0.005  0.99611    
+MeasurelemmaSpritzer          3.397e+01  9.224e+03   0.004  0.99706    
+MeasurelemmaTankfüllung       3.327e+01  9.224e+03   0.004  0.99712    
+MeasurelemmaTässchen          3.472e+01  7.781e+03   0.004  0.99644    
+Genitives                    -6.844e-01  6.177e-02 -11.078  < 2e-16 ***
+Minus1posD                    1.091e+00  2.538e-01   4.299 1.71e-05 ***
+Minus1posO                    1.303e+00  2.798e-01   4.658 3.20e-06 ***
+Minus1posA                    2.475e+00  2.627e-01   9.422  < 2e-16 ***
+Minus1posP                    1.814e+00  3.875e-01   4.680 2.87e-06 ***
+Matchlength                   6.924e-01  7.564e-02   9.154  < 2e-16 ***
+Measureabbreviated0           1.520e-01  5.126e-01   0.297  0.76678    
+Measureattraction                    NA         NA      NA       NA    
+Measurelength                -1.724e-01  1.840e-01  -0.937  0.34871    
+Kindattraction                7.351e-01  1.484e-01   4.954 7.26e-07 ***
+MeasurenumberSg              -8.855e-01  1.892e-01  -4.680 2.87e-06 ***
+Kindfinalm                    2.890e-01  6.440e-01   0.449  0.65356    
+Kindfinalh                   -1.572e-01  7.364e-01  -0.214  0.83092    
+Kindfinale                   -6.048e-02  5.869e-01  -0.103  0.91792    
+Kindfinalr                    1.625e-01  5.414e-01   0.300  0.76405    
+Kindfinalz                    5.478e-01  6.095e-01   0.899  0.36875    
+Kindfinals                    9.180e-01  5.441e-01   1.687  0.09157 .  
+Kindfinalf                    1.999e-01  5.696e-01   0.351  0.72564    
+Kindfinalg                    1.392e+00  5.489e-01   2.535  0.01124 *  
+Kindfinald                   -3.771e-02  6.345e-01  -0.059  0.95261    
+Kindfinalt                   -2.646e-01  5.378e-01  -0.492  0.62270    
+Kindfinall                    1.255e-01  5.485e-01   0.229  0.81906    
+Kindfinaln                    1.088e+00  5.054e-01   2.153  0.03131 *  
+Kindfinalb                   -5.650e-01  7.725e-01  -0.731  0.46455    
+Kindedible0                   7.295e-01  2.462e-01   2.963  0.00305 ** 
+Badness                      -1.953e-01  6.342e-02  -3.079  0.00208 ** 
+KindconsistencySoft          -1.246e+00  6.644e-01  -1.876  0.06071 .  
+KindconsistencyPowder        -9.232e-01  7.351e-01  -1.256  0.20917    
+KindconsistencyMixed         -1.739e+00  7.396e-01  -2.352  0.01868 *  
+KindconsistencyHard          -9.218e-01  6.695e-01  -1.377  0.16854    
+KindconsistencyLiquid        -6.470e-01  6.594e-01  -0.981  0.32649    
+KindconsistencyImmaterial    -1.780e+00  1.055e+00  -1.686  0.09171 .  
+KindconsistencyGaseous       -2.239e+00  8.036e-01  -2.786  0.00534 ** 
+KindoriginManmade            -2.475e-01  2.948e-01  -0.839  0.40120    
+KindoriginInapplicable        1.691e+00  5.332e-01   3.171  0.00152 ** 
+KindoriginNatural            -1.182e-01  2.116e-01  -0.558  0.57656    
 KindoriginCultural                   NA         NA      NA       NA    
-KindoriginResidue               0.77919    0.40365   1.930  0.05356 .  
-Kindfreq                        0.06192    0.12808   0.483  0.62880    
-MeasurecaseAcc                 -0.05524    0.13164  -0.420  0.67475    
-MeasurecaseDat                  0.72717    0.15305   4.751 2.02e-06 ***
+KindoriginResidue             7.792e-01  4.037e-01   1.930  0.05356 .  
+Kindfreq                      6.192e-02  1.281e-01   0.483  0.62880    
+MeasurecaseAcc               -5.524e-02  1.316e-01  -0.420  0.67475    
+MeasurecaseDat                7.272e-01  1.530e-01   4.751 2.02e-06 ***
 KindintNonint                        NA         NA      NA       NA    
-KindgenderNeut                 -0.31363    0.19995  -1.569  0.11676    
+KindgenderNeut               -3.136e-01  1.999e-01  -1.569  0.11676    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 

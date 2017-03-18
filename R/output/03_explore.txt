@@ -1,15 +1,15 @@
 Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...MASCULINE
  [1] "Measurelemma"       "Kindlemma"          "Minus1pos"          "Genitives"          "Kindlength"         "Measureclass"       "Matchlength"        "Measureabbreviated"
- [9] "Measurelength"      "Attraction"         "Minus2pos"          "Kindfinal"          "Kindedible"         "Badness"            "Kindconsistency"    "Kindorigin"        
-[17] "Measuregender"      "Kindfreq"           "Measurecase"        "Kindint"            "Measurenumber"      "Kindgender"         "Measurefreq"        "Kindcase"          
-[25] "Originalsort"       "Genitive"           "Casedrop"          
-Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...
+ [9] "Measureattraction"  "Measurelength"      "Kindattraction"     "Minus2pos"          "Kindfinal"          "Kindedible"         "Badness"            "Kindconsistency"   
+[17] "Kindorigin"         "Measuregender"      "Kindfreq"           "Measurecase"        "Kindint"            "Measurenumber"      "Kindgender"         "Measurefreq"       
+[25] "Kindcase"           "Originalsort"       "Genitive"           "Casedrop"          
+Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...
 
 FEMININE
- [1] "Measurelemma"       "Kindlemma"          "Minus1pos"          "Measureclass"       "Measureabbreviated" "Kindconsistency"    "Matchlength"        "Kindfinal"         
- [9] "Genitives"          "Kindedible"         "Kindorigin"         "Measurelength"      "Measuregender"      "Kindint"            "Badness"            "Minus2pos"         
-[17] "Measurenumber"      "Measurefreq"        "Measurecase"        "Kindfreq"           "Attraction"         "Kindlength"         "Kindgender"         "Kindcase"          
-[25] "Originalsort"       "Genitive"           "Casedrop"          
+ [1] "Measurelemma"       "Kindlemma"          "Minus1pos"          "Measureclass"       "Measureabbreviated" "Kindconsistency"    "Matchlength"        "Measureattraction" 
+ [9] "Kindfinal"          "Genitives"          "Kindedible"         "Kindorigin"         "Measurelength"      "Measuregender"      "Kindint"            "Badness"           
+[17] "Minus2pos"          "Measurenumber"      "Measurefreq"        "Measurecase"        "Kindfreq"           "Kindattraction"     "Kindlength"         "Kindgender"        
+[25] "Kindcase"           "Originalsort"       "Genitive"           "Casedrop"          
 Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...Hoppala! Convergence error...
 
 PLURAL
@@ -20,41 +20,38 @@ PLURAL
 
  Comparison of monofactorial effects for regressors.
 
-                       R2 p(LRT) Lambda        R2 p(LRT)  Lambda        R2 p(LRT)   Lambda   
-Measurelemma       0.2569 0.0000 0.1051  1 0.4337 0.0000  0.2831  1 0.4130 0.0000  -0.1367  2
-Kindlemma          0.1916 0.0000 0.0140  2 0.2831 0.0000  0.2310  2 0.8473 1.0000      NaN  1
-Minus1pos          0.1740 0.0000 0.0106  3 0.2792 0.0000  0.2589  3 0.0849 0.0000  -0.7126  4
-Genitives          0.1194 0.0000 0.0070  4 0.1323 0.0000  0.1462  9 0.0842 0.0000 -10.8436  5
-Kindlength         0.1078 0.0000 0.0324  5 0.0011 0.3474  0.0174 22 0.0015 0.4592 -10.8455 15
-Measureclass       0.0947 0.0000 0.0208  6 0.2396 0.0000  0.2284  4     NA     NA       NA NA
-Matchlength        0.0900 0.0000 0.0100  7 0.1367 0.0000  0.0395  7 0.0247 0.0027 -10.8459  9
-Measureabbreviated 0.0787 0.0000 0.0077  8 0.1451 0.0000  0.0055  5     NA     NA       NA 19
-Measurelength      0.0471 0.0000 0.0075  9 0.0997 0.0000 -0.0328 12 0.0180 0.0105 -10.8461 11
-Attraction         0.0459 0.0000 0.0143 10 0.0020 0.1995  0.0184 21 0.1036 0.0000  -1.4612  3
-Minus2pos          0.0384 0.0000 0.0136 11 0.0340 0.0000  0.0007 16 0.0386 0.0028 -10.8386  8
-Kindfinal          0.0373 0.0000 0.0091 12 0.1329 0.0000  0.0043  8 0.0771 0.0999  -5.6952  6
-Kindedible         0.0368 0.0000 0.0154 13 0.1275 0.0000  0.0054 10     NA     NA       NA NA
-Badness            0.0366 0.0000 0.0069 14 0.0535 0.0000  0.0083 15 0.0067 0.1176 -10.8331 14
-Kindconsistency    0.0337 0.0000 0.0202 15 0.1370 0.0000  0.0483  6     NA     NA       NA NA
-Kindorigin         0.0298 0.0000 0.0169 16 0.1139 0.0000  0.0776 11     NA     NA       NA NA
-Measuregender      0.0281 0.0000 0.0107 17 0.0986 0.0000  0.0221 13 0.0010 0.8325 -10.8407 16
-Kindfreq           0.0276 0.0000 0.0213 18 0.0021 0.1893  0.0073 20 0.0082 0.0847 -10.8474 13
-Measurecase        0.0140 0.0000 0.0058 19 0.0051 0.0390  0.0447 19 0.0129 0.0305 -10.8443 12
-Kindint            0.0135 0.0000 0.0111 20 0.0643 0.0000  0.0037 14     NA     NA       NA NA
-Measurenumber      0.0048 0.0007 0.0058 21 0.0290 0.0000  0.0069 17     NA     NA       NA 18
-Kindgender         0.0037 0.0032 0.0054 22     NA     NA      NA 23 0.0399 0.0022 -10.8304  7
-Measurefreq        0.0021 0.0273 0.0199 23 0.0091 0.0061  0.0050 18 0.0243 0.0029 -10.8460 10
+                       R2 p(LRT)  Lambda        R2 p(LRT)  Lambda        R2 p(LRT)   Lambda   
+Measurelemma       0.2569 0.0000 -0.1037  1 0.4337 0.0000     NaN  1 0.4130 0.0000  -0.1382  2
+Kindlemma          0.1916 0.0000  0.0233  2 0.2831 0.0000  0.2323  2 0.8473 1.0000      NaN  1
+Minus1pos          0.1740 0.0000  0.0137  3 0.2792 0.0000  0.2555  3 0.0849 0.0000  -0.7922  4
+Genitives          0.1194 0.0000  0.0162  4 0.1323 0.0000  0.1233 10 0.0842 0.0000 -10.8422  5
+Kindlength         0.1078 0.0000  0.0406  5 0.0011 0.3474  0.0084 23 0.0015 0.4592 -10.8452 15
+Measureclass       0.0947 0.0000  0.0060  6 0.2396 0.0000  0.2229  4     NA     NA       NA NA
+Matchlength        0.0900 0.0000  0.0030  7 0.1367 0.0000  0.0318  7 0.0247 0.0027 -10.8472  9
+Measureabbreviated 0.0787 0.0000  0.0080  8 0.1451 0.0000  0.0122  5     NA     NA       NA 19
+Measureattraction  0.0717 0.0000  0.0092  9 0.1339 0.0000  0.1051  8     NA     NA       NA NA
+Measurelength      0.0471 0.0000  0.0118 10 0.0997 0.0000 -0.0184 13 0.0180 0.0105 -10.8261 11
+Kindattraction     0.0459 0.0000  0.0086 11 0.0020 0.1995  0.0052 22     NA     NA       NA NA
+Minus2pos          0.0384 0.0000  0.0142 12 0.0340 0.0000  0.0187 17 0.0386 0.0028 -10.8402  8
+Kindfinal          0.0373 0.0000  0.0151 13 0.1329 0.0000  0.0180  9 0.0771 0.0999  -2.5390  6
+Kindedible         0.0368 0.0000  0.0199 14 0.1275 0.0000  0.0155 11     NA     NA       NA NA
+Badness            0.0366 0.0000  0.0024 15 0.0535 0.0000  0.0101 16 0.0067 0.1176 -10.8459 14
+Kindconsistency    0.0337 0.0000  0.0136 16 0.1370 0.0000  0.0696  6     NA     NA       NA NA
+Kindorigin         0.0298 0.0000  0.0147 17 0.1139 0.0000  0.0662 12     NA     NA       NA NA
+Measuregender      0.0281 0.0000  0.0072 18 0.0986 0.0000  0.0203 14 0.0010 0.8325 -10.8419 16
+Kindfreq           0.0276 0.0000  0.0065 19 0.0021 0.1893  0.0154 21 0.0082 0.0847 -10.8448 13
+Measurecase        0.0140 0.0000  0.0107 20 0.0051 0.0390  0.0094 20 0.0129 0.0305 -10.8379 12
+Kindint            0.0135 0.0000  0.0100 21 0.0643 0.0000  0.0061 15     NA     NA       NA NA
+Measurenumber      0.0048 0.0007  0.0149 22 0.0290 0.0000  0.0052 18     NA     NA       NA 18
+Kindgender         0.0037 0.0032  0.0289 23     NA     NA      NA 24 0.0399 0.0022 -10.8468  7
+Measurefreq        0.0021 0.0273  0.0202 24 0.0091 0.0061  0.0082 19 0.0243 0.0029 -10.8434 10
 
 
 Rank correlation between regressors ordered by monofactorial GLM.
 
 
 
-Rank correlation (Spearman) MN/F :  0.7565812
-
-Rank correlation (Spearman) PL/F :  0.3896104
-
-Rank correlation (Spearman) PL/F :  0.3896104
+Rank correlation (Spearman) MN/F :  0.7625153
 
  Check for MULTICOLLINEARITY
 
@@ -62,54 +59,58 @@ Rank correlation (Spearman) PL/F :  0.3896104
  == Masc/Neut ==
 Correlations of the variables
 
-                Kindlength    Kindfreq Measurelength Measurefreq Matchlength   Genitives     Badness   Attraction
-Kindlength     1.000000000 -0.16851894   0.007740757  0.07279332  0.43941847 -0.18349084 -0.03809745 -0.033612821
-Kindfreq      -0.168518935  1.00000000   0.059034136 -0.05167287 -0.10325930 -0.04625853 -0.06093930  0.740014016
-Measurelength  0.007740757  0.05903414   1.000000000 -0.44544372  0.57051607 -0.10710998 -0.14577152  0.001284541
-Measurefreq    0.072793322 -0.05167287  -0.445443717  1.00000000 -0.17252454 -0.02791451 -0.04012084 -0.020496223
-Matchlength    0.439418472 -0.10325930   0.570516069 -0.17252454  1.00000000 -0.22545925 -0.11540137 -0.037724368
-Genitives     -0.183490839 -0.04625853  -0.107109981 -0.02791451 -0.22545925  1.00000000  0.14920801 -0.097773580
-Badness       -0.038097451 -0.06093930  -0.145771520 -0.04012084 -0.11540137  0.14920801  1.00000000 -0.038743181
-Attraction    -0.033612821  0.74001402   0.001284541 -0.02049622 -0.03772437 -0.09777358 -0.03874318  1.000000000
+                    Kindlength    Kindfreq Measurelength Measurefreq Matchlength   Genitives     Badness Kindattraction Measureattraction
+Kindlength         1.000000000 -0.16851894   0.007740757  0.07279332  0.43941847 -0.18349084 -0.03809745   -0.033612821       0.007242561
+Kindfreq          -0.168518935  1.00000000   0.059034136 -0.05167287 -0.10325930 -0.04625853 -0.06093930    0.740014016       0.043970516
+Measurelength      0.007740757  0.05903414   1.000000000 -0.44544372  0.57051607 -0.10710998 -0.14577152    0.001284541       0.202522507
+Measurefreq        0.072793322 -0.05167287  -0.445443717  1.00000000 -0.17252454 -0.02791451 -0.04012084   -0.020496223       0.276669282
+Matchlength        0.439418472 -0.10325930   0.570516069 -0.17252454  1.00000000 -0.22545925 -0.11540137   -0.037724368       0.164836887
+Genitives         -0.183490839 -0.04625853  -0.107109981 -0.02791451 -0.22545925  1.00000000  0.14920801   -0.097773580      -0.100099976
+Badness           -0.038097451 -0.06093930  -0.145771520 -0.04012084 -0.11540137  0.14920801  1.00000000   -0.038743181      -0.144923713
+Kindattraction    -0.033612821  0.74001402   0.001284541 -0.02049622 -0.03772437 -0.09777358 -0.03874318    1.000000000      -0.034841632
+Measureattraction  0.007242561  0.04397052   0.202522507  0.27666928  0.16483689 -0.10009998 -0.14492371   -0.034841632       1.000000000
 
 
 Variance inflation factors
 
-                  GVIF
-Kindlength    1.429128
-Kindfreq      2.364730
-Measurelength 2.049043
-Measurefreq   1.284981
-Matchlength   2.129749
-Genitives     1.096915
-Badness       1.056639
-Attraction    2.282449
+                      GVIF
+Kindlength        1.431524
+Kindfreq          2.389617
+Measurelength     2.206212
+Measurefreq       1.541118
+Matchlength       2.133502
+Genitives         1.099374
+Badness           1.061597
+Kindattraction    2.305982
+Measureattraction 1.292784
 
  == Fem ==
 Correlations of the variables
 
-                Kindlength    Kindfreq Measurelength Measurefreq Matchlength    Genitives      Badness   Attraction
-Kindlength     1.000000000 -0.42977671    -0.1922001  0.08059631  0.42313491  0.007000236  0.121288568 -0.137482804
-Kindfreq      -0.429776713  1.00000000     0.2742351 -0.14164562 -0.06535544 -0.028439090 -0.110154089  0.523785373
-Measurelength -0.192200103  0.27423512     1.0000000 -0.43946025  0.49728634 -0.241202685 -0.285880812  0.159639276
-Measurefreq    0.080596314 -0.14164562    -0.4394602  1.00000000 -0.14909957 -0.035703547  0.057225344 -0.090607194
-Matchlength    0.423134907 -0.06535544     0.4972863 -0.14909957  1.00000000 -0.278272352 -0.117599160  0.061702410
-Genitives      0.007000236 -0.02843909    -0.2412027 -0.03570355 -0.27827235  1.000000000  0.135315306 -0.145428677
-Badness        0.121288568 -0.11015409    -0.2858808  0.05722534 -0.11759916  0.135315306  1.000000000 -0.001541781
-Attraction    -0.137482804  0.52378537     0.1596393 -0.09060719  0.06170241 -0.145428677 -0.001541781  1.000000000
+                    Kindlength    Kindfreq Measurelength Measurefreq Matchlength    Genitives      Badness Kindattraction Measureattraction
+Kindlength         1.000000000 -0.42977671    -0.1922001  0.08059631  0.42313491  0.007000236  0.121288568   -0.137482804       -0.09435833
+Kindfreq          -0.429776713  1.00000000     0.2742351 -0.14164562 -0.06535544 -0.028439090 -0.110154089    0.523785373        0.18475855
+Measurelength     -0.192200103  0.27423512     1.0000000 -0.43946025  0.49728634 -0.241202685 -0.285880812    0.159639276        0.28101281
+Measurefreq        0.080596314 -0.14164562    -0.4394602  1.00000000 -0.14909957 -0.035703547  0.057225344   -0.090607194        0.17685032
+Matchlength        0.423134907 -0.06535544     0.4972863 -0.14909957  1.00000000 -0.278272352 -0.117599160    0.061702410        0.14299678
+Genitives          0.007000236 -0.02843909    -0.2412027 -0.03570355 -0.27827235  1.000000000  0.135315306   -0.145428677       -0.16601926
+Badness            0.121288568 -0.11015409    -0.2858808  0.05722534 -0.11759916  0.135315306  1.000000000   -0.001541781       -0.15622640
+Kindattraction    -0.137482804  0.52378537     0.1596393 -0.09060719  0.06170241 -0.145428677 -0.001541781    1.000000000        0.20230564
+Measureattraction -0.094358334  0.18475855     0.2810128  0.17685032  0.14299678 -0.166019263 -0.156226396    0.202305641        1.00000000
 
 
 Variance inflation factors
 
-                  GVIF
-Kindlength    1.888451
-Kindfreq      1.752855
-Measurelength 2.322199
-Measurefreq   1.290868
-Matchlength   2.225938
-Genitives     1.164844
-Badness       1.112590
-Attraction    1.442993
+                      GVIF
+Kindlength        1.888614
+Kindfreq          1.755769
+Measurelength     2.525780
+Measurefreq       1.466142
+Matchlength       2.226848
+Genitives         1.166347
+Badness           1.116955
+Kindattraction    1.470316
+Measureattraction 1.290200
 
  == Pl ==
 Correlations of the variables
