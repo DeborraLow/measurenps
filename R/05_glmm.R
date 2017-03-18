@@ -92,8 +92,9 @@ mn.glmm <- glmer(Genitive~1
                 +Measureclass
                 +Matchlength
                 +Measureabbreviated
+                +Measureattraction
                 #+Measurelength       # virtual non-convergence
-                +Attraction
+                +Kindattraction
                 +Measurenumber
                 +Kindfinal
                 +Kindedible
@@ -111,9 +112,9 @@ mn.glmm <- glmer(Genitive~1
 # Regressors to be used in getting LRT w/ bootstrapped CIs.
 
 mn.bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", "Genitives", "Minus1pos",
-                   "Measureclass", "Matchlength", "Measureabbreviated", "Attraction",
-                   "Measurenumber", "Kindfinal", "Kindedible", "Badness", "Kindfreq",
-                   "Measurecase", "Kindint", "Measurefreq")
+                   "Measureclass", "Matchlength", "Measureabbreviated", "Measureattraction",
+                   "Kindattraction", "Measurenumber", "Kindfinal", "Kindedible",
+                   "Badness", "Kindfreq", "Measurecase", "Kindint", "Measurefreq")
 
 # Get PB test.
 mn.modelcomp <- lmer.modelcomparison(model = mn.glmm, regressors = mn.bootcomp.regs,
@@ -171,6 +172,7 @@ fem.glmm <- glmer(Casedrop~1
                  +Measureabbreviated
                  +Kindconsistency
                  +Matchlength
+                 +Measureattraction
                  #+Kindfinal             # no hypothesis
                  +Genitives
                  +Kindedible
@@ -183,7 +185,7 @@ fem.glmm <- glmer(Casedrop~1
                  +Measurefreq
                  +Measurecase
                  +Kindfreq
-                 +Attraction
+                 +Kindattraction
                  #+Kindlength         # unstable in bootstrap
                  , data=fem, family=binomial(link=logit), nAGQ=the.nAGQ,
                  control=glmerControl(optimizer="nloptwrap2",optCtrl=list(maxfun=2e5)))
@@ -191,7 +193,7 @@ fem.glmm <- glmer(Casedrop~1
 fem.bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", "Minus1pos", "Measureabbreviated", "Kindconsistency",
                       "Matchlength", "Genitives", "Kindedible", "Measuregender", "Measurenumber",
                       "Kindint", "Badness", "Measurefreq", "Measurecase", "Kindfreq",
-                      "Attraction")
+                      "Measureattraction", "Kindattraction")
 # Get PB test.
 fem.modelcomp <- lmer.modelcomparison(model = fem.glmm, regressors = fem.bootcomp.regs,
                      formula.target = "Casedrop~1", nsim = ci.boot.modelcomp.nsim,
@@ -317,87 +319,125 @@ fem.ci.wald <- do.call(confint.merMod, c(opts.ci.wald, list(object = fem.glmm, p
 
 allfacs <- head(rev(c(names(fixef(mn.glmm)), names(fixef(fem.glmm))[!names(fixef(fem.glmm)) %in% names(fixef(mn.glmm))])), -1)
 allfacs <- allfacs[rev(order(allfacs))]
-x.lower <- -2 # min(c(mn.ci[,1], fem.ci[,1]))*1.05
-x.upper <- 4  #max(c(mn.ci[,2], fem.ci[,2]))*1.05
 
-if (save.persistent) pdf(paste(out.dir, "04_glmm_fixef.pdf", sep=""))
+col.fixef <- c("darkgreen", "lightgreen", "darkblue", "lightblue")
+lwd.fixef <- c(3, 2)
+pch.fixef <- c(25, 25, 24, 24)
+cex.fixef <- 1.25
 
-dotchart(rep(-10, length(allfacs)), xlim=c(x.lower, x.upper), lcolor = "gray", 
-         labels = allfacs, cex = 0.7,
-         main="Fixed effects with bootstrapped CI")
-lines(c(0,0), c(0,length(allfacs)+1), col="gray", lty=1)
+# This is a bit of a weird solution because
+#  (a) it grew out of a simpler solution
+#  (b) I should have encapsualted into a function but hadn't
+for (zzz in 1:3) {
 
-for (i in 1:length(allfacs)) {
-
-  # Draw F.
-  if (allfacs[i] %in% names(fixef(fem.glmm))) {
-    if ((fem.ci[allfacs[i],1] < 0 & fem.ci[allfacs[i],2] < 0) | (fem.ci[allfacs[i],1] > 0 & fem.ci[allfacs[i],2] > 0)) {
-      lcol <- "darkgreen"
-      llty <- 1
-      lpch <- 25
-      lcex <- 0.65
-      llwd <- 1.5
-    } else {
-      lcol <- "darkgray"
-      llty <- 1
-      lpch <- 25
-      lcex <- 0.65
-      llwd <- 1
-    }
-    if (fem.ci[allfacs[i],1] < x.lower) {
-      x1 <- x.lower
-      lines(c(x1-0.25, x1), c(i,i)+0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
-    } else {
-      x1 <- fem.ci[allfacs[i],1]
-    }
-    if (fem.ci[allfacs[i],2] > x.upper) {
-      x2 <- x.upper
-      lines(c(x2, x2+0.25), c(i,i)+0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
-    } else {
-      x2 <- fem.ci[allfacs[i],2]
-    }
-    lines(c(x1, x2), c(i,i)+0.25, lty=llty, lwd=llwd, col = lcol)
-    points(fixef(fem.glmm)[allfacs[i]], i+0.25, col = lcol, bg = lcol, pch = lpch, cex = lcex)
-  }  
-  
-  # Draw M/N.
-  if (allfacs[i] %in% names(fixef(mn.glmm))) {
-    if ((mn.ci[allfacs[i],1] < 0 & mn.ci[allfacs[i],2] < 0) | (mn.ci[allfacs[i],1] > 0 & mn.ci[allfacs[i],2] > 0)) {
-      lcol <- "darkblue"
-      llty <- 1
-      lpch <- 24
-      lcex <- 0.65
-      llwd <- 1.5
-    } else {
-      lcol <- "darkgray"
-      llty <- 1
-      lpch <- 24
-      lcex <- 0.65
-      llwd <- 1
-    }
-    if (mn.ci[allfacs[i],1] < x.lower) {
-      x1 <- x.lower
-      lines(c(x1-0.25, x1), c(i,i)-0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
-    } else {
-      x1 <- mn.ci[allfacs[i],1]
-    }
-    if (mn.ci[allfacs[i],2] > x.upper) {
-      x2 <- x.upper
-      lines(c(x2, x2+0.25), c(i,i)-0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
-    } else {
-      x2 <- mn.ci[allfacs[i],2]
-    }
-    lines(c(x1, x2), c(i,i)-0.25, lty=llty, lwd=llwd, col = lcol)
-    points(fixef(mn.glmm)[allfacs[i]], i-0.25, col = lcol, bg = lcol, pch = lpch, cex = lcex)
+  if (zzz == 1) {
+    localfacs <- allfacs[-grep('^(Kind|Measure)', allfacs)]
+    localfacs <- c(localfacs, allfacs[grep('Measurecase|Measurenumber|Measureabbreviated', allfacs)])
+    fnam  <- "04_glmm_fixef_firstlevel.pdf"
+    subtitulum <- "First level regressors"
+    posi <- "topright"
   }
+  else if (zzz == 2) {
+    localfacs <- allfacs[grep('^Measure', allfacs)]
+    localfacs <- localfacs[which(!localfacs %in% allfacs[grep('Measurecase|Measurenumber|Measureabbreviated', allfacs)])]
+    fnam  <- "04_glmm_fixef_secondlevel_measure.pdf"
+    subtitulum <- "Second level regressors for measure lemma"
+    posi <- "bottomright"
+  }
+  else {
+    localfacs <- allfacs[grep('^Kind', allfacs)]
+    fnam  <- "04_glmm_fixef_secondlevel_kind.pdf"
+    subtitulum <- "Second level regressors for kind lemma"
+    posi <- "bottomright"
+  }
+
+  localfacs <- sort(localfacs, decreasing = T)
+  
+  x.lower <- min(c(mn.ci[intersect(localfacs, rownames(mn.ci)),1], fem.ci[intersect(localfacs, rownames(fem.ci)),1]))*1.05
+  x.upper <- max(c(mn.ci[intersect(localfacs, rownames(mn.ci)),2], fem.ci[intersect(localfacs, rownames(fem.ci)),2]))*1.05
+
+  # Clamp for better readability of plot.
+  x.lower <- ifelse(x.lower < -4, -4, x.lower)
+  x.upper <- ifelse(x.upper > 4, 4, x.upper)
+  
+  if (save.persistent) pdf(paste(out.dir, fnam, sep=""))
+  
+  dotchart(rep(-10, length(localfacs)), xlim=c(x.lower, x.upper), lcolor = "gray", 
+           labels = localfacs, cex = 0.7,
+           main=paste("Fixed effects with bootstrapped CI:", subtitulum, sep="\n")
+           )
+  lines(c(0,0), c(0,length(localfacs)+1), col="gray", lty=1)
+  
+  for (i in 1:length(localfacs)) {
+  
+    # Draw F.
+    if (localfacs[i] %in% names(fixef(fem.glmm))) {
+      if ((fem.ci[localfacs[i],1] < 0 & fem.ci[localfacs[i],2] < 0) | (fem.ci[localfacs[i],1] > 0 & fem.ci[localfacs[i],2] > 0)) {
+        lcol <- col.fixef[1]
+        llty <- 1
+        lpch <- pch.fixef[1]
+        lcex <- cex.fixef
+        llwd <- lwd.fixef[1]
+      } else {
+        lcol <- col.fixef[2]
+        llty <- 1
+        lpch <- pch.fixef[2]
+        lcex <- cex.fixef
+        llwd <- lwd.fixef[2]
+      }
+      if (fem.ci[localfacs[i],1] < x.lower) {
+        x1 <- x.lower
+        lines(c(x1-0.25, x1), c(i,i)+0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
+      } else {
+        x1 <- fem.ci[localfacs[i],1]
+      }
+      if (fem.ci[localfacs[i],2] > x.upper) {
+        x2 <- x.upper
+        lines(c(x2, x2+0.25), c(i,i)+0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
+      } else {
+        x2 <- fem.ci[localfacs[i],2]
+      }
+      lines(c(x1, x2), c(i,i)+0.25, lty=llty, lwd=llwd, col = lcol)
+      points(fixef(fem.glmm)[localfacs[i]], i+0.25, col = lcol, bg = lcol, pch = lpch, cex = lcex)
+    }  
+    
+    # Draw M/N.
+    if (localfacs[i] %in% names(fixef(mn.glmm))) {
+      if ((mn.ci[localfacs[i],1] < 0 & mn.ci[localfacs[i],2] < 0) | (mn.ci[localfacs[i],1] > 0 & mn.ci[localfacs[i],2] > 0)) {
+        lcol <- col.fixef[3]
+        llty <- 1
+        lpch <- pch.fixef[3]
+        lcex <- cex.fixef
+        llwd <- lwd.fixef[1]
+      } else {
+        lcol <- col.fixef[4]
+        llty <- 1
+        lpch <- pch.fixef[4]
+        lcex <- cex.fixef
+        llwd <- lwd.fixef[2]
+      }
+      if (mn.ci[localfacs[i],1] < x.lower) {
+        x1 <- x.lower
+        lines(c(x1-0.25, x1), c(i,i)-0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
+      } else {
+        x1 <- mn.ci[localfacs[i],1]
+      }
+      if (mn.ci[localfacs[i],2] > x.upper) {
+        x2 <- x.upper
+        lines(c(x2, x2+0.25), c(i,i)-0.25, lty=3, col=lcol, cex = lcex, lwd = llwd)
+      } else {
+        x2 <- mn.ci[localfacs[i],2]
+      }
+      lines(c(x1, x2), c(i,i)-0.25, lty=llty, lwd=llwd, col = lcol)
+      points(fixef(mn.glmm)[localfacs[i]], i-0.25, col = lcol, bg = lcol, pch = lpch, cex = lcex)
+    }
+  }
+  
+  legend(posi, bg = "white", legend = c("F (0 not in CI)", "F (0 in CI)", "M/N (0 not in CI)", "M/N (0 in CI)"), cex = 0.7,
+         col = col.fixef, pt.bg = col.fixef, lty = 1, lwd = lwd.fixef, pch = pch.fixef, pt.cex = 0.65)
+  
+  if (save.persistent) dev.off()
 }
-
-legend(2.5, 28, bg = "white", legend = c("F (0 not in CI)", "F (0 in CI)", "M/N (0 not in CI)", "M/N (0 in CI)"), cex = 0.7,
-       col = c("darkgreen", "darkgray", "darkblue", "darkgray"), pt.bg = c("darkgreen", "darkgray", "darkblue", "darkgray"),
-       lty = 1, lwd = c(1.5, 1, 1.5, 1), pch = c(25, 25, 24, 24), pt.cex = 0.65)
-
-if (save.persistent) dev.off()
-
 
 # BIG TABLE (MCMC results to be added in next step)
 
@@ -435,8 +475,8 @@ main.dotchart.meas <- "Meas. rand. eff."
 main.dotchart.kind <- "Kind rand. eff."
 
 if (save.persistent) pdf(paste(out.dir, "04_glmm_raneff_mn.pdf", sep=""))
-par(mfrow=c(1,2))
-do.call(ranef.plot, c(list(mn.glmm, mn, "Measurelemma", n.select, main=paste(main.dotchart.meas, "(MN)")), opts.dotchart))
+par(mfrow=c(1,1))
+#do.call(ranef.plot, c(list(mn.glmm, mn, "Measurelemma", n.select, main=paste(main.dotchart.meas, "(MN)")), opts.dotchart))
 do.call(ranef.plot, c(list(mn.glmm, mn, "Kindlemma", n.select, main=paste(main.dotchart.kind, "(MN)")), opts.dotchart))
 par(mfrow=c(1,1))
 if (save.persistent) dev.off()
@@ -457,7 +497,8 @@ fixeff.pl.cex <- 1.5
 
 # M/N
 
-effs.mn <- c("Genitives", "Minus1pos", "Matchlength", "Measurenumber", "Badness", "Measurecase", "Attraction", "Measureclass")
+effs.mn <- c("Genitives", "Minus1pos", "Matchlength", "Measurenumber", "Badness", "Measurecase", "Kindattraction", "Measureattraction", "Measureclass",
+             "Kindedible", "Kindfinal", "Kindfreq", "Kindint", "Measurefreq")
 
 for (eff in effs.mn) {
   fn <- paste("output/04_glmm_fixeff_mn_", eff, ".pdf", sep="")
@@ -469,7 +510,9 @@ for (eff in effs.mn) {
 
 # FEM
 
-effs.fem <- c("Genitives", "Minus1pos", "Matchlength", "Measurenumber", "Attraction")
+effs.fem <- c("Genitives", "Badness", "Measurecase", "Measureabbreviated", "Minus1pos", "Matchlength", "Measurenumber",
+              "Measureattraction", "Kindattraction", "Kindconsistency", "Kindedible", "Kindfreq", "Kindint", "Measurefreq",
+              "Measuregender")
 
 for (eff in effs.fem) {
   print(eff)

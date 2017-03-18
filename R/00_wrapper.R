@@ -101,4 +101,6 @@ if (save.persistent) sink()
 # Save the state after all computations for debugging/ensuring reproducibility.
 save(list = ls(), file=paste(out.dir, "workspace_", end.time, ".RData", sep=""))
 
+# Add-on: Run prediction for experiment stimuli.
+source('11_stimuli_predict.R')
 

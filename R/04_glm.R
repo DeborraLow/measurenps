@@ -12,8 +12,9 @@ mn.glm <- glm(Genitive~1
               #+Measureclass     # prob 0 or 1
               +Matchlength
               +Measureabbreviated
+              +Measureattraction
               +Measurelength
-              +Attraction
+              +Kindattraction
               +Measurenumber
               +Kindfinal
               +Kindedible
@@ -61,6 +62,7 @@ fem.glm <- glm(Casedrop~1
               +Measureabbreviated
               +Kindconsistency
               +Matchlength
+              #+Measureattraction# prob 0 or 1
               #+Kindfinal        # no hypothesis
               +Genitives
               +Kindedible
@@ -74,7 +76,7 @@ fem.glm <- glm(Casedrop~1
               +Measurefreq
               +Measurecase
               +Kindfreq
-              #+Attraction     # prob 0 or 1
+              #+Kindattraction # prob 0 or 1
               #+Kindlength     # unstable in bootstrap
               , data=fem,  family=binomial(link=logit))
 fem.glm.r2 <- NagelkerkeR2(fem.glm)$R2

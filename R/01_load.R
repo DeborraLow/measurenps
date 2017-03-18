@@ -198,6 +198,7 @@ for (fak in fax) {
 
 # Hm, different level ordering looks odd in plot, so make Minus1pos same order.
 mn$Minus1pos <- factor(mn$Minus1pos, levels = c("C", "D", "O", "A", "P"))
+mn$Measureclass <- factor(mn$Measureclass, levels = c("Square", "Length", "Currency", "Capacity", "Weight", "Rest", "Vessel", "Amount", "Layer", "Portion" ))
 fem$Minus1pos <- factor(fem$Minus1pos, levels = c("C", "D", "O", "A", "P"))
 
 

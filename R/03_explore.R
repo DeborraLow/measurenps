@@ -133,32 +133,7 @@ cat("\n\nRank correlation between regressors ordered by monofactorial GLM.\n\n")
 mnf.corr <- cor(order(rownames(mn.explore)[-1]), order(rownames(fem.explore)[-1]), method="sp")
 cat('\n\nRank correlation (Spearman) MN/F : ', mnf.corr)
 
-fem.explore.subs <- fem.explore[rownames(pl.explore),]
-fem.explore.subs <- fem.explore.subs[order(fem.explore.subs[,1], decreasing = T),]
-plf.corr <- cor(order(rownames(pl.explore)[-1]), order(rownames(fem.explore.subs)[-1]), method="sp")
-cat('\n\nRank correlation (Spearman) PL/F : ', plf.corr)
-
-mn.explore.subs <- mn.explore[rownames(pl.explore),]
-mn.explore.subs <- mn.explore.subs[order(mn.explore.subs[,1], decreasing = T),]
-plmn.corr <- cor(order(rownames(pl.explore)), order(rownames(mn.explore.subs)), method="sp")
-cat('\n\nRank correlation (Spearman) PL/F : ', plf.corr)
-
 if (save.persistent) sink()
-
-if (save.persistent) pdf(paste(out.dir, "regressor_monofact_corr.pdf", sep=""))
-
-plot(fem.explore[-1,1]~mn.explore[-1,1], pch=15, col="darkblue", xlim=c(0,0.45), ylim=c(0,0.45), cex=1.5,
-     xlab="R²", ylab="R²", main="Correlation: monofactorial pre-analysis of regressors")
-#abline(lm(fem.explore[-1,1]~mn.explore[-1,1]), col="darkblue", lty=1, lwd=2)
-points(pl.explore[-1,1]~mn.explore.subs[-1,1], pch=16, col="orange", cex=1.5)
-#abline(lm(pl.explore[-1,1]~mn.explore.subs[-1,1]), col="orange", lty=3, lwd=2)
-points(fem.explore.subs[-1,1]~pl.explore[-1,1], pch=17, col="darkgreen", type="p", cex=1.5)
-#abline(lm(fem.explore.subs[-1,1]~pl.explore[-1,1]), col="darkgreen", lty=2, lwd=2)
-#abline(0,1, lwd=2, lty=2)
-legend("bottomright", legend = c("Fem~Masc/Neut", "Pl~Masc/Neut", "Pl~Fem"), col=c("darkblue","orange","darkgreen"), pch=15:17)
-#legend("topleft", legend = c("Fem~Masc/Neut", "Pl~Masc/Neut", "Pl~Fem"), col=c("darkblue","orange","darkgreen"), lty=1:3, pch=15:17)
-
-if (save.persistent) dev.off()
 
 # Check for multicolinearity.
 source("highstat.r")
@@ -168,10 +143,10 @@ if (save.persistent) sink(paste(out.dir, "03_explore.txt", sep=""), append = T)
 cat("\n\n Check for MULTICOLLINEARITY\n\n")
 
 cat("\n == Masc/Neut ==\n")
-corvif(mn[, c("Kindlength", "Kindfreq", "Measurelength", "Measurefreq", "Matchlength", "Genitives", "Badness", "Attraction")])
+corvif(mn[, c("Kindlength", "Kindfreq", "Measurelength", "Measurefreq", "Matchlength", "Genitives", "Badness", "Kindattraction", "Measureattraction")])
 
 cat("\n == Fem ==\n")
-corvif(fem[, c("Kindlength", "Kindfreq", "Measurelength", "Measurefreq", "Matchlength", "Genitives", "Badness", "Attraction")])
+corvif(fem[, c("Kindlength", "Kindfreq", "Measurelength", "Measurefreq", "Matchlength", "Genitives", "Badness", "Kindattraction", "Measureattraction")])
 
 cat("\n == Pl ==\n")
 corvif(pl[, c("Kindlength", "Kindfreq", "Measurelength", "Measurefreq", "Matchlength", "Genitives", "Badness", "Attraction")])

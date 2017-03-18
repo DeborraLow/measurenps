@@ -8,7 +8,7 @@ options(mc.cores = parallel::detectCores())
 
 chains <- 4
 seed   <- 6976
-iter   <- 1000
+iter   <- 1000 # Set to 1000 for production.
 
 # MN
 
@@ -21,8 +21,9 @@ mn.glmm.mcmc <- stan_glmer(Genitive~1
                            +Measureclass
                            +Matchlength
                            +Measureabbreviated
+                           +Measureattraction
                            #+Measurelength       # virtual non-convergence
-                           +Attraction
+                           +Kindattraction
                            +Measurenumber
                            +Kindfinal
                            +Kindedible
@@ -55,6 +56,7 @@ fem.glmm.mcmc <- stan_glmer(Casedrop~1
                             +Measureabbreviated
                             +Kindconsistency
                             +Matchlength
+                            +Measureattraction
                             #+Kindfinal             # no hypothesis
                             +Genitives
                             +Kindedible
@@ -67,7 +69,7 @@ fem.glmm.mcmc <- stan_glmer(Casedrop~1
                             +Measurefreq
                             +Measurecase
                             +Kindfreq
-                            +Attraction
+                            +Kindattraction
                             #+Kindlength         # unstable in bootstrap
                   ,
                   data=fem, family=binomial(link=logit),
