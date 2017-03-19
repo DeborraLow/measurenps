@@ -9,7 +9,7 @@
 # Comment this line if you want to keep your old workspace.
 rm(list = ls())
 
-# Let this point to location of R script sources.
+# Set this to the location of R script sources.
 setwd('~/Massangaben/')
 
 # OPTIONS
@@ -100,7 +100,3 @@ if (save.persistent) sink()
 
 # Save the state after all computations for debugging/ensuring reproducibility.
 save(list = ls(), file=paste(out.dir, "workspace_", end.time, ".RData", sep=""))
-
-# Add-on: Run prediction for experiment stimuli.
-source('11_stimuli_predict.R')
-

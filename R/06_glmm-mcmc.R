@@ -25,7 +25,6 @@ mn.glmm.mcmc <- stan_glmer(Genitive~1
                            #+Measurelength       # virtual non-convergence
                            +Kindattraction
                            +Measurenumber
-                           +Kindfinal
                            +Kindedible
                            +Badness
                            #+Kindconsistency     # virtual non-convergence
@@ -57,12 +56,10 @@ fem.glmm.mcmc <- stan_glmer(Casedrop~1
                             +Kindconsistency
                             +Matchlength
                             +Measureattraction
-                            #+Kindfinal             # no hypothesis
                             +Genitives
                             +Kindedible
                             #+Kindorigin           # fixeff matrix rank deficient
                             #+Measurelength        # unstable in bootstrap
-                            +Measuregender
                             +Measurenumber
                             +Kindint
                             +Badness
@@ -91,7 +88,6 @@ pl.glmm.mcmc <- stan_glmer(Casedrop~1
                            #+Minus1pos           # model unidentifiable
                            +Attraction
                            #+Genitives           # model unidentifiable
-                           #+Kindfinal           # model unidentifiable
                            #+Kindgender          # Hessian singular
                            #+Matchlength         # model unidentifiable
                            +Measurefreq
@@ -101,7 +97,6 @@ pl.glmm.mcmc <- stan_glmer(Casedrop~1
                            #+Badness             # model unidentifiable
                            #+Minus2pos           # model unidentifiable
                            #+Kindlength          # non-convergence
-                           +Measuregender
                            #+Measurenumber       # makes no sense
                            #+Measureabbreviated  # only one level
                  ,

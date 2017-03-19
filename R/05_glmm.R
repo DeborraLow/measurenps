@@ -96,7 +96,6 @@ mn.glmm <- glmer(Genitive~1
                 #+Measurelength       # virtual non-convergence
                 +Kindattraction
                 +Measurenumber
-                +Kindfinal
                 +Kindedible
                 +Badness
                 #+Kindconsistency     # virtual non-convergence
@@ -113,7 +112,7 @@ mn.glmm <- glmer(Genitive~1
 
 mn.bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", "Genitives", "Minus1pos",
                    "Measureclass", "Matchlength", "Measureabbreviated", "Measureattraction",
-                   "Kindattraction", "Measurenumber", "Kindfinal", "Kindedible",
+                   "Kindattraction", "Measurenumber", "Kindedible",
                    "Badness", "Kindfreq", "Measurecase", "Kindint", "Measurefreq")
 
 # Get PB test.
@@ -173,12 +172,10 @@ fem.glmm <- glmer(Casedrop~1
                  +Kindconsistency
                  +Matchlength
                  +Measureattraction
-                 #+Kindfinal             # no hypothesis
                  +Genitives
                  +Kindedible
                  #+Kindorigin           # fixeff matrix rank deficient
                  #+Measurelength        # unstable in bootstrap
-                 +Measuregender
                  +Measurenumber
                  +Kindint
                  +Badness
@@ -191,7 +188,7 @@ fem.glmm <- glmer(Casedrop~1
                  control=glmerControl(optimizer="nloptwrap2",optCtrl=list(maxfun=2e5)))
 
 fem.bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", "Minus1pos", "Measureabbreviated", "Kindconsistency",
-                      "Matchlength", "Genitives", "Kindedible", "Measuregender", "Measurenumber",
+                      "Matchlength", "Genitives", "Kindedible", "Measurenumber",
                       "Kindint", "Badness", "Measurefreq", "Measurecase", "Kindfreq",
                       "Measureattraction", "Kindattraction")
 # Get PB test.
@@ -240,7 +237,6 @@ pl.glmm <- glmer(Casedrop~1
                  #+Minus1pos           # model unidentifiable
                  +Attraction
                  #+Genitives           # model unidentifiable
-                 #+Kindfinal           # model unidentifiable
                  #+Kindgender          # Hessian singular
                  #+Matchlength         # model unidentifiable
                  +Measurefreq
@@ -250,7 +246,6 @@ pl.glmm <- glmer(Casedrop~1
                  #+Badness             # model unidentifiable
                  #+Minus2pos           # model unidentifiable
                  #+Kindlength          # Multicollinearity!
-                 +Measuregender
                  #+Measurenumber       # makes no sense
                  #+Measureabbreviated  # only one level
                  ,
@@ -342,7 +337,7 @@ for (zzz in 1:3) {
     localfacs <- localfacs[which(!localfacs %in% allfacs[grep('Measurecase|Measurenumber|Measureabbreviated', allfacs)])]
     fnam  <- "04_glmm_fixef_secondlevel_measure.pdf"
     subtitulum <- "Second level regressors for measure lemma"
-    posi <- "bottomright"
+    posi <- "topleft"
   }
   else {
     localfacs <- allfacs[grep('^Kind', allfacs)]
@@ -498,7 +493,7 @@ fixeff.pl.cex <- 1.5
 # M/N
 
 effs.mn <- c("Genitives", "Minus1pos", "Matchlength", "Measurenumber", "Badness", "Measurecase", "Kindattraction", "Measureattraction", "Measureclass",
-             "Kindedible", "Kindfinal", "Kindfreq", "Kindint", "Measurefreq")
+             "Kindedible", "Kindfreq", "Kindint", "Measurefreq")
 
 for (eff in effs.mn) {
   fn <- paste("output/04_glmm_fixeff_mn_", eff, ".pdf", sep="")
@@ -511,8 +506,7 @@ for (eff in effs.mn) {
 # FEM
 
 effs.fem <- c("Genitives", "Badness", "Measurecase", "Measureabbreviated", "Minus1pos", "Matchlength", "Measurenumber",
-              "Measureattraction", "Kindattraction", "Kindconsistency", "Kindedible", "Kindfreq", "Kindint", "Measurefreq",
-              "Measuregender")
+              "Measureattraction", "Kindattraction", "Kindconsistency", "Kindedible", "Kindfreq", "Kindint", "Measurefreq")
 
 for (eff in effs.fem) {
   print(eff)

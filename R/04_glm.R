@@ -16,12 +16,10 @@ mn.glm <- glm(Genitive~1
               +Measurelength
               +Kindattraction
               +Measurenumber
-              +Kindfinal
               +Kindedible
               +Badness
               +Kindconsistency
               +Kindorigin
-              #+Measuregender   # convergence
               +Kindfreq
               #+Minus2pos       # prob 0 or 1 
               +Measurecase
@@ -63,12 +61,10 @@ fem.glm <- glm(Casedrop~1
               +Kindconsistency
               +Matchlength
               #+Measureattraction# prob 0 or 1
-              #+Kindfinal        # no hypothesis
               +Genitives
               +Kindedible
               +Kindorigin
               +Measurelength
-              +Measuregender
               +Measurenumber
               +Kindint
               +Badness
@@ -108,7 +104,6 @@ pl.glm <- glm(Casedrop~1
               #+Minus1pos     # prob 0 or 1
               #+Attraction    # prob 0 or 1
               +Genitives
-              #+Kindfinal     # no hypothesis
               #+Kindgender    # prob 0 or 1
               #+Matchlength   # prob 0 or 1
               #+Measurefreq   # prob 0 or 1
@@ -118,7 +113,6 @@ pl.glm <- glm(Casedrop~1
               +Badness
               #+Minus2pos     # prob 0 or 1
               +Kindlength
-              +Measuregender
               #+Measurenumber # 1 level
               #+Measureabbreviated # 1 level
               , data=pl,  family=binomial(link=logit)

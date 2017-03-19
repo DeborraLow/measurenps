@@ -4,12 +4,10 @@ stimuli <- read.csv("~/Massangaben/data/stimuli.csv", header=TRUE)
 
 stims.fax  <- c("Measurecase",
           "Kindlemma",
-          "Kindfinal",
           "Kindconsistency",
           "Kindedible",
           "Kindint",
           "Measurelemma",
-          "Measuregender", 
           "Measurenumber",
           "Measureabbreviated",
           "Measureclass",

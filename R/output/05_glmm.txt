@@ -6,65 +6,52 @@ MASCULINE
 Generalized linear mixed model fit by maximum likelihood (Adaptive Gauss-Hermite Quadrature, nAGQ = 0) ['glmerMod']
  Family: binomial  ( logit )
 Formula: Genitive ~ 1 + (1 | Measurelemma) + (1 | Kindlemma) + Genitives +      Minus1pos + Measureclass + Matchlength + Measureabbreviated +  
-    Measureattraction + Kindattraction + Measurenumber + Kindfinal +      Kindedible + Badness + Kindfreq + Measurecase + Kindint +      Measurefreq
+    Measureattraction + Kindattraction + Measurenumber + Kindedible +      Badness + Kindfreq + Measurecase + Kindint + Measurefreq
    Data: mn
 Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
 
      AIC      BIC   logLik deviance df.resid 
-  2514.1   2777.9  -1215.1   2430.1     3907 
+  2519.0   2701.2  -1230.5   2461.0     3920 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--4.1513 -0.3653 -0.1898 -0.0663 11.7134 
+-4.3926 -0.3611 -0.1918 -0.0646 10.6385 
 
 Random effects:
- Groups       Name        Variance Std.Dev.
- Measurelemma (Intercept) 0.0000   0.0000  
- Kindlemma    (Intercept) 0.1095   0.3309  
+ Groups       Name        Variance  Std.Dev. 
+ Measurelemma (Intercept) 3.813e-15 6.175e-08
+ Kindlemma    (Intercept) 3.491e-01 5.908e-01
 Number of obs: 3949, groups:  Measurelemma, 131; Kindlemma, 68
 
 Fixed effects:
-                      Estimate Std. Error z value Pr(>|z|)    
-(Intercept)          -5.739259   0.959881  -5.979 2.24e-09 ***
-Genitives            -0.668948   0.057655 -11.603  < 2e-16 ***
-Minus1posD            1.229750   0.226860   5.421 5.94e-08 ***
-Minus1posO            1.217006   0.252094   4.828 1.38e-06 ***
-Minus1posA            2.441480   0.232731  10.491  < 2e-16 ***
-Minus1posP            1.557035   0.362244   4.298 1.72e-05 ***
-MeasureclassLength    0.320924   1.093904   0.293 0.769236    
-MeasureclassCurrency  0.468794   0.927583   0.505 0.613283    
-MeasureclassCapacity  1.360424   0.833412   1.632 0.102605    
-MeasureclassWeight    1.564807   0.817278   1.915 0.055536 .  
-MeasureclassRest      1.586950   0.926402   1.713 0.086708 .  
-MeasureclassVessel    1.956621   0.839798   2.330 0.019813 *  
-MeasureclassAmount    2.041992   0.822418   2.483 0.013031 *  
-MeasureclassLayer     2.201257   0.868224   2.535 0.011233 *  
-MeasureclassPortion   2.592000   0.821486   3.155 0.001604 ** 
-Matchlength           0.541198   0.064662   8.370  < 2e-16 ***
-Measureabbreviated0   0.129801   0.302907   0.429 0.668275    
-Measureattraction     0.171688   0.074955   2.291 0.021990 *  
-Kindattraction        0.485032   0.127723   3.798 0.000146 ***
-MeasurenumberSg      -0.761324   0.158492  -4.804 1.56e-06 ***
-Kindfinalm            0.759807   0.600623   1.265 0.205860    
-Kindfinalh           -0.690649   0.656645  -1.052 0.292898    
-Kindfinale            0.205285   0.501012   0.410 0.681996    
-Kindfinalr            0.156595   0.490243   0.319 0.749407    
-Kindfinalz           -0.006999   0.559279  -0.013 0.990016    
-Kindfinals            0.169107   0.488341   0.346 0.729126    
-Kindfinalf           -0.400513   0.532914  -0.752 0.452320    
-Kindfinalg            1.399890   0.499705   2.801 0.005088 ** 
-Kindfinald           -0.462597   0.553511  -0.836 0.403295    
-Kindfinalt            0.320480   0.474939   0.675 0.499815    
-Kindfinall            0.391599   0.474406   0.825 0.409115    
-Kindfinaln            1.124920   0.473868   2.374 0.017601 *  
-Kindfinalb            0.404350   0.627421   0.644 0.519275    
-Kindedible0           0.626398   0.213053   2.940 0.003281 ** 
-Badness              -0.206790   0.059499  -3.476 0.000510 ***
-Kindfreq              0.215098   0.120468   1.786 0.074176 .  
-MeasurecaseAcc       -0.022401   0.123516  -0.181 0.856085    
-MeasurecaseDat        0.642470   0.143995   4.462 8.13e-06 ***
-KindintNonint         0.173267   0.187077   0.926 0.354352    
-Measurefreq          -0.176023   0.075809  -2.322 0.020238 *  
+                     Estimate Std. Error z value Pr(>|z|)    
+(Intercept)          -5.50008    0.87023  -6.320 2.61e-10 ***
+Genitives            -0.65862    0.05750 -11.455  < 2e-16 ***
+Minus1posD            1.27158    0.22746   5.590 2.27e-08 ***
+Minus1posO            1.32052    0.25054   5.271 1.36e-07 ***
+Minus1posA            2.45330    0.23296  10.531  < 2e-16 ***
+Minus1posP            1.59448    0.36250   4.399 1.09e-05 ***
+MeasureclassLength    0.32551    1.09945   0.296 0.767180    
+MeasureclassCurrency  1.09878    0.97256   1.130 0.258568    
+MeasureclassCapacity  1.41797    0.84471   1.679 0.093222 .  
+MeasureclassWeight    1.54287    0.82541   1.869 0.061593 .  
+MeasureclassRest      1.53839    0.93057   1.653 0.098295 .  
+MeasureclassVessel    2.03692    0.85143   2.392 0.016741 *  
+MeasureclassAmount    1.97014    0.82941   2.375 0.017532 *  
+MeasureclassLayer     1.97518    0.87352   2.261 0.023748 *  
+MeasureclassPortion   2.58414    0.82925   3.116 0.001832 ** 
+Matchlength           0.54313    0.06568   8.270  < 2e-16 ***
+Measureabbreviated0   0.09906    0.30250   0.327 0.743317    
+Measureattraction     0.21273    0.07596   2.801 0.005100 ** 
+Kindattraction        0.48644    0.14207   3.424 0.000617 ***
+MeasurenumberSg      -0.73306    0.15751  -4.654 3.26e-06 ***
+Kindedible0           0.70732    0.21908   3.229 0.001244 ** 
+Badness              -0.19976    0.05934  -3.366 0.000762 ***
+Kindfreq              0.07609    0.13564   0.561 0.574798    
+MeasurecaseAcc       -0.02306    0.12348  -0.187 0.851836    
+MeasurecaseDat        0.62636    0.14368   4.359 1.30e-05 ***
+KindintNonint         0.16410    0.21018   0.781 0.434952    
+Measurefreq          -0.15642    0.07600  -2.058 0.039560 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -73,53 +60,51 @@ Analysis of Deviance Table (Type II Wald chisquare tests)
 
 Response: Genitive
                       Chisq Df Pr(>Chisq)    
-Genitives          134.6199  1  < 2.2e-16 ***
-Minus1pos          148.1612  4  < 2.2e-16 ***
-Measureclass        41.7730  9  3.616e-06 ***
-Matchlength         70.0499  1  < 2.2e-16 ***
-Measureabbreviated   0.1836  1  0.6682753    
-Measureattraction    5.2466  1  0.0219898 *  
-Kindattraction      14.4212  1  0.0001461 ***
-Measurenumber       23.0741  1  1.559e-06 ***
-Kindfinal           40.4605 13  0.0001165 ***
-Kindedible           8.6442  1  0.0032811 ** 
-Badness             12.0793  1  0.0005098 ***
-Kindfreq             3.1881  1  0.0741765 .  
-Measurecase         27.0852  2  1.314e-06 ***
-Kindint              0.8578  1  0.3543524    
-Measurefreq          5.3913  1  0.0202375 *  
+Genitives          131.2057  1  < 2.2e-16 ***
+Minus1pos          148.8800  4  < 2.2e-16 ***
+Measureclass        35.8214  9  4.265e-05 ***
+Matchlength         68.3891  1  < 2.2e-16 ***
+Measureabbreviated   0.1072  1  0.7433170    
+Measureattraction    7.8438  1  0.0050996 ** 
+Kindattraction      11.7242  1  0.0006169 ***
+Measurenumber       21.6596  1  3.256e-06 ***
+Kindedible          10.4237  1  0.0012441 ** 
+Badness             11.3323  1  0.0007617 ***
+Kindfreq             0.3147  1  0.5747984    
+Measurecase         25.8682  2  2.414e-06 ***
+Kindint              0.6096  1  0.4349518    
+Measurefreq          4.2366  1  0.0395604 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
 Model comparison with LR and PB test
-            Regressor        PB.p        LRT.p            LR Df
-1    (1|Measurelemma) 1.000000000 1.000000e+00 -4.515846e-05  1
-2       (1|Kindlemma) 0.003205128 1.511145e-02  5.903428e+00  1
-3           Genitives 0.002008032 0.000000e+00  1.436394e+02  1
-4           Minus1pos 0.002000000 0.000000e+00  1.542381e+02  4
-5        Measureclass 0.001996008 7.419472e-06  4.005715e+01  9
-6         Matchlength 0.001996008 0.000000e+00  7.118963e+01  1
-7  Measureabbreviated 0.633266533 6.704845e-01  1.810359e-01  1
-8   Measureattraction 0.027944112 2.223878e-02  5.227006e+00  1
-9      Kindattraction 0.006072874 2.057370e-04  1.377795e+01  1
-10      Measurenumber 0.001996008 1.261570e-06  2.348095e+01  1
-11          Kindfinal 0.055888224 3.491746e-03  3.089593e+01 13
-12         Kindedible 0.016096579 3.991330e-03  8.287755e+00  1
-13            Badness 0.002000000 4.093856e-04  1.248886e+01  1
-14           Kindfreq 0.188376754 7.528782e-02  3.163798e+00  1
-15        Measurecase 0.001996008 1.502565e-06  2.681667e+01  2
-16            Kindint 0.430000000 3.496176e-01  8.748446e-01  1
-17        Measurefreq 0.044000000 2.075899e-02  5.346913e+00  1
+            Regressor        PB.p        LRT.p           LR Df
+1    (1|Measurelemma) 0.005277045 9.648851e-01 1.938131e-03  1
+2       (1|Kindlemma) 0.010309278 4.125478e-12 4.806390e+01  1
+3           Genitives 0.003968254 0.000000e+00 1.405649e+02  1
+4           Minus1pos 0.002232143 0.000000e+00 1.548220e+02  4
+5        Measureclass 0.004366812 1.166011e-04 3.333820e+01  9
+6         Matchlength 0.002024291 1.110223e-16 6.967171e+01  1
+7  Measureabbreviated 0.730382294 7.433463e-01 1.072073e-01  1
+8   Measureattraction 0.032911392 1.018068e-02 6.603006e+00  1
+9      Kindattraction 0.004140787 5.575895e-04 1.191249e+01  1
+10      Measurenumber 0.002087683 2.450384e-06 2.220497e+01  1
+11         Kindedible 0.006263048 1.599455e-03 9.960374e+00  1
+12            Badness 0.002036660 5.983129e-04 1.178122e+01  1
+13           Kindfreq 0.584867076 5.688186e-01 3.246632e-01  1
+14        Measurecase 0.002000000 2.551251e-06 2.575785e+01  2
+15            Kindint 0.431818182 4.122277e-01 6.723666e-01  1
+16        Measurefreq 0.040983607 4.039811e-02 4.201085e+00  1
 
 
       R2m       R2c 
-0.5216434 0.5369228 
+0.4953822 0.5437920 
 
 
-correct 0.8685743
+correct 0.8718663
 
-λ 0.2276786
+λ 0.2470238
 
 
 
@@ -129,51 +114,49 @@ FEMININE
 Generalized linear mixed model fit by maximum likelihood (Adaptive Gauss-Hermite Quadrature, nAGQ = 0) ['glmerMod']
  Family: binomial  ( logit )
 Formula: Casedrop ~ 1 + (1 | Measurelemma) + (1 | Kindlemma) + Minus1pos +      Measureabbreviated + Kindconsistency + Matchlength + Measureattraction +  
-    Genitives + Kindedible + Measuregender + Measurenumber +      Kindint + Badness + Measurefreq + Measurecase + Kindfreq +      Kindattraction
+    Genitives + Kindedible + Measurenumber + Kindint + Badness +      Measurefreq + Measurecase + Kindfreq + Kindattraction
    Data: fem
 Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
 
      AIC      BIC   logLik deviance df.resid 
-  1050.0   1190.4   -497.0    994.0     1086 
+  1049.6   1180.0   -498.8    997.6     1088 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--4.6051 -0.5107 -0.1226  0.5295 10.2155 
+-4.2255 -0.4998 -0.1245  0.5219  9.8512 
 
 Random effects:
  Groups       Name        Variance Std.Dev.
- Measurelemma (Intercept) 0.5817   0.7627  
+ Measurelemma (Intercept) 0.8186   0.9048  
  Kindlemma    (Intercept) 0.0000   0.0000  
 Number of obs: 1114, groups:  Measurelemma, 73; Kindlemma, 19
 
 Fixed effects:
-                          Estimate Std. Error z value Pr(>|z|)    
-(Intercept)               -2.86007    0.85820  -3.333 0.000860 ***
-Minus1posD                 1.49086    0.40322   3.697 0.000218 ***
-Minus1posO                 2.28486    0.44058   5.186 2.15e-07 ***
-Minus1posA                 2.33492    0.40246   5.802 6.57e-09 ***
-Minus1posP                 4.97495    1.15138   4.321 1.55e-05 ***
-Measureabbreviated0       -0.54284    0.54666  -0.993 0.320702    
-KindconsistencyHard       -0.11767    0.83696  -0.141 0.888196    
-KindconsistencyLiquid      0.97810    0.71944   1.360 0.173976    
-KindconsistencySoft        0.47921    0.72499   0.661 0.508616    
-KindconsistencyImmaterial -0.88132    0.85722  -1.028 0.303895    
-KindconsistencyGaseous     0.24703    0.83046   0.297 0.766118    
-KindconsistencyMixed       1.09106    0.75862   1.438 0.150376    
-KindconsistencyPowder      1.36645    0.85814   1.592 0.111306    
-Matchlength                0.63325    0.11797   5.368 7.96e-08 ***
-Measureattraction          0.37907    0.15700   2.414 0.015760 *  
-Genitives                 -0.52252    0.09140  -5.717 1.08e-08 ***
-Kindedible0                1.40457    0.33134   4.239 2.24e-05 ***
-MeasuregenderMasc          0.63737    0.42596   1.496 0.134572    
-MeasuregenderFem          -0.05769    0.46273  -0.125 0.900783    
-MeasurenumberSg           -0.36502    0.28438  -1.284 0.199296    
-KindintNonint             -0.32100    0.30047  -1.068 0.285379    
-Badness                   -0.11068    0.09357  -1.183 0.236868    
-Measurefreq                0.03638    0.17161   0.212 0.832088    
-MeasurecaseAcc             0.16129    0.17127   0.942 0.346337    
-Kindfreq                  -0.01974    0.17279  -0.114 0.909058    
-Kindattraction             0.03436    0.14745   0.233 0.815722    
+                           Estimate Std. Error z value Pr(>|z|)    
+(Intercept)               -2.440007   0.848385  -2.876 0.004027 ** 
+Minus1posD                 1.476389   0.408187   3.617 0.000298 ***
+Minus1posO                 2.235137   0.442737   5.048 4.45e-07 ***
+Minus1posA                 2.294418   0.407763   5.627 1.84e-08 ***
+Minus1posP                 4.966356   1.150219   4.318 1.58e-05 ***
+Measureabbreviated0       -0.654753   0.560811  -1.168 0.243004    
+KindconsistencyHard       -0.230181   0.841613  -0.273 0.784469    
+KindconsistencyLiquid      1.067210   0.724921   1.472 0.140974    
+KindconsistencySoft        0.398011   0.731737   0.544 0.586492    
+KindconsistencyImmaterial -1.034758   0.863482  -1.198 0.230779    
+KindconsistencyGaseous     0.149685   0.837866   0.179 0.858213    
+KindconsistencyMixed       0.999711   0.764764   1.307 0.191139    
+KindconsistencyPowder      1.181295   0.859851   1.374 0.169492    
+Matchlength                0.627458   0.118408   5.299 1.16e-07 ***
+Measureattraction          0.427273   0.169276   2.524 0.011599 *  
+Genitives                 -0.523692   0.091948  -5.696 1.23e-08 ***
+Kindedible0                1.442616   0.334855   4.308 1.65e-05 ***
+MeasurenumberSg           -0.426932   0.285633  -1.495 0.134996    
+KindintNonint             -0.295537   0.301948  -0.979 0.327696    
+Badness                   -0.119755   0.093750  -1.277 0.201466    
+Measurefreq                0.002066   0.182227   0.011 0.990954    
+MeasurecaseAcc             0.169932   0.171922   0.988 0.322943    
+Kindfreq                  -0.014521   0.175222  -0.083 0.933954    
+Kindattraction             0.032228   0.148562   0.217 0.828263    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -182,53 +165,51 @@ Analysis of Deviance Table (Type II Wald chisquare tests)
 
 Response: Casedrop
                      Chisq Df Pr(>Chisq)    
-Minus1pos          61.4699  4  1.424e-12 ***
-Measureabbreviated  0.9861  1    0.32070    
-Kindconsistency    20.2982  7    0.00496 ** 
-Matchlength        28.8158  1  7.960e-08 ***
-Measureattraction   5.8295  1    0.01576 *  
-Genitives          32.6831  1  1.085e-08 ***
-Kindedible         17.9695  1  2.245e-05 ***
-Measuregender       3.7792  2    0.15113    
-Measurenumber       1.6475  1    0.19930    
-Kindint             1.1413  1    0.28538    
-Badness             1.3991  1    0.23687    
-Measurefreq         0.0450  1    0.83209    
-Measurecase         0.8868  1    0.34634    
-Kindfreq            0.0130  1    0.90906    
-Kindattraction      0.0543  1    0.81572    
+Minus1pos          58.9577  4  4.803e-12 ***
+Measureabbreviated  1.3631  1   0.243004    
+Kindconsistency    22.5307  7   0.002057 ** 
+Matchlength        28.0806  1  1.164e-07 ***
+Measureattraction   6.3712  1   0.011599 *  
+Genitives          32.4392  1  1.230e-08 ***
+Kindedible         18.5604  1  1.646e-05 ***
+Measurenumber       2.2341  1   0.134996    
+Kindint             0.9580  1   0.327696    
+Badness             1.6317  1   0.201466    
+Measurefreq         0.0001  1   0.990954    
+Measurecase         0.9770  1   0.322943    
+Kindfreq            0.0069  1   0.933954    
+Kindattraction      0.0471  1   0.828263    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
 Model comparison with LR and PB test
             Regressor        PB.p        LRT.p           LR Df
-1    (1|Measurelemma) 0.003816794 3.651930e-03  8.449254831  1
-2       (1|Kindlemma) 1.000000000 1.000000e+00 -0.001024798  1
-3           Minus1pos 0.001996008 2.220446e-16 80.036816393  4
-4  Measureabbreviated 0.379310345 3.105624e-01  1.028282529  1
-5     Kindconsistency 0.117764471 9.650364e-03 18.568972797  7
-6         Matchlength 0.002016129 1.220243e-08 32.454369700  1
-7           Genitives 0.002000000 3.465665e-09 34.902887782  1
-8          Kindedible 0.002028398 3.715370e-05 17.011520421  1
-9       Measuregender 0.280000000 1.638216e-01  3.617955097  2
-10      Measurenumber 0.199195171 2.020307e-01  1.627633715  1
-11            Kindint 0.298780488 2.843076e-01  1.146383075  1
-12            Badness 0.222444890 2.226211e-01  1.487394622  1
-13        Measurefreq 0.877263581 8.579786e-01  0.032022377  1
-14        Measurecase 0.359281437 3.336609e-01  0.934636826  1
-15           Kindfreq 0.950920245 9.289394e-01  0.007952952  1
-16  Measureattraction 0.031380753 8.536777e-03  6.917258216  1
-17     Kindattraction 0.855711423 8.280462e-01  0.047179352  1
+1    (1|Measurelemma) 0.003759398 2.827759e-05 17.530228981  1
+2       (1|Kindlemma) 0.016574586 9.421077e-01  0.005273820  1
+3           Minus1pos 0.001996008 4.440892e-16 77.998677118  4
+4  Measureabbreviated 0.266666667 2.275276e-01  1.456250623  1
+5     Kindconsistency 0.069860279 4.846716e-03 20.357707285  7
+6         Matchlength 0.002012072 1.810976e-08 31.687353981  1
+7           Genitives 0.002012072 3.627634e-09 34.813957784  1
+8          Kindedible 0.006060606 2.945197e-05 17.452867177  1
+9       Measurenumber 0.159595960 1.349227e-01  2.234930457  1
+10            Kindint 0.325910931 3.277241e-01  0.957870181  1
+11            Badness 0.189024390 1.847219e-01  1.759219472  1
+12        Measurefreq 1.000000000 1.000000e+00 -0.001425870  1
+13        Measurecase 0.332661290 3.083002e-01  1.037943857  1
+14           Kindfreq 0.979035639 9.528090e-01  0.003502232  1
+15  Measureattraction 0.006302521 5.290564e-03  7.777340025  1
+16     Kindattraction 0.855397149 8.412158e-01  0.040135551  1
 
 
       R2m       R2c 
-0.4899582 0.5665945 
+0.4679733 0.5739777 
 
 
-correct 0.8132855
+correct 0.8150808
 
-λ 0.5497835
+λ 0.5541126
 
 
 
@@ -237,30 +218,28 @@ PLURAL
 
 Generalized linear mixed model fit by maximum likelihood (Adaptive Gauss-Hermite Quadrature, nAGQ = 0) ['glmerMod']
  Family: binomial  ( logit )
-Formula: Casedrop ~ 1 + (1 | Kindlemma) + Attraction + Measurefreq + Measurelength +      Measuregender
+Formula: Casedrop ~ 1 + (1 | Kindlemma) + Attraction + Measurefreq + Measurelength
    Data: pl
 Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
 
      AIC      BIC   logLik deviance df.resid 
-   423.8    457.1   -204.9    409.8      854 
+   420.8    444.6   -205.4    410.8      856 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.6155  0.1493  0.2050  0.2857  0.9314 
+-3.7310  0.1479  0.2084  0.2885  0.8622 
 
 Random effects:
  Groups    Name        Variance Std.Dev.
- Kindlemma (Intercept) 0.9904   0.9952  
+ Kindlemma (Intercept) 0.9593   0.9794  
 Number of obs: 861, groups:  Kindlemma, 560
 
 Fixed effects:
-                  Estimate Std. Error z value Pr(>|z|)    
-(Intercept)         3.2914     0.9370   3.513 0.000444 ***
-Attraction          0.9589     0.1592   6.022 1.72e-09 ***
-Measurefreq        -0.4626     0.1720  -2.690 0.007137 ** 
-Measurelength       0.2035     0.1908   1.066 0.286296    
-MeasuregenderFem   -0.4873     0.9346  -0.521 0.602068    
-MeasuregenderMasc  -0.1376     0.9933  -0.138 0.889855    
+              Estimate Std. Error z value Pr(>|z|)    
+(Intercept)     2.8596     0.1772  16.137  < 2e-16 ***
+Attraction      0.9423     0.1585   5.946 2.75e-09 ***
+Measurefreq    -0.4980     0.1703  -2.923  0.00346 ** 
+Measurelength   0.1592     0.1866   0.853  0.39364    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -269,16 +248,15 @@ Analysis of Deviance Table (Type II Wald chisquare tests)
 
 Response: Casedrop
                 Chisq Df Pr(>Chisq)    
-Attraction    36.2645  1  1.723e-09 ***
-Measurefreq    7.2381  1   0.007137 ** 
-Measurelength  1.1370  1   0.286296    
-Measuregender  0.8994  2   0.637831    
+Attraction    35.3524  1  2.751e-09 ***
+Measurefreq    8.5458  1   0.003463 ** 
+Measurelength  0.7277  1   0.393642    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
       R2m       R2c 
-0.1965369 0.3823965 
+0.1977022 0.3770143 
 
 
 correct 0.9361208
@@ -290,51 +268,36 @@ correct 0.9361208
 Table comparing coefficient estimates between M/N and F (GLMM)
 
                           MNCoef MNCIBootLo MNCIBootHi MNCIBootWidth MNCIBootEx0 MNCIWald FCoef FCIBootLo FCIBootHi FCIBootWidth FCIBootEx0 FCIWald
-Badness                    -0.21      -0.33      -0.09          0.24           †        † -0.11     -0.29      0.06         0.35                   
-Genitives                  -0.67      -0.79      -0.56          0.23           †        † -0.52      -0.7     -0.35         0.35          †       †
-Kindattraction              0.49       0.23       0.77          0.54           †        †  0.03     -0.26      0.32         0.58                   
-KindconsistencyGaseous      <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  0.25     -1.34      2.05         3.39                   
-KindconsistencyHard         <NA>       <NA>       <NA>          <NA>        <NA>     <NA> -0.12     -1.67       1.7         3.37                   
-KindconsistencyImmaterial   <NA>       <NA>       <NA>          <NA>        <NA>     <NA> -0.88     -2.48       0.9         3.37                   
-KindconsistencyLiquid       <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  0.98     -0.29      2.65         2.95                   
-KindconsistencyMixed        <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  1.09     -0.18      2.63         2.81                   
-KindconsistencyPowder       <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  1.37     -0.17      3.21         3.37                   
-KindconsistencySoft         <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  0.48      -0.8      2.04         2.85                   
-Kindedible0                 0.63       0.21       1.05          0.83           †        †   1.4      0.74      2.03         1.29          †       †
-Kindfinalb                   0.4      -0.88       1.87          2.75                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinald                 -0.46       -1.5       0.78          2.29                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinale                  0.21      -0.71       1.38          2.09                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinalf                  -0.4      -1.41       0.83          2.24                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinalg                   1.4       0.39        2.6           2.2           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinalh                 -0.69      -2.03       0.56          2.59                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinall                  0.39      -0.53       1.55          2.07                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinalm                  0.76      -0.52       2.08           2.6                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinaln                  1.12       0.23       2.24          2.01           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinalr                  0.16      -0.84       1.29          2.13                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinals                  0.17      -0.75       1.28          2.02                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinalt                  0.32      -0.63       1.41          2.04                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfinalz                 -0.01       -1.2       1.28          2.48                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Kindfreq                    0.22      -0.05       0.45           0.5                      -0.02     -0.37      0.32          0.7                   
-KindintNonint               0.17       -0.2       0.58          0.77                      -0.32     -0.94       0.3         1.24                   
-Matchlength                 0.54       0.41       0.68          0.27           †        †  0.63      0.42      0.86         0.44          †       †
-Measureabbreviated0         0.13      -0.43       0.79          1.23                      -0.54     -1.57      0.61         2.18                   
-Measureattraction           0.17       0.02       0.33           0.3           †        †  0.38      0.08      0.69         0.61          †       †
-MeasurecaseAcc             -0.02      -0.27        0.2          0.47                       0.16     -0.19      0.53         0.72                   
-MeasurecaseDat              0.64       0.37       0.92          0.55           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassAmount          2.04       0.73      16.71         15.98           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassCapacity        1.36       0.04         16         15.96           †           <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassCurrency        0.47      -1.04      15.32         16.36                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassLayer            2.2       0.75      16.98         16.23           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassLength          0.32     -13.91       15.2         29.11                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassPortion         2.59       1.28      17.26         15.97           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassRest            1.59      -0.02      16.34         16.36                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassVessel          1.96       0.65      16.56         15.91           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-MeasureclassWeight          1.56       0.33      16.19         15.85           †           <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
-Measurefreq                -0.18      -0.32      -0.03          0.29           †        †  0.04     -0.29      0.41         0.69                   
-MeasuregenderFem            <NA>       <NA>       <NA>          <NA>        <NA>     <NA> -0.06     -0.99      0.82         1.81                   
-MeasuregenderMasc           <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  0.64      -0.2      1.51         1.71                   
-MeasurenumberSg            -0.76      -1.08      -0.44          0.64           †        † -0.37     -0.93       0.2         1.13                   
-Minus1posA                  2.44       1.98       2.98             1           †        †  2.33      1.61      3.12         1.51          †       †
-Minus1posD                  1.23       0.78       1.74          0.96           †        †  1.49      0.75       2.3         1.55          †       †
-Minus1posO                  1.22       0.69       1.72          1.03           †        †  2.28      1.48      3.23         1.75          †       †
-Minus1posP                  1.56       0.78       2.26          1.48           †        †  4.97      3.17     19.73        16.56          †       †
+Badness                     -0.2      -0.32      -0.08          0.24           †        † -0.12      -0.3      0.08         0.37                   
+Genitives                  -0.66      -0.77      -0.54          0.23           †        † -0.52     -0.71     -0.34         0.37          †       †
+Kindattraction              0.49       0.18       0.76          0.58           †        †  0.03     -0.26      0.32         0.58                   
+KindconsistencyGaseous      <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  0.15     -1.29      1.78         3.08                   
+KindconsistencyHard         <NA>       <NA>       <NA>          <NA>        <NA>     <NA> -0.23     -1.65      1.42         3.07                   
+KindconsistencyImmaterial   <NA>       <NA>       <NA>          <NA>        <NA>     <NA> -1.03     -2.49      0.67         3.15                   
+KindconsistencyLiquid       <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  1.07     -0.11      2.62         2.73                   
+KindconsistencyMixed        <NA>       <NA>       <NA>          <NA>        <NA>     <NA>     1     -0.24      2.51         2.75                   
+KindconsistencyPowder       <NA>       <NA>       <NA>          <NA>        <NA>     <NA>  1.18     -0.41      3.01         3.42                   
+KindconsistencySoft         <NA>       <NA>       <NA>          <NA>        <NA>     <NA>   0.4     -0.78      1.74         2.52                   
+Kindedible0                 0.71       0.31       1.11          0.79           †        †  1.44      0.76      2.03         1.27          †       †
+Kindfreq                    0.08       -0.2       0.34          0.54                      -0.01     -0.36      0.33         0.69                   
+KindintNonint               0.16      -0.24       0.54          0.78                       -0.3     -0.88      0.32          1.2                   
+Matchlength                 0.54        0.4       0.68          0.28           †        †  0.63      0.41      0.86         0.45          †       †
+Measureabbreviated0          0.1      -0.41       0.73          1.15                      -0.65     -1.67      0.41         2.08                   
+Measureattraction           0.21       0.06       0.36           0.3           †        †  0.43      0.09      0.75         0.66          †       †
+MeasurecaseAcc             -0.02      -0.25       0.22          0.47                       0.17     -0.15      0.51         0.66                   
+MeasurecaseDat              0.63       0.35       0.92          0.57           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassAmount          1.97       0.76      16.34         15.58           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassCapacity        1.42       0.09      15.78         15.69           †           <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassCurrency         1.1      -0.59      15.65         16.24                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassLayer           1.98        0.6      16.42         15.81           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassLength          0.33     -13.69      14.69         28.37                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassPortion         2.58       1.38      17.01         15.63           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassRest            1.54      -0.14      15.95         16.09                       <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassVessel          2.04       0.76      16.44         15.69           †        †  <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+MeasureclassWeight          1.54       0.35      15.95          15.6           †           <NA>      <NA>      <NA>         <NA>       <NA>    <NA>
+Measurefreq                -0.16      -0.31      -0.02           0.3           †        †     0     -0.34      0.34         0.68                   
+MeasurenumberSg            -0.73      -1.03      -0.42          0.61           †        † -0.43     -1.05      0.13         1.18                   
+Minus1posA                  2.45       1.97       2.89          0.92           †        †  2.29      1.43      3.25         1.83          †       †
+Minus1posD                  1.27       0.82       1.74          0.93           †        †  1.48      0.64      2.33         1.69          †       †
+Minus1posO                  1.32       0.82       1.82             1           †        †  2.24      1.42       3.2         1.78          †       †
+Minus1posP                  1.59       0.87       2.27           1.4           †        †  4.97      3.17     19.71        16.55          †       †
