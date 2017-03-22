@@ -81,7 +81,7 @@ lmer.modelcomparison <- function(model, regressors, formula.target, ci = 0.95, n
 # for the remaning factors substantially.
 # Code:
 # source("mer-utils.R")
-# vif.mer(mn.glmm)
+# vif.mer(fem.glmm)
 
 mn.glmm <- glmer(Genitive~1
                 +(1|Measurelemma)
@@ -524,3 +524,10 @@ print(p)
 if (save.persistent) dev.off()
 
 
+if (save.persistent) sink(paste(out.dir, "05_glmm.txt", sep=""), append = T)
+source("mer-utils.R")
+cat("\n\n MULTICOLLINEARITY\nM/N\n")
+print(vif.mer(mn.glmm))
+cat("\n\n F\n")
+print(vif.mer(fem.glmm))
+if (save.persistent) sink()

@@ -301,3 +301,24 @@ Minus1posA                  2.45       1.97       2.89          0.92           �
 Minus1posD                  1.27       0.82       1.74          0.93           †        †  1.48      0.64      2.33         1.69          †       †
 Minus1posO                  1.32       0.82       1.82             1           †        †  2.24      1.42       3.2         1.78          †       †
 Minus1posP                  1.59       0.87       2.27           1.4           †        †  4.97      3.17     19.71        16.55          †       †
+
+
+
+
+ MULTICOLLINEARITY
+M/N
+           Genitives           Minus1posD           Minus1posO           Minus1posA           Minus1posP   MeasureclassLength MeasureclassCurrency MeasureclassCapacity   MeasureclassWeight     MeasureclassRest 
+            1.107923             4.052563             1.297700             3.773971             1.214855             2.144342             3.500730            16.321436            25.404121             4.539886 
+  MeasureclassVessel   MeasureclassAmount    MeasureclassLayer  MeasureclassPortion          Matchlength  Measureabbreviated0    Measureattraction       Kindattraction      MeasurenumberSg          Kindedible0 
+           18.805584            46.196122             7.923493            36.909524             1.166274             1.280762             1.987319             2.172454             1.889537             1.319032 
+             Badness             Kindfreq       MeasurecaseAcc       MeasurecaseDat        KindintNonint          Measurefreq 
+            1.016097             2.127421             1.347906             1.371085             1.236326             2.216625 
+
+
+ F
+               Minus1posD                Minus1posO                Minus1posA                Minus1posP       Measureabbreviated0       KindconsistencyHard     KindconsistencyLiquid       KindconsistencySoft 
+                 5.246630                  1.465434                  4.193463                  1.095286                  1.294605                  5.864328                  8.445739                 15.094499 
+KindconsistencyImmaterial    KindconsistencyGaseous      KindconsistencyMixed     KindconsistencyPowder               Matchlength         Measureattraction                 Genitives               Kindedible0 
+                 4.319900                  6.271376                  7.278295                  3.870234                  1.618618                  1.062751                  1.131905                  2.248278 
+          MeasurenumberSg             KindintNonint                   Badness               Measurefreq            MeasurecaseAcc                  Kindfreq            Kindattraction 
+                 1.652541                  2.450390                  1.037854                  1.213235                  1.071587                  3.915980                  3.167650 
