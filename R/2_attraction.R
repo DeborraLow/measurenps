@@ -40,7 +40,8 @@ cx.kind <- cbind(cx.kind.lem, lapply(cx.kind.lem, function(lem){get_freq(nn.kind
 
 # A rather simple "attraction" function, i.e., proportion.
 attraction <- function(cs) {
-  unlist(cs)[2] / (unlist(cs)[1] + unlist(cs)[2])
+#  unlist(cs)[2] / (unlist(cs)[1] + unlist(cs)[2])
+  log((unlist(cs)[2] + 1) / (unlist(cs)[1] + 1))
 }
 
 
@@ -60,10 +61,10 @@ colnames(cx.measure) <- c("Lemma", "Nn", "Ndn", "Pv")
 
 
 # Pull attraction strength for each observation.
-m$Kindattraction <- unlist(lapply(m$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == x), "Pv"] } ))
-m$Measureattraction <- unlist(lapply(m$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Pv"] } ))
+measure$Kindattraction <- unlist(lapply(measure$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == x), "Pv"] } ))
+measure$Measureattraction <- unlist(lapply(measure$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Pv"] } ))
 
 
 # Center
-m$Kindattraction    <- z.transform(m$Kindattraction)
-m$Measureattraction <- z.transform(m$Measureattraction)
+measure$Kindattraction    <- z.transform(measure$Kindattraction)
+measure$Measureattraction <- z.transform(measure$Measureattraction)

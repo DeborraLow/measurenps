@@ -6,13 +6,12 @@ require(gridExtra)
 require(car)
 
 
-the.nAGQ <- 0                 # 0 for speed, 1 for precision and EXTREMELY slow computation.
-ci.boot.nsim <- 2            # Even 100 can be extremely slow! SET TO MIN. 1000 FOR PRODUCTION!!!
-ci.boot.modelcomp.nsim <- 2  # This takes ages, even with 10. Set to 500 for PRODUCTION!!!
+the.nAGQ               <- 0      # 0 for speed, 1 for precision and EXTREMELY slow computation.
+ci.boot.nsim           <- 100   # Even 100 can be extremely slow! SET TO MIN. 1000 FOR PRODUCTION!!!
+ci.boot.modelcomp.nsim <- 100   # This takes ages, even with 10. Set to 1000 for PRODUCTION!!!
 
 
 
-# Estimate model.
 measure.glmm <- glmer(Construction~1
                  
                  +(1|Measurelemma)
@@ -32,7 +31,7 @@ measure.glmm <- glmer(Construction~1
                  +Measureclass
                  +Measurefreq
 
-                 , data=m, family=binomial(link=logit), na.action = na.fail, nAGQ=the.nAGQ,
+                 , data=measure, family=binomial(link=logit), na.action = na.fail, nAGQ=the.nAGQ,
                  control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5)))
 
 
@@ -42,11 +41,11 @@ measure.glmm.r2 <- r.squaredGLMM(measure.glmm)
 
 
 # Predict and analyze with optimal cutoff.
-all.cut           <- seq(-2,2,0.01)[which.max(unlist(lapply(seq(-2,2,0.01), function(x) {corr.prop(measure.glmm, m$Construction, x)})))]
+all.cut           <- seq(-2,2,0.01)[which.max(unlist(lapply(seq(-2,2,0.01), function(x) {corr.prop(measure.glmm, measure$Construction, x)})))]
 measure.glmm.pred <- ifelse(predict(measure.glmm) < all.cut, 0, 1)
-measure.glmm.cmat <- table(measure.glmm.pred, m$Construction, dnn=c("Pred","Obs"))
+measure.glmm.cmat <- table(measure.glmm.pred, measure$Construction, dnn=c("Pred","Obs"))
 measure.glmm.corr <- sum(diag(measure.glmm.cmat))/sum(measure.glmm.cmat)
-measure.glmm.base <- length(which(m$Construction == "NACa"))/length(m$Construction)
+measure.glmm.base <- length(which(measure$Construction == "NACa"))/length(measure$Construction)
 measure.glmm.pre  <- (measure.glmm.corr-measure.glmm.base)/(1-measure.glmm.base)
 
 
@@ -86,14 +85,79 @@ cat("\n\n")
 if (save.persistent) sink()
 
 
+
+# Get the bootstrapped CIs.
+opts.ci.95 <- list(level = 0.95, method = "boot", boot.type = "perc", nsim = ci.boot.nsim, parallel="multicore", ncpus=8)
+measure.ci.95 <- do.call(confint.merMod, c(opts.ci.95, list(object = measure.glmm, parm = names(fixef(measure.glmm)))))
+measure.ci.95 <- measure.ci.95[nrow(measure.ci.95):2,]
+
+opts.ci.90 <- list(level = 0.90, method = "boot", boot.type = "perc", nsim = ci.boot.nsim, parallel="multicore", ncpus=8)
+measure.ci.90 <- do.call(confint.merMod, c(opts.ci.95, list(object = measure.glmm, parm = names(fixef(measure.glmm)))))
+measure.ci.90 <- measure.ci.90[nrow(measure.ci.90):2,]
+
+measure.fixeffs <- rev(fixef(measure.glmm)[2:length(fixef(measure.glmm))])
+
+x.lower <- min(measure.ci.90[,1])*1.05
+x.upper <- max(measure.ci.90[,2])*1.05
+
+if (save.persistent) pdf(paste(out.dir, "fixeffs.pdf", sep=""))
+dotchart(measure.fixeffs, pch=20,
+         xlim = c(x.lower, x.upper),
+         lcolor = "gray",
+         cex = 1.2,
+         main=paste("Fixed effects with bootstrapped\n 90% and 95% CIs (", ci.boot.nsim, " simulations)", sep=""))
+lines(c(0,0), c(0,length(measure.ci.95)), col="gray")
+
+for (i in 1:nrow(measure.ci.95)) {
+  lines(measure.ci.90[i,c(1,2)], c(i,i), col="lightgray", lwd=5)
+  points(measure.fixeffs[i], i, pch=18, cex=1.5, col="black")
+  lines(measure.ci.95[i,c(1,2)], c(i,i), col="black", lwd=2)
+}
+if (save.persistent) dev.off()
+
+
+
 # Effect plots.
 fixeff.pl.cex <- 1.5
-effs.all <- c("Genitives", "Leftcontext", "Measurenumber", "Badness", "Measurecase", "Kindattraction", "Measureattraction", "Measureclass",
-             "Kindedible", "Kindfreq", "Measurefreq")
+effs <- c("Badness", "Genitives", "Leftcontext", "Measurecase", "Measurenumber", 
+          "Kindattraction", "Kindfreq", "Kindgender", 
+          "Measureattraction", "Measureclass", "Measurefreq")
 
-for (eff in effs.all) {
-  print(eff)
-  p <- plot(effect(eff, measure.glmm, KR = T), rug=F, main = paste("EFfect plot: ", eff), colors = c("black", "darkblue"), cex = fixeff.pl.cex)
+for (eff in effs) {
+  if (save.persistent) pdf(paste(out.dir, eff, ".pdf", sep=""))
+  p <- plot(effect(eff, measure.glmm),
+            rug=F, 
+            main = paste("EFfect plot: ", eff),
+            ylab = "Probability of PGCa",
+            colors = c("black", "darkblue"), cex = fixeff.pl.cex)
   print(p)
+  if (save.persistent) dev.off()
 }
+
+
+
+
+# Selective ranef plots.
+opts.dotchart <- list(pch=19, col="black", cex=1, xlab="Estimate of intercept")
+n.select <- 30
+main.dotchart.meas <- "Meas. rand. eff."
+main.dotchart.kind <- "Kind rand. eff."
+
+if (save.persistent) pdf(paste(out.dir, "raneffs_selection.pdf", sep=""))
+par(mfrow=c(1,2))
+do.call(ranef.plot, c(list(measure.glmm, measure, "Measurelemma", n.select, main = main.dotchart.meas), opts.dotchart))
+do.call(ranef.plot, c(list(measure.glmm, measure, "Kindlemma", n.select, main = main.dotchart.kind), opts.dotchart))
+par(mfrow=c(1,1))
+if (save.persistent) dev.off()
+
+
+
+
+# Make table.
+measure.glmm.table <- data.frame(
+  Coefficient = round(fixef(measure.glmm)[-1], round.in.big.table),
+  Low         = rev(round(measure.ci.95[,1], round.in.big.table)),
+  High        = rev(round(measure.ci.95[,2], round.in.big.table)),
+  Not0        = rev(ifelse( (measure.ci.95[,1] < 0 & measure.ci.95[,2] < 0) | (measure.ci.95[,1] > 0 & measure.ci.95[,2] > 0) , "*", ""))
+)
 

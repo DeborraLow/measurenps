@@ -4,32 +4,32 @@ require(rstan)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-# MASCULINE GLMM
 
 chains <- 4
 seed   <- 6976
-iter   <- 1000 # Set to 1000 for production.
+iter   <- 100 # Set to 1000 for production.
 
-# MN
 
-mn.glmm.mcmc <- stan_glmer(Genitive~1
+measure.glmm.mcmc <- stan_glmer(Construction~1
+                           
                            +(1|Measurelemma)
                            +(1|Kindlemma)
+                           
+                           +Badness                 
                            +Genitives
-                           +Minus1pos
-                           +Measureclass
-                           +Measureabbreviated
-                           +Measureattraction
-                           +Kindattraction
-                           +Measurenumber
-                           +Kindedible
-                           +Badness
-                           +Kindconsistency
-                           +Kindfreq
+                           +Leftcontext
                            +Measurecase
+                           +Measurenumber
+                           
+                           +Kindattraction
+                           +Kindfreq
+                           +Kindgender
+                           
+                           +Measureattraction
+                           +Measureclass
                            +Measurefreq
                            ,
-                 data=mn, family=binomial(link=logit),
+                 data=measure, family=binomial(link=logit),
                  chains=chains, seed=seed, iter=iter,
                  prior = normal(0, 2.5), prior_intercept = normal(0, 10),
                  prior_ops = prior_options(prior_scale_for_dispersion = 5, min_prior_scale = 1e-12, scaled = TRUE),
@@ -37,72 +37,32 @@ mn.glmm.mcmc <- stan_glmer(Genitive~1
                  prior_PD = F
                  )
 
-mn.baysum <- summary(mn.glmm.mcmc)
-
-
-# FEM
-
-fem.glmm.mcmc <- stan_glmer(Casedrop~1
-                            +(1|Measurelemma)
-                            +(1|Kindlemma)
-                            +Measureclass
-                            +Minus1pos
-                            +Measureabbreviated
-                            +Kindconsistency
-                            +Measureattraction
-                            +Genitives
-                            +Kindedible
-                            +Measurenumber
-                            +Badness
-                            +Measurefreq
-                            +Measurecase
-                            +Kindfreq
-                            +Kindattraction
-                  ,
-                  data=fem, family=binomial(link=logit),
-                  chains=chains, seed=seed, iter=iter,
-                  prior = normal(0, 2.5), prior_intercept = normal(0, 10),
-                  prior_ops = prior_options(prior_scale_for_dispersion = 5, min_prior_scale = 1e-12, scaled = TRUE),
-                  prior_covariance = decov(regularization = 1, concentration = 1, shape = 1, scale = 1),
-                  prior_PD = F
-              )
-
-fem.baysum <- summary(fem.glmm.mcmc)
-
+measure.baysum <- summary(measure.glmm.mcmc)
 
 
 # OUTPUT
 
-if (save.persistent) sink(paste(out.dir, "06_glmm-mcmc.txt", sep=""))
+if (save.persistent) sink(paste(out.dir, "mcmc.txt", sep=""))
 cat("\nBayesian estimation of GLMMs with MCMC\n\n")
-print(mn.baysum)
-print(fem.baysum)
+print(measure.baysum)
 if (save.persistent) sink()
 
 
-# Add results to BIG TABLE.
+# Make table.
+measure.glmm.table <- data.frame(
+  ML_Coef  = round(fixef(measure.glmm)[-1], round.in.big.table),
+  ML_Low   = rev(round(measure.ci.95[,1], round.in.big.table)),
+  ML_High  = rev(round(measure.ci.95[,2], round.in.big.table)),
+  ML_Not0  = rev(ifelse( (measure.ci.95[,1] < 0 & measure.ci.95[,2] < 0) | (measure.ci.95[,1] > 0 & measure.ci.95[,2] > 0) , "*", "")),
+  MC_Coef  = round(measure.baysum[,1][names(fixef(measure.glmm)[-1])], round.in.big.table),
+  MC_Low   = round(measure.baysum[,4][names(fixef(measure.glmm)[-1])], round.in.big.table),
+  MC_High  = round(measure.baysum[,8][names(fixef(measure.glmm)[-1])], round.in.big.table),
+  MC_Not0  = ifelse( (measure.baysum[,4][names(fixef(measure.glmm)[-1])] < 0 & measure.baysum[,8][names(fixef(measure.glmm)[-1])] < 0) |
+                       (measure.baysum[,4][names(fixef(measure.glmm)[-1])] > 0 & measure.baysum[,8][names(fixef(measure.glmm)[-1])] > 0) , "*", "")
+)
 
-coefs.mcmc.table <- data.frame(cbind(
-  # M/N
-  round(mn.baysum[,1][allfacs], round.in.big.table),
-  round(mn.baysum[,4][allfacs], round.in.big.table),
-  round(mn.baysum[,8][allfacs], round.in.big.table),
-  round(mn.baysum[,8][allfacs] - mn.baysum[,4][allfacs], round.in.big.table),
-  ifelse( (mn.baysum[,4][allfacs] < 0 & mn.baysum[,8][allfacs] < 0) | (mn.baysum[,4][allfacs] > 0 & mn.baysum[,8][allfacs] > 0) , "†", ""),
-  # F
-  round(fem.baysum[,1][allfacs], round.in.big.table),
-  round(fem.baysum[,4][allfacs], round.in.big.table),
-  round(fem.baysum[,8][allfacs], round.in.big.table),
-  round(fem.baysum[,8][allfacs] - fem.baysum[,4][allfacs], round.in.big.table),
-  ifelse( (fem.baysum[,4][allfacs] < 0 & fem.baysum[,8][allfacs] < 0) | (fem.baysum[,4][allfacs] > 0 & fem.baysum[,8][allfacs] > 0) , "†", "")
-), row.names = allfacs)
 
-colnames(coefs.mcmc.table) <- c("MNCoefMcmc", "MNCIMcmcLo", "MNCIMcmcHi", "MNCIMcmcWidth", "MNCIMcmcEx0", "FCoefMcmc", "FCIMcmcLo", "FCIMcmcHi", "FCIMcmcWidth", "FCIMcmcEx0")
-
-# Create big table and order alphabetically.
-big.table <- cbind(coefs.glmm.table[,1:6], coefs.mcmc.table[,1:5], coefs.glmm.table[,7:12], coefs.mcmc.table[,6:10])
-big.table <- big.table[order(rownames(big.table)),]
-
+# Print table.
 if (save.persistent) sink(paste(out.dir, "06_glmm-mcmc.txt", sep=""), append = T)
 cat("\n\nTable comparing coefficient estimates across relevant models\n\n")
 print(big.table)
