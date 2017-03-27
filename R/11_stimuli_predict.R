@@ -6,7 +6,6 @@ stims.fax  <- c("Measurecase",
           "Kindlemma",
           "Kindconsistency",
           "Kindedible",
-          "Kindint",
           "Measurelemma",
           "Measurenumber",
           "Measureabbreviated",
@@ -35,24 +34,15 @@ get.value <- function(df, index.column, index.value, value.column) {
 }
 
 stimuli.mn$Kindfreq <- unlist(lapply(as.character(stimuli.mn$Kindlemma), function(x) get.value(mn, "Kindlemma", x, "Kindfreq")))
-stimuli.mn$Measurelength <- unlist(lapply(as.character(stimuli.mn$Measurelemma), function(x) get.value(mn, "Measurelemma", x, "Measurelength")))
 stimuli.mn$Measurefreq <- unlist(lapply(as.character(stimuli.mn$Measurelemma), function(x) get.value(mn, "Measurelemma", x, "Measurefreq")))
-stimuli.mn$Attraction <- unlist(lapply(as.character(stimuli.mn$Kindlemma), function(x) get.value(mn, "Kindlemma", x, "Attraction")))
+stimuli.mn$Kindattraction <- unlist(lapply(as.character(stimuli.mn$Kindlemma), function(x) get.value(mn, "Kindlemma", x, "Kindattraction")))
+stimuli.mn$Measureattraction <- unlist(lapply(as.character(stimuli.mn$Measurelemma), function(x) get.value(mn, "Measurelemma", x, "Measureattraction")))
 
 stimuli.fem$Kindfreq <- unlist(lapply(as.character(stimuli.fem$Kindlemma), function(x) get.value(fem, "Kindlemma", x, "Kindfreq")))
-stimuli.fem$Measurelength <- unlist(lapply(as.character(stimuli.fem$Measurelemma), function(x) get.value(fem, "Measurelemma", x, "Measurelength")))
 stimuli.fem$Measurefreq <- unlist(lapply(as.character(stimuli.fem$Measurelemma), function(x) get.value(fem, "Measurelemma", x, "Measurefreq")))
-stimuli.fem$Attraction <- unlist(lapply(as.character(stimuli.fem$Kindlemma), function(x) get.value(fem, "Kindlemma", x, "Attraction")))
+stimuli.fem$Kindattraction <- unlist(lapply(as.character(stimuli.fem$Kindlemma), function(x) get.value(fem, "Kindlemma", x, "Kindattraction")))
+stimuli.fem$Measureattraction <- unlist(lapply(as.character(stimuli.fem$Measurelemma), function(x) get.value(fem, "Measurelemma", x, "Measureattraction")))
 
-
-# Hm, Matchlength is even more complicated.
-matchl.mean <- mean(m[which(m$Kindgender %in% c("Masc", "Neut")), "Matchlength"])
-matchl.sd <- sd(m[which(m$Kindgender %in% c("Masc", "Neut")), "Matchlength"])
-stimuli.mn$Matchlength <- unlist(lapply(stimuli.mn$Matchlength, function(l) (l-matchl.mean)/matchl.sd))
-
-matchl.mean <- mean(m[which(m$Kindgender == "Fem"), "Matchlength"])
-matchl.sd <- sd(m[which(m$Kindgender == "Fem"), "Matchlength"])
-stimuli.fem$Matchlength <- unlist(lapply(stimuli.fem$Matchlength, function(l) (l-matchl.mean)/matchl.sd))
 
 # Set Badnesss to mean = 0 (b/o normalitzation).
 stimuli.mn$Badness <- 0

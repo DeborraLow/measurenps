@@ -88,21 +88,16 @@ mn.glmm <- glmer(Genitive~1
                 +(1|Kindlemma)
                 +Genitives
                 +Minus1pos
-                #+Kindlength          # unstable in bootstrap
                 +Measureclass
-                +Matchlength
                 +Measureabbreviated
                 +Measureattraction
-                #+Measurelength       # virtual non-convergence
                 +Kindattraction
                 +Measurenumber
                 +Kindedible
                 +Badness
-                #+Kindconsistency     # virtual non-convergence
-                #+Kindorigin          # virtual non-convergence
+                +Kindconsistency
                 +Kindfreq
                 +Measurecase
-                +Kindint
                 +Measurefreq
               , data=mn, family=binomial(link=logit), na.action = na.fail, nAGQ=the.nAGQ,
               control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5)))
@@ -111,9 +106,9 @@ mn.glmm <- glmer(Genitive~1
 # Regressors to be used in getting LRT w/ bootstrapped CIs.
 
 mn.bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", "Genitives", "Minus1pos",
-                   "Measureclass", "Matchlength", "Measureabbreviated", "Measureattraction",
+                   "Measureclass", "Measureabbreviated", "Measureattraction",
                    "Kindattraction", "Measurenumber", "Kindedible",
-                   "Badness", "Kindfreq", "Measurecase", "Kindint", "Measurefreq")
+                   "Badness", "Kindconsistency", "Kindfreq", "Measurecase", "Measurefreq")
 
 # Get PB test.
 mn.modelcomp <- lmer.modelcomparison(model = mn.glmm, regressors = mn.bootcomp.regs,
@@ -166,31 +161,26 @@ if (save.persistent) sink()
 fem.glmm <- glmer(Casedrop~1
                  +(1|Measurelemma)
                  +(1|Kindlemma)
-                 #+Measureclass         # non-convergence
+                 +Measureclass
                  +Minus1pos
                  +Measureabbreviated
                  +Kindconsistency
-                 +Matchlength
                  +Measureattraction
                  +Genitives
                  +Kindedible
-                 #+Kindorigin           # fixeff matrix rank deficient
-                 #+Measurelength        # unstable in bootstrap
                  +Measurenumber
-                 +Kindint
                  +Badness
                  +Measurefreq
                  +Measurecase
                  +Kindfreq
                  +Kindattraction
-                 #+Kindlength         # unstable in bootstrap
                  , data=fem, family=binomial(link=logit), nAGQ=the.nAGQ,
                  control=glmerControl(optimizer="nloptwrap2",optCtrl=list(maxfun=2e5)))
 
-fem.bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", "Minus1pos", "Measureabbreviated", "Kindconsistency",
-                      "Matchlength", "Genitives", "Kindedible", "Measurenumber",
-                      "Kindint", "Badness", "Measurefreq", "Measurecase", "Kindfreq",
-                      "Measureattraction", "Kindattraction")
+fem.bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", "Measureclass", "Minus1pos",
+                       "Measureabbreviated", "Kindconsistency", "Measureattraction",
+                       "Genitives", "Kindedible", "Measurenumber", "Badness", "Measurefreq",
+                       "Measurecase", "Kindfreq", "Kindattraction")
 # Get PB test.
 fem.modelcomp <- lmer.modelcomparison(model = fem.glmm, regressors = fem.bootcomp.regs,
                      formula.target = "Casedrop~1", nsim = ci.boot.modelcomp.nsim,
@@ -205,9 +195,7 @@ fem.glmm.cmat <- table(fem.glmm.pred, fem$Casedrop)
 fem.glmm.corr <- sum(diag(fem.glmm.cmat))/sum(fem.glmm.cmat)
 fem.glmm.base <- length(which(fem$Casedrop == 0))/length(fem$Casedrop)
 fem.glmm.pre <- (fem.glmm.corr-fem.glmm.base)/(1-fem.glmm.base)
-#fem.glmm.lemrand.order <- order(ranef(fem.glmm)$Kindlemma)
-#fem.glmm.lemrand <- ranef(fem.glmm)$Kindlemma[fem.glmm.lemrand.order,]
-#fem.glmm.lemrand.names <- rownames(coef(fem.glmm)$Kindlemma)[fem.glmm.lemrand.order]
+
 
 if (save.persistent) sink(paste(out.dir, "05_glmm.txt", sep=""), append = T)
 cat("\n\n\nFEMININE\n\n")
@@ -224,77 +212,6 @@ cat("\n\n")
 cat("λ", fem.glmm.pre)
 cat("\n\n")
 if (save.persistent) sink()
-
-
-
-
-
-# PLURAL
-
-pl.glmm <- glmer(Casedrop~1
-                 +(1|Kindlemma)
-                 #+(1|Measurelemma)    # model unidentifiable
-                 #+Minus1pos           # model unidentifiable
-                 +Attraction
-                 #+Genitives           # model unidentifiable
-                 #+Kindgender          # Hessian singular
-                 #+Matchlength         # model unidentifiable
-                 +Measurefreq
-                 +Measurelength
-                 #+Measurecase         # model unidentifiable
-                 #+Kindfreq            # non-convergence
-                 #+Badness             # model unidentifiable
-                 #+Minus2pos           # model unidentifiable
-                 #+Kindlength          # Multicollinearity!
-                 #+Measurenumber       # makes no sense
-                 #+Measureabbreviated  # only one level
-                 ,
-                 data=pl, family=binomial(link=logit), nAGQ=the.nAGQ,
-                 control=glmerControl(optimizer="nloptwrap2",optCtrl=list(maxfun=2e5)))
-
-pl.glmm.r2 <- r.squaredGLMM(pl.glmm)
-pl.glmm.wald <- Anova(pl.glmm, type="II")
-pl.cut <- seq(-2,2,0.01)[which.max(unlist(lapply(seq(-2,2,0.01), function(x) {corr.prop(pl.glmm, pl$Casedrop, x)})))]
-pl.glmm.pred <- ifelse(predict(pl.glmm) < pl.cut, 0, 1)
-pl.glmm.cmat <- table(pl.glmm.pred, pl$Casedrop)
-pl.glmm.corr <- sum(diag(pl.glmm.cmat))/sum(pl.glmm.cmat)
-pl.glmm.base <- length(which(pl$Casedrop == 0))/length(pl$Casedrop)
-pl.glmm.pre <- (pl.glmm.corr-pl.glmm.base)/(1-pl.glmm.base)
-pl.glmm.lemrand.order <- order(ranef(pl.glmm)$Kindlemma)
-pl.glmm.lemrand <- ranef(pl.glmm)$Kindlemma[pl.glmm.lemrand.order,]
-pl.glmm.lemrand.names <- rownames(coef(pl.glmm)$Kindlemma)[pl.glmm.lemrand.order]
-
-if (save.persistent) sink(paste(out.dir, "05_glmm.txt", sep=""), append = T)
-cat("\n\n\nPLURAL\n\n")
-print(summary(pl.glmm, correlation=F))
-cat("\n\n")
-print(pl.glmm.wald)
-cat("\n\n")
-print(pl.glmm.r2)
-cat("\n\n")
-cat("correct", pl.glmm.corr)
-cat("\n\n")
-cat("λ", pl.glmm.pre)
-cat("\n\n")
-if (save.persistent) sink()
-
-
-
-
-
-
-
-# Check convergence of measure noun random effect between MN and F.
-ran.meas.fem <- ranef(fem.glmm)$Measurelemma
-ran.meas.mn  <- ranef(mn.glmm)$Measurelemma
-ran.match    <- match(rownames(ran.meas.mn), rownames(ran.meas.fem))
-ran.aligned  <- cbind(ran.meas.mn, ran.meas.fem[ran.match,])
-ran.aligned  <- ran.aligned[which(!is.na(ran.aligned[1]) & !is.na(ran.aligned[2])),]
-ran.aligned  <- cbind(ran.aligned, mn$Measurefreq[match(rownames(ran.aligned), mn$Measurelemma)])
-
-
-
-
 
 
 # MORE OUTPUT
@@ -337,13 +254,13 @@ for (zzz in 1:3) {
     localfacs <- localfacs[which(!localfacs %in% allfacs[grep('Measurecase|Measurenumber|Measureabbreviated', allfacs)])]
     fnam  <- "04_glmm_fixef_secondlevel_measure.pdf"
     subtitulum <- "Second level regressors for measure lemma"
-    posi <- "topleft"
+    posi <- "topright"
   }
   else {
     localfacs <- allfacs[grep('^Kind', allfacs)]
     fnam  <- "04_glmm_fixef_secondlevel_kind.pdf"
     subtitulum <- "Second level regressors for kind lemma"
-    posi <- "bottomright"
+    posi <- "topright"
   }
 
   localfacs <- sort(localfacs, decreasing = T)
@@ -471,20 +388,28 @@ main.dotchart.kind <- "Kind rand. eff."
 
 if (save.persistent) pdf(paste(out.dir, "04_glmm_raneff_mn.pdf", sep=""))
 par(mfrow=c(1,1))
-#do.call(ranef.plot, c(list(mn.glmm, mn, "Measurelemma", n.select, main=paste(main.dotchart.meas, "(MN)")), opts.dotchart))
 do.call(ranef.plot, c(list(mn.glmm, mn, "Kindlemma", n.select, main=paste(main.dotchart.kind, "(MN)")), opts.dotchart))
 par(mfrow=c(1,1))
 if (save.persistent) dev.off()
 
 if (save.persistent) pdf(paste(out.dir, "04_glmm_raneff_fem.pdf", sep=""))
 do.call(ranef.plot, c(list(fem.glmm, fem, "Measurelemma", n.select, main=paste(main.dotchart.meas, "(F)")), opts.dotchart))
-#do.call(ranef.plot, c(list(fem.glmm, fem, "Kindlemma", n.select, main=paste(main.dotchart.kind, "(F)")), opts.dotchart))
 if (save.persistent) dev.off()
 
-if (save.persistent) pdf(paste(out.dir, "04_glmm_raneff_pl.pdf", sep=""))
-#do.call(ranef.plot, c(list(pl.glmm, pl, "Measurelemma", n.select, main=paste(main.dotchart.meas, "(P)")), opts.dotchart))
-do.call(ranef.plot, c(list(pl.glmm, pl, "Kindlemma", n.select, main=paste(main.dotchart.kind, "(P)")), opts.dotchart))
+
+# And full plots for personal use.
+
+if (save.persistent) pdf(paste(out.dir, "04_glmm_raneff_mn_full.pdf", sep=""))
+par(mfrow=c(1,1))
+do.call(ranef.plot, c(list(mn.glmm, mn, "Kindlemma", length(unlist(ranef(mn.glmm)$Kindlemma)), main=paste(main.dotchart.kind, "(MN)")), opts.dotchart))
+par(mfrow=c(1,1))
 if (save.persistent) dev.off()
+
+if (save.persistent) pdf(paste(out.dir, "04_glmm_raneff_fem_full.pdf", sep=""))
+do.call(ranef.plot, c(list(fem.glmm, fem, "Measurelemma", length(unlist(ranef(fem.glmm)$Measurelemma)), main=paste(main.dotchart.meas, "(F)")), opts.dotchart))
+if (save.persistent) dev.off()
+
+
 
 # Effect plots.
 
@@ -492,8 +417,8 @@ fixeff.pl.cex <- 1.5
 
 # M/N
 
-effs.mn <- c("Genitives", "Minus1pos", "Matchlength", "Measurenumber", "Badness", "Measurecase", "Kindattraction", "Measureattraction", "Measureclass",
-             "Kindedible", "Kindfreq", "Kindint", "Measurefreq")
+effs.mn <- c("Genitives", "Minus1pos", "Measurenumber", "Badness", "Measurecase", "Kindattraction", "Measureattraction", "Measureclass",
+             "Kindedible", "Kindfreq", "Measurefreq")
 
 for (eff in effs.mn) {
   fn <- paste("output/04_glmm_fixeff_mn_", eff, ".pdf", sep="")
@@ -505,23 +430,19 @@ for (eff in effs.mn) {
 
 # FEM
 
-effs.fem <- c("Genitives", "Badness", "Measurecase", "Measureabbreviated", "Minus1pos", "Matchlength", "Measurenumber",
-              "Measureattraction", "Kindattraction", "Kindconsistency", "Kindedible", "Kindfreq", "Kindint", "Measurefreq")
+effs.fem <- c("Genitives", "Badness", "Measurecase", "Measureabbreviated", "Minus1pos", "Measurenumber",
+              "Measureattraction", "Kindattraction", "Kindconsistency", "Kindedible", "Kindfreq", "Measurefreq")
 
 for (eff in effs.fem) {
   print(eff)
   fn <- paste("output/04_glmm_fixeff_fem_", eff, ".pdf", sep="")
   if (save.persistent) pdf(fn)
-  p <- plot(Effect(eff, fem.glmm, KR = T), rug=F, main = "Feminine", colors = c("black", "darkblue"), cex = fixeff.pl.cex)
+  p <- plot(Effect(eff, fem.glmm, KR = T), rug=F, main = "Feminine", colors = c("black", "darkblue"), cex = fixeff.pl.cex,
+            ylab = "Genitive")
   print(p)
   if (save.persistent) dev.off()
 }
 
-
-if (save.persistent) pdf(paste(out.dir, "04_glmm_fixeff_pl_Attraction.pdf", sep=""))
-p <- plot(Effect("Attraction", pl.glmm, KR = T), rug=F, main = "Plural", colors = c("black", "darkblue"), cex = fixeff.pl.cex)
-print(p)
-if (save.persistent) dev.off()
 
 
 if (save.persistent) sink(paste(out.dir, "05_glmm.txt", sep=""), append = T)
@@ -530,4 +451,20 @@ cat("\n\n MULTICOLLINEARITY\nM/N\n")
 print(vif.mer(mn.glmm))
 cat("\n\n F\n")
 print(vif.mer(fem.glmm))
+if (save.persistent) sink()
+
+# Print raneffs,
+
+if (save.persistent) sink(paste(out.dir, "05_glmm.txt", sep=""), append = T)
+cat("\n\n Random effects\n")
+cat("\n\n M/N Kindlemma \n")
+cbind(
+  rownames(ranef(mn.glmm)$Kindlemma)[order(ranef(mn.glmm)$Kindlemma[[1]])],
+  unname(unlist(ranef(mn.glmm)$Kindlemma)[order(ranef(mn.glmm)$Kindlemma[[1]])])
+)
+cat("\n\n F Measurelemma \n")
+cbind(
+  rownames(ranef(fem.glmm)$Measurelemma)[order(ranef(fem.glmm)$Measurelemma[[1]])],
+  unname(unlist(ranef(fem.glmm)$Measurelemma)[order(ranef(fem.glmm)$Measurelemma[[1]])])
+)
 if (save.persistent) sink()

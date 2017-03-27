@@ -515,7 +515,7 @@ The resulting models will then be validated using experimental methods in Sectio
 \label{sec:corpusstudies}
 
 
-\subsection{Getting the right data}
+\subsection{Corpus choice and sampling}
 \label{sec:gettingdata}
 
 % TODO Quote:
@@ -523,8 +523,8 @@ The resulting models will then be validated using experimental methods in Sectio
 
 For the present study, I used the German \textit{Corpus from the Web} (COW) in its 2014 version DECOW14A (\citealp{SchaeferBildhauer2012full,Schaefer2015b} and \citealp{BiemannEa2013,SchaeferBildhauer2013} for overviews of web corpora in general and the methodology of their construction), which contains almost 21 billion tokens.%
 \footnote{The corpora are made available for free at \url{https://www.webcorpora.org}.
-I chose this corpus for two main reasons.
 At the time of this writing, a newer 2016 version DECOW16 had already been released.}
+I chose this corpus for two main reasons.
 First, the external validity of any study is increased through a higher heterogeneity of the sample \citep[30]{MaxwellDelaney2004}, and the DECOW corpus has clearly a much more heterogeneous composition compared to the only other very large corpus of German, the DeReKo \citep{KupietzEa2010} of the Institute for the German Language (IDS), which contains almost exclusively newspaper texts.%
 \footnote{It was shown in \cite{W16-2601} that, for example, the spread of topics is much smaller in DeReKo compared to DECOW.}
 Second, it was already mentioned that normative grammars often adopt clear positions on the grammaticality of the NAC or the PGC.
@@ -699,8 +699,8 @@ As explained in Section~\ref{sec:descriptive}, due to extensive case syncrestism
 All dative MNPs with feminine kind nouns had to be removed, and the regressor \textit{Measurecase} consequently only had two levels with feminine kind nouns.%
 \footnote{Together with other cleanups (erroneous hits, extremely noisy material), the removal of such uninformative sentences reduced the total size of the sample to 5,063 sentences.}
 Therefore, two separate models for masculine\slash neuter and feminine kind nouns were fitted.
-For the masculine\slash neuter model, the final sample size was $n_{\text{MN}}=3,949$ with 672 cases of \PGCa\ and 3,277 cases of \NACa.
-For the feminine model, it was $n_{\text{F}}=1,114$ with 462 cases of \PGCa\ and 652 cases of $\NACa$.
+For the masculine\slash neuter model (henceforth \textit{MN model}), the final sample size was $n_{\text{MN}}=3,949$ with 672 cases of \PGCa\ and 3,277 cases of \NACa.
+For the feminine model (henceforth \textit{F model}), it was $n_{\text{F}}=1,114$ with 462 cases of \PGCa\ and 652 cases of $\NACa$.
 All regressors from Table~\ref{tab:variables} were included to begin with, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
 The regressors listed in Table~\ref{tab:variables} with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \cite[265--269,302--304]{GelmanHill2006}.
 The same goes for those listed with the kind lemma as their unit of reference.
@@ -781,18 +781,18 @@ However, re-estimating the models with these variables removed did \textit{not} 
 %\end{table}
 
 Standard diagnostics show that the model quality is quite high.
-For the masculine\slash neuter model, Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.495$ and $R^2_c=0.544$ (see \citealp{Gries2015} for a linguist-friendly introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
+For the MN model, Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.495$ and $R^2_c=0.544$ (see \citealp{Gries2015} for a linguist-friendly introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
 The rate of correct predictions is $0.872$, which means a proportional reduction of error of $\lambda=0.247$.
-For the feminine model, $R_m^2=0.468$ and $R^2_c=0.574$ are achieved, as well as a correct prediction rate of $0.815$, which means a proportional reduction of error of $\lambda=0.554$.
+For the F model, $R_m^2=0.468$ and $R^2_c=0.574$ are achieved, as well as a correct prediction rate of $0.815$, which means a proportional reduction of error of $\lambda=0.554$.
 The measure and kind lemma intercepts are distributed with the following standard deviations:
-Masculine\slash neuter $\sigma_{\text{Measurelemma}}>0.001$ (131 lemmas), $\sigma_{\text{Kindlemma}}=0.591$ (68 lemmas);
-Feminine $\sigma_{\text{Measurelemma}}=0.905$ (73 lemmas), $\sigma_{\text{Kindlemma}}=0.000$ (19 lemmas).
-In the masculine\slash neuter model individual measure lemmas do not play much of role, mostly because the second-level regressors successfully model the between-lemma variance.
-In the feminine model, kind lemmas (and -- as will be shown -- the second level model for kind lemmas) are irrelevant, most likely because of the low number of levels.%
+MN model $\sigma_{\text{Measurelemma}}<0.001$ (131 lemmas), $\sigma_{\text{Kindlemma}}=0.591$ (68 lemmas);
+F model $\sigma_{\text{Measurelemma}}=0.905$ (73 lemmas), $\sigma_{\text{Kindlemma}}=0.000$ (19 lemmas).
+In the MN model, variance between individual measure lemmas do not play much of role, mostly because the second-level regressors successfully model the between-lemma variance.
+In the F model, kind lemmas (and -- as will be shown -- the second level model for kind lemmas) could not be estimated with great success, most likely because of the low number of levels.%
 \footnote{This low number is expected given that most mass nouns are masculine and neuter in German.}
 This will be discussed in Section~\ref{sec:interpretation}.
 
-In Table~\ref{tab:bigtable}, there are groups of columns for the results obtained from Maximum Likelihood estimation and Markov-Chain Monte Carlo estimation, both for the masculine\slash neuter and the feminine models and including confidence intervals.
+In Table~\ref{tab:bigtable}, there are groups of columns for the results obtained from Maximum Likelihood estimation and Markov-Chain Monte Carlo estimation, both for the MN model and F models and including confidence intervals.
 In the remainder of this section, I describe how these results were obtained.
 The coefficient estimates are specified for each regressor (level) in the columns labelled \textit{Coef}.%
 \footnote{Empty cells in the table correspond to regressors and their levels which had to be removed because of convergence problems.}
@@ -803,10 +803,10 @@ The column \textit{Not 0} shows an asterisk for those intervals that do not incl
 As mentioned above, no step-down model selection was performed.
 However, for each regressor, a $p$ value was obtained by dropping the regressor from the full model, re-estimating the nested model and comparing it to the full model.
 Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
-These bootstrapped $p$ values are given in the columns labelled p\Sub{BP} in Table~\ref{tab:bigtable}.
+These bootstrapped $p$ values are given in the columns labelled p\Sub{PB} in Table~\ref{tab:bigtable}.
 
 Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo estimation do not necessarily (and in this case predictably) lead to different results.
-Both the masculine\slash neuter model and the feminine model were re-estimated using the \textit{stan\_glmer} function from the \textit{rstanarm} package, which provides an \textit{lme4}-compatible syntax for estimating common model types with the \textit{stan} software \citep{CarpenterEa2017}.
+Both the MN model and the F model were re-estimated using the \textit{stan\_glmer} function from the \textit{rstanarm} package, which provides an \textit{lme4}-compatible syntax for estimating common model types with the \textit{stan} software \citep{CarpenterEa2017}.
 The algorithm was run using 4 chains and 1,000 iterations, and instead of guessing prior distributions or using implausible uniform prior distributions \cite[251--252]{Levshina2016}, I used plausible default priors.
 Most notably, priors for coefficients were specified as $\mathcal{N}(0,10)$ because coefficients higher than $10$ or lower than $-10$ are extremely rare in well-specified models on appropriate data.%
 \footnote{Consider that with a coefficient of 10, each increase by $1$ in the regressor variable means an increase in odds of $exp(10)=22026.47$.
@@ -848,9 +848,9 @@ In the interpretation of the results in the next section, it will become apparen
 The results reported in Section~\ref{sec:corpushierarchicalmodel} generally confirm the hypotheses from Section~\ref{sec:analyses}.
 Before I turn to some details, it should be noticed that the results from standard MLE (with bootstrap) and MCMC (with default priors) obviously differ in numerical details -- but not enough to result in different interpretations.
 The signs and magnitudes of the coefficients are identical with the two methods, and the confidence intervals have roughly the same width and symmetry properties.
-In only one single case (masculine\slash neuter, \textit{Measureattraction}) the MLE bootstrap confidence interval does not include $0$ while the MCMC interval does (barely, with $-0.01$).
+In only one single case (MN model, \textit{Measureattraction}) the MLE bootstrap confidence interval does not include $0$ while the MCMC interval does (barely, with $-0.01$).
 While I only interpret the MLE results, virtually the same interpretation could be made for the MCMC results.
-Furthermore, the masculine\slash neuter model and the feminine model agree in many relevant aspects.
+Furthermore, the MN model and the F model agree in many relevant aspects.
 Disagreement between the models will be discussed below.
 
 % ATTRACTION
@@ -858,14 +858,14 @@ Disagreement between the models will be discussed below.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Kindattraction}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Kindattraction}
-  \caption{Effect plot for the regressor \textit{Kindattraction} for the masculine\slash neuter and the feminine model (y axes have different scales)}
+  \caption{Effect plot for the regressor \textit{Kindattraction} for the MN model and the F model (y axes have different scales)}
   \label{fig:eff:kindattraction}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Measureattraction}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Measureattraction}
-  \caption{Effect plot for the regressor \textit{Measureattraction} for the masculine\slash neuter and the feminine model (y axes have different scales)}
+  \caption{Effect plot for the regressor \textit{Measureattraction} for the MN model and the F model (y axes have different scales)}
   \label{fig:eff:measureattraction}
 \end{figure}
 
@@ -874,8 +874,8 @@ First, the prototypicality effect related to the non-alternating \PGCd\ and \NAC
 They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis),assuming typical values of all other regressors.}
 The effect is mostly as expected:
 if a lemma appears relatively more often in the \PGCd\ (compared to its frequency in the \NACb), the more often the \PGCa\ is chosen over the \NACa\ with this specific lemma.
-Only the feminine model \textit{Kindattraction} regressor is clearly useless (`non-significant') in the PBmodcomp test, and the effect plot shows a corresponding picture.
-This is related to the fact that in the feminine model the kind lemma effect and its second-level model turned out to be uninformative relative to the alternation (remember that $\sigma_{\text{Kindlemma}}=0.000$).
+Only the F model \textit{Kindattraction} regressor is clearly useless (`non-significant') in the PBmodcomp test, and the effect plot shows a corresponding picture.
+This is related to the fact that in the F model the kind lemma effect and the corresponding second-level model could not be estimated successfully (remember that $\sigma_{\text{Kindlemma}}=0.000$).
 The effect plots show a picture in line with a \textit{divide by 4} interpretation of the coefficients as shown in Table~\ref{tab:bigtable}.%
 \footnote{Coefficients are on the logit scale, which does not linearly correspond to the probability scale.
 If coefficients are reasonably small, however, dividing the coefficient by $4$ gives a good approximation of the change on the probability scale for each increment of the response variable \citep[82]{GelmanHill2006}.}
@@ -890,28 +890,39 @@ As readers can observe, these numbers correspond approximately to the slopes of 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.6\textwidth]{figures/corpus/04_glmm_fixeff_mn_Measureclass}
-  \caption{Effect plot for the regressor \textit{Measureclass} for the masculine\slash neuter model}
+  \caption{Effect plot for the regressor \textit{Measureclass} for the MN model}
   \label{fig:eff:measureattraction}
 \end{figure}
 
+In Section~\ref{sec:analyses}, it was also hypothesised that there may be effects specific to classes of lemmas and classes of lemmas, and that they might be related to degrees of grammaticalisation of the measure noun and\slash or semantic prototypicality effects.
+The picture is clear for the MN model.
+Lemma-specific effects were not detected ($\sigma_{\text{Measurelemma}}<0.001$), but instead the lemma class second-level predictor was successfully estimated ($p=0.004$ in the PB test).
+The large confidence intervals around the estimates (between $15.6$ and $28.37$) indicate that maybe the sample size needs to be higher, or a slightly modified classification might be even more adequate.
+Looking at the effect plot in Figure~\ref{fig:eff:measureattraction}, however, it is evident that the more abstract physical measure nouns with a high degree of grammaticalisation favour the \NACa\ (\textit{Square}, \textit{Length}, \textit{Currency}, \textit{Capacity}, \textit{Weight}) whereas the more concrete and less grammaticalised classes of measure nouns (which usually have an alternative use outside of MNPs) favour the \PGCa\ (\textit{Layer}, \textit{Amount}, \textit{Vessel}, \textit{Portion}).
+Ideally, there should be more differentiation in the second group, but given the large confidence intervals, significantly larger samples would be needed for more precise estimation.
+As mentioned before, the second level model for measure nouns in the F model could not estimated with meaningful results.
+
+On the other hand, the heuristic semantic classification for kind nouns in \textit{Kindconsistency} is much less useful.
+The MN model did not even converge with this regressor, and for the F model an insufficient $p=0.07$ was achieved in the PB test.
+Also, \textit{Kindint} does not contribute anything useful in either model (MN model $p=0.432$; F model $p=0.326$).
+The only regressor that has a considerable influence is \textit{Kindedible}, \ie, whether the substance denoted by the kind noun is edible.
+Since these regressors were added heuristically, there is no interpretation in terms of substantive theory, however, and I am hesitant to count it as very meaningful.
+In sum, no consistent picture emerges for kind noun-specific semantic prototypicality effects, but for measure nouns there is a clear indication that -- as predicted -- classes of more strongly grammaticalised nouns occur proportionally more frequently in the \PGCa.
 
 % PLURAL & CARDINALS
-%
-%\begin{figure}[h!]
-%  \centering
-%  \includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Minus1pos}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Minus1pos}
-%  \caption{Effect plot for the regressor \textit{Minus1pos} for the masculine\slash neuter and the feminine model (y axes have different scales)}
-%  \label{fig:eff:measureattraction}
-%\end{figure}
-%
-%\begin{figure}[h!]
-%  \centering
-%  \includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Measurenumber}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Measurenumber}
-%  \caption{Effect plot for the regressor \textit{Measurenumber} for the masculine\slash neuter and the feminine model (y axes have different scales)}
-%  \label{fig:eff:measureattraction}
-%\end{figure}
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_mn_Minus1pos}~\includegraphics[width=0.4\textwidth]{figures/corpus/04_glmm_fixeff_fem_Minus1pos}
+  \caption{Effect plot for the regressor \textit{Minus1pos} for the MN model and the F model (y axes have different scales)}
+  \label{fig:eff:measureattraction}
+\end{figure}
 
+I now turn to the predicted effect of plural measure nouns and cardinals as quantifiers.
+Plurality has a clear effect in the expected direction (plural favours the \PGCa) in the MN model ($p=0.002$ for \textit{Measurenumber}).
+In the F model, the effect has the same direction, but the estimate is quite imprecise ($p=0.160$), again likely due to the low sample size.
+Figure~\ref{fig:eff:measureattraction} shows, however, that the left context of the measure noun influences the choice of the variant (in both models, the regressor has $p=0.002$).
+Cardinals have a strong tendency to co-occur with the \NACa\ in both models.
 
 % REGISTER
 % => Badness
@@ -919,10 +930,22 @@ As readers can observe, these numbers correspond approximately to the slopes of 
 % => Matchlength
 % => Measureabbreviated
 
+The register-related proxy variables point into the expected direction.
+Increased \textit{Badness} favours the \NACa\ (only in the MN model $\beta=-0.2$, $p=0.002$), and so does a lesser density of genitives (MN model $\beta=-0.66$, $p=0.004$; F model $\beta=-0.52$, $p=0.002$).
+A higher length of the NP (\textit{Matchlength}) favours the \PGCa\ (MN model $\beta=0.54$, $p=0.002$; F model $\beta=0.63$, $p=0.002$) as predicted, but abbreviated measure nouns (\textit{Measureabbreviated}) do not seem to have much of an effect (MN model $p=0.730$; F model $p=0.267$).
+
+
 % NUISANCE
 % => dative effect
 % => frequency
 
+Finally, the nuisance variables \textit{Measurefreq} and \textit{Kindfreq} have no clear effect, except for maybe a $p=0.041$ for \textit{Measurefreq} in the MN model.
+The coefficient is $-0.16$ meaning that with each increase of the lemma log-frequency (per one million tokens) of the measure noun of one standard deviation, the probability that the \PGCa\ is chosen is lowered by approximately $-0.16/4=-0.04$.
+Since token frequency is no direct proxy for grammaticalisation, I hesitate to interpret this effect.
+The effect for \textit{Measurecase} is as predicted by previous studies (see Section~\ref{sec:analyses}).
+The dative favours the \PGCa\ in the MN model with $p=0.002$ and a coefficient for the dative (vs.\ the nominative, which is on the intercept) of $0.63$.
+In the F model, \textit{Dative} was not a level of \textit{Measurecase} due to the syncretisms mentioned in Section~\ref{sec:descriptive}.
+Although \textit{Measurecase} is a nuisance variable in the context of this study, convergence with previous work strengthens its validity.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

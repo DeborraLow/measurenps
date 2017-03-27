@@ -13,15 +13,13 @@ prop.func <- function(v, smooth = 1) {
 ndn.kind <- read.delim("data/ndn_kind_freq.tsv", header=FALSE, quote="")
 nn.kind <- read.delim("data/nn_kind_freq.tsv", header=FALSE, quote="")
 
-# Pl & Measure have been pre-processed differently, can load in one table.
-countnouns_attracfreq <- read.delim("data/countnouns_attracfreq.tsv", quote="")
+# Measure nousn have been pre-processed differently, can load in one table.
 measurenouns_attracfreq <- read.delim("data/measurenouns_attracfreq.tsv", quote="")
 
 # A cleanup.
-nn.kind <- nn.kind[-which(nn.kind$Lem=="rege"),]
 colnames(ndn.kind) <- c("Freq","Lem")
 colnames(nn.kind) <- c("Freq","Lem")
-
+nn.kind <- nn.kind[-which(nn.kind$Lem=="rege"),]
 
 # Get all lemmas for master table.
 # Background: We want values for all nouns, even those which occur in
@@ -29,7 +27,7 @@ colnames(nn.kind) <- c("Freq","Lem")
 cx.kind.lem <- c(as.character(nn.kind$Lem), as.character(ndn.kind$Lem))
 cx.kind.lem <- unique(cx.kind.lem[order(cx.kind.lem)])
 
-# Function to extract freqs for both constructions with "add 1".
+# Function to extract freqs for both constructions.
 get_freq <- function(data, lem) {
   n1 <- data[which(data$Lem == lem),1]
   if (length(n1) == 0) n1 <- 0
@@ -39,190 +37,35 @@ get_freq <- function(data, lem) {
 # Generate full table.
 cx.kind <- cbind(cx.kind.lem, lapply(cx.kind.lem, function(lem){get_freq(nn.kind,lem)}), lapply(cx.kind.lem, function(lem){get_freq(ndn.kind,lem)}))
 
-# A rather simple "attraction" function, i.e., quotients.
-attraction <- function(cs, smooth=1) {
-  (unlist(cs)[2]+smooth) / (unlist(cs)[1]+smooth)
+# A rather simple "attraction" function, i.e., proportion.
+attraction <- function(cs) {
+  unlist(cs)[2] / (unlist(cs)[1] + unlist(cs)[2])
 }
+
+
 
 # Generate attraction quotients for full table.
 cx.kind <- as.data.frame(cx.kind)
 cx.kind$Pv <- unlist(apply(cx.kind[,2:3], 1, function(cs){attraction(cs)} ))
-cx.kind$Lpv <- log(cx.kind$Pv, 10)
 
-# PLURAL & MEASURE are simpler because the tables were imported done & ready.
+# Measure nouns are simpler because the tables were imported done & ready.
 cx.measure <- measurenouns_attracfreq
 cx.measure$Pv <- unlist(apply(cx.measure[,2:3], 1, function(cs){attraction(cs)} ))
-cx.measure$Lpv <- log(cx.measure$Pv, 10)
-cx.pl.kind <- countnouns_attracfreq
-cx.pl.kind$Pv <- unlist(apply(cx.pl.kind[,2:3], 1, function(cs){attraction(cs)} ))
-cx.pl.kind$Lpv <- log(cx.pl.kind$Pv, 10)
 
 # Give proper names to columns in final dfs.
-colnames(cx.kind) <- c("Lemma", "Nn", "Ndn", "Pv", "Lpv")
-colnames(cx.measure) <- c("Lemma", "Nn", "Ndn", "Pv", "Lpv")
-colnames(cx.pl.kind) <- c("Lemma", "Nn", "Ndn", "Pv", "Lpv")
+colnames(cx.kind) <- c("Lemma", "Nn", "Ndn", "Pv")
+colnames(cx.measure) <- c("Lemma", "Nn", "Ndn", "Pv")
 
-# Order by attraction value.
-cx.kind <- cx.kind[order(cx.kind$Pv),]
-cx.measure <- cx.measure[order(cx.measure$Pv),]
-cx.pl.kind <- cx.pl.kind[order(cx.pl.kind$Pv),]
-
-
-# Now, compare the "attraction" from neighboring constructions
-# with the ratio Gen/CaseIdent ("prop") in the target constructions.
-
-mn.props.kind <- apply(table(mn$Genitive,mn$Kindlemma), 2, prop.func )
-mn.props.measure <- apply(table(mn$Genitive,mn$Measurelemma), 2, prop.func )
-fem.props.kind <- apply(table(fem$Casedrop,fem$Kindlemma), 2, prop.func )
-fem.props.measure <- apply(table(fem$Casedrop,fem$Measurelemma), 2, prop.func )
-pl.props.kind <- apply(table(pl$Casedrop,pl$Kindlemma), 2, prop.func )
-
-# Now get the kind attration for the proportions from MN sample.
-mn.assocs.kind <- unlist(lapply(names(mn.props.kind), function(x) { cx.kind[which(cx.kind$Lemma == x), "Lpv"] } ))
-mn.assocs.measure <- unlist(lapply(names(mn.props.measure), function(x) { cx.measure[which(cx.measure$Lemma == x), "Lpv"] } ))
-fem.assocs.kind <- unlist(lapply(names(fem.props.kind), function(x) { cx.kind[which(cx.kind$Lemma == x), "Lpv"] } ))
-fem.assocs.measure <- unlist(lapply(names(fem.props.measure), function(x) { cx.measure[which(cx.measure$Lemma == x), "Lpv"] } ))
-pl.assocs.kind <- unlist(lapply(names(pl.props.kind), function(x) { r <- cx.pl.kind[which(cx.pl.kind$Lemma == x), "Lpv"]; ifelse(is.null(r), 0, r) } ))
-
-# Cleanup M/N.
-mn.rmv <- which(names(mn.props.kind) %in% c("Regen","Wein","Blut","Vermögen"))
-mn.nuller <- which(mn.props.kind=="0")
-mn.outl <- c(mn.rmv,mn.nuller)
-mn.props.kind.cl <- mn.props.kind[-mn.outl]
-mn.assocs.kind.cl <- mn.assocs.kind[-mn.outl]
-
-mn.props.measure.cl <- mn.props.measure
-mn.assocs.measure.cl <- mn.assocs.measure
-
-
-# Cleanup Fem.
-fem.assocs.kind.cl <- fem.assocs.kind
-fem.props.kind.cl <- fem.props.kind
-
-fem.assocs.measure.cl <- fem.assocs.measure
-fem.props.measure.cl <- fem.props.measure
-
-
-# Cleanup Pl.
-pl.assocs.kind.cl <- pl.assocs.kind
-pl.props.kind.cl <- pl.props.kind
-
-# Simple correlations and LMs.
-mn.ass.corrtest <- cor.test(mn.props.kind.cl, mn.assocs.kind.cl)
-mn.ass.lm <- lm(mn.props.kind.cl~mn.assocs.kind.cl)
-
-mn.ass.meas.corrtest <- cor.test(mn.props.measure.cl, mn.assocs.measure.cl)
-mn.ass.meas.lm <- lm(mn.props.measure.cl~mn.assocs.measure.cl)
-
-fem.ass.corrtest <- cor.test(fem.props.kind.cl, fem.assocs.kind.cl)
-fem.ass.lm <- lm(fem.props.kind.cl~fem.assocs.kind.cl)
-
-fem.ass.meas.corrtest <- cor.test(fem.props.measure.cl, fem.assocs.measure.cl)
-fem.ass.meas.lm <- lm(fem.props.measure~fem.assocs.measure.cl)
-
-pl.ass.corrtest <- cor.test(pl.props.kind.cl, pl.assocs.kind.cl)
-pl.ass.lm <- lm(pl.props.kind.cl~pl.assocs.kind.cl)
-
-
-# Bootstrap function wrapper for correlation.
-boot.cor <- function(data, indices) {
-  cor(data[indices,1], data[indices,2])
-}
-
-mn.cor.boot <- boot(data=cbind(mn.props.kind.cl, mn.assocs.kind.cl), statistic=boot.cor, R=100000, parallel="multicore", ncpus=8)
-mn.meas.cor.boot <- boot(data=cbind(mn.props.measure.cl, mn.assocs.measure.cl), statistic=boot.cor, R=100000, parallel="multicore", ncpus=8)
-fem.cor.boot <- boot(data=cbind(fem.props.kind.cl, fem.assocs.kind.cl), statistic=boot.cor, R=100000, parallel="multicore", ncpus=8)
-fem.meas.cor.boot <- boot(data=cbind(fem.props.measure.cl, fem.assocs.measure.cl), statistic=boot.cor, R=100000, parallel="multicore", ncpus=8)
-pl.cor.boot <- boot(data=cbind(pl.props.kind.cl, pl.assocs.kind.cl), statistic=boot.cor, R=100000, parallel="multicore", ncpus=8)
-
-
-# OUTPUT
-
-if (save.persistent) pdf(paste(out.dir, "02_mn_attraction_lm.pdf", sep=""))
-par(mfrow=c(1,2))
-plot(mn.props.kind.cl~mn.assocs.kind.cl, main="MN: Kind nouns")
-abline(mn.ass.lm)
-plot(mn.props.measure.cl~mn.assocs.measure.cl, main="MN: Measure nouns")
-abline(mn.ass.meas.lm)
-par(mfrow=c(1,1))
-if (save.persistent) dev.off()
-
-if (save.persistent) pdf(paste(out.dir, "02_fem_attraction_lm.pdf", sep=""))
-par(mfrow=c(1,2))
-plot(fem.props.kind.cl~fem.assocs.kind.cl, main="FEM: Kind nouns")
-abline(fem.ass.lm)
-plot(fem.props.measure.cl~fem.assocs.measure.cl, main="FEM: Measure nouns")
-abline(fem.ass.meas.lm)
-par(mfrow=c(1,1))
-if (save.persistent) dev.off()
-
-if (save.persistent) pdf(paste(out.dir, "02_pl_attraction_lm.pdf", sep=""))
-plot(pl.props.kind.cl~pl.assocs.kind.cl)
-abline(pl.ass.lm)
-if (save.persistent) dev.off()
-
-if (save.persistent) sink(paste(out.dir, "02_attraction.txt", sep=""))
-cat("\n [ MASC / NEUT ATTRACTION EFFECT ]\n")
-cat("\n [ KIND ]\n\n")
-cat("\n [ Correlation ]\n\n")
-print(mn.ass.corrtest)
-cat("\n [ ... bootstrap CI ]\n\n")
-print(mn.cor.boot)
-print(boot.ci(mn.cor.boot, conf=0.95, type = "bca"))
-cat("\n [ MEASURE ]\n\n")
-cat("\n [ Correlation ]\n\n")
-print(mn.ass.meas.corrtest)
-cat("\n [ ... bootstrap CI ]\n\n")
-print(mn.meas.cor.boot)
-print(boot.ci(mn.meas.cor.boot, conf=0.95, type = "bca"))
-
-cat("\n [ FEM ATTRACTION EFFECT ]\n")
-cat("\n [ KIND ]\n\n")
-cat("\n [ Correlation ]\n\n")
-print(fem.ass.corrtest)
-cat("\n [ ... bootstrap CI ]\n\n")
-print(fem.cor.boot)
-print(boot.ci(fem.cor.boot, conf=0.95, type = "bca"))
-cat("\n [ MEASURE ]\n\n")
-cat("\n [ Correlation ]\n\n")
-print(fem.ass.meas.corrtest)
-cat("\n [ ... bootstrap CI ]\n\n")
-print(fem.meas.cor.boot)
-print(boot.ci(fem.meas.cor.boot, conf=0.95, type = "bca"))
-
-
-cat("\n [ PL ATTRACTION EFFECT ]\n")
-cat("\n [ Correlation ]\n\n")
-print(pl.ass.corrtest)
-cat("\n [ ... bootstrap CI ]\n\n")
-print(pl.cor.boot)
-#print(boot.ci(pl.cor.boot, conf=0.95, type = "bca"))
-if (save.persistent) sink()
-
-if (save.persistent) {
-  pdf(paste(out.dir, "02_mn_attraction_bootstrapcorr.pdf", sep=""))
-  plot(mn.cor.boot)
-  dev.off()
-  pdf(paste(out.dir, "02_fem_attraction_bootstrapcorr.pdf", sep=""))
-  plot(fem.cor.boot)
-  dev.off()
-#  pdf(paste(out.dir, "02_pl_attraction_bootstrapcorr.pdf", sep=""))
-#  plot(pl.cor.boot)
-#  dev.off()
-}
 
 # Pull attraction strength for each observation.
 
-mn$Kindattraction <- unlist(lapply(mn$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == x), "Lpv"] } ))
-mn$Measureattraction <- unlist(lapply(mn$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Lpv"] } ))
-fem$Kindattraction <- unlist(lapply(fem$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == x), "Lpv"] } ))
-fem$Measureattraction <- unlist(lapply(fem$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Lpv"] } ))
-pl$Attraction <- unlist(lapply(as.character(pl$Kindlemma), function(x) { r <- cx.pl.kind[which(as.character(cx.pl.kind$Lemma) == x), "Lpv"]; ifelse(is.null(r), 0, r) } ))
-pl$Attraction <- ifelse(is.na(pl$Attraction), 0, pl$Attraction)
+mn$Kindattraction <- unlist(lapply(mn$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == x), "Pv"] } ))
+mn$Measureattraction <- unlist(lapply(mn$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Pv"] } ))
+fem$Kindattraction <- unlist(lapply(fem$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == x), "Pv"] } ))
+fem$Measureattraction <- unlist(lapply(fem$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Pv"] } ))
 
 # Center
 mn$Kindattraction <- center.simple(mn$Kindattraction)
 mn$Measureattraction <- center.simple(mn$Measureattraction)
 fem$Kindattraction <- center.simple(fem$Kindattraction)
 fem$Measureattraction <- center.simple(fem$Measureattraction)
-pl$Attraction <- center.simple(pl$Attraction)

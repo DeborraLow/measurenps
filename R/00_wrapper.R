@@ -60,16 +60,6 @@ source('02_attraction.R') # calculate attraction factors
 
 t.attracted <- Sys.time()
 
-cat("\n\n EXPLORE ...\n")
-source('03_explore.R')    # exploratory analysis (determine order of adding regressors)
-
-t.explored <- Sys.time()
-
-cat("\n\n GLM ...\n")
-source('04_glm.R')        # GLMs
-
-t.glm <- Sys.time()
-
 cat("\n\n GLMM ...\n")
 source('05_glmm.R')       # full GLMMs
 
@@ -87,9 +77,7 @@ cat("Total:", t.mcmc - t.start)
 
 cat("... Loading:", t.loaded - t.start, "\n")
 cat("... Attraction:", t.attracted - t.loaded, "\n")
-cat("... Exploring:", t.explored - t.attracted, "\n")
-cat("... GLMs:", t.glm - t.explored, "\n")
-cat("... GLMMs:", t.glmm - t.glm, "\n")
+cat("... GLMMs:", t.glmm - t.attracted, "\n")
 cat("... MCMC:", t.mcmc - t.glmm, "\n\n")
 
 cat("\n\nThis run ENDED at ")

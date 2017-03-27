@@ -17,21 +17,16 @@ mn.glmm.mcmc <- stan_glmer(Genitive~1
                            +(1|Kindlemma)
                            +Genitives
                            +Minus1pos
-                           #+Kindlength          # unstable in bootstrap
                            +Measureclass
-                           +Matchlength
                            +Measureabbreviated
                            +Measureattraction
-                           #+Measurelength       # virtual non-convergence
                            +Kindattraction
                            +Measurenumber
                            +Kindedible
                            +Badness
-                           #+Kindconsistency     # virtual non-convergence
-                           #+Kindorigin          # virtual non-convergence
+                           +Kindconsistency
                            +Kindfreq
                            +Measurecase
-                           +Kindint
                            +Measurefreq
                            ,
                  data=mn, family=binomial(link=logit),
@@ -50,24 +45,19 @@ mn.baysum <- summary(mn.glmm.mcmc)
 fem.glmm.mcmc <- stan_glmer(Casedrop~1
                             +(1|Measurelemma)
                             +(1|Kindlemma)
-                            #+Measureclass         # non-convergence
+                            +Measureclass
                             +Minus1pos
                             +Measureabbreviated
                             +Kindconsistency
-                            +Matchlength
                             +Measureattraction
                             +Genitives
                             +Kindedible
-                            #+Kindorigin           # fixeff matrix rank deficient
-                            #+Measurelength        # unstable in bootstrap
                             +Measurenumber
-                            +Kindint
                             +Badness
                             +Measurefreq
                             +Measurecase
                             +Kindfreq
                             +Kindattraction
-                            #+Kindlength         # unstable in bootstrap
                   ,
                   data=fem, family=binomial(link=logit),
                   chains=chains, seed=seed, iter=iter,
@@ -80,37 +70,6 @@ fem.glmm.mcmc <- stan_glmer(Casedrop~1
 fem.baysum <- summary(fem.glmm.mcmc)
 
 
-# PL
-
-pl.glmm.mcmc <- stan_glmer(Casedrop~1
-                           +(1|Kindlemma)
-                           #+(1|Measurelemma)    # model unidentifiable
-                           #+Minus1pos           # model unidentifiable
-                           +Attraction
-                           #+Genitives           # model unidentifiable
-                           #+Kindgender          # Hessian singular
-                           #+Matchlength         # model unidentifiable
-                           +Measurefreq
-                           +Measurelength
-                           #+Measurecase         # model unidentifiable
-                           #+Kindfreq            # non-convergence
-                           #+Badness             # model unidentifiable
-                           #+Minus2pos           # model unidentifiable
-                           #+Kindlength          # non-convergence
-                           #+Measurenumber       # makes no sense
-                           #+Measureabbreviated  # only one level
-                 ,
-                 data=pl, family=binomial(link=logit),
-                 chains=chains, seed=seed, iter=iter,
-                 prior = normal(0, 2.5), prior_intercept = normal(0, 10),
-                 prior_ops = prior_options(prior_scale_for_dispersion = 5, min_prior_scale = 1e-12, scaled = TRUE),
-                 prior_covariance = decov(regularization = 1, concentration = 1, shape = 1, scale = 1),
-                 prior_PD = F
-               )
-
-pl.baysum <- summary(pl.glmm.mcmc)
-
-
 
 # OUTPUT
 
@@ -118,7 +77,6 @@ if (save.persistent) sink(paste(out.dir, "06_glmm-mcmc.txt", sep=""))
 cat("\nBayesian estimation of GLMMs with MCMC\n\n")
 print(mn.baysum)
 print(fem.baysum)
-print(pl.baysum)
 if (save.persistent) sink()
 
 
