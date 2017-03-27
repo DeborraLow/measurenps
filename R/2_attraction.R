@@ -1,9 +1,3 @@
-# This creates the quotient database for lemmas in the NN and NDN construction.
-
-
-prop.func <- function(v, smooth = 1) {
-  log( (v[2]+smooth) / (v[1]+smooth), 10)
-}
 
 ndn.kind <- read.delim("data/ndn_kind_freq.tsv", header=FALSE, quote="")
 nn.kind <- read.delim("data/nn_kind_freq.tsv", header=FALSE, quote="")
@@ -38,9 +32,8 @@ get_freq <- function(data, lem) {
 cx.kind <- cbind(cx.kind.lem, lapply(cx.kind.lem, function(lem){get_freq(nn.kind,lem)}), lapply(cx.kind.lem, function(lem){get_freq(ndn.kind,lem)}))
 
 
-# A rather simple "attraction" function, i.e., proportion.
+# A rather simple "attraction" function, i.e., log ratio.
 attraction <- function(cs) {
-#  unlist(cs)[2] / (unlist(cs)[1] + unlist(cs)[2])
   log((unlist(cs)[2] + 1) / (unlist(cs)[1] + 1))
 }
 

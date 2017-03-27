@@ -6,12 +6,6 @@ require(gridExtra)
 require(car)
 
 
-the.nAGQ               <- 0      # 0 for speed, 1 for precision and EXTREMELY slow computation.
-ci.boot.nsim           <- 100   # Even 100 can be extremely slow! SET TO MIN. 1000 FOR PRODUCTION!!!
-ci.boot.modelcomp.nsim <- 100   # This takes ages, even with 10. Set to 1000 for PRODUCTION!!!
-
-
-
 measure.glmm <- glmer(Construction~1
                  
                  +(1|Measurelemma)
@@ -75,12 +69,13 @@ cat("\n\n")
 print(measure.glmm.wald)
 cat("\n\nModel comparison with LR and PB test\n")
 print(modelcomp)
+print(round(modelcomp$PB.p, precision))
 cat("\n\n")
-print(measure.glmm.r2)
+print(round(measure.glmm.r2, precision))
 cat("\n\n")
-cat("correct", measure.glmm.corr)
+cat("correct", round(measure.glmm.corr, precision))
 cat("\n\n")
-cat("λ", measure.glmm.pre)
+cat("λ", round(measure.glmm.pre, precision))
 cat("\n\n")
 if (save.persistent) sink()
 
@@ -149,15 +144,4 @@ do.call(ranef.plot, c(list(measure.glmm, measure, "Measurelemma", n.select, main
 do.call(ranef.plot, c(list(measure.glmm, measure, "Kindlemma", n.select, main = main.dotchart.kind), opts.dotchart))
 par(mfrow=c(1,1))
 if (save.persistent) dev.off()
-
-
-
-
-# Make table.
-measure.glmm.table <- data.frame(
-  Coefficient = round(fixef(measure.glmm)[-1], round.in.big.table),
-  Low         = rev(round(measure.ci.95[,1], round.in.big.table)),
-  High        = rev(round(measure.ci.95[,2], round.in.big.table)),
-  Not0        = rev(ifelse( (measure.ci.95[,1] < 0 & measure.ci.95[,2] < 0) | (measure.ci.95[,1] > 0 & measure.ci.95[,2] > 0) , "*", ""))
-)
 

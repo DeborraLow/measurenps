@@ -1,13 +1,9 @@
 require(rstanarm)
 require(rstan)
 
+
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
-
-
-chains <- 4
-seed   <- 6976
-iter   <- 100 # Set to 1000 for production.
 
 
 measure.glmm.mcmc <- stan_glmer(Construction~1
@@ -50,20 +46,23 @@ if (save.persistent) sink()
 
 # Make table.
 measure.glmm.table <- data.frame(
-  ML_Coef  = round(fixef(measure.glmm)[-1], round.in.big.table),
-  ML_Low   = rev(round(measure.ci.95[,1], round.in.big.table)),
-  ML_High  = rev(round(measure.ci.95[,2], round.in.big.table)),
+  ML_Coef  = round(fixef(measure.glmm)[-1], precision),
+  MC_Coef  = round(measure.baysum[,1][names(fixef(measure.glmm)[-1])], precision),
+  
+  ML_Low   = rev(round(measure.ci.95[,1], precision)),
+  MC_Low   = round(measure.baysum[,4][names(fixef(measure.glmm)[-1])], precision),
+
+  ML_High  = rev(round(measure.ci.95[,2], precision)),
+  MC_High  = round(measure.baysum[,8][names(fixef(measure.glmm)[-1])], precision),
+
   ML_Not0  = rev(ifelse( (measure.ci.95[,1] < 0 & measure.ci.95[,2] < 0) | (measure.ci.95[,1] > 0 & measure.ci.95[,2] > 0) , "*", "")),
-  MC_Coef  = round(measure.baysum[,1][names(fixef(measure.glmm)[-1])], round.in.big.table),
-  MC_Low   = round(measure.baysum[,4][names(fixef(measure.glmm)[-1])], round.in.big.table),
-  MC_High  = round(measure.baysum[,8][names(fixef(measure.glmm)[-1])], round.in.big.table),
   MC_Not0  = ifelse( (measure.baysum[,4][names(fixef(measure.glmm)[-1])] < 0 & measure.baysum[,8][names(fixef(measure.glmm)[-1])] < 0) |
                        (measure.baysum[,4][names(fixef(measure.glmm)[-1])] > 0 & measure.baysum[,8][names(fixef(measure.glmm)[-1])] > 0) , "*", "")
 )
 
 
 # Print table.
-if (save.persistent) sink(paste(out.dir, "06_glmm-mcmc.txt", sep=""), append = T)
-cat("\n\nTable comparing coefficient estimates across relevant models\n\n")
-print(big.table)
+if (save.persistent) sink(paste(out.dir, "mcmc.txt", sep=""), append = T)
+cat("\n\nTable comparing coefficient estimates with ML and MCMC\n\n")
+print(measure.glmm.table)
 if (save.persistent) sink()

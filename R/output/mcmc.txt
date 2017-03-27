@@ -1,0 +1,452 @@
+
+Bayesian estimation of GLMMs with MCMC
+
+stan_glmer(formula = Construction ~ 1 + (1 | Measurelemma) + 
+    (1 | Kindlemma) + Badness + Genitives + Leftcontext + Measurecase + 
+    Measurenumber + Kindattraction + Kindfreq + Kindgender + 
+    Measureattraction + Measureclass + Measurefreq, data = measure, 
+    family = binomial(link = logit), chains = chains, seed = seed, 
+    iter = iter, prior = normal(0, 2.5), prior_intercept = normal(0, 
+        10), prior_ops = prior_options(prior_scale_for_dispersion = 5, 
+        min_prior_scale = 1e-12, scaled = TRUE), prior_covariance = decov(regularization = 1, 
+        concentration = 1, shape = 1, scale = 1), prior_PD = F)
+
+Family: binomial (logit)
+Algorithm: sampling
+Posterior sample size: 200
+Observations: 5063
+Groups: Measurelemma 150, Kindlemma 87
+
+Estimates:
+                                                mean    sd      2.5%    25%     50%     75%     97.5%
+(Intercept)                                      -4.5     0.3    -5.1    -4.7    -4.5    -4.2    -3.9
+Badness                                          -0.2     0.0    -0.3    -0.2    -0.2    -0.1    -0.1
+Genitives                                        -0.7     0.1    -0.8    -0.7    -0.6    -0.6    -0.6
+LeftcontextD                                      1.2     0.2     0.8     1.0     1.2     1.3     1.6
+LeftcontextO                                      1.6     0.2     1.2     1.5     1.6     1.7     2.0
+LeftcontextA                                      2.4     0.2     2.0     2.2     2.4     2.5     2.7
+LeftcontextP                                      2.4     0.3     1.8     2.2     2.4     2.6     2.9
+MeasurecaseAcc                                    0.1     0.1    -0.1     0.0     0.1     0.1     0.3
+MeasurecaseDat                                    0.7     0.1     0.5     0.6     0.7     0.8     1.0
+MeasurenumberPl                                   0.8     0.2     0.5     0.7     0.8     0.9     1.1
+Kindattraction                                    0.2     0.1     0.0     0.2     0.2     0.3     0.4
+Kindfreq                                          0.2     0.1     0.0     0.1     0.2     0.2     0.3
+KindgenderNeut                                    0.0     0.2    -0.4    -0.1     0.0     0.1     0.4
+KindgenderFem                                     1.4     0.3     0.9     1.2     1.4     1.6     1.9
+Measureattraction                                 0.3     0.1     0.1     0.2     0.3     0.3     0.4
+MeasureclassRest                                  0.5     0.4    -0.2     0.3     0.5     0.7     1.2
+MeasureclassContainer                             0.6     0.3     0.1     0.4     0.6     0.8     1.2
+MeasureclassAmount                                1.0     0.4     0.3     0.8     1.0     1.2     1.7
+MeasureclassPortion                               1.5     0.3     1.0     1.3     1.5     1.7     2.1
+Measurefreq                                      -0.3     0.1    -0.4    -0.3    -0.3    -0.2    -0.1
+b[(Intercept) Measurelemma:Kilometer]            -0.1     0.5    -1.2    -0.4    -0.1     0.2     1.0
+b[(Intercept) Measurelemma:Stapel]                0.1     0.5    -0.8    -0.2     0.1     0.4     1.0
+b[(Intercept) Measurelemma:Stückchen]            -0.1     0.4    -0.9    -0.4    -0.1     0.1     0.6
+b[(Intercept) Measurelemma:Handvoll]              0.2     0.4    -0.5     0.0     0.2     0.5     1.0
+b[(Intercept) Measurelemma:Pfund]                 0.4     0.4    -0.5     0.1     0.4     0.7     1.2
+b[(Intercept) Measurelemma:Haufe]                 0.4     0.3    -0.1     0.2     0.4     0.6     0.9
+b[(Intercept) Measurelemma:Unmenge]              -0.3     0.4    -1.2    -0.6    -0.3     0.0     0.4
+b[(Intercept) Measurelemma:Liter]                 0.3     0.3    -0.2     0.1     0.3     0.4     0.8
+b[(Intercept) Measurelemma:Stück]                -0.1     0.3    -0.8    -0.3    -0.1     0.1     0.5
+b[(Intercept) Measurelemma:Kubikmeter]            0.5     0.3    -0.1     0.2     0.5     0.7     1.1
+b[(Intercept) Measurelemma:Tonne]                 0.3     0.3    -0.2     0.1     0.3     0.5     0.9
+b[(Intercept) Measurelemma:Menge]                 0.0     0.3    -0.6    -0.1     0.0     0.3     0.7
+b[(Intercept) Measurelemma:Kilogramm]             0.0     0.3    -0.6    -0.1     0.0     0.2     0.5
+b[(Intercept) Measurelemma:Euro]                 -0.1     0.4    -1.1    -0.4    -0.1     0.2     0.8
+b[(Intercept) Measurelemma:Barrel]                0.3     0.6    -0.7     0.0     0.3     0.8     1.4
+b[(Intercept) Measurelemma:Büschel]               0.0     0.4    -0.8    -0.3     0.0     0.2     0.6
+b[(Intercept) Measurelemma:Mark]                 -0.3     0.5    -1.3    -0.5    -0.2     0.1     0.7
+b[(Intercept) Measurelemma:Fass]                  0.5     0.5    -0.6     0.1     0.5     0.8     1.7
+b[(Intercept) Measurelemma:Flasche]               0.3     0.4    -0.4     0.0     0.2     0.5     1.1
+b[(Intercept) Measurelemma:Fleck]                 0.0     0.6    -1.1    -0.4     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Fleckchen]             0.2     0.5    -0.7    -0.2     0.1     0.5     1.1
+b[(Intercept) Measurelemma:Fontäne]              -0.3     0.7    -1.7    -0.8    -0.3     0.1     0.9
+b[(Intercept) Measurelemma:Franc]                -0.1     0.6    -1.3    -0.5    -0.1     0.2     1.0
+b[(Intercept) Measurelemma:Gramm]                -0.4     0.4    -1.1    -0.6    -0.4    -0.1     0.3
+b[(Intercept) Measurelemma:Gallone]               0.0     0.6    -1.0    -0.4     0.0     0.4     0.9
+b[(Intercept) Measurelemma:Glas]                  0.3     0.3    -0.4     0.0     0.2     0.5     0.9
+b[(Intercept) Measurelemma:Hektar]               -0.2     0.6    -1.2    -0.5    -0.2     0.2     1.0
+b[(Intercept) Measurelemma:Häufchen]              0.5     0.5    -0.3     0.2     0.5     0.8     1.5
+b[(Intercept) Measurelemma:Kanne]                 0.5     0.5    -0.4     0.1     0.4     0.8     1.4
+b[(Intercept) Measurelemma:Kilowatt]              0.1     0.5    -0.8    -0.2     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Kiste]                 0.0     0.5    -0.9    -0.3     0.0     0.4     1.0
+b[(Intercept) Measurelemma:Klafter]              -0.2     0.5    -1.3    -0.5    -0.2     0.2     0.8
+b[(Intercept) Measurelemma:Klumpen]               0.2     0.4    -0.6    -0.1     0.1     0.4     1.1
+b[(Intercept) Measurelemma:Krug]                 -0.2     0.5    -1.2    -0.5    -0.2     0.1     0.9
+b[(Intercept) Measurelemma:Lache]                 0.1     0.6    -1.1    -0.3     0.0     0.4     1.2
+b[(Intercept) Measurelemma:Ladung]               -0.5     0.5    -1.3    -0.8    -0.5    -0.1     0.4
+b[(Intercept) Measurelemma:Meter]                -0.4     0.5    -1.4    -0.7    -0.4    -0.1     0.4
+b[(Intercept) Measurelemma:Masse]                 0.0     0.5    -1.0    -0.3     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Milligramm]            0.2     0.5    -0.8    -0.2     0.2     0.5     1.1
+b[(Intercept) Measurelemma:Milliliter]            0.1     0.4    -0.6    -0.1     0.0     0.3     0.8
+b[(Intercept) Measurelemma:Portion]              -0.9     0.5    -1.9    -1.3    -0.9    -0.6    -0.1
+b[(Intercept) Measurelemma:Prise]                -0.1     0.5    -1.1    -0.4    -0.1     0.2     0.7
+b[(Intercept) Measurelemma:Quadratmeter]         -0.3     0.4    -1.2    -0.5    -0.3     0.0     0.7
+b[(Intercept) Measurelemma:Quadratkilometer]     -0.2     0.6    -1.3    -0.5    -0.2     0.1     0.8
+b[(Intercept) Measurelemma:Sack]                  0.1     0.5    -1.0    -0.2     0.0     0.4     1.0
+b[(Intercept) Measurelemma:Schicht]               0.1     0.3    -0.5    -0.1     0.1     0.3     0.7
+b[(Intercept) Measurelemma:Schüssel]              0.1     0.4    -0.8    -0.2     0.0     0.4     0.8
+b[(Intercept) Measurelemma:Schwall]               1.4     0.5     0.5     1.0     1.4     1.7     2.4
+b[(Intercept) Measurelemma:Streifen]             -0.2     0.4    -0.9    -0.4    -0.1     0.1     0.6
+b[(Intercept) Measurelemma:Taler]                 0.3     0.5    -0.8     0.0     0.3     0.7     1.3
+b[(Intercept) Measurelemma:Tasse]                -0.3     0.4    -1.0    -0.5    -0.3     0.0     0.4
+b[(Intercept) Measurelemma:Teller]               -0.2     0.4    -0.9    -0.4    -0.2     0.1     0.5
+b[(Intercept) Measurelemma:Topf]                  0.6     0.4    -0.2     0.4     0.7     0.9     1.4
+b[(Intercept) Measurelemma:Tropfen]               0.2     0.3    -0.4     0.0     0.2     0.4     0.9
+b[(Intercept) Measurelemma:Übermass]              0.1     0.6    -0.9    -0.3     0.1     0.5     1.3
+b[(Intercept) Measurelemma:Unze]                 -0.1     0.5    -1.3    -0.5    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Barren]                0.0     0.5    -1.0    -0.3     0.0     0.3     0.8
+b[(Intercept) Measurelemma:Batzen]               -0.1     0.6    -1.4    -0.6    -0.1     0.3     1.2
+b[(Intercept) Measurelemma:Becher]                0.0     0.5    -1.0    -0.3     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Berg]                  0.6     0.4    -0.2     0.3     0.6     0.9     1.4
+b[(Intercept) Measurelemma:Beutel]                0.0     0.6    -1.1    -0.4     0.0     0.4     1.1
+b[(Intercept) Measurelemma:Biss]                  0.2     0.5    -0.7    -0.2     0.2     0.5     1.1
+b[(Intercept) Measurelemma:Blatt]                -0.1     0.5    -1.2    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Block]                 0.1     0.6    -1.0    -0.2     0.1     0.4     1.3
+b[(Intercept) Measurelemma:Brocken]              -0.1     0.5    -1.3    -0.4    -0.1     0.2     0.8
+b[(Intercept) Measurelemma:Büchse]                0.2     0.5    -0.8    -0.2     0.1     0.5     1.3
+b[(Intercept) Measurelemma:Bund]                 -0.2     0.6    -1.2    -0.5    -0.1     0.2     1.0
+b[(Intercept) Measurelemma:Bündel]                0.4     0.6    -0.6     0.0     0.4     0.8     1.5
+b[(Intercept) Measurelemma:Cent]                 -0.1     0.5    -1.2    -0.4    -0.1     0.3     0.9
+b[(Intercept) Measurelemma:Zentimeter]           -0.3     0.5    -1.3    -0.6    -0.3    -0.1     0.5
+b[(Intercept) Measurelemma:Dollar]               -0.3     0.4    -1.2    -0.6    -0.3     0.0     0.5
+b[(Intercept) Measurelemma:Dose]                  0.1     0.4    -0.8    -0.2     0.1     0.4     0.9
+b[(Intercept) Measurelemma:Dosis]                 0.1     0.6    -0.9    -0.3     0.1     0.5     1.2
+b[(Intercept) Measurelemma:Eimer]                -0.3     0.5    -1.3    -0.6    -0.3     0.0     0.7
+b[(Intercept) Measurelemma:Einheit]               0.3     0.6    -0.9    -0.1     0.3     0.6     1.4
+b[(Intercept) Measurelemma:Esslöffel]            -0.3     0.4    -1.2    -0.6    -0.3     0.0     0.5
+b[(Intercept) Measurelemma:Extraportion]         -0.3     0.6    -1.5    -0.6    -0.2     0.1     0.8
+b[(Intercept) Measurelemma:Feinunze]              0.3     0.5    -0.9     0.0     0.3     0.6     1.4
+b[(Intercept) Measurelemma:Fetzen]                0.3     0.5    -0.4     0.0     0.2     0.5     1.3
+b[(Intercept) Measurelemma:Fläschchen]            0.1     0.5    -0.9    -0.2     0.1     0.4     1.1
+b[(Intercept) Measurelemma:Franke]               -0.1     0.5    -1.2    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Fuhre]                 0.0     0.5    -1.0    -0.4     0.0     0.3     1.2
+b[(Intercept) Measurelemma:Gläschen]             -0.2     0.5    -1.2    -0.6    -0.2     0.1     0.7
+b[(Intercept) Measurelemma:Groschen]              0.0     0.6    -1.1    -0.3     0.0     0.3     1.3
+b[(Intercept) Measurelemma:Gulden]                0.0     0.5    -0.9    -0.4     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Hälmchen]             -0.1     0.6    -1.1    -0.5     0.0     0.3     1.1
+b[(Intercept) Measurelemma:Happen]               -0.1     0.6    -1.2    -0.5    -0.1     0.3     1.0
+b[(Intercept) Measurelemma:Hauch]                 0.0     0.4    -0.7    -0.2     0.0     0.3     0.8
+b[(Intercept) Measurelemma:Häuflein]             -0.3     0.6    -1.5    -0.7    -0.3     0.0     0.8
+b[(Intercept) Measurelemma:Hektoliter]            0.2     0.6    -1.0    -0.2     0.1     0.6     1.5
+b[(Intercept) Measurelemma:Kanister]             -0.2     0.6    -1.3    -0.5    -0.1     0.2     1.0
+b[(Intercept) Measurelemma:Kännchen]              0.0     0.5    -1.0    -0.2     0.0     0.3     1.0
+b[(Intercept) Measurelemma:Kante]                -0.2     0.5    -1.2    -0.6    -0.2     0.2     0.8
+b[(Intercept) Measurelemma:Karton]               -0.1     0.5    -1.4    -0.4    -0.1     0.3     1.0
+b[(Intercept) Measurelemma:Kelle]                -0.1     0.5    -1.2    -0.4    -0.1     0.2     1.0
+b[(Intercept) Measurelemma:Kilowattstunde]        0.0     0.5    -1.0    -0.4     0.1     0.4     1.1
+b[(Intercept) Measurelemma:Klecks]                0.1     0.6    -1.1    -0.2     0.2     0.4     1.2
+b[(Intercept) Measurelemma:Koffer]               -0.2     0.6    -1.2    -0.5    -0.2     0.1     0.9
+b[(Intercept) Measurelemma:Korb]                  0.2     0.5    -0.7    -0.1     0.1     0.5     1.2
+b[(Intercept) Measurelemma:Korn]                  0.0     0.5    -1.1    -0.4    -0.1     0.3     0.9
+b[(Intercept) Measurelemma:Kübel]                 0.3     0.5    -0.8    -0.1     0.2     0.6     1.5
+b[(Intercept) Measurelemma:Kugel]                -0.1     0.5    -1.2    -0.5    -0.1     0.2     0.6
+b[(Intercept) Measurelemma:Lage]                  0.1     0.5    -0.9    -0.3     0.0     0.4     1.1
+b[(Intercept) Measurelemma:Laib]                  1.0     0.5     0.0     0.6     0.9     1.3     2.0
+b[(Intercept) Measurelemma:Lawine]                0.3     0.7    -0.9    -0.1     0.2     0.6     1.6
+b[(Intercept) Measurelemma:Löffel]               -0.1     0.4    -0.9    -0.3    -0.1     0.2     0.8
+b[(Intercept) Measurelemma:Mass]                  0.2     0.5    -0.7    -0.2     0.2     0.5     1.2
+b[(Intercept) Measurelemma:Megawatt]              0.0     0.6    -1.0    -0.4     0.1     0.4     1.2
+b[(Intercept) Measurelemma:Megawattstunde]       -0.1     0.7    -1.6    -0.5    -0.1     0.3     1.3
+b[(Intercept) Measurelemma:Messerspitze]         -0.6     0.6    -1.6    -0.9    -0.5    -0.2     0.5
+b[(Intercept) Measurelemma:Millimeter]           -0.2     0.4    -1.1    -0.5    -0.2     0.2     0.6
+b[(Intercept) Measurelemma:Molekül]              -0.1     0.5    -1.3    -0.4    -0.1     0.2     0.9
+b[(Intercept) Measurelemma:Päckchen]              0.0     0.7    -1.4    -0.4     0.0     0.4     1.4
+b[(Intercept) Measurelemma:Packung]              -0.3     0.5    -1.3    -0.6    -0.2     0.1     0.6
+b[(Intercept) Measurelemma:Paket]                 0.0     0.6    -1.2    -0.4     0.0     0.4     1.2
+b[(Intercept) Measurelemma:Pfütze]                0.1     0.6    -1.0    -0.2     0.1     0.5     1.3
+b[(Intercept) Measurelemma:Pott]                 -0.2     0.6    -1.6    -0.6    -0.2     0.2     0.7
+b[(Intercept) Measurelemma:Quadratzentimeter]    -0.4     0.5    -1.5    -0.7    -0.4     0.0     0.5
+b[(Intercept) Measurelemma:Raummeter]             0.0     0.6    -1.0    -0.5     0.0     0.5     1.1
+b[(Intercept) Measurelemma:Rest]                  0.1     0.5    -1.0    -0.2     0.1     0.3     0.9
+b[(Intercept) Measurelemma:Riegel]               -0.1     0.5    -1.1    -0.4     0.0     0.3     0.9
+b[(Intercept) Measurelemma:Riesenportion]        -0.2     0.6    -1.6    -0.6    -0.1     0.3     1.0
+ [ reached getOption("max.print") -- omitted 117 rows ]
+
+Diagnostics:
+                                              mcse Rhat n_eff
+(Intercept)                                   0.0  1.0  200  
+Badness                                       0.0  1.0  200  
+Genitives                                     0.0  1.0  200  
+LeftcontextD                                  0.0  1.0  137  
+LeftcontextO                                  0.0  1.0  200  
+LeftcontextA                                  0.0  1.0  168  
+LeftcontextP                                  0.0  1.0  200  
+MeasurecaseAcc                                0.0  1.0  200  
+MeasurecaseDat                                0.0  1.0  200  
+MeasurenumberPl                               0.0  1.0  170  
+Kindattraction                                0.0  1.0  200  
+Kindfreq                                      0.0  1.0  200  
+KindgenderNeut                                0.0  1.0  200  
+KindgenderFem                                 0.0  1.0  200  
+Measureattraction                             0.0  1.0  200  
+MeasureclassRest                              0.0  1.0  200  
+MeasureclassContainer                         0.0  1.0  200  
+MeasureclassAmount                            0.0  1.0  200  
+MeasureclassPortion                           0.0  1.0  200  
+Measurefreq                                   0.0  1.0  200  
+b[(Intercept) Measurelemma:Kilometer]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Stapel]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Stückchen]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Handvoll]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Pfund]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Haufe]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Unmenge]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Liter]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Stück]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Kubikmeter]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Tonne]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Menge]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Kilogramm]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Euro]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Barrel]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Büschel]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Mark]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Fass]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Flasche]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Fleck]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Fleckchen]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Fontäne]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Franc]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Gramm]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Gallone]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Glas]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Hektar]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Häufchen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Kanne]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Kilowatt]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Kiste]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Klafter]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Klumpen]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Krug]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Lache]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Ladung]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Meter]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Masse]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Milligramm]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Milliliter]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Portion]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Prise]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Quadratmeter]      0.0  1.0  200  
+b[(Intercept) Measurelemma:Quadratkilometer]  0.0  1.0  200  
+b[(Intercept) Measurelemma:Sack]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Schicht]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Schüssel]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Schwall]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Streifen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Taler]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Tasse]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Teller]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Topf]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Tropfen]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Übermass]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Unze]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Barren]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Batzen]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Becher]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Berg]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Beutel]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Biss]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Blatt]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Block]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Brocken]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Büchse]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Bund]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Bündel]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Cent]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Zentimeter]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Dollar]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Dose]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Dosis]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Eimer]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Einheit]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Esslöffel]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Extraportion]      0.0  1.0  200  
+b[(Intercept) Measurelemma:Feinunze]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Fetzen]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Fläschchen]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Franke]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Fuhre]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Gläschen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Groschen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Gulden]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Hälmchen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Happen]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Hauch]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Häuflein]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Hektoliter]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Kanister]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Kännchen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Kante]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Karton]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Kelle]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Kilowattstunde]    0.0  1.0  200  
+b[(Intercept) Measurelemma:Klecks]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Koffer]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Korb]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Korn]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Kübel]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Kugel]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Lage]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Laib]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Lawine]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Löffel]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Mass]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Megawatt]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Megawattstunde]    0.0  1.0  200  
+b[(Intercept) Measurelemma:Messerspitze]      0.0  1.0  200  
+b[(Intercept) Measurelemma:Millimeter]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Molekül]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Päckchen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Packung]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Paket]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Pfütze]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Pott]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Quadratzentimeter] 0.0  1.0  200  
+b[(Intercept) Measurelemma:Raummeter]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Rest]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Riegel]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Riesenportion]     0.0  1.0  200  
+b[(Intercept) Measurelemma:Rinnsal]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Schälchen]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Scheffel]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Scheibchen]        0.0  1.0  200  
+b[(Intercept) Measurelemma:Scheibe]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Scheit]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Schluck]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Schoppen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Schuss]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Sechserpack]       0.0  1.0  200  
+b[(Intercept) Measurelemma:Spritzer]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Stich]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Strahl]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Tafel]             0.0  1.0  200  
+b[(Intercept) Measurelemma:Tankfüllung]       0.0  1.0  200  
+b[(Intercept) Measurelemma:Tässchen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Teelöffel]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Teilchen]          0.0  1.0  200  
+b[(Intercept) Measurelemma:Thermoskanne]      0.0  1.0  200  
+b[(Intercept) Measurelemma:Tröpfchen]         0.0  1.0  200  
+b[(Intercept) Measurelemma:Tube]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Tupfer]            0.0  1.0  200  
+b[(Intercept) Measurelemma:Tütchen]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Tüte]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Unsumme]           0.0  1.0  200  
+b[(Intercept) Measurelemma:Viertelliter]      0.0  1.0  200  
+b[(Intercept) Measurelemma:Watt]              0.0  1.0  200  
+b[(Intercept) Measurelemma:Zentner]           0.0  1.0  200  
+b[(Intercept) Kindlemma:Stahl]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Wäsche]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Fleisch]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Geld]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Glas]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Haut]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Kohle]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Gas]                  0.0  1.0  200  
+b[(Intercept) Kindlemma:Brot]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Gemüse]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Stoff]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Öl]                   0.0  1.0  200  
+b[(Intercept) Kindlemma:Flüssigkeit]          0.0  1.0  200  
+b[(Intercept) Kindlemma:Metall]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Asche]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Eis]                  0.0  1.0  200  
+b[(Intercept) Kindlemma:Mais]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Materie]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Holz]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Sauerstoff]           0.0  1.0  200  
+b[(Intercept) Kindlemma:Staub]                0.0  1.0  154  
+b[(Intercept) Kindlemma:Trinkwasser]          0.0  1.0  200  
+b[(Intercept) Kindlemma:Abfall]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Alkohol]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Aluminium]            0.0  1.0  200  
+b[(Intercept) Kindlemma:Benzin]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Beton]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Bier]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Blut]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Butter]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Diesel]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Dreck]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Eisen]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Eiweiss]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Energie]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Erde]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Farbe]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Fell]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Fisch]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Futter]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Gehalt]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Getreide]             0.0  1.0  200  
+b[(Intercept) Kindlemma:Gold]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Gras]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Honig]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Kaffee]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Kleidung]             0.0  1.0  200  
+b[(Intercept) Kindlemma:Kunststoff]           0.0  1.0  200  
+b[(Intercept) Kindlemma:Leder]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Lohn]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Luft]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Müll]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Nahrung]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Pfeffer]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Plastik]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Rasen]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Regen]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Reis]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Salz]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Sand]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Scheisse]             0.0  1.0  200  
+b[(Intercept) Kindlemma:Schnee]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Schokolade]           0.0  1.0  200  
+b[(Intercept) Kindlemma:Schrott]              0.0  1.0  200  
+b[(Intercept) Kindlemma:Senf]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Suppe]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Tee]                  0.0  1.0  200  
+b[(Intercept) Kindlemma:Vermögen]             0.0  1.0  200  
+b[(Intercept) Kindlemma:Wasser]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Wein]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Zeug]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Zucker]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Creme]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Draht]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Fett]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Gepäck]               0.0  1.0  200  
+b[(Intercept) Kindlemma:Gift]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Käse]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Kram]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Lack]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Mehl]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Milch]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Saft]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Salat]                0.0  1.0  200  
+b[(Intercept) Kindlemma:Spielzeug]            0.0  1.0  200  
+b[(Intercept) Kindlemma:Teig]                 0.0  1.0  200  
+b[(Intercept) Kindlemma:Wurst]                0.0  1.0  200  
+mean_PPD                                      0.0  1.0  200  
+log-posterior                                 2.4  1.1   40  
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
+
+
+Table comparing coefficient estimates with ML and MCMC
+
+                      ML_Coef ML_Low ML_High ML_Not0 MC_Coef MC_Low MC_High MC_Not0
+Badness                 -0.17  -0.25   -0.06       *   -0.16  -0.27   -0.06       *
+Genitives               -0.63  -0.72   -0.54       *   -0.65  -0.75   -0.56       *
+LeftcontextD             1.18   0.78    1.53       *    1.18   0.84    1.61       *
+LeftcontextO             1.56   0.99    2.05       *    1.60   1.19    2.00       *
+LeftcontextA             2.30   1.90    2.67       *    2.35   2.02    2.74       *
+LeftcontextP             2.35   1.54    2.91       *    2.37   1.85    2.93       *
+MeasurecaseAcc           0.07  -0.13    0.29            0.08  -0.13    0.29        
+MeasurecaseDat           0.71   0.46    1.01       *    0.73   0.46    0.98       *
+MeasurenumberPl          0.81   0.51    1.10       *    0.82   0.53    1.13       *
+Kindattraction           0.20   0.04    0.40       *    0.22   0.04    0.42       *
+Kindfreq                 0.16   0.00    0.33       *    0.17   0.00    0.33        
+KindgenderNeut          -0.01  -0.51    0.34           -0.01  -0.44    0.41        
+KindgenderFem            1.36   0.85    1.80       *    1.39   0.86    1.88       *
+Measureattraction        0.25   0.05    0.40       *    0.27   0.09    0.44       *
+MeasureclassRest         0.56  -0.08    1.15            0.49  -0.17    1.23        
+MeasureclassContainer    0.61   0.01    1.23       *    0.60   0.07    1.16       *
+MeasureclassAmount       0.93   0.26    1.63       *    0.98   0.32    1.66       *
+MeasureclassPortion      1.47   0.73    2.05       *    1.50   0.96    2.09       *
+Measurefreq             -0.26  -0.43   -0.06       *   -0.27  -0.44   -0.10       *

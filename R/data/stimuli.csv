@@ -1,0 +1,17 @@
+sent1,sent2,Kindgender,Measurelemma,Kindlemma,Leftcontext,Measureclass,Measurenumber,Measurecase,Measuregender
+100g braunen Zuckers sind auf jeden Fall genug.,100g brauner Zucker sind auf jeden Fall genug.,Masc,Gramm,Zucker,C,Physical,Pl,Nom,Neut
+Sie verbrauchen 60 Liter sprudelndes Trinkwasser.,Sie verbrauchen 60 Liter sprudelnden Trinkwassers.,Neut,Liter,Trinkwasser,C,Physical,Pl,Acc,Masc
+Wir haben jede Menge alten Krams aus dem Haus geschafft.,Wir haben jede Menge alten Kram aus dem Haus geschafft.,Masc,Menge,Kram,D,Amount,Sg,Acc,Fem
+Er stellt die Masse mit einem Esslöffel warmem Honig her.,Er stellt die Masse mit einem Esslöffel warmen Honigs her.,Masc,Esslöffel,Honig,D,Container,Sg,Dat,Masc
+Wir mussten uns durch Büschel frischen Grases zwängen.,Wir mussten uns durch Büschel frisches Gras zwängen.,Neut,Büschel,Gras,P,Portion,Pl,Acc,Masc
+Nicht ein Tropfen königliches Blut hat den Boden berührt.,Nicht ein Tropfen königlichen Bluts hat den Boden berührt.,Neut,Tropfen,Blut,D,Portion,Sg,Nom,Masc
+Beträchtliche Stücke saftigen Fleischs wurden serviert.,Beträchtliche Stücke saftiges Fleisch wurden serviert.,Neut,Stück,Fleisch,A,Amount,Pl,Nom,Neut
+Bei unserer Ankunft stand ein Glas köstlicher Wein schon auf dem Tisch.,Bei unserer Ankunft stand ein Glas köstlichen Weins schon auf dem Tisch.,Masc,Glas,Wein,D,Container,Sg,Nom,Neut
+In den Kakao gehören immer 350ml warmer Milch.,In den Kakao gehören immer 350ml warme Milch.,Fem,Milliliter,Milch,C,Physical,Pl,Nom,Masc
+Ich nehme eine große Packung salzige Wurst mit an den See.,Ich nehme eine große Packung salziger Wurst mit an den See.,Fem,Packung,Wurst,A,Rest,Sg,Acc,Fem
+Die Schule verbraucht 260.000 Kilowattstunden elektrischer Energie.,Die Schule verbraucht 260.000 Kilowattstunden elektrische Energie.,Fem,Kilowattstunde,Energie,C,Physical,Pl,Acc,Fem
+Man machte mal wieder viel Lärm um jede Menge heiße Luft.,Man machte mal wieder viel Lärm um jede Menge heißer Luft.,Fem,Menge,Luft,D,Amount,Sg,Acc,Fem
+Mit dieser Methode kann man eine große Menge dunkler Materie erzeugen.,Mit dieser Methode kann man eine große Menge dunkle Materie erzeugen.,Fem,Menge,Materie,A,Amount,Sg,Acc,Fem
+Dort türmen sich Berge schmutzige Wäsche.,Dort türmen sich Berge schmutziger Wäsche.,Fem,Berg,Wäsche,O,Portion,Pl,Nom,Masc
+Viele Tonnen gebrauchter Kleidung landen im Müll.,Viele Tonnen gebrauchte Kleidung landen im Müll.,Fem,Tonne,Kleidung,D,Physical,Pl,Nom,Fem
+Es wurden Eimer rote Farbe geschleudert.,Es wurden Eimer roter Farbe geschleudert.,Fem,Eimer,Farbe,O,Container,Pl,Acc,Masc
