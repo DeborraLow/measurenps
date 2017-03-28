@@ -2,66 +2,118 @@
 
 GLMM, predicting reactions from corpus model
 
-Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+Generalized linear mixed model fit by maximum likelihood (Adaptive Gauss-Hermite Quadrature, nAGQ = 0) ['glmerMod']
  Family: binomial  ( logit )
 Formula: Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
    Data: responses.df
+Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
 
      AIC      BIC   logLik deviance df.resid 
-   837.3    855.9   -414.7    829.3      764 
+   830.1    848.7   -411.0    822.1      764 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.0976 -0.6871  0.2454  0.6136  2.9874 
+-3.3174 -0.6273  0.2229  0.6063  2.5489 
 
 Random effects:
  Groups      Name        Variance Std.Dev.
- Participant (Intercept) 0.5690   0.7543  
- Item        (Intercept) 0.3521   0.5934  
+ Participant (Intercept) 0.5897   0.7679  
+ Item        (Intercept) 0.4882   0.6987  
 Number of obs: 768, groups:  Participant, 24; Item, 16
 
 Fixed effects:
                 Estimate Std. Error z value Pr(>|z|)    
-(Intercept)      0.62711    0.24438   2.566   0.0103 *  
-Modelprediction  0.64071    0.09195   6.968 3.21e-12 ***
+(Intercept)      -1.3433     0.3159  -4.252 2.12e-05 ***
+Modelprediction   3.9525     0.5436   7.271 3.57e-13 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
-            (Intr)
-Modelprdctn 0.317 
-
-
-ANOVA on nested models w & w/o Modelpred
-
-Data: responses.df
-Models:
-model.fc: Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
-model.fc.0: Chosenconstruction ~ Kindgender + (1 | Item) + (1 | Participant)
-           Df    AIC    BIC  logLik deviance Chisq Chi Df Pr(>Chisq)
-model.fc    4 837.35 855.92 -414.67   829.35                        
-model.fc.0  4 856.51 875.09 -424.26   848.51     0      0          1
-
-
-LR-Test and bootstrapped PB test on nested models w & w/o Modelpred
-
-Parametric bootstrap test; time: 663.77 sec; samples: 1000 extremes: 0;
-Requested samples: 1000 Used samples: 77 Extremes: 0
-large : Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
-small : Chosenconstruction ~ Kindgender + (1 | Item) + (1 | Participant)
-         stat df p.value    
-LRT    19.168  0 < 2e-16 ***
-PBtest 19.168    0.01282 *  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-
- R-squared 
-
-      R2m       R2c 
-0.2264237 0.3956303 
-
-
- 95% bootstrap CI                    2.5 %    97.5 %
-Modelprediction 0.4886103 0.8280448
-(Intercept)     0.1714986 1.1220399
+       [1] "Di10"
+[1] "Di11"
+[1] "Di12"
+[1] "Di14"
+[1] "Di15"
+[1] "Di16"
+[1] "Di17"
+[1] "Di18"
+[1] "Do11"
+[1] "Do12"
+[1] "Do13"
+[1] "Do14"
+[1] "Do15"
+[1] "Fr12"
+[1] "Fr13"
+[1] "Fr14"
+[1] "Fr15"
+[1] "Fr18"
+[1] "Mi10"
+[1] "Mi11"
+[1] "Mi12"
+[1] "Mi13"
+[1] "Mi15"
+[1] "Mi16"
+[1] "Mi17"
+[1] "Mi18"
+[1] "Mo11"
+[1] "Mo12"
+[1] "Mo13"
+[1] "Mo14"
+[1] "Mo15"
+[1] "Mo16"
+[1] "Mo17"
+[1] "Mo18"
+[1] "Sa12"
+[1] "Sa14"
+[1] "Sa16"
+[1] "Sa17"
+[1] "Di10"
+[1] "Di11"
+[1] "Di12"
+[1] "Di14"
+[1] "Di15"
+[1] "Di16"
+[1] "Di17"
+[1] "Di18"
+[1] "Do11"
+[1] "Do12"
+[1] "Do13"
+[1] "Do14"
+[1] "Di10"
+[1] "Di11"
+[1] "Di12"
+[1] "Di14"
+[1] "Di15"
+[1] "Di16"
+[1] "Di17"
+[1] "Di18"
+[1] "Do11"
+[1] "Do12"
+[1] "Do13"
+[1] "Do14"
+[1] "Do15"
+[1] "Fr12"
+[1] "Fr13"
+[1] "Fr14"
+[1] "Fr15"
+[1] "Fr18"
+[1] "Mi10"
+[1] "Mi11"
+[1] "Mi12"
+[1] "Mi13"
+[1] "Mi15"
+[1] "Mi16"
+[1] "Mi17"
+[1] "Mi18"
+[1] "Mo11"
+[1] "Mo12"
+[1] "Mo13"
+[1] "Mo14"
+[1] "Mo15"
+[1] "Mo16"
+[1] "Mo17"
+[1] "Mo18"
+[1] "Sa12"
+[1] "Sa14"
+[1] "Sa16"
+[1] "Sa17"

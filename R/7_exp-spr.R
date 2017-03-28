@@ -3,6 +3,7 @@ require(effects)
 require(MuMIn)
 require(pbkrtest)
 require(plyr)
+require(boot)
 
 rm(list = ls())
 
@@ -25,11 +26,12 @@ data.files.names <- list.files(data.dir)
 data.files.names <- data.files.names[grep('csv$', data.files.names)]
 data.files       <- paste(data.dir, data.files.names, sep="")
 
+
 load("output/corpus_stims_pred.RData")
 
 assigs <- read.delim(assigs.fn, header = T, sep = ",", quote = "", stringsAsFactors = F)
 stims  <- read.delim(stims.fn, header = T, sep = "\t", quote = "", stringsAsFactors = F)
-stims$Modelprediction <- rep(c(stims.pred, rep(0, 33)), 2)
+stims$Modelprediction <- rep(c(inv.logit(stims.pred), rep(0, 33)), 2)
 
 parts.rt.var <- NULL
 
@@ -152,7 +154,7 @@ if (save.persistent) sink()
 # Make formula and estimate model.
 # ################################
 
-# Model with coprpus-based logits as input.
+# Model with coprpus-based probs as input.
 formule <- paste(target, "~Construction*Modelprediction+Position+(1|Participant)", sep = "")
 formule.0 <- paste(target, "~Position+(1|Participant)", sep = "")
 rt.model <- lmer(formule, data = rt.all, REML = F)
@@ -165,7 +167,7 @@ rt.model.0 <- lmer(formule.0, data = rt.all, REML = F)
 
 if (save.persistent) sink(paste(out.dir, "results.txt", sep=""), append = T)
 
-cat("\n\n##### Model w/corpus-based logits #####\n\n")
+cat("\n\n##### Model w/corpus-based probabilities #####\n\n")
 
 print(summary(rt.model))
 
@@ -187,7 +189,7 @@ if (save.persistent) sink()
 # #############
 
 p <- plot(effect("Construction:Modelprediction", rt.model, KR = T), rug=F, colors = c("black", "darkblue"),
-          ylab="Residual log. reading time", xlab = "Logits from corpus-based model",
+          ylab="Residual log. reading time", xlab = "Probability for PGCa from corpus-based model",
           main="Predicting reading times from\ncorpus-based model")
 if (save.persistent) pdf(paste(out.dir, "effects.pdf", sep=""))
 print(p)
@@ -234,12 +236,12 @@ if (save.persistent) dev.off()
 
 if (save.persistent) pdf(paste(out.dir, "model_diagnostic.pdf", sep=""))
 par(mfrow=c(3,2))
-plot(residuals(rt.model) ~ unlist(rt.all[, target]), main="Model with logits", xlab="Reading time")
-boxplot(residuals(rt.model) ~ rt.all$Construction, main="Model with logits", xlab="Case")
-boxplot(residuals(rt.model) ~ rt.all$Modelprediction, main="Model with logits", xlab="Logits from corpus model")
-boxplot(residuals(rt.model) ~ rt.all$Kindgender, main="Model with logits", xlab="Kind noun gender")
-boxplot(residuals(rt.model) ~ rt.all$Position, main="Model with logits", xlab="Item position")
-boxplot(residuals(rt.model) ~ rt.all$Participant, main="Model with logits", xlab="Participant")
+plot(residuals(rt.model) ~ unlist(rt.all[, target]), main="Model with probs", xlab="Reading time")
+boxplot(residuals(rt.model) ~ rt.all$Construction, main="Model with probs", xlab="Case")
+boxplot(residuals(rt.model) ~ rt.all$Modelprediction, main="Model with probs", xlab="Probs from corpus model")
+boxplot(residuals(rt.model) ~ rt.all$Kindgender, main="Model with probs", xlab="Kind noun gender")
+boxplot(residuals(rt.model) ~ rt.all$Position, main="Model with probs", xlab="Item position")
+boxplot(residuals(rt.model) ~ rt.all$Participant, main="Model with probs", xlab="Participant")
 par(mfrow=c(1,1))
 if (save.persistent) dev.off()
 
@@ -266,7 +268,7 @@ if (save.persistent) dev.off()
 
 library(mgcv)
 
-rt.gamm <- gamm(t2.rt.resid ~ s(Position) + s(Modelprediction, by = Kindgender:Construction),
+rt.gamm <- gamm(t2.rt.resid ~ s(Position) + s(Modelprediction, by = Construction),
   random = list( Participant = ~1 ),  # With kindgender = ~1 does not converge.
   data = rt.all,
   family = gaussian,
@@ -283,7 +285,7 @@ print(summary(rt.gamm$gam))
 if (save.persistent) sink()
 
 if (save.persistent) pdf(paste(out.dir, "gamm.pdf", sep=""))
-par(mfrow=c(3,2))
+par(mfrow=c(2,2))
 plot(rt.gamm$gam)
 par(mfrow=c(1,1))
 if (save.persistent) dev.off()

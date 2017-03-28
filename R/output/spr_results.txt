@@ -4,39 +4,39 @@
 
 
 
-##### Model w/corpus-based logits #####
+##### Model w/corpus-based probabilities #####
 
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: t1.rt.resid ~ Construction * Modelprediction + Position + (1 |      Participant)
    Data: rt.all
 
      AIC      BIC   logLik deviance df.resid 
-   213.7    249.4    -99.9    199.7     1197 
+   218.1    253.8   -102.0    204.1     1197 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--2.9058 -0.6548 -0.0803  0.5183  4.3495 
+-2.8427 -0.6575 -0.0806  0.5119  4.3972 
 
 Random effects:
  Groups      Name        Variance  Std.Dev.
- Participant (Intercept) 0.0004872 0.02207 
- Residual                0.0686728 0.26205 
+ Participant (Intercept) 0.0004807 0.02193 
+ Residual                0.0689301 0.26255 
 Number of obs: 1204, groups:  Participant, 38
 
 Fixed effects:
                                    Estimate Std. Error t value
-(Intercept)                       0.2416499  0.0181226  13.334
-ConstructionPGCa                 -0.0064511  0.0170308  -0.379
-Modelprediction                  -0.0062282  0.0062054  -1.004
-Position                         -0.0051940  0.0002634 -19.718
-ConstructionPGCa:Modelprediction -0.0190359  0.0087675  -2.171
+(Intercept)                       0.2567675  0.0220003  11.671
+ConstructionPGCa                  0.0506982  0.0249470   2.032
+Modelprediction                  -0.0272464  0.0386710  -0.705
+Position                         -0.0051867  0.0002639 -19.654
+ConstructionPGCa:Modelprediction -0.1103213  0.0546276  -2.020
 
 Correlation of Fixed Effects:
             (Intr) CnsPGC Mdlprd Positn
-CnstrctnPGC -0.474                     
-Modelprdctn  0.321 -0.328              
-Position    -0.721  0.006 -0.018       
-CnstrcPGC:M -0.237  0.462 -0.708  0.026
+CnstrctnPGC -0.552                     
+Modelprdctn -0.624  0.562              
+Position    -0.576 -0.023 -0.021       
+CnstrcPGC:M  0.437 -0.795 -0.708  0.024
 
 
  Model comparison 
@@ -45,9 +45,9 @@ Models:
 rt.model.0: t1.rt.resid ~ Position + (1 | Participant)
 rt.model: t1.rt.resid ~ Construction * Modelprediction + Position + (1 | 
 rt.model:     Participant)
-           Df    AIC    BIC   logLik deviance  Chisq Chi Df Pr(>Chisq)    
-rt.model.0  4 225.72 246.09 -108.860   217.72                             
-rt.model    7 213.71 249.37  -99.856   199.71 18.008      3  0.0004382 ***
+           Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)   
+rt.model.0  4 225.72 246.09 -108.86   217.72                            
+rt.model    7 218.10 253.75 -102.05   204.10 13.623      3   0.003467 **
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -55,16 +55,16 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
  R-squared 
 Full model
       R2m       R2c 
-0.2506094 0.2558889 
+0.2478849 0.2530941 
 
 
-Parametric bootstrap test; time: 28.35 sec; samples: 1000 extremes: 1;
+Parametric bootstrap test; time: 26.67 sec; samples: 1000 extremes: 4;
 large : t1.rt.resid ~ Construction * Modelprediction + Position + (1 | 
     Participant)
 small : t1.rt.resid ~ Position + (1 | Participant)
-         stat df   p.value    
-LRT    18.008  3 0.0004382 ***
-PBtest 18.008    0.0019980 ** 
+         stat df  p.value   
+LRT    13.623  3 0.003467 **
+PBtest 13.623    0.004995 **
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -75,23 +75,21 @@ Family: gaussian
 Link function: identity 
 
 Formula:
-t2.rt.resid ~ s(Position) + s(Modelprediction, by = Kindgender:Construction)
+t2.rt.resid ~ s(Position) + s(Modelprediction, by = Construction)
 
 Parametric coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  0.05532    0.01628   3.399 0.000699 ***
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  0.05256    0.01615   3.255  0.00117 **
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Approximate significance of smooth terms:
-                                                    edf Ref.df       F  p-value    
-s(Position)                                       1.685  1.685 159.779  < 2e-16 ***
-s(Modelprediction):Kindgender:ConstructionF:NACa  1.000  1.000   2.483 0.115346    
-s(Modelprediction):Kindgender:ConstructionF:PGCa  1.000  1.000  12.167 0.000504 ***
-s(Modelprediction):Kindgender:ConstructionMN:NACa 1.000  1.000   0.667 0.414332    
-s(Modelprediction):Kindgender:ConstructionMN:PGCa 1.000  1.000   0.957 0.328199    
+                                    edf Ref.df       F p-value    
+s(Position)                           1      1 283.167 < 2e-16 ***
+s(Modelprediction):ConstructionNACa   1      1   1.432 0.23167    
+s(Modelprediction):ConstructionPGCa   1      1  10.799 0.00104 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-R-sq.(adj) =  0.188   
-  Scale est. = 0.10247   n = 1204
+R-sq.(adj) =  0.185   
+  Scale est. = 0.10305   n = 1204

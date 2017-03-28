@@ -95,3 +95,20 @@ correct 0.855
 
 λ 0.354
 
+
+
+
+
+ Variance inflation diagnostics
+                      GVIF Df GVIF^(1/2Df)
+Badness           1.019377  1     1.009642
+Genitives         1.051993  1     1.025667
+Leftcontext       3.561123  4     1.172056
+Measurecase       1.417501  2     1.091141
+Measurenumber     1.790346  1     1.338038
+Kindattraction    1.232043  1     1.109974
+Kindfreq          1.093630  1     1.045768
+Kindgender        2.662140  2     1.277344
+Measureattraction 1.467227  1     1.211291
+Measureclass      6.126742  4     1.254307
+Measurefreq       1.469873  1     1.212383

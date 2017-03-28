@@ -117,7 +117,7 @@ for (eff in effs) {
   if (save.persistent) pdf(paste(out.dir, eff, ".pdf", sep=""))
   p <- plot(effect(eff, measure.glmm),
             rug=F, 
-            main = paste("EFfect plot: ", eff),
+            main = paste("Effect plot: ", eff),
             ylab = "Probability of PGCa",
             colors = c("black", "darkblue"), cex = fixeff.pl.cex)
   print(p)
@@ -140,3 +140,10 @@ do.call(ranef.plot, c(list(measure.glmm, measure, "Kindlemma", n.select, main = 
 par(mfrow=c(1,1))
 if (save.persistent) dev.off()
 
+
+
+source('highstat.r')
+if (save.persistent) sink(paste(out.dir, "glmm.txt", sep=""), append = T)
+cat("\n\n Variance inflation diagnostics\n")
+print(myvif(measure.glmm))
+if (save.persistent) sink()
