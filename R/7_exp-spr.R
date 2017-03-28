@@ -11,8 +11,8 @@ set.seed(239865)
 setwd('/Users/user/Workingcopies/measurenps/GitHub/R')
 
 
-ci.method       <- "boot"
-modcomp.nsim    <- 500    # 500
+ci.method       <- "boot" # boot
+modcomp.nsim    <- 1000   # 500
 boot.nsim       <- 1000   # 1000
 iqr.factor      <- 3      # For removing outliers in final data set.
 out.dir         <- "output/spr_"

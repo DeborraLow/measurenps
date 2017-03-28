@@ -10,7 +10,7 @@ set.seed(239865)
 setwd('/Users/user/Workingcopies/measurenps/GitHub/R')
 
 ci.method        <- "boot" # boot
-modcomp.nsim     <- 500    # 500
+modcomp.nsim     <- 1000   # 500
 boot.nsim        <- 1000   # 1000
 out.dir          <- "output/fc_"
 save.persistent  <- T

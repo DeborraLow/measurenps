@@ -1,0 +1,67 @@
+
+
+GLMM, predicting reactions from corpus model
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
+   Data: responses.df
+
+     AIC      BIC   logLik deviance df.resid 
+   837.3    855.9   -414.7    829.3      764 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.0976 -0.6871  0.2454  0.6136  2.9874 
+
+Random effects:
+ Groups      Name        Variance Std.Dev.
+ Participant (Intercept) 0.5690   0.7543  
+ Item        (Intercept) 0.3521   0.5934  
+Number of obs: 768, groups:  Participant, 24; Item, 16
+
+Fixed effects:
+                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      0.62711    0.24438   2.566   0.0103 *  
+Modelprediction  0.64071    0.09195   6.968 3.21e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr)
+Modelprdctn 0.317 
+
+
+ANOVA on nested models w & w/o Modelpred
+
+Data: responses.df
+Models:
+model.fc: Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
+model.fc.0: Chosenconstruction ~ Kindgender + (1 | Item) + (1 | Participant)
+           Df    AIC    BIC  logLik deviance Chisq Chi Df Pr(>Chisq)
+model.fc    4 837.35 855.92 -414.67   829.35                        
+model.fc.0  4 856.51 875.09 -424.26   848.51     0      0          1
+
+
+LR-Test and bootstrapped PB test on nested models w & w/o Modelpred
+
+Parametric bootstrap test; time: 663.77 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 77 Extremes: 0
+large : Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
+small : Chosenconstruction ~ Kindgender + (1 | Item) + (1 | Participant)
+         stat df p.value    
+LRT    19.168  0 < 2e-16 ***
+PBtest 19.168    0.01282 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+ R-squared 
+
+      R2m       R2c 
+0.2264237 0.3956303 
+
+
+ 95% bootstrap CI                    2.5 %    97.5 %
+Modelprediction 0.4886103 0.8280448
+(Intercept)     0.1714986 1.1220399
