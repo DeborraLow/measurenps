@@ -11,16 +11,16 @@ setwd('/Users/user/Workingcopies/measurenps/GitHub/R')
 
 
 # Options.
-set.seed(2398651)                   # Do NOT change, or results will differ.
-save.persistent        <- T         # write to files instead of screen/console.
-out.dir                <- "output/" # Put generated files here.
-precision              <- 3         # Precision in result table.
-the.nAGQ               <- 0         # 0 for speed, 1 for precision and eytremely slow computation.
-ci.boot.nsim           <- 1000      # Even 100 can be extremely slow. Set to 1000 for production.
-ci.boot.modelcomp.nsim <- 1000      # This takes ages, even with 10. Set to 1000 for for production.
-chains                 <- 4         # MCMC.
-seed                   <- 6976      # MCMC.
-iter                   <- 1000      # MCMC. Set to 1000 for production.
+set.seed(2398651)                          # Do NOT change, or results will differ.
+save.persistent        <- T                # write to files instead of screen/console.
+out.dir                <- "output/corpus_" # Put generated files here.
+precision              <- 3                # Precision in result table.
+the.nAGQ               <- 0                # 0 for speed, 1 for precision and eytremely slow computation.
+ci.boot.nsim           <- 1000             # Even 100 can be extremely slow. Set to 1000 for production.
+ci.boot.modelcomp.nsim <- 1000             # This takes ages, even with 10. Set to 1000 for for production.
+chains                 <- 4                # MCMC.
+seed                   <- 6976             # MCMC.
+iter                   <- 1000             # MCMC. Set to 1000 for production.
 
 
 # Delete old output.
@@ -50,3 +50,6 @@ source('4_glmm-mcmc.R')  # same GLMMs estimated with Stan (Bayesian/MCMC)
 
 cat("\n\n Prediction for experimental stimuli ...\n")
 source('5_stimuli_predict.R')
+
+# Save workspace.
+save(list = ls(), file=paste(out.dir, "workspace_", Sys.time, ".RData", sep=""))

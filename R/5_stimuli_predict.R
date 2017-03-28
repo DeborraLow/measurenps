@@ -38,7 +38,11 @@ stimuli$Genitives <- 0
 
 
 # Do the actual prediction.
+stims.pred <- predict(measure.glmm, newdata = stimuli)
+
 if (save.persistent) sink(paste(out.dir, "stimuli_predict.txt", sep=""))
-print(predict(measure.glmm, newdata = stimuli))
+print(stims.pred)
 if (save.persistent) sink()
 
+# Save to be loaded by experiment scripts.
+save(stims.pred, file = paste(out.dir, "stims_pred.RData", sep=""))

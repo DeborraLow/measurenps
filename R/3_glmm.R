@@ -86,25 +86,20 @@ opts.ci.95 <- list(level = 0.95, method = "boot", boot.type = "perc", nsim = ci.
 measure.ci.95 <- do.call(confint.merMod, c(opts.ci.95, list(object = measure.glmm, parm = names(fixef(measure.glmm)))))
 measure.ci.95 <- measure.ci.95[nrow(measure.ci.95):2,]
 
-opts.ci.90 <- list(level = 0.90, method = "boot", boot.type = "perc", nsim = ci.boot.nsim, parallel="multicore", ncpus=8)
-measure.ci.90 <- do.call(confint.merMod, c(opts.ci.95, list(object = measure.glmm, parm = names(fixef(measure.glmm)))))
-measure.ci.90 <- measure.ci.90[nrow(measure.ci.90):2,]
-
 measure.fixeffs <- rev(fixef(measure.glmm)[2:length(fixef(measure.glmm))])
 
-x.lower <- min(measure.ci.90[,1])*1.05
-x.upper <- max(measure.ci.90[,2])*1.05
+x.lower <- min(measure.ci.95[,1])*1.05
+x.upper <- max(measure.ci.95[,2])*1.05
 
 if (save.persistent) pdf(paste(out.dir, "fixeffs.pdf", sep=""))
 dotchart(measure.fixeffs, pch=20,
          xlim = c(x.lower, x.upper),
          lcolor = "gray",
          cex = 1.2,
-         main=paste("Fixed effects with bootstrapped\n 90% and 95% CIs (", ci.boot.nsim, " simulations)", sep=""))
+         main=paste("Fixed effects with bootstrapped\n 95% CIs (", ci.boot.nsim, " simulations)", sep=""))
 lines(c(0,0), c(0,length(measure.ci.95)), col="gray")
 
 for (i in 1:nrow(measure.ci.95)) {
-  lines(measure.ci.90[i,c(1,2)], c(i,i), col="lightgray", lwd=5)
   points(measure.fixeffs[i], i, pch=18, cex=1.5, col="black")
   lines(measure.ci.95[i,c(1,2)], c(i,i), col="black", lwd=2)
 }
