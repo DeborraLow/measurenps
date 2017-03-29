@@ -367,7 +367,7 @@ Finally, (\ref{it:intro:other}) suggests that there are alternative ways of expr
 %  \end{xlist}
 %\end{exe}
 %
-If the measure noun denotes a container or vessel, constructions with \textit{voll} (\textit{von})\slash\textit{voller} `full (of)' and \textit{mit} `with' are available, see (\ref{ex:alternatives}).
+If the measure noun denotes a container, constructions with \textit{voll} (\textit{von})\slash\textit{voller} `full (of)' and \textit{mit} `with' are available, see (\ref{ex:alternatives}).
 
 \begin{exe}
   \ex\label{ex:alternatives}
@@ -387,7 +387,7 @@ If the measure noun denotes a container or vessel, constructions with \textit{vo
 These construction have very idiosyncratic properties (the construction with \textit{voller} is discussed in \citealp{Zeldes2018}, the construction with \textit{mit} is discussed in \citealp{Bhatt1990}), they are not semantically equivalent to the NAC and the PGC, and -- most importantly -- they are only available for a small subset of measure nouns.
 Subtle interactions between these constructions and NAC\slash PGC cannot be excluded, especially because the former might act as a (partial) alternative and thus reduce the count of exemplars of the NAC, the PGC, or both for container measure nouns.
 There are no clear hypotheses about such interactions, however.
-Nevertheless, the corpus-based models in Section~\ref{sec:corpusstudies} are specified in a way that they could detect preferences for either NAC or PGC for the class of container or vessel measure nouns, for which the alternative constructions illustrated in (\ref{ex:alternatives}) are available.
+Nevertheless, the corpus-based models in Section~\ref{sec:corpusstudies} are specified in a way that they could detect preferences for either NAC or PGC for the class of container measure nouns, for which the alternative constructions illustrated in (\ref{ex:alternatives}) are available.
 
 This concludes the descriptive overview of the phenomenon.
 I have shown that there is an alternation between two measure noun constructions in a narrow syntactic configuration (kind NP with an adjective but without a determiner), and that the two constructions differ in the case of the kind noun (case agreement with the measure noun or genitive).
@@ -402,7 +402,6 @@ I turn to some more theory-oriented discussion in the next section.
 
 This section briefly reviews existing analyses of the \PGCa-\NACa\ alternation and related issues.
 I also develop my own analysis and the appropriate hypotheses for the empirical studies presented in Sections~\ref{sec:corpusstudies} and \ref{sec:externalvalidation}.
-%While the constructions and the alternation are standardly covered in descriptive grammars such as \citet[XYZ]{Eisenberg2013a}, the research literature contains little specific discussion of the situation in German.
 I discuss four main factors that might influence the alternation:
 first, the different syntactic structures of the variants \NACa\ and \PGCa\ in relation to their syntactic prototypes \NACb\ and \PGCd;
 second, degrees of grammaticalisation of the measure noun associated with the two prototypes;
@@ -550,7 +549,6 @@ In step (\ref{enum:data:step1}), I exported a list of all nouns in the DECOW14A0
 \footnote{DECOW14A01 is the first slice (roughly a twentieth) of the complete DECOW14A corpus.
 It contains just over one billion tokens.}
 Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.
-%\footnote{They behave like mass nouns mostly in that they occur without a determiner in the singular.}
 The hundredth selected mass noun was \textit{Schmuck} `jewelry’, which is the 3,054th most frequent noun in the original frequency list.
 
 This resulting list of mass nouns was used in step (\ref{enum:data:step2}) to bootstrap a list of measure nouns co-occurring with the mass nouns from DECOW14A01.
@@ -561,30 +559,12 @@ From each of the 100 lists, I also removed noun-noun combinations that had a fre
 The result was a list of the most frequent 2,365 individual combinations of a measure noun and a mass noun.
 
 In step (\ref{enum:data:step3}), each of these 2,365 noun–noun combinations was queried in the target constructions (\PGCa\ and \NACa) individually in each of the first ten slices of DECOW (roughly 10 billion tokens).
-%The scripts generating the actual queries were crafted so as to make sure that adjectives and nouns were searched in the appropriate forms.
-%The CQL query in (\ref{ex:data:query01}) shows an example query for a neuter mass noun like \textit{Wasser} `water' which finds relevant sequences such as the ones shown in (\ref{ex:data:query02}).%
-%\footnote{The COW creators used to make corpora available in the IMS Open Corpus Query Workbench \citep{EvertHardie2011}, which has a query syntax informally referred to as CQL.
-%Documentation can be obtained at \url{http://cwb.sourceforge.net}.}
-%The versions with the genitive singular \textit{Liters} and the dative plural \textit{Litern} are not shown in (2) for space reasons but are also found by the query in (1).
-%In terms of context, single sentences containing the target were exported.
-%
-%\begin{exe}
-%  \ex{\label{ex:data:query01} \texttt{\small[ lemma="Liter" ] [ pos="ADJA" \& word=".+(en|em|es)" ] [ lemma="Wasser" ]}}
-%  \ex\label{ex:data:query02}
-%  \begin{xlist}
-%    \ex{\label{ex:data:query02a} Liter [klaren Wassers]\Sub{Gen}}
-%    \ex{\label{ex:data:query02b} Liter [klares Wasser]\Sub{Nom\slash Acc}}
-%    \ex{\label{ex:data:query02c} Liter [klarem Wasser]\Sub{Dat}}
-%  \end{xlist}
-%\end{exe}
 In order to reduce the sample size for the manual annotation process, the final concordance was sampled from the results of these 2,365 queries.
 Since the mass nouns in the sample were distributed according to the usual power law, I used all hits for mass nouns occurring less than one hundred times, but randomly sampled one hundred hits for each mass noun that occurred one hundred or more times.
 The final sample contained 6,843 sentences, which was reduced to 5,063 in the manual annotation process due to removal of noisy material, erroneous hits and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
 Given the careful bootstrapping and sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
 \footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were bootstrapped and queried, resulting in a sample of 1,876 sentences.
-%Bootstrapping measure nouns first was more efficient in the plural for reasons to complicated to discuss here, especially because the data was not properly analysed anyway.
 As stated in Section~\ref{sec:germanmeasurenps}, the NAC is virtually never used with plural kind nouns, and this sample was not used for full analysis.
-%Consequently, it does not make sense to model the influencing factors in the same way as for singular kind nouns.
 }
 
 Finally, two auxiliary samples were also drawn.
@@ -631,7 +611,7 @@ The higher the value, the more often the noun occurs in the \PGCa (proportionall
 
 In Section~\ref{sec:analyses}, it was hypothesised that classes of measure lemmas might have different preferences for the two variants.
 To capture this, class information was annotated for measure lemmas.
-The classification was designed inspired by the list in \cite[530]{Koptjevskaja2001}, but due to the frequencies of the respective nouns, very coarse classes were necessary.
+The classification was designed inspired by the list in \cite[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
 With typical examples and the number of data points in the final sample, the classes are:
 \textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'; size 1,968),
 \textit{Container} (\textit{Eimer} `bucket'; size 740), 
@@ -669,43 +649,49 @@ To control for this effect, the case of the measure noun was manually annotated 
 \subsection{A hierarchical model of the measure noun alternation}
 \label{sec:corpushierarchicalmodel}
 
+\begin{figure}[hb!]
+  \centering
+  \includegraphics[width=0.85\textwidth]{../R/output/corpus_fixeffs}
+  \caption{Coefficients (MLE) with 95\% parametric bootstrap confidence intervals; intercept (\textit{Leftcontext=C}, \textit{Measurecase=Nom}, \textit{Measurenumber=Sg}, \textit{Kindgender=Masc}, \textit{Measureclass=Physical}; 0 for all numeric z-transformed regressors) is -4.328}
+  \label{fig:fixeffs}
+\end{figure}
+
 In this section, I report the results of fitting a multilevel model to the data using R \citep{R}, \textit{lme4} \citep{lme4} for Maximum Likelihood Estimation, and \textit{rstanarm} \citep{rstanarm} for Markov-Chain Monte Carlo estimation.
 The purpose is to model the influence of the regressors specified in Table~\ref{tab:variables} on the probability that either the \NACa\ or the \PGCa\ is chosen.
 All regressors from Table~\ref{tab:variables} were included to begin with, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
 The sample size was $n=5,063$ with $1,1344$ cases of \PGCa\ and $3,929$ cases of \NACa.
-The regressors listed in Table~\ref{tab:variables} with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \cite[265--269,302--304]{GelmanHill2006}.
+The results of the estimation are shown in Table~\ref{tab:bigtable} and in Figure~\ref{fig:fixeffs}.
+The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \cite[265--269,302--304]{GelmanHill2006}.
 The same goes for those listed with the kind lemma as their unit of reference.
-The results of the estimation are shown in Table~\ref{tab:bigtable}.
 Given the coding of the response variable, coefficients leaning to the positive side can be interpreted as favouring the \PGCa.
-
 
 \begin{sidewaystable}
   \centering
-    \begin{tabular}{lllrrrrrrrcc}
-    Level     & Regressor         & Level     & \pPB  & \multicolumn{2}{l}{Coefficient} & \multicolumn{2}{l}{CI Low} & \multicolumn{2}{l}{CI High} & \multicolumn{2}{l}{CI contains 0} \\
-    &                   &           &       & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} \\\midrule
+    \begin{tabular}{llrlrrrrrrcc}
+      Level & Regressor & \multicolumn{1}{l}{\pPB} & Level  & \multicolumn{2}{l}{Coefficient} & \multicolumn{2}{l}{CI Low} & \multicolumn{2}{l}{CI High} & \multicolumn{2}{l}{CI contains 0} \\
+              &                   &       &          & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} \\\midrule
 
-    First     & Badness           & (numeric) & 0.001 & -0.165 & -0.169 & -0.264 & -0.264 & -0.074 & -0.075 &      * &      * \\
-              & Genitives         & (numeric) & 0.001 & -0.630 & -0.645 & -0.710 & -0.739 & -0.523 & -0.552 &      * &      * \\
-              & Leftcontext       & D         & 0.001 &  1.178 &  1.173 &  0.751 &  0.784 &  1.548 &  1.546 &      * &      * \\
-              &                   & O         &       &  1.561 &  1.588 &  1.093 &  1.179 &  1.919 &  2.007 &      * &      * \\
-              &                   & A         &       &  2.300 &  2.340 &  1.872 &  1.959 &  2.644 &  2.726 &      * &      * \\
-              &                   & P         &       &  2.353 &  2.371 &  1.693 &  1.766 &  2.900 &  2.978 &      * &      * \\
-              & Measurecase       & Acc       & 0.001 &  0.065 &  0.070 & -0.130 & -0.119 &  0.268 &  0.269 &        &        \\
-              &                   & Dat       &       &  0.707 &  0.735 &  0.413 &  0.480 &  0.959 &  1.002 &      * &      * \\
-	      & Measurenumber     & Pl        & 0.001 &  0.814 &  0.825 &  0.534 &  0.574 &  1.080 &  1.079 &      * &      * \\[0.5\baselineskip]
-
-    Second    & Kindattraction    & (numeric) & 0.033 &  0.204 &  0.216 &  0.030 &  0.014 &  0.366 &  0.412 &      * &      * \\
-    (Kind)    & Kindfreq          & (numeric) & 0.066 &  0.161 &  0.173 & -0.008 &  0.009 &  0.333 &  0.350 &        &      * \\
-              & Kindgender        & Neut      & 0.001 & -0.007 & -0.022 & -0.407 & -0.424 &  0.408 &  0.379 &        &        \\
-	      &                   & Fem       &       &  1.357 &  1.379 &  0.831 &  0.872 &  1.808 &  1.897 &      * &      * \\[0.5\baselineskip]
-              
-    Second    & Measureattraction & (numeric) & 0.015 &  0.247 &  0.275 &  0.058 &  0.078 &  0.413 &  0.476 &      * &      * \\
-    (Measure) & Measureclass      & Rest      & 0.001 &  0.564 &  0.488 & -0.140 & -0.309 &  1.197 &  1.236 &        &        \\
-              &                   & Container &       &  0.609 &  0.618 &  0.050 &  0.018 &  1.145 &  1.215 &      * &      * \\
-              &                   & Amount    &       &  0.927 &  0.959 &  0.184 &  0.189 &  1.566 &  1.718 &      * &      * \\
-              &                   & Portion   &       &  1.472 &  1.503 &  0.916 &  0.956 &  1.938 &  2.064 &      * &      * \\
-              & Measurefreq       & (numeric) & 0.003 & -0.257 & -0.264 & -0.413 & -0.435 & -0.098 & -0.099 &      * &      * \\
+    First     & Badness           & 0.001 & (numeric) & -0.165 & -0.169 & -0.264 & -0.264 & -0.074 & -0.075 &      * &      * \\
+              & Genitives         & 0.001 & (numeric) & -0.630 & -0.645 & -0.710 & -0.739 & -0.523 & -0.552 &      * &      * \\
+              & Leftcontext       & 0.001 & D         &  1.178 &  1.173 &  0.751 &  0.784 &  1.548 &  1.546 &      * &      * \\
+              &                   &       & O         &  1.561 &  1.588 &  1.093 &  1.179 &  1.919 &  2.007 &      * &      * \\
+              &                   &       & A         &  2.300 &  2.340 &  1.872 &  1.959 &  2.644 &  2.726 &      * &      * \\
+              &                   &       & P         &  2.353 &  2.371 &  1.693 &  1.766 &  2.900 &  2.978 &      * &      * \\
+              & Measurecase       & 0.001 & Acc       &  0.065 &  0.070 & -0.130 & -0.119 &  0.268 &  0.269 &        &        \\
+              &                   &       & Dat       &  0.707 &  0.735 &  0.413 &  0.480 &  0.959 &  1.002 &      * &      * \\
+	      & Measurenumber     & 0.001 & Pl        &  0.814 &  0.825 &  0.534 &  0.574 &  1.080 &  1.079 &      * &      * \\[0.5\baselineskip]
+                                          
+    Second    & Kindattraction    & 0.033 & (numeric) &  0.204 &  0.216 &  0.030 &  0.014 &  0.366 &  0.412 &      * &      * \\
+    (Kind)    & Kindfreq          & 0.066 & (numeric) &  0.161 &  0.173 & -0.008 &  0.009 &  0.333 &  0.350 &        &      * \\
+              & Kindgender        & 0.001 & Neut      & -0.007 & -0.022 & -0.407 & -0.424 &  0.408 &  0.379 &        &        \\
+	      &                   &       & Fem       &  1.357 &  1.379 &  0.831 &  0.872 &  1.808 &  1.897 &      * &      * \\[0.5\baselineskip]
+                                          
+    Second    & Measureattraction & 0.015 & (numeric) &  0.247 &  0.275 &  0.058 &  0.078 &  0.413 &  0.476 &      * &      * \\
+    (Measure) & Measureclass      & 0.001 & Rest      &  0.564 &  0.488 & -0.140 & -0.309 &  1.197 &  1.236 &        &        \\
+              &                   &       & Container &  0.609 &  0.618 &  0.050 &  0.018 &  1.145 &  1.215 &      * &      * \\
+              &                   &       & Amount    &  0.927 &  0.959 &  0.184 &  0.189 &  1.566 &  1.718 &      * &      * \\
+              &                   &       & Portion   &  1.472 &  1.503 &  0.916 &  0.956 &  1.938 &  2.064 &      * &      * \\
+              & Measurefreq       & 0.003 & (numeric) & -0.257 & -0.264 & -0.413 & -0.435 & -0.098 & -0.099 &      * &      * \\
   \end{tabular}
   \smallskip
   \caption{Coefficient table comparing Maximum Likelihood Estimation (MLE, with 95\% bootstrap confidence interval) and `Bayesian' Markov-Chain Monte Carlo estimation (MCMC); for details see text}
@@ -716,26 +702,33 @@ Standard diagnostics for the Maximum Likelihood Estimation (MLE) show that the m
 Generalized variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than $2$.
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.423$ and $R^2_c=0.515$ (see \citealp{Gries2015} for a linguist-friendly introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
 The rate of correct predictions is $0.855$, which means a proportional reduction of error of $\lambda=0.354$.
-The measure lemma intercepts have a standard deviation of $\sigma_{\text{Measurelemma}}=0.623$, the kind lemma intercept $\sigma_{\text{Kindlemma}}=0.488$
+The measure lemma intercepts have a standard deviation of $\sigma_{\text{Measurelemma}}=0.623$, the kind lemma intercept $\sigma_{\text{Kindlemma}}=0.488$.
 
 The coefficient estimates are specified in Table~\ref{tab:bigtable} for each regressor (or regressor level) in the columns labelled \textit{Coefficient}.
 For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \textit{confint.merMod} function from \textit{lme4}) with 1,000 replications, and using the percentile method for the calculation of the intervals.
-The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:bigtable} in the columns labelled \textit{CI Low} and \textit{CI High} (for the upper and lower 2.5th percentiles).
-The column \textit{CI contains 0} shows an asterisk for those intervals that do not include 0 as a more modest replacement of significance levels.
+The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:bigtable} in the columns labelled \textit{CI Low} and \textit{CI High} (= upper and lower 2.5th percentiles).
+The column \textit{CI contains 0} shows an asterisk for those intervals that do \textit{not} include 0.
 Furthermore, for each regressor, a $p$ value was obtained by dropping the regressor from the full model, re-estimating the nested model and comparing it to the full model.
 Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 These bootstrapped $p$ values are given in the columns labelled p\Sub{PB} in Table~\ref{tab:bigtable}.
-All regressors have low \pPB\ values of magnitude $10^{-2}$ and $10^{-3}$, and only \textit{Kindattraction} ($p_{\text{PB}}=0.033$) and \textit{Kindfreq} ($p_{\text{PB}}=0.066$) can be seen as slightly too high to be convincing (`non-significant').
+All regressors have low p\Sub{PB} values of magnitude $10^{-2}$ or $10^{-3}$.
+Only \textit{Kindfreq} ($p_{\text{PB}}=0.066$) can be seen as slightly too high to be convincing (`non-significant').
 
 Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo estimation do not necessarily (and in this case predictably) lead to different results.
 Both the MN model and the F model were re-estimated using the \textit{stan\_glmer} function from the \textit{rstanarm} package, which provides an \textit{lme4}-compatible syntax for estimating common model types with the \textit{stan} software \citep{CarpenterEa2017}.
-The algorithm was run using 4 chains and 1,000 iterations, and instead of guessing prior distributions or using implausible uniform prior distributions \cite[251--252]{Levshina2016}, I used plausible default priors.
+The algorithm was run with $4$ chains and $1,000$ iterations, and instead of guessing prior distributions or using implausible uniform prior distributions \cite[251--252]{Levshina2016}, I used plausible default priors.
 Most notably, priors for coefficients were specified as $\mathcal{N}(0,10)$ because coefficients higher than $10$ or lower than $-10$ are extremely rare in well-specified models on appropriate data.%
-\footnote{Consider that with a coefficient of 10, each increase by $1$ in the regressor variable means an increase in odds of $exp(10)=22026.47$.
+\footnote{Consider that with a coefficient of $10$, each increase by $1$ in the regressor variable means an increase in odds of $exp(10)=22,026.47$.
 To reliably estimate such coefficients, extremely large samples would be required.}
 The algorithm converged, and for all coefficients, the $\hat{R}$ diagnostic was exactly $1$.
 The resulting coefficients and intervals as well as an * are also given in Table~\ref{tab:bigtable} in the columns labelled \textit{MCMC}.
-Since both methods lead to exactly the same results (minus negligible numerical differences) as expected (see Section~\ref{sec:rightstatistics}), I only interpret the MLE model in the next section.
+Both methods lead to exactly the same results (minus negligible numerical differences) as expected (see Section~\ref{sec:rightstatistics}).
+The signs and magnitudes of the coefficients are identical, and confidence intervals have the same width and symmetry properties.
+If one were interested in significance at $\alpha=0.05$, then the decision based on the confidence intervals differs for \textit{Kindfreq} ($p_{\text{PB}}=0.066$, MLE lower bound is $-0.008$ and MCMC lower bound is $0.009$).
+With MCMC, the regressor is `not significant' at the standard $\alpha$ level, but it is with MLE.
+This might only go to show how absurd strict significance testing is in complex modelling situations:
+both methods essentially estimate the same sign and magnitude for the coefficient (MLE $0.161$, MCMC $0.173$) and do not differ substantially with regard to the precision of the estimate in the form of the width of the confidence interval (both intervals have a width of exactly $0.341$).
+Hence, I only interpret the MLE model in the next section.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -745,37 +738,23 @@ Since both methods lead to exactly the same results (minus negligible numerical 
 \subsection{Interpretation}
 \label{sec:interpretation}
 
-The results reported in Section~\ref{sec:corpushierarchicalmodel} generally confirm the hypotheses from Section~\ref{sec:analyses}.
-Before I turn to some details, it should be noticed that the results from standard MLE (with bootstrap) and MCMC (with default priors) obviously differ in numerical details -- but not enough to result in different interpretations.
-The signs and magnitudes of the coefficients are identical with the two methods, and the confidence intervals have roughly the same width and symmetry properties.
-In only one single case (MN model, \textit{Measureattraction}) the MLE bootstrap confidence interval does not include $0$ while the MCMC interval does (barely, with $-0.01$).
-While I only interpret the MLE results, virtually the same interpretation could be made for the MCMC results.
-Furthermore, the MN model and the F model agree in many relevant aspects.
-Disagreement between the models will be discussed below.
-
 % ATTRACTION
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.75\textwidth]{../R/output/corpus_Measureattraction}
-  \caption{Effect plot for the regressor \textit{Measureattraction}}
-  \label{fig:eff:measureattraction}
+  \includegraphics[width=0.5\textwidth]{../R/output/corpus_Measureattraction}~\includegraphics[width=0.5\textwidth]{../R/output/corpus_Kindattraction}
+  \caption{Effect plots for the regressors \textit{Measureattraction} and \textit{Kindattraction}; y axes are not aligned}
+  \label{fig:eff:attraction}
 \end{figure}
 
-First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown, see the effect plots in Figure~\ref{fig:eff:measureattraction}.%
+The results reported in Section~\ref{sec:corpushierarchicalmodel} generally confirm the hypotheses from Section~\ref{sec:analyses}.
+First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown, see the effect plots in Figure~\ref{fig:eff:attraction}.%
 \footnote{Effect plots were created using the \textit{effects} package \citep{Fox2003}.
-They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis),assuming typical values of all other regressors.}
+They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis), assuming typical values of all other regressors.}
 The effect is mostly as expected:
 if a lemma appears relatively more often in the \PGCd\ (compared to its frequency in the \NACb), the more often the \PGCa\ is chosen over the \NACa\ with this specific lemma.
-Only the F model \textit{Kindattraction} regressor is clearly useless (`non-significant') in the PBmodcomp test, and the effect plot shows a corresponding picture.
-This is related to the fact that in the F model the kind lemma effect and the corresponding second-level model could not be estimated successfully (remember that $\sigma_{\text{Kindlemma}}=0.000$).
-The effect plots show a picture in line with a \textit{divide by 4} interpretation of the coefficients as shown in Table~\ref{tab:bigtable}.%
-\footnote{Coefficients are on the logit scale, which does not linearly correspond to the probability scale.
-If coefficients are reasonably small, however, dividing the coefficient by $4$ gives a good approximation of the change on the probability scale for each increment of the response variable \citep[82]{GelmanHill2006}.}
-Given that all regressors have been z-transformed, we can make statements such as the following:
-If a masculine kind noun is one standard deviation more frequently encountered in the \PGCd\ (compared to its frequency in the \NACb) than the kind nouns on average, the probability that the \PGCa\ is chosen instead of the \NACa\ with this kind noun in it rises by $\beta^{MN}_{\text{Kindattraction}}/4=0.49/4=0.1225$, etc.
-For measure nouns in MNPs with masculine kind nouns, it is $\beta^{MN}_{\text{Measureattraction}}/4=0.21/4=0.0525$, and for measure nouns in MNPs with feminine kind nouns, it is $\beta^{F}_{\text{Measureattraction}}/4=0.43/4=0,1075$.
-As readers can observe, these numbers correspond approximately to the slopes of the effect plots.
+The effect for measure nouns is stronger, and it was estimated with higher precision.
+
 
 % GRAMMATICALISATION
 % => lemmas and lemma classes
@@ -787,20 +766,11 @@ As readers can observe, these numbers correspond approximately to the slopes of 
   \label{fig:eff:measureattraction}
 \end{figure}
 
-In Section~\ref{sec:analyses}, it was also hypothesised that there may be effects specific to classes of lemmas and classes of lemmas, and that they might be related to degrees of grammaticalisation of the measure noun and\slash or semantic prototypicality effects.
-The picture is clear for the MN model.
-Lemma-specific effects were not detected ($\sigma_{\text{Measurelemma}}<0.001$), but instead the lemma class second-level predictor was successfully estimated ($p=0.004$ in the PB test).
-The large confidence intervals around the estimates (between $15.6$ and $28.37$) indicate that maybe the sample size needs to be higher, or a slightly modified classification might be even more adequate.
-Looking at the effect plot in Figure~\ref{fig:eff:measureattraction}, however, it is evident that the more abstract physical measure nouns with a high degree of grammaticalisation favour the \NACa\ (\textit{Square}, \textit{Length}, \textit{Currency}, \textit{Capacity}, \textit{Weight}) whereas the more concrete and less grammaticalised classes of measure nouns (which usually have an alternative use outside of MNPs) favour the \PGCa\ (\textit{Layer}, \textit{Amount}, \textit{Vessel}, \textit{Portion}).
-Ideally, there should be more differentiation in the second group, but given the large confidence intervals, significantly larger samples would be needed for more precise estimation.
-As mentioned before, the second level model for measure nouns in the F model could not estimated with meaningful results.
-
-On the other hand, the heuristic semantic classification for kind nouns in \textit{Kindconsistency} is much less useful.
-The MN model did not even converge with this regressor, and for the F model an insufficient $p=0.07$ was achieved in the PB test.
-Also, \textit{Kindint} does not contribute anything useful in either model (MN model $p=0.432$; F model $p=0.326$).
-The only regressor that has a considerable influence is \textit{Kindedible}, \ie, whether the substance denoted by the kind noun is edible.
-Since these regressors were added heuristically, there is no interpretation in terms of substantive theory, however, and I am hesitant to count it as very meaningful.
-In sum, no consistent picture emerges for kind noun-specific semantic prototypicality effects, but for measure nouns there is a clear indication that -- as predicted -- classes of more strongly grammaticalised nouns occur proportionally more frequently in the \PGCa.
+In Section~\ref{sec:analyses}, it was also hypothesised that there may be effects specific to classes of measure lemmas, and that they might be related to degrees of grammaticalisation of the measure noun.
+Transcending the effects of individual lemmas (captured in the random intercepts), the \textit{Measureclass} second-level predictor was successfully estimated ($p_{\text{PB}}=0.001$).
+Looking at the effect plot in Figure~\ref{fig:eff:measureattraction}, it is evident that abstract non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACa.
+At the other end of the scale, nouns denoting natural portions like \textit{Haufen} `heap', \textit{Bündel} `bundle', \textit{Schluck} `gulp' favour the \PGCa.
+These are referential nouns, confirming the hypothesis that it is prototypical of the PGC to host two referential nouns and the NAC only one.
 
 % PLURAL & CARDINALS
 
@@ -812,9 +782,8 @@ In sum, no consistent picture emerges for kind noun-specific semantic prototypic
 \end{figure}
 
 I now turn to the predicted effect of plural measure nouns and cardinals as quantifiers.
-Plurality has a clear effect in the expected direction (plural favours the \PGCa) in the MN model ($p=0.002$ for \textit{Measurenumber}).
-In the F model, the effect has the same direction, but the estimate is quite imprecise ($p=0.160$), again likely due to the low sample size.
-Figure~\ref{fig:eff:leftcontext} shows, however, that the left context of the measure noun influences the choice of the variant (in both models, the regressor has $p=0.002$).
+Plurality has a clear effect in the expected direction (plural favours the \PGCa) ($\beta_{\text{MeasurenumberPl}}=0.814$, $p=0.001$ for \textit{Measurenumber}).
+Figure~\ref{fig:eff:leftcontext} shows that the left context of the measure noun influences the choice of the variant ($p=0.001$).
 Cardinals have a strong tendency to co-occur with the \NACa\ in both models.
 
 % REGISTER
@@ -822,22 +791,16 @@ Cardinals have a strong tendency to co-occur with the \NACa\ in both models.
 % => Genitives
 
 The register-related proxy variables point into the expected direction.
-Increased \textit{Badness} favours the \NACa\ (only in the MN model $\beta=-0.2$, $p=0.002$), and so does a lesser density of genitives (MN model $\beta=-0.66$, $p=0.004$; F model $\beta=-0.52$, $p=0.002$).
-A higher length of the NP (\textit{Matchlength}) favours the \PGCa\ (MN model $\beta=0.54$, $p=0.002$; F model $\beta=0.63$, $p=0.002$) as predicted, but abbreviated measure nouns (\textit{Measureabbreviated}) do not seem to have much of an effect (MN model $p=0.730$; F model $p=0.267$).
-
+Increased \textit{Badness} of the document favours the \NACa\ ($\beta_{\text{Badness}}=-0.165$, $p=0.001$), and so does a lesser density of genitives ($\beta=-0.630$, $p=0.001$).
+While these are poor proxies to register (and partially circular in the case of \textit{Genitives}), this result can at least encourage future work into register effects 
 
 % NUISANCE
 % => dative effect
 % => frequency
 
-Finally, the nuisance variables \textit{Measurefreq} and \textit{Kindfreq} have no clear effect, except for maybe a $p=0.041$ for \textit{Measurefreq} in the MN model.
-The coefficient is $-0.16$ meaning that with each increase of the lemma log-frequency (per one million tokens) of the measure noun of one standard deviation, the probability that the \PGCa\ is chosen is lowered by approximately $-0.16/4=-0.04$.
-Since token frequency is no direct proxy for grammaticalisation, I hesitate to interpret this effect.
-The effect for \textit{Measurecase} is as predicted by previous studies (see Section~\ref{sec:analyses}).
-The dative favours the \PGCa\ in the MN model with $p=0.002$ and a coefficient for the dative (vs.\ the nominative, which is on the intercept) of $0.63$.
-In the F model, \textit{Dative} was not a level of \textit{Measurecase} due to the syncretisms mentioned in Section~\ref{sec:descriptive}.
+The effect of \textit{Measurecase} ($p=0.001$) is as predicted by previous studies (see Section~\ref{sec:analyses}).
+A measure noun in the dative favours the \PGCa\ with $\beta_{\text{MeasurecaseDat}}=0.707$ (compared to the nominative, which is on the intercept).
 Although \textit{Measurecase} is a nuisance variable in the context of this study, convergence with previous work strengthens its validity.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -856,21 +819,19 @@ Although \textit{Measurecase} is a nuisance variable in the context of this stud
 % Levy, Roger .2008. “Expectation-based syntactic comprehension.” Cognition 106: 1126–1177.
 % Smith, Nathaniel, and Levy, Roger. 2013. “The effect of word predictability on reading time is logarithmic.” Cognition 128: 302–319.
 
-As was pointed out in Section \ref{sec:cocl}, there can be substantial doubt that corpus linguistic methods in themselves can be called \textit{cognitively oriented} in any meaningful way.
-At the same time, it is a highly plausible assumption in a usage-based framework that large and varied corpora ideally represent language users' relevant input of (at least) written language, and that there should be reflexes of the distributions found in such corpora in the linguistic behaviour of language users.
+As was pointed out in Section \ref{sec:cogocl}, there is a strong interest in validating corpus-based findings through experiments in order to substantiate \textit{cognitively oriented usage-based corpus linguistics} as a research programme.
 Therefore, this section and the next present the results of two experiments wherein I cross-checked the corpus-based findings.
-
+Both experiments use attested sentences from the corpus sample (see Section~\ref{sec:gettingdata}) and the probabilities that the corpus-based statistical model (see Section~\ref{sec:corpushierarchicalmodel} assigns to the competing constructions in the sentences.
 First, a forced-choice experiment was conducted.
+Participants had to chose between two sentences differing only <++>
+
 There were 24 participants (L1 speakers of German without reading or writing disability) aged 19 to 30 who were recruited from introductory linguistics courses at Freie Universität Berlin.
 Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper explicit knowledge of linguistics, grammar, or experimental methods.
 None had never participated in a forced-choice experiment before.
 Participation was voluntary, but participants received credit in partial fulfillment of course requirements.
 
-As stimuli, I used attested (but simplified) sentences from the corpus study in an approach similar to the one taken in \cite{DivjakEa2016}.
-The rationale was that it is virtually impossible to test the large and complex sets of regressors used in the corpus study in a traditional randomized experiments where usually just one relevant factor (ideally something like treatment vs.\ non-treatment) is of interest.
-Therefore, attested sentences were used, and the predictions of the corpus models were tested against participants' preferences.
-
-Concretely, I sampled 16 attested sentences from the corpus and simplified them (mostly removing embedded clauses, complex adverbials, etc.) and standardized their orthography.
+As stimuli, attested (but simplified) sentences from the corpus study were used in an approach similar to the one taken in \cite{DivjakEa2016}.
+I sampled 16 attested sentences from the corpus and simplified them (mostly removing embedded clauses, complex adverbials, etc.) and standardized their orthography.
 It was made sure that the simplifications and normalisations did not affect any of the regressors used in the corpus study.
 Eight sentences contained masculine or neuter kind nouns, the other eight contained feminine kind nouns.
 Furthermore, in each of the M\slash N and F groups, four sentences with a case drop (\ie\ genitive or oblique case on the kind noun) and four withe case identity were chosen.

@@ -96,7 +96,7 @@ dotchart(measure.fixeffs, pch=20,
          xlim = c(x.lower, x.upper),
          lcolor = "gray",
          cex = 1.2,
-         main=paste("Fixed effects with bootstrapped\n 95% CIs (", ci.boot.nsim, " simulations)", sep=""))
+         main=paste("Coefficient estimates\n with bootstrapped 95% CI", sep=""))
 lines(c(0,0), c(0,length(measure.ci.95)), col="gray")
 
 for (i in 1:nrow(measure.ci.95)) {
