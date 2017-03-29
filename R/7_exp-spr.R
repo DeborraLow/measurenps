@@ -292,4 +292,4 @@ if (save.persistent) dev.off()
 
 
 # Save workspace.
-save(list = ls(), file=paste(out.dir, "workspace_", Sys.time(), ".RData", sep=""))
+save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))

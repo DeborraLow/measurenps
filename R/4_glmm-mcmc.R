@@ -66,3 +66,27 @@ if (save.persistent) sink(paste(out.dir, "mcmc.txt", sep=""), append = T)
 cat("\n\nTable comparing coefficient estimates with ML and MCMC\n\n")
 print(measure.glmm.table)
 if (save.persistent) sink()
+
+
+# Print new fixeff plot with MCMC.
+if (save.persistent) pdf(paste(out.dir, "fixeffs_mle+mcmc.pdf", sep=""))
+dotchart(rep(-100, length(measure.fixeffs)), pch=20,
+         xlim = c(x.lower, x.upper),
+         labels = names(measure.fixeffs),
+         lcolor = "gray",
+         cex = 1.2,
+         main=paste("MLE and MCMC oefficient estimates\n with 95% confidence intervals", sep=""))
+lines(c(0,0), c(0,length(measure.ci.95)), col="gray")
+
+for (i in 1:nrow(measure.ci.95)) {
+  points(measure.fixeffs[i], i+0.25, pch=25, cex=0.75, bg="black", col = "black")
+  lines(measure.ci.95[i,c(1,2)], c(i+0.25, i+0.25), col="black", lwd=2)
+  
+  # MCMC.
+  points(measure.glmm.table[names(measure.fixeffs[i]), "MC_Coef"], i-0.25, pch=24, cex=0.75, bg="gray", col = "gray")
+  lines(measure.glmm.table[names(measure.fixeffs[i]), c("MC_Low", "MC_High")], c(i-0.25,i-0.25), col="gray", lwd=2)
+}
+
+legend("topright", legend = c("MLE", "MCMC"), cex = 1.2, col = c("black", "gray"), pt.bg = c("black", "gray"),
+       lty = 1, lwd = 2, pch = c(25, 24), pt.cex = 0.75, bg = "white")
+if (save.persistent) dev.off()

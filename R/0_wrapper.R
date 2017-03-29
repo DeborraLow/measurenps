@@ -54,4 +54,4 @@ cat("\n\n Prediction for experimental stimuli ...\n")
 source('5_stimuli_predict.R')
 
 # Save workspace.
-save(list = ls(), file=paste(out.dir, "workspace_", Sys.time(), ".RData", sep=""))
+save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))

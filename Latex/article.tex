@@ -127,6 +127,14 @@ In German grammar, the term \textit{Zweifelsfälle} `cases of doubt' is often us
 % Method:
 % Noble
 
+% TODO SURPRISAL
+%
+% Bybee, Joan und Thompson, Sandra. 1997. “Three Frequency Effects in Syntax”, Proceedings of the Twenty-Third Annual Meeting of the Berkeley Linguistics Society, 378-388.
+% Bybee, Joan. 2006. “From Usage to Grammar: The Mind‘s Response to Repetition”. Language 82(4): 711-733.
+% Levy, Roger .2008. “Expectation-based syntactic comprehension.” Cognition 106: 1126–1177.
+% Smith, Nathaniel, and Levy, Roger. 2013. “The effect of word predictability on reading time is logarithmic.” Cognition 128: 302–319.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,7 +218,6 @@ If the kind noun forms an NP with a determiner, the construction resembles (and 
 Whereas partitives are constructions denoting a proper part-of relation strictly requiring a definite kind noun as in \textit{a sip of the wine}, pseudo partitives -- albeit syntactically similar and diachronically related to partitives in many languages -- merely denote quantities and contain indefinite kind nouns as in \textit{a sip of wine}.
 %In the literature on German, some authors incorrectly call the pseudo-partitive a \textit{partitive} \cite{Hentschel1993} while some realise the difference and at least mention it \citep{Eschenbach1994,GallmannLindauer1994,Loebel1989,Zimmer2015}.
 }
-%I use * to denote general unacceptability, and the acceptability judgements given in (\ref{ex:intro:pseudopartitive}) are completely undisputed.
 Here, the kind noun is in the genitive, and I refer to the construction in (\ref{ex:intro:pseudopartitive1}) as the \textit{Pseudo-partitive Genitive Construction} (PGC).
 
 \begin{exe}
@@ -226,9 +233,9 @@ Here, the kind noun is in the genitive, and I refer to the construction in (\ref
 When the kind noun is bare -- \ie, without a determiner and without modifying adjectives -- the kind noun has to agree in case with the measure noun, and the genitive seen in the PGC is not acceptable, see (\ref{ex:intro:narrowapposition}).
 This construction is usually classified as a \textit{Narrow Apposition Construction} \citep{Loebel1986}, henceforth NAC.%
 \footnote{Notice that the unavailability of the genitive on the kind noun can be seen as following from a rather quirky constraint that genitive NPs in German require the presence of some strongly case-marked element (determiner or adjective) in addition to the head noun in order to be acceptable \citep{GallmannLindauer1994,Schachtl1989}.}
-%The construction as in (\ref{ex:intro:narrowapposition2}) is also referred to as the \textit{Direct Partitive Construction} for other Germanic languages in which the PGC with the synthetic genitive is not available.%
-%\footnote{This nomenclature makes sense in contrast to the \textit{Indirect Partitive Construction} with prepositional linkers translating to `of' -- \ie\ analytic genitives -- in such languages, see \cite{HankamerMikkelsen2008} for Danish.
-%For German, this terminology is not distinctive enough, which is why I use the terms NAC and PGC.}
+The construction as in (\ref{ex:intro:narrowapposition2}) is also referred to as the \textit{Direct Partitive Construction} for other Germanic languages in which the PGC with the synthetic genitive is not available.%
+\footnote{This nomenclature makes sense in contrast to the \textit{Indirect Partitive Construction} with prepositional linkers translating to `of' -- \ie\ analytic genitives -- in such languages, see \cite{HankamerMikkelsen2008} for Danish.
+For German, this terminology is not distinctive enough, which is why I use the terms NAC and PGC.}
 While only an accusative is shown in (\ref{ex:intro:narrowapposition}), the kind noun obligatory agrees in case also with nominative and dative measure nouns.
 
 \begin{exe}
@@ -649,8 +656,8 @@ To control for this effect, the case of the measure noun was manually annotated 
 
 \begin{figure}[hb!]
   \centering
-  \includegraphics[width=0.85\textwidth]{../R/output/corpus_fixeffs}
-  \caption{Coefficients (MLE) with 95\% parametric bootstrap confidence intervals; intercept (\textit{Leftcontext=C}, \textit{Measurecase=Nom}, \textit{Measurenumber=Sg}, \textit{Kindgender=Masc}, \textit{Measureclass=Physical}; 0 for all numeric z-transformed regressors) is -4.328}
+  \includegraphics[width=0.85\textwidth]{../R/output/corpus_fixeffs_mle+mcmc}
+  \caption{Coefficients (MLE and MCMC) with 95\% confidence intervals (for details see text); intercept (\textit{Leftcontext=C}, \textit{Measurecase=Nom}, \textit{Measurenumber=Sg}, \textit{Kindgender=Masc}, \textit{Measureclass=Physical}; 0 for all numeric z-transformed regressors) is -4.328 (MLE) and -4.441 (MCMC)}
   \label{fig:fixeffs}
 \end{figure}
 
@@ -748,10 +755,14 @@ Since both estimators converge, I only interpret the MLE model in the next secti
 The results reported in Section~\ref{sec:corpushierarchicalmodel} generally confirm the hypotheses from Section~\ref{sec:analyses}.
 First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown, see the effect plots in Figure~\ref{fig:eff:attraction}.%
 \footnote{Effect plots were created using the \textit{effects} package \citep{Fox2003}.
-They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis), assuming typical values of all other regressors.}
+They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis), at typical values of all other regressors.}
 The effect is mostly as expected:
 if a lemma appears relatively more often in the \PGCd\ (compared to its frequency in the \NACb), the more often the \PGCa\ is chosen over the \NACa\ with this specific lemma.
 The effect for measure nouns is stronger, and it was estimated with higher precision.
+
+An interesting picture emerges for the lemma frequencies.
+A higher than average lemma frequency of measure nouns favours the \NACa\ as expected ($\beta_{\text{Measurefreq}}=-0.257$, $p_{\text{PB}}=0.003$).
+With kind nouns, higher frequency seems to favour the \PGCa ($\beta_{\text{Kindfreq}}=0.161$, $p_{\text{PB}}=0.066$).
 
 
 % GRAMMATICALISATION
@@ -809,13 +820,6 @@ Although \textit{Measurecase} is a nuisance variable in the context of this stud
 \label{sec:externalvalidation}
 
 \subsection{Experiment 1: forced choice}
-
-% TODO SURPRISAL
-%
-% Bybee, Joan und Thompson, Sandra. 1997. “Three Frequency Effects in Syntax”, Proceedings of the Twenty-Third Annual Meeting of the Berkeley Linguistics Society, 378-388.
-% Bybee, Joan. 2006. “From Usage to Grammar: The Mind‘s Response to Repetition”. Language 82(4): 711-733.
-% Levy, Roger .2008. “Expectation-based syntactic comprehension.” Cognition 106: 1126–1177.
-% Smith, Nathaniel, and Levy, Roger. 2013. “The effect of word predictability on reading time is logarithmic.” Cognition 128: 302–319.
 
 As was pointed out in Section \ref{sec:cogocl}, there is a strong interest in validating corpus-based findings through experiments in order to substantiate \textit{cognitively oriented usage-based corpus linguistics} as a research programme.
 Therefore, this section and the next present the results of two experiments wherein I cross-checked the corpus-based findings.
@@ -896,13 +900,6 @@ In summary, the forced choice experiment clearly succeeded in validating the res
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Experiment 2: self-paced reading}
-
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.6\textwidth]{figures/experiment/spr_effects_modelPredDichotomousReg}
-%\caption{Effect plot for the LMM in the self-paced reading experiment: modeling participants' residualised log reading times on the dichotomised predictions of the corpus-based GLMM (cf.\ Section~\ref{sec:corpushierarchicalmodel})}
-%\label{fig:spr:dichotomous:effects}
-%\end{figure}
 
 \begin{figure}[h]
 \centering
