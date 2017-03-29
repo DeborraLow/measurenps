@@ -29,91 +29,29 @@ Modelprediction   3.9525     0.5436   7.271 3.57e-13 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
-       [1] "Di10"
-[1] "Di11"
-[1] "Di12"
-[1] "Di14"
-[1] "Di15"
-[1] "Di16"
-[1] "Di17"
-[1] "Di18"
-[1] "Do11"
-[1] "Do12"
-[1] "Do13"
-[1] "Do14"
-[1] "Do15"
-[1] "Fr12"
-[1] "Fr13"
-[1] "Fr14"
-[1] "Fr15"
-[1] "Fr18"
-[1] "Mi10"
-[1] "Mi11"
-[1] "Mi12"
-[1] "Mi13"
-[1] "Mi15"
-[1] "Mi16"
-[1] "Mi17"
-[1] "Mi18"
-[1] "Mo11"
-[1] "Mo12"
-[1] "Mo13"
-[1] "Mo14"
-[1] "Mo15"
-[1] "Mo16"
-[1] "Mo17"
-[1] "Mo18"
-[1] "Sa12"
-[1] "Sa14"
-[1] "Sa16"
-[1] "Sa17"
-[1] "Di10"
-[1] "Di11"
-[1] "Di12"
-[1] "Di14"
-[1] "Di15"
-[1] "Di16"
-[1] "Di17"
-[1] "Di18"
-[1] "Do11"
-[1] "Do12"
-[1] "Do13"
-[1] "Do14"
-[1] "Di10"
-[1] "Di11"
-[1] "Di12"
-[1] "Di14"
-[1] "Di15"
-[1] "Di16"
-[1] "Di17"
-[1] "Di18"
-[1] "Do11"
-[1] "Do12"
-[1] "Do13"
-[1] "Do14"
-[1] "Do15"
-[1] "Fr12"
-[1] "Fr13"
-[1] "Fr14"
-[1] "Fr15"
-[1] "Fr18"
-[1] "Mi10"
-[1] "Mi11"
-[1] "Mi12"
-[1] "Mi13"
-[1] "Mi15"
-[1] "Mi16"
-[1] "Mi17"
-[1] "Mi18"
-[1] "Mo11"
-[1] "Mo12"
-[1] "Mo13"
-[1] "Mo14"
-[1] "Mo15"
-[1] "Mo16"
-[1] "Mo17"
-[1] "Mo18"
-[1] "Sa12"
-[1] "Sa14"
-[1] "Sa16"
-[1] "Sa17"
+            (Intr)
+Modelprdctn -0.607
+
+
+LR-Test and bootstrapped PB test on nested models w & w/o Modelpred
+
+Parametric bootstrap test; time: 101.01 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 978 Extremes: 0
+large : Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
+small : Chosenconstruction ~ (1 | Item) + (1 | Participant)
+         stat df   p.value    
+LRT    47.175  1 6.491e-12 ***
+PBtest 47.175     0.001021 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+ R-squared 
+
+      R2m       R2c 
+0.2159639 0.4094769 
+
+
+ 95% bootstrap CI                    2.5 %     97.5 %
+Modelprediction  2.836223  5.0228569
+(Intercept)     -1.940436 -0.7472845

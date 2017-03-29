@@ -43,11 +43,11 @@
   \author*[1]{Roland Schäfer}
   %\runningauthor{...}
   \affil[1]{Freie Universität Berlin}
-  \title{Competing Constructions for German Measure Phrases}
-  \runningtitle{Competing Constructions for German Measure Phrases}
+  \title{A Case Alternation in German Measure Noun Phrases: from Usage Data to Experimental Validation}
+  \runningtitle{A Case Alternation in German Measure Noun Phrases}
   %\subtitle{...}
-  \abstract{In German, nominal morpho-syntax\ldots}
-  \keywords{alternations, hierarchical models, corpus methods and experimental methods, measure constructions, German}
+  \abstract{}
+  \keywords{corpus methods and experimental methods, alternations, hierarchical models, measure constructions, German}
   %\classification[PACS]{...}
   %\communicated{...}
   %\dedication{...}
@@ -79,8 +79,6 @@
 
 This paper deals with a morpho-syntactic alternation that occurs only in a very specific syntactic measure noun phrase construction.
 By \textit{alternation} I refer to a situation where two or more forms or constructions are available with no clear difference in acceptability, function, or meaning.
-I use it as an example case for a protocol for the estimation and validation of corpus-based models in cognitively oriented corpus linguistics.
-I briefly motivate this approach in this introduction, for details see Section~\ref{sec:cocl}.
 
 In German grammar, the term \textit{Zweifelsfälle} `cases of doubt' is often used \citep{Klein2009}.
 
@@ -668,7 +666,7 @@ Given the coding of the response variable, coefficients leaning to the positive 
 \begin{sidewaystable}
   \centering
     \begin{tabular}{llrlrrrrrrcc}
-      Level & Regressor & \multicolumn{1}{l}{\pPB} & Level  & \multicolumn{2}{l}{Coefficient} & \multicolumn{2}{l}{CI Low} & \multicolumn{2}{l}{CI High} & \multicolumn{2}{l}{CI contains 0} \\
+      Level & Regressor & \multicolumn{1}{l}{\pPB} & Level  & \multicolumn{2}{l}{Coefficient} & \multicolumn{2}{l}{CI low} & \multicolumn{2}{l}{CI high} & \multicolumn{2}{l}{CI contains 0} \\
               &                   &       &          & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} \\\midrule
 
     First     & Badness           & 0.001 & (numeric) & -0.165 & -0.169 & -0.264 & -0.264 & -0.074 & -0.075 &      * &      * \\
@@ -706,7 +704,7 @@ The measure lemma intercepts have a standard deviation of $\sigma_{\text{Measure
 
 The coefficient estimates are specified in Table~\ref{tab:bigtable} for each regressor (or regressor level) in the columns labelled \textit{Coefficient}.
 For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \textit{confint.merMod} function from \textit{lme4}) with 1,000 replications, and using the percentile method for the calculation of the intervals.
-The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:bigtable} in the columns labelled \textit{CI Low} and \textit{CI High} (= upper and lower 2.5th percentiles).
+The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:bigtable} in the columns labelled \textit{CI low} and \textit{CI high} (= upper and lower 2.5th percentiles).
 The column \textit{CI contains 0} shows an asterisk for those intervals that do \textit{not} include 0.
 Furthermore, for each regressor, a $p$ value was obtained by dropping the regressor from the full model, re-estimating the nested model and comparing it to the full model.
 Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
@@ -728,7 +726,7 @@ If one were interested in significance at $\alpha=0.05$, then the decision based
 With MCMC, the regressor is `not significant' at the standard $\alpha$ level, but it is with MLE.
 This might only go to show how absurd strict significance testing is in complex modelling situations:
 both methods essentially estimate the same sign and magnitude for the coefficient (MLE $0.161$, MCMC $0.173$) and do not differ substantially with regard to the precision of the estimate in the form of the width of the confidence interval (both intervals have a width of exactly $0.341$).
-Hence, I only interpret the MLE model in the next section.
+Since both estimators converge, I only interpret the MLE model in the next section.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -821,38 +819,44 @@ Although \textit{Measurecase} is a nuisance variable in the context of this stud
 
 As was pointed out in Section \ref{sec:cogocl}, there is a strong interest in validating corpus-based findings through experiments in order to substantiate \textit{cognitively oriented usage-based corpus linguistics} as a research programme.
 Therefore, this section and the next present the results of two experiments wherein I cross-checked the corpus-based findings.
-Both experiments use attested sentences from the corpus sample (see Section~\ref{sec:gettingdata}) and the probabilities that the corpus-based statistical model (see Section~\ref{sec:corpushierarchicalmodel} assigns to the competing constructions in the sentences.
+Both experiments use attested sentences from the corpus sample (see Section~\ref{sec:gettingdata}) and the probabilities that the corpus-based statistical model (see Section~\ref{sec:corpushierarchicalmodel}) assigns to the competing constructions in the sentences.
 First, a forced-choice experiment was conducted.
-Participants had to chose between two sentences differing only <++>
+Participants had to chose between two sentences differing only in that one contained the \NACa\ and the other contained the \PGCa.
 
-There were 24 participants (L1 speakers of German without reading or writing disability) aged 19 to 30 who were recruited from introductory linguistics courses at Freie Universität Berlin.
+There were 24 participants (L1 speakers of German without reading or writing disability) aged 19 to 30 who were recruited from introductory linguistics courses at [name of university anonymised].
 Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper explicit knowledge of linguistics, grammar, or experimental methods.
-None had never participated in a forced-choice experiment before.
+None of them had ever participated in a forced-choice experiment before.
 Participation was voluntary, but participants received credit in partial fulfillment of course requirements.
 
 As stimuli, attested (but simplified) sentences from the corpus study were used in an approach similar to the one taken in \cite{DivjakEa2016}.
 I sampled 16 attested sentences from the corpus and simplified them (mostly removing embedded clauses, complex adverbials, etc.) and standardized their orthography.
 It was made sure that the simplifications and normalisations did not affect any of the regressors used in the corpus study.
 Eight sentences contained masculine or neuter kind nouns, the other eight contained feminine kind nouns.
-Furthermore, in each of the M\slash N and F groups, four sentences with a case drop (\ie\ genitive or oblique case on the kind noun) and four withe case identity were chosen.
-More precisely, the four sentences were sampled as highly prototypical examples of case drop (high logits) and case identity (low logits), respectively, according to the corpus based models.%
-\footnote{Sentences were sorted by their corresponding $\hat{y}$ calculated from the model.
-For the M\slash N sentences, sentences were sampled from the top and bottom 15\% of the resulting vector.
-For the F sentences, the top and bottom 25\% were used because the overall sample size was smaller.}
-It was made sure that the highly predictive features according to Section \ref{sec:interpretation} occurred in unique combinations among the four sentences in each cell.
+Furthermore, in each of the masculine\slash neuter and feminine groups, four sentences originally containing the \NACa\ and four sentences originally containing the \PGCa\ were chosen.
+More precisely, the sentences were sampled as \textit{highly prototypical examples} of \PGCa\ (high probability assigned by GLMM) and \NACa\ (low probability assigned by GLMM), respectively.%
+\footnote{Remember from Section~\ref{sec:corpusstudies} that the model predicts the probability that the \PGCa\ is chosen over the \NACa.}
+High and low probability were defined as the top and bottom 20\% of all probabilities assigned by the GLMM.
+Lemmas and feature combinations were made unique within each group whenever possible.
 The design is summarised in Table \ref{tab:experiment1:design}.
 
 \begin{table}
   \centering
   \begin{tabular}[h]{rcc}
-     & M\slash N & F \\
+     & Masculine\slash Neuter & Feminine \\
      \midrule
-     \textbf{high prob.\ for case drop} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
-     \textbf{low prob.\ for case drop} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
+     \textbf{high prob.\ for PGC\Subsf{adj}} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
+     \textbf{low prob.\ for PGC\Subsf{adj}} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
   \end{tabular}
-  \caption{The four groups of attested sentences chosen as stimuli (\Supsf{a}Among the 4 sentences, combinations of important factor values were made unique.)}
+  \caption{The four groups of attested sentences chosen as stimuli (\Supsf{a}Among the 4 sentences, combinations of important factor values were made unique whenever possible.)}
   \label{tab:experiment1:design}
 \end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{../R/output/fc_proportions}
+\caption{Participants' responses in the forced-choice task plotted against the predictions from the corpus-based model}
+\label{fig:afc:proportions}
+\end{figure}
 
 The pairs of stimuli were the original attested sentence containing the preferred construction and a modified version containing the dispreferred construction.
 They were presented next to each other, and a 20 second time limit for each choice was set.%
@@ -862,51 +866,30 @@ As fillers, 23 pairs of sentences exemplifying similar alternation phenomena fro
 Thus, participants saw 39 pairs of sentences and 78 sentences in total.
 They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
 The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
+Figure \ref{fig:afc:proportions} shows the relationship between the probabilities calculated from the corpus-based model and the proportional choices made by participants.
+The close correlation between the probabilities derived from usage data and the choices in the experiment are evident, and the relation appears to be linear.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.75\textwidth]{../R/output/fc_proportions}
-\caption{Participants' responses in the forced-choice task plotted against the predictions from the corpus-based model}
-\label{fig:afc:proportions}
-\end{figure}
-
-Figure \ref{fig:afc:proportions} shows the relationship between the logits calculated from the corpus-based model and the proportional choices made by participants.
-Visually, it looks like there is a close correlation between the corpus-derived preferences and preferences in the forced choice experiment.
-
-Then, a multilevel logistic regression was specified.
-Coefficients were estimated using Maximum Likelihood, and the coefficient table is given in Table \ref{tab:afc:model}, where instead of approximate standard errors and $z$ and $p$ values the lower and the upper bound of a bootstrapped 95\% confidence interval are specified.
-
-\begin{table}
-  \centering
-  \begin{tabular}{lrrr}
-    Effect & Estimate & 95\% CI lower & 95\% CI upper \\
-    \midrule
-    (Intercept)            &  0.748  &  0.242  &  1.265 \\
-    Modelpred              &  1.154  &  0.905  &  1.497 \\
-    KindgenderMN           &  0.135  & -0.416  &  0.632 \\
-    Modelpred:KindgenderMN & -0.567  & -0.843  & -0.298 \\
-  \end{tabular}
-  \caption{Coefficient table for the GLMM specified in equation \ref{eq:model:afc}, analysing the results of the forced choice experiment}
-  \label{tab:afc:model}
-\end{table}
-
-The number of observations was $n=768$.
-The random effects for participant ($\sigma=0.7841$, 24 groups) and item ($\sigma=0.4869$, 16 groups) show considerable variance.
-Accordingly, there is a notable difference between the marginal and conditional Nakagawa \& Schielzeth's $R^2_{m}=0.383$ and $R^2_{c}=0.510$, while both values are quite high.
-Dropping the term of interest ($\beta^1\cdot x_i^1+\beta^2\cdot x_i^2+\beta^{1.2}\cdot x_i^1\cdot x_i^2$) leads to a significantly worse fit of the nested model both in a traditional Likelihood Ratio Test ($LR=55.172$, $p<0.0001$) and its bootstrapped PB alternative ($p = 0.002$, 493 of 500 requested samples used).
-The effect display for the term is given in Figure \ref{fig:afc:effects}.
-
-\begin{figure}[h]
+\begin{figure}[hb!]
 \centering
 \includegraphics[width=0.75\textwidth]{../R/output/fc_effects}
-\caption{Effect plot for the multilevel logistic regression in the forced-choice experiment: predictability of participants' choices from the logits of the corpus-based GLMM (cf.\ Section~\ref{sec:corpushierarchicalmodel})}
+\caption{Effect plot for the multilevel logistic regression in the forced-choice experiment: predictability of participants' choices using the probabilities derived from the corpus-based GLMM}
 \label{fig:afc:effects}
 \end{figure}
 
-In summary, the forced choice experiment clearly succeeded in validating the results from the corpus study in as much as the preferences extracted from the corpus correspond to native speakers' choices.
-We can take this as an indication that there is some relation between the process generating the corpus data and the behaviour of individual speakers.
-In the next section, I report the results of a self-paced reading experiment which yielded (maybe expectedly) less clear results.
+Then, a multilevel logistic regression was specified with the probability predicted by the corpus-based GLMM (\textit{Modelprediction}) as the only fixed effect.
+A random effect for the sentence ($16$ levels) was added to catch idiosyncrasies of single sentences (or badly selected sentences).
+Also, a random effect for the participant ($24$ levels) was added.
+Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
+The number of observations was $n=768$.
 
+The regressor \textit{Modelprediction} achieves $p_{\text{PB}}=0.001$ ($1,000$ replications) and is estimated at $3.953$ relative to an intercept of $-1.343$.
+The confidence interval from a parametric bootstrap ($1,000$ replications) for the regressor is acceptable with a lower bound of $2.836$ and an upper bound of $5.023$.
+The random effects for participant ($\sigma=0.768$) and item ($\sigma=0.700$) show considerable variance.
+Accordingly, there is a notable difference between the marginal and conditional Nakagawa \& Schielzeth's $R^2_{m}=0.216$ and $R^2_{c}=0.409$.
+The effect display for the term is given in Figure \ref{fig:afc:effects}.
+It confirms the effect intuitively noticeable from Figure~\ref{fig:afc:proportions}:
+the higher the probability of the \PGCa\ predicted from usage-data, the more often participants chose the \PGCa\ variant in the forced-choice task.
+In summary, the forced choice experiment clearly succeeded in validating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
