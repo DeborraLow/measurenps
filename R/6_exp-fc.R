@@ -49,7 +49,7 @@ responses.df <- data.frame(
     Modelpred     = rep(inv.logit(stims.pred), ncol(results))
   , Kindgender    = factor(rep(c(rep("MN", 8), rep("F", 8)), ncol(results)))
   , ResponseDrop  = factor(as.vector(apply(results, 2, reconstruct.rating)))
-  , Item          = as.factor(rep(c(rep(c(1:8), 2), rep(c(9:16), 2)), ncol(results)))
+  , Item          = as.factor(rep(1:16, ncol(results)))
   , Participant   = as.factor(unlist(lapply(1:ncol(results), function(x) rep(x, 16))))
 )
 

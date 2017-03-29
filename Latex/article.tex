@@ -820,6 +820,7 @@ Although \textit{Measurecase} is a nuisance variable in the context of this stud
 \label{sec:externalvalidation}
 
 \subsection{Experiment 1: forced choice}
+\label{sec:exp:fc}
 
 As was pointed out in Section \ref{sec:cogocl}, there is a strong interest in validating corpus-based findings through experiments in order to substantiate \textit{cognitively oriented usage-based corpus linguistics} as a research programme.
 Therefore, this section and the next present the results of two experiments wherein I cross-checked the corpus-based findings.
@@ -881,16 +882,18 @@ The close correlation between the probabilities derived from usage data and the 
 \end{figure}
 
 Then, a multilevel logistic regression was specified with the probability predicted by the corpus-based GLMM (\textit{Modelprediction}) as the only fixed effect.
-A random effect for the sentence ($16$ levels) was added to catch idiosyncrasies of single sentences (or badly selected sentences).
-Also, a random effect for the participant ($24$ levels) was added.
+A random effect for the sentence was added to catch idiosyncrasies of single sentences (or badly selected sentences).
+Also, a random effect for the participant was added.
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
-The number of observations was $n=768$.
+The number of observations was $n=384$.
 
-The regressor \textit{Modelprediction} achieves $p_{\text{PB}}=0.001$ ($1,000$ replications) and is estimated at $3.953$ relative to an intercept of $-1.343$.
-The confidence interval from a parametric bootstrap ($1,000$ replications) for the regressor is acceptable with a lower bound of $2.836$ and an upper bound of $5.023$.
-The random effects for participant ($\sigma=0.768$) and item ($\sigma=0.700$) show considerable variance.
-Accordingly, there is a notable difference between the marginal and conditional Nakagawa \& Schielzeth's $R^2_{m}=0.216$ and $R^2_{c}=0.409$.
-The effect display for the term is given in Figure \ref{fig:afc:effects}.
+A certain amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Sentence}}=0.599$, $16$ levels).
+Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.407$, $24$ levels).
+On the extreme sides, one participant chose the \PGCa\ in $13$ of $16$ cases, and two participants only chose it in $5$ of $16$ cases.
+However, the regressor \textit{Modelprediction} still achieves $p_{\text{PB}}=0.001$ ($1,000$ replications) and is estimated at $4.555$ relative to an intercept of $-1.511$.
+The confidence interval from a parametric bootstrap ($1,000$ replications) for the regressor is acceptable with a lower bound of $2.746$ and an upper bound of $6.330$.
+Nakagawa \& Schielzeth's pseudo-coefficients of determination are $R^2_{m}=0.271$ and $R^2_{c}=0.442$, which means that roughly 27\% of the variance in the data can be explained by considering the predictions from the corpus-based GLMM.
+The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
 It confirms the effect intuitively noticeable from Figure~\ref{fig:afc:proportions}:
 the higher the probability of the \PGCa\ predicted from usage-data, the more often participants chose the \PGCa\ variant in the forced-choice task.
 In summary, the forced choice experiment clearly succeeded in validating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices.
@@ -900,6 +903,20 @@ In summary, the forced choice experiment clearly succeeded in validating the res
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Experiment 2: self-paced reading}
+\label{sec:exp:spr}
+
+Finally, I report the results of a self-paced reading experiment also designed to test whether the statistical model derived from usage data (see Section~\ref{sec:corpusnonhierarchicalmodel}) can be used to predict speakers' behaviour.
+As opposed to the forced choice experiment reported in the last section, self-paced reading is completely implicit (see Section~\ref{sec:cogocl} for more on the motivation).
+
+I used exactly the same stimuli as in the forced choice experiments.
+Each participant read the sentence with the variant preferred by the corpus model and the modified sentence with the dispreferred variant.
+To avoid and\slash or randomise repetition effects, the stimuli for each participant were separated into two blocks of $16$ targets and $33$ fillers.
+It was made sure that from each sentence pair, one sentence was assigned to the first block, and the other sentence to the other block.
+This assignment was randomised for each participant, and the order within the block was also randomised while keeping the sentences from each pair as far apart as possible.
+In total, each participant read $98$ sentences.
+There were $38$ (different) participants recruited in exactly the same manner as for the experiment reported in Section~\ref{sec:exp:fc}.
+
+
 
 \begin{figure}[h]
 \centering

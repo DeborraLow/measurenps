@@ -9,39 +9,39 @@ Formula: Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
 Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
 
      AIC      BIC   logLik deviance df.resid 
-   830.1    848.7   -411.0    822.1      764 
+   426.5    442.3   -209.3    418.5      380 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.3174 -0.6273  0.2229  0.6063  2.5489 
+-2.5930 -0.6333  0.1740  0.6294  2.6149 
 
 Random effects:
  Groups      Name        Variance Std.Dev.
- Participant (Intercept) 0.5897   0.7679  
- Item        (Intercept) 0.4882   0.6987  
-Number of obs: 768, groups:  Participant, 24; Item, 16
+ Participant (Intercept) 0.4072   0.6381  
+ Item        (Intercept) 0.5985   0.7736  
+Number of obs: 384, groups:  Participant, 24; Item, 16
 
 Fixed effects:
                 Estimate Std. Error z value Pr(>|z|)    
-(Intercept)      -1.3433     0.3159  -4.252 2.12e-05 ***
-Modelprediction   3.9525     0.5436   7.271 3.57e-13 ***
+(Intercept)      -1.5114     0.4073  -3.711 0.000206 ***
+Modelprediction   4.5553     0.8991   5.066 4.05e-07 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
             (Intr)
-Modelprdctn -0.607
+Modelprdctn -0.757
 
 
 LR-Test and bootstrapped PB test on nested models w & w/o Modelpred
 
-Parametric bootstrap test; time: 101.01 sec; samples: 1000 extremes: 0;
-Requested samples: 1000 Used samples: 978 Extremes: 0
+Parametric bootstrap test; time: 79.95 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 988 Extremes: 0
 large : Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
 small : Chosenconstruction ~ (1 | Item) + (1 | Participant)
          stat df   p.value    
-LRT    47.175  1 6.491e-12 ***
-PBtest 47.175     0.001021 ** 
+LRT    18.609  1 1.605e-05 ***
+PBtest 18.609     0.001011 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -49,9 +49,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
  R-squared 
 
       R2m       R2c 
-0.2159639 0.4094769 
+0.2714129 0.4420435 
 
 
  95% bootstrap CI                    2.5 %     97.5 %
-Modelprediction  2.836223  5.0228569
-(Intercept)     -1.940436 -0.7472845
+Modelprediction  2.746407  6.3301826
+(Intercept)     -2.277403 -0.7036777
