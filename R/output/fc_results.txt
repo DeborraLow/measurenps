@@ -4,44 +4,46 @@ GLMM, predicting reactions from corpus model
 
 Generalized linear mixed model fit by maximum likelihood (Adaptive Gauss-Hermite Quadrature, nAGQ = 0) ['glmerMod']
  Family: binomial  ( logit )
-Formula: Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
+Formula: Chosenconstruction ~ Modelprediction + (1 + Modelprediction |      Item) + (1 + Modelprediction | Participant)
    Data: responses.df
 Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
 
      AIC      BIC   logLik deviance df.resid 
-   426.5    442.3   -209.3    418.5      380 
+   434.3    465.9   -209.1    418.3      376 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--2.5930 -0.6333  0.1740  0.6294  2.6149 
+-2.4822 -0.6450  0.2139  0.6205  2.7264 
 
 Random effects:
- Groups      Name        Variance Std.Dev.
- Participant (Intercept) 0.4072   0.6381  
- Item        (Intercept) 0.5985   0.7736  
+ Groups      Name            Variance Std.Dev. Corr 
+ Participant (Intercept)     0.53042  0.7283        
+             Modelprediction 0.07642  0.2764   -1.00
+ Item        (Intercept)     0.86083  0.9278        
+             Modelprediction 0.24903  0.4990   -1.00
 Number of obs: 384, groups:  Participant, 24; Item, 16
 
 Fixed effects:
                 Estimate Std. Error z value Pr(>|z|)    
-(Intercept)      -1.5114     0.4073  -3.711 0.000206 ***
-Modelprediction   4.5553     0.8991   5.066 4.05e-07 ***
+(Intercept)      -1.5189     0.4328  -3.510 0.000448 ***
+Modelprediction   4.4959     0.8395   5.356 8.53e-08 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
             (Intr)
-Modelprdctn -0.757
+Modelprdctn -0.802
 
 
 LR-Test and bootstrapped PB test on nested models w & w/o Modelpred
 
-Parametric bootstrap test; time: 79.95 sec; samples: 1000 extremes: 0;
-Requested samples: 1000 Used samples: 988 Extremes: 0
-large : Chosenconstruction ~ Modelprediction + (1 | Item) + (1 | Participant)
+Parametric bootstrap test; time: 486.89 sec; samples: 1000 extremes: 1;
+large : Chosenconstruction ~ Modelprediction + (1 + Modelprediction | 
+    Item) + (1 + Modelprediction | Participant)
 small : Chosenconstruction ~ (1 | Item) + (1 | Participant)
-         stat df   p.value    
-LRT    18.609  1 1.605e-05 ***
-PBtest 18.609     0.001011 ** 
+         stat df  p.value   
+LRT    18.853  5 0.002047 **
+PBtest 18.853    0.001998 **
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -49,9 +51,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
  R-squared 
 
       R2m       R2c 
-0.2714129 0.4420435 
+0.2674936 0.4354542 
 
 
  95% bootstrap CI                    2.5 %     97.5 %
-Modelprediction  2.746407  6.3301826
-(Intercept)     -2.277403 -0.7036777
+Modelprediction  2.738080  6.3899346
+(Intercept)     -2.427943 -0.6172257

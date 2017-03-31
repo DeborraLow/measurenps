@@ -11,8 +11,8 @@ set.seed(239865)
 setwd('/Users/user/Workingcopies/measurenps/GitHub/R')
 
 ci.method        <- "boot" # boot
-modcomp.nsim     <- 1000   # 1000
-boot.nsim        <- 1000   # 1000
+modcomp.nsim     <- 1000 # 1000
+boot.nsim        <- 1000 # 1000
 the.nAGQ         <- 0 
 out.dir          <- "output/fc_"
 save.persistent  <- T
@@ -65,7 +65,7 @@ if (save.persistent) sink(paste(out.dir, "results.txt", sep=""))
 
 # Actual model.
 cat("\n\nGLMM, predicting reactions from corpus model\n\n")
-model.fc <- glmer(Chosenconstruction~Modelprediction+(1|Item)+(1|Participant),
+model.fc <- glmer(Chosenconstruction~Modelprediction+(1+Modelprediction|Item)+(1+Modelprediction|Participant),
                   family = binomial(link = "logit"), data = responses.df, nAGQ=the.nAGQ,
                   control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5)))
 print(summary(model.fc))
@@ -89,7 +89,7 @@ print(ci.95.fc)
 
 if (save.persistent) sink()
 
-# Effect plot for main interaction.
+# Effect plot.
 p <- plot(effect("Modelprediction", model.fc, KR = T), rug=F, colors = c("black", "darkblue"),
           main="Forced choice experiment",
           ylab="Probability that PGCa is chosen",
@@ -130,5 +130,5 @@ if (save.persistent) dev.off()
 
 
 # Save workspace.
-save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))
+if (save.persistent) save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))
 

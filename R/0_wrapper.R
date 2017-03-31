@@ -13,7 +13,7 @@ setwd('/Users/user/Workingcopies/measurenps/GitHub/R')
 
 # Options.
 set.seed(2398651)                          # Do NOT change, or results will differ.
-save.persistent        <- T                # write to files instead of screen/console.
+save.persistent        <- F                # Write to files instead of screen/console.
 out.dir                <- "output/"        # Put generated files here.
 precision              <- 3                # Precision in result table.
 the.nAGQ               <- 0                # 0 for speed, 1 for precision and eytremely slow computation.
@@ -54,4 +54,4 @@ cat("\n\n Prediction for experimental stimuli ...\n")
 source('5_stimuli_predict.R')
 
 # Save workspace.
-save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))
+if (save.persistent) save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))

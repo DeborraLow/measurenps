@@ -11,11 +11,11 @@ set.seed(239865)
 
 setwd('/Users/user/Workingcopies/measurenps/GitHub/R')
 
-
-ci.method       <- "boot" # boot
-modcomp.nsim    <- 1000   # 500
-boot.nsim       <- 1000   # 1000
-iqr.factor      <- 3      # For removing outliers in final data set.
+target          <- "tf.rt.resid" # Response variable.
+ci.method       <- "boot"        # boot
+modcomp.nsim    <- 1000          # 1000
+boot.nsim       <- 1000          # 1000
+iqr.factor      <- 2             # For removing outliers in final data set.
 out.dir         <- "output/spr_"
 save.persistent <- T
 data.dir        <- "data/spr/"
@@ -56,7 +56,7 @@ for (dafi in data.files) {
   
   # Get the stims for this part in part order and make right format (split words).
   part.stims.order   <- unname(unlist(assigs[which(assigs$Participant == part), 2:99]))
-  part.stims         <- stims[part.stims.order, c("Sentence", "Target", "Kindgender", "Construction", "Modelpred", "Modelprediction", "Expectedcorr", "Adjtarget", "Wordcount", "Number", "Expno")]
+  part.stims         <- stims[part.stims.order, c("Sentence", "Target", "Kindgender", "Construction", "Modelpred", "Modelprediction", "Expectedcorr", "Adjtarget", "Wordcount", "Number", "Expno", "Item")]
   part.stims$woffset <- head(c(1, cumsum(part.stims$Wordcount)+1), -1)
   
   part.stims$Position = 1:nrow(part.stims)
@@ -81,20 +81,25 @@ for (dafi in data.files) {
   part.stims$t2        <- apply(part.stims, 1, function(r) { ifelse(!r['Adjtarget'] == 'x', unlist(unname(strsplit(r["Sentence"], " ", fixed = T)))[as.numeric(r["Adjtarget"])+1 ], NA) } )
   part.stims$t1.length <- apply(part.stims, 1, function(r) { ifelse(!is.na(r["t1"]), nchar(r["t1"]), NA) } )
   part.stims$t2.length <- apply(part.stims, 1, function(r) { ifelse(!is.na(r["t2"]), nchar(r["t2"]), NA) } )
+  part.stims$tf.length <- part.stims$t1.length + part.stims$t2.length
 
   # Get RTs.
   part.stims$t1.rt.raw <- apply(part.stims, 1, function(r) { ifelse(!is.na(r["t1"]), rt[as.numeric(r["woffset"])+as.numeric(r["Adjtarget"])-1], NA) } )
   part.stims$t2.rt.raw <- apply(part.stims, 1, function(r) { ifelse(!is.na(r["t2"]), rt[as.numeric(r["woffset"])+as.numeric(r["Adjtarget"])], NA) } )
+  part.stims$tf.rt.raw <- part.stims$t1.rt.raw + part.stims$t2.rt.raw
 
   # Get log RTs.
   part.stims$t1.rt.log <- ifelse(!is.na(part.stims$t1.rt.raw), log(part.stims$t1.rt.raw), NA)
   part.stims$t2.rt.log <- ifelse(!is.na(part.stims$t2.rt.raw), log(part.stims$t2.rt.raw), NA)
+  part.stims$tf.rt.log <- ifelse(!is.na(part.stims$tf.rt.raw), log(part.stims$tf.rt.raw), NA)
 
   # Get predicted RT by residual LM plus residual RT.
   part.stims$t1.rt.pred  <- apply(part.stims, 1, function(r) { predict(rt.resid.model, data.frame(wlength = as.numeric(r["t1.length"]))) } )
   part.stims$t1.rt.resid <- part.stims$t1.rt.log - part.stims$t1.rt.pred
   part.stims$t2.rt.pred  <- apply(part.stims, 1, function(r) { predict(rt.resid.model, data.frame(wlength = as.numeric(r["t2.length"]))) } )
   part.stims$t2.rt.resid <- part.stims$t2.rt.log - part.stims$t2.rt.pred
+  part.stims$tf.rt.pred  <- apply(part.stims, 1, function(r) { predict(rt.resid.model, data.frame(wlength = as.numeric(r["tf.length"]))) } )
+  part.stims$tf.rt.resid <- part.stims$tf.rt.log - part.stims$tf.rt.pred
 
   # Add participant label.
   part.stims$Participant <- part
@@ -134,14 +139,11 @@ rt.all$rt.tt.resid     <- as.numeric(rt.all$t1.rt.resid + rt.all$t1.rt.resid)
 
 
 
-target <- c("t1.rt.resid")
-
 # ################
 # Remove outliers.
 # ################
 
 before.oc      <- nrow(rt.all)
-iqr.factor     <- 3
 outlier.bounds <- as.numeric(c(quantile(unlist(rt.all[,target]))[3]-iqr.factor*IQR(unlist(rt.all[,target])),quantile(unlist(rt.all[,target]))[3]+iqr.factor*IQR(unlist(rt.all[,target]))))
 rt.all         <- rt.all[which(rt.all[,target] >= outlier.bounds[1] & rt.all[,target] <= outlier.bounds[2]),]
 
@@ -155,10 +157,12 @@ if (save.persistent) sink()
 # ################################
 
 # Model with coprpus-based probs as input.
-formule <- paste(target, "~Construction*Modelprediction+Position+(1|Participant)", sep = "")
-formule.0 <- paste(target, "~Position+(1|Participant)", sep = "")
-rt.model <- lmer(formule, data = rt.all, REML = F)
-rt.model.0 <- lmer(formule.0, data = rt.all, REML = F)
+#formule.rsl <- paste(target, "~Construction*Modelprediction+Position+(1+Construction*Modelprediction|Participant)", sep = "")
+formule <- paste(target, "~Construction*Modelprediction+Position+(1|Participant)+(1|Item)", sep = "")
+formule.0 <- paste(target, "~Construction+Position+(1|Participant)+(1|Item)", sep = "")
+#rt.model.rsl <- lmer(formule.rsl, data = rt.all, REML = T)
+rt.model <- lmer(formule, data = rt.all, REML = T)
+rt.model.0 <- lmer(formule.0, data = rt.all, REML = T)
 
 
 # ######
@@ -167,13 +171,18 @@ rt.model.0 <- lmer(formule.0, data = rt.all, REML = F)
 
 if (save.persistent) sink(paste(out.dir, "results.txt", sep=""), append = T)
 
-cat("\n\n##### Model w/corpus-based probabilities #####\n\n")
+#cat("\n\n##### Model w/ random slope #####\n\n")
+#print(summary(rt.model.rsl))
+#cat("\n\n Model comparison \n")
+#print(anova(rt.model, rt.model.0))
+#cat("\n\n R-squared \n")
+#cat("Full model\n")
+#print(r.squaredGLMM(rt.model.rsl))
 
+cat("\n\n##### Model w/o random slope #####\n\n")
 print(summary(rt.model))
-
 cat("\n\n Model comparison \n")
 print(anova(rt.model, rt.model.0))
-
 cat("\n\n R-squared \n")
 cat("Full model\n")
 print(r.squaredGLMM(rt.model))
@@ -204,6 +213,12 @@ if (save.persistent) dev.off()
 opts.ci.95 <- list(level = 0.95, method = ci.method, boot.type = "perc", nsim = boot.nsim)
 rt.ci.95  <- do.call(confint.merMod, c(opts.ci.95, list(object = rt.model, parm = names(fixef(rt.model)))))
 rt.ci.95  <- rt.ci.95[nrow(rt.ci.95):1,]  # Reverse order of CIs.
+
+if (save.persistent) sink(paste(out.dir, "results.txt", sep=""), append = T)
+cat("\n\n Bootstrap CIs\n")
+print(rt.ci.95)
+cat("\n\n")
+if (save.persistent) sink()
 
 fix.effs <- rev(fixef(rt.model)[1:length(fixef(rt.model))])
 
@@ -249,8 +264,8 @@ if (save.persistent) pdf(paste(out.dir, "rt_participantvariance.pdf", sep=""))
 lims <- c(min(parts.rt.var$rt.mean-parts.rt.var$rt.sd), max(parts.rt.var$rt.mean+parts.rt.var$rt.sd))
 dotchart(parts.rt.var$rt.mean, pch="", xlim = lims,
          main = "Mean and sd character reading times\nper word for each participant"
-         #, labels = parts.rt.var$part
-         , labels = paste("Part", rev(1:nrow(parts.rt.var)), coll="")
+         , labels = parts.rt.var$part
+         #, labels = paste("Part", rev(1:nrow(parts.rt.var)), coll="")
          )
 for (i in 1:nrow(parts.rt.var)) {
   lines(c(parts.rt.var[i, "rt.mean"]-parts.rt.var[i, "rt.sd"], parts.rt.var[i, "rt.mean"]+parts.rt.var[i, "rt.sd"]), c(i, i))
@@ -268,8 +283,8 @@ if (save.persistent) dev.off()
 
 library(mgcv)
 
-rt.gamm <- gamm(t2.rt.resid ~ s(Position) + s(Modelprediction, by = Construction),
-  random = list( Participant = ~1 ),  # With kindgender = ~1 does not converge.
+rt.gamm <- gamm(tf.rt.resid ~ s(Position) + s(Modelprediction, by = Construction),
+  random = list( Participant = ~1 ),
   data = rt.all,
   family = gaussian,
   niterPQL = 1000
@@ -292,4 +307,4 @@ if (save.persistent) dev.off()
 
 
 # Save workspace.
-save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))
+if (save.persistent) save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))
