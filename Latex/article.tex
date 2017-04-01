@@ -7,6 +7,7 @@
 \usepackage{microtype}
 \usepackage{enumerate}
 \usepackage{eqnarray}
+\usepackage{colortbl}
 
 \newcommand{\wrt}{w.\,r.\,t.\ }
 \newcommand{\Wrt}{W.\,r.\,t.\ }
@@ -19,6 +20,7 @@
 \newcommand{\Subsf}[1]{\ensuremath{\mathsf{_{#1}}}}
 \newcommand{\Supsf}[1]{\ensuremath{\mathsf{^{#1}}}}
 \newcommand{\pPB}{p\Subsf{PB}}
+\newcommand{\mpPB}{\ensuremath{p_{\text{PB}}}}
 
 \newcommand{\NACb}{NAC\Sub{bare}}
 \newcommand{\NACa}{NAC\Sub{adj}}
@@ -27,10 +29,14 @@
 
 \newcommand*\Rot{\rotatebox{75}}
 
+\definecolor{lg}{rgb}{.8,.8,.8}
+\newcommand{\Dim}{\cellcolor{lg}}
+
 \usepackage{gb4e-}
 
 \usepackage{bbding}
 \newcommand{\CheckIt}{\CheckmarkBold}
+\newcommand{\CrossIt}{\XSolidBold}
 
 
 \usepackage{natbib}
@@ -47,7 +53,7 @@
   \runningtitle{Competing Constructions for German Measure Noun Phrases}
   %\subtitle{...}
   \abstract{}
-  \keywords{corpus methods and experimental methods, alternations, hierarchical models, measure constructions, German}
+  \keywords{corpus methods and experimental methods, self-paced reading, forced choice, alternations, hierarchical models, measure constructions, German}
   %\classification[PACS]{...}
   %\communicated{...}
   %\dedication{...}
@@ -72,7 +78,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Cognitively oriented corpus linguistics: theories, case studies, and methods}
+\section{Cognitively oriented corpus linguistics}
 \label{sec:cogocl}
 
 \subsection{Corpora and cognition}
@@ -201,12 +207,10 @@ Before discussing the results in Section~\ref{sec:corpusstudies}, I show how I m
 \subsection{Two stable cases and a case alternation}
 \label{sec:descriptive}
 
-The alternation phenomenon to be discussed in this paper appears to be a straightforward case alternation at first sight.
-However, without a solid knowledge of German nominal morpho-syntax, some of the more subtle distinctions that have to be made in its analysis can be confusing.
-Therefore, I introduce and illustrate the relevant constructions in some detail in this section.
-I describe the narrow range of syntactic constellations in which the alternation occurs, and I motivate the focus on \textit{only} this narrow (range rather than, for example, the whole range of nominal constructions expressing quantities).
+In this section, I introduce and illustrate the relevant alternating constructions.
+I describe the narrowly defined syntactic configuration in which the alternation occurs, and I motivate the focus on \textit{only} this narrow (range rather than, for example, the whole range of nominal constructions expressing quantities).
 
-I use the term \textit{measure noun phrase} (MNP) to refer a noun phrase (NP) in which a kind-denoting (count or mass) noun depends on another noun specifying a quantity of the objects or the substance denoted by the kind noun.
+I use the term \textit{measure noun phrase} (MNP) to refer a noun phrase (NP) in which a kind-denoting (count or mass) noun depends on another noun that specifies a quantity of the objects or the substance denoted by the kind noun.
 I call the kind-denoting noun simply the \textit{kind noun} and the quantity-denoting noun the \textit{measure noun}.
 Measure nouns can be all sorts of nouns which genuinely denote a quantity (such as \textit{litre} or \textit{amount}) but also nouns denoting containers, collections, etc. (such as \textit{glass} or \textit{bucket}).
 In a similar vein, \citet[284]{Brems2003} considers nouns as measure nouns \textit{which, strictly speaking, do not designate a `measure', but display a more nebulous} (\textit{sic!}) \textit{potential for quantification} (see also \citealp[530]{Koptjevskaja2001}, and \citealp[338]{Rutkowski2007}).
@@ -215,7 +219,7 @@ For illustration purposes, in the English \textit{a cup of fine coffee}, \textit
 In the case at hand, three different syntactic configurations need to be distinguished \wrt case assignment inside German measure noun phrases.
 If the kind noun forms an NP with a determiner, the construction resembles (and is usually called) a \textit{pseudo-partitive} (on partitives and pseudo-partitives see, e.\,g., \citealp{Barker1998,Selkirk1977,Stickney2007,Vos1999}; for a recent application of the terminology to German, see \citealp{Gerstenberger2015}).%
 \footnote{If the kind noun is definite, the construction instantiates a true partitive.
-Whereas partitives are constructions denoting a proper part-of relation strictly requiring a definite kind noun as in \textit{a sip of the wine}, pseudo partitives -- albeit syntactically similar and diachronically related to partitives in many languages -- merely denote quantities and contain indefinite kind nouns as in \textit{a sip of wine}.
+Whereas partitives are constructions denoting a proper part-of relation as in \textit{a sip of the wine}, pseudo partitives -- albeit syntactically similar and diachronically related to partitives in many languages -- merely denote quantities and contain indefinite kind nouns as in \textit{a sip of wine}.
 %In the literature on German, some authors incorrectly call the pseudo-partitive a \textit{partitive} \cite{Hentschel1993} while some realise the difference and at least mention it \citep{Eschenbach1994,GallmannLindauer1994,Loebel1989,Zimmer2015}.
 }
 Here, the kind noun is in the genitive, and I refer to the construction in (\ref{ex:intro:pseudopartitive1}) as the \textit{Pseudo-partitive Genitive Construction} (PGC).
@@ -230,13 +234,7 @@ Here, the kind noun is in the genitive, and I refer to the construction in (\ref
   \end{xlist}
 \end{exe}
 
-When the kind noun is bare -- \ie, without a determiner and without modifying adjectives -- the kind noun has to agree in case with the measure noun, and the genitive seen in the PGC is not acceptable, see (\ref{ex:intro:narrowapposition}).
-This construction is usually classified as a \textit{Narrow Apposition Construction} \citep{Loebel1986}, henceforth NAC.%
-\footnote{Notice that the unavailability of the genitive on the kind noun can be seen as following from a rather quirky constraint that genitive NPs in German require the presence of some strongly case-marked element (determiner or adjective) in addition to the head noun in order to be acceptable \citep{GallmannLindauer1994,Schachtl1989}.}
-The construction as in (\ref{ex:intro:narrowapposition2}) is also referred to as the \textit{Direct Partitive Construction} for other Germanic languages in which the PGC with the synthetic genitive is not available.%
-\footnote{This nomenclature makes sense in contrast to the \textit{Indirect Partitive Construction} with prepositional linkers translating to `of' -- \ie\ analytic genitives -- in such languages, see \cite{HankamerMikkelsen2008} for Danish.
-For German, this terminology is not distinctive enough, which is why I use the terms NAC and PGC.}
-While only an accusative is shown in (\ref{ex:intro:narrowapposition}), the kind noun obligatory agrees in case also with nominative and dative measure nouns.
+If the kind noun is bare -- \ie\ if it does neither come with a determiner nor a modifying adjective -- it has to agree in case with the measure noun, and the genitive seen in the PGC is not acceptable, see (\ref{ex:intro:narrowapposition}).
 
 \begin{exe}
   \ex\label{ex:intro:narrowapposition}
@@ -248,13 +246,19 @@ While only an accusative is shown in (\ref{ex:intro:narrowapposition}), the kind
   \end{xlist}
 \end{exe}
 
+This construction is usually classified as a \textit{Narrow Apposition Construction} \citep{Loebel1986}, henceforth NAC.%
+\footnote{The construction as in (\ref{ex:intro:narrowapposition2}) is also referred to as the \textit{Direct Partitive Construction} for other Germanic languages in which the PGC with the synthetic genitive is not available.
+This nomenclature makes sense in contrast to the \textit{Indirect Partitive Construction} with prepositional linkers translating to `of' -- \ie\ analytic genitives -- in such languages, see \cite{HankamerMikkelsen2008} for Danish.
+For German, this terminology is not distinctive enough, which is why I use the terms NAC and PGC.}
+Notice that the unavailability of the genitive on the kind noun can be seen as following from a rather quirky constraint that genitive NPs in German require the presence of some strongly case-marked element (determiner or adjective) in addition to the head noun in order to be acceptable \citep{GallmannLindauer1994,Schachtl1989}.
+While only an accusative is shown in (\ref{ex:intro:narrowapposition}), the kind noun obligatory agrees in case also with nominative and dative measure nouns.
 
 The actual alternation can be observed \textit{only when the kind noun occurs with an attributive adjective but without a determiner}, as in (\ref{ex:intro:alternation}), where both the NAC in (\ref{ex:intro:alternation1}) and the PGC in (\ref{ex:intro:alternation2}) are equally acceptable.
 They are by-and-large functionally and semantically equivalent.
 However, Section~\ref{sec:analyses} is devoted to developing hypotheses about subtle differences between them.%
 \footnote{Some descriptive and normative grammars take stronger positions w.\,r.\,t.\ the acceptability of the two options.
 See \cite{Hentschel1993,Zimmer2015} for analyses of the sometimes absurd stances taken in grammars of German.
-%As the usage and experimental data presented below should render it clear, there might be preferences under certain circumstances, but we cannot assume either construction to be unacceptable.
+As the usage and experimental data presented below (especially Section~\ref{sec:exp:fc}) should render it clear, there might be preferences under certain circumstances, but we cannot assume either construction to be unacceptable.
 }
 
 \begin{exe}
@@ -273,14 +277,14 @@ See \cite{Hentschel1993,Zimmer2015} for analyses of the sometimes absurd stances
     \multicolumn{1}{r}{kind NP is:} & bare noun NP & NP with adjective & NP with determiner \\
     & [\ldots N\Subsf{meas} [N\Subsf{kind}]] & [\ldots N\Subsf{meas} [AP N\Subsf{kind}]] & [\ldots N\Subsf{meas} [D N\Subsf{kind}]] \\
     \midrule
-    narrow apposition         & \CheckIt & \CheckIt &          \\
-    pseudo-partitive genitive &          & \CheckIt & \CheckIt \\
+    narrow apposition         & \NACb & \NACa & ---   \\
+    pseudo-partitive genitive & ---   & \PGCa & \PGCd \\
   \end{tabular}
   \caption{Distribution of the NAC and PGC constructions in different NP structures}
   \label{tab:constructions}
 \end{table}
 
-The distribution of the case patterns in the NAC (case identity between the measure noun and the kind noun) and in the PGC (genitive on the kind noun) depending on the structure of the kind NP are summarised in Table~\ref{tab:constructions}.
+The distribution of the case patterns in the NAC (case identity between the measure noun and the kind noun) and in the PGC (genitive on the kind noun, regardless of the case of the measure noun) depending on the structure of the kind NP are summarised in Table~\ref{tab:constructions}.
 I call the narrow apposition construction with a bare kind noun the \NACb, the partitive genitive with a determiner in the kind noun phrase the \PGCd.
 I call the alternating variants with an adjective but no determiner in the kind noun phrase \NACa, and \PGCa, respectively.
 
@@ -289,7 +293,7 @@ I now turn to some more subtle issues related to the measure noun case alternati
 \begin{enumerate}[i.]
   \item{\label{it:intro:idiot} alleged alternatives to the NAC and the PGC}
   \item{\label{it:intro:datsg} alternative \textit{weak} forms of dative singular neuter adjectives}
-  \item{\label{it:intro:femsg} case syncretism in feminine NPs}
+%  \item{\label{it:intro:femsg} case syncretism in feminine NPs}
   \item{\label{it:intro:plurl} similar constructions with plural/collective kind nouns}
   \item{\label{it:intro:noifl} grammaticalised non-inflected measure nouns}
   \item{\label{it:intro:other} alternative constructions for expressing quantities}
@@ -303,46 +307,46 @@ Also, in my corpus sample, they simply did not occur.
 Even if they are accepted by some speakers, their extremely low frequency makes it virtually impossible to study them using either corpus methods (Section~\ref{sec:corpusstudies}) or experimental approaches (Section~\ref{sec:externalvalidation}), and I consequently ignore them.
 
 As for (\ref{it:intro:datsg}), a complication with neuter kind nouns in the dative is mentioned by \citet[20--22]{Zimmer2015}.
-He reports a high number of occurrences of adjectives being inflected according to the \textit{weak} inflectional pattern, which is normally only used if a strongly inflected determiner precedes the adjective: \textit{kalt-en Wasser} `cold water' instead of \textit{kalt-em Wasser}.%
+In the \NACa, the adjective normally inflects with the so-called \textit{strong} case and number suffixes, which are used when no determiner with strong inflection is present in the NP.
+\cite{Zimmer2015} reports a high number of occurrences of adjectives being inflected with the \textit{weak} inflectional marker, which are normally only used if a strongly inflected determiner precedes the adjective: \textit{kalt-en Wasser} `cold water' instead of \textit{kalt-em Wasser}.%
 \footnote{See Section~\ref{sec:analyses} for more discussion of adjectival inflection.}
 In my corpus sample, this tendency was not nearly as clear, and there was a high number of very noisy sentences among those potentially showing this pattern.
-Hence, I do not discuss these forms much, although I will offer a possible interpretation in Section~\ref{sec:analyses}.
+Hence, I do not discuss these forms.%
+\footnote{All corpus data and scripts used for this paper will be released freely, so further examination of the few cases maybe showing this kind of inflection is possible.}
 
-\label{page:femininesyncretism}
-With feminine kind nouns, (\ref{it:intro:femsg}) is relevant.
-Whereas the singular masculine and neuter nominal subsystem is a four case system (at least for NPs with adjectives and determiners), feminine singular NPs show nominative-accusative and dative-genitive syncretisms.
-Table~\ref{tab:syncretisms} shows this as well as the partial syncretism in the plural, where no gender distinctions are made.
-This means that with dative measure nouns, the alternation is unobservable if the kind noun is feminine, and it is problematic to speak of a \textit{genitive} kind noun construction in this case.
-This is taken into account in the statistical modelling and the discussion presented in Section~\ref{sec:corpusstudies}.
-
-\begin{table}
-  \centering
-  \begin{tabular}{llll}
-     & Masculine\slash Neuter & Feminine & Plural \\
-     \midrule
-     nominative & rot-er Wein    & \multirow{2}{*}{frisch-e Sahne}   & \multirow{2}{*}{klein-e Äpfel} \\
-     accusative & rot-en Wein    &                                   &                                \\
-     dative     & rot-em Wein    & \multirow{2}{*}{frisch-er Sahne}  & klein-en Äpfel-n               \\
-     genitive   & rot-en Wein-es &                                   & klein-er Äpfel                 \\
-  \end{tabular}
-  \caption{Case syncretisms in NPs with an adjective and without a determiner (\textit{roter Wein} `red wine', \textit{frische Sahne} `fresh cream', \textit{kleine Äpfel} `small apples')}
-  \label{tab:syncretisms}
-\end{table}
+% \label{page:femininesyncretism}
+% With feminine kind nouns, (\ref{it:intro:femsg}) is relevant.
+% Whereas the singular masculine and neuter nominal subsystem is a four case system (at least for NPs with adjectives and determiners), feminine singular NPs show nominative-accusative and dative-genitive syncretisms.
+% Table~\ref{tab:syncretisms} shows this as well as the partial syncretism in the plural, where no gender distinctions are made.
+% This means that with dative measure nouns, the alternation is unobservable if the kind noun is feminine, and it is problematic to speak of a \textit{genitive} kind noun construction in this case.
+% This is taken into account in the statistical modelling and the discussion presented in Section~\ref{sec:corpusstudies}.
+% 
+% \begin{table}
+%   \centering
+%   \begin{tabular}{llll}
+%      & Masculine\slash Neuter & Feminine & Plural \\
+%      \midrule
+%      nominative & rot-er Wein    & \multirow{2}{*}{frisch-e Sahne}   & \multirow{2}{*}{klein-e Äpfel} \\
+%      accusative & rot-en Wein    &                                   &                                \\
+%      dative     & rot-em Wein    & \multirow{2}{*}{frisch-er Sahne}  & klein-en Äpfel-n               \\
+%      genitive   & rot-en Wein-es &                                   & klein-er Äpfel                 \\
+%   \end{tabular}
+%   \caption{Case syncretisms in NPs with an adjective and without a determiner (\textit{roter Wein} `red wine', \textit{frische Sahne} `fresh cream', \textit{kleine Äpfel} `small apples')}
+%   \label{tab:syncretisms}
+% \end{table}
 
 Turning to (\ref{it:intro:plurl}), readers might have noticed that so far only MNPs denoting quantities of substances (mass kind nouns such as \textit{ein Glas roter Wein\slash roten Weines} `a glass of red wine') have been discussed.
-If the kind noun is a plural count noun as in \textit{ein Sack kleine Äpfel\slash kleiner Äpfel} `a bag of small apples' (see Table~\ref{tab:syncretisms} for the inflection pattern), a similar alternation between PGC and NAC can be observed.
-%\footnote{\label{fn:eschenbash}On the collective interpretation of such constructions, see \cite{Eschenbach1994}.
-%It is, however, unfortunate that Eschenbach does not notice and discuss the morpho-syntactic distribution of PGC and NAC, even when she gets very close to listing the relevant data \citep[217]{Eschenbach1994}.}
-In line with experimental results reported in \citet[15--16]{Zimmer2015}, I found that the PGC is so dominant with plural kind nouns (67 of 861 cases or over 92\%, cf.\ Section~\ref{sec:corpusstudies}) that the alternation cannot be analysed in the same way as in the singular case.
-While this will play a role in the interpretation of the corpus findings, MNPs with plural ve kind nouns will not be dealt with prominently in the remainder of the paper.
-%A statistical model for plural kind nouns will be reported in passing in Section~\ref{sec:corpusstudies}, however.
+If the kind noun is a plural count noun as in \textit{ein Sack kleine Äpfel} (\NACa) or \textit{ein Sack kleiner Äpfel} (\PGCa) `a bag of small apples', a similar alternation between PGC and NAC can be observed.
+In line with experimental results reported in \citet[15--16]{Zimmer2015}, I found that the PGC is so dominant with plural kind nouns (67 of 861 cases or over 92\%, cf.\ Section~\ref{sec:corpusstudies}) that the alternation cannot be analysed in the same way as in the singular case.%
+\footnote{More concretely, I these cases were included in the regression analysis of the corpus data along with a factor encoding the number of the kind noun, this factor would most assuredly override any other regressor for the data points with a plural kind noun.}
+While this will play a role in the interpretation of the corpus findings, MNPs with plural kind nouns will not be included in the corpus study and the experiments reported here.
 
 As for (\ref{it:intro:noifl}), some measure nouns have been grammaticalised in a way that they always appear non-inflected.
-They are typical measure nouns like \textit{Gramm} `gram', \textit{Pfund} `pound' or \textit{Prozent} `percent', which do not have plural forms at all.%
-\footnote{With neglectable frequency, this effect is extended to container nouns like \textit{Glas} `glass', but with a twist.
-A non-inflected variant \textit{zwei Glas roter Wein} `two glasses of wine' and an inflected variant \textit{zwei Gläser roter Wein} co-exist.
-The non-inflected variant denotes the quantity of wine fitting into two glasses, the inflected variant denotes two glasses filled with wine.}
-I treat these cases like any other measure noun because they enter into both the \NACa\ as in (\ref{ex:uninflectedmeasures:a}) and the \PGCa\ as in (\ref{ex:uninflectedmeasures:b}).
+They are typical measure nouns like \textit{Gramm} `gram', \textit{Pfund} `pound' or \textit{Prozent} `percent', which do not have plural forms at all.
+%\footnote{With neglectable frequency, this effect is extended to container nouns like \textit{Glas} `glass', but with a twist.
+%A non-inflected variant \textit{zwei Glas roter Wein} `two glasses of wine' and an inflected variant \textit{zwei Gläser roter Wein} co-exist.
+%The non-inflected variant denotes the quantity of wine fitting into two glasses, the inflected variant denotes two glasses filled with wine.}
+I treat these cases like other measure nouns because they enter into both the \NACa\ as in (\ref{ex:uninflectedmeasures:a}) and the \PGCa\ as in (\ref{ex:uninflectedmeasures:b}).
 In Section~\ref{sec:analyses}, degrees of grammaticalisation as a factor influencing the alternation will be discussed, however. 
 
 \begin{exe}
@@ -356,23 +360,30 @@ In Section~\ref{sec:analyses}, degrees of grammaticalisation as a factor influen
 \end{exe}
 
 Finally, (\ref{it:intro:other}) suggests that there are alternative ways of expressing similar quantificational meanings.
-%First of all, the analytic (pseudo-)partitive with \textit{von} `of' is only available as an alternative to the PGC if the kind noun phrase contains a (definite or indefinite) determiner as in (\ref{ex:analyticalpartitive}).
-%
-%\begin{exe}
-%  \ex\label{ex:analyticalpartitive} 
-%  \begin{xlist}
-%    \ex[ ]{\label{ex:analyticalpartitive:a}\gll ein Glas von dem roten Wein\\
-%                                                a glass of the red wine\\
-%                                                \glt a glass of the red wine
-%       }
-%    \ex[*]{\label{ex:analyticalpartitive:b}\gll ein Glas von rotem Wein\\
-%                                                a glass of red wine\\
-%                                                \glt a glass of red wine
-%       }
-%  \end{xlist}
-%\end{exe}
-%
-If the measure noun denotes a container, constructions with \textit{voll} (\textit{von})\slash\textit{voller} `full (of)' and \textit{mit} `with' are available, see (\ref{ex:alternatives}).
+In the variationist tradition, which is strongly influenced by Labovian sociolinguistics, the \textit{principle of accountability} would dictate that proper studies should examine a variationist \textit{variable}, \ie\ all different \textit{ways of saying the same thing} (\citealp{Labov1966}, \citealp{Labov1969}, for an overview see \citealp{Tagliamonte2012}).
+In the case at hand, the variable might be something like \textit{measuring substances and collections}.
+I argue that it is fully justified to focus narrowly on \NACa\ and \PGCa\ with their well-defined morph-syntactic properties, mostly because the alternative constructions are not used in the same range of contexts.
+Two major alternatives might be considered.
+First of all, the analytic (pseudo-)partitive with \textit{von} `of' is only available as an alternative to the PGC if the kind noun phrase contains a (definite or indefinite) determiner as in (\ref{ex:analyticalpartitive}).
+
+\begin{exe}
+  \ex\label{ex:analyticalpartitive} 
+  \begin{xlist}
+    \ex[ ]{\label{ex:analyticalpartitive:a}\gll ein Glas von dem roten Wein\\
+                                                a glass of the red wine\\
+                                                \glt a glass of the red wine
+       }
+    \ex[*]{\label{ex:analyticalpartitive:b}\gll ein Glas von rotem Wein\\
+                                                a glass of red wine\\
+                                                \glt a glass of red wine
+       }
+  \end{xlist}
+\end{exe}
+
+This means that the \textit{von} (pseudo-)partitive does not compete with the \NACa\ and the \PGCa.
+In fact, there is not a single context in which they can be interchanged. 
+
+Second constructions with \textit{voll} (\textit{von})\slash\textit{voller} `full (of)' and \textit{mit} `with' are available, see (\ref{ex:alternatives}).
 
 \begin{exe}
   \ex\label{ex:alternatives}
@@ -389,10 +400,11 @@ If the measure noun denotes a container, constructions with \textit{voll} (\text
   \end{xlist}
 \end{exe}
 
-These construction have very idiosyncratic properties (the construction with \textit{voller} is discussed in \citealp{Zeldes2018}, the construction with \textit{mit} is discussed in \citealp{Bhatt1990}), they are not semantically equivalent to the NAC and the PGC, and -- most importantly -- they are only available for a small subset of measure nouns.
-Subtle interactions between these constructions and NAC\slash PGC cannot be excluded, especially because the former might act as a (partial) alternative and thus reduce the count of exemplars of the NAC, the PGC, or both for container measure nouns.
-There are no clear hypotheses about such interactions, however.
-Nevertheless, the corpus-based models in Section~\ref{sec:corpusstudies} are specified in a way that they could detect preferences for either NAC or PGC for the class of container measure nouns, for which the alternative constructions illustrated in (\ref{ex:alternatives}) are available.
+These construction have very idiosyncratic properties (the construction with \textit{voller} is discussed in \citealp{Zeldes2018}, the construction with \textit{mit} is discussed in \citealp{Bhatt1990}), they are not semantically equivalent to the NAC and the PGC, and they are only available for a small subset of measure nouns.
+All of these constructions are only used with measure nouns denoting containers, and the whole NP always refers to the container, and never to the quantity contained in it.
+They are consequently incompatible with measure nouns denoting natural portions such as \textit{Schluck} `gulp' or \textit{Haufen} `heap' and strongly grammaticalised nouns such as \textit{Gramm} `gram'.
+This disqualifies them as alternatives to the \NACa\ or \PGCa\ in most contexts, and they are thus decidedly \textit{not} more ways of saying the same thing. 
+It is therefore reasonable to focus on the two well-defined variants.
 
 This concludes the descriptive overview of the phenomenon.
 I have shown that there is an alternation between two measure noun constructions in a narrow syntactic configuration (kind NP with an adjective but without a determiner), and that the two constructions differ in the case of the kind noun (case agreement with the measure noun or genitive).
@@ -405,7 +417,7 @@ I turn to some more theory-oriented discussion in the next section.
 \subsection{Theoretical assessment}
 \label{sec:analyses}
 
-This section briefly reviews existing analyses of the \PGCa-\NACa\ alternation and related issues.
+This section briefly reviews existing analyses of the \PGCa vs.\ \NACa\ alternation and related issues.
 I also develop my own analysis and the appropriate hypotheses for the empirical studies presented in Sections~\ref{sec:corpusstudies} and \ref{sec:externalvalidation}.
 I discuss four main factors that might influence the alternation:
 first, the different syntactic structures of the variants \NACa\ and \PGCa\ in relation to their syntactic prototypes \NACb\ and \PGCd;
@@ -416,15 +428,15 @@ fourth, preferences in different registers.
 The first aspect is related to analyses of the morpho-syntax of German MNPs.
 A major interest in descriptive and generative linguistics is to find a plausible analysis of the hierarchical syntactic structure of the constructions in question.
 The first question is which noun constitutes the head of the whole construction.
-This question was answered for the case at hand quite clearly by \cite{Loebel1986} already (see also \citealp[213]{Eschenbach1994}, and \citealp[16]{GallmannLindauer1994}).
+This was answered quite clearly by \cite{Loebel1986} already (see also \citealp[213]{Eschenbach1994}, and \citealp[16]{GallmannLindauer1994}).
 Subject-verb agreement is always realised on the measure noun, and we can therefore assume that the measure noun is the head.
-However, the MNP-internal structure has more interesting cues to offer if the strong\slash weak inflection patterns of adjectives (already mentioned in Section~\ref{sec:descriptive}) are taken into account.
+However, the MNP-internal structure has more interesting cues to offer if the strong\slash weak inflection patterns of adjectives are taken into account.
 In NPs with a strongly inflected determiner, attributive adjectives inflect according to the massively syncretistic \textit{weak} pattern.
 %\footnote{The weak pattern has only two suffixes.
 %The structural cases (nominative and accusative) in the singular are marked with \textit{-e}, the oblique cases (dative and genitive) as well as the entire plural are marked with \textit{-en}.
 %The only exception to this rule is the masculine accusative singular, which is also marked with \textit{-en}.}
-If there is no determiner (as is the case in the alternating constructions), attributive adjectives inflect like determiners, however.
-This is called the \textit{strong} inflectional pattern (see Table~\ref{tab:syncretisms}).
+If there is no determiner (as is the case in the alternating constructions), attributive adjectives inflect like determiners themselves, however.
+This is called the \textit{strong} inflectional pattern.
 Thus, the adjectives in the \NACa\ and the \PGCa\ have properties of adjectives as well as determiners.
 They are lexical adjectives and function as attributive modifiers.
 On the other hand, they are inflected like determiners, and they are the leftmost element in the NP, which is typical of determiners.
@@ -434,14 +446,13 @@ When they classify the adjective more as an adjective, the kind NP has no determ
 \footnote{While the generative analysis presented in \cite{Bhatt1990} cannot properly deal with probabilistic effects, Bhatt comes close to this interpretation by analysing the kind NP in the GPC as a DP and in the NAC as an NP.}
 In a framework that assumes similarity-based probabilistic classification, such as Prototype Theory, we can regard the \PGCd\ as instantiating the PGC prototype and the \NACb\ as the NAC prototype.
 The choice between \PGCa\ and \NACa\ is then expected to be influenced by the degree of similarity to either of these prototypes.
+I will argue below that the prototypes differ mainly in that they attract different (classes of) measure nouns more or less strongly, mostly because of degrees of grammaticalisation.
+However, if lemmas are attracted with different strengths by the two prototypes, then we can expect a baseline attraction effect:
+nouns which occur more often in the \PGCd\ should favour the \PGCa, and nouns which occur more often in the \NACb\ should favour the \NACa.
+Put differently, a noun's relative frequencies in the prototypical non-alternating constructions should be indicative of same noun's preference to appear in the two alternating variants.
+This baseline attraction effect will be quantified in the corpus study Section~\ref{sec:corpusstudies}.
 
-Any attempt to substantiate or test this hypothesis is rendered difficult by the fact that the semantic differences between the variants are at best subtle, which means that the prototypes are not associated with clearly detectable differences in meaning.
-However, if there is a semantic difference, kind and measure noun lemmas should be attracted more strongly to one of the prototypes.
-As a result, kind noun lemmas and measure noun lemmas are expected to appear with different relative frequencies in the prototypical \NACb\ and the prototypical \PGCd.
-Their relative frequencies in these non-alternating configurations should then be indicative of their preference to appear in one of the two alternating variants \NACa\ and \PGCa.
-This predicted effect will be quantified in Section~\ref{sec:corpusstudies}.
-
-Turning to grammaticalisation now, it is often assumed that pseudo-partitives arise as a form of grammaticalised partitives (\eg\ \citealp[536--539]{Koptjevskaja2001} for Finnish and Estonian, \citealp[559]{Koptjevskaja2001} for European languages per se).
+Turning to grammaticalisation, it is often assumed that pseudo-partitives arise as a form of grammaticalised partitives (\eg\ \citealp[536--539]{Koptjevskaja2001} for Finnish and Estonian, \citealp[559]{Koptjevskaja2001} for European languages per se).
 %
 %\footnote{Notice that the description of German in \citet[547--549]{Koptjevskaja2001} is vague and partly incorrect, maybe because her main source \cite{Eschenbach1993} is not as clear as it could be (see also Footnote \ref{fn:eschenbash} above).
 %Her example (29b) from \citet[71]{Eschenbach1993}, repeated here verbatim as (\ref{ex:koptjewskaja}) is misclassified as a clear case of a dative on the measure noun and a genitive on the kind noun (hence, PGC).
@@ -456,15 +467,15 @@ Turning to grammaticalisation now, it is often assumed that pseudo-partitives ar
 %Then, she does not clearly distinguish acceptable from non-acceptable constructions (cf.\ Section \ref{sec:descriptive}) on her pp.\ 548 and 549, including a rather confusing \textit{???} rating of her (31b), which is clearly a non-acceptable construction of the type illustrated in (\ref{ex:analyticalpartitive:b}) above.
 %}
 %
-The alternating constructions in German are both clearly pseudo-partitives, but the grammaticalisation paths uncovered by \cite[esp.\ 526--530]{Koptjevskaja2001} -- which I interpret freely here -- are clearly relevant for an analysis of the alternation.
+The alternating constructions in German are both clearly pseudo-partitives, but the grammaticalisation paths uncovered by \cite[esp.\ 526--530]{Koptjevskaja2001} are relevant for an analysis of the alternation.
 The grammaticalisation path can start out (in some languages) with constructions involving two referential nouns (not necessarily forming a single and contiguous NP) and a \textit{separative} meaning as in \textit{(cut) two slices from the cake} \citep[535]{Koptjevskaja2001}.
 The \textit{part-of} meaning of true partitives as in \textit{a slice of the cake} represents the first stage of a development wherein the measure noun already tends to loose some semantic content.
 The pseudo-partitive stage finally instantiates a \textit{quantity-of} relation, potentially even leading to fully grammaticalised quantifiers such as \textit{a lot}.
-In German, the PGC is clearly the older variant \citep{Zimmer2015} with an overt \textit{quantity-of} marker in the form of the genitive suffix.
+In German, the PGC is clearly the older variant \citep{Zimmer2015}, still having an overt \textit{quantity-of} marker in the form of the genitive suffix.
 Also, it still has the potential to form a true partitive (if the kind noun is definite).
 Conversely, the NAC completely lacks this ability to form true partitives, and it forms a more restrictive environment with less combinatory and semantic flexibility.
 Hence, we can expect more strongly grammaticalised measure nouns to prefer the NAC.
-For example, strongly grammaticalised non-referential nouns like \textit{Gramm} `gram' and \textit{Meter} `metre' should occur proportionally more often in the \NACa\ than in the \PGCa.%
+For example, highly grammaticalised non-referential nouns like \textit{Gramm} `gram' and \textit{Meter} `metre' should occur proportionally more often in the \NACa\ than in the \PGCa.%
 \footnote{In case studies like \cite{Brems2003,DeclerckBrems2016} syntactic evidence for grammaticalisation plays a prominent role.
 In English -- \cite{Brems2003} argues based on a view from \cite{Langacker1991} -- strongly lexicalised and thus semantically bleached measure nouns turn from nouns into quantifiers, leading to a syntactic reanalysis of the NP, wherein the kind noun becomes the head.
 The argument is supported by convincing syntactic evidence, for example subject-verb agreement.
@@ -481,7 +492,7 @@ Under the appropriate circumstances, it could also be used to denote a heap-shap
 The former use, however, is highly restricted for \textit{zwei Haufen französischer Watte} `two heaps of French cotton' (\PGCa) -- not `two lots of French cotton'.
 Such an NP is less likely to be used in situations where the exact quantity of cotton is irrelevant, even if there are actually two heaps of cotton.
 In other words, a precisely quantified measure noun leads to a higher individuation (the creation of discrete portions) of the substance denoted by the kind noun, which is more appropriate for the PGC prototype.
-The statistical models in Section~\ref{sec:corpusstudies} will be designed to detect such a subtle effect, if it exists.
+The statistical models in Section~\ref{sec:corpusstudies} will be designed to detect such an effect.
 %\footnote{In the extreme, some measure nouns cannot be pluralised, such as \textit{eine Menge} `a lot of'.
 %Also note that the presentation of the examples in NAC and PGC is suggestive.
 %Native speakers will confirm that both NPs sound highly acceptable in both GPC and NAC.
@@ -530,7 +541,7 @@ At the time of this writing, a newer 2016 version DECOW16 had already been relea
 I chose this corpus for two main reasons.
 First, the external validity of any study is increased through a higher heterogeneity of the sample \citep[30]{MaxwellDelaney2004}, and the DECOW corpus has clearly a much more heterogeneous composition compared to the only other very large corpus of German, the DeReKo \citep{KupietzEa2010} of the Institute for the German Language (IDS), which contains almost exclusively newspaper texts.%
 \footnote{It was shown in \cite{W16-2601} that, for example, the spread of topics is much smaller in DeReKo compared to DECOW.}
-Second, it was already mentioned that normative grammars often adopt clear positions on the grammaticality of the NAC or the PGC.
+Second, it was already mentioned that normative grammars often adopt clear positions regarding the grammaticality of either the \NACa\ or the \PGCa.
 Thus, newspaper text or any other text that conforms strongly to normative grammars might not represent the alternation phenomenon fully (and without bias) because authors and proof-readers might favour one alternative or the other.
 Web corpora, on the other hand, contain at least some amount of non-standard language from forums and similar sources.
 For these or similar reasons, COW corpora have been used in a number of peer-reviewed publications, for example \cite{VanGoethemHiligsmann2014,VanGoethemHuening2015,MuellerS2014,Schaefer2016c,SchaeferSayatz2014,SchaeferSayatz2016,Zimmer2015}. 
@@ -538,13 +549,13 @@ Therefore, DECOW can be considered the obvious choice for this study.
 
 I now turn to the sampling procedure applied to obtain concordances for manual annotation and statistical analysis.
 Among the factors potentially influencing the alternation (see Section~\ref{sec:germanmeasurenps}) were lemma-specific preference effects.
-Therefore, it was highly desirable to obtain a sample in which all (or at least most of the highly frequent) actually occurring combinations of kind noun and measure noun were represented.
+Therefore, it was highly desirable to obtain a sample in which most of the highly frequent actually occurring combinations of kind nouns and measure nouns were represented.
 I applied a three-stage bootstrap process in order to obtain such a sample.
 It consisted of three steps:
 
 \begin{enumerate}[i.]
   \item\label{enum:data:step1} bootstrapping a list of the one hundred most frequent mass nouns,
-  \item\label{enum:data:step2} bootstrapping a list of all measure nouns with which the mass nouns co-occur in the bare-noun NAC 
+  \item\label{enum:data:step2} bootstrapping a list of all measure nouns with which the mass nouns co-occur in the \NACb 
   \item\label{enum:data:step3} sampling the target constructions by querying each combination of mass noun and measure noun found in step (\ref{enum:data:step2}).
 \end{enumerate}
 
@@ -556,8 +567,8 @@ It contains just over one billion tokens.}
 Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.
 The hundredth selected mass noun was \textit{Schmuck} `jewelry’, which is the 3,054th most frequent noun in the original frequency list.
 
-This resulting list of mass nouns was used in step (\ref{enum:data:step2}) to bootstrap a list of measure nouns co-occurring with the mass nouns from DECOW14A01.
-In order to generate this list, I utilized the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
+This resulting list of mass nouns was used in step (\ref{enum:data:step2}) to bootstrap a list of measure nouns co-occurring with the mass nouns. 
+In order to generate this list, I utilised the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
 Hence, I searched for all sequences N\Sub{1}N\Sub{2} where N\Sub{2} was one of the mass noun lemmas extracted in step (\ref{enum:data:step1}).
 Then, the resulting 100 lists of noun-noun combinations were each sorted by frequency in descending order and sieved manually to remove erroneous hits.
 From each of the 100 lists, I also removed noun-noun combinations that had a frequency below 2, except if the individual list would have otherwise been shorter than 20 noun-noun combinations.
@@ -568,8 +579,9 @@ In order to reduce the sample size for the manual annotation process, the final 
 Since the mass nouns in the sample were distributed according to the usual power law, I used all hits for mass nouns occurring less than one hundred times, but randomly sampled one hundred hits for each mass noun that occurred one hundred or more times.
 The final sample contained 6,843 sentences, which was reduced to 5,063 in the manual annotation process due to removal of noisy material, erroneous hits and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
 Given the careful bootstrapping and sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
-\footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were bootstrapped and queried, resulting in a sample of 1,876 sentences.
-As stated in Section~\ref{sec:germanmeasurenps}, the NAC is virtually never used with plural kind nouns, and this sample was not used for full analysis.
+\footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were bootstrapped and queried, resulting in a sample of 871 sentences.
+As stated in Section~\ref{sec:germanmeasurenps}, the \NACa\ is virtually never used with plural kind nouns, and this sample was not used except for quantifying the frequency of occurrence of the constructions (67 times \NACa\ and 794 times \PGCa).
+The sample is distributed in the data package accompanying this paper, however.
 }
 
 Finally, two auxiliary samples were also drawn.
@@ -583,7 +595,7 @@ Therefore, all noun-noun pairs from the bootstrap process were also queried in t
 \subsection{Variables and annotation}
 \label{sec:annotation}
 
-The full set of manually annotated variables for the main sample is given in Table~\ref{tab:variables}, and I briefly discuss them now.%
+The full set of manually annotated variables for the main sample is given in Table~\ref{tab:variables}, and I briefly discuss it now.%
 \footnote{All numeric variables were also z-transformed (\ie, centered to the mean and rescaled such that they have a standard deviation of $1$) to facilitate their interpretation in the regression models reported in the next section.}
 Notice that \textit{Construction} is the response variable (or `dependent variable') with the values \textit{PGCa} and \textit{NACa}.
 
@@ -616,16 +628,16 @@ The higher the value, the more often the noun occurs in the \PGCa (proportionall
 
 In Section~\ref{sec:analyses}, it was hypothesised that classes of measure lemmas might have different preferences for the two variants.
 To capture this, class information was annotated for measure lemmas.
-The classification was designed inspired by the list in \cite[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
-With typical examples and the number of data points in the final sample, the classes are:
-\textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'; size 1,968),
-\textit{Container} (\textit{Eimer} `bucket'; size 740), 
-\textit{Amount} (\textit{Menge} `amount'; size 1,364), 
-\textit{Portion} (natural portions like \textit{Happen} `bite' or \textit{Krümel} `crumb'; size 713).
-The few lemmas that did not fit into either of these classes were labeled \textit{Rest} (size 278).
+The classification was inspired by the list in \cite[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
+With typical examples and their frequencies in the final sample, the classes are:
+\textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'; $f=1,968$),
+\textit{Container} (\textit{Eimer} `bucket'; $f=740$), 
+\textit{Amount} (\textit{Menge} `amount'; $f=1,364$), 
+\textit{Portion} (natural portions like \textit{Happen} `bite' or \textit{Krümel} `crumb'; $f=713$).
+The few lemmas that did not fit into either of these classes were labeled \textit{Rest} ($f=278$).
 
 The variable \textit{Leftcontext} encodes the coarse-grained part-of-speech of the word preceding the measure noun.
-The level names stand for (again with class sizes in the final sample) \textit{cardinal} (size 1,939), \textit{determiner} (size 1,971), \textit{other} (size 221), \textit{adjective} (size 845), and \textit{preposition} (size 87).
+The level names stand for (again with their frequency in the final sample) \textit{cardinal} ($f=1,939$), \textit{determiner} ($f=1,971$), \textit{other} ($f=221$), \textit{adjective} ($f=845$), and \textit{preposition} ($f=87$).
 The purpose of this variable is mainly to test whether cardinals really favour the \PGCa\ as hypothesised in Section~\ref{sec:analyses}.
 Along the same lines, \textit{Measurenumber} encodes the grammatical case and number of the measure noun.
 
@@ -657,13 +669,13 @@ To control for this effect, the case of the measure noun was manually annotated 
 \begin{figure}[hb!]
   \centering
   \includegraphics[width=0.85\textwidth]{../R/output/corpus_fixeffs_mle+mcmc}
-  \caption{Coefficients (MLE and MCMC) with 95\% confidence intervals (for details see text); intercept (\textit{Leftcontext=C}, \textit{Measurecase=Nom}, \textit{Measurenumber=Sg}, \textit{Kindgender=Masc}, \textit{Measureclass=Physical}; 0 for all numeric z-transformed regressors) is -4.328 (MLE) and -4.441 (MCMC)}
+  \caption{Coefficients (MLE and MCMC) with 95\% confidence intervals (for details see text); the intercept (\textit{Leftcontext=C}, \textit{Measurecase=Nom}, \textit{Measurenumber=Sg}, \textit{Kindgender=Masc}, \textit{Measureclass=Physical}; 0 for all numeric z-transformed regressors) is -4.328 (MLE) and -4.441 (MCMC)}
   \label{fig:fixeffs}
 \end{figure}
 
 In this section, I report the results of fitting a multilevel model to the data using R \citep{R}, \textit{lme4} \citep{lme4} for Maximum Likelihood Estimation, and \textit{rstanarm} \citep{rstanarm} for Markov-Chain Monte Carlo estimation.
 The purpose is to model the influence of the regressors specified in Table~\ref{tab:variables} on the probability that either the \NACa\ or the \PGCa\ is chosen.
-All regressors from Table~\ref{tab:variables} were included to begin with, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
+All regressors from Table~\ref{tab:variables} were included, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
 The sample size was $n=5,063$ with $1,1344$ cases of \PGCa\ and $3,929$ cases of \NACa.
 The results of the estimation are shown in Table~\ref{tab:bigtable} and in Figure~\ref{fig:fixeffs}.
 The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \cite[265--269,302--304]{GelmanHill2006}.
@@ -672,39 +684,40 @@ Given the coding of the response variable, coefficients leaning to the positive 
 
 \begin{sidewaystable}
   \centering
-    \begin{tabular}{llrlrrrrrrcc}
-      Level & Regressor & \multicolumn{1}{l}{\pPB} & Level  & \multicolumn{2}{l}{Coefficient} & \multicolumn{2}{l}{CI low} & \multicolumn{2}{l}{CI high} & \multicolumn{2}{l}{CI contains 0} \\
-              &                   &       &          & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} & \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} \\\midrule
+  \resizebox{\textheight}{!}{
+  \begin{tabular}{llrlp{0.5em}rrp{0.5em}rrp{0.5em}rrp{0.5em}cc}
+      Level & Regressor & \multicolumn{1}{l}{\pPB} & Level  && \multicolumn{2}{l}{Coefficient} && \multicolumn{2}{l}{CI low} && \multicolumn{2}{l}{CI high} && \multicolumn{2}{l}{CI contains 0} \\
+              &                   &       &           && \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} && \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} && \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} && \multicolumn{1}{l}{MLE} & \multicolumn{1}{l}{MCMC} \\\midrule
 
-    First     & Badness           & 0.001 & (numeric) & -0.165 & -0.169 & -0.264 & -0.264 & -0.074 & -0.075 &      * &      * \\
-              & Genitives         & 0.001 & (numeric) & -0.630 & -0.645 & -0.710 & -0.739 & -0.523 & -0.552 &      * &      * \\
-              & Leftcontext       & 0.001 & D         &  1.178 &  1.173 &  0.751 &  0.784 &  1.548 &  1.546 &      * &      * \\
-              &                   &       & O         &  1.561 &  1.588 &  1.093 &  1.179 &  1.919 &  2.007 &      * &      * \\
-              &                   &       & A         &  2.300 &  2.340 &  1.872 &  1.959 &  2.644 &  2.726 &      * &      * \\
-              &                   &       & P         &  2.353 &  2.371 &  1.693 &  1.766 &  2.900 &  2.978 &      * &      * \\
-              & Measurecase       & 0.001 & Acc       &  0.065 &  0.070 & -0.130 & -0.119 &  0.268 &  0.269 &        &        \\
-              &                   &       & Dat       &  0.707 &  0.735 &  0.413 &  0.480 &  0.959 &  1.002 &      * &      * \\
-	      & Measurenumber     & 0.001 & Pl        &  0.814 &  0.825 &  0.534 &  0.574 &  1.080 &  1.079 &      * &      * \\[0.5\baselineskip]
+    First     & Badness           & 0.001 & (numeric) && -0.165 & -0.169 && -0.264 & -0.264 && -0.074 & -0.075 &&      * &      * \\
+              & Genitives         & 0.001 & (numeric) && -0.630 & -0.645 && -0.710 & -0.739 && -0.523 & -0.552 &&      * &      * \\
+              & Leftcontext       & 0.001 & D         &&  1.178 &  1.173 &&  0.751 &  0.784 &&  1.548 &  1.546 &&      * &      * \\
+              &                   &       & O         &&  1.561 &  1.588 &&  1.093 &  1.179 &&  1.919 &  2.007 &&      * &      * \\
+              &                   &       & A         &&  2.300 &  2.340 &&  1.872 &  1.959 &&  2.644 &  2.726 &&      * &      * \\
+              &                   &       & P         &&  2.353 &  2.371 &&  1.693 &  1.766 &&  2.900 &  2.978 &&      * &      * \\
+              & Measurecase       & 0.001 & Acc       &&  0.065 &  0.070 && -0.130 & -0.119 &&  0.268 &  0.269 &&        &        \\
+              &                   &       & Dat       &&  0.707 &  0.735 &&  0.413 &  0.480 &&  0.959 &  1.002 &&      * &      * \\
+	      & Measurenumber     & 0.001 & Pl        &&  0.814 &  0.825 &&  0.534 &  0.574 &&  1.080 &  1.079 &&      * &      * \\[0.5\baselineskip]
                                           
-    Second    & Kindattraction    & 0.033 & (numeric) &  0.204 &  0.216 &  0.030 &  0.014 &  0.366 &  0.412 &      * &      * \\
-    (Kind)    & Kindfreq          & 0.066 & (numeric) &  0.161 &  0.173 & -0.008 &  0.009 &  0.333 &  0.350 &        &      * \\
-              & Kindgender        & 0.001 & Neut      & -0.007 & -0.022 & -0.407 & -0.424 &  0.408 &  0.379 &        &        \\
-	      &                   &       & Fem       &  1.357 &  1.379 &  0.831 &  0.872 &  1.808 &  1.897 &      * &      * \\[0.5\baselineskip]
+    Second    & Kindattraction    & 0.033 & (numeric) &&  0.204 &  0.216 &&  0.030 &  0.014 &&  0.366 &  0.412 &&      * &      * \\
+    (Kind)    & Kindfreq          & 0.066 & (numeric) &&  0.161 &  0.173 && -0.008 &  0.009 &&  0.333 &  0.350 &&        &      * \\
+              & Kindgender        & 0.001 & Neut      && -0.007 & -0.022 && -0.407 & -0.424 &&  0.408 &  0.379 &&        &        \\
+	      &                   &       & Fem       &&  1.357 &  1.379 &&  0.831 &  0.872 &&  1.808 &  1.897 &&      * &      * \\[0.5\baselineskip]
                                           
-    Second    & Measureattraction & 0.015 & (numeric) &  0.247 &  0.275 &  0.058 &  0.078 &  0.413 &  0.476 &      * &      * \\
-    (Measure) & Measureclass      & 0.001 & Rest      &  0.564 &  0.488 & -0.140 & -0.309 &  1.197 &  1.236 &        &        \\
-              &                   &       & Container &  0.609 &  0.618 &  0.050 &  0.018 &  1.145 &  1.215 &      * &      * \\
-              &                   &       & Amount    &  0.927 &  0.959 &  0.184 &  0.189 &  1.566 &  1.718 &      * &      * \\
-              &                   &       & Portion   &  1.472 &  1.503 &  0.916 &  0.956 &  1.938 &  2.064 &      * &      * \\
-              & Measurefreq       & 0.003 & (numeric) & -0.257 & -0.264 & -0.413 & -0.435 & -0.098 & -0.099 &      * &      * \\
+    Second    & Measureattraction & 0.015 & (numeric) &&  0.247 &  0.275 &&  0.058 &  0.078 &&  0.413 &  0.476 &&      * &      * \\
+    (Measure) & Measureclass      & 0.001 & Rest      &&  0.564 &  0.488 && -0.140 & -0.309 &&  1.197 &  1.236 &&        &        \\
+              &                   &       & Container &&  0.609 &  0.618 &&  0.050 &  0.018 &&  1.145 &  1.215 &&      * &      * \\
+              &                   &       & Amount    &&  0.927 &  0.959 &&  0.184 &  0.189 &&  1.566 &  1.718 &&      * &      * \\
+              &                   &       & Portion   &&  1.472 &  1.503 &&  0.916 &  0.956 &&  1.938 &  2.064 &&      * &      * \\
+              & Measurefreq       & 0.003 & (numeric) && -0.257 & -0.264 && -0.413 & -0.435 && -0.098 & -0.099 &&      * &      * \\
   \end{tabular}
-  \smallskip
+  }
   \caption{Coefficient table comparing Maximum Likelihood Estimation (MLE, with 95\% bootstrap confidence interval) and `Bayesian' Markov-Chain Monte Carlo estimation (MCMC); for details see text}
   \label{tab:bigtable}
 \end{sidewaystable}
 
 Standard diagnostics for the Maximum Likelihood Estimation (MLE) show that the model quality is quite high.
-Generalized variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than $2$.
+Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than $2$.
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.423$ and $R^2_c=0.515$ (see \citealp{Gries2015} for a linguist-friendly introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
 The rate of correct predictions is $0.855$, which means a proportional reduction of error of $\lambda=0.354$.
 The measure lemma intercepts have a standard deviation of $\sigma_{\text{Measurelemma}}=0.623$, the kind lemma intercept $\sigma_{\text{Kindlemma}}=0.488$.
@@ -717,7 +730,7 @@ Furthermore, for each regressor, a $p$ value was obtained by dropping the regres
 Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 These bootstrapped $p$ values are given in the columns labelled p\Sub{PB} in Table~\ref{tab:bigtable}.
 All regressors have low p\Sub{PB} values of magnitude $10^{-2}$ or $10^{-3}$.
-Only \textit{Kindfreq} ($p_{\text{PB}}=0.066$) can be seen as slightly too high to be convincing (`non-significant').
+Only \textit{Kindfreq} ($\mpPB=0.066$) can be seen as slightly too high to be convincing (`non-significant').
 
 Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo estimation do not necessarily (and in this case predictably) lead to different results.
 Both the MN model and the F model were re-estimated using the \textit{stan\_glmer} function from the \textit{rstanarm} package, which provides an \textit{lme4}-compatible syntax for estimating common model types with the \textit{stan} software \citep{CarpenterEa2017}.
@@ -729,7 +742,8 @@ The algorithm converged, and for all coefficients, the $\hat{R}$ diagnostic was 
 The resulting coefficients and intervals as well as an * are also given in Table~\ref{tab:bigtable} in the columns labelled \textit{MCMC}.
 Both methods lead to exactly the same results (minus negligible numerical differences) as expected (see Section~\ref{sec:rightstatistics}).
 The signs and magnitudes of the coefficients are identical, and confidence intervals have the same width and symmetry properties.
-If one were interested in significance at $\alpha=0.05$, then the decision based on the confidence intervals differs for \textit{Kindfreq} ($p_{\text{PB}}=0.066$, MLE lower bound is $-0.008$ and MCMC lower bound is $0.009$).
+Figure~\ref{fig:fixeffs} illustrates this by also showing both estimates.
+If we were interested in significance at $\alpha=0.05$, then the decision based on the confidence intervals differs for \textit{Kindfreq} ($\mpPB=0.066$, MLE lower bound is $-0.008$ and MCMC lower bound is $0.009$).
 With MCMC, the regressor is `not significant' at the standard $\alpha$ level, but it is with MLE.
 This might only go to show how absurd strict significance testing is in complex modelling situations:
 both methods essentially estimate the same sign and magnitude for the coefficient (MLE $0.161$, MCMC $0.173$) and do not differ substantially with regard to the precision of the estimate in the form of the width of the confidence interval (both intervals have a width of exactly $0.341$).
@@ -761,8 +775,10 @@ if a lemma appears relatively more often in the \PGCd\ (compared to its frequenc
 The effect for measure nouns is stronger, and it was estimated with higher precision.
 
 An interesting picture emerges for the lemma frequencies.
-A higher than average lemma frequency of measure nouns favours the \NACa\ as expected ($\beta_{\text{Measurefreq}}=-0.257$, $p_{\text{PB}}=0.003$).
-With kind nouns, higher frequency seems to favour the \PGCa ($\beta_{\text{Kindfreq}}=0.161$, $p_{\text{PB}}=0.066$).
+A higher than average lemma frequency of measure nouns favours the \NACa\ ($\beta_{\text{Measurefreq}}=-0.257$, $\mpPB=0.003$) as expected if we assume at least a tendency for highly grammaticalised items to be more frequent.
+With kind nouns, higher frequency seems to favour the \PGCa ($\beta_{\text{Kindfreq}}=0.161$, $\mpPB=0.066$).
+However, there is no clear theoretical interpretation (see Section~\ref{sec:analyses}), and the estimate is imprecise (`not significant at $\alpha=0.05$', see above).
+The effect can therefore be ignored or treated as a nuisance variable.
 
 
 % GRAMMATICALISATION
@@ -776,10 +792,10 @@ With kind nouns, higher frequency seems to favour the \PGCa ($\beta_{\text{Kindf
 \end{figure}
 
 In Section~\ref{sec:analyses}, it was also hypothesised that there may be effects specific to classes of measure lemmas, and that they might be related to degrees of grammaticalisation of the measure noun.
-Transcending the effects of individual lemmas (captured in the random intercepts), the \textit{Measureclass} second-level predictor was successfully estimated ($p_{\text{PB}}=0.001$).
+Transcending the effects of individual lemmas (captured in the random intercepts), the \textit{Measureclass} second-level predictor was successfully estimated ($\mpPB=0.001$).
 Looking at the effect plot in Figure~\ref{fig:eff:measureattraction}, it is evident that abstract non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACa.
 At the other end of the scale, nouns denoting natural portions like \textit{Haufen} `heap', \textit{Bündel} `bundle', \textit{Schluck} `gulp' favour the \PGCa.
-These are referential nouns, confirming the hypothesis that it is prototypical of the PGC to host two referential nouns and the NAC only one.
+These are referential nouns, confirming the hypothesis that it is prototypical of the PGC to contain two referential nouns, while the NAC only contains one (the kind noun).
 
 % PLURAL & CARDINALS
 
@@ -791,23 +807,24 @@ These are referential nouns, confirming the hypothesis that it is prototypical o
 \end{figure}
 
 I now turn to the predicted effect of plural measure nouns and cardinals as quantifiers.
-Plurality has a clear effect in the expected direction (plural favours the \PGCa) ($\beta_{\text{MeasurenumberPl}}=0.814$, $p=0.001$ for \textit{Measurenumber}).
-Figure~\ref{fig:eff:leftcontext} shows that the left context of the measure noun influences the choice of the variant ($p=0.001$).
-Cardinals have a strong tendency to co-occur with the \NACa\ in both models.
+Plurality has a clear effect in the expected direction (plural favours the \PGCa) ($\beta_{\text{MeasurenumberPl}}=0.814$, $\mpPB=0.001$ for \textit{Measurenumber}).
+Figure~\ref{fig:eff:leftcontext} shows that the left context of the measure noun influences the choice of the variant ($\mpPB=0.001$).
+Cardinals have a strong tendency to co-occur with the \NACa.
+Both effects were predicted in Section~\ref{sec:analyses}.
 
 % REGISTER
 % => Badness
 % => Genitives
 
 The register-related proxy variables point into the expected direction.
-Increased \textit{Badness} of the document favours the \NACa\ ($\beta_{\text{Badness}}=-0.165$, $p=0.001$), and so does a lesser density of genitives ($\beta=-0.630$, $p=0.001$).
-While these are poor proxies to register (and partially circular in the case of \textit{Genitives}), this result can at least encourage future work into register effects 
+Increased \textit{Badness} of the document favours the \NACa\ ($\beta_{\text{Badness}}=-0.165$, $\mpPB=0.001$), and so does a lesser density of genitives ($\beta=-0.630$, $\mpPB=0.001$).
+While these are poor proxies to register (and partially circular in the case of \textit{Genitives}), this result can at least encourage future work into register effects. 
 
 % NUISANCE
 % => dative effect
 % => frequency
 
-The effect of \textit{Measurecase} ($p=0.001$) is as predicted by previous studies (see Section~\ref{sec:analyses}).
+The influence of \textit{Measurecase} ($\mpPB=0.001$) is as predicted in previous analyses (see Section~\ref{sec:analyses}).
 A measure noun in the dative favours the \PGCa\ with $\beta_{\text{MeasurecaseDat}}=0.707$ (compared to the nominative, which is on the intercept).
 Although \textit{Measurecase} is a nuisance variable in the context of this study, convergence with previous work strengthens its validity.
 
@@ -824,7 +841,8 @@ Although \textit{Measurecase} is a nuisance variable in the context of this stud
 
 As was pointed out in Section \ref{sec:cogocl}, there is a strong interest in validating corpus-based findings through experiments in order to substantiate \textit{cognitively oriented usage-based corpus linguistics} as a research programme.
 Therefore, this section and the next present the results of two experiments wherein I cross-checked the corpus-based findings.
-Both experiments use sentences containing attested MNPs from the corpus sample embedded into radiacally simplified sentences, and the probabilities that the corpus-based statistical model (see Section~\ref{sec:corpushierarchicalmodel}) assigns to the competing constructions in these sentences.
+Both experiments use sentences containing attested MNPs from the corpus sample (embedded into simplified sentences) as stimuli.
+Also, the probabilities that the corpus-based model assigns to the two variants in these sentences is used as the main regressor in both studies.
 First, a forced-choice experiment was conducted.
 Participants had to chose between two sentences differing only in that one contained the \NACa\ and the other contained the \PGCa.
 
@@ -833,9 +851,10 @@ Although the experiment was conducted in the last four weeks of their first seme
 None of them had ever participated in a forced-choice experiment before.
 Participation was voluntary, but participants received credit in partial fulfillment of course requirements.
 
-As stimuli, attested MNPs from the corpus study were used, but the sentences were radically simplified to avoid .
+As stimuli, attested MNPs from the corpus study were used, but the sentences were radically simplified to avoid influences from contextual nuisance variables as much as possible.
+The approach is also justified because according to the theoretical assessment in Section~\ref{sec:analyses}, the choice of variants depends mostly on a very local constructional context.
 I sampled 16 MNPs from the corpus, and it was made sure that the simplifications and normalisations did not affect any of the regressors used in the corpus study.
-For example, the case, number, etc. of the MNP remained the same, as well as the choice of lexical material within the MNP.
+In the simplified sentences, the case, number, etc. of the MNP remained the same as in the attested sentence, as well as the choice of lexical material within the MNP.
 Eight sentences contained masculine or neuter kind nouns, the other eight contained feminine kind nouns.
 Furthermore, in each of the masculine\slash neuter and feminine groups, four sentences originally containing the \NACa\ and four sentences originally containing the \PGCa\ were chosen.
 More precisely, the sentences were sampled as \textit{highly prototypical examples} of \PGCa\ (high probability assigned by GLMM) and \NACa\ (low probability assigned by GLMM), respectively.%
@@ -866,13 +885,13 @@ The design is summarised in Table \ref{tab:experiment1:design}.
 The pairs of stimuli were the sentence containing the preferred construction (according to the corpus GLMM) and a modified version containing the dispreferred construction.
 They were presented next to each other, and a 20 second time limit for each choice was set.%
 \footnote{No participant ever exceeded the time limit.}
-The position on the screen (left\slash right) and the order of sentences were randomized for each participant.
+The position on the screen (left\slash right) and the order of sentences were randomised for each participant.
 As fillers, 23 pairs of sentences exemplifying similar alternation phenomena from German morpho-syntax were used.
 Thus, participants saw 39 pairs of sentences and 78 sentences in total.
 They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
 The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
-Figure \ref{fig:afc:proportions} shows the relationship between the probabilities calculated from the corpus-based model and the proportional choices made by participants.
-The close correlation between the probabilities derived from usage data and the choices in the experiment are evident, and the relation appears to be linear.
+Figure \ref{fig:afc:proportions} shows the relationship between the probabilities calculated from the corpus-based model and the choices made by participants.
+The close correlation between the probabilities derived from usage data and the choices in the experiment are evident.
 
 \begin{figure}[hb!]
 \centering
@@ -881,11 +900,11 @@ The close correlation between the probabilities derived from usage data and the 
 \label{fig:afc:effects}
 \end{figure}
 
-Then, a multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM (\textit{Modelprediction}) as the only fixed effect.%
-\footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to $0$ (which is the mean for z-transformed variables).}
+Then, a multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.%
+\footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to $0$, which is the mean for z-transformed variables.}
 A random intercept and slope were added for the individual sentence (item) in order to catch idiosyncrasies of single sentences.
 Also, a random intercept and slope for participants was added.%
-\footnote{The random slopes were added to comply with \citet[257]{BarrEa2013} who predict \textit{catastrophically high Type I error rates} for designs with within-subject manipulations if random effects structures are not kept maximal.
+\footnote{The random slopes were added to comply with \citet[257]{BarrEa2013} who predict \textit{catastrophically high Type I error rates} for experimental designs with within-subject manipulations if random effects structures are not kept maximal.
 Notice that the model reported here was estimated with conceptually identical results with regard to the predictor of interest (\textit{Modelprediction}) if only random intercepts were used.}
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
 The number of observations was $n=384$.
@@ -894,11 +913,11 @@ A certain amount of the variance can be accounted for by idiosyncrasies of singl
 \footnote{I use $\sigma^f_r$ to denote the standard deviation of the of the random intercepts for the fixed effect $f$ varying by random effect $r$.}
 Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.530$, $\sigma^{\text{Modelprediction}}_{\text{Participant}}=0.076$, $24$ levels).
 On the extreme sides, one participant chose the \PGCa\ in $13$ of $16$ cases, and two participants only chose it in $5$ of $16$ cases.
-The regressor \textit{Modelprediction} achieves $p_{\text{PB}}=0.002$ ($1,000$ replications) and is estimated at $4.500$ relative to an intercept of $-1.520$.
-The confidence interval from a parametric bootstrap ($1,000$ replications) for the regressor is acceptable with a lower bound of $2.738$ and an upper bound of $6.390$.
-Nakagawa \& Schielzeth's pseudo-coefficients of determination are $R^2_{m}=0.267$ and $R^2_{c}=0.435$, which means that roughly 27\% of the variance in the data can be explained by considering the predictions from the corpus-based GLMM.
+The regressor \textit{Modelprediction} achieves $\mpPB=0.002$ ($1,000$ replications) and is estimated at $4.500$ relative to an intercept of $-1.520$.
+The confidence interval from a parametric bootstrap ($1,000$ replications, percentile method) for the regressor is acceptable with a lower bound of $2.738$ and an upper bound of $6.390$.
+Nakagawa \& Schielzeth's pseudo-coefficients of determination are $R^2_{m}=0.267$ and $R^2_{c}=0.435$, which means that roughly 27\% of the variance in the data can be explained by considering only the predictions from the corpus-based GLMM.
 The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
-It confirms the effect intuitively noticeable from Figure~\ref{fig:afc:proportions}:
+It confirms the effect descriptively shown in Figure~\ref{fig:afc:proportions}:
 the higher the probability of the \PGCa\ predicted from usage-data, the more often participants chose the \PGCa\ variant in the forced-choice task.
 In summary, the forced choice experiment clearly succeeded in validating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices.
 
@@ -910,17 +929,17 @@ In summary, the forced choice experiment clearly succeeded in validating the res
 \label{sec:exp:spr}
 
 Finally, I report the results of a self-paced reading experiment also designed to test whether the statistical model derived from usage data (see Section~\ref{sec:corpushierarchicalmodel}) can be used to predict speakers' behaviour.
-It is expected that reading the \textit{un}expected or less prototypical variant (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material might incur a processing overhead \citep{Kaiser2013}.
+It is expected that reading the less prototypical variant (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}; see also Section~\ref{sec:cogocl}).
 In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
 
 I used exactly the same stimuli as in the forced choice experiments.
-Each participant read both the $16$ sentences with the variant predicted by the corpus model and the $16$ modified sentence with the variant that the corpus model would not predict.%
+Each participant read both the $16$ sentences with the variant predicted by the corpus model and the $16$ modified sentences with the variant that the corpus model does not predict.%
 \footnote{Notice that lemmas and their frequencies as well as lemma classes are part of the corpus-based GLMM, and there was no additional controlling of lemma frequencies, etc.}
 To avoid repetition effects, the stimuli for each participant were separated into two blocks of $16$ targets and $33$ fillers per block.
 It was made sure that from each target sentence pair, one sentence was assigned to the first block, and the other sentence to the other block.
 The assignment of members of the individual sentence pairs to one of the blocks was randomised for each participant individually, and so was the order within the block.
 The sentences from each pair of variants were kept as far apart as possible.
-The fillers also came in pairs such that the second block contained only sentences to which participants had been exposed in the first block in slightly modified form.
+The fillers also came in pairs such that the second block exclusively contained sentences to which participants had been exposed in the first block in slightly modified form.
 In total, each participant read $98$ sentences.
 After each sentence, participants had to answer simple (non-metalinguistic) yes-no questions about the previous sentence as distractors.
 The distractor questions were different ones in the first and the second block.
@@ -930,12 +949,12 @@ The experiment was conducted using \textit{PsychoPy}.
 The reading times were residualised per speaker based on the reading times of all words (not just the targets) by that speaker.
 The adjective and kind noun (\ie\ the constituents bearing the critical case markers) were used as the target region, such as the bracketed words in the example \textit{zwei Gläser} [\textit{sprudelndes Wasser}] `two glasses of sparkling water'.
 Outliers farther than 2 inter-quartile ranges from the mean logarithmised residual time were reamoved ($64$ data points), resulting in a total number of $n=1,152$ observations.
-An LMM was specified with the logarithmised residual reading times as the response variable and the probabilities derived from the corpus GLMM (\textit{Modelprediction}) as the main regressor.
-Since the corpus GLMM predicts the probability of the \PGCa, it is expected that reading times are positively correlated (longer reading times) with the probability if the stimulus actually contains the \NACa, and negatively correlated (shorter reading times) if the stimulus actually contains the \PGCa.
+An LMM was specified with the logarithmised residual reading times as the response variable, and the probabilities derived from the corpus GLMM (\textit{Modelprediction}) as the main regressor.
+Since the corpus GLMM predicts the probability of the \PGCa (vs.\ the \NACa), it is expected that reading times are positively correlated (longer reading times) with the probability if the stimulus actually contains the \NACa, and negatively correlated (shorter reading times) if the stimulus actually contains the \PGCa.
 To account for this, an interaction between \textit{Modelprediction} and \textit{Construction} (levels \textit{PGCa} and \textit{NACa}) was added to the model.
 Furthermore, the position of the sentence in the individual experiment run was included as a fixed effect to control for increasing reading speed during experiment runs.
-Random intercepts were specified for \textit{Participant} and \textit{Item} (the $16$ sentence pairs are one \textit{Item}).%
-\footnote{I tried random slopes, but it was impossible to get the algorithm to converge.}
+Random intercepts were specified for \textit{Participant} and \textit{Item} (the $16$ sentence pairs are one \textit{Item} each).%
+\footnote{I tried random slopes in order to keep the random effect structure maximal \citep{BarrEa2013}, but it was impossible to get the algorithm to converge.}
 
 \begin{table}
   \centering
@@ -946,13 +965,13 @@ Random intercepts were specified for \textit{Participant} and \textit{Item} (the
     Position                         & -0.005 & -0.005 &  0.004 &     \\ 
     ConstructionPGCa:Modelprediction & -0.132 & -0.229 & -0.041 &  *  \\ 
   \end{tabular}
-  \caption{Fixed effect coefficient table for the LMM used to analyse the self-paced reading experiment}
+  \caption{Fixed effect coefficient table for the LMM used to analyse the self-paced reading experiment; the intercept is 0.819}
   \label{tab:exp:spr}
 \end{table}
 
-Table~\ref{tab:exp:spr} shows the coefficient estimates with a 95\% parametric bootstrap confidence interval ($1,000$ replications).
+Table~\ref{tab:exp:spr} shows the coefficient estimates with a 95\% parametric bootstrap confidence interval ($1,000$ replications, percentile method).
 The standard deviation of the participant intercepts is $\sigma_{\text{Participant}}=0.079$ and of the item intercepts $\sigma_{\text{Item}}=0.039$.
-Comparing the full model to a model without the main regressor \textit{Modelprediction} (and consequently also the interaction with \textit{Construction}) in a PB test gives $p_{\text{PB}}=0.018$.
+Comparing the full model to a model without the main regressor \textit{Modelprediction} (and consequently also without the interaction with \textit{Construction}) in a PB test gives $\mpPB=0.018$.
 Nakagawa and Schielzeth's pseudo-determination coefficients are $R^2_m=0.238$ and $R^2_c=0.347$.
 
 \begin{figure}[h]
@@ -963,13 +982,14 @@ Nakagawa and Schielzeth's pseudo-determination coefficients are $R^2_m=0.238$ an
 \end{figure}
 
 While the overall model quality is acceptable, the relevant effect is estimated with some uncertainty, which is also visible in the effect plot in Figure~\ref{fig:spr:effects}.
-While the estimate for the sentences with \NACa\ is clearly too imprecise, there is a clear tendency in the sentences with \PGCa, which is also confirmed by the `significant' results from the bootstrapped confidence intervals (see Table~\ref{tab:exp:spr}) and from the PB test reported above.
+While the estimate for the sentences with \NACa\ is obviously very imprecise, there is a clearer tendency in the sentences with \PGCa, which is also confirmed by the `significant' results from the bootstrapped confidence intervals (see Table~\ref{tab:exp:spr}) and from the PB test reported above.
 The \PGCa\ brings about an increased reading time ($\beta_{\text{ConstructionPGCa}}=0.062$), which is plausible because it is the much rarer construction (see Section~\ref{sec:corpusstudies}).
-However, if it occurs in a prototypical situation, reading times drop ($\beta_{\text{ConstructionPGCa:Modelprediction}}=-0.132$), which is also reflected in the slope of curve in the right panel of Figure~\ref{fig:spr:effects}.
-This fits into the general picture in as much as the construction with the lower frequency might be developing towards a more sharply defined prototype.
-In this context, it should be remembered from Section~\ref{sec:gettingdata} that even the \PGCd\ is much rarer that the \NACb\ ($17,252$ vs.\ $315,635$ occurrences in the auxiliary corpus samples).
+However, if it occurs in a prototypical situation, reading times drop ($\beta_{\text{ConstructionPGCa:Modelprediction}}=-0.132$).
+This is noticeable in the downward slope of curve in the right panel of Figure~\ref{fig:spr:effects}.
+This fits into the general picture in as much as the construction with the lower frequency might be developing towards a more sharply defined prototype.%
+\footnote{In this context, it should be remembered from Section~\ref{sec:gettingdata} that even the \PGCd\ is much rarer that the \NACb\ ($17,252$ vs.\ $315,635$ occurrences in the auxiliary corpus samples).}
 Conversely, the \NACa\ (like the NAC in general) might be the highly frequent default which does not incur reading time penalty, even if it is not the optimal choice in the given context and with the given lexical material.
-This possibility will be considered, among other things, in the next section.
+This interpretation will be considered, among other things, in the next and final section.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -992,7 +1012,7 @@ This possibility will be considered, among other things, in the next section.
 
 \begin{acknowledgement}
   I want to thank (in alphabetical order) Felix Bildhauer, Samuel Reichert, and Ulrike Sayatz for discussions on relevant aspects of this paper.
-  I also thank Ulrike Sayatz for recruiting the participants for the experiments.
+  I also thank Ulrike Sayatz for helping to recruit the participants for the experiments.
   I am grateful to Kim Maser for her work on the annotation of the concordances.
   The research presented here was made possible in part through funding from the \textit{Deutsche Forschungsgemeinschaft} (DFG, personal grant SCHA1916/1-1).
 \end{acknowledgement}
