@@ -29,7 +29,11 @@ get_freq <- function(data, lem) {
 
 
 # Generate full table.
-cx.kind <- cbind(cx.kind.lem, lapply(cx.kind.lem, function(lem){get_freq(nn.kind,lem)}), lapply(cx.kind.lem, function(lem){get_freq(ndn.kind,lem)}))
+cx.kind <- data.frame(
+  Lemma = as.character(cx.kind.lem),
+  Nn    = unlist(lapply(cx.kind.lem, function(lem){get_freq(nn.kind,lem)})),
+  Ndn   = unlist(lapply(cx.kind.lem, function(lem){get_freq(ndn.kind,lem)}))
+)
 
 
 # A rather simple "attraction" function, i.e., log ratio.
@@ -37,27 +41,43 @@ attraction <- function(cs) {
   log((unlist(cs)[2] + 1) / (unlist(cs)[1] + 1))
 }
 
+collottraction <- function(cs, alls) {
+  .cs <- as.numeric(cs)
+  .alls <- as.numeric(alls)
+  .mat<- matrix(c(.cs[2], .cs[1], .alls[2]-.cs[2], .alls[1]-.cs[1]), nrow = 2)
+  .p <- fisher.test(.mat)$p.value
+  log(.p, 10)
+}
+
+
 
 # Generate attraction quotients for full table.
+kind.all.nn  <- sum(unlist((cx.kind$Nn)))
+kind.all.ndn <- sum(unlist((cx.kind$Ndn)))
 cx.kind <- as.data.frame(cx.kind)
 cx.kind$Pv <- unlist(apply(cx.kind[,2:3], 1, function(cs){attraction(cs)} ))
+cx.kind$Collo <- unlist(apply(cx.kind[,2:3], 1, function(cs){collottraction(cs, c(kind.all.nn, kind.all.ndn))} ))
 
 
 # Measure nouns are simpler because the tables were imported done & ready.
 cx.measure <- measurenouns_attracfreq
+measure.all.nn  <- sum(unlist((cx.measure$Nn)))
+measure.all.ndn <- sum(unlist((cx.measure$Ndn)))
 cx.measure$Pv <- unlist(apply(cx.measure[,2:3], 1, function(cs){attraction(cs)} ))
+cx.measure$Collo <- unlist(apply(cx.measure[,2:3], 1, function(cs){collottraction(cs, c(measure.all.nn, measure.all.ndn))} ))
 
-
-# Give nice names to columns in final dfs.
-colnames(cx.kind) <- c("Lemma", "Nn", "Ndn", "Pv")
-colnames(cx.measure) <- c("Lemma", "Nn", "Ndn", "Pv")
 
 
 # Pull attraction strength for each observation.
-measure$Kindattraction <- unlist(lapply(measure$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == x), "Pv"] } ))
+measure$Kindattraction <- unlist(lapply(measure$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == as.character(x)), "Pv"] } ))
+measure$Kindcollo <- unlist(lapply(measure$Kindlemma, function(x) { cx.kind[which(cx.kind$Lemma == as.character(x)), "Collo"] } ))
 measure$Measureattraction <- unlist(lapply(measure$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Pv"] } ))
-
+measure$Measurecollo <- unlist(lapply(measure$Measurelemma, function(x) { cx.measure[which(as.character(cx.measure$Lemma) == as.character(x)), "Collo"] } ))
 
 # Center
 measure$Kindattraction    <- z.transform(measure$Kindattraction)
+measure$Kindcollo         <- ifelse(measure$Kindcollo < -200, -200, measure$Kindcollo)
+#measure$Kindcollo         <- z.transform(measure$Kindcollo)
 measure$Measureattraction <- z.transform(measure$Measureattraction)
+measure$Measurecollo      <- ifelse(measure$Measurecollo < -200, -200, measure$Measurecollo)
+#measure$Measurecollo      <- z.transform(measure$Measurecollo)

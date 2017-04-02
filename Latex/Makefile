@@ -15,7 +15,7 @@ quick:
 	@echo
 	@echo " === LAST RUN === "
 	@echo
-	-$(LX) $(TEXFLAGS) $(FILEN)
+	-$(LX) $(TEXFLAGS) $(FILEN) | grep 'Warning\|Error'
 
 clean:
 	\rm *.adx *.and *.aux *.bbl *.blg *.idx *.ilg *.ldx *.lnd *.log *.out *.pdf *.rdx *.run.xml *.sdx *.snd *.toc *.wdx *.xdv
@@ -29,7 +29,7 @@ all:
 	@echo
 	@echo " === LAST RUN === "
 	@echo
-	-$(LX) $(TEXFLAGS) $(FILEN)
+	-$(LX) $(TEXFLAGS) $(FILEN) | grep 'Warning\|Error'
 
 
 view:

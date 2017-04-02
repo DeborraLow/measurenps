@@ -20,10 +20,12 @@ measure.glmm <- glmer(Construction~1
                  +Measurenumber
 
                  +Kindattraction
+                 #+Kindcollo
                  +Kindfreq
                  +Kindgender
 
                  +Measureattraction
+                 #+Measurecollo
                  +Measureclass
                  +Measurefreq
 
@@ -66,7 +68,7 @@ modelcomp <- lmer.modelcomparison(model = measure.glmm, regressors = bootcomp.re
 
 # Output.
 if (save.persistent) sink(paste(out.dir, "glmm.txt", sep=""))
-cat("\n\n\nMASCULINE\n\n")
+cat("\n\n\nGLMM summary\n\n")
 print(summary(measure.glmm), correlation=F)
 cat("\n\n")
 print(measure.glmm.wald)
