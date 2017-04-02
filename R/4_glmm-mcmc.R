@@ -16,7 +16,7 @@ measure.glmm.mcmc <- stan_glmer(Construction~1
                            +Leftcontext
                            +Measurecase
                            +Measurenumber
-                           
+
                            +Kindattraction
                            +Kindfreq
                            +Kindgender

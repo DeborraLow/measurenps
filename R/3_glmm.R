@@ -4,6 +4,8 @@ require(MuMIn)
 require(effects)
 require(gridExtra)
 require(car)
+require(pbkrtest)
+
 
 
 measure.glmm <- glmer(Construction~1
@@ -16,7 +18,7 @@ measure.glmm <- glmer(Construction~1
                  +Leftcontext
                  +Measurecase
                  +Measurenumber
-                 
+
                  +Kindattraction
                  +Kindfreq
                  +Kindgender
@@ -58,6 +60,7 @@ bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)",
 modelcomp <- lmer.modelcomparison(model = measure.glmm, regressors = bootcomp.regs,
                                      formula.target = "Construction~1", nsim = ci.boot.modelcomp.nsim,
                                      print.updated = T)
+
 
 
 
@@ -141,9 +144,43 @@ par(mfrow=c(1,1))
 if (save.persistent) dev.off()
 
 
-
+# Multicollinearity.
 source('highstat.r')
 if (save.persistent) sink(paste(out.dir, "glmm.txt", sep=""), append = T)
 cat("\n\n Variance inflation diagnostics\n")
 print(myvif(measure.glmm))
+if (save.persistent) sink()
+
+
+# Nachschlag: PB test for interaction.
+measure.glmm.plus <- glmer(Construction~1
+                           
+                           +(1|Measurelemma)
+                           +(1|Kindlemma)
+                           
+                           +Badness                 
+                           +Genitives
+                           +Leftcontext
+                           +Measurecase
+                           +Measurenumber
+                           
+                           +Measurenumber:Leftcontext
+                           
+                           +Kindattraction
+                           +Kindfreq
+                           +Kindgender
+                           
+                           +Measureattraction
+                           +Measureclass
+                           +Measurefreq
+                           
+                           , data=measure, family=binomial(link=logit), na.action = na.fail, nAGQ=the.nAGQ,
+                           control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5)))
+
+
+modcomp.interact <- PBmodcomp(measure.glmm.plus, measure.glmm, nsim = ci.boot.modelcomp.nsim)
+if (save.persistent) sink(paste(out.dir, "glmm.txt", sep=""), append = T)
+cat("\n\nModel comparison with LR and PB test for INTERACTION\n")
+print(modcomp.interact)
+cat("\n\n")
 if (save.persistent) sink()
