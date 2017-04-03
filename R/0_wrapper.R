@@ -25,7 +25,7 @@ iter                   <- 1000             # MCMC. Set to 1000 for production.
 
 
 # Delete old output.
-unlink(paste(out.dir, '*', sep=""))
+if (save.persistent) unlink(paste(out.dir, '*', sep=""))
 out.dir <- paste(out.dir, "corpus_", sep="")
 
 

@@ -8,9 +8,9 @@ stims.fax  <- c(
   "Measurecase",
   "Kindlemma",
   "Measurelemma",
-  "Measurenumber",
   "Measureclass",
-  "Leftcontext",
+  "Measurenumber",
+  "Cardinal",
   "Kindgender"
   )
 

@@ -14,8 +14,8 @@ measure.glmm <- glmer(Construction~1
                  +(1|Kindlemma)
                  
                  +Badness                 
+                 +Cardinal
                  +Genitives
-                 +Leftcontext
                  +Measurecase
                  +Measurenumber
 
@@ -56,7 +56,7 @@ measure.glmm.lemrand.names <- rownames(coef(measure.glmm)$Kindlemma)[measure.glm
 
 # PB test.
 bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", 
-                   "Badness", "Genitives", "Leftcontext", "Measurecase", "Measurenumber", 
+                   "Badness", "Genitives", "Cardinal", "Measurecase", "Measurenumber",
                    "Kindattraction", "Kindfreq", "Kindgender", 
                    "Measureattraction", "Measureclass", "Measurefreq")
 modelcomp <- lmer.modelcomparison(model = measure.glmm, regressors = bootcomp.regs,
@@ -114,7 +114,7 @@ if (save.persistent) dev.off()
 
 # Effect plots.
 fixeff.pl.cex <- 1.5
-effs <- c("Badness", "Genitives", "Leftcontext", "Measurecase", "Measurenumber", 
+effs <- c("Badness", "Genitives", "Cardinal", "Measurecase", "Measurenumber",
           "Kindattraction", "Kindfreq", "Kindgender", 
           "Measureattraction", "Measureclass", "Measurefreq")
 
@@ -151,38 +151,4 @@ source('highstat.r')
 if (save.persistent) sink(paste(out.dir, "glmm.txt", sep=""), append = T)
 cat("\n\n Variance inflation diagnostics\n")
 print(myvif(measure.glmm))
-if (save.persistent) sink()
-
-
-# Nachschlag: PB test for interaction.
-measure.glmm.plus <- glmer(Construction~1
-                           
-                           +(1|Measurelemma)
-                           +(1|Kindlemma)
-                           
-                           +Badness                 
-                           +Genitives
-                           +Leftcontext
-                           +Measurecase
-                           +Measurenumber
-                           
-                           +Measurenumber:Leftcontext
-                           
-                           +Kindattraction
-                           +Kindfreq
-                           +Kindgender
-                           
-                           +Measureattraction
-                           +Measureclass
-                           +Measurefreq
-                           
-                           , data=measure, family=binomial(link=logit), na.action = na.fail, nAGQ=the.nAGQ,
-                           control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5)))
-
-
-modcomp.interact <- PBmodcomp(measure.glmm.plus, measure.glmm, nsim = ci.boot.modelcomp.nsim)
-if (save.persistent) sink(paste(out.dir, "glmm.txt", sep=""), append = T)
-cat("\n\nModel comparison with LR and PB test for INTERACTION\n")
-print(modcomp.interact)
-cat("\n\n")
 if (save.persistent) sink()

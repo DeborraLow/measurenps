@@ -16,9 +16,9 @@ measure <- measure[,c("Measurecase",
           "Kindcase",
           "Kindfreq",
           "Measurelemma",
-          "Measurenumber",
           "Measureclass",
           "Measurefreq",
+          "Measurenumber",
           "Minus1pos",
           "Genitives",
           "Badness",
@@ -47,6 +47,8 @@ measure$Leftcontext <- ifelse(measure$Leftcontext == "Card", "C", measure$Leftco
 measure$Leftcontext <- ifelse(measure$Leftcontext %in% c("D", "P", "A", "C"), measure$Leftcontext, "O")
 measure$Leftcontext <- as.factor(measure$Leftcontext)
 
+# Even simpler.
+measure$Cardinal <- factor(ifelse(measure$Leftcontext == "C", "Yes", "No"), levels = c("Yes", "No"))
 
 # Simplify "Measureclass".
 measure$Measureclass <- factor(ifelse(as.character(measure$Measureclass) %in% c("Natural", "Trace", "Transport", "Object", "Unknown", "Unit", "Currency", "Layer"), "Rest", as.character(measure$Measureclass)))
@@ -77,8 +79,8 @@ fax  <- c("Measurecase",
           "Kindgender",
           "Kindcase",
           "Measurelemma",
-          "Measurenumber",
           "Measureclass",
+          "Measurenumber",
           "Leftcontext")
 
 for (fak in fax) {
@@ -88,7 +90,7 @@ for (fak in fax) {
 
 # Hm, different level ordering looks odd in plot, so make Leftcontext same order.
 measure$Leftcontext  <- factor(measure$Leftcontext, levels = c("C", "D", "O", "A", "P"))
-measure$Measureclass <- factor(measure$Measureclass, levels = c("Physical", "Rest", "Container", "Amount", "Portion" ))
+measure$Measureclass <- factor(measure$Measureclass, levels = c("Physical", "Container", "Rest", "Amount", "Portion" ))
 measure$Kindgender   <- factor(measure$Kindgender, levels = c("Masc", "Neut", "Fem"))
 
 

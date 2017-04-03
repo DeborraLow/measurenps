@@ -7,23 +7,25 @@ options(mc.cores = parallel::detectCores())
 
 
 measure.glmm.mcmc <- stan_glmer(Construction~1
-                           
-                           +(1|Measurelemma)
-                           +(1|Kindlemma)
-                           
-                           +Badness                 
-                           +Genitives
-                           +Leftcontext
-                           +Measurecase
-                           +Measurenumber
-
-                           +Kindattraction
-                           +Kindfreq
-                           +Kindgender
-                           
-                           +Measureattraction
-                           +Measureclass
-                           +Measurefreq
+                                
+                                +(1|Measurelemma)
+                                +(1|Kindlemma)
+                                
+                                +Badness                 
+                                +Cardinal
+                                +Genitives
+                                +Measurecase
+                                +Measurenumber
+                                
+                                +Kindattraction
+                                #+Kindcollo
+                                +Kindfreq
+                                +Kindgender
+                                
+                                +Measureattraction
+                                #+Measurecollo
+                                +Measureclass
+                                +Measurefreq
                            ,
                  data=measure, family=binomial(link=logit),
                  chains=chains, seed=seed, iter=iter,
