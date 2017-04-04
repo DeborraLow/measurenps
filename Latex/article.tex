@@ -108,7 +108,7 @@ By \textit{alternation} I refer to a situation where two or more forms or constr
 In this section, I motivate the choice of statistical models which I use later in Section~\ref{sec:corpusstudies}.
 Readers might think that the methods used here for modeling a grammatical alternation -- namely Hierarchical Regression and Generalised Linear Mixed Models (GLMMs) -- does not require much motivation.
 After all, GLMMs have been established as the major tool in the analysis of alternation phenomena (\citealp{BresnanEa2007,BresnanHay2010,BresnanFord2010,DivjakArppe2013,Gries2015,NessetJanda2010}, to name just a few publications).
-Over the past few years, however, modified or alternative methods have been proposed, and I want to make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}) as suggested in \cite{Levshina2016,Divjak2016a}, for example.
+Over the past few years, however, modified or alternative methods have been proposed, and I want to make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}) as suggested in \cite{Levshina2016,Divjak2016a}.
 Conceptually, I see three points of discussion that should be kept apart.
 First, Bayesian methods are sometimes touted as superior tools for scientific inference compared to frequentist methods.
 Second, it has been proposed that the Bayesian interpretation of probability is more cognitively adequate for the modeling of linguistic data.
@@ -121,19 +121,19 @@ Given we know the distribution of the values measured, we can calculate for obse
 This is essentially the frequentist notion of direct probability, \ie\ long-run frequencies under replication.
 What makes this attractive is that a model -- specified with reference to a substantive theory of the given phenomenon -- can fail on given data, and if it does not, the outcome of the experiment contributes to the overall well-testedness of the theory.
 Bayesian approaches, on the other hand, condition on the data and quantify (inductively) the probability of models given specific observations.
-The models are thus not fixed, and the probability is usually equated with researchers posterior beliefs about models.
-There is actually a debate among Bayesians whether and how a notion of theory testing is compatible (or even already contained) in the Bayesian approach.
+The models are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about models.
+There is actually a debate among Bayesians whether and how a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
 In \citet[10]{GelmanShalizi2013}, the authors acknowledge this and state about the standard inductive interpretation of Bayesianism that \textit{most of this received view of Bayesian inference is wrong}, and they develop a Bayesian notion of p values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning).
-Clearly, in such quarrels between and among camps of philosophers of science and statisticians it is virtually impossible for mere practitioners to take sides based on a sufficiently informed judgement.
+Clearly, in such quarrels between and among camps of philosophers of science and statisticians it is virtually impossible for mere practitioners to take sides.
 
 These quarrels relate to the second question, however.
 \citet[301--302]{Divjak2016a} speaks favourably of Bayesian methods because the Bayesian concept of probability is more adequate for cognitive modeling compared to the frequentist one.
-This criticism is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}).
+Her argument is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}).
 Frequentist methods were, however, never designed as cognitive models (see above).
-The actual question that emerges here is what our statistical models (estimated on corpus data) should represent.
+The actual question that emerges here is how we interpret our statistical models (estimated on corpus data).
 Are they inductive models of cognitive representations that learners would infer from being exposed to the corpus data?%
 \footnote{In which case we are doing \textit{data science in language research} in the words of \citealp{MilinEa2016}.}
-Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on output data.
+Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on linguistic output data contained in corpora.
 In the former case, we should definitely resort to methods like NDL, which most likely would entail tossing most previous work done in (cognitive) linguistics into the bin and abandoning all high-level generalisations that most existing studies have been based upon.
 In fact, arguments to this extreme effect and against using high-level generalisation have been made, for example in \cite{BaayenEa2016}, \citet[299--300]{Divjak2016a}, \cite{RamscarPort2016}, \cite{TheijssenEa2013}.
 In the latter case, the cognitive commitment does not necessarily extend to the statistical methods used.
@@ -141,30 +141,34 @@ These methods then do not need to be any more cognitively plausible than an ANOV
 I view my own work in the tradition of testing theories (embracing high-level generalisations) on data (see Sections~\ref{sec:germanmeasurenps}--\ref{sec:externalvalidation}), but I am fundamentally agnostic with respect to this question.
 The best strategy for cognitive linguistics as a field might be to cultivate many methods while making sure that each method is applied carefully and competently.
 
-The third point is the most practically relevant in the context of this paper.
+The third point, then, is the most practically relevant in the context of this paper.
 In her otherwise excellent study, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
 First, she claims that \textit{while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data}.
-This does not do justice to frequentist methods in that rejection of the null hypothesis is characteristic of Fisher's approach, but in the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis (vs.\ the alternative), cf.\ \cite{Lehmann1993,Lehmann2011,Perezgonzalez2015}.
+This does not do justice to frequentist methods in that mere rejection of the null hypothesis is characteristic only of Fisher's approach, but in the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis (vs.\ the alternative), cf.\ \cite{Lehmann1993,Lehmann2011,Perezgonzalez2015}.
 She then explains that a \textit{distinctive feature of Bayesian statistics is the use of so-called priors} and that \textit{posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data} \cite[252]{Levshina2016}.
 Remarkably, however, she does \textit{not} use informative priors, and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error, such that the proclaimed advantage of Bayesian modeling was apparently not taken advantage of.%
 \footnote{In the words of \cite{Senn2011}: \textit{You may believe you are a Bayesian but you are probably wrong}.
 \cite[347--348]{GelmanHill2006} \textit{view any noninformative prior distribution as inherently provisional}.}
-Now, Maximum Likelihood Estimation (MLE), the traditional method which could have been used here, is not exactly \textit{frequentist} in the sense of Neyman-Pearson test theory.
+Now, Maximum Likelihood Estimation (MLE), the traditional method which could have been used here, is not exactly \textit{frequentist} in the sense of Neyman-Pearson testing theory.
 MLE also conditions on the data in as much as it finds the most likely set of parameters given the data.
 What is more, Bayesian estimators in fact incorporate the Likelihood function and merely multiply it by the prior \citep[PAGENUMBER??]{GelmanEa2014}.
 If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
-The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional models \citep[1119--1120]{Freedman1999}, a well-established result known as the Bernstein-von Mises theorem.
-With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have obtained with Maximum Likelihood methods.
+The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional models \citep[1119--1120]{Freedman1999}, a well-established result known as the Bernstein-von Mises theorem.%
+\footnote{Relating back to cognitive plausibility, this means that Bayesian methods cannot be more cognitively plausible in these situations than Maximum Likelihood Estimation.}
+With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have obtained with Maximum Likelihood methods.%
+\footnote{In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
+  This is a clear sign that the prior is \textit{swamped by the data} (QUOTE??).}
 If not, especially in case of convergence problems, this would have been an ideal occasion to demonstrate the superiority of Bayesian estimation.
-There are situations where Bayesian estimators can be more robust, namely with heavily censored data, empty cells, complex hierarchical models, perfect separation (see \citealp{Freedman1999}, \cite[345--348]{GelmanHill2006}).
-I want to reiterate that these points do not in any way invalidate the study presented by \cite{Levshina2016}.
+After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
+I want to reiterate that these points do not in any way invalidate the study presented in \cite{Levshina2016}.
 However, being \textit{Bayesian} is not among its selling points.
-In Section~\ref{sec:corpushierarchicalmodel}, I compare my own hierarchical models estimated with Bayesian and MLE estimators to demonstrate convergence.
+That said, I want to voice the concern that most likely many practitioners struggle with getting an adequate grasp of advanced statistical methods, and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
+In Section~\ref{sec:corpushierarchicalmodel}, I compare my own hierarchical models estimated with Bayesian and MLE estimators to demonstrate their expectable convergence.
 
 This concludes the general introduction.
-In the remainder of the paper, I introduce the alternation phenomenon (Section~\ref{sec:germanmeasurenps}) and suggest a theory-driven set of factors influencing the alternation (Section~\ref{sec:analyses}).
+In the remainder of the paper, I introduce the alternation phenomenon (Section~\ref{sec:descriptive}) and suggest a theory-driven set of factors influencing the alternation (Section~\ref{sec:analyses}).
 Then, the corpus study is presented including statistical analysis (Section~\ref{sec:corpusstudies}).
-The two experiments validating the corpus study are then reported (Section~\ref{sec:externalvalidation} before I sum up the paper in Section~\ref{sec:conclusion}.
+The two experiments validating the corpus study are then reported (Section~\ref{sec:externalvalidation}) before I sum up the paper in Section~\ref{sec:conclusion}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
