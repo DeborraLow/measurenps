@@ -53,7 +53,7 @@
   \runningtitle{Competing Constructions for German Measure Noun Phrases}
   %\subtitle{...}
   \abstract{}
-  \keywords{corpus methods and experimental methods, self-paced reading, forced choice, alternations, hierarchical models, measure constructions, German}
+  \keywords{corpus methods and experimental methods, self-paced reading, forced-choice, alternations, hierarchical models, measure constructions, German}
   %\classification[PACS]{...}
   %\communicated{...}
   %\dedication{...}
@@ -91,22 +91,23 @@ Instead, multifactorial models are constructed, which incorporate influencing fa
 The estimation of the model quantifies the influence the factors have on the probability that either variant is chosen.
 
 For such probabilistic generalisations estimated on corpus data, there has always been an interest in correlating the results with results from experimental work (for example, \citealp{ArppeJaervikivi2007,BresnanEa2007,BresnanFord2010,DivjakGries2008,DivjakEa2016,FordBresnan2013}).
-This often called a \textit{validation} of the corpus-derived findings, but \citet[303]{Divjak2016} criticises this choice of words \textit{because it creates the impression that behavioral experimental data is inherently more valuable than textual data}, citing \cite{TummersEa2005}, who state that a corpus is \textit{a sample of spontaneous language use that is} (\textit{generally}) \textit{realized by native speakers}.
+This often called a \textit{validation} of the corpus-derived findings, but \citet[303]{Divjak2016a} criticises this choice of words \textit{because it creates the impression that behavioral experimental data is inherently more valuable than textual data}, citing \cite{TummersEa2005}, who state that a corpus is \textit{a sample of spontaneous language use that is} (\textit{generally}) \textit{realized by native speakers}.
 This position, which I adopt by and large, does not, however, imply that we can in some way \textit{deduce mental representations from patterns of use}, \ie\ from corpus data \citep[486--487]{Dabrowska2016}.%
 \footnote{I suggest that the word \textit{induce} would be more appropriate than \textit{deduce}.}
 In fact, it would be surprising if we could!
 Nobody assumes that we can induce mental representations from experiments, which -- as opposed to corpus studies -- even provide a direct access to the cognitive agent and offer much better options to control and experimental conditions and nuisance variables.
 Instead, a theory of cognitive representation is pre-specified, and predictions are derived from this theory \textit{before} the experiment or the corpus study is conducted.
 Technical problems of statistical inference aside (but see Section~\ref{sec:rightstatistics}), a successful experiment corroborates the theory, and a failed experiment weakens the theory.
+The simplest assumption would be that the same approach is adequate for corpus studies.
 
 That said, the present study is conducted within the general paradigm of cognitive corpus linguistics and includes a comparison of the corpus findings with results from two experiments.
-As a theoretical framework, I assume a model of similarity-based classification in the sense of Prototype Theory.
+As a theoretical framework, I assume a model of similarity-based classification in the form of Prototype Theory.
 The approach within cognitive corpus linguistics (\eg\ \citealp{DivjakArppe2013,Gries2003}) assumes that the variables annotated in a corpus study on an alternation phenomenon define prototypes for the alternating variants.
 The similarity of a given feature vector (in a concrete sentence where one of the variants is used) determines to a large extent which variant is chosen by speakers.
 This entails that a variant of Prototype Theory with \textit{features} is assumed \citep{Rosch1978}, instead of the monolithic prototypes assumed in earlier versions.
 While Prototype Theory is well suited for modeling constructional choices, it is just one similarity-based framework, the most prominent other framework being Exemplar Theory (\citealp{MedinSchaffer1978,Hintzman1986}; see \citealp{StormsEa2000} for a comparison of the theories in experimental settings).
 Prototype Theory and Exemplar Theory differ mainly in whether they assume higher-level abstractions as part of the cognitive representation (Prototype Theory) or not (Exemplar Theory).
-I am sceptical whether corpus analysis alone could ever decide which theory is more adequate, given that substantial doubt has been voiced whether even experimental methods are ultimately able to do so \citep{Barsalou1990}.%
+I am sceptical that corpus analysis alone could ever decide which theory is more adequate, given that substantial doubt has been voiced whether even experimental methods are ultimately able to do so \citep{Barsalou1990}.%
 \footnote{In \cite{DivjakArppe2013}, a fruitful attempt was made to show how both models form a converging picture based on corpus data.}
 Prototype Theory (with feature abstractions) is simply preferred here because it fits the established alternation modeling paradigm, which relies on features being weighted (in a sense) in statistical models.
 In Section~\ref{sec:analyses}, a prototype-theoretical parlance is therefore adopted.
@@ -117,15 +118,15 @@ Before moving on to the description of the phenomenon and the corpus study in Se
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{A word on statistical analysis}
+\subsection{On statistical analysis}
 \label{sec:rightstatistics}
 
 In this section, I motivate the choice of statistical models which I use later in Section~\ref{sec:corpusstudies}.
 Readers might think that the method used here for modeling grammatical alternations -- namely (Hierarchical) Logistic Regression\slash Generalised Linear (Mixed) Models or GLM(M)s -- does not require much motivation.
 After all, GLMMs have been established as the major tool in the analysis of alternation phenomena.
-All studies mentioned at the outset of Section~\ref{sec:cogocl} use GLM(M)s \citep{BresnanEa2007,BresnanHay2010,BresnanFord2010,DivjakArppe2013,Gries2015,NessetJanda2010}.
+All studies mentioned at the outset of Section~\ref{sec:cogocl} use GLM(M)s \citep{BresnanEa2007,BresnanHay2010,BresnanFord2010,DivjakArppe2013,Gries2015,NessetJanda2010} use some form of regression\slash GLM(M).
 Over the past few years, however, modified or alternative methods have been proposed.
-From among these methods, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}), as it was proposed in \cite{Levshina2016,Divjak2016a}.
+From among these methods, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}), as it was proposed in \cite{Levshina2016,Divjak2016a}, for example.
 Conceptually, I see three points of discussion that should be kept apart.
 First, Bayesian methods are sometimes touted as superior tools for scientific inference compared to frequentist methods.
 Second, it has been proposed that the Bayesian interpretation of probability is more cognitively adequate for the modeling of linguistic data.
@@ -137,18 +138,19 @@ Frequentists assume that models and parameters are fixed, for example a model sp
 We can then calculate for observed data (for example a measurement of $3$ heads in an experiment with $10$ tosses) how often such a result or a more extreme result would occur if the model were true and we repeated the experiment arbitrarily often.
 This is essentially the frequentist notion of direct probability, \ie\ long-run frequencies under replication.
 Standard tests in the Fisher and Neyman-Pearson traditions as well as Neyman confidence intervals are based on this notion.
-Bayesian approaches (in the now commonly found interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
+Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
 The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
 There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
-In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that \textit{most of this received view of Bayesian inference is wrong}, and they develop a Bayesian notion of p values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning).
+In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that \textit{most of this received view of Bayesian inference is wrong}, and they develop a Bayesian notion of $p$ values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning).
 Clearly, in such quarrels between and among camps of philosophers of science and statisticians it is difficult for mere practitioners to take sides.
 
 These quarrels relate to the second question, however.
 \citet[301--302]{Divjak2016a} speaks favourably of Bayesian methods because the Bayesian concept of probability is more adequate for cognitive modeling compared to the frequentist one.
-Her argument is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}).
-Yet, neither frequentist nor Bayesian methods were conceived as cognitive models, but as systems of inference for researchers (see above, and see also \citealp[302]{Divjak2016a}).
+Her argument is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}). 
+On p.\ 303 of \cite{Divjak2016a}, the author explicitly mentions NDL.
+Yet, neither frequentist nor Bayesian methods were conceived as cognitive models, but as systems of inference for scientists (see above, and see also \citealp[302]{Divjak2016a}).
 The fundamental question that lurks behind such arguments is how we interpret our statistical models (estimated on corpus data).
-Are they inductive models of cognitive representations that learners would infer from being exposed to the corpus data?%
+Are they inductive models of cognitive representations that also human learners would infer from being exposed to the corpus data?%
 \footnote{In which case we are doing \textit{data science in language research} in the words of \citealp{MilinEa2016}.}
 Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on linguistic output data contained in corpora.
 In the former case, we adopt a strong \textit{corpus as input} hypothesis and should definitely resort to methods like NDL.
@@ -164,12 +166,14 @@ The third point, then, is the most practically relevant in the context of this p
 In her otherwise excellent study, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
 First, she claims that \textit{while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data}.
 This does not do justice to frequentist methods in that mere rejection of the null hypothesis is characteristic only of Fisher's approach, but in the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis vis-à-vis the alternative hypothesis (cf.\ \citealp{Lehmann1993,Lehmann2011,Perezgonzalez2015}).
+Also, especially Neyman-style frequentism has well-known extensions to estimation (see \citealp{GreenlandEa2016}, esp.\ p.\ 340).
 She then explains that a \textit{distinctive feature of Bayesian statistics is the use of so-called priors} and that \textit{posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data} \cite[252]{Levshina2016}.
-Remarkably, however, she does \textit{not} use informative priors, and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error, such that the proclaimed advantage of Bayesian modeling was apparently not taken advantage of.%
+Remarkably, given this statement, she does \textit{not} use informative priors, and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error.
+So, the proclaimed major advantage of Bayesian modeling was apparently not taken advantage of.%
 \footnote{In the words of \cite{Senn2011}: \textit{You may believe you are a Bayesian but you are probably wrong}.
 \citet[347--348]{GelmanHill2006} \textit{view any noninformative prior distribution as inherently provisional} and give recommendations how to proceed once posteriors have been obtained from noninformative priors.}
 Now, Maximum Likelihood Estimation (MLE) -- the traditional method which could have been used instead -- is not exactly \textit{frequentist} in the sense of Neyman-Pearson testing theory.
-MLE, like inductive Bayesianism, conditions on the data in as much as it searches for the most likely set of parameters given the data.
+MLE, like inductive Bayesianism, conditions on the data in as much as it searches for the most likely set of parameters given the particular data.
 What is more, Bayesian estimators are in fact based the Likelihood function and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
 If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
 The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional models \citep[1119--1120]{Freedman1999}, a well-established result known as the Bernstein-von Mises theorem.
@@ -177,8 +181,8 @@ With a modest model structure including $17$ fixed effects and $2,646$ data poin
 In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
 This is a clear sign that the prior is \textit{swamped} by the data \citep[1119]{Freedman1999}.
 Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
-However, most similar studies (back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist, and most likely as cognitively plausible as Bayesian estimators.
-If for Levshina's study, results did, in fact, \textit{not} converge, it would have been an ideal occasion to demonstrate the superiority of the algorithms used in Bayesian estimation.
+However, most similar studies (back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist, and as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
+If for Levshina's study, results from Bayesian and MLE methods did, in fact, \textit{not} converge, it would have been an ideal occasion to demonstrate the superiority of the algorithms used in Bayesian estimation.
 After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
 I want to reiterate that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
 However, being \textit{Bayesian} is most likely not among its selling points.
@@ -420,7 +424,7 @@ I also develop my own analysis and the appropriate hypotheses for the empirical 
 I discuss four main aspects:
 first, the different syntactic structures of the variants \NACa\ and \PGCa\ in relation to their syntactic prototypes \NACb\ and \PGCd;
 second, degrees of grammaticalisation of the measure noun associated with the two prototypes;
-third, a semantic prototypicality effect of the degrees of grammaticalisation (preference to occur with cardinals);
+third, a semantic prototypicality effect of the degrees of grammaticalisation (a preference to occur with cardinals);
 fourth, preferences in different registers.
 
 % MORPHO-SYNTAX AND PROTOTYPES
@@ -641,7 +645,7 @@ The higher the value, the more often the noun occurs in the \PGCa (proportionall
 \footnote{
   It could be argued that some more advanced measure of attraction strength should be used, as is done in Collostructional (or Collexeme) Analysis \citep{GriesStefanowitsch2004}, see also \cite{Gries2015a}.
   Three main points speak against such an approach in the present case (but see \citealp[246--249]{Levshina2016} for a successful more refined approach).
-  First, the attraction values will be used as regressors in a GLMM, and the values resulting from collostructional approaches, \ie\ logarithmised Fisher p values, have a very unfavourable distribution in the case at hand.
+  First, the attraction values will be used as regressors in a GLMM, and the values resulting from collostructional approaches, \ie\ logarithmised Fisher $p$ values, have a very unfavourable distribution in the case at hand.
   They cluster around $0$, and they include values of $-\infty$.
   Second, their main use in collostructional analyses is to \textit{sort} a list of collexemes and interpret their order.
   Their concrete numerical value might not have a solid cognitive interpretation in the given context.
@@ -746,8 +750,8 @@ For a robust quantification of the precision of the estimation, I ran a parametr
 The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:bigtable} in the columns labelled \textit{CI low} and \textit{CI high} (= upper and lower 2.5th percentiles).
 The column \textit{CI contains 0} shows an asterisk for those intervals that do \textit{not} include 0.
 Furthermore, for each regressor, a $p$ value was obtained by dropping the regressor from the full model, re-estimating the nested model and comparing it to the full model.
-Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}, hence I call the corresponding value $p_{\text{PB}}$.
-These bootstrapped $p$ values are given in the columns labelled p\Sub{PB} in Table~\ref{tab:bigtable}.
+Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
+I call the corresponding value $p_{\text{PB}}$, and it is given in the appropriately labeled columns in Table~\ref{tab:bigtable}.
 Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be convincing (non-significant).
 
 Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo estimation do not necessarily (and in this case predictably) lead to different results.
@@ -848,35 +852,23 @@ Although \textit{Measurecase} is a nuisance variable in the context of this stud
 \section{Correlating corpus findings with experiments}
 \label{sec:experimental}
 
-
-\subsection{Preliminary remarks}
-
-In the two experiments reported in this section, I use probabilities for the alternating constructions calculated for attested material, and I correlate these probabilities with the participants' reactions.
-Thus, a direct link can be established between output material found in corpora and the behaviour of linguistic agents.
-The first experiment tests preferences for constructions explicitly.
-\cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute $100$ points between the alternatives, assigning more points to more natural sounding alternative.
-In essence, participants distribute a probability mass between two variants, which is intended to produce more subtle results compared to what is essentially a two-alternative forced-choice task \cite{Rosenbach2013}.
-The split-100 paradigm has been criticised in \cite{ArppeJaervikivi2007}, reiterated in \cite{DivjakEa2016}.
-In \cite{VerhoevenTemme2017}, it was shown that results from forced-choice and split-100 experiments mostly converge, which is expected in the long run if a probability is turned into a binary decision.
-I present a forced-choice experiment in Section~\ref{sec:exp:fc} and not a split-100 experiment, mainly because in a dry-run of the experiment, participants complained about the unnaturalness of the task of assigning a probability mass to two variants.
-The analysis compares the probabilities assigned to stimuli by the corpus-derived model with the frequency with which participants chose the variants for the same stimuli.
-
-The second experiment tests preferences more implicitly.
-It is expected that reading less prototypical variants (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
-In Section~\ref{sec:exp:spr}, a self-paced reading experiment is therefore presented.
-In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
-The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
-
-
-\subsection{Experiment 1: forced choice}
+\subsection{Experiment 1: forced-choice}
 \label{sec:exp:fc}
 
-As was pointed out in Section \ref{sec:cogocl}, there is a strong interest in combining corpus-based findings with experiments.
-Therefore, this section and the next present the results of two experiments wherein I compare results from the corpus study with experimental results.
+In the two experiments reported in this section, I use probabilities for the alternating constructions calculated for attested material, and I correlate these probabilities with the participants' reactions.
+Thus, a direct link can be established between output material found in corpora and the behaviour of linguistic agents (see also Section~\ref{sec:cogocl}).
 Both experiments use sentences containing attested MNPs from the corpus sample (embedded into simplified sentences) as stimuli.
 Also, the probabilities that the corpus-based model assigns to the two variants in these sentences is used as the main regressor in both studies.
-First, a forced-choice experiment was conducted.
+
+The first experiment tests preferences for constructions explicitly.
+\cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute $100$ points between the alternatives, assigning more points to more natural sounding alternative.
+In essence, participants distribute a probability mass between two variants, which is intended to produce more subtle results compared to a two-alternative forced-choice task \cite{Rosenbach2013}, where participants have to choose one of two variants.
+The split-100 paradigm has been criticised in \cite{ArppeJaervikivi2007}.
+The criticism was reiterated in \cite{DivjakEa2016}, where they use a forced-choice task.
+In \cite{VerhoevenTemme2017}, it was shown that results from forced-choice and split-100 experiments mostly converge, which is expected in the long run if a probability is turned into a binary decision.
+I present a forced-choice experiment in Section~\ref{sec:exp:fc} and not a split-100 experiment, mainly because in a dry-run of the experiment, participants complained about the unnaturalness of the task of distributing a probability mass across two variants.
 Participants had to chose between two sentences differing only in that one contained the \NACa\ and the other contained the \PGCa.
+The analysis compares the probabilities assigned to stimuli by the corpus-derived model with the frequency with which participants chose the variants for the same stimuli.
 
 There were 24 participants (native speakers of German without reading or writing disabilities) aged 19 to 30 living permanently in [name of city anonymised], who were recruited from introductory linguistics courses at [name of university anonymised].
 Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper explicit knowledge of linguistics, grammar, or experimental methods.
@@ -942,7 +934,7 @@ Nakagawa \& Schielzeth's pseudo-coefficients of determination are $R^2_{m}=0.227
 The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
 The result is very clear.
 The higher the probability of the \PGCa\ predicted from usage-data, the more often participants chose the \PGCa\ variant in the forced-choice task.
-In summary, the forced choice experiment clearly succeeded in corroborating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices.
+In summary, the forced-choice experiment clearly succeeded in corroborating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -951,8 +943,13 @@ In summary, the forced choice experiment clearly succeeded in corroborating the 
 \subsection{Experiment 2: self-paced reading}
 \label{sec:exp:spr}
 
-Finally, I report the results of a self-paced reading experiment also designed to test whether the statistical model derived from usage data (see Section~\ref{sec:corpushierarchicalmodel}) can be used to predict speakers' behaviour.
-I used exactly the same stimuli as in the forced choice experiments.
+The second experiment tests preferences more implicitly.
+It is expected that reading less prototypical variants (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
+In Section~\ref{sec:exp:spr}, a self-paced reading experiment is therefore presented.
+In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
+The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
+
+Conretely, the exact same stimuli as in the forced-choice experiments were used.
 Each participant read both the $16$ sentences with the variant predicted by the corpus model and the $16$ modified sentences with the variant that the corpus model does not predict.%
 \footnote{Notice that lemmas and their frequencies as well as lemma classes are included as regressors in the corpus-based GLMM, and there was consequently no additional controlling of lemma frequencies, etc.}
 To minimise repetition effects, the stimuli for each participant were separated into two blocks of $16$ targets and $33$ fillers per block.
@@ -965,7 +962,7 @@ In total, each participant read $98$ sentences.
 After each sentence, participants had to answer simple (non-metalinguistic) yes-no questions about the previous sentence as distractors.
 The distractor questions were different ones in the first and the second block.
 There were $38$ (different) participants recruited in exactly the same manner as for the experiment reported in Section~\ref{sec:exp:fc}.
-None of them had ever participated in any kind of reading experiment.
+None of them had ever participated in any kind of reading experiment, and none of them took part in the first experiment (and vice versa).
 The experiment was conducted using \textit{PsychoPy}.
 
 The reading times were residualised per speaker based on the reading times of all words (not just the targets) by that speaker.
@@ -1012,7 +1009,9 @@ This can be seen in the downward slope in the right panel of Figure~\ref{fig:spr
 This fits into the general picture in as much as the construction with the lower frequency might be developing towards a more sharply defined prototype.%
 \footnote{In this context, it should be remembered from Section~\ref{sec:gettingdata} that even the \PGCd\ is much rarer that the \NACb\ ($17,252$ vs.\ $315,635$ occurrences in the auxiliary corpus samples).}
 Conversely, the \NACa\ (like the NAC in general) might be the highly frequent default which does not incur reading time penalty, even if it is not the optimal choice in the given context and with the given lexical material.
-This interpretation will be considered, among other things, in the next and final section.
+
+This concludes the report of the two experiments.
+In the final section, I take stock and summarise the contribution of the present study to the research on alternations in cognitive linguistics.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1023,9 +1022,23 @@ This interpretation will be considered, among other things, in the next and fina
 \section{Conclusions}
 \label{sec:conclusion}
 
-I have shown!
-Oh, yes, I have shown\ldots
+This paper stands in a now ten year-old tradition of research on grammatical alternations using corpus and experimental data.
+In my view, the main tenets of this line of research are:
+(i)~Language, viewed from a cognitively realistic angle, is a probabilistic phenomenon and cannot be modeled appropriately within Aristotelian frameworks that assume discrete and clearly delimited categories.
+(ii)~Corpora are collections of usage events (language production) and can therefore be used to evaluate both the claim made in (i) and specific theoretical claims (in case studies) about factors influencing speakers' decisions to use specific forms or constructions.
+(iii)~Given (ii), we expect results from corpus analyses and from appropriate experiments to yield similar results, not necessarily as a form of validation of the corpus-based findings, but as converging evidence.
+I consider these three points to be of utmost importance because they clearly set this brand of cognitive linguistics apart from \textit{both} Aristotelian frameworks of the generative flavour \textit{and} introspective, non-empirical, and anti-quantitative versions of cognitive linguistics (see \citealp{Dabrowska2016} for an impressive philippic against such approaches).
 
+The present paper adds to the evidence that all of the aforementioned three points are correct.
+A grammatical alternation in German measure NPs was examined using corpus data and based on factors partly derived from existing accounts and formulated in terms of construction prototypes.
+The preferences extracted from the DECOW web corpus were confirmed in a forced-choice experiment, in which participants explicitly chose variants in line with the corpus-derived model.
+In a more implicit self-paced reading experiment, it was shown that the much rarer variant brings about a reading time penalty except in cases for which the corpus model predicts very high probability for this variant.
+
+Future work could extend these results and provide a general picture of the constructions expressing measurements (see Section~\ref{sec:descriptive}).
+This would be a much more complicated task given that the choices then would no longer be binary, and that the meaning of the alternative ways of expressing measurements are semantically more varied.
+Finally, I want to point out that German is mildly under-researched in the specific framework used here.
+This is quite surprising given the fact that German morpho-syntax is famous for its alternations, which are usually called \textit{Zweifelsfälle} (`cases of doubt') in the traditional literature \citep{Klein2009}.
+Instead of drowning them in normative, descriptive, or didactic discussions, they could serve as ideal test cases in cognitive linguistics.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
