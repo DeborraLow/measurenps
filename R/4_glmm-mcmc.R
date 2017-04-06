@@ -89,6 +89,6 @@ for (i in 1:nrow(measure.ci.95)) {
   lines(measure.glmm.table[names(measure.fixeffs[i]), c("MC_Low", "MC_High")], c(i-0.25,i-0.25), col="gray", lwd=2)
 }
 
-legend("topright", legend = c("MLE", "MCMC"), cex = 1.2, col = c("black", "gray"), pt.bg = c("black", "gray"),
+legend(1.11, 12.5, legend = c("MLE", "MCMC"), cex = 1.2, col = c("black", "gray"), pt.bg = c("black", "gray"),
        lty = 1, lwd = 2, pch = c(25, 24), pt.cex = 0.75, bg = "white")
 if (save.persistent) dev.off()

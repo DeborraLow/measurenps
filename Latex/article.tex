@@ -177,12 +177,12 @@ Now, Maximum Likelihood Estimation (MLE) -- the traditional method which could h
 MLE, like inductive Bayesianism, conditions on the data in as much as it searches for the most likely set of parameters given the particular data.
 What is more, Bayesian estimators are in fact based the Likelihood function and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
 If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
-The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional models \citep[1119--1120]{Freedman1999}, a well-established result known as the Bernstein-von Mises theorem.
+The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional parameter models \citep[1119--1120]{Freedman1999}, a well-established result known as the Bernstein-von Mises theorem.
 With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have obtained with Maximum Likelihood methods.
 In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
-This is a clear sign that the prior is \textit{swamped} by the data \citep[1119]{Freedman1999}.
+This is a clear sign that the prior is \textit{swamped by the data} \citep[1119]{Freedman1999}.
 Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
-However, most similar studies (back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist, and as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
+However, most similar studies (back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist in a narrow sense, and which is as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
 If for Levshina's study, results from Bayesian and MLE methods did, in fact, \textit{not} converge, it would have been an ideal occasion to demonstrate the superiority of the algorithms used in Bayesian estimation.
 After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
 I want to reiterate that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
@@ -760,7 +760,7 @@ Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-
 I call the corresponding value $p_{\text{PB}}$, and it is given in the appropriately labeled columns in Table~\ref{tab:bigtable}.
 Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be convincing (non-significant).
 
-Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo estimation do not necessarily (and in this case predictably) lead to different results.
+Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo sampling (MCMC) do not necessarily (and in this case predictably) lead to different results.
 The model was re-estimated using the \textit{stan\_glmer} function from the \textit{rstanarm} package, which provides an \textit{lme4}-compatible syntax for estimating common model types with the \textit{stan} software \citep{CarpenterEa2017}.
 The algorithm was run with $4$ chains and $1,000$ iterations, and I used plausible default priors.
 Most notably, priors for coefficients were specified as $\mathcal{N}(0,10)$ because coefficients higher than $10$ or lower than $-10$ are extremely rare in well-specified models on appropriate data.%
