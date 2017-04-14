@@ -113,86 +113,6 @@ I am sceptical that corpus analysis alone could ever decide which theory is more
 Prototype Theory (with feature abstractions) is simply preferred here because it fits the established alternation modeling paradigm, which relies on features being weighted in statistical models.
 In Section~\ref{sec:analyses}, a prototype-theoretical parlance is therefore adopted.
 
-Before moving on to the description of the phenomenon and the corpus study in Sections~\ref{sec:descriptive} and \ref{sec:analyses}, I comment on the statistical methods used in the corpus study in Section~\ref{sec:rightstatistics} because the discussion is closely related to basic questions of the cognitive approach in corpus linguistics.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{On statistical analysis}
-\label{sec:rightstatistics}
-
-In this section, I motivate the choice of statistical models which I use later in Section~\ref{sec:corpusstudies}.
-Readers might think that the method used here for modeling grammatical alternations -- namely (Hierarchical) Logistic Regression\slash Generalised Linear (Mixed) Models or GLM(M)s -- does not require much motivation.
-After all, GLMMs have been established as the major tool in the analysis of alternation phenomena.
-All studies mentioned at the outset of Section~\ref{sec:cogocl} use some form of regression\slash GLM(M).
-Over the past few years, however, modified or alternative methods have been proposed.
-From among these methods, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}), as it was proposed in \cite{Levshina2016,Divjak2016a}, for example.
-Conceptually, I see three points of discussion that should be kept apart.
-First, Bayesian methods are sometimes touted as superior tools for scientific inference compared to frequentist methods.
-Second, it has been proposed that the Bayesian interpretation of probability is more cognitively adequate for the modeling of linguistic data.
-Third, and very specific to this paper, given established methods in the modeling of alternation and variation, it has to be decided whether so-called Bayesian methods lead to substantially different results.
-
-As for the first point, this is not quite the place to discuss it fully.
-The basic distinction is a philosophical one and related to the concepts of \textit{direct} and \textit{inverse probability} (\eg\ \citealp{Senn2011}).
-Frequentists assume that models and parameters are fixed, for example a model specifying that a coin is fair.
-We can then calculate for observed data (for example a measurement of $3$ heads in an experiment with $10$ tosses) how often such a result or a more extreme result would occur if the model were true and we repeated the experiment arbitrarily often.
-This is essentially the frequentist notion of direct probability, \ie\ long-run frequencies under replication.
-Standard tests in the Fisher and Neyman-Pearson traditions as well as Neyman confidence intervals are based on this concept of probability.
-Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
-The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
-There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
-In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that \textit{most of this received view of Bayesian inference is wrong}, and they develop a Bayesian notion of $p$ values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
-Clearly, in such quarrels between and among camps of philosophers of science and statisticians, it is difficult for mere practitioners to take sides.
-
-These quarrels relate to the second point, however.
-\citet[301--302]{Divjak2016a} speaks favourably of Bayesian methods because the Bayesian concept of probability is more adequate for cognitive modeling compared to the frequentist one.
-Her argument is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}). 
-On p.\ 303 of \cite{Divjak2016a}, the author goes on to explicitly mention NDL as well.
-Yet, neither frequentist nor Bayesian methods were conceived as cognitive models, but as systems of inference for scientists (see above, and see also \citealp[302]{Divjak2016a}).
-The fundamental question that lurks behind such arguments is how we interpret our statistical models (estimated on corpus data).
-Are they inductive models of cognitive representations that also human learners would infer from being exposed to the corpus data?%
-\footnote{In which case we are doing \textit{data science in language research} in the words of \citealp{MilinEa2016}.
-I see this as standing in contradiction to the view advocated in \cite{Dabrowska2016} as cited above.}
-Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on linguistic output data contained in corpora?
-In the former case, we adopt a strong \textit{corpus as input} hypothesis and should definitely resort to methods like NDL.
-However, this would most likely require us to toss most previous work done in (cognitive) linguistics into the bin and to abandon all high-level generalisations that most existing studies have been based upon.
-In fact, arguments to this extreme effect and against using high-level generalisation have been made, for example in \cite{BaayenEa2016}, \citet[299--300]{Divjak2016a}, \cite{RamscarPort2016}, \cite{TheijssenEa2013}.
-In the latter and less extreme case, the cognitive commitment does, however, not necessarily extend to the statistical methods used.
-These methods then do not need to be any more cognitively plausible than an ANOVA used to analyse the results from an experiment.
-I view my own work (see Sections~\ref{sec:germanmeasurenps}--\ref{sec:experimental}) in the tradition of testing theories (which embrace high-level generalisations), and I agree to provisionally use Likelihood methods (see below).
-I remain fully agnostic with respect to the question which approach is `right'.
-The best strategy for cognitive linguistics as a field might be to cultivate many methods while making sure that each method is applied carefully and competently.
-
-The third point, then, is the most practically relevant in the context of this paper.
-In her otherwise excellent study, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
-First, she claims that \textit{while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data}.
-This does not do justice to frequentist methods in that mere rejection of the null hypothesis is characteristic only of Fisher's approach.
-In the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis vis-à-vis the alternative hypothesis (cf.\ \citealp{Lehmann1993,Lehmann2011,Perezgonzalez2015}).
-Also, especially Neyman-style frequentism has well-known extensions to estimation, for example in the form of confidence intervals (see \citealp{GreenlandEa2016}, esp.\ p.\ 340).
-She then explains that a \textit{distinctive feature of Bayesian statistics is the use of so-called priors} and that \textit{posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data} \cite[252]{Levshina2016}.
-Remarkably, given this statement, she does \textit{not} use informative priors, and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error.
-So, the proclaimed major advantage of Bayesian modeling was apparently not taken advantage of.%
-\footnote{In the words of \cite{Senn2011}: \textit{You may believe you are a Bayesian but you are probably wrong}.
-\citet[347--348]{GelmanHill2006} \textit{view any noninformative prior distribution as inherently provisional} and give recommendations how to proceed once posteriors have been obtained from noninformative priors.}
-Now, Maximum Likelihood Estimation (MLE) -- the traditional method which could have been used instead -- is not exactly \textit{frequentist} in the sense of Neyman-Pearson testing theory.
-MLE, like inductive Bayesianism, conditions on the particular data in as much as it searches for the most likely set of parameters given the data.
-What is more, Bayesian estimators are in fact based the Likelihood and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
-If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
-The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional parameter models \citep[1119--1120]{Freedman1999}, a well-established result known as the Bernstein-von Mises theorem.
-With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have obtained with Maximum Likelihood methods.
-In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
-This is a clear sign that the prior is \textit{swamped by the data} \citep[1119]{Freedman1999}.
-Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
-However, most similar studies (dating back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist in a narrow sense, and which is as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
-If for Levshina's study, results from Bayesian and MLE methods did, in fact, \textit{not} converge, it would have been an ideal occasion to demonstrate the superiority of the algorithms used in Bayesian estimation.
-After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
-I want to reiterate that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
-However, being \textit{Bayesian} is most likely not among its selling points.
-That said, I want to voice the concern that probably many practitioners are already struggling with getting an adequate grasp of advanced statistical methods, and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
-In Section~\ref{sec:corpushierarchicalmodel}, I compare my own hierarchical models estimated with Bayesian and MLE estimators to demonstrate their expectable convergence.
-
-This concludes the general introduction.
 In the remainder of the paper, I introduce the alternation phenomenon (Section~\ref{sec:descriptive}) and suggest a theory-driven set of factors influencing the alternation (Section~\ref{sec:analyses}).
 Then, the corpus study is presented including an appropriate statistical analysis (Section~\ref{sec:corpusstudies}).
 Two experiments that correlate results from the corpus study with experimental results are then reported (Section~\ref{sec:experimental}) before I sum up the paper in Section~\ref{sec:conclusion}.
@@ -528,7 +448,7 @@ The statistical model presented in Section~\ref{sec:corpusstudies} will be speci
 
 Finally, it was found that the \PGCa\ is more typical of higher registers or even exclusive to written language (see \citealp[320--323]{Hentschel1993}).
 This is not surprising in as much as the genitive -- an intrinsic part of the PGC -- is generally underrepresented in colloquial vernacular variants of German as a result of a diachronic process wherein many (but by no means all) uses of the genitive are replaced by other cases or periphrastic constructions \citep{FleischerSchallert2011}.
-Under an integral view of prototypes, which incorporate effects related to larger contexts and registers, such preferences can be to be part of the construction prototypes.
+Under an integral view of prototypes, which incorporate effects related to larger contexts and registers, such preferences can be part of what defines the construction prototypes.
 In the corpus study in Section~\ref{sec:corpusstudies}, register effects will therefore be modeled -- even if only using two very simple proxy variables.
 
 To summarise the discussion and core hypotheses, I assume that the alternation is controlled by the similarity of the chosen lemmas (including the degree of grammaticalisation of measure nouns), certain morpho-syntactic choices, as well as the larger utterance context to two prototypes instantiated more straightforwardly by the two non-alternating cases of NAC and PGC.
@@ -608,7 +528,7 @@ The result was a list of the most frequent 2,365 individual combinations of a me
 
 In step (\ref{enum:data:step3}), each of these 2,365 noun–noun combinations was queried in the target constructions (\PGCa\ and \NACa) individually in each of the first ten slices of DECOW (roughly 10 billion tokens).
 In order to reduce the sample size for the manual annotation process, the final concordance was sampled from the results of these 2,365 queries.
-Since the mass nouns in the sample were distributed according to the usual power law, I used all hits for mass nouns occurring less than one hundred times, but randomly sampled one hundred hits for each mass noun that occurred one hundred or more times.
+Since the mass nouns in the sample were distributed according to the usual power law, I used all hits for nouns with a frequency up to $100$, and a sample of $100$ of all those with higher frequency.
 The final sample contained 6,843 sentences, which was reduced to 5,063 in the manual annotation process due to removal of noisy material, erroneous hits and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
 Given the careful bootstrapping and sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
 \footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were bootstrapped and queried, resulting in a sample of 871 sentences.
@@ -652,9 +572,9 @@ Notice first that \textit{Construction} is the response variable (or `dependent 
   \label{tab:variables}
 \end{table}
 
-The variables \textit{Kindattraction} and \textit{Measureattraction} encode the ratio with which a given kind noun lemma or measure noun lemma occurs in the \NACb\ and the \PGCd.
+The variables \textit{Kindattraction} and \textit{Measureattraction} encode the ratio with which a given kind noun lemma or measure noun lemma occurs in the \PGCd\ and the  \NACb.
 They were calculated from the auxiliary samples described at the end of Section~\ref{sec:gettingdata} as a log-transformed quotient.
-The higher the value, the more often the noun occurs in the \PGCa (proportionally).%
+The higher the value, the more often the noun occurs in the \PGCd (proportionally).%
 \footnote{
   It could be argued that some more advanced measure of attraction strength should be used, as is done in Collostructional (or Collexeme) Analysis \citep{GriesStefanowitsch2004}, see also \cite{Gries2015a}.
   Three main points speak against such an approach in the present case (but see \citealp[246--249]{Levshina2016} for a different approach).
@@ -669,7 +589,7 @@ They were added to control for basic frequency effects.
 
 In Section~\ref{sec:analyses}, it was hypothesised that classes of measure lemmas might have different preferences for the two variants.
 To capture this, class information was annotated for measure lemmas.
-The classification was inspired by the list in \cite[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
+The classification was inspired by the list in \citet[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
 With typical examples and their frequencies in the final sample, the classes are:
 \textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'; $f=1,968$),
 \textit{Container} (\textit{Eimer} `bucket'; $f=740$), 
@@ -691,11 +611,88 @@ While more genitives are also indicative of higher registers, the use of this va
 Since the \PGCa\ contains a genitive itself, the regressor variable \textit{Genitive} and the document-level variable \textit{Genitives} are not fully independent.
 However, since instances of the \PGCa\ make up for only a minute fraction of all genitives, I still use \textit{Genitives} as a regressor with the appropriate caveats.
 
-Finally, one variable as added as nuisance variable in the context of the present study.
+Finally, one variable was added as nuisance variable in the context of the present study.
 It was reported in the literature that MNPs in the dative and with a masculine or neuter kind noun favour the \PGCa\ more than the corresponding nominative and accusative MNPs \citep{Hentschel1993,Zimmer2015}.
 As an example, \textit{mit einem Stück frischen Brots} `with a piece of fresh bread' (\PGCa) would be preferred over \textit{mit einem Stück frischem Brot} (\NACa).
 As with all the examples, native speakers of German will most likely notice that differences are subtle.
 To control for this effect, the case of the measure noun was manually annotated (variable \textit{Measurecase}).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{On statistical analysis}
+\label{sec:rightstatistics}
+
+In this section, I motivate the choice of statistical models which I use in Section~\ref{sec:corpushierarchicalmodel}.
+Readers might think that the method used here for modeling grammatical alternations -- namely (Hierarchical) Logistic Regression\slash Generalised Linear (Mixed) Models or GLM(M)s -- does not require much motivation.
+After all, GLMMs have been established as the major tool in the analysis of alternation phenomena.
+All studies mentioned at the outset of Section~\ref{sec:cogocl} use some form of regression\slash GLM(M).
+Over the past few years, however, modified or alternative methods have been proposed.
+From among these methods, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}), as it was proposed in \cite{Levshina2016,Divjak2016a}, for example.
+Conceptually, I see three points of discussion that should be kept apart.
+First, Bayesian methods are sometimes touted as superior tools for scientific inference compared to frequentist methods.
+Second, it has been proposed that the Bayesian interpretation of probability is more cognitively adequate for the modeling of linguistic data.
+Third, and very specific to this paper, given established methods in the modeling of alternation and variation, it has to be decided whether so-called Bayesian methods lead to substantially different results.
+
+As for the first point, this is not quite the place to discuss it fully.
+The basic distinction is a philosophical one and related to the concepts of \textit{direct} and \textit{inverse probability} (\eg\ \citealp{Senn2011}).
+Frequentists assume that models and parameters are fixed, for example a model specifying that a coin is fair.
+We can then calculate for observed data (for example a measurement of $3$ heads in an experiment with $10$ tosses) how often such a result or a more extreme result would occur if the model were true and we repeated the experiment arbitrarily often.
+This is essentially the frequentist notion of direct probability, \ie\ long-run frequencies under replication.
+Standard tests in the Fisher and Neyman-Pearson traditions as well as Neyman confidence intervals are based on this concept of probability.
+Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
+The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
+There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
+In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that \textit{most of this received view of Bayesian inference is wrong}, and they develop a Bayesian notion of $p$ values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
+Clearly, in such quarrels between and among camps of philosophers of science and statisticians, it is difficult for mere practitioners to take sides.
+
+These quarrels relate to the second point, however.
+\citet[301--302]{Divjak2016a} speaks favourably of Bayesian methods because the Bayesian concept of probability is more adequate for cognitive modeling compared to the frequentist one.
+Her argument is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}). 
+On p.\ 303 of \cite{Divjak2016a}, the author goes on to explicitly mention NDL as well.
+Yet, neither frequentist nor Bayesian methods were conceived as cognitive models, but as systems of inference for scientists (see above, and see also \citealp[302]{Divjak2016a}).
+The fundamental question that lurks behind such arguments is how we interpret our statistical models (estimated on corpus data).
+Are they inductive models of cognitive representations that also human learners would infer from being exposed to the corpus data?%
+\footnote{In which case we are doing \textit{data science in language research} in the words of \citealp{MilinEa2016}.
+I see this as standing in contradiction to the view advocated in \cite{Dabrowska2016} as cited above.}
+Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on linguistic output data contained in corpora?
+In the former case, we adopt a strong \textit{corpus as input} hypothesis and should definitely resort to methods like NDL.
+However, this would most likely require us to toss most previous work done in (cognitive) linguistics into the bin and to abandon all high-level generalisations that most existing studies have been based upon.
+In fact, arguments to this extreme effect and against using high-level generalisation have been made, for example in \cite{BaayenEa2016}, \citet[299--300]{Divjak2016a}, \cite{RamscarPort2016}, \cite{TheijssenEa2013}.
+In the latter and less extreme case, the cognitive commitment does, however, not necessarily extend to the statistical methods used.
+These methods then do not need to be any more cognitively plausible than an ANOVA used to analyse the results from an experiment.
+I view my own work (see Sections~\ref{sec:germanmeasurenps}--\ref{sec:experimental}) in the tradition of testing theories (which embrace high-level generalisations), and I agree to provisionally use Likelihood methods (see below).
+I remain fully agnostic with respect to the question which approach is `right'.
+The best strategy for cognitive linguistics as a field might be to cultivate many methods while making sure that each method is applied carefully and competently.
+
+The third point, then, is the most practically relevant in the context of this paper.
+In her otherwise excellent study, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
+First, she claims that \textit{while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data}.
+This does not do justice to frequentist methods in that mere rejection of the null hypothesis is characteristic only of Fisher's approach.
+In the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis vis-à-vis the alternative hypothesis (cf.\ \citealp{Lehmann1993,Lehmann2011,Perezgonzalez2015}).
+Also, especially Neyman-style frequentism has well-known extensions to estimation, for example in the form of confidence intervals (see \citealp{GreenlandEa2016}, esp.\ p.\ 340).
+She then explains that a \textit{distinctive feature of Bayesian statistics is the use of so-called priors} and that \textit{posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data} \cite[252]{Levshina2016}.
+Remarkably, given this statement, she does \textit{not} use informative priors, and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error.
+So, the proclaimed major advantage of Bayesian modeling was apparently not taken advantage of.%
+\footnote{In the words of \cite{Senn2011}: \textit{You may believe you are a Bayesian but you are probably wrong}.
+\citet[347--348]{GelmanHill2006} \textit{view any noninformative prior distribution as inherently provisional} and give recommendations how to proceed once posteriors have been obtained from noninformative priors.}
+Now, Maximum Likelihood Estimation (MLE) -- the traditional method which could have been used instead -- is not exactly \textit{frequentist} in the sense of Neyman-Pearson testing theory.
+MLE, like inductive Bayesianism, conditions on the particular data in as much as it searches for the most likely set of parameters given the data.
+What is more, Bayesian estimators are in fact based the Likelihood and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
+If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
+The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional parameter models \citep[1119--1120]{Freedman1999}, a well-established result known as the Bernstein-von Mises theorem.
+With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have obtained with Maximum Likelihood methods.
+In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
+This is a clear sign that the prior is \textit{swamped by the data} \citep[1119]{Freedman1999}.
+Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
+However, most similar studies (dating back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist in a narrow sense, and which is as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
+If for Levshina's study, results from Bayesian and MLE methods did, in fact, \textit{not} converge, it would have been an ideal occasion to demonstrate the superiority of the algorithms used in Bayesian estimation.
+After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
+I want to reiterate that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
+However, being \textit{Bayesian} is most likely not among its selling points.
+That said, I want to voice the concern that probably many practitioners are already struggling with getting an adequate grasp of advanced statistical methods, and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
+In Section~\ref{sec:corpushierarchicalmodel}, I compare my own hierarchical models estimated with Bayesian and MLE estimators to demonstrate their expectable convergence.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -713,11 +710,11 @@ To control for this effect, the case of the measure noun was manually annotated 
 \end{figure}
 
 In this section, I report the results of fitting a multilevel model to the data using R \citep{R}, \textit{lme4} \citep{lme4} for Maximum Likelihood Estimation, and \textit{rstanarm} \citep{rstanarm} for Markov-Chain Monte Carlo estimation (see Section~\ref{sec:rightstatistics}).
-The purpose is to model the influence of the regressors specified in Table~\ref{tab:variables} on the probability that either the \PGCa\ is chosen over the \NACa.
+The purpose is to model the influence of the regressors specified in Table~\ref{tab:variables} on the probability that the \PGCa\ is chosen over the \NACa.
 All regressors from Table~\ref{tab:variables} were included, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
 The sample size was $n=5,063$ with $1,1344$ cases of \PGCa\ and $3,929$ cases of \NACa.
 The results of the estimation are shown in Table~\ref{tab:bigtable} and in Figure~\ref{fig:fixeffs}.
-The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \cite[265--269,302--304]{GelmanHill2006}.
+The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \citet[265--269,302--304]{GelmanHill2006}.
 The same goes for those listed with the kind lemma as their unit of reference.
 Given the coding of the response variable, coefficients leaning to the positive side can be interpreted as favouring the \PGCa.
 
@@ -754,9 +751,9 @@ Given the coding of the response variable, coefficients leaning to the positive 
 
 Standard diagnostics for the Maximum Likelihood Estimation (MLE) show that the model quality is quite high.
 Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than $1.6$.
-Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$ (see \citealp{Gries2015} for a linguist-friendly introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
+Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
 The rate of correct predictions is $0.843$, which means a proportional reduction of error of $\lambda=0.297$.
-The measure lemma intercepts have a standard deviation of $\sigma_{\text{Measurelemma}}=0.448$, the kind lemma intercept $\sigma_{\text{Kindlemma}}=0.604$.
+The lemma intercepts have standard deviations of $\sigma_{\text{Measurelemma}}=0.448$ and $\sigma_{\text{Kindlemma}}=0.604$.
 
 The coefficient estimates are specified in Table~\ref{tab:bigtable} for each regressor (or regressor level) in the columns labelled \textit{Coefficient}.
 For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \mbox{\textit{confint.merMod}} function from \textit{lme4}) with $1,000$ replications, and using the percentile method for the calculation of the intervals.
@@ -800,7 +797,9 @@ Since both estimators converge, I only interpret the MLE model in the next secti
 The results reported in Section~\ref{sec:corpushierarchicalmodel} generally confirm the hypotheses from Section~\ref{sec:analyses}.
 First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown, see the effect plots in Figure~\ref{fig:eff:attraction}.%
 \footnote{Effect plots were created using the \textit{effects} package \citep{Fox2003}.
-They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis), at typical values of all other regressors.}
+They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis), at typical values of all other regressors.
+The vertical bars (categorical variables) and grey areas (continuous variables) are asymptotic $95\%$ confidence intervals calculated from \textit{glmer}.
+They are not bootstrapped.}
 The effect is mostly as expected:
 if a lemma appears relatively more often in the \PGCd\ (compared to its frequency in the \NACb), the more often the \PGCa\ is chosen over the \NACa\ with this specific lemma.
 The effect for measure nouns is stronger, and it was estimated with higher precision.
@@ -875,7 +874,7 @@ Also, the probabilities that the corpus-based model assigns to the two variants 
 
 The first experiment tests preferences for constructions explicitly.
 \cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute $100$ points between the alternatives, assigning more points to more natural sounding alternative.
-In essence, participants distribute a probability mass between two variants, which is intended to produce more subtle results compared to a two-alternative forced-choice task \cite{Rosenbach2013}, where participants have to choose one of two variants.
+In essence, participants distribute a probability mass between two variants, which is intended to produce more subtle results compared to a two-alternative forced-choice task \citep{Rosenbach2013}, where participants have to choose one of two variants.
 The split-100 paradigm has been criticised in \cite{ArppeJaervikivi2007}.
 The criticism was reiterated in \cite{DivjakEa2016}, where they use a forced-choice task.
 In \cite{VerhoevenTemme2017}, it was shown that results from forced-choice and split-100 experiments mostly converge, which is expected in the long run if a probability is turned into a binary decision.
@@ -905,10 +904,10 @@ The design is summarised in Table \ref{tab:experiment1:design}.
   \begin{tabular}[h]{rcc}
      & Masculine\slash Neuter & Feminine \\
      \midrule
-     \textbf{high prob.\ for PGC\Subsf{adj}} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
-     \textbf{low prob.\ for PGC\Subsf{adj}} & 4 sentences\Supsf{a} & 4 sentences\Supsf{a} \\
+     \textbf{high prob.\ for PGC\Subsf{adj}} & 4 sentences & 4 sentences \\
+     \textbf{low prob.\ for PGC\Subsf{adj}} & 4 sentences & 4 sentences \\
   \end{tabular}
-  \caption{The four groups of sentences chosen as stimuli (\Supsf{a}Among the 4 sentences, combinations of important factor values were made unique whenever possible.)}
+  \caption{The four groups of sentences chosen as stimuli; in each group of four sentences, combinations of important factor values were made unique whenever possible}
   \label{tab:experiment1:design}
 \end{table}
 
@@ -938,7 +937,7 @@ Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} fu
 The number of observations was $n=384$.
 
 A certain amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Sentence}}=1.785$, $\sigma^{\text{Modelprediction}}_{\text{Sentence}}=5.996$, $16$ levels).%
-\footnote{I use $\sigma^f_r$ to denote the standard deviation of the of the random intercepts for the fixed effect $f$ varying by random effect $r$.}
+\footnote{I use $\sigma^f_r$ to denote the standard deviation of the random intercepts for the fixed effect $f$ varying by random effect $r$.}
 Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.781$, $\sigma^{\text{Modelprediction}}_{\text{Participant}}=0.484$, $24$ levels).
 On the extreme sides, one participant chose the \PGCa\ in $13$ of $16$ cases, and two participants only chose it in $5$ of $16$ cases.
 The regressor \textit{Modelprediction} achieves $\mpPB=0.007$ ($1,000$ replications) and is estimated at $5.408$ relative to an intercept of $-1.304$.
@@ -975,11 +974,11 @@ In total, each participant read $98$ sentences.
 After each sentence, participants had to answer simple (non-metalinguistic) yes-no questions about the previous sentence as distractors.
 The distractor questions were different ones in the first and the second block.
 There were $38$ (different) participants recruited in exactly the same manner as for the experiment reported in Section~\ref{sec:exp:fc}.
-None of them had ever participated in any kind of reading experiment, and none of them took part in the first experiment (and vice versa).
+None of them had ever participated in any kind of reading experiment, and none of them took part in the first experiment.
 The experiment was conducted using \textit{PsychoPy}.
 
 The reading times were residualised per speaker based on the reading times of all words (not just the targets) by that speaker.
-The adjective and the kind noun (\ie\ the constituents bearing the critical case markers) were used as the target region, such as the bracketed words in the example \textit{zwei Gläser} [\textit{sprudelndes Wasser}] `two glasses of sparkling water'.
+The adjective and the kind noun (\ie\ the constituents bearing the critical case markers) were used as the target region, such as the bracketed words in the example \textit{zwei Gläser} [\textit{spru\-deln\-des Wasser}] `two glasses of sparkling water'.
 Outliers farther than 2 inter-quartile ranges from the mean logarithmised residual time were removed ($64$ data points), resulting in a total number of $n=1,152$ observations.
 An LMM was specified with the logarithmised residual reading times as the response variable, and the probabilities derived from the corpus GLMM (\textit{Modelprediction}) as the main regressor.
 Since the corpus GLMM predicts the probability of the \PGCa\ (vis-à-vis the \NACa), it is expected that reading times are positively correlated (longer reading times) with the probability if the stimulus actually contains the \NACa, and negatively correlated (shorter reading times) if the stimulus actually contains the \PGCa.
