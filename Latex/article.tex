@@ -53,16 +53,16 @@
   \runningtitle{Competing Constructions for German Measure Noun Phrases}
   %\subtitle{...}
   \abstract{In this paper, a case alternation occurring in German measure noun phrases is examined from the perspective of cognitively oriented corpus linguistics.
-    In pseudo-partitive constructions such as \textit{eine Tasse guter Kaffe} `a cup of good coffee', the embedded kind noun either agrees in its case with the measure head noun, or it is a genitive as in \textit{eine Tasse guten Kaffees}.
+    In pseudo-partitive constructions such as \textit{eine Tasse guter Kaffe} `a cup of good coffee', the embedded kind noun either agrees in its case with the measure head noun or it is a genitive as in \textit{eine Tasse guten Kaffees}.
     This alternation occurs only under highly specific syntactic conditions.
     The analysis is formulated in terms of Prototype Theory. 
-    It is assumed the variants are modelled after non-alternating neighbouring constructions, which represent the prototypes more clearly.
-    Mainly, it is argued the frequencies with which individual lemmas appear in the prototypical constructions partially predicts which variant is chosen in the alternating case, and that the genitive construction is prototypical of more strongly grammaticalised measure nouns.
-    A large-scale corpus study using the DECOW web corpus is reported to support the theoretical analysis.
+    I assume that the variants are modelled after non-alternating neighbouring constructions, which represent the prototypes more clearly.
+    Primarily, it is argued that the frequencies with which individual lemmas appear in the prototypical constructions partially predicts which variant is chosen in the alternating case, and that the genitive construction is prototypical of more strongly grammaticalised measure nouns.
+    I present a large-scale corpus study using the DECOW web corpus which supports the theoretical analysis.
     In the statistical analysis of the corpus study, it is discussed whether Bayesian estimators are intrinsically better than Likelihood Maximisation methods, and all results are estimated with Maximum Likelihood and Bayesian methods for comparison.
     Finally, a forced choice experiment and a self-paced reading experiment are reported.
-    Both experiments successfully correlate the usage-based corpus analysis with the behaviour of cognitive agents.
-    The present study therefore contributes to a now well-established strand of research into alternations using both corpus and experimental methods.}
+    In both experiments, the usage-based corpus analysis is successfully correlated with the behaviour of cognitive agents.
+    The present study therefore contributes to a now well-established area of research into alternations using both corpus and experimental methods.}
   \keywords{corpus methods and experimental methods, self-paced reading, forced-choice, alternations, hierarchical models, measure constructions, German}
   %\classification[PACS]{...}
   %\communicated{...}
@@ -93,22 +93,24 @@
 
 This paper deals with a morpho-syntactic alternation between two constructions that occurs only in a very specific type of measure noun phrase in German.
 By \textit{alternation} I refer to a situation where two or more forms or constructions are available with no clear difference in acceptability, function, or meaning.
-The study of alternations has a now longstanding tradition in cognitively oriented corpus linguistics (\citealp{BresnanEa2007,BresnanHay2010,BresnanFord2010,DivjakArppe2013,Gries2015,NessetJanda2010}, to name just a few publications).
-This strand of research is based on the assumption that language is a probabilistic phenomenon \citep{Bresnan2007}, and choices of variants are neither chosen deterministically nor fully at random.
-Instead, multifactorial models are constructed, which incorporate influencing factors from diverse levels, including contextual ones.
+The study of alternations has a long history in cognitively oriented corpus linguistics (\citealp{BresnanEa2007,BresnanHay2010,BresnanFord2010,DivjakArppe2013,Gries2015,NessetJanda2010}, to name just a few publications).
+This area of research is based on the assumption that language is a probabilistic phenomenon \citep{Bresnan2007} where choices of variants are chosen neither deterministically nor fully at random.
+Instead, multifactorial models are constructed which incorporate influencing factors from diverse levels, including contextual factors.
 The estimation of the model coefficients quantifies the influence that the factors have on the probability that either variant is chosen.
 
-For such probabilistic generalisations estimated on corpus data, there has always been an interest in correlating the results with results from experimental work (for example, \citealp{ArppeJaervikivi2007,BresnanEa2007,BresnanFord2010,DivjakGries2008,DivjakEa2016,FordBresnan2013}).
-This often called a \textit{validation} of the corpus-derived findings, but \citet[303]{Divjak2016a} rightly criticises this choice of words \textit{because it creates the impression that behavioral experimental data is inherently more valuable than textual data}, citing \cite{TummersEa2005}, who state that a corpus is \textit{a sample of spontaneous language use that is} (\textit{generally}) \textit{realized by native speakers}.
+For such probabilistic generalisations estimated on corpus data, there has always been an interest in correlating the findings with results from experimental work (for example, \citealp{ArppeJaervikivi2007,BresnanEa2007,BresnanFord2010,DivjakGries2008,DivjakEa2016,FordBresnan2013}).
+This often called a \textit{validation} of the corpus-derived findings, but \citet[303]{Divjak2016a} rightly criticises this choice of words ``because it creates the impression that behavioral experimental data is inherently more valuable than textual data'', citing \cite{TummersEa2005}, who state that a corpus is ``a sample of spontaneous language use that is'' (\textit{generally}) \textit{realized by native speakers}.
 This position, which I adopt, does not, however, imply that we can in some way \textit{deduce mental representations from patterns of use}, \ie\ from corpus data, as  \citet[486--487]{Dabrowska2016} convincingly argues.%
-\footnote{I suggest that the word \textit{induce} would be more appropriate than \textit{deduce}.}
+\footnote{In its colloquial meaning, the verb \textit{deduce} seems appropriate here.
+However, in terms of the scientific method, we are most likely talking about \textit{induction} rather than \textit{deduction}.}
 It would be highly surprising if this were possible.
-Nobody assumes that we can induce mental representations from experiments, which -- as opposed to corpus studies -- even allow for direct access to the cognitive agent and offer much better options to control experimental conditions and nuisance variables.
-Instead, a theory of cognitive representation is pre-specified, and predictions are derived from this theory \textit{before} the experiment or the corpus study is conducted.
+Nobody assumes that we can inductively infer mental representations from experiments, which -- as opposed to corpus studies -- even allow for direct access to the cognitive agent and offer much better possibilities to control experimental conditions and nuisance variables.
+Under the standard approach, we pre-specify a theory of cognitive representation.
+Then, predictions are derived from this theory \textit{before} the experiment or the corpus study is conducted to \textit{test} the theory.
 Technical problems of statistical inference aside (see also Section~\ref{sec:rightstatistics}), a successful experiment corroborates the theory, and a failed experiment weakens the theory.
 The simplest assumption would be that the same approach is adequate for corpus studies.
 
-That said, the present study is conducted within the general paradigm of cognitive corpus linguistics and includes a comparison of the corpus findings with results from two experiments.
+The present study is conducted within the general paradigm of cognitive corpus linguistics and includes a comparison of the corpus findings with results from two experiments.
 As a theoretical framework, I assume a model of similarity-based classification in the form of Prototype Theory.
 Protoype Theory has been used in alternation research in cognitively oriented corpus linguistics, see \cite{DivjakArppe2013,Gries2003}.
 It is assumed that the variables annotated in a corpus study on an alternation phenomenon define prototypes for the alternating variants.
@@ -117,12 +119,12 @@ This entails that a variant of Prototype Theory with \textit{features} is assume
 While Prototype Theory is well suited for modeling constructional choices, it is just one of several similarity-based theories of classification, the most prominent other framework being Exemplar Theory (\citealp{MedinSchaffer1978,Hintzman1986}; see \citealp{StormsEa2000} for a comparison of the theories in experimental settings).
 Prototype Theory and Exemplar Theory differ mainly in whether they assume higher-level abstractions as part of the cognitive representation (Prototype Theory) or not (Exemplar Theory).
 I am sceptical that corpus analysis alone could ever decide which theory is more adequate, given that substantial doubt has been voiced whether even experimental methods are ultimately able to do so \citep{Barsalou1990}.%
-\footnote{In \cite{DivjakArppe2013}, a fruitful attempt was made to show how both models form a converging picture based on corpus data.}
-Prototype Theory (with feature abstractions) is simply preferred here because it fits the established alternation modeling paradigm, which relies on features being weighted in statistical models.
+\footnote{In \cite{DivjakArppe2013}, it was shown using corpus data how both models form a converging picture.}
+Prototype Theory (with feature abstractions) is preferred here simply because it fits the established alternation modeling paradigm, which relies on features being weighted in statistical models.
 In Section~\ref{sec:analyses}, a prototype-theoretical parlance is therefore adopted.
 
 In the remainder of the paper, I introduce the alternation phenomenon (Section~\ref{sec:descriptive}) and suggest a theory-driven set of factors influencing the alternation (Section~\ref{sec:analyses}).
-Then, the corpus study is presented including an appropriate statistical analysis (Section~\ref{sec:corpusstudies}).
+Then, the corpus study is presented, including an appropriate statistical analysis (Section~\ref{sec:corpusstudies}).
 Two experiments that correlate results from the corpus study with experimental results are then reported (Section~\ref{sec:experimental}) before I sum up the paper in Section~\ref{sec:conclusion}.
 
 
@@ -139,15 +141,15 @@ Two experiments that correlate results from the corpus study with experimental r
 \label{sec:descriptive}
 
 In this section, I introduce and illustrate the relevant alternating constructions.
-I describe the narrowly defined syntactic configuration in which the alternation occurs, and I motivate the focus on \textit{only} this narrow range rather than, for example, the whole range of nominal constructions expressing quantities.
+I describe the narrowly defined syntactic configuration in which the alternation occurs and I motivate the focus on \textit{only} this narrow range rather than, for example, the whole range of nominal constructions expressing quantities.
 
-I use the term \textit{measure noun phrase} (MNP) to refer a noun phrase (NP) in which a kind-denoting (count or mass) noun depends on another noun that specifies a quantity of the objects or the substance denoted by the kind noun.
+I use the term \textit{measure noun phrase} (MNP) to refer a noun phrase (NP) in which a kind-denoting (count or mass) noun depends on another noun that specifies a quantity of the objects or the substance denoted by the kind-denoting noun.
 I call the kind-denoting noun simply the \textit{kind noun} and the quantity-denoting noun the \textit{measure noun}.
-For illustration purposes, in the English \textit{a cup of fine coffee}, \textit{cup} is the measure noun, and \textit{coffee} is the kind noun.
-Measure nouns can be all sorts of nouns which genuinely denote a quantity (such as \textit{litre} or \textit{amount}) but also nouns denoting containers, collections, etc. (such as \textit{glass} or \textit{bucket}).
-In a similar vein, \citet[284]{Brems2003} considers such nouns denoting containers etc.\ as measure nouns \textit{which, strictly speaking, do not designate a `measure', but display a more nebulous} (sic!) \textit{potential for quantification} (see also \citealp[530]{Koptjevskaja2001}, and \citealp[338]{Rutkowski2007}).
+For illustration purposes, in the English \textit{a glass of good wine}, \textit{glass} is the measure noun, and \textit{wine} is the kind noun.
+Measure nouns can be all sorts of nouns which denote a quantity (such as \textit{litre} or \textit{amount}) but also those denoting containers, collections, etc. (such as \textit{glass} or \textit{bucket}).
+In a similar vein, \citet[284]{Brems2003} considers such nouns denoting containers etc.\ as measure nouns ``which, strictly speaking, do not designate a `measure', but display a more nebulous potential for quantification'' (see also \citealp[530]{Koptjevskaja2001}, and \citealp[338]{Rutkowski2007}).
 
-In the case at hand, three different syntactic configurations need to be distinguished \wrt case assignment inside German measure noun phrases.
+In the case at hand, three different syntactic configurations need to be distinguished \wrt case assignment inside German MNPs.
 If the kind noun forms an NP with a determiner, the construction resembles (and is usually called) a \textit{pseudo-partitive} (on partitives and pseudo-partitives see, e.\,g., \citealp{Barker1998,Selkirk1977,Stickney2007,Vos1999}; for a recent application of the terminology to German, see \citealp{Gerstenberger2015}).%
 \footnote{If the kind noun is definite, the construction instantiates a true partitive.
 Whereas partitives are constructions denoting a proper part-of relation as in \textit{a sip of the wine}, pseudo partitives -- albeit syntactically similar and diachronically related to partitives in many languages -- merely denote quantities and contain indefinite kind nouns as in \textit{a sip of wine}.
@@ -158,33 +160,33 @@ Here, the kind noun is in the genitive, and I refer to the construction in (\ref
 \begin{exe}
 %  \ex\label{ex:intro:pseudopartitive}
 %  \begin{xlist}
-    \ex[ ]{\label{ex:intro:pseudopartitive1}\gll Wir trinken [[eine Tasse]\Sub{Acc} [eines leckeren Kaffees]\Sub{Gen}]\Sub{Acc}.\\
-    we drink a cup a tasty coffee\\
-    \glt We drink a cup of a tasty coffee.}
+    \ex[ ]{\label{ex:intro:pseudopartitive1}\gll Wir trinken [[eine Glas]\Sub{Acc} [dieses Weins]\Sub{Gen}]\Sub{Acc}.\\
+    we drink a glass this wine\\
+    \glt We drink a glass of this wine.}
 %    \ex[*]{\label{ex:intro:pseudopartitive2} Wir trinken [[eine Tasse]\Sub{Acc} [einen leckeren Kaffee]\Sub{Acc}]\Sub{Acc}.}
 %  \end{xlist}
 \end{exe}
 
-If the kind noun is bare -- \ie\ if it comes neither with a determiner nor a modifying adjective -- it has to agree in case with the measure noun, and the genitive as seen in the PGC is not acceptable, see (\ref{ex:intro:narrowapposition2}).
+If the kind noun is bare -- \ie\ if it comes neither with a determiner nor a modifying adjective -- it has to agree in case with the measure noun as in (\ref{ex:intro:narrowapposition1}), and the genitive as seen in the PGC is not acceptable, see (\ref{ex:intro:narrowapposition2}).
 
 \begin{exe}
-%  \ex\label{ex:intro:narrowapposition}
-%  \begin{xlist}
-%    \ex[*]{\label{ex:intro:narrowapposition1} Wir trinken [[eine Tasse]\Sub{Acc} [Kaffees]\Sub{Gen}]\Sub{Acc}.}
-    \ex[ ]{\label{ex:intro:narrowapposition2}\gll Wir trinken [[eine Tasse]\Sub{Acc} [Kaffee]\Sub{Acc}]\Sub{Acc}.\\
-    we drink a cup coffee\\
-    \glt We drink a cup of coffee.}
-%  \end{xlist}
+  \ex\label{ex:intro:narrowapposition}
+  \begin{xlist}
+    \ex[ ]{\label{ex:intro:narrowapposition1}\gll Wir trinken [[ein Glas]\Sub{Acc} [Wein]\Sub{Acc}]\Sub{Acc}.\\
+    we drink a glass wine\\
+    \glt We drink a glass of wine.}
+    \ex[*]{\label{ex:intro:narrowapposition2} Wir trinken [[ein Glas]\Sub{Acc} [Weins]\Sub{Gen}]\Sub{Acc}.}
+  \end{xlist}
 \end{exe}
 
 This construction is usually classified as a \textit{Narrow Apposition Construction} \citep{Loebel1986}, henceforth NAC.%
-\footnote{The construction as in (\ref{ex:intro:narrowapposition2}) is also referred to as the \textit{Direct Partitive Construction} for other Germanic languages in which the PGC with the synthetic genitive is not available.
-This nomenclature makes sense in contrast to the \textit{Indirect Partitive Construction} with prepositional linkers translating to `of' -- \ie\ analytic genitives -- in such languages, see \cite{HankamerMikkelsen2008} for Danish.
+\footnote{The construction as in (\ref{ex:intro:narrowapposition1}) is also referred to as the \textit{Direct Partitive Construction} for other Germanic languages in which the PGC with the synthetic genitive is not available.
+This nomenclature makes sense in contrast to the \textit{Indirect Partitive Construction} with prepositional linkers translating to \textit{of} -- \ie\ analytic genitives -- in such languages, see \cite{HankamerMikkelsen2008} for Danish.
 For German, this terminology is not distinctive enough, which is why I use the terms NAC and PGC.}
 Notice that the unavailability of the genitive on the kind noun can be seen as following from a rather quirky constraint that genitive NPs in German require the presence of some strongly case-marked element (determiner or adjective) in addition to the head noun in order to be acceptable (\citealp{GallmannLindauer1994,Schachtl1989}; see also \citealp[160]{Eisenberg2013b}).
-%While only an accusative is shown in (\ref{ex:intro:narrowapposition2}), the kind noun obligatory agrees in case also with nominative and dative measure nouns.
+%While only an accusative is shown in (\ref{ex:intro:narrowapposition1}), the kind noun obligatory agrees in case also with nominative and dative measure nouns.
 
-The actual alternation can be observed \textit{only when the kind noun occurs with an attributive adjective but without a determiner}, as in (\ref{ex:intro:alternation}), where both the NAC in (\ref{ex:intro:alternation1}) and the PGC in (\ref{ex:intro:alternation2}) are equally acceptable.
+The alternation can be observed \textit{only when the kind noun occurs with an attributive adjective but without a determiner}, as in (\ref{ex:intro:alternation}), where both the PGC in (\ref{ex:intro:alternation1}) and the NAC in (\ref{ex:intro:alternation2}) are equally acceptable.
 They are by-and-large functionally and semantically equivalent.
 However, Section~\ref{sec:analyses} is devoted to developing hypotheses about subtle differences between them.%
 \footnote{Some descriptive and normative grammars take stronger positions w.\,r.\,t.\ the acceptability of the two options.
@@ -195,23 +197,29 @@ As the usage and experimental data presented below (especially Section~\ref{sec:
 \begin{exe}
   \ex\label{ex:intro:alternation}
   \begin{xlist}
-    \ex[ ]{\label{ex:intro:alternation1}\gll Wir trinken [[eine Tasse]\Sub{Acc} [heißen Kaffee]\Sub{Acc}]\Sub{Acc}.\\
-    we drink a cup hot coffee\\
-    \glt We drink a cup of hot coffee.}
-    \ex[ ]{\label{ex:intro:alternation2} Wir trinken [[eine Tasse]\Sub{Acc} [heißen Kaffees]\Sub{Gen}]\Sub{Acc}.}
+    \ex[ ]{\label{ex:intro:alternation1} \gll Wir trinken [[ein Glas]\Sub{Acc} [guten Weins]\Sub{Gen}]\Sub{Acc}.\\
+    we drink a glass good wine \\
+    \glt We drink a glass of good wine.}
+    \ex[ ]{\label{ex:intro:alternation2} Wir trinken [[ein Glas]\Sub{Acc} [guten Wein]\Sub{Acc}]\Sub{Acc}.}
   \end{xlist}
 \end{exe}
 
 \begin{table}
   \centering
-  \begin{tabular}{lccc}
+  \begin{tabular}{llll}
     \multicolumn{1}{r}{kind NP is:} & bare noun NP & NP with adjective & NP with determiner \\
     & [\ldots N\Subsf{meas} [N\Subsf{kind}]] & [\ldots N\Subsf{meas} [AP N\Subsf{kind}]] & [\ldots N\Subsf{meas} [D N\Subsf{kind}]] \\
     \midrule
-    narrow apposition         & \NACb & \NACa & ---   \\
-    pseudo-partitive genitive & ---   & \PGCa & \PGCd \\
+    \multirow{2}{*}{narrow apposition}
+                & \NACb                                                 & \NACa                                                   & \multirow{2}{*}{---}       \\
+		& (\ref{ex:intro:narrowapposition1}) \textit{Glas Wein} & (\ref{ex:intro:alternation2}) \textit{Glas guten Wein}  &                            \\
+    \midrule
+
+    \multirow{2}{*}{pseudo-partitive genitive} 
+                & \multirow{2}{*}{---}                                  & \PGCa                                                   & \PGCd                      \\
+                &                                                       & (\ref{ex:intro:alternation1}) \textit{Glas guten Weins} & (\ref{ex:intro:pseudopartitive1}) \textit{Glas dieses Weins} \\
   \end{tabular}
-  \caption{Distribution of the NAC and PGC constructions in different NP structures}
+  \caption{Distribution of the NAC and PGC constructions in different NP structures with examples and references to full example sentences}
   \label{tab:constructions}
 \end{table}
 
@@ -223,18 +231,19 @@ This paper is about the middle column of Table~\ref{tab:constructions}, \ie\ the
 I now turn to some more subtle issues related to the measure noun case alternation, namely:
 
 \begin{enumerate}[i.]
-  \item{\label{it:intro:idiot} alleged alternatives to the \NACa\ and the \PGCa}
-%  \item{\label{it:intro:datsg} alternative \textit{weak} forms of dative singular neuter adjectives}
-%  \item{\label{it:intro:femsg} case syncretism in feminine NPs}
-  \item{\label{it:intro:plurl} similar constructions with plural/collective kind nouns}
-  \item{\label{it:intro:noifl} grammaticalised non-inflected measure nouns}
-  \item{\label{it:intro:other} alternative constructions for expressing quantities}
+  \item{\label{it:intro:idiot} alleged alternatives to the \NACa\ and the \PGCa,}
+%  \item{\label{it:intro:datsg} alternative \textit{weak} forms of dative singular neuter adjectives,}
+%  \item{\label{it:intro:femsg} case syncretism in feminine NPs,}
+  \item{\label{it:intro:plurl} similar constructions with plural/collective kind nouns,}
+  \item{\label{it:intro:noifl} grammaticalised non-inflected measure nouns,}
+  \item{\label{it:intro:other} alternative constructions for expressing quantities.}
 \end{enumerate}
 
 \vspace{-1\baselineskip}
 
 First of all, (\ref{it:intro:idiot}) refers to claims found in some grammars that a generic nominative, accusative, and even dative on the kind noun are used instead of the genitive (\PGCa) or case agreement (\NACa).
-Overviews can be found in \citealp{Hentschel1993,Zimmer2015}, and (\ref{ex:intro:gennom}) shows a putative generic nominative on the kind noun inside an accusative MNP.
+Overviews can be found in \citealp{Hentschel1993} and \citealp{Zimmer2015}.
+Sentence (\ref{ex:intro:gennom}) shows a putative generic nominative on the kind noun inside an accusative MNP.
 
 \begin{exe}
     \ex[*]{\label{ex:intro:gennom} Wir trinken [[eine Tasse]\Sub{Acc} [heißer Kaffee]\Sub{Nom}]\Sub{Acc}.}
@@ -287,7 +296,7 @@ They cannot be used in MNPs.}
 %A non-inflected variant \textit{zwei Glas roter Wein} `two glasses of wine' and an inflected variant \textit{zwei Gläser roter Wein} co-exist.
 %The non-inflected variant denotes the quantity of wine fitting into two glasses, the inflected variant denotes two glasses filled with wine.}
 I treat these cases like other measure nouns because they enter into both the \NACa\ as in (\ref{ex:uninflectedmeasures:a}) and the \PGCa\ as in (\ref{ex:uninflectedmeasures:b}).
-In Section~\ref{sec:analyses}, degrees of grammaticalisation as a factor influencing the alternation will be discussed, however. 
+In Section~\ref{sec:analyses}, however, degrees of grammaticalisation as a factor influencing the alternation will be discussed.
 
 \begin{exe}
   \ex\label{ex:uninflectedmeasures}
@@ -340,7 +349,8 @@ Second, constructions with \textit{voll} (\textit{von})\slash\textit{voller} `fu
   \end{xlist}
 \end{exe}
 
-These construction have very idiosyncratic properties (the construction with \textit{voller} is discussed in \citealp{Zeldes2018}, the construction with \textit{mit} is discussed in \citealp{Bhatt1990}), they are not semantically equivalent to the NAC and the PGC, and they are only available for a small subset of measure nouns.
+These construction have very idiosyncratic properties (the construction with \textit{voller} is discussed in \citealp{Zeldes2018}.
+The construction with \textit{mit} is discussed in \citealp{Bhatt1990}), they are not semantically equivalent to the NAC and the PGC, and they are only available for a small subset of measure nouns.
 All of these constructions are used only with measure nouns denoting containers, and the whole NP always refers to the container, and never to the quantity contained in it.
 They are consequently incompatible with measure nouns denoting natural portions such as \textit{Schluck} `gulp' or \textit{Haufen} `heap' and strongly grammaticalised nouns such as \textit{Gramm} `gram'.
 This disqualifies them as alternatives to the \NACa\ or \PGCa\ in most contexts, and they are thus decidedly \textit{not} more ways of saying the same thing. 
@@ -367,16 +377,17 @@ fourth, preferences in different registers.
 
 % MORPHO-SYNTAX AND PROTOTYPES
 
-My analysis is based on the idea that the relevant syntactic structure [N\Sub{1}~[A~N\Sub{2}]\Sub{NP\Sub{2}}]\Sub{NP\Sub{1}} as instantiated in the \NACa\ and the \PGCa\ is ambiguous.
-To show this, the first question is which noun constitutes the head of the whole construction.
-This was answered quite clearly by \cite{Loebel1986} already (see also \citealp[213]{Eschenbach1994}, and \citealp[16]{GallmannLindauer1994}).
-Subject-verb agreement is always realised on the measure noun, and we can therefore assume that the measure noun is the head.
-However, the MNP-internal structure has more interesting cues to offer if the strong\slash weak inflection patterns of adjectives are taken into account.
+My analysis is based on the idea that in the relevant syntactic structure [N\Sub{1}~[A~N\Sub{2}]\Sub{NP\Sub{2}}]\Sub{NP\Sub{1}} (as instantiated in the \NACa\ and the \PGCa), the adjective is morpho-syntactically ambiguous between a determiner and a modifying adjective.
+To show this, %the first question is which noun constitutes the head of the whole construction.
+%This was answered quite clearly by \cite{Loebel1986} already (see also \citealp[213]{Eschenbach1994}, and \citealp[16]{GallmannLindauer1994}).
+%Subject-verb agreement is always realised on the measure noun, and we can therefore assume that the measure noun is the head.
+%Furthermore, the internal structure of MNPs can only be understood if the strong\slash weak inflection patterns of adjectives are taken into account.
+the strong\slash weak inflection patterns of adjectives needs to be taken into account.
 In NPs with a strongly inflected determiner, attributive adjectives inflect according to the massively syncretistic \textit{weak} pattern.
 %\footnote{The weak pattern has only two suffixes.
 %The structural cases (nominative and accusative) in the singular are marked with \textit{-e}, the oblique cases (dative and genitive) as well as the entire plural are marked with \textit{-en}.
 %The only exception to this rule is the masculine accusative singular, which is also marked with \textit{-en}.}
-If there is no determiner (as is the case in the alternating constructions), attributive adjectives inflect like determiners themselves, however.
+If there is no determiner (as is the case in the alternating constructions), on the other hand, attributive adjectives inflect like determiners themselves.
 This is called the \textit{strong} inflectional pattern.
 Thus, the adjectives in the \NACa\ and the \PGCa\ have properties of adjectives as well as determiners.
 On the one hand, they are lexical adjectives and function as attributive modifiers.
@@ -396,10 +407,10 @@ This basic attraction effect will be quantified in the corpus study Section~\ref
 % GRAMMATICALISATION
 
 In a probabilistic framework like Prototype Theory, the crucial question (beyond simple lemma preference effects) is, however, what controls speakers' decisions to use either variant. 
-In the remainder of this section, I argue that the NAC and the PGC are prototypes associated with different degrees of the grammaticalisation of the measure noun, a related morpho-syntactic property, and register effects.
+In the remainder of this section, I argue that the NAC and the PGC are prototypes associated with different degrees of the grammaticalisation of the measure noun and related morpho-syntactic properties, as well as register effects.
 The degree of similarity of a given instance to either of the two prototypes makes speakers chose the \NACa\ or the \PGCa.
 
-I first turn to grammaticalisation.
+I first focus on grammaticalisation.
 It is often assumed that pseudo-partitives arise as a form of grammaticalised partitives (\eg\ \citealp[536--539]{Koptjevskaja2001} for Finnish and Estonian, \citealp[559]{Koptjevskaja2001} for European languages in general).
 %
 %\footnote{Notice that the description of German in \citet[547--549]{Koptjevskaja2001} is vague and partly incorrect, maybe because her main source \cite{Eschenbach1993} is not as clear as it could be (see also Footnote \ref{fn:eschenbash} above).
@@ -415,9 +426,9 @@ It is often assumed that pseudo-partitives arise as a form of grammaticalised pa
 %Then, she does not clearly distinguish acceptable from non-acceptable constructions (cf.\ Section \ref{sec:descriptive}) on her pp.\ 548 and 549, including a rather confusing \textit{???} rating of her (31b), which is clearly a non-acceptable construction of the type illustrated in (\ref{ex:analyticalpartitive:b}) above.
 %}
 %
-The alternating constructions in German are both clearly pseudo-partitives, but the grammaticalisation paths uncovered by \citet[esp.\ 526--530]{Koptjevskaja2001} are still relevant in the case at hand.
+The grammaticalisation paths uncovered by \citet[esp.\ 526--530]{Koptjevskaja2001} are relevant in the case at hand.
 The grammaticalisation path can start out (in some languages) with constructions involving two referential nouns (not necessarily forming a single and contiguous NP) and a \textit{separative} meaning as in \textit{(cut) two slices from the cake} \citep[535]{Koptjevskaja2001}.
-The \textit{part-of} meaning of true partitives as in \textit{a slice of the cake} represents the first stage of a development wherein the measure noun already tends to loose some semantic content.
+The \textit{part-of} meaning of true partitives as in \textit{a slice of the cake} represents the first stage of a development wherein the measure noun can already lose some semantic content, when for example words like \textit{bite} are no longer necessarily interpreted as a piece bitten out of something.
 The pseudo-partitive stage finally instantiates a \textit{quantity-of} relation, potentially even leading to fully grammaticalised quantifiers such as \textit{a lot}.
 In German, the PGC is clearly the older variant \citep{Zimmer2015}.
 It still has the potential to form a true partitive (if the kind noun is definite).
@@ -432,7 +443,7 @@ For example, highly grammaticalised non-referential nouns like \textit{Gramm} `g
 % CARDINAL QUANTIFIERS
 
 As described above, the grammaticalisation path leads from NPs denoting individuated objects standing in a \textit{part-of} relation to a construction with a more diffuse \textit{quantity-of} relation.
-Both types of relations can be numerically quantified -- in as much as a precise number of \textit{parts} or a numerically exact \textit{quantity} can be specified.
+Both types of relations can be numerically quantified -- inasmuch as a precise number of \textit{parts} or a numerically exact \textit{quantity} can be specified.
 However, it is much more prototypical of quantities to be specified with numerical precision.
 Since the \NACa\ is more closely associated with the \textit{quantity-of} relation, cardinals as attributes of the measure noun are expected to have a higher proportional frequency in the \NACa.
 For illustration, (\ref{ex:determiners}) shows the expected variants under this hypothesis.
@@ -455,7 +466,7 @@ Especially with abstract physical measure nouns (like \textit{centilitre}), exac
 The statistical model presented in Section~\ref{sec:corpusstudies} will be specified in a way that it can detect such a preference.
 
 Finally, it was found that the \PGCa\ is more typical of higher registers or even exclusive to written language (see \citealp[320--323]{Hentschel1993}).
-This is not surprising in as much as the genitive -- an intrinsic part of the PGC -- is generally underrepresented in colloquial vernacular variants of German as a result of a diachronic process wherein many (but by no means all) uses of the genitive are replaced by other cases or periphrastic constructions \citep{FleischerSchallert2011}.
+This is not surprising inasmuch as the genitive -- an intrinsic part of the PGC -- is generally underrepresented in colloquial vernacular variants of German as a result of a diachronic process wherein many (but by no means all) uses of the genitive are replaced by other cases or periphrastic constructions \citep{FleischerSchallert2011}.
 Under an integral view of prototypes, which incorporate effects related to larger contexts and registers, such preferences can be part of what defines the construction prototypes.
 In the corpus study in Section~\ref{sec:corpusstudies}, register effects will therefore be modelled -- even if only using two very simple proxy variables.
 
@@ -497,7 +508,7 @@ At the time of this writing, a newer 2016 version DECOW16 had already been relea
 I chose this corpus for two main reasons.%
 \footnote{The use of web data for linguistic research does require explicit and careful justification.
 Due to the noisy nature and unknown composition of the web, only carefully designed and established web corpora like the COW corpora or the SketchEngine corpora \citep{KilgarriffEa2014} should be used.
-Clearly, using search engine results is \textit{bad science} for many reasons, most prominently total irreproducibility of results, as \cite{Kilgarriff2006} pointed out more than ten years ago.
+Clearly, using search engine results is `bad science' for many reasons, most prominently total irreproducibility of results, as \cite{Kilgarriff2006} pointed out more than ten years ago.
 Careless use of search engine results is still found, however, see for example \citet[171--175]{DeclerckBrems2016}.}
 First, the external validity of any study is increased through a higher heterogeneity of the sample \citep[30]{MaxwellDelaney2004}, and the DECOW corpus has clearly a much more heterogeneous composition compared to the only other very large corpus of German, the DeReKo \citep{KupietzEa2010} of the Institute for the German Language (IDS), which contains almost exclusively newspaper texts.%
 \footnote{It was shown in \cite{W16-2601} that, for example, the spread of topics is much smaller in DeReKo compared to DECOW.}
@@ -509,7 +520,7 @@ Therefore, DECOW can be considered the obvious choice for this study.
 
 I now turn to the sampling procedure applied to obtain concordances for manual annotation and statistical analysis.
 Among the factors potentially influencing the alternation (see Section~\ref{sec:germanmeasurenps}) were lemma-specific preference effects.
-Therefore, it was highly desirable to obtain a sample in which most of the highly frequent actually occurring combinations of kind nouns and measure nouns were represented.
+Therefore, it was highly desirable to obtain a sample in which most of the highly frequent actually-occurring combinations of kind nouns and measure nouns were represented.
 I applied a three-stage bootstrap process in order to obtain such a sample.
 It consisted of three steps:
 
@@ -525,7 +536,7 @@ In step (\ref{enum:data:step1}), I exported a list of all nouns in the DECOW14A0
 \footnote{DECOW14A01 is the first slice (roughly a twentieth) of the complete DECOW14A corpus.
 It contains just over one billion tokens.}
 Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.
-The hundredth selected mass noun was \textit{Schmuck} `jewelry’, which is the 3,054th most frequent noun in the original frequency list.
+The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is the $3,054$th most frequent noun in the original frequency list.
 
 This resulting list of mass nouns was used in step (\ref{enum:data:step2}) to bootstrap a list of measure nouns co-occurring with the mass nouns. 
 In order to generate this list, I utilised the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
@@ -586,7 +597,7 @@ The higher the value, the more often the noun occurs in the \PGCd (proportionall
 \footnote{
   It could be argued that some more advanced measure of attraction strength should be used, as is done in Collostructional (or Collexeme) Analysis \citep{GriesStefanowitsch2004}, see also \cite{Gries2015a}.
   Three main points speak against such an approach in the present case (but see \citealp[246--249]{Levshina2016} for a different approach).
-  First, the attraction values will be used as regressors in a GLMM, and the values resulting from collostructional approaches, \ie\ logarithmised Fisher $p$ values, have a very unfavourable distribution in the case at hand.
+  First, the attraction values will be used as regressors in a hierarchical logistic regression, and the values resulting from collostructional approaches, \ie\ logarithmised Fisher $p$ values, have a very unfavourable distribution in the case at hand.
   They cluster around $0$, and they include values of $-\infty$.
   Second, their main use in collostructional analyses is to \textit{sort} a list of collexemes and interpret their order.
   Their concrete numerical value might not have a solid cognitive interpretation in the given context.
@@ -632,12 +643,12 @@ To control for this effect, the case of the measure noun was manually annotated 
 \subsection{On statistical analysis}
 \label{sec:rightstatistics}
 
-In this section, I motivate the choice of statistical models which I use in Section~\ref{sec:corpushierarchicalmodel}.
-Readers might think that the method used here for modeling grammatical alternations -- namely (Hierarchical) Logistic Regression\slash Generalised Linear (Mixed) Models or GLM(M)s -- does not require much motivation.
+In this section, I justify the choice of statistical models which I use in Section~\ref{sec:corpushierarchicalmodel}.
+Readers might think that the method used here for modeling grammatical alternations -- namely (Hierarchical) Logistic Regression\slash Generalised Linear (Mixed) Models or GL(M)Ms -- does not require much justification.
 After all, GLMMs have been established as the major tool in the analysis of alternation phenomena.
-All studies mentioned at the outset of Section~\ref{sec:cogocl} use some form of regression\slash GLM(M).
+All studies mentioned at the outset of Section~\ref{sec:cogocl} use some form of regression\slash GL(M)M.
 Over the past few years, however, modified or alternative methods have been proposed.
-From among these methods, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}), as it was proposed in \cite{Levshina2016,Divjak2016a}, for example.
+From among these methods, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}), as it was proposed in \cite{Levshina2016} and \cite{Divjak2016a}, for example.
 Conceptually, I see three points of discussion that should be kept apart.
 First, Bayesian methods are sometimes touted as superior tools for scientific inference compared to frequentist methods.
 Second, it has been proposed that the Bayesian interpretation of probability is more cognitively adequate for the modeling of linguistic data \cite[301--302]{Divjak2016a}.
@@ -652,7 +663,7 @@ Standard tests in the Fisher and Neyman-Pearson traditions as well as Neyman con
 Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
 The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
 There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
-In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that \textit{most of this received view of Bayesian inference is wrong}, and they develop a Bayesian notion of $p$ values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
+In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that ``most of this received view of Bayesian inference is wrong'', and they develop a Bayesian notion of $p$ values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
 Clearly, in such quarrels between and among camps of philosophers of science and statisticians, it is difficult for mere practitioners to take sides.
 
 These quarrels relate to the second point, however.
@@ -662,7 +673,7 @@ On p.\ 303 of \cite{Divjak2016a}, the author goes on to explicitly mention NDL a
 Yet, neither frequentist nor Bayesian methods were conceived as cognitive models, but as systems of inference for scientists (see above, and see also \citealp[302]{Divjak2016a}).
 The fundamental question that lurks behind such arguments is how we interpret our statistical models (estimated on corpus data).
 Are they inductive models of cognitive representations that also human learners would infer from being exposed to the corpus data?%
-\footnote{In which case we are doing \textit{data science in language research} in the words of \citealp{MilinEa2016}.
+\footnote{In which case we are doing ``data science in language research'' in the words of \citealp{MilinEa2016}.
 I see this as standing in contradiction to the view advocated in \cite{Dabrowska2016} as cited above.}
 Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on linguistic output data contained in corpora?
 In the former case, we adopt a strong \textit{corpus as input} hypothesis and should definitely resort to methods like NDL.
@@ -671,37 +682,37 @@ In fact, arguments to this extreme effect and against using high-level generalis
 In the latter and less extreme case, the cognitive commitment does, however, not necessarily extend to the statistical methods used.
 These methods then do not need to be any more cognitively plausible than an ANOVA used to analyse the results from an experiment.
 I view my own work (see Sections~\ref{sec:germanmeasurenps}--\ref{sec:experimental}) in the tradition of testing theories (which embrace high-level generalisations), and I agree to provisionally use Likelihood methods (see below).
-I remain fully agnostic with respect to the question which approach is `right'.
+I remain fully agnostic with respect to the question, which approach is \textit{right}.
 The best strategy for cognitive linguistics as a field might be to cultivate many methods while making sure that each method is applied carefully and competently.
 
 %The first and second point cannot be discussed in detail here.%
 %\footnote{However, among the Bayesian hype, there is also a number of critical papers by statisticians (even prominent Bayesians) and philosophers of science in which the extreme credibility that has been assigned to Bayesian approaches (and especially the standard inductivist interpretation of Bayesianism) is questioned (for example, \citealp{GelmanShalizi2013,Mayo2011,Senn2011}).}
 The third point, then, is the most practically relevant in the context of this paper.
 In her otherwise excellent study, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
-First, she claims that \textit{while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data}.
+First, she claims that ``while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data.''
 This does not do justice to frequentist methods in that mere rejection of the null hypothesis is characteristic only of Fisher's approach.
 In the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis vis-à-vis the alternative hypothesis (cf.\ \citealp{Lehmann1993,Lehmann2011,Perezgonzalez2015}).
 Also, especially Neyman-style frequentism has well-known extensions to estimation, for example in the form of confidence intervals (see \citealp{GreenlandEa2016}, esp.\ p.\ 340).
-She then explains that a \textit{distinctive feature of Bayesian statistics is the use of so-called priors} and that \textit{posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data} \cite[252]{Levshina2016}.
+She then explains that a ``distinctive feature of Bayesian statistics is the use of so-called priors'' and that ``posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data'' \cite[252]{Levshina2016}.
 Remarkably, given this statement, she does \textit{not} use informative priors, and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error.
 So, the proclaimed major advantage of Bayesian modeling was apparently not taken advantage of.%
-\footnote{In the words of \cite{Senn2011}: \textit{You may believe you are a Bayesian but you are probably wrong}.
-\citet[347--348]{GelmanHill2006} \textit{view any noninformative prior distribution as inherently provisional} and give recommendations how to proceed once posteriors have been obtained from noninformative priors.}
+\footnote{In the words of \cite{Senn2011}: ``You may believe you are a Bayesian but you are probably wrong.''
+\citet[347--348]{GelmanHill2006} ``view any noninformative prior distribution as inherently provisional'' and give recommendations how to proceed once posteriors have been obtained from noninformative priors.}
 Now, Maximum Likelihood Estimation (MLE) -- the traditional method which could have been used instead -- is not exactly \textit{frequentist} in the sense of Neyman-Pearson testing theory.
-MLE, like inductive Bayesianism, conditions on the particular data in as much as it searches for the most likely set of parameters given the data.
+MLE, like inductive Bayesianism, conditions on the particular data inasmuch as it searches for the most likely set of parameters given the data.
 What is more, Bayesian estimators are in fact based the Likelihood and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
 If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
 The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional parameter models \citep[1119--1120]{Freedman1999}, a well-established result known as the \textit{Bernstein-von Mises theorem}.
-With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have obtained with Maximum Likelihood methods.
+With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have been obtained with Maximum Likelihood methods.
 In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
-This is a clear sign that the prior is \textit{swamped by the data} \citep[1119]{Freedman1999}.
+This is a clear sign that the prior is ``swamped by the data'' \citep[1119]{Freedman1999}.
 Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
 However, most similar studies (dating back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist in a narrow sense, and which is as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
 If for Levshina's study, results from Bayesian and MLE methods did, in fact, \textit{not} converge, it would have been an ideal occasion to demonstrate the superiority of the algorithms used in Bayesian estimation.
 After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
 I want to reiterate that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
 However, being \textit{Bayesian} is most likely not among its selling points.
-That said, I want to voice the concern that probably many practitioners are already struggling with getting an adequate grasp of advanced statistical methods, and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
+That said, I want to voice the concern that probably, many practitioners are already struggling with getting an adequate grasp of advanced statistical methods and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
 In Section~\ref{sec:corpushierarchicalmodel}, I compare my own hierarchical models estimated with Bayesian and MLE estimators to demonstrate their expectable convergence.
 
 
@@ -774,7 +785,8 @@ Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-
 I call the corresponding value $p_{\text{PB}}$, and it is given in the appropriately labelled columns in Table~\ref{tab:bigtable}.
 Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be convincing (non-significant).
 
-Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo sampling (MCMC) do not necessarily (and in this case predictably) lead to different results.
+Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo sampling (MCMC) do not necessarily lead to different results.
+Actually, given the low complexity of the model and the large sample size, it would be surprising if they did (see Section~\ref{sec:rightstatistics}).
 The model was re-estimated using the \textit{stan\_glmer} function from the \textit{rstanarm} package, which provides an \textit{lme4}-compatible syntax for estimating common model types with the \textit{stan} software \citep{CarpenterEa2017}.
 The algorithm was run with $4$ chains and $1,000$ iterations, and I used plausible default priors.
 Most notably, priors for coefficients were specified as $\mathcal{N}(0,10)$ because coefficients higher than $10$ or lower than $-10$ are extremely rare in well-specified models on appropriate data.%
@@ -805,7 +817,7 @@ Since both estimators converge, I only interpret the MLE model in the next secti
 \end{figure}
 
 The results reported in Section~\ref{sec:corpushierarchicalmodel} generally confirm the hypotheses from Section~\ref{sec:analyses}.
-First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown, see the effect plots in Figure~\ref{fig:eff:attraction}.%
+First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown (see the effect plots in Figure~\ref{fig:eff:attraction}).%
 \footnote{Effect plots were created using the \textit{effects} package \citep{Fox2003}.
 They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis), at typical values of all other regressors.
 The vertical bars (categorical variables) and grey areas (continuous variables) are asymptotic $95\%$ confidence intervals calculated from \textit{glmer}.
@@ -817,7 +829,7 @@ The effect for measure nouns is stronger, and it was estimated with higher preci
 An interesting picture emerges for the lemma frequencies.
 A higher than average lemma frequency of measure nouns favours the \NACa\ ($\beta_{\text{Measurefreq}}=-0.231$, $\mpPB=0.005$) as expected if we assume at least a tendency for highly grammaticalised items to be more frequent.
 With kind nouns, higher frequency seems to favour the \PGCa ($\beta_{\text{Kindfreq}}=0.146$, $\mpPB=0.095$).
-However, there is no clear theoretical interpretation (see Section~\ref{sec:analyses}), and the estimate is imprecise (not significant at $\alpha=0.05$, see above).
+However, there is no clear theoretical interpretation (see Section~\ref{sec:analyses}) and the estimate is imprecise (not significant at $\alpha=0.05$, see above).
 The effect can therefore be ignored or treated as a nuisance variable.
 
 
@@ -971,18 +983,18 @@ In this Section, a self-paced reading experiment is therefore presented.
 In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
 The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
 
-Conretely, the exact same stimuli as in the forced-choice experiments were used.
-Each participant read both the $16$ sentences with the variant predicted by the corpus model and the $16$ modified sentences with the variant that the corpus model does not predict.%
+Concretely, the exact same stimuli as in the forced-choice experiments were used.
+Each participant read both the $16$ sentences with the variant predicted by the corpus model and the $16$ modified sentences with the variant that the corpus model did not predict.%
 \footnote{Notice that lemmas and their frequencies as well as lemma classes are included as regressors in the corpus-based GLMM, and there was consequently no additional controlling of lemma frequencies, etc.}
 To minimise repetition effects, the stimuli for each participant were separated into two blocks of $16$ targets and $33$ fillers per block.
 In the experiment, participants first read all sentences from the first block, then all sentences from the second block.
-It was made sure that from each target sentence pair, one sentence was assigned to the first block, and the other sentence to the other block.
-The assignment of members of the individual sentence pairs to the blocks was randomised for each participant individually, and so was the order within each block.
+From each target sentence pair, one sentence was assigned to the first block and the other sentence to the other block.
+The assignment of members of the individual sentence pairs to the blocks was randomised for each participant individually and so was the order within each block.
 The sentences from each pair of variants were kept as far apart as possible.
 The fillers also came in pairs such that the second block exclusively contained sentences to which participants had been exposed in the first block in slightly modified form.
 In total, each participant read $98$ sentences.
 After each sentence, participants had to answer simple (non-metalinguistic) yes-no questions about the previous sentence as distractors.
-The distractor questions were different ones in the first and the second block.
+The distractor questions were different between the first and the second blocks.
 There were $38$ (different) participants recruited in exactly the same manner as for the experiment reported in Section~\ref{sec:exp:fc}.
 None of them had ever participated in any kind of reading experiment, and none of them took part in the first experiment.
 The experiment was conducted using \textit{PsychoPy}.
@@ -993,7 +1005,8 @@ Outliers farther than 2 inter-quartile ranges from the mean logarithmised residu
 An LMM was specified with the logarithmised residual reading times as the response variable.
 
 The probabilities derived from the corpus GLMM (\textit{Modelprediction}) were added as the main regressor of interest.
-It should be remembered that the corpus GLMM predicts the probability of the \PGCa, such that the higher the GLMM prediction, the more prototypical the sentence is for containing the \PGCa.
+It should be remembered that the corpus GLMM predicts the probability of the \PGCa.
+As a consequence, the higher the GLMM prediction is, the more prototypical the sentence is for containing the \PGCa.
 Therefore, it is expected that reading times are higher when model \textit{Modelprediction} is higher and the sentence contains the \NACa.
 However, when the sentence contains the \PGCa, reading times should be lower when \textit{Modelprediction} is higher.
 To account for this, an interaction between \textit{Modelprediction} and \textit{Construction} (levels \textit{PGCa} and \textit{NACa}) was added to the model.
@@ -1033,7 +1046,7 @@ There is a clearer effect in the sentences with \PGCa, which is also confirmed b
 The \PGCa\ brings about an increased reading time ($\beta_{\text{ConstructionPGCa}}=0.054$), which is plausible because it is the much rarer construction (see Section~\ref{sec:corpusstudies}).
 However, if it occurs in a prototypical context and with prototypical lexical material, reading times drop ($\beta_{\text{ConstructionPGCa:Modelprediction}}=-0.125$).
 This can be seen in the downward slope in the right panel of Figure~\ref{fig:spr:effects}.
-This fits into the general picture in as much as the construction with the lower frequency might be developing towards a more sharply defined prototype.%
+This fits into the general picture inasmuch as the construction with the lower frequency might be developing towards a more sharply defined prototype.%
 \footnote{In this context, it should be remembered from Section~\ref{sec:gettingdata} that even the \PGCd\ is much rarer that the \NACb\ ($17,252$ vs.\ $315,635$ occurrences in the auxiliary corpus samples).}
 Conversely, the \NACa\ (like the NAC in general) might be the highly frequent default which does not incur a reading time penalty, even if it is not the optimal choice in the given context and with the given lexical material.
 
