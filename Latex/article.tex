@@ -53,15 +53,17 @@
   \runningtitle{Competing Constructions for German Measure Noun Phrases}
   %\subtitle{...}
   \abstract{In this paper, a case alternation occurring in German measure noun phrases is examined from the perspective of cognitively oriented corpus linguistics.
-    In pseudo-partitive constructions such as \textit{eine Tasse guter Kaffe} `a cup of good coffee', the embedded kind noun either agrees in its case with the measure head noun or it is a genitive as in \textit{eine Tasse guten Kaffees}.
+    In pseudo-partitive constructions such as \textit{eine Tasse guter Kaffe} `a cup of good coffee', the embedded kind-denoting noun either agrees in its case with the measure head noun or it is a genitive as in \textit{eine Tasse guten Kaffees}.
     This alternation occurs only under highly specific syntactic conditions.
     The analysis is formulated in terms of Prototype Theory. 
-    I assume that the variants are modelled after non-alternating neighbouring constructions, which represent the prototypes more clearly.
-    Primarily, it is argued that the frequencies with which individual lemmas appear in the prototypical constructions partially predicts which variant is chosen in the alternating case, and that the genitive construction is prototypical of more strongly grammaticalised measure nouns.
+    I assume that the variants are modelled after non-alternating neighbouring constructions, which represent the prototypes more purely.
+    Primarily, it is argued that the frequencies with which individual lemmas occur in the prototypical constructions partially predict which variant is chosen in the alternating case.
+    Another major prediction is that the genitive construction is prototypical of more strongly grammaticalised measure nouns.
     I present a large-scale corpus study using the DECOW web corpus which supports the theoretical analysis.
-    In the statistical analysis of the corpus study, it is discussed whether Bayesian estimators are intrinsically better than Likelihood Maximisation methods, and all results are estimated with Maximum Likelihood and Bayesian methods for comparison.
+    In the statistical analysis of the corpus study, it is discussed whether Bayesian estimators lead to substantially different results compared to Likelihood Maximisation methods in studies like this one.
+    The model is estimated with Maximum Likelihood and Bayesian methods for comparison.
     Finally, a forced choice experiment and a self-paced reading experiment are reported.
-    In both experiments, the usage-based corpus analysis is successfully correlated with the behaviour of cognitive agents.
+    The usage-based findings from the corpus study show a clear correlation with the behaviour of cognitive agents in both experiments.
     The present study therefore contributes to a now well-established area of research into alternations using both corpus and experimental methods.}
   \keywords{corpus methods and experimental methods, self-paced reading, forced-choice, alternations, hierarchical models, measure constructions, German}
   %\classification[PACS]{...}
@@ -284,7 +286,7 @@ Even if they are accepted by some speakers, their extremely low frequency makes 
 
 Turning to (\ref{it:intro:plurl}), readers might have noticed that so far only MNPs denoting quantities of substances (mass kind nouns such as \textit{ein Glas roter Wein\slash roten Weines} `a glass of red wine') have been discussed.
 If the kind noun is a plural count noun as in \textit{ein Sack kleine Äpfel} (\NACa) or \textit{ein Sack kleiner Äpfel} (\PGCa) `a bag of small apples', a similar alternation between PGC and NAC can be observed.
-In line with experimental results reported in \citet[15--16]{Zimmer2015}, I found that the PGC is so dominant with plural kind nouns ($794$ of $861$ cases, or over 92\%, cf.\ Section~\ref{sec:corpusstudies}) that the alternation cannot be analysed in the same way as in the singular.%
+In line with experimental results reported in \citet[15--16]{Zimmer2015}, I found that the PGC is so dominant with plural kind nouns (794 of 861 cases, or over 92\%, cf.\ Section~\ref{sec:corpusstudies}) that the alternation cannot be analysed in the same way as in the singular.%
 \footnote{More concretely, if these cases were included in the regression analysis of the corpus data along with a factor encoding the number of the kind noun, this factor would most assuredly override any other regressor for the data points with a plural kind noun.}
 While this will play a role in the interpretation of the corpus findings, MNPs with plural kind nouns will not be included in the corpus study and the experiments reported in Sections~\ref{sec:corpusstudies} and \ref{sec:experimental}.
 
@@ -400,7 +402,7 @@ When they classify the adjective more as an adjective, the kind NP has no determ
 This morpho-syntactic ambiguity means that the \NACa\ is in fact a \NACb\ in disguise, and the \PGCa\ is a \PGCd\ in disguise.
 This should ideally be reflected in the following basic selection effect:
 It is known from frameworks like Collexeme Analysis \citep{GriesStefanowitsch2004} that lemmas are attracted with different strengths by competing constructions.
-If the \NACa\ is highly similar to the \NACb\ and the \PGCa\ is highly similar to the \PGCd, the probability with which individual noun lemmas appear in the alternating constructions should be predictable at least partly from the relative frequency with which the same lemmas are used in the non-alternating constructions (see \citealp[246--249]{Levshina2016} for a similar idea in a different context).
+If the \NACa\ is highly similar to the \NACb\ and the \PGCa\ is highly similar to the \PGCd, the probability with which individual noun lemmas appear in the alternating constructions should be predictable at least partly from the relative frequency with which the same lemmas are used in the non-alternating constructions.
 Nouns which occur proportionally more often in the \PGCd\ should favour the \PGCa, and nouns which occur proportionally more often in the \NACb\ should favour the \NACa.
 This basic attraction effect will be quantified in the corpus study Section~\ref{sec:corpusstudies}.
 
@@ -536,7 +538,7 @@ In step (\ref{enum:data:step1}), I exported a list of all nouns in the DECOW14A0
 \footnote{DECOW14A01 is the first slice (roughly a twentieth) of the complete DECOW14A corpus.
 It contains just over one billion tokens.}
 Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.
-The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is the $3,054$th most frequent noun in the original frequency list.
+The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is the 3,054th most frequent noun in the original frequency list.
 
 This resulting list of mass nouns was used in step (\ref{enum:data:step2}) to bootstrap a list of measure nouns co-occurring with the mass nouns. 
 In order to generate this list, I utilised the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
@@ -547,7 +549,7 @@ The result was a list of the most frequent 2,365 individual combinations of a me
 
 In step (\ref{enum:data:step3}), each of these 2,365 noun–noun combinations was queried in the target constructions (\PGCa\ and \NACa) individually in each of the first ten slices of DECOW (roughly 10 billion tokens).
 In order to reduce the sample size for the manual annotation process, the final concordance was sampled from the results of these 2,365 queries.
-Since the mass nouns in the sample were distributed according to the usual power law, I used all hits for nouns with a frequency up to $100$, and a sample of $100$ of all those with higher frequency.
+Since the mass nouns in the sample were distributed according to the usual power law, I used all hits for nouns with a frequency up to 100, and a sample of 100 of all those with higher frequency.
 The final sample contained 6,843 sentences, which was reduced to 5,063 in the manual annotation process due to removal of noisy material, erroneous hits and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
 Given the careful bootstrapping and sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
 \footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were bootstrapped and queried, resulting in a sample of 871 sentences.
@@ -567,7 +569,7 @@ Therefore, all noun-noun pairs from the bootstrap process were also queried in t
 \label{sec:annotation}
 
 The full set of manually annotated variables for the main sample is given in Table~\ref{tab:variables}, and I briefly discuss it now.%
-\footnote{All numeric variables were also z-transformed (\ie\ centered to the mean and rescaled such that they have a standard deviation of $1$) to facilitate their interpretation in the regression models reported in the next section.}
+\footnote{All numeric variables were also z-transformed (\ie\ centered to the mean and rescaled such that they have a standard deviation of 1) to facilitate their interpretation in the regression models reported in the next section.}
 Notice first that \textit{Construction} is the response variable (or `dependent variable') with the values \textit{PGCa} and \textit{NACa}.
 
 \begin{table}
@@ -597,8 +599,8 @@ The higher the value, the more often the noun occurs in the \PGCd (proportionall
 \footnote{
   It could be argued that some more advanced measure of attraction strength should be used, as is done in Collostructional (or Collexeme) Analysis \citep{GriesStefanowitsch2004}, see also \cite{Gries2015a}.
   Three main points speak against such an approach in the present case (but see \citealp[246--249]{Levshina2016} for a different approach).
-  First, the attraction values will be used as regressors in a hierarchical logistic regression, and the values resulting from collostructional approaches, \ie\ logarithmised Fisher $p$ values, have a very unfavourable distribution in the case at hand.
-  They cluster around $0$, and they include values of $-\infty$.
+  First, the attraction values will be used as regressors in a hierarchical logistic regression, and the values resulting from collostructional approaches, \ie\ logarithmised Fisher p values, have a very unfavourable distribution in the case at hand.
+  They cluster around 0, and they include values of $-\infty$.
   Second, their main use in collostructional analyses is to \textit{sort} a list of collexemes and interpret their order.
   Their concrete numerical value might not have a solid cognitive interpretation in the given context.
   Third, I tried using collexeme strength as a regressor, and the results were unsatisfactory.
@@ -610,13 +612,13 @@ In Section~\ref{sec:analyses}, it was hypothesised that classes of measure lemma
 To capture this, class information was annotated for measure lemmas.
 The classification was inspired by the list in \citet[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
 With typical examples and their frequencies in the final sample, the classes are:
-\textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'; $f=1,968$),
-\textit{Container} (\textit{Eimer} `bucket'; $f=740$), 
-\textit{Amount} (\textit{Menge} `amount'; $f=1,364$), 
-\textit{Portion} (natural portions like \textit{Happen} `bite' or \textit{Krümel} `crumb'; $f=713$).
-The few lemmas that did not fit into either of these classes were labelled \textit{Rest} ($f=278$).
+\textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'; \textit{f=}1,968),
+\textit{Container} (\textit{Eimer} `bucket'; \textit{f=}740),
+\textit{Amount} (\textit{Menge} `amount'; \textit{f=}1,364), 
+\textit{Portion} (natural portions like \textit{Happen} `bite' or \textit{Krümel} `crumb'; \textit{f=}713).
+The few lemmas that did not fit into either of these classes were labelled \textit{Rest} (\textit{f=}278).
 
-The variable \textit{Cardinal} encodes whether the measure noun is modified by a cardinal ($f=1,939$) or not ($f=3,124$).
+The variable \textit{Cardinal} encodes whether the measure noun is modified by a cardinal (\textit{f=}1,939) or not (\textit{f=}3,124).
 The purpose of this variable is to test whether cardinals really favour the \NACa\ as hypothesised in Section~\ref{sec:analyses}.
 
 To capture the influence of register or style mentioned in Section~\ref{sec:analyses}, two proxy variables were used.
@@ -657,13 +659,13 @@ Third, and very specific to this paper, given established methods in the modelin
 As for the first point, this is not quite the place to discuss it fully.
 The basic distinction is a philosophical one and related to the concepts of \textit{direct} and \textit{inverse probability} (\eg\ \citealp{Senn2011}).
 Frequentists assume that models and parameters are fixed, for example a model specifying that a coin is fair.
-We can then calculate for observed data (for example a measurement of $3$ heads in an experiment with $10$ tosses) how often such a result or a more extreme result would occur if the model were true and we repeated the experiment arbitrarily often.
+We can then calculate for observed data (for example a measurement of 3 heads in an experiment with 10 tosses) how often such a result or a more extreme result would occur if the model were true and we repeated the experiment arbitrarily often.
 This is essentially the frequentist notion of direct probability, \ie\ long-run frequencies under replication.
 Standard tests in the Fisher and Neyman-Pearson traditions as well as Neyman confidence intervals are based on this concept of probability.
 Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
 The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
 There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
-In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that ``most of this received view of Bayesian inference is wrong'', and they develop a Bayesian notion of $p$ values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
+In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that ``most of this received view of Bayesian inference is wrong'', and they develop a Bayesian notion of p values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
 Clearly, in such quarrels between and among camps of philosophers of science and statisticians, it is difficult for mere practitioners to take sides.
 
 These quarrels relate to the second point, however.
@@ -703,7 +705,7 @@ MLE, like inductive Bayesianism, conditions on the particular data inasmuch as i
 What is more, Bayesian estimators are in fact based the Likelihood and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
 If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
 The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional parameter models \citep[1119--1120]{Freedman1999}, a well-established result known as the \textit{Bernstein-von Mises theorem}.
-With a modest model structure including $17$ fixed effects and $2,646$ data points in \cite{Levshina2016}, it is highly likely that the same results would have been obtained with Maximum Likelihood methods.
+With a modest model structure including 17 fixed effects and 2,646 data points in \cite{Levshina2016}, it is highly likely that the same results would have been obtained with Maximum Likelihood methods.
 In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
 This is a clear sign that the prior is ``swamped by the data'' \citep[1119]{Freedman1999}.
 Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
@@ -733,7 +735,7 @@ In Section~\ref{sec:corpushierarchicalmodel}, I compare my own hierarchical mode
 In this section, I report the results of fitting a multilevel model to the data using R \citep{R}, \textit{lme4} \citep{lme4} for Maximum Likelihood Estimation, and \textit{rstanarm} \citep{rstanarm} for `Bayesian' Markov-Chain Monte Carlo estimation (see Section~\ref{sec:rightstatistics}).
 The purpose is to model the influence of the regressors specified in Table~\ref{tab:variables} on the probability that the \PGCa\ is chosen over the \NACa.
 All regressors from Table~\ref{tab:variables} were included, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
-The sample size was $n=5,063$ with $1,1344$ cases of \PGCa\ and $3,929$ cases of \NACa.
+The sample size was \textit{n=}5,063 with 1,1344 cases of \PGCa\ and 3,929 cases of \NACa.
 The results of the estimation are shown in Table~\ref{tab:bigtable} and in Figure~\ref{fig:fixeffs}.
 The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \citet[265--269,302--304]{GelmanHill2006}.
 The same goes for those listed with the kind lemma as their unit of reference.
@@ -771,16 +773,16 @@ Given the coding of the response variable, coefficients leaning to the positive 
 
 
 Standard diagnostics for MLE show that the model quality is quite good.
-Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than $1.6$.
+Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than 1.6.
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
-The rate of correct predictions is $0.843$, which means a proportional reduction of error of $\lambda=0.297$.
+The rate of correct predictions is 0.843, which means a proportional reduction of error of $\lambda=0.297$.
 The lemma intercepts have standard deviations of $\sigma_{\text{Measurelemma}}=0.448$ and $\sigma_{\text{Kindlemma}}=0.604$.
 
 The coefficient estimates are specified in Table~\ref{tab:bigtable} for each regressor (or regressor level) in the columns labelled \textit{Coefficient}.
-For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \mbox{\textit{confint.merMod}} function from \textit{lme4}) with $1,000$ replications, and using the percentile method for the calculation of the intervals.
+For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \mbox{\textit{confint.merMod}} function from \textit{lme4}) with 1,000 replications, and using the percentile method for the calculation of the intervals.
 The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:bigtable} in the columns labelled \textit{CI low} and \textit{CI high} (= upper and lower 2.5th percentiles).
-The column \textit{CI contains 0} shows an asterisk for those intervals that do \textit{not} include $0$.
-Furthermore, for each regressor, a $p$ value was obtained by dropping the regressor from the full model, re-estimating the nested model and comparing it to the full model.
+The column \textit{CI contains 0} shows an asterisk for those intervals that do \textit{not} include 0.
+Furthermore, for each regressor, a p value was obtained by dropping the regressor from the full model, re-estimating the nested model and comparing it to the full model.
 Instead of inexact Wald approximations or Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 I call the corresponding value $p_{\text{PB}}$, and it is given in the appropriately labelled columns in Table~\ref{tab:bigtable}.
 Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be convincing (non-significant).
@@ -788,11 +790,11 @@ Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be co
 Finally, I show that Bayesian methods in the form of Markov-Chain Monte Carlo sampling (MCMC) do not necessarily lead to different results.
 Actually, given the low complexity of the model and the large sample size, it would be surprising if they did (see Section~\ref{sec:rightstatistics}).
 The model was re-estimated using the \textit{stan\_glmer} function from the \textit{rstanarm} package, which provides an \textit{lme4}-compatible syntax for estimating common model types with the \textit{stan} software \citep{CarpenterEa2017}.
-The algorithm was run with $4$ chains and $1,000$ iterations, and I used plausible default priors.
-Most notably, priors for coefficients were specified as $\mathcal{N}(0,10)$ because coefficients higher than $10$ or lower than $-10$ are extremely rare in well-specified models on appropriate data.%
-\footnote{Consider that with a coefficient of $10$, each increase by $1$ in the regressor variable means an increase in odds of $exp(10)=22,026.47$.
+The algorithm was run with 4 chains and 1,000 iterations, and I used plausible default priors.
+Most notably, priors for coefficients were specified as $\mathcal{N}(0,10)$ because coefficients higher than 10 or lower than $-10$ are extremely rare in well-specified models on appropriate data.%
+\footnote{Consider that with a coefficient of 10, each increase by 1 in the regressor variable means an increase in odds of $exp(10)=22,026.47$.
 To reliably estimate such coefficients, extremely large samples would be required.}
-The algorithm converged, and for all coefficients, the $\hat{R}$ diagnostic was exactly $1$.
+The algorithm converged, and for all coefficients, the $\hat{R}$ diagnostic was exactly 1.
 The resulting coefficients and intervals as well as an * are also given in Table~\ref{tab:bigtable} in the columns labelled \textit{MCMC}.
 Both methods lead to exactly the same results (minus negligible numerical differences) as expected given the modest complexity of the model structure and the large sample size (see Section~\ref{sec:rightstatistics}).
 The signs and magnitudes of the coefficients are identical, and confidence intervals have the same width and symmetry properties.
@@ -820,7 +822,7 @@ The results reported in Section~\ref{sec:corpushierarchicalmodel} generally conf
 First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown (see the effect plots in Figure~\ref{fig:eff:attraction}).%
 \footnote{Effect plots were created using the \textit{effects} package \citep{Fox2003}.
 They show the changes in probability for the outcome (y axis) dependent on values of a regressor (x axis), at typical values of all other regressors.
-The vertical bars (categorical variables) and grey areas (continuous variables) are asymptotic $95\%$ confidence intervals calculated from \textit{glmer}.
+The vertical bars (categorical variables) and grey areas (continuous variables) are asymptotic 95\% confidence intervals calculated from \textit{glmer}.
 They are not bootstrapped.}
 The effect is mostly as expected:
 if a lemma appears relatively more often in the \PGCd\ (compared to its frequency in the \NACb), the more often the \PGCa\ is chosen over the \NACa\ with this specific lemma.
@@ -895,7 +897,7 @@ Both experiments use sentences containing attested MNPs from the corpus sample (
 Also, the probabilities that the corpus-based model assigns to the two variants in these sentences is used as the main regressor in both studies.
 
 The first experiment tests preferences for constructions explicitly.
-\cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute $100$ points between the alternatives, assigning more points to more natural sounding alternative.
+\cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute 100 points between the alternatives, assigning more points to more natural sounding alternative.
 In essence, participants distribute a probability mass between two variants, which is intended to produce more subtle results compared to a two-alternative forced-choice task \citep{Rosenbach2013}, where participants have to choose one of two variants.
 The split-100 paradigm has been criticised in \cite{ArppeJaervikivi2007}.
 The criticism was reiterated in \cite{DivjakEa2016}, where they use a forced-choice task.
@@ -923,7 +925,7 @@ The design is summarised in Table \ref{tab:experiment1:design}.
 
 \begin{table}
   \centering
-  \begin{tabular}[h]{rcc}
+  \begin{tabular}[h]{lll}
      & Masculine\slash Neuter & Feminine \\
      \midrule
      \textbf{high prob.\ for PGC\Subsf{adj}} & 4 sentences & 4 sentences \\
@@ -950,20 +952,20 @@ The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 \end{figure}
 
 Then, a multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.%
-\footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to $0$, which is the mean for z-transformed variables.}
+\footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to 0, which is the mean for z-transformed variables.}
 A random intercept and slope were added for the individual sentence (item) in order to catch idiosyncrasies of single sentences.
 Also, a random intercept and slope for participants was added.%
 \footnote{The random slopes were added to comply with \citet[257]{BarrEa2013} who predict \textit{catastrophically high Type I error rates} for experimental designs with within-subject manipulations if random effects structures are not kept maximal.
 Notice that the model reported here was estimated with conceptually identical results with regard to the predictor of interest (\textit{Modelprediction}) if only random intercepts were used.}
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
-The number of observations was $n=384$.
+The number of observations was \textit{n=}384.
 
-A certain amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Sentence}}=1.785$, $\sigma^{\text{Modelprediction}}_{\text{Sentence}}=5.996$, $16$ levels).%
+A certain amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Sentence}}=1.785$, $\sigma^{\text{Modelprediction}}_{\text{Sentence}}=5.996$, 16 levels).%
 \footnote{I use $\sigma^f_r$ to denote the standard deviation of the random intercepts for the fixed effect $f$ varying by random effect $r$.}
-Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.781$, $\sigma^{\text{Modelprediction}}_{\text{Participant}}=0.484$, $24$ levels).
-On the extreme sides, one participant chose the \PGCa\ in $13$ of $16$ cases, and two participants only chose it in $5$ of $16$ cases.
-The regressor \textit{Modelprediction} achieves $\mpPB=0.007$ ($1,000$ replications) and is estimated at $5.408$ relative to an intercept of $-1.304$.
-The confidence interval from a parametric bootstrap ($1,000$ replications, percentile method) for the regressor is acceptable but slightly large with a lower bound of $1.626$ and an upper bound of $8.397$.
+Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.781$, $\sigma^{\text{Modelprediction}}_{\text{Participant}}=0.484$, 24 levels).
+On the extreme sides, one participant chose the \PGCa\ in 13 of 16 cases, and two participants only chose it in 5 of 16 cases.
+The regressor \textit{Modelprediction} achieves $\mpPB=0.007$ (1,000 replications) and is estimated at 5.408 relative to an intercept of -1.304.
+The confidence interval from a parametric bootstrap (1,000 replications, percentile method) for the regressor is acceptable but slightly large with a lower bound of 1.626 and an upper bound of 8.397.
 The pseudo-coefficients of determination are $R^2_{m}=0.227$ and $R^2_{c}=0.561$, which means that over 22\% of the variance in the data can be explained by considering only the predictions from the corpus-based GLMM.
 The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
 The result is very clear.
@@ -984,35 +986,35 @@ In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading para
 The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
 
 Concretely, the exact same stimuli as in the forced-choice experiments were used.
-Each participant read both the $16$ sentences with the variant predicted by the corpus model and the $16$ modified sentences with the variant that the corpus model did not predict.%
+Each participant read both the 16 sentences with the variant predicted by the corpus model and the 16 modified sentences with the variant that the corpus model did not predict.%
 \footnote{Notice that lemmas and their frequencies as well as lemma classes are included as regressors in the corpus-based GLMM, and there was consequently no additional controlling of lemma frequencies, etc.}
-To minimise repetition effects, the stimuli for each participant were separated into two blocks of $16$ targets and $33$ fillers per block.
+To minimise repetition effects, the stimuli for each participant were separated into two blocks of 16 targets and 33 fillers per block.
 In the experiment, participants first read all sentences from the first block, then all sentences from the second block.
 From each target sentence pair, one sentence was assigned to the first block and the other sentence to the other block.
 The assignment of members of the individual sentence pairs to the blocks was randomised for each participant individually and so was the order within each block.
 The sentences from each pair of variants were kept as far apart as possible.
 The fillers also came in pairs such that the second block exclusively contained sentences to which participants had been exposed in the first block in slightly modified form.
-In total, each participant read $98$ sentences.
+In total, each participant read 98 sentences.
 After each sentence, participants had to answer simple (non-metalinguistic) yes-no questions about the previous sentence as distractors.
 The distractor questions were different between the first and the second blocks.
-There were $38$ (different) participants recruited in exactly the same manner as for the experiment reported in Section~\ref{sec:exp:fc}.
+There were 38 participants recruited in exactly the same manner as for the experiment reported in Section~\ref{sec:exp:fc}.
 None of them had ever participated in any kind of reading experiment, and none of them took part in the first experiment.
 The experiment was conducted using \textit{PsychoPy}.
 
 The reading times were residualised per speaker based on the reading times of all words (not just the targets) by that speaker.
 The adjective and the kind noun (\ie\ the constituents bearing the critical case markers) were used as the target region, such as the bracketed words in the example \textit{zwei Gläser} [\textit{spru\-deln\-des Wasser}] `two glasses of sparkling water'.
-Outliers farther than 2 inter-quartile ranges from the mean logarithmised residualised reading time were removed ($64$ data points), resulting in a total number of $n=1,152$ observations.
+Outliers farther than 2 inter-quartile ranges from the mean logarithmised residualised reading time were removed (64 data points), resulting in a total number of \textit{n=}1,152 observations.
 An LMM was specified with the logarithmised residual reading times as the response variable.
 
 The probabilities derived from the corpus GLMM (\textit{Modelprediction}) were added as the main regressor of interest.
 It should be remembered that the corpus GLMM predicts the probability of the \PGCa.
 As a consequence, the higher the GLMM prediction is, the more prototypical the sentence is for containing the \PGCa.
-Therefore, it is expected that reading times are higher when model \textit{Modelprediction} is higher and the sentence contains the \NACa.
+Therefore, it is expected that reading times are higher when the value of \textit{Modelprediction} is higher but the sentence contains the \NACa.
 However, when the sentence contains the \PGCa, reading times should be lower when \textit{Modelprediction} is higher.
 To account for this, an interaction between \textit{Modelprediction} and \textit{Construction} (levels \textit{PGCa} and \textit{NACa}) was added to the model.
 
-Furthermore, the position ($1$--$98$) of the sentence in the individual experiment (\textit{Position}) was included as a fixed effect to control for the usual increase in reading speed during an experiment run.
-Random intercepts were specified for \textit{Participant} and \textit{Item} (the $16$ sentence pairs are one \textit{Item} each).%
+Furthermore, the position (1--98) of the sentence in the individual experiment (\textit{Position}) was included as a fixed effect to control for the usual increase in reading speed during an experiment run.
+Random intercepts were specified for \textit{Participant} and \textit{Item} (the 16 sentence pairs are one \textit{Item} each).%
 \footnote{I tried random slopes in order to keep the random effect structure maximal \citep{BarrEa2013}, but it was impossible to get the algorithm to converge due to the added complexity of the interaction.}
 
 \begin{table}
@@ -1028,7 +1030,7 @@ Random intercepts were specified for \textit{Participant} and \textit{Item} (the
   \label{tab:exp:spr}
 \end{table}
 
-Table~\ref{tab:exp:spr} shows the coefficient estimates with a 95\% parametric bootstrap confidence interval ($1,000$ replications, percentile method).
+Table~\ref{tab:exp:spr} shows the coefficient estimates with a 95\% parametric bootstrap confidence interval (1,000 replications, percentile method).
 The standard deviation of the participant intercepts is $\sigma_{\text{Participant}}=0.079$ and of the item intercepts $\sigma_{\text{Item}}=0.037$.
 Comparing the full model to a model without the main regressor \textit{Modelprediction} (and consequently also without the interaction with \textit{Construction}) in a PB test gives $\mpPB=0.036$.
 The pseudo-coefficients of determination are $R^2_m=0.237$ and $R^2_c=0.346$.
@@ -1047,7 +1049,7 @@ The \PGCa\ brings about an increased reading time ($\beta_{\text{ConstructionPGC
 However, if it occurs in a prototypical context and with prototypical lexical material, reading times drop ($\beta_{\text{ConstructionPGCa:Modelprediction}}=-0.125$).
 This can be seen in the downward slope in the right panel of Figure~\ref{fig:spr:effects}.
 This fits into the general picture inasmuch as the construction with the lower frequency might be developing towards a more sharply defined prototype.%
-\footnote{In this context, it should be remembered from Section~\ref{sec:gettingdata} that even the \PGCd\ is much rarer that the \NACb\ ($17,252$ vs.\ $315,635$ occurrences in the auxiliary corpus samples).}
+\footnote{In this context, it should be remembered from Section~\ref{sec:gettingdata} that even the \PGCd\ is much rarer that the \NACb\ (17,252 vs.\ 315,635 occurrences in the auxiliary corpus samples).}
 Conversely, the \NACa\ (like the NAC in general) might be the highly frequent default which does not incur a reading time penalty, even if it is not the optimal choice in the given context and with the given lexical material.
 
 This concludes the report of the two experiments.
