@@ -52,24 +52,22 @@
 
   \author*[1]{Roland Schäfer}
   \runningauthor{Roland Schäfer. Submitted April 2017. Do not quote.}
+  %\affil[1]{}
   \affil[1]{Freie Universität Berlin}
   \title{Competing Constructions for German Measure Noun Phrases: from Usage Data to Experiment}
   \runningtitle{Competing Constructions for German Measure Noun Phrases}
   %\subtitle{...}
-  \abstract{In this paper, a case alternation occurring in German measure noun phrases is examined from the perspective of cognitively oriented corpus linguistics.
-    In pseudo-partitive constructions such as \textit{eine Tasse guter Kaffee} `a cup of good coffee', the embedded kind-denoting noun either agrees in its case with the measure head noun or it stands in the genitive as in \textit{eine Tasse guten Kaffees} with no difference in meaning.
-    This alternation occurs only under specific syntactic conditions.
-    The analysis is formulated in terms of Prototype Theory. 
-    I assume that the alternants are modelled after non-alternating neighbouring constructions, which represent the prototypes more directly.
-    Primarily, it is argued that the frequencies with which individual lemmas occur in the prototypical constructions partially predict which alternant is chosen in the alternating case.
-    Another major assumption is that the genitive construction is prototypical of more strongly grammaticalised measure nouns.
-    I present a large-scale corpus study using the DECOW web corpus which supports the theory.
-    In the statistical analysis of the corpus study, it is discussed whether Bayesian estimators lead to substantially different results than Likelihood Maximisation methods in this and similar studies.
-    The model parameters are estimated with both methods for comparison.
-    Finally, a forced choice experiment and a self-paced reading experiment are reported.
-    The usage-based findings from the corpus study show a correlation with the behaviour of cognitive agents in both experiments.
-    The present study therefore contributes to a now well-established area of research into alternations using both corpus and experimental methods.}
-  \keywords{corpus methods and experimental methods, self-paced reading, forced-choice, alternations, hierarchical models, measure constructions, German}
+  \abstract{In this paper, a case alternation in German measure noun phrases is examined from the perspective of cognitively oriented corpus linguistics.
+    In certain pseudo-partitive constructions, the embedded kind-denoting noun either agrees in its case with the measure head noun (\textit{eine Tasse guter Kaffee} `a cup of good coffee') or it stands in the genitive (\textit{eine Tasse guten Kaffees}).
+    My analysis is formulated in terms of Prototype Theory.
+    I assume that the choice of alternants is influenced by non-alternating neighbouring constructions representing the prototypes more directly.
+    I argue that the frequencies with which individual lemmas occur in these prototypical non-alternating constructions partially predict which alternant is chosen and that the genitive alternant is prototypical of strongly grammaticalised measure nouns.
+    I present a large-scale corpus study using the DECOW corpus to support this theory.
+    In the statistical analysis, I compare Maximum Likelihood estimators to Bayesian estimators (recently proposed for similar studies), showing that results \textit{predictably} do not differ.
+    Finally, two experiments (forced choice and self-paced reading) are reported.
+    The usage-based findings show a clear correlation with the behaviour of cognitive agents in both experiments.
+    The present study therefore contributes to the well-established field of research into alternations using corpus and experimental methods.}
+  \keywords{corpus methods and experimental methods, alternations, hierarchical models, pseudo-partitives, German}
   %\classification[PACS]{...}
   %\communicated{...}
   %\dedication{...}
@@ -173,8 +171,6 @@ Here, the kind noun is in the genitive, and I refer to the construction in (\ref
 \end{exe}
 
 If the kind noun is bare -- \ie\ if it comes neither with a determiner nor a modifying adjective -- it has to agree in case with the measure noun as in (\ref{ex:intro:narrowapposition1}), and the genitive as seen in the PGC is not acceptable, see (\ref{ex:intro:narrowapposition2}).
-
-\enlargethispage{1\baselineskip}
 
 \begin{exe}
   \ex\label{ex:intro:narrowapposition}
@@ -655,7 +651,7 @@ However, since instances of the \PGCa\ make up for only a minute fraction of all
 
 Finally, one variable was added as nuisance variable in the context of the present study.
 It was reported in the literature that MNPs in the dative and with a masculine or neuter kind noun favour the \PGCa\ more than the corresponding nominative and accusative MNPs \citep{Hentschel1993,Zimmer2015}.
-As an example, \textit{mit einem Stück frischen Brots} `with a piece of fresh bread' (\PGCa) would be preferred over \textit{mit einem Stück frischem Brot} (\NACa).
+As an example, \textit{mit einem Stück frischen Brots} `with a piece of fresh bread' (\PGCa) would be preferred more strongly against \textit{mit einem Stück frischem Brot} (\NACa).
 As with all the examples, native speakers of German will most likely notice that differences are subtle.
 To control for this effect, the case of the measure noun was manually annotated (variable \textit{Measurecase}).
 
@@ -686,7 +682,7 @@ Third and very specific to this paper, given established methods in the modeling
 % Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
 % The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
 % There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
-% In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that ``most of this received view of Bayesian inference is wrong'', and they develop a Bayesian notion of p-values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
+% In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that ``most of this received view of Bayesian inference is wrong,'' and they develop a Bayesian notion of p-values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
 % Clearly, in such quarrels between and among camps of philosophers of science and statisticians, it is difficult for mere practitioners to take sides.
 % 
 % These quarrels relate to the second point, however.
@@ -710,7 +706,7 @@ Third and very specific to this paper, given established methods in the modeling
 
 The first and second point cannot be discussed in detail here.%
 \footnote{However, there is a number of critical papers by statisticians (even prominent Bayesians) and philosophers of science in which the extreme credibility that has recently been assigned to (subjective and automatic) Bayesian approaches (and especially the standard inductivist interpretation of Bayesianism) is questioned (for example, \citealp{GelmanShalizi2013,Mayo2011,Senn2011}).}
-In her otherwise excellent study, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
+With regard to the third point, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
 First, she claims that ``while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data.''
 This does not do justice to frequentist methods in that mere rejection of the null hypothesis is characteristic only of Fisher's approach.
 In the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis vis-à-vis the alternative hypothesis (cf.\ \citealp{Lehmann1993,Lehmann2011,Perezgonzalez2015}).
@@ -731,11 +727,11 @@ This is a clear sign that the prior is ``swamped by the data'' \citep[1119]{Free
 % Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
 % However, most similar studies (dating back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist in a narrow sense, and which is as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
 
-If there had been evidence in Levshina's study that Bayesian and MLE methods would \textit{not} converge, it would have been an occasion to demonstrate the selective superiority of the algorithms used in Bayesian estimation.
+If there had been evidence in Levshina's study that Bayesian and MLE methods did \textit{not} converge, it would have been an occasion to demonstrate the selective superiority of the algorithms used in Bayesian estimation.
 After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
 I want to state clearly that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
-However, being \textit{Bayesian} is most likely not among its selling points.
-Additionally, I want to voice the concern that probably, many practitioners are already struggling with getting an adequate grasp of advanced statistical methods and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
+However, being ``Bayesian'' is most likely not among its selling points.
+Additionally, I want to voice the concern that many practitioners are probably already struggling with getting an adequate grasp of advanced statistical methods and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
 In Section~\ref{sec:corpushierarchicalmodel}, I estimate the parameters of my hierarchical model with MLE and Markov-Chain Monte Carlo (MCMC) methods (the currently most prominent estimator used in Bayesian settings) to demonstrate their expectable convergence.
 
 
@@ -753,7 +749,7 @@ In Section~\ref{sec:corpushierarchicalmodel}, I estimate the parameters of my hi
   \label{fig:fixeffs}
 \end{figure}
 
-In this section, I report the results of fitting a multilevel model to the data using R \citep{R}, \textit{lme4} \citep{lme4} for Maximum Likelihood Estimation (MLE) and \textit{rstanarm} \citep{rstanarm} for ``Bayesian'' Markov-Chain Monte Carlo (MCMC) estimation (see Section~\ref{sec:rightstatistics}).
+In this section, I report the results of fitting a multilevel model to the data using R \citep{R}, \textit{lme4} \citep{lme4} for Maximum Likelihood Estimation (MLE) and \textit{rstanarm} \citep{rstanarm} for Bayesian Markov-Chain Monte Carlo (MCMC) estimation (see Section~\ref{sec:rightstatistics}).
 The purpose is to model the influence of the regressors specified in Table~\ref{tab:variables} on the probability that the \PGCa\ is chosen over the \NACa.
 All regressors from Table~\ref{tab:variables} were included, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
 The sample size was \textit{n=}5,063 with 1,1344 cases of \PGCa\ and 3,929 cases of \NACa.
@@ -1111,13 +1107,13 @@ Instead of being drowned in normative, descriptive, or didactic discussions, the
 
 
 
-\begin{acknowledgement}
-  I thank (in alphabetical order) Felix Bildhauer, Susanne Flach, Elizabeth Pankratz, Samuel Reichert, and Ulrike Sayatz for valuable discussions and comments.
-  Elizabeth thankfully also fixed my English.
-  Furthermore, I thank Ulrike for helping me to recruit the participants for the experiments.
-  Finally, I am grateful to Kim Maser for her work on the annotation of the concordances.
-  The research presented here was made possible in part through funding from the \textit{Deutsche Forschungsgemeinschaft} (DFG, personal grant SCHA1916/1-1).
-\end{acknowledgement}
+% \begin{acknowledgement}
+%   I thank (in alphabetical order) Felix Bildhauer, Susanne Flach, Elizabeth Pankratz, Samuel Reichert, and Ulrike Sayatz for valuable discussions and comments.
+%   Elizabeth thankfully also fixed my English.
+%   Furthermore, I thank Ulrike for helping me to recruit the participants for the experiments.
+%   Finally, I am grateful to Kim Maser for her work on the annotation of the concordances.
+%   The research presented here was made possible in part through funding from the \textit{Deutsche Forschungsgemeinschaft} (DFG, personal grant SCHA1916/1-1).
+% \end{acknowledgement}
 
 
 
