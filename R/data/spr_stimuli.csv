@@ -1,0 +1,99 @@
+Sentence	Target	Number	Expno	Kindgender	Construction	Modelpred	Expectedcorr	Adjtarget	Item
+100 g braunen Zuckers sind auf jeden Fall genug.	1	1	1	MN	PGCa	NACa	0	3	1
+Sie verbrauchen 60 Liter sprudelndes Trinkwasser.	1	2	2	MN	NACa	NACa	1	5	2
+Wir haben jede Menge alten Krams aus dem Haus geschafft.	1	3	3	MN	PGCa	NACa	0	5	3
+Er stellt die Masse mit einem Esslöffel warmem Honig her.	1	4	4	MN	NACa	NACa	1	8	4
+Wir mussten uns durch Büschel frischen Grases zwängen.	1	5	5	MN	PGCa	PGCa	1	6	5
+Nicht ein Tropfen königliches Blut hat den Boden berührt.	1	6	6	MN	NACa	PGCa	0	4	6
+Beträchtliche Stücke saftigen Fleischs wurden serviert.	1	7	7	MN	PGCa	PGCa	1	3	7
+Bei unserer Ankunft stand ein Glas köstlicher Wein schon auf dem Tisch.	1	8	8	MN	NACa	PGCa	0	7	8
+In den Kakao gehören immer 350 ml warmer Milch.	1	9	9	MN	PGCa	NACa	0	8	9
+Ich nehme eine große Packung salzige Wurst mit an den See.	1	10	10	MN	NACa	NACa	1	6	10
+Die Schule verbraucht 260.000 Kilowattstunden elektrischer Energie.	1	11	11	MN	PGCa	NACa	0	6	11
+Man machte mal wieder viel Lärm um jede Menge heiße Luft.	1	12	12	MN	NACa	NACa	1	10	12
+Mit dieser Methode kann man eine große Menge dunkler Materie erzeugen.	1	13	13	MN	PGCa	PGCa	1	9	13
+Dort türmen sich Berge schmutzige Wäsche.	1	14	14	MN	NACa	PGCa	0	5	14
+Viele Tonnen gebrauchter Kleidung landen im Müll.	1	15	15	MN	PGCa	PGCa	1	3	15
+Es wurden Eimer rote Farbe geschleudert.	1	16	16	MN	NACa	PGCa	0	4	16
+Er wurde trotz dem bekannten Skandal wiedergewählt.	0	17	0	x	x	x	x	x	x
+Bei der Feier gedachte man den Soldaten des zweiten Weltkriegs.	0	18	0	x	x	x	x	x	x
+Sie verlassen wegen dem schönen Wetter die Wohnung.	0	19	0	x	x	x	x	x	x
+Die Gäste suchen die Wohnung des Herrn Gantenbein.	0	20	0	x	x	x	x	x	x
+Die Schuhe in Größe 36 hätten seiner Frau gepasst.	0	21	0	x	x	x	x	x	x
+In der Tat wissen wir um die Probleme im Landkreis.	0	22	0	x	x	x	x	x	x
+Am äußeren Rand der Stadt liegen die Slums.	0	23	0	x	x	x	x	x	x
+Wir hatten in Dänemark gelegentlich einen Besucher.	0	24	0	x	x	x	x	x	x
+Im Fernrohr sahen wir den roten Planet ganz deutlich.	0	25	0	x	x	x	x	x	x
+Die Autos beider beteiligter Fahrer wurden verschrottet.	0	26	0	x	x	x	x	x	x
+Die Kinder fuhren mit solch unzureichenden Helmen zur Schule.	0	27	0	x	x	x	x	x	x
+Sie hatte keine Lust auf noch eine Sammlung dummer Sprüche.	0	28	0	x	x	x	x	x	x
+Es waren nur kleinere Delikte, deren sie überführt wurden.	0	29	0	x	x	x	x	x	x
+Außer das Essen kann ich leider nichts mitbringen.	0	30	0	x	x	x	x	x	x
+Außer dem Bürgermeister beschuldigten die Störenfriede jeden.	0	31	0	x	x	x	x	x	x
+Wir übergaben dem Mann das Auto mehr als gerne.	0	32	0	x	x	x	x	x	x
+In meinem Studium las ich mehr als einmal Rilke.	0	33	0	x	x	x	x	x	x
+Dass es regnete, hat uns die Stimmung ziemlich vermiest.	0	34	0	x	x	x	x	x	x
+Die Uhr war aus Japan, die er trug.	0	35	0	x	x	x	x	x	x
+Die Uhr schlug sporadisch, obschon sie defekt war.	0	36	0	x	x	x	x	x	x
+In diesem Zirkus werden die Tiere artgerecht gehalten.	0	37	0	x	x	x	x	x	x
+Als die Sonne unterging, war die Flut zurückgekehrt.	0	38	0	x	x	x	x	x	x
+Fernab des Rummels wurde schon immer ruhig diskutiert.	0	39	0	x	x	x	x	x	x
+Walter Scheel war der vierte Bundespräsident.	0	40	0	x	x	x	x	x	x
+Die Linie 101 hält nicht am Hauptbahnhof.	0	41	0	x	x	x	x	x	x
+Manche Kreditnehmer sind mit sämtlichem, künftigem Einkommen haftbar.	0	42	1	x	x	x	x	x	x
+Die Lösung wird mit reichlichem, purem Alkohol verdünnt.	0	43	2	x	x	x	x	x	x
+Die Formen wurden unter regelmäßigem, kaltem Abduschen gehärtet.	0	44	3	x	x	x	x	x	x
+Sie haben die Erlebnisse bei frischem, kaltem Saft besprochen.	0	45	4	x	x	x	x	x	x
+Ihr Blutdruck kann schon bei minimalem täglichen Einsatz sinken.	0	46	5	x	x	x	x	x	x
+Danach wurde die Leinwand aus seltenem dichten Gewebe wiederhergestellt.	0	47	6	x	x	x	x	x	x
+Ich wurde damals schnell dank täglichem grünen Tee wieder fit.	0	48	7	x	x	x	x	x	x
+Er hat ein Hemd aus feinem dichten Stoff gefertigt.	0	49	8	x	x	x	x	x	x
+100 g brauner Zucker sind auf jeden Fall genug.	1	50	1	F	NACa	NACa	1	3	1
+Sie verbrauchen 60 Liter sprudelnden Trinkwassers.	1	51	2	F	PGCa	NACa	0	5	2
+Wir haben jede Menge alten Kram aus dem Haus geschafft.	1	52	3	F	NACa	NACa	1	5	3
+Er stellt die Masse mit einem Esslöffel warmen Honigs her.	1	53	4	F	PGCa	NACa	0	8	4
+Wir mussten uns durch Büschel frisches Gras zwängen.	1	54	5	F	NACa	PGCa	0	6	5
+Nicht ein Tropfen königlichen Bluts hat den Boden berührt.	1	55	6	F	PGCa	PGCa	1	4	6
+Beträchtliche Stücke saftiges Fleisch wurden serviert.	1	56	7	F	NACa	PGCa	0	3	7
+Bei unserer Ankunft stand ein Glas köstlichen Weins schon auf dem Tisch.	1	57	8	F	PGCa	PGCa	1	7	8
+In den Kakao gehören immer 350 ml warme Milch.	1	58	9	F	NACa	NACa	1	8	9
+Ich nehme eine große Packung salziger Wurst mit an den See.	1	59	10	F	PGCa	NACa	0	6	10
+Die Schule verbraucht 260.000 Kilowattstunden elektrische Energie.	1	60	11	F	NACa	NACa	1	6	11
+Man machte mal wieder viel Lärm um jede Menge heißer Luft.	1	61	12	F	PGCa	NACa	0	10	12
+Mit dieser Methode kann man eine große Menge dunkle Materie erzeugen.	1	62	13	F	NACa	PGCa	0	9	13
+Dort türmen sich Berge schmutziger Wäsche.	1	63	14	F	PGCa	PGCa	1	5	14
+Viele Tonnen gebrauchte Kleidung landen im Müll.	1	64	15	F	NACa	PGCa	0	3	15
+Es wurden Eimer roter Farbe geschleudert.	1	65	16	F	PGCa	PGCa	1	4	16
+Er wurde trotz des bekannten Skandals wiedergewählt.	0	66	0	x	x	x	x	x	x
+Bei der Feier gedachte man der Soldaten des zweiten Weltkriegs.	0	67	0	x	x	x	x	x	x
+Sie verlassen wegen des schönen Wetters die Wohnung.	0	68	0	x	x	x	x	x	x
+Die Gäste suchen die Wohnung des Herrn Gantenbeins.	0	69	0	x	x	x	x	x	x
+Die Schuhe in Größe 36 würden seiner Frau gepasst haben.	0	70	0	x	x	x	x	x	x
+In der Tat wissen wir von den Problemen im Landkreis.	0	71	0	x	x	x	x	x	x
+Am äußersten Rand der Stadt liegen die Slums.	0	72	0	x	x	x	x	x	x
+Wir hatten in Dänemark einen gelegentlichen Besucher.	0	73	0	x	x	x	x	x	x
+Im Fernrohr sahen wir den roten Planeten ganz deutlich.	0	74	0	x	x	x	x	x	x
+Die Autos beider beteiligten Fahrer wurden verschrottet.	0	75	0	x	x	x	x	x	x
+Die Kinder fuhren mit solchen unzureichenden Helmen zur Schule.	0	76	0	x	x	x	x	x	x
+Sie hatte keine Lust auf noch eine Sammlung dumme Sprüche.	0	77	0	x	x	x	x	x	x
+Es waren nur kleinere Delikte, derer sie überführt wurden.	0	78	0	x	x	x	x	x	x
+Außer dem Essen kann ich leider nichts mitbringen.	0	79	0	x	x	x	x	x	x
+Außer den Bürgermeister beschuldigten die Störenfriede jeden.	0	80	0	x	x	x	x	x	x
+Wir übergaben das Auto dem Mann mehr als gerne.	0	81	0	x	x	x	x	x	x
+In meinem Studium habe ich mehr als einmal Rilke gelesen.	0	82	0	x	x	x	x	x	x
+Es hat uns die Stimmung ziemlich vermiest, dass es regnete.	0	83	0	x	x	x	x	x	x
+Die Uhr, die er trug, war aus Japan.	0	84	0	x	x	x	x	x	x
+Die Uhr schlug sporadisch, obwohl sie defekt war.	0	85	0	x	x	x	x	x	x
+Der Flug zum Mond dauerte ungefähr drei Tage.	0	86	0	x	x	x	x	x	x
+Unter keinen Umständen können Neuwahlen vor Dezember stattfinden.	0	87	0	x	x	x	x	x	x
+Die Teilnehmerinnen wussten überwiegend nicht, was Tupperware ist.	0	88	0	x	x	x	x	x	x
+Jetzt ist genau die richtige Zeit, um Nadelhölzer umzusetzen.	0	89	0	x	x	x	x	x	x
+In einer Studie wurde jetzt nachgewiesen, dass das Medikament nicht wirkt.	0	90	0	x	x	x	x	x	x
+Die Stücke wurden aus wertvollem, klassischen Schmuck umgearbeitet.	0	91	1	x	x	x	x	x	x
+Wir konnten dann mit minimalem, sauberen Kraftstoff fahren.	0	92	2	x	x	x	x	x	x
+Das Tuch wurde dann mit reichem, goldenen Besatz rekonstruiert.	0	93	3	x	x	x	x	x	x
+Alle Betten wurden mit üblichem, harten Schaumstoff gefertigt.	0	94	4	x	x	x	x	x	x
+Jugendliche können Kleidung bei ausreichendem monatlichem Taschengeld selber kaufen.	0	95	5	x	x	x	x	x	x
+Die müden Teilnehmer wurden mit zusätzlichem schwarzem Kaffee wiederbelebt.	0	96	6	x	x	x	x	x	x
+Die Eislaufbahnen wurden mit dauerhaftem feinem Kunsteis eingesprüht.	0	97	7	x	x	x	x	x	x
+Jungtiere sollten immer auf warmem weichem Untergrund liegen.	0	98	8	x	x	x	x	x	x
