@@ -9,42 +9,42 @@ Formula: Chosenconstruction ~ Modelprediction + (1 + Modelprediction |      Item
 Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
 
      AIC      BIC   logLik deviance df.resid 
-   438.9    470.5   -211.5    422.9      376 
+   434.7    466.3   -209.3    418.7      376 
 
 Scaled residuals: 
-     Min       1Q   Median       3Q      Max 
--2.35689 -0.66335  0.08434  0.63471  2.83920 
+    Min      1Q  Median      3Q     Max 
+-2.5293 -0.6402  0.1732  0.5899  2.6817 
 
 Random effects:
  Groups      Name            Variance Std.Dev. Corr 
- Participant (Intercept)      0.6106  0.7814        
-             Modelprediction  0.2341  0.4839   -1.00
- Item        (Intercept)      3.1860  1.7849        
-             Modelprediction 35.9520  5.9960   -1.00
+ Participant (Intercept)     0.753543 0.86807       
+             Modelprediction 0.472877 0.68766  -1.00
+ Item        (Intercept)     0.660852 0.81293       
+             Modelprediction 0.004821 0.06944  1.00 
 Number of obs: 384, groups:  Participant, 24; Item, 16
 
 Fixed effects:
-                Estimate Std. Error z value Pr(>|z|)   
-(Intercept)      -1.3040     0.5699  -2.288  0.02213 * 
-Modelprediction   5.4075     1.7700   3.055  0.00225 **
+                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      -1.5614     0.4502  -3.468 0.000524 ***
+Modelprediction   4.7712     1.0210   4.673 2.97e-06 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
             (Intr)
-Modelprdctn -0.885
+Modelprdctn -0.786
 
 
 LR-Test and bootstrapped PB test on nested models w & w/o Modelpred
 
-Parametric bootstrap test; time: 523.72 sec; samples: 1000 extremes: 6;
-Requested samples: 1000 Used samples: 992 Extremes: 6
+Parametric bootstrap test; time: 651.87 sec; samples: 1000 extremes: 0;
+Requested samples: 1000 Used samples: 998 Extremes: 0
 large : Chosenconstruction ~ Modelprediction + (1 + Modelprediction | 
     Item) + (1 + Modelprediction | Participant)
 small : Chosenconstruction ~ (1 | Item) + (1 | Participant)
          stat df  p.value   
-LRT    14.187  5 0.014467 * 
-PBtest 14.187    0.007049 **
+LRT    18.448  5 0.002434 **
+PBtest 18.448    0.001001 **
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -52,9 +52,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
  R-squared 
 
       R2m       R2c 
-0.2267181 0.5610739 
+0.2636121 0.4513330 
 
 
- 95% bootstrap CI                    2.5 %      97.5 %
-Modelprediction  1.625643  8.39743015
-(Intercept)     -2.401644 -0.05477806
+ 95% bootstrap CI                    2.5 %     97.5 %
+Modelprediction  2.612869  6.7913651
+(Intercept)     -2.441870 -0.6241384
