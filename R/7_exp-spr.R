@@ -4,6 +4,7 @@ require(MuMIn)
 require(pbkrtest)
 require(plyr)
 require(boot)
+require(lattice)
 
 rm(list = ls())
 
@@ -138,6 +139,9 @@ rt.all$Modelprediction <- as.numeric(rt.all$Modelprediction)
 rt.all$rt.tt.resid     <- as.numeric(rt.all$t1.rt.resid + rt.all$t1.rt.resid)
 
 
+# Fix factor levels.
+revalue(rt.all$Construction, c("NACa" = "NACadj", "PGCa" = "PGCadj"))
+
 
 # ################
 # Remove outliers.
@@ -198,9 +202,18 @@ if (save.persistent) sink()
 # #############
 
 p <- plot(effect("Construction:Modelprediction", rt.model, KR = T), rug=F, colors = c("black", "darkblue"),
-          ylab="Residual log. reading time", xlab = "Probability for PGCa from corpus-based model",
-          main="Predicting reading times from\ncorpus-based model")
-if (save.persistent) pdf(paste(out.dir, "effects.pdf", sep=""))
+          ylab="Residual log. reading time", xlab = "Probability for PGCadj from corpus-based model",
+          main=NULL)
+
+if (save.persistent) {
+  trellis.device(device = "pdf", file = paste0(out.dir, "effects.pdf"))
+  trellis.par.set(list(axis.text = list(cex = 1.75)))
+  trellis.par.set(list(par.ylab.text = list(cex = 1.75)))
+  trellis.par.set(list(par.xlab.text = list(cex = 1.75)))
+  trellis.par.set(list(par.zlab.text = list(cex = 1.75)))
+  trellis.par.set(list(add.text = list(cex = 1.6)))
+  trellis.par.set(list(par.sub.text = list(cex = 1.75)))
+}
 print(p)
 if (save.persistent) dev.off()
 

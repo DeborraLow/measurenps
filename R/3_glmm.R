@@ -5,7 +5,7 @@ require(effects)
 require(gridExtra)
 require(car)
 require(pbkrtest)
-
+require(lattice)
 
 
 measure.glmm <- glmer(Construction~1
@@ -101,7 +101,8 @@ dotchart(measure.fixeffs, pch=20,
          xlim = c(x.lower, x.upper),
          lcolor = "gray",
          cex = 1.2,
-         main=paste("Coefficient estimates\n with bootstrapped 95% CI", sep=""))
+         # main=paste("Coefficient estimates\n with bootstrapped 95% CI", sep=""))
+         main=NULL)
 lines(c(0,0), c(0,length(measure.ci.95)), col="gray")
 
 for (i in 1:nrow(measure.ci.95)) {
@@ -113,18 +114,23 @@ if (save.persistent) dev.off()
 
 
 # Effect plots.
-fixeff.pl.cex <- 1.5
 effs <- c("Badness", "Genitives", "Cardinal", "Measurecase", "Measurenumber",
           "Kindattraction", "Kindfreq", "Kindgender", 
           "Measureattraction", "Measureclass", "Measurefreq")
 
 for (eff in effs) {
-  if (save.persistent) pdf(paste(out.dir, eff, ".pdf", sep=""))
+  if (save.persistent) {
+    trellis.device(device = "pdf", file = paste0(out.dir, eff, ".pdf"))
+    trellis.par.set(list(axis.text = list(cex = 1.75)))
+    trellis.par.set(list(par.ylab.text = list(cex = 1.75)))
+    trellis.par.set(list(par.xlab.text = list(cex = 1.75)))
+  }
   p <- plot(effect(eff, measure.glmm),
-            rug=F, 
-            main = paste("Effect plot: ", eff),
+            rug=F,
+            main = NULL,
             ylab = "Probability of PGCa",
-            colors = c("black", "darkblue"), cex = fixeff.pl.cex)
+            colors = c("black", "darkblue")
+            )
   print(p)
   if (save.persistent) dev.off()
 }

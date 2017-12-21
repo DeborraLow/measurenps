@@ -3,6 +3,7 @@ require(effects)
 require(MuMIn)
 require(pbkrtest)
 require(boot)
+require(lattice)
 
 rm(list = ls())
 
@@ -55,10 +56,9 @@ responses.df <- data.frame(
 
 
 # Rename some variables to make paper consistent and readable.
-
 colnames(responses.df)[which(colnames(responses.df) == "Modelpred")] <- "Modelprediction"
 colnames(responses.df)[which(colnames(responses.df) == "ResponseDrop")] <- "Chosenconstruction"
-responses.df$Chosenconstruction <- as.factor(ifelse(responses.df$Chosenconstruction == T, "PGCa", "NACa"))
+responses.df$Chosenconstruction <- as.factor(ifelse(responses.df$Chosenconstruction == T, "PGCadj", "NACadj"))
 
 # REPORT
 if (save.persistent) sink(paste(out.dir, "results.txt", sep=""))
@@ -91,11 +91,17 @@ if (save.persistent) sink()
 
 # Effect plot.
 p <- plot(effect("Modelprediction", model.fc, KR = T), rug=F, colors = c("black", "darkblue"),
-          main="Forced choice experiment",
-          ylab="Probability that PGCa is chosen",
-          xlab="Probability for PGCa from corpus-based model"
+          main=NULL,
+          ylab="Probability that PGCadj is chosen",
+          xlab="Probability for PGCadj from corpus-based model"
 )
-if (save.persistent) pdf(paste(out.dir, "effects.pdf", sep=""))
+
+if (save.persistent) {
+  trellis.device(device = "pdf", file = paste0(out.dir, "effects.pdf"))
+  trellis.par.set(list(axis.text = list(cex = 1.75)))
+  trellis.par.set(list(par.ylab.text = list(cex = 1.75)))
+  trellis.par.set(list(par.xlab.text = list(cex = 1.75)))
+}
 print(p)
 if (save.persistent) dev.off()
 
@@ -124,7 +130,7 @@ if (save.persistent) dev.off()
 if (save.persistent) pdf(paste(out.dir, "proportions.pdf", sep=""))
 plot(responses.df$Chosenconstruction~responses.df$Modelprediction,
      main = "Forced choice: distribution of responses\nby (binned) predictions from corpus-based model",
-     xlab = "Probability for PGCa from corpus-based model", ylab="Proportion of responses",
+     xlab = "Probability for PGCadj from corpus-based model", ylab="Proportion of responses",
      col = c("gray30", "white"))
 if (save.persistent) dev.off()
 

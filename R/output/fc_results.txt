@@ -37,7 +37,7 @@ Modelprdctn -0.786
 
 LR-Test and bootstrapped PB test on nested models w & w/o Modelpred
 
-Parametric bootstrap test; time: 651.87 sec; samples: 1000 extremes: 0;
+Parametric bootstrap test; time: 650.84 sec; samples: 1000 extremes: 0;
 Requested samples: 1000 Used samples: 998 Extremes: 0
 large : Chosenconstruction ~ Modelprediction + (1 + Modelprediction | 
     Item) + (1 + Modelprediction | Participant)

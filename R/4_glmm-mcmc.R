@@ -77,7 +77,9 @@ dotchart(rep(-100, length(measure.fixeffs)), pch=20,
          labels = names(measure.fixeffs),
          lcolor = "gray",
          cex = 1.2,
-         main=paste("MLE and MCMC oefficient estimates\n with 95% confidence intervals", sep=""))
+#         main=paste("MLE and MCMC oefficient estimates\n with 95% confidence intervals", sep="")
+         main=NULL
+         )
 lines(c(0,0), c(0,length(measure.ci.95)), col="gray")
 
 for (i in 1:nrow(measure.ci.95)) {

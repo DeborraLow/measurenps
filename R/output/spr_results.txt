@@ -59,7 +59,7 @@ Full model
 0.2374014 0.3461489 
 
 
-Parametric bootstrap test; time: 35.27 sec; samples: 1000 extremes: 32;
+Parametric bootstrap test; time: 34.40 sec; samples: 1000 extremes: 32;
 large : tf.rt.resid ~ Construction * Modelprediction + Position + (1 | 
     Participant) + (1 | Item)
 small : tf.rt.resid ~ Construction + Position + (1 | Participant) + (1 | 
