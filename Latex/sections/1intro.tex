@@ -1,46 +1,80 @@
-
-\section{Cognitively oriented corpus linguistics}
+\section{Prototypes, and exemplars, and corpora}
 \label{sec:cogocl}
 
 This paper deals with a morpho-syntactic alternation between two constructions that occurs only in a very specific type of measure noun phrase in German.
 By \textit{alternation} I refer to a situation where two or more forms or constructions are available with no clear difference in acceptability, function, or meaning.
-The study of alternations has a long history in cognitively oriented corpus linguistics (\citealp{BresnanEa2007,BresnanHay2010,BresnanFord2010,DivjakArppe2013,Gries2015,NessetJanda2010}, to name just a few publications).
+The study of alternations has a long history in cognitively oriented corpus linguistics (for example, \citealp{BresnanEa2007,BresnanHay2010,BresnanFord2010,DivjakArppe2013,Gries2015,NessetJanda2010}).
 This area of research is based on the assumption that language is a probabilistic phenomenon \citep{Bresnan2007} where alternants are chosen neither deterministically nor fully at random.
 Instead, multifactorial models are constructed which incorporate influencing factors from diverse levels, including contextual factors.
 The estimation of the model coefficients quantifies the influence that the factors have on the probability that either alternant is chosen.
+There are two fundamental issues to consider.
+First, there is a question of how corpus data relates to experimental findings, which provide more direct evidence of mental representations and processes.
+Second, the appropriate modelling of such results in cognitive linguistics is a key issue.
 
-For such probabilistic generalisations estimated on corpus data, there has always been an interest in correlating the findings with results from experimental work (for example, \citealp{ArppeJaervikivi2007,BresnanEa2007,BresnanFord2010,DivjakGries2008,DivjakEa2016,FordBresnan2013}).
+As for the first issue, there has always been an interest in correlating of probabilistic generalisations extracted from corpus data with results from experimental work (for example, \citealp{ArppeJaervikivi2007,BresnanEa2007,BresnanFord2010,DivjakGries2008,DivjakEa2016,FordBresnan2013}).
 This is often called a \textit{validation} of the corpus-derived findings, but \citet[303]{Divjak2016a} rightly criticises this choice of words ``because it creates the impression that behavioral experimental data is inherently more valuable than textual data,'' citing \cite{TummersEa2005}, who state that a corpus is ``a sample of spontaneous language use that is (generally) realized by native speakers.''
-However, as \citet[486--487]{Dabrowska2016} convincingly argues, this does not imply that we can in some way ``deduce mental representations from patterns of use,'' \ie\ from corpus data.%
-\footnote{In its colloquial meaning, the verb \textit{deduce} seems appropriate here.
-However, in terms of the scientific method, we are most likely talking about \textit{induction} rather than \textit{deduction}.}
+However, as \citet[486--487]{Dabrowska2016} convincingly argues, this does not imply that we can in some way ``deduce mental representations from patterns of use,'' \ie\ from corpus data.
 It would be highly surprising if this were possible, and the same holds for experimental methods.
 Nobody assumes that we can inductively infer mental representations from experiments, which -- as opposed to corpus studies -- even allow for direct access to the cognitive agent and offer much better possibilities to control experimental conditions and nuisance variables.
 Rather, under the standard approach, a theory of cognitive representation is pre-specified.
 Then, predictions are derived from this theory \textit{before} the experiment or the corpus study is conducted to \textit{test} the theory.
-Technical problems of statistical inference aside, a successful experiment corroborates the theory, and a failed experiment weakens the theory.
-The simplest assumption would be that the same approach is adequate for corpus studies.
-
-The present study is conducted within the general paradigm of cognitive corpus linguistics and includes a comparison of the corpus findings with results from two experiments.
-I assume a model of similarity-based classification in the form of Prototype Theory for modeling alternation.
-Protoype Theory has been used in alternation research in cognitively oriented corpus linguistics (see \citealp{DivjakArppe2013}; \citealp{Gries2003}).
-It is assumed that the variables annotated in a corpus study on an alternation phenomenon define prototypes for the alternants.
-The similarity of a given feature vector (in a concrete sentence where one of the alternants is used) influences to a large extent which alternant is chosen by speakers.
-This entails that a variant of Prototype Theory with features is assumed \citep{Rosch1978}, instead of the monolithic prototypes of earlier versions.
-Prototype Theory is well suited for modeling constructional choices but it is just one of several similarity-based theories of classification, the most prominent other framework being Exemplar Theory (\citealp{MedinSchaffer1978,Hintzman1986}; see \citealp{StormsEa2000} for a comparison of the theories in experimental settings).
-Prototype Theory and Exemplar Theory model essentially the same types of effects and differ mainly in whether they assume higher-level abstractions as part of the cognitive representation (Prototype Theory) or try to do without them (Exemplar Theory).
-I am sceptical that corpus analysis alone could ever decide which theory is more suitable, given that substantial doubt has been voiced whether even experimental methods are ultimately able to do so \citep{Barsalou1990}.%
-\footnote{In \cite{DivjakArppe2013}, it was shown using corpus data how both models form a converging picture.}
-Prototype Theory (with feature abstractions) is preferred here simply because it fits the established alternation modeling paradigm, which relies on features being weighted in statistical models.
-In Section~\ref{sec:analyses}, a prototype-theoretical parlance is therefore adopted.
-
-In the remainder of the paper, I introduce the alternation phenomenon (Section~\ref{sec:descriptive}) and suggest a theory-driven set of factors influencing the alternation (Section~\ref{sec:analyses}).
-Then the corpus study is presented, including an appropriate statistical analysis (Section~\ref{sec:corpusstudies}).
-Two experiments which corroborate the corpus-based findings are then reported in Section~\ref{sec:experimental} before I sum up the paper in Section~\ref{sec:conclusion}.
+While the same approach is by and large applicable to corpus data.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hl{Discussion of non-convergence here.}
+
+
+\hl{Turning to the second issue, }
+This entails that a variant of prototype theory with features is assumed \citep{Rosch1978}.
+Prototype theory is well suited for modeling constructional choices, but it is just one of several similarity-based theories of classification, the most prominent other framework being Exemplar Theory (\citealp{MedinSchaffer1978,Hintzman1986}; see \citealp{StormsEa2000} for a comparison of the theories in experimental settings).
+Prototype Theory and Exemplar Theory model essentially the same types of effects and differ mainly in whether they assume higher-level abstractions as part of the cognitive representation of categories (prototype theory) or assume that categories emerge through the storage of many exemplars and similarity classification on those exemplars (exemplar theory).
+As \cite{Barsalou1990} shows, the two theories model the same types of effects and are informationally equivalent.
+Consequently, experiments which favour one theory over the other use procedural behaviour of subjects, for example the speed of category retrieval.
+In very early experiments, \cite{PosnerKeele1968} showed, for example, that highly prototypical unseen exemplars were categorised more easily by subjects compared to less prototypical ones, even if these were included in the learning data.
+Since corpus data only show artefacts of production events and we have no experimental access to the speakers or writers performance, one should be sceptical whether corpus analysis alone could ever decide which theory of mental representation is more suitable (see also \citealp[22]{Gries2003} and the \citealp[486--487]{Dabrowska2016} quote above).
+%The corpus-based approach in \cite{DivjakArppe2013}, for example, primarily shows that corpus data are compatible with aspects of prototype and exemplar theory.
+
+
+
+\cite{VanpaemelStorms2008,LeeVanpaemel2008} proposed the \textit{varying abstraction model} (VAM) which ``attempt[s] to balance economy and informativeness'' \citep[745]{LeeVanpaemel2008}, treating models with full abstraction (prototypes) and no abstraction at all (radical exemplar theory) as special cases of a model which allows for both abstraction and exemplar effects.
+However, \cite[183--184]{Vanpaemel2016} describes the state of affairs between adherents of neo-prototype theory (such as \citealp{MindaSmith2001,MindaSmith2002}) and exemplar theory as a stalemate, and suggests yet another approach to solve the divide.
+
+\cite{ConawayKurtz2016} show that reference point approaches to category learning such as prototype and exemplar theory fail to explain certain experimental results where subjects learn to generalise beyond the input in a way that cannot be explained by similarity.
+
+\cite{GriffithsEa2009} present a computational model based on the hierarchichal Dirirchlet process which is able to chose the appropriate complexity of representation for a given category.
+
+In \cite{HahnEa2010}, the authors show that subjects even use similarity (exemplar) effects when they are given very simple explicit rules, which is highly relevant because most studies focus on implicit rule-based knowledge, which involves many auxiliary assumptions in actual experiments \citep[2]{HahnEa2010}.
+
+An aspect generally neglected in models of categorisation is how categorisation feeds exemplar generation and creativity (\ie category generation), two subjects of utmost importance to many linguists.
+In \cite{JernKemp2013}, a model is assumed where cognitive agents sample from learned distributions over both categories and exemplars to generate new ones.
+
+One thing that should be kept in mind is that most of the research on categorisation in cognitive science uses experiments with highly simplified stimuli and very simple tasks.
+It is remarkable in this context that \cite{VoorspoelsEa2011} consider the experimental task reported by them -- assigning typicality scores to nouns from the domains of \textit{animals} and \textit{artefacts} to categories like \textit{bird}, \textit{fish}, \textit{clothing}, or \textit{tools} -- a study of ``superordinate natural language categories, whereas most evidence supporting exemplar representations has been found in artificial categories of a more subordinate level'' \citep[1013]{VoorspoelsEa2011}.
+Linguists (not just of the cognitive variety) are usually interested in high-level generalisations and complex categories, especially in (morpho-)syntax.%
+\footnote{Notice that recently, approaches have emerged which solve at least some problems by abandoning typically linguistic high-level features altogether \citep{BaayenEa2016,RamscarPort2016}.}
+Since, as a consequence, formal models of categorisation in cognitive linguistics have not been spelled out at the same level of mathematical detail as in cognitive science, I propose that the primary focus should be on determining which factors influence choices made by speakers.
+As \cite[22]{Gries2003} put it with reference to classic prototype theory, ``even if the form of analysis does not translate into statements on mental representations, the high predictive power [...] shows that the cognitive factors underlying the choice of construction have been identified properly and weighted in accordance with their importance for actual usage.''
+A major advancement since this early time has been the focus on which effects are at least more plausibly modelled as prototype\slash abstraction and exemplar effects, and how observed data fits the two approaches (see, for example, \citealp{DivjakArppe2013}).
+This paper contributes this discussion.
+
+
+
+
+% The present study is conducted within the general paradigm of cognitive corpus linguistics and includes a comparison of the corpus findings with results from two experiments.
+% I assume a model of similarity-based classification in the form of Prototype Theory for modeling alternation.
+% Protoype Theory has been used in alternation research in cognitively oriented corpus linguistics (see \citealp{DivjakArppe2013}; \citealp{Gries2003}).
+% It is assumed that the variables annotated in a corpus study on an alternation phenomenon define prototypes for the alternants.
+% The similarity of a given feature vector (in a concrete sentence where one of the alternants is used) influences to a large extent which alternant is chosen by speakers.
+% This entails that a variant of Prototype Theory with features is assumed \citep{Rosch1978}, instead of the monolithic prototypes of earlier versions.
+% Prototype Theory is well suited for modeling constructional choices but it is just one of several similarity-based theories of classification, the most prominent other framework being Exemplar Theory (\citealp{MedinSchaffer1978,Hintzman1986}; see \citealp{StormsEa2000} for a comparison of the theories in experimental settings).
+% Prototype Theory and Exemplar Theory model essentially the same types of effects and differ mainly in whether they assume higher-level abstractions as part of the cognitive representation (Prototype Theory) or try to do without them (Exemplar Theory).
+% I am sceptical that corpus analysis alone could ever decide which theory is more suitable, given that substantial doubt has been voiced whether even experimental methods are ultimately able to do so \citep{Barsalou1990}.%
+% \footnote{In \cite{DivjakArppe2013}, it was shown using corpus data how both models form a converging picture.}
+% Prototype Theory (with feature abstractions) is preferred here simply because it fits the established alternation modeling paradigm, which relies on features being weighted in statistical models.
+% In Section~\ref{sec:analyses}, a prototype-theoretical parlance is therefore adopted.
+% 
+% In the remainder of the paper, I introduce the alternation phenomenon (Section~\ref{sec:descriptive}) and suggest a theory-driven set of factors influencing the alternation (Section~\ref{sec:analyses}).
+% Then the corpus study is presented, including an appropriate statistical analysis (Section~\ref{sec:corpusstudies}).
+% Two experiments which corroborate the corpus-based findings are then reported in Section~\ref{sec:experimental} before I sum up the paper in Section~\ref{sec:conclusion}.
 
 
