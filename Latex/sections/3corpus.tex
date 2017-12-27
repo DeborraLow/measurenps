@@ -147,82 +147,82 @@ To control for this effect, the case of the measure noun was manually annotated 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{On statistical analysis}
-\label{sec:rightstatistics}
-
-In this section, I justify my choice of statistical models used in Section~\ref{sec:corpushierarchicalmodel}.
-Readers might think that the method used here for modeling grammatical alternations -- namely (Hierarchical) Logistic Regression\slash Generalised Linear (Mixed) Models or GL(M)Ms -- does not require much justification.
-After all, GLMMs have been established as the major tool in the analysis of alternation phenomena.
-All studies mentioned at the outset of Section~\ref{sec:cogocl} use some form of regression\slash GLMM.
-Over the past few years, however, modified or alternative methods have been proposed.
-While it is impossible to discuss all of these methods here, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}) as it was proposed in \cite{Levshina2016} and \cite{Divjak2016a}, for example.
-Conceptually, I see three points of discussion that should be kept apart.
-First, Bayesian methods are sometimes touted as superior tools for scientific inference compared to frequentist methods.
-Second, it has been proposed that the Bayesian interpretation of probability is more cognitively adequate for the modeling of linguistic data \cite[301--302]{Divjak2016a}.
-Third and very specific to this paper, given established methods in the modeling of alternation and variation, it has to be decided whether so-called Bayesian methods lead to substantially different results.
-
-% As for the first point, this is not quite the place to discuss it fully.
-% The basic distinction is a philosophical one and related to the concepts of \textit{direct} and \textit{inverse probability} (\eg\ \citealp{Senn2011}).
-% Frequentists assume that models and parameters are fixed, for example a model specifying that a coin is fair.
-% We can then calculate for observed data (for example a measurement of 3 heads in an experiment with 10 tosses) how often such a result or a more extreme result would occur if the model were true and we repeated the experiment arbitrarily often.
-% This is essentially the frequentist notion of direct probability, \ie\ long-run frequencies under replication.
-% Standard tests in the Fisher and Neyman-Pearson traditions as well as Neyman confidence intervals are based on this concept of probability.
-% Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
-% The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
-% There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
-% In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that ``most of this received view of Bayesian inference is wrong,'' and they develop a Bayesian notion of p-values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
-% Clearly, in such quarrels between and among camps of philosophers of science and statisticians, it is difficult for mere practitioners to take sides.
+% \subsection{On statistical analysis}
+% \label{sec:rightstatistics}
 % 
-% These quarrels relate to the second point, however.
-% \citet[301--302]{Divjak2016a} speaks favourably of Bayesian methods because the Bayesian concept of probability is more adequate for cognitive modeling compared to the frequentist one.
-% Her argument is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}). 
-% On p.\ 303 of \cite{Divjak2016a}, the author goes on to explicitly mention NDL as well.
-% Yet, neither frequentist nor Bayesian methods were conceived as cognitive models, but as systems of inference for scientists (see above, and see also \citealp[302]{Divjak2016a}).
-% The fundamental question that lurks behind such arguments is how we interpret our statistical models (estimated on corpus data).
-% Are they inductive models of cognitive representations that also human learners would infer from being exposed to the corpus data?%
-% \footnote{In which case we are doing ``data science in language research'' in the words of \citealp{MilinEa2016}.
-% I see this as standing in contradiction to the view advocated in \cite{Dabrowska2016} as cited above.}
-% Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on linguistic output data contained in corpora?
-% In the former case, we adopt a strong \textit{corpus as input} hypothesis and should definitely resort to methods like NDL.
-% However, this would most likely require us to toss most previous work done in (cognitive) linguistics into the bin and to abandon all high-level generalisations that most existing studies have been based upon.
-% In fact, arguments to this extreme effect and against using high-level generalisation have been made, for example in \cite{BaayenEa2016}, \citet[299--300]{Divjak2016a}, \cite{RamscarPort2016}, \cite{TheijssenEa2013}.
-% In the latter and less extreme case, the cognitive commitment does, however, not necessarily extend to the statistical methods used.
-% These methods then do not need to be any more cognitively plausible than an ANOVA used to analyse the results from an experiment.
-% I view my own work (see Sections~\ref{sec:germanmeasurenps}--\ref{sec:experimental}) in the tradition of testing theories (which embrace high-level generalisations), and I agree to provisionally use Likelihood methods (see below).
-% I remain fully agnostic with respect to the question, which approach is \textit{right}.
-% The best strategy for cognitive linguistics as a field might be to cultivate many methods while making sure that each method is applied carefully and competently.
-
-The first and second point cannot be discussed in detail here.%
-\footnote{However, there is a number of critical papers by statisticians (even prominent Bayesians) and philosophers of science in which the extreme credibility that has recently been assigned to (subjective and automatic) Bayesian approaches (and especially the standard inductivist interpretation of Bayesianism) is questioned (for example, \citealp{GelmanShalizi2013,Mayo2011,Senn2011}).}
-With regard to the third point, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
-First, she claims that ``while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data.''
-This does not do justice to frequentist methods in that a strong focus on the rejection of the null hypothesis is characteristic only of Fisher's approach.
-In the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis vis-à-vis the alternative hypothesis (cf.\ \citealp{Lehmann1993,Lehmann2011,Perezgonzalez2015}).
-Also, especially Neyman-style frequentism has well-known extensions to estimation, for example in the form of confidence intervals (see \citealp{GreenlandEa2016}, esp.\ p.\ 340).
-She then explains that a ``distinctive feature of Bayesian statistics is the use of so-called priors'' and that ``posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data'' \cite[252]{Levshina2016}.
-Remarkably, given this statement, she does \textit{not} use informative priors and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error.
-So, the proclaimed major advantage of Bayesian modeling was apparently not taken advantage of.%
-\footnote{In the words of \cite{Senn2011}: ``You may believe you are a Bayesian but you are probably wrong.''
-\citet[347--348]{GelmanHill2006} ``view any noninformative prior distribution as inherently provisional'' and give recommendations how to proceed once posteriors have been obtained from noninformative priors.}
-Now, Maximum Likelihood Estimation (MLE) -- the traditional method which could have been used instead -- is not exactly \textit{frequentist} in the sense of Neyman-Pearson testing theory.
-MLE, like inductive Bayesianism, conditions on the particular data inasmuch as it searches for the most likely set of parameters given the data.
-What is more, Bayesian estimators are in fact based on the Likelihood and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
-If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
-The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional parameter models \citep[1119--1120]{Freedman1999}, a well-established result known as the \textit{Bernstein-von Mises theorem}.
-With a modest model structure including 17 fixed effects and 2,646 data points in \cite{Levshina2016}, it is highly likely that the same results would have been obtained with Maximum Likelihood methods.
-In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
-This is a clear sign that the prior is ``swamped by the data'' \citep[1119]{Freedman1999}.
-% Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
-% However, most similar studies (dating back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist in a narrow sense, and which is as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
-
-If there had been evidence in Levshina's study that Bayesian and MLE methods did \textit{not} converge, it would have been an occasion to demonstrate the selective superiority of the algorithms used in Bayesian estimation.
-After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
-I want to state clearly that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
-However, being ``Bayesian'' is most likely not among its selling points.
-Additionally, I want to voice the concern that many practitioners are probably already struggling with getting an adequate grasp of advanced statistical methods and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
-In the next section, I estimate the parameters of my hierarchical model with MLE and Markov-Chain Monte Carlo (MCMC) methods (the currently most prominent estimator used in Bayesian settings) to demonstrate their expectable convergence.
-
-
+% In this section, I justify my choice of statistical models used in Section~\ref{sec:corpushierarchicalmodel}.
+% Readers might think that the method used here for modeling grammatical alternations -- namely (Hierarchical) Logistic Regression\slash Generalised Linear (Mixed) Models or GL(M)Ms -- does not require much justification.
+% After all, GLMMs have been established as the major tool in the analysis of alternation phenomena.
+% All studies mentioned at the outset of Section~\ref{sec:cogocl} use some form of regression\slash GLMM.
+% Over the past few years, however, modified or alternative methods have been proposed.
+% While it is impossible to discuss all of these methods here, I just make a few remarks on Bayesian estimation (see \citealp{GelmanEa2014}) as it was proposed in \cite{Levshina2016} and \cite{Divjak2016a}, for example.
+% Conceptually, I see three points of discussion that should be kept apart.
+% First, Bayesian methods are sometimes touted as superior tools for scientific inference compared to frequentist methods.
+% Second, it has been proposed that the Bayesian interpretation of probability is more cognitively adequate for the modeling of linguistic data \cite[301--302]{Divjak2016a}.
+% Third and very specific to this paper, given established methods in the modeling of alternation and variation, it has to be decided whether so-called Bayesian methods lead to substantially different results.
+% 
+% % As for the first point, this is not quite the place to discuss it fully.
+% % The basic distinction is a philosophical one and related to the concepts of \textit{direct} and \textit{inverse probability} (\eg\ \citealp{Senn2011}).
+% % Frequentists assume that models and parameters are fixed, for example a model specifying that a coin is fair.
+% % We can then calculate for observed data (for example a measurement of 3 heads in an experiment with 10 tosses) how often such a result or a more extreme result would occur if the model were true and we repeated the experiment arbitrarily often.
+% % This is essentially the frequentist notion of direct probability, \ie\ long-run frequencies under replication.
+% % Standard tests in the Fisher and Neyman-Pearson traditions as well as Neyman confidence intervals are based on this concept of probability.
+% % Bayesian approaches (in the now common interpretation), on the other hand, condition on the particular data and quantify inductively the probability of model parameters given the data.
+% % The parameters are thus not fixed, and the probability is usually equated with researchers' posterior beliefs about model parameters.
+% % There is actually a debate among Bayesians about the proper interpretation of Bayesian methods, and whether a notion of hypothesis testing is compatible (or even already contained) in the Bayesian approach.
+% % In \citet[10]{GelmanShalizi2013}, the authors -- prominent Bayesians themselves -- acknowledge that a theory of statistical testing is a desideratum, and they state about the standard inductive interpretation of Bayesianism that ``most of this received view of Bayesian inference is wrong,'' and they develop a Bayesian notion of p-values (see also \citealp{Mayo2013}, for a frequentist reply; also \citealp{Senn2011} on different strands of Bayesianism and their stance on inductive vs.\ deductive reasoning, and \citealp{Mayo2011}, for a critical reply to \citealp{Senn2011}).
+% % Clearly, in such quarrels between and among camps of philosophers of science and statisticians, it is difficult for mere practitioners to take sides.
+% % 
+% % These quarrels relate to the second point, however.
+% % \citet[301--302]{Divjak2016a} speaks favourably of Bayesian methods because the Bayesian concept of probability is more adequate for cognitive modeling compared to the frequentist one.
+% % Her argument is part of a larger body of literature asking for cognitively plausible modeling techniques, for example Naive Discriminative Learning (NDL; \citealp{Baayen2011,BaayenEa2013,MilinEa2016,TheijssenEa2013}). 
+% % On p.\ 303 of \cite{Divjak2016a}, the author goes on to explicitly mention NDL as well.
+% % Yet, neither frequentist nor Bayesian methods were conceived as cognitive models, but as systems of inference for scientists (see above, and see also \citealp[302]{Divjak2016a}).
+% % The fundamental question that lurks behind such arguments is how we interpret our statistical models (estimated on corpus data).
+% % Are they inductive models of cognitive representations that also human learners would infer from being exposed to the corpus data?%
+% % \footnote{In which case we are doing ``data science in language research'' in the words of \citealp{MilinEa2016}.
+% % I see this as standing in contradiction to the view advocated in \cite{Dabrowska2016} as cited above.}
+% % Or are they tests of theories that are pre-specified and merely tested for predictive accuracy on linguistic output data contained in corpora?
+% % In the former case, we adopt a strong \textit{corpus as input} hypothesis and should definitely resort to methods like NDL.
+% % However, this would most likely require us to toss most previous work done in (cognitive) linguistics into the bin and to abandon all high-level generalisations that most existing studies have been based upon.
+% % In fact, arguments to this extreme effect and against using high-level generalisation have been made, for example in \cite{BaayenEa2016}, \citet[299--300]{Divjak2016a}, \cite{RamscarPort2016}, \cite{TheijssenEa2013}.
+% % In the latter and less extreme case, the cognitive commitment does, however, not necessarily extend to the statistical methods used.
+% % These methods then do not need to be any more cognitively plausible than an ANOVA used to analyse the results from an experiment.
+% % I view my own work (see Sections~\ref{sec:germanmeasurenps}--\ref{sec:experimental}) in the tradition of testing theories (which embrace high-level generalisations), and I agree to provisionally use Likelihood methods (see below).
+% % I remain fully agnostic with respect to the question, which approach is \textit{right}.
+% % The best strategy for cognitive linguistics as a field might be to cultivate many methods while making sure that each method is applied carefully and competently.
+% 
+% The first and second point cannot be discussed in detail here.%
+% \footnote{However, there is a number of critical papers by statisticians (even prominent Bayesians) and philosophers of science in which the extreme credibility that has recently been assigned to (subjective and automatic) Bayesian approaches (and especially the standard inductivist interpretation of Bayesianism) is questioned (for example, \citealp{GelmanShalizi2013,Mayo2011,Senn2011}).}
+% With regard to the third point, \citet[251--252]{Levshina2016} argues for Bayesian estimation in mixed regression settings.
+% First, she claims that ``while frequentist statistics only allows one to test whether the null hypothesis can be rejected, Bayesian statistics enables one both to test the null hypothesis and to estimate the probability of specific parameter values given the data.''
+% This does not do justice to frequentist methods in that a strong focus on the rejection of the null hypothesis is characteristic only of Fisher's approach.
+% In the Neyman-Pearson approach, results ideally \textit{favour} the main hypothesis vis-à-vis the alternative hypothesis (cf.\ \citealp{Lehmann1993,Lehmann2011,Perezgonzalez2015}).
+% Also, especially Neyman-style frequentism has well-known extensions to estimation, for example in the form of confidence intervals (see \citealp{GreenlandEa2016}, esp.\ p.\ 340).
+% She then explains that a ``distinctive feature of Bayesian statistics is the use of so-called priors'' and that ``posterior probabilities depend on both the prior beliefs and the data, whereas the results of a frequentist model depend only on the data'' \cite[252]{Levshina2016}.
+% Remarkably, given this statement, she does \textit{not} use informative priors and in her footnote 8 \cite[252]{Levshina2016} admits that priors were probed using trial and error.
+% So, the proclaimed major advantage of Bayesian modeling was apparently not taken advantage of.%
+% \footnote{In the words of \cite{Senn2011}: ``You may believe you are a Bayesian but you are probably wrong.''
+% \citet[347--348]{GelmanHill2006} ``view any noninformative prior distribution as inherently provisional'' and give recommendations how to proceed once posteriors have been obtained from noninformative priors.}
+% Now, Maximum Likelihood Estimation (MLE) -- the traditional method which could have been used instead -- is not exactly \textit{frequentist} in the sense of Neyman-Pearson testing theory.
+% MLE, like inductive Bayesianism, conditions on the particular data inasmuch as it searches for the most likely set of parameters given the data.
+% What is more, Bayesian estimators are in fact based on the Likelihood and merely multiply it by the prior \citep[6--8]{GelmanEa2014}.
+% If the prior is flat, results converge (see also \citealp[347]{GelmanHill2006}).
+% The same is true if the sample size is large compared to the number of parameters, at least for finite-dimensional parameter models \citep[1119--1120]{Freedman1999}, a well-established result known as the \textit{Bernstein-von Mises theorem}.
+% With a modest model structure including 17 fixed effects and 2,646 data points in \cite{Levshina2016}, it is highly likely that the same results would have been obtained with Maximum Likelihood methods.
+% In fact, she admits that changing the priors did not lead to substantially different results in her footnote 8.
+% This is a clear sign that the prior is ``swamped by the data'' \citep[1119]{Freedman1999}.
+% % Going back to the argument that Bayesian methods are allegedly more cognitively plausible than `frequentist' methods, the claim might still be true.
+% % However, most similar studies (dating back to \citealp{BresnanEa2007}) use an estimator (MLE) that is not frequentist in a narrow sense, and which is as cognitively plausible as Bayesian estimators because it most likely produces the same results in these studies.
+% 
+% If there had been evidence in Levshina's study that Bayesian and MLE methods did \textit{not} converge, it would have been an occasion to demonstrate the selective superiority of the algorithms used in Bayesian estimation.
+% After all, there are situations where Bayesian estimators can be more robust, namely with heavily censored data, complex hierarchical models, perfect separation, etc. (see \citealp{Freedman1999}, \citealp[345--348]{GelmanHill2006}).
+% I want to state clearly that these points do not in any way invalidate the results presented in \cite{Levshina2016}.
+% However, being ``Bayesian'' is most likely not among its selling points.
+% Additionally, I want to voice the concern that many practitioners are probably already struggling with getting an adequate grasp of advanced statistical methods and that it might therefore be wise to use the more conservative and better understood method if the alternative method is not absolutely required for substantive reasons.
+% In the next section, I estimate the parameters of my hierarchical model with MLE and Markov-Chain Monte Carlo (MCMC) methods (the currently most prominent estimator used in Bayesian settings) to demonstrate their expectable convergence.
+% 
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
