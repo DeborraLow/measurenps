@@ -137,36 +137,48 @@ The aggregated counts for each concordance were analysed in the form of a multil
     \begin{tabular}{llrlrrrc}
     Model level  & Regressor         & $\text{p}_{\text{PB}}$ & Factor level & Coefficient & CI low & CI high & CI excludes 0 \\
     \midrule
-    First        & Badness           &                 &              &       &  &   &              \\
-                 & Cardinal          &                 & No           &       &  &   &              \\
-                 & Genitives         &                 &              &       &  &   &              \\
+    1                & Badness           & 0.042                  &              &  0.120      & -0.002 &  0.228  &              \\
+                     & Cardinal          & 0.001                  & No           &  1.419      &  0.869 &  1.993  &  *           \\
+                     & Genitives         & 0.001                  &              & -0.710      & -0.815 & -0.556  &  *           \\[0.5\baselineskip]
+
     
-    Second       & (Kindfreq)        &                 &              &       &  &   &              \\
-    (Kind)       & (Kindgender)      &                 &              &       &  &   &              \\[0.5\baselineskip]
+    2 (Kindlemma)    & (Kindfreq)        & (0.781)                &              &             &        &         &              \\
+                     & (Kindgender)      & (0.199)                &              &             &        &         &              \\[0.5\baselineskip]
     
-    Second       & Measureclass      &                 & Container    &       &  &   &              \\
-    (Measure)    &                   &                 & Rest         &       &  &   &              \\
-                 &                   &                 & Amount       &       &  &   &              \\
-                 &                   &                 & Portion      &       &  &   &              \\
-                 & (Measurefreq)     &                 &              &       &  &   &              \\
+    2 (Measurelemma) & Measureclass      & 0.005                  & Container    & 0.445       & -0.579 &  1.532  &              \\
+                     &                   &                        & Rest         & 1.745       &  0.649 &  2.831  &  *           \\
+                     &                   &                        & Amount       & 1.597       &  0.125 &  2.751  &  *           \\
+                     &                   &                        & Portion      & 1.782       &  0.771 &  2.690  &  *           \\
+                     & (Measurefreq)     & (0.265)                &              &             &        &         &              \\
 
   \end{tabular}
   }
-  \caption{Coefficient table with 95\% bootstrap confidence intervals for the pre-study; the intercept is XXX}
+  \caption{Coefficient table with 95\% bootstrap confidence intervals for the pre-study; the intercept is -5.370}
   \label{tab:smalltable}
 \end{table}
 
 The coefficient estimates are specified in Table~\ref{tab:smalltable} for each regressor (or regressor level) in the columns labelled \textit{Coefficient}.
-Given the coding of the response variable, coefficients leaning to the positive side can be interpreted as describing a context typical of the \PGCd.
+Given the coding of the response variable, coefficients leaning to the positive side can be interpreted as characterising a configuration typical of the \PGCd.
 For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \mbox{\textit{confint.merMod}} function from \textit{lme4}) with 1,000 replications and using the percentile method for the calculation of the intervals.
 The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:smalltable} in the columns labelled \textit{CI low} and \textit{CI high} (= upper and lower 2.5th percentiles).
 The column \textit{CI excludes 0} shows an asterisk for those intervals that do not include 0.
 Furthermore, for each regressor, a p-value was obtained by dropping the regressor from the full model, re-estimating the nested model, and comparing it to the full model.
 Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 I call the corresponding value $p_{\text{PB}}$, and it is given in the respective columns in Table~\ref{tab:smalltable}.
-Regressors which did not reach sig=0.05 in in the pbkrtest (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and have no coefficient estimates.
+Regressors which did not reach sig=0.05 in in the PBmodcomp test (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and have no coefficient estimates.
+The overall intercept is -5.370 and reoresents \textit{Cardinal=Yes}, \textit{Measureclass=Physical} and 0 for all (z-transformed) numeric regressors.
+The standard deviation in the random intercepts is 1.157 for \textit{Measurelemma} ($p_{\text{PB}}=0.001$) and 0.923 for \textit{Kindlemma} ($p_{\text{PB}}=0.0.002$).
+Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.278$ and $R^2_c=0.566$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
+This means that the effect of the fixed effects (marginal $R^2$) is weak to intermediate, and that lemma-specific effects (conditional minus marginal $R^2$) are equally strong with a difference between the two coefficients of 0.289.
 
-
+This show that the main prototypical factors \textit{Cardinal} and \textit{Measureclass} indeed play the predicted role
+The abstract non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACb.
+At the other end of the scale, nouns denoting natural portions like \textit{Haufen} `heap', \textit{Bündel} `bundle', \textit{Schluck} `gulp' favour the \PGCd.
+Also, The presence of a cardinal modifier clearly favours the \NACb.
+The stylistic factor \textit{Genitives} is confirmed to have an influence as predicted inasmuch as a general lack of genitives (which is encoded as a \textit{higher} value of the variable) favours the \NACb.
+\textit{Badness} points into the wrong direction, but it barely reaches sig=0.05, and its confidence interval includes 0.
+The lemma frequency regressors both clearly fail the PBmodcomp test.
+I will return to these results in Section~\ref{sec:interpretation}.
 
 \subsection{Main study: the alternation}
 \label{sec:annotation}
@@ -198,9 +210,9 @@ All regressors from Table~\ref{tab:variables} were included, and the measure lem
 The sample size was \textit{n=}5,063 with 1,134 cases of \PGCa\ and 3,929 cases of \NACa.
 The results of the estimation are shown in Table~\ref{tab:bigtable} and in Figure~\ref{fig:fixeffs}.
 The intercept comprises \textit{Cardinal=Yes}, \textit{Measurecase=Nom}, \textit{Kindgender=Masc}, \textit{Measureclass=Physical}, and 0 for all numeric z-transformed regressors.
-It was estimated at -4.328.
+It was estimated at -3.548.
 
-The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \citet[265--269,302--304]{GelmanHill2006} and Section~\ref{sec:itemandexemplareffects}.
+The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as group-level predictors (or second-level effects), cf.\ \citet[265--269,302--304]{GelmanHill2006} and Section~\ref{sec:itemandexemplareffects}.
 The same goes for those listed with the kind lemma as their unit of reference.
 Given the coding of the response variable, coefficients leaning to the positive side can be interpreted as favouring the \PGCa.
 
@@ -210,43 +222,43 @@ Given the coding of the response variable, coefficients leaning to the positive 
     \begin{tabular}{llrlrrrc}
     Model level  & Regressor         & $\text{p}_{\text{PB}}$ & Factor level & Coefficient & CI low & CI high & CI excludes 0 \\
     \midrule
-    First        & Badness           &  0.002                 &              & -0.152      & -0.247 & -0.061  & *             \\
-                 & Cardinal          &  0.001                 & No           &  1.189      &  0.862 &  1.466  & *             \\
-                 & Genitives         &  0.001                 &              & -0.693      & -0.768 & -0.592  & *             \\
-                 & Measurecase       &  0.001                 & Acc          &  0.030      & -0.150 &  0.212  &               \\
-                 &                   &                        & Dat          &  0.705      &  0.455 &  0.944  & *             \\[0.5\baselineskip]
+    1               & Badness           &  0.002                 &              & -0.152      & -0.247 & -0.061  & *             \\
+                    & Cardinal          &  0.001                 & No           &  1.189      &  0.862 &  1.466  & *             \\
+                    & Genitives         &  0.001                 &              & -0.693      & -0.768 & -0.592  & *             \\
+                    & Measurecase       &  0.001                 & Acc          &  0.030      & -0.150 &  0.212  &               \\
+                    &                   &                        & Dat          &  0.705      &  0.455 &  0.944  & *             \\[0.5\baselineskip]
     
-    Second       & Kindattraction    &  0.020                 &              &  0.225      &  0.049 &  0.393  & *             \\
-    (Kind)       & Kindfreq          &  0.095                 &              &  0.146      & -0.023 &  0.301  &               \\
-                 & Kindgender        &  0.001                 & Neut         &  0.021      & -0.367 &  0.392  &               \\
-                 &                   &                        & Fem          &  1.269      &  0.800 &  1.709  & *             \\[0.5\baselineskip]
+    2 (Kindlemma)   & Kindattraction    &  0.020                 &              &  0.225      &  0.049 &  0.393  & *             \\
+                    & Kindfreq          &  0.095                 &              &  0.146      & -0.023 &  0.301  &               \\
+                    & Kindgender        &  0.001                 & Neut         &  0.021      & -0.367 &  0.392  &               \\
+                    &                   &                        & Fem          &  1.269      &  0.800 &  1.709  & *             \\[0.5\baselineskip]
     
-    Second       & Measureattraction &  0.001                 &              &  0.282      &  0.106 &  0.447  & *             \\
-    (Measure)    & Measureclass      &  0.001                 & Container    &  0.252      & -0.265 &  0.788  &               \\
-                 &                   &                        & Rest         &  0.421      & -0.209 &  1.063  &               \\
-                 &                   &                        & Amount       &  0.831      &  0.215 &  1.432  & *             \\
-                 &                   &                        & Portion      &  1.217      &  0.675 &  1.684  & *             \\
-                 & Measurefreq       &  0.005                 &              & -0.231      & -0.363 & -0.079  & *             \\
+    2 (Measurelemma & Measureattraction &  0.001                 &              &  0.282      &  0.106 &  0.447  & *             \\
+                    & Measureclass      &  0.001                 & Container    &  0.252      & -0.265 &  0.788  &               \\
+                    &                   &                        & Rest         &  0.421      & -0.209 &  1.063  &               \\
+                    &                   &                        & Amount       &  0.831      &  0.215 &  1.432  & *             \\
+                    &                   &                        & Portion      &  1.217      &  0.675 &  1.684  & *             \\
+                    & Measurefreq       &  0.005                 &              & -0.231      & -0.363 & -0.079  & *             \\
 
   \end{tabular}
   }
-  \caption{Coefficient table with 95\% bootstrap confidence intervals for the main study; the intercept is -4.328}
+  \caption{Coefficient table with 95\% bootstrap confidence intervals for the main study; the intercept is -3.548}
   \label{tab:bigtable}
 \end{table}
 
 Standard diagnostics show that the model quality is quite good.%
 \footnote{Notice that no aggressive model selection was applied, especially not upward model selection including probing for interactions.
 I am convinced that the model should be specified based on theoretical considerations (and known nuisance effects) to avoid the dangers of data dredging and to avoid models which are difficult to interpret.
-Removal of useless regressors (judging by, for example, the pbkrtest and coefficients of determination) is the only type of model selection I allow in my research.}
-Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
+Removal of useless regressors (judging by, for example, the PBmodcomp test and coefficients of determination) is the only type of model selection I allow in my research.}
+Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$.
 The rate of correct predictions is 0.843, which means a proportional reduction of error of $\lambda=0.297$.
-Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than 1.6.
+Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and the highest corrected $\text{GVIF}^{1/2\text{df}}$ was 1.520 for \textit{Cardinal}.
 The lemma intercepts have standard deviations of $\sigma_{\text{Measurelemma}}=0.448$ and $\sigma_{\text{Kindlemma}}=0.604$.
-Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be convincing, failing at sig=0.05.
+Only \textit{Kindfreq} ($\mpPB=0.095$) could be seen as slightly too high to be convincing, failing at sig=0.05.
 
-Using collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) was not successful.
-While the attraction measures reach satisfying sig levels, the $\text{p}_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.
-The coefficients of determination drop to $R_m^2=0.383$ and $R^2_c=0.490$.
+Using signed logarithmised collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) (with smoothing to avoid log(0) operations) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) (see Section~\ref{sec:variablesandannotation}) was not successful.
+While the attraction measures reach satisfying sig levels in the PBmodcomp test (0.020 for \textit{Kindattraction} and 0.001 for \textit{Measureattraction}), the $p_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.
+The coefficients of determination drop to $R_m^2=0.135$ and $R^2_c=0.636$.
 
 
 \subsection{Interpretation}
@@ -254,7 +266,7 @@ The coefficients of determination drop to $R_m^2=0.383$ and $R^2_c=0.490$.
 
 
 %\hl{As collostructional analysis is relatively popular in some cognitively oriented areas of corpus linguistics, I tried using collexeme strength as a regressor (with smoothing to remedy the mathematical problems), and the results were unsatisfactory compared to the simple quotient used here.
-%The corresponding regressor did not even reach sig=0.1 in the pbkrtest.
+%The corresponding regressor did not even reach sig=0.1 in the PBmodcomp test.
 %Both the cognitive underpinnings and the math behind collostructional analysis are still much debated (see prominently \citealp{SchmidKuechenhoff2013,KuechenhoffSchmid2015}), I see this result }
 
 

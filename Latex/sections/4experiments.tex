@@ -15,7 +15,7 @@ In essence, participants distribute a probability mass between two alternants, w
 The split-100 paradigm has been criticised in \cite{ArppeJaervikivi2007}.
 The criticism was reiterated in \cite{DivjakEa2016}, where they use a forced-choice task.
 In \cite{VerhoevenTemme2017}, it was shown that results from forced-choice and split-100 experiments mostly converge (with some numeric intricacies related to the non-linear distribution of preferences for alternants).
-I present a forced-choice experiment in this Section and not a split-100 experiment, mainly because in a dry run of the experiment, participants complained about the unnaturalness of distributing a probability mass across two alternants and tended to produce ratings of 0 and 100 (and to a lesser degree 50).
+I present a forced-choice experiment in this Section instead of a split-100 experiment not only because of some researchers' critical attitude towards the split-100 task, but also because in a dry run of the experiment, participants complained about the unnaturalness of distributing a probability mass across two alternants and tended to produce ratings of 0 and 100 (and to a lesser degree 50).
 Participants had to choose between two sentences that differed only in that one contained the \NACa\, and the other one contained the \PGCa.
 The analysis compares the probabilities assigned to the stimuli by the corpus-derived model with the frequency with which participants chose the alternants for the same stimuli.
 
@@ -30,7 +30,7 @@ I sampled 16 MNPs from the concordance and made sure that the simplifications an
 In the simplified sentences, the case, number, etc. of the MNP remained the same as in the attested sentence, as did the choice of lexical material within the MNP.
 Eight sentences contained masculine or neuter kind nouns, and the other eight contained feminine kind nouns.
 Furthermore, in each of the masculine\slash neuter and feminine groups, four sentences originally containing the \NACa\ and four sentences originally containing the \PGCa\ were chosen.
-More precisely, the sentences were sampled as \textit{highly prototypical examples} of \PGCa\ (high probability assigned by GLMM) and \NACa\ (low probability assigned by GLMM), respectively.%
+More precisely, the sentences were sampled as \textit{highly typical examples} of \PGCa\ (high probability assigned by GLMM) and \NACa\ (low probability assigned by GLMM), respectively.%
 \footnote{Remember from Section~\ref{sec:corpusstudies} that the model predicts the probability that the \PGCa\ is chosen over the \NACa.}
 High and low probabilities were defined as the top and bottom 20\% of all probabilities assigned by the GLMM.
 Lemmas and feature combinations were made unique within each group whenever possible.
@@ -57,7 +57,7 @@ Thus, participants saw 39 pairs of sentences and 78 sentences in total.
 They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
 The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 
-\begin{figure}[hb!]
+\begin{figure}[htbp!]
 \centering
 \includegraphics[width=0.5\textwidth]{../R/output/fc_effects}
 \caption{Effect plot for the multilevel logistic regression in the forced-choice experiment: predictability of participants' choices using the probabilities derived from the corpus-based GLMM}
@@ -67,33 +67,49 @@ The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 Then, a multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.%
 \footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to 0, which is the mean for z-transformed variables.}
 A random intercept and slope were added for the individual sentence (item) in order to catch idiosyncrasies of single sentences.
-Also, a random intercept and slope for participants was added.%
-\footnote{The random slopes were added to comply with \citet[257]{BarrEa2013} who predict \textit{catastrophically high Type I error rates} for experimental designs with within-subject manipulations if random effects structures are not kept maximal.
-Notice that the model reported here was estimated with conceptually identical results with regard to the predictor of interest (\textit{Modelprediction}) if only random intercepts were used.}
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
 The number of observations was \textit{n=}384.
 
-A certain amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Sentence}}=1.785$, $\sigma^{\text{Modelprediction}}_{\text{Sentence}}=5.996$, 16 levels).%
-\footnote{I use $\sigma^f_r$ to denote the standard deviation of the random intercepts for the fixed effect $f$ varying by random effect $r$.}
-Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.781$, $\sigma^{\text{Modelprediction}}_{\text{Participant}}=0.484$, 24 levels).
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{../R/output/fc_proportions}
+  \caption{Spineplot of the proportion of responses plotted against the predictions from the corpus-based model in the forced-choice experiment}
+  \label{fig:spines}
+\end{figure}
+
+A good amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Item}}=1.217$).%
+Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.412$).
 On the extreme ends, one participant chose the \PGCa\ in 13 of 16 cases, and two participants only chose it in 5 of 16 cases.
-The regressor \textit{Modelprediction} achieves $\mpPB=0.007$ (1,000 replications) and is estimated at 5.408 relative to an intercept of -1.304.
-The confidence interval from a parametric bootstrap (1,000 replications, percentile method) for the regressor is acceptable but slightly large with a lower bound of 1.626 and an upper bound of 8.397.
-The pseudo-coefficients of determination are $R^2_{m}=0.227$ and $R^2_{c}=0.561$, which means that over 22\% of the variance in the data can be explained by considering only the predictions from the corpus-based GLMM.
+The regressor \textit{Modelprediction} achieves $\mpPB=0.003$ (1,000 replications) and is estimated at 4.389 relative to an intercept of -1.270.
+The confidence interval from a parametric bootstrap (1,000 replications, percentile method) for the regressor is acceptable but slightly large with a lower bound of 1.788 and an upper bound of 6.599.
+The pseudo-coefficients of determination are $R^2_{m}=0.185$ and $R^2_{c}=0.455$, which means that roughly 19\% of the variance in the data can be explained by considering only the predictions from the corpus-based GLMM.
+This is a weak result for the fixed effects part, but clearly worthy of mention.
 The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
-The result is very clear.
 The higher the probability of the \PGCa\ predicted from usage data, the more often participants chose the \PGCa\ alternant in the forced-choice task.
-In summary, the forced-choice experiment clearly succeeded in corroborating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices.
+A closer look at the results in the form of the spineplot in Figure~\ref{fig:spines} shows, however, that it was likely idiosyncracies in the sentences with a model prediction between 0.5 and 0.6 which spoiled an otherwise much better correlation.
+Clearly, a revised and improved experiment might lead to a much better fit in future research.
 
+In principle, a per-stimulus random effect for \textit{Modelprediction} could also remedy the problem with individual stimuli at least partially.
+Therefore, a model with random slopes for \textit{Modelprediction} and both random effects (\textit{Participant} and \textit{Item}) was specified and estimated.
+The random slope for participants was added to comply with \citet[257]{BarrEa2013} who predict \textit{catastrophically high Type I error rates} for experimental designs with within-subject manipulations if random effects structures are not kept maximal.
+The coefficient of the fixed effect changed noticeably but not enough to change the interpretation (5.408 relative to an intercept of -1.304), and the marginal $R^2_m$ rises to 0.213 ($R^2_c=0.488$).
+In line with expectations, the standard deviation in the random slopes for \textit{Item} is high at 5.996.
+However, the covariance parameters were estimated at -1.0, which is a clear sign that the variance-covariance matrix could not be estimated successfully.
+The same was true for models with only \textit{Item} and \textit{Participant} random slopes.
+This is exactly the kind of model overparametrisation criticised in \citet{BatesEa2015a} and \citet{MatuschekEa2017}.
+The available data is simply insufficient to estimate the parameters of the more complex model with varying slopes.%
+\footnote{\citet[1]{BatesEa2015a} state: ``We show that failure to converge typically is not due to a suboptimal estimation algorithm, but is a consequence of attempting to fit a model that is too complex to be properly supported by the data, irrespective of whether estimation is based on maximum likelihood or on Bayesian hierarchical modeling with uninformative or weakly informative priors.
+Importantly, even under convergence, overparameterization may lead to uninterpretable models.''
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In summary, the forced-choice experiment succeeded in corroborating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices, but the correlation is weak, likely due to problems with individual test items and\slash or too few data.
+
 
 \subsection{Experiment 2: self-paced reading}
 \label{sec:exp:spr}
 
 The second experiment tests preferences more implicitly.
-It is expected that reading less prototypical alternants (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
+It is expected that reading less typical alternants (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
 In this section, a self-paced reading experiment is therefore presented.
 In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
 The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
@@ -121,23 +137,23 @@ An LMM was specified with the logarithmised residual reading times as the respon
 
 The probabilities derived from the corpus GLMM (\textit{Modelprediction}) were added as the main regressor of interest.
 It should be remembered that the corpus GLMM predicts the probability of the \PGCa.
-As a consequence, the higher the GLMM prediction is, the more prototypical the sentence is for containing the \PGCa.
+As a consequence, the higher the GLMM prediction is, the more typical the sentence is for containing the \PGCa.
 It is therefore expected that reading times are higher when the value of \textit{Modelprediction} is higher but the sentence contains the \NACa.
 However, when the sentence contains the \PGCa, reading times should be lower when \textit{Modelprediction} is higher.
-To account for this, an interaction between \textit{Modelprediction} and \textit{Construction} (levels \textit{PGCa} and \textit{NACa}) was added to the model.
+To account for this, an interaction between \textit{Modelprediction} and \textit{Construction} (levels \textit{PGCadj} and \textit{NACadj}) was added to the model.
 
 Furthermore, the position (1--98) of the sentence in the individual experiment (\textit{Position}) was included as a fixed effect to control for the usual increase in reading speed during an experiment run.
 Random intercepts were specified for \textit{Participant} and \textit{Item} (the 16 sentence pairs are one \textit{Item} each).%
-\footnote{I tried random slopes in order to keep the random effect structure maximal \citep{BarrEa2013} but it was impossible to get the algorithm to converge due to the added complexity of the interaction.}
+\footnote{Again, all attempts to include random slopes resulted in the variance-covariance matrix not being properly estimated (1 or -1 covariance parameters).}
 
 \begin{table}
   \centering
   \begin{tabular}{lrrrc}
     Regressor & \multicolumn{1}{r}{Coefficient} & \multicolumn{1}{r}{CI low} & \multicolumn{1}{r}{CI high} & \multicolumn{1}{r}{CI excludes 0} \\ \midrule
-    ConstructionPGCa                 &  0.054 &  0.012 &  0.095 &  *  \\ 
-    Modelprediction                  & -0.006 & -0.113 &  0.110 &     \\ 
-    Position                         & -0.005 & -0.005 &  0.004 &     \\ 
-    ConstructionPGCa:Modelprediction & -0.125 & -0.234 & -0.023 &  *  \\ 
+    Construction=PGCadj                 &  0.054 &  0.012 &  0.095 &  *  \\ 
+    Modelprediction                     & -0.003 & -0.113 &  0.110 &     \\ 
+    Position                            & -0.005 & -0.005 &  0.004 &     \\ 
+    Construction=PGCadj:Modelprediction & -0.125 & -0.234 & -0.023 &  *  \\ 
   \end{tabular}
   \caption{Fixed effect coefficient table for the LMM used to analyse the self-paced reading experiment; the intercept is 0.829}
   \label{tab:exp:spr}
@@ -146,32 +162,24 @@ Random intercepts were specified for \textit{Participant} and \textit{Item} (the
 Table~\ref{tab:exp:spr} shows the coefficient estimates with a 95\% parametric bootstrap confidence interval (1,000 replications, percentile method).
 The standard deviation of the participant intercepts is $\sigma_{\text{Participant}}=0.079$ and of the item intercepts $\sigma_{\text{Item}}=0.037$.
 Comparing the full model to a model without the main regressor \textit{Modelprediction} (and consequently also without the interaction with \textit{Construction}) in a PB test gives $\mpPB=0.036$.
-The pseudo-coefficients of determination are $R^2_m=0.237$ and $R^2_c=0.346$.
+The pseudo-coefficients of determination are $R^2_m=0.239$ and $R^2_c=0.346$.
 There is thus some inter-subject variation and a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities.
 
-\begin{figure}[h]
+\begin{figure}[htbp!]
 \centering
 \includegraphics[width=0.5\textwidth]{../R/output/spr_effects}
 \caption{Effect plot for the LMM in the self-paced reading experiment: modeling participants' residualised log reading times on the probabilities given by the corpus-based GLMM}
 \label{fig:spr:effects}
 \end{figure}
 
-The effect plot for the effect of interest is shown in Figure~\ref{fig:spr:effects}.
-The estimate for the sentences with \NACa\ is obviously imprecise and no differences in reading times are observed.
+The effect plot for the interaction of interest is shown in Figure~\ref{fig:spr:effects}.
+The estimate for the sentences with \NACa\ is obviously imprecise and no significant differences in reading times are observed.
 There is a clearer effect in the sentences with \PGCa, which is also confirmed by the significant results from the bootstrapped confidence intervals (see Table~\ref{tab:exp:spr}) and from the PB test reported above.
-The \PGCa\ brings about an increased reading time ($\beta_{\text{ConstructionPGCa}}=0.054$), which is plausible because it is the much rarer construction (see Section~\ref{sec:corpusstudies}).
-However, if it occurs in a prototypical context and with prototypical lexical material, reading times drop ($\beta_{\text{ConstructionPGCa:Modelprediction}}=-0.125$).
+The \PGCa\ brings about an increased reading time, which is plausible because it is the much rarer construction (see Section~\ref{sec:corpusstudies}).
+However, if it occurs in a prototypical context and with prototypical lexical material, reading times drop.
 This can be seen in the downward slope in the right panel of Figure~\ref{fig:spr:effects}.
 This fits into the general picture inasmuch as the construction with the lower frequency might be developing towards a more sharply defined prototype.%
-\footnote{In this context, it should be remembered from Section~\ref{sec:gettingdata} that even the \PGCd\ is much rarer that the \NACb\ (17,252 vs.\ 315,635 occurrences in the auxiliary corpus samples).}
+\footnote{In this context, it should be remembered from Section~\ref{sec:corpusstudies} that even the \PGCd\ is much rarer that the \NACb\ (17,252 vs.\ 315,635 occurrences in the auxiliary corpus samples).}
 Conversely, the \NACa\ (like the NAC in general) might be the highly frequent default which does not incur a reading time penalty, even if it is not the optimal choice in the given context and with the given lexical material.
 
-This concludes the report of the two experiments.
-In the final section, I take stock and summarise the contribution of the present study to the research on alternations in cognitive linguistics.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+In Section~\ref{sec:conclusion}, I take stock and summarise the contribution of the present study to the research on alternations in cognitive linguistics.

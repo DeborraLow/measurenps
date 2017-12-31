@@ -63,9 +63,18 @@ responses.df$Chosenconstruction <- as.factor(ifelse(responses.df$Chosenconstruct
 # REPORT
 if (save.persistent) sink(paste(out.dir, "results.txt", sep=""))
 
+
+# Overparametrised model.
+cat("\n\nGLMM, predicting reactions from corpus model: OVERPARAMETRISED \n\n")
+model.fc.op <- glmer(Chosenconstruction~Modelprediction+(1+Modelprediction|Item)+(1+Modelprediction|Participant),
+                  family = binomial(link = "logit"), data = responses.df, nAGQ=the.nAGQ,
+                  control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5)))
+print(summary(model.fc.op))
+
+
 # Actual model.
-cat("\n\nGLMM, predicting reactions from corpus model\n\n")
-model.fc <- glmer(Chosenconstruction~Modelprediction+(1+Modelprediction|Item)+(1+Modelprediction|Participant),
+cat("\n\nGLMM, predicting reactions from corpus model: PARSIMOUNIOUS\n\n")
+model.fc <- glmer(Chosenconstruction~Modelprediction+(1|Item)+(1|Participant),
                   family = binomial(link = "logit"), data = responses.df, nAGQ=the.nAGQ,
                   control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5)))
 print(summary(model.fc))
@@ -128,9 +137,11 @@ if (save.persistent) dev.off()
 
 # Descriptive plot of responses model prediction.
 if (save.persistent) pdf(paste(out.dir, "proportions.pdf", sep=""))
-plot(responses.df$Chosenconstruction~responses.df$Modelprediction,
-     main = "Forced choice: distribution of responses\nby (binned) predictions from corpus-based model",
-     xlab = "Probability for PGCadj from corpus-based model", ylab="Proportion of responses",
+par(cex.lab = 1.5, cex.axis = 1.5, mar=c(5,5,5,5))
+spineplot(responses.df$Chosenconstruction~responses.df$Modelprediction,
+     #main = "Forced choice: distribution of responses\nby (binned) predictions from corpus-based model",
+     xlab = "Probability for PGCadj from corpus-based model",
+     ylab = "Proportion of responses",
      col = c("gray30", "white"))
 if (save.persistent) dev.off()
 
