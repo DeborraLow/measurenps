@@ -1,0 +1,90 @@
+
+
+
+GLMM with COLLO summary
+
+Generalized linear mixed model fit by maximum likelihood (Adaptive Gauss-Hermite Quadrature, nAGQ = 0) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: Construction ~ 1 + (1 | Measurelemma) + (1 | Kindlemma) + Badness +      Cardinal + Genitives + Measurecase + Kindcollo + Kindfreq +  
+    Kindgender + Measurecollo + Measureclass + Measurefreq
+   Data: measure
+Control: glmerControl(optimizer = "nloptwrap2", optCtrl = list(maxfun = 2e+05))
+
+     AIC      BIC   logLik deviance df.resid 
+  3869.6   3987.2  -1916.8   3833.6     5045 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4638 -0.4361 -0.2190 -0.0640  8.8449 
+
+Random effects:
+ Groups       Name        Variance Std.Dev.
+ Measurelemma (Intercept) 0.2911   0.5395  
+ Kindlemma    (Intercept) 0.3923   0.6263  
+Number of obs: 5063, groups:  Measurelemma, 150; Kindlemma, 87
+
+Fixed effects:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -3.65227    0.25962 -14.067  < 2e-16 ***
+Badness               -0.15740    0.04708  -3.343 0.000828 ***
+CardinalNo             1.17512    0.14561   8.070 7.01e-16 ***
+Genitives             -0.69298    0.04595 -15.080  < 2e-16 ***
+MeasurecaseAcc         0.03865    0.09424   0.410 0.681670    
+MeasurecaseDat         0.69635    0.12936   5.383 7.33e-08 ***
+Kindcollo             -0.14107    0.09177  -1.537 0.124260    
+Kindfreq               0.14001    0.08896   1.574 0.115513    
+KindgenderNeut         0.05782    0.19992   0.289 0.772417    
+KindgenderFem          1.37673    0.23637   5.824 5.73e-09 ***
+Measurecollo          -0.06808    0.14586  -0.467 0.640698    
+MeasureclassContainer  0.23108    0.29051   0.795 0.426366    
+MeasureclassRest       0.97078    0.31392   3.092 0.001985 ** 
+MeasureclassAmount     1.13654    0.35132   3.235 0.001216 ** 
+MeasureclassPortion    1.42114    0.26730   5.317 1.06e-07 ***
+Measurefreq           -0.22732    0.08570  -2.652 0.007991 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Analysis of Deviance Table (Type II Wald chisquare tests)
+
+Response: Construction
+                Chisq Df Pr(>Chisq)    
+Badness       11.1782  1  0.0008276 ***
+Cardinal      65.1298  1  7.012e-16 ***
+Genitives    227.4106  1  < 2.2e-16 ***
+Measurecase   32.7218  2  7.844e-08 ***
+Kindcollo      2.3628  1  0.1242602    
+Kindfreq       2.4771  1  0.1155131    
+Kindgender    41.4065  2  1.020e-09 ***
+Measurecollo   0.2178  1  0.6406977    
+Measureclass  38.9618  4  7.094e-08 ***
+Measurefreq    7.0356  1  0.0079905 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Model comparison with LR and PB test
+           Regressor        PB.p        LRT.p         LR Df
+1   (1|Measurelemma) 0.001760563 2.559929e-04  13.367716  1
+2      (1|Kindlemma) 0.002132196 0.000000e+00  76.243949  1
+3            Badness 0.002038736 9.773518e-04  10.869988  1
+4          Genitives 0.001020408 0.000000e+00 248.164203  1
+5           Cardinal 0.001035197 0.000000e+00  70.901701  1
+6        Measurecase 0.001000000 4.655618e-08  33.765212  2
+7     Kindattraction 0.020304569 9.622730e-03   6.703436  1
+8           Kindfreq 0.095286885 7.019217e-02   3.278521  1
+9         Kindgender 0.000999001 2.076326e-07  30.774991  2
+10 Measureattraction 0.001016260 1.412604e-03  10.189268  1
+11      Measureclass 0.000999001 2.459735e-05  26.542218  4
+12       Measurefreq 0.005149331 2.888102e-03   8.876845  1
+ [1] 0.002 0.002 0.002 0.001 0.001 0.001 0.020 0.095 0.001 0.001 0.001 0.005
+
+
+  R2m   R2c 
+0.376 0.480 
+
+
+correct 0.844
+
+λ 0.304
+
