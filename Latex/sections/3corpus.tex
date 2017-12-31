@@ -30,7 +30,7 @@ I now turn to the sampling procedure applied to obtain concordances for manual a
 Among the factors potentially influencing the alternation (see Section~\ref{sec:germanmeasurenps}) were lemma-specific preference effects.
 Therefore, it was highly desirable to obtain a sample in which most of the highly frequent actually-occurring combinations of kind nouns and measure nouns were represented.
 I applied a two-stage process in order to obtain a list of actually co-occurring measure nouns and kind nouns.
-First, I generate a list of the one hundred most frequent mass nouns,
+First, I generated a list of the one hundred most frequent mass nouns.
 Second, I derived a list of all measure nouns with which the mass nouns co-occurred in the \NACb.
 
 In the first step, I exported a list of all nouns in the DECOW14A01 sub-corpus sorted by their token frequency and manually went through it from the most frequent noun downwards, selecting the first one hundred mass nouns that occurred in the list.%
@@ -42,7 +42,7 @@ The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is th
 
 This list of mass nouns was used in the second step to derive a list of measure nouns co-occurring with the mass nouns. 
 In order to generate this list, I utilised the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
-Hence, I searched for all sequences N\Sub{1}N\Sub{2} where N\Sub{2} was one of the mass noun lemmas extracted in in the first step.
+I therefore searched for all sequences N\Sub{1}N\Sub{2} where N\Sub{2} was one of the mass noun lemmas extracted in in the first step.
 Then, the resulting 100 lists of noun-noun combinations were each sorted by frequency in descending order and sieved manually to remove erroneous hits.
 From each of the 100 lists, I also removed noun-noun combinations that had a frequency below 2, except if the individual list would have otherwise been shorter than 20 noun-noun combinations.
 The result was a list of the most frequent 2,365 individual combinations of a measure noun and a mass noun.
@@ -51,7 +51,7 @@ The result was a list of the most frequent 2,365 individual combinations of a me
 \subsubsection{Variables and annotation}
 \label{sec:variablesandannotation}
 
-The full set of manually annotated variables for the main study given in Table~\ref{tab:variables}.%
+The full set of manually annotated variables for the main study is given in Table~\ref{tab:variables}.%
 \footnote{All numeric variables were z-transformed (\ie\ centered to the mean and rescaled such that they have a standard deviation of 1) to facilitate their interpretation in the regression models.}
 Notice first that \textit{Construction} is the response variable with the values \textit{PGCadj} and \textit{NACadj}.
 
@@ -79,12 +79,12 @@ Notice first that \textit{Construction} is the response variable with the values
   \label{tab:variables}
 \end{table}
 
-The variables \textit{Kindattraction} and \textit{Measureattraction} encode the ratio with which a given kind noun lemma or measure noun lemma occurs in the \PGCd\ and the  \NACb.
+The variables \textit{Kindattraction} and \textit{Measureattraction} encode the ratio with which a given kind noun lemma or measure noun lemma occurs in the \PGCd\ and the \NACb.
 They were calculated from the auxiliary samples described at the end of Section~\ref{sec:gettingdata} as a log-transformed quotient.
-The higher the value, the more often the noun occurs in the \PGCd (proportionally).
+The higher the value, the more often the noun occurs in the \PGCd\ (proportionally).
 It could be argued that other measures of attraction strength could be used, for example those popularised in collostructional analysis (\citealp{StefanowitschGries2003,GriesStefanowitsch2004}; see also \citealp{Gries2015a}).
 However, the goal here is to quantify how often lemmas occur in the \PGCd\ and the \NACb, and these constructions do not compete at all but are rather mutually exclusive.
-While this does not preclude the use of collostructional analysis, it is an open question whether the marginals (usually called the ``expected frequencies'' in the collostructional literature) given the overall frequency of the constructions and the lemmas are cognitively relevant in this case.
+While this does not preclude the use of collostructional analysis, it is an open question whether the marginals (usually called the ``expected frequencies'' in the collostructional literature), given the overall frequency of the constructions and the lemmas, are cognitively relevant in this case.
 After all, the main difference between the quotient used here and the logarithmised p-values from a Fisher test is that they take these marginals into account. 
 However, using collexeme strength instead of the raw frequency quotient was tried as an alternative (variables \textit{Kindcollo} and \textit{Measurecollo}); see Sections~\ref{sec:corpushierarchicalmodel} and~\ref{sec:interpretation}.
 Additionally, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW14A corpus creators on their web page.
@@ -103,12 +103,12 @@ The higher the values of this variable, the lower the proportion of genitives am
 A high number of genitives is also indicative of a more formal, elaborate style close to the written standard.
 However, the use of this variable as a regressor in the present study might be considered problematic.
 Since the \PGCa\ contains a genitive itself, the regressor variable \textit{Genitive} and the document-level variable \textit{Genitives} are not fully independent.
-Since instances of the \PGCa\ make up for only a minute fraction of all genitives, I still use \textit{Genitives} as a regressor.%
+Since instances of the \PGCa\ make up for only a minute fraction of all genitives, however, I still use \textit{Genitives} as a regressor.%
 \footnote{A reviewer suggested that a fully fledged multidimensional analysis \citep{Biber1988} would help to improve the operationalisation of the influence of style.
 This sounds plausible, but there simply is no large corpus of German for which similar data have been published.
 In the meantime, the creators of COW and the Institut für Deutsche Sprache (IDS) Mannheim have developed a similar annotation framework (COReX), and the COW creators have pre-released a non-public beta version of the corresponding data base for DECOW16A to their users.
 This data base contains 118 automatically extracted lexico-grammatical features for each document.
-As of today, it is not recommended for use in published research, however.
+However, at this time, it is not recommended for use in published research.
 Also, the genitive is generally considered a good indicator of style in German, and its frequency is usually high enough such that the \textit{Genitives} score is a stable measure even for shorter documents (compared to first or second person pronouns, for example, which are totally absent in a majority of documents).
 The genitive is still the dominant attributive case in German.}
 
@@ -127,7 +127,7 @@ Therefore, in this section I examine the distribution of the prototypical featur
 
 For this pre-study, each of the 2,365 combinations of measure noun lemma and kind noun lemma were queried in the \NACb\ and the \PGCd.
 Each of the resulting 2,365 concordances was scaled down randomly to a size of maximally 100 sentences, and from the resulting 35,766 sentences, 5,000 were randomly sampled for the statistical analysis.
-All features described in Section~\ref{sec:variablesandannotation} were annotated except for the ones which do not apply in the non-alternating case (\textit{Kindattraction} and \textit{Measureattraction} and \textit{Measurecase}).
+All features described in Section~\ref{sec:variablesandannotation} were annotated except for the ones which do not apply in the non-alternating case (\textit{Kindattraction}, \textit{Measureattraction}, and \textit{Measurecase}).
 The aggregated counts for each concordance were analysed in the form of a multilevel logistic regression model using R \citep{R} and the \textit{lme4} package \citep{Bates2010,BatesEa2015}.%
 \footnote{An alternative \textit{BOBYQA} optimiser from the \textit{nloptr} package \citep{Johnson2017} was used for all fits with \textit{lme4} reported in this paper.}
 
@@ -173,11 +173,11 @@ Regressors which did not reach sig=0.05 in pbkrtest (\textit{Kindfreq}, \textit{
 \label{sec:corpushierarchicalmodel}
 
 For the main study, each of the 2,365 noun–noun combinations was queried in the alternating constructions \PGCa\ and \NACa\ in DECOW14A.%
-\footnote{In fact, due to processing considerations with the COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
+\footnote{Due to processing considerations with the COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
 For the manual annotation process, a random sub-sample was generated.
 For each mass noun, the concordance was downsampled randomly to maximally 100 sentences, which resulted in 6,843 sentences without further downsampling.
-In the manual annotation process the size was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
-Given the careful sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
+In the manual annotation process the size was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits, and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
+Given the careful sampling procedure described in this section, we can be highly certain that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
 \footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were listed and queried, resulting in a sample of 871 sentences.
 As stated in Section~\ref{sec:germanmeasurenps}, the \NACa\ is virtually never used with plural kind nouns, and this sample was not used except for quantifying the frequency of occurrence of the constructions (67 times \NACa\ and 794 times \PGCa).
 The sample is distributed with the data package accompanying this paper.}
@@ -318,7 +318,7 @@ This effect was predicted in Section~\ref{sec:analyses}.
 % => Badness
 % => Genitives
 
-The style-related proxy variables point to the expected direction.
+The style-related proxy variables point in the expected direction.
 Increased \textit{Badness} of the document favours the \NACa\ ($\beta_{\text{Badness}}=-0.152$, $\mpPB=0.002$), and so does a lower density of genitives ($\beta=-0.693$, $\mpPB=0.001$).
 While these are merely proxies to style (and partially circular in the case of \textit{Genitives}), this result can at least encourage future work into stylistic effects. 
 
