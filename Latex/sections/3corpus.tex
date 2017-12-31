@@ -26,17 +26,16 @@ Therefore, DECOW14A is a valid choice for this study.
 \subsubsection{Bootstrapping pairs of lemmas}
 \label{sec:bootstrappinlemmapairs}
 
-I now turn to the sampling procedure applied to obtain concordances for manual annotation and statistical analysis.
 Among the factors potentially influencing the alternation (see Section~\ref{sec:germanmeasurenps}) were lemma-specific preference effects.
 Therefore, it was highly desirable to obtain a sample in which most of the highly frequent actually-occurring combinations of kind nouns and measure nouns were represented.
 I applied a two-stage process in order to obtain a list of actually co-occurring measure nouns and kind nouns.
-First, I generated a list of the one hundred most frequent mass nouns.
+First, I generated a list of the one hundred most frequent genuine mass nouns.
 Second, I derived a list of all measure nouns with which the mass nouns co-occurred in the \NACb.
 
 In the first step, I exported a list of all nouns in the DECOW14A01 sub-corpus sorted by their token frequency and manually went through it from the most frequent noun downwards, selecting the first one hundred mass nouns that occurred in the list.%
 \footnote{DECOW14A01 is the first slice (roughly a twentieth) of the complete DECOW14A corpus.
 It contains just over one billion tokens.}
-Mass nouns were defined as concrete nouns which denote a substance in the broad sense, combine with uninflected mass quantifiers such as \textit{viel} `much' and \textit{wenig} `little' (\textit{viel Bier} `much beer'), and form only sortal and unit plurals (such as the plural \textit{Biere} `types of beer' or `glasses of beer').
+Mass nouns were defined as concrete nouns which denote a substance genuinely (without coercion), combine with uninflected mass quantifiers such as \textit{viel} `much' and \textit{wenig} `little' (\textit{viel Bier} `much beer'), and form only sortal and unit plurals (such as the plural \textit{Biere} `types of beer' or `glasses of beer').
 Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.
 The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is the 3,054th most frequent noun in the original frequency list.
 
@@ -120,6 +119,7 @@ To control for this effect, the case of the measure noun was manually annotated 
 Second, due to differences in case syncretisms, it is possible that feminine kind nouns have slightly different preferences than masculine and neuter ones, and the appropriate variable \textit{Kindgender} was annotated.
 
 \subsection{Pre-study: main prototype effects in the non-alternating constructions}
+\label{sec:prestudy}
 
 The main study to be reported below deals exclusively with the alternating constructions, as is customary in alternation modelling.
 However, the prototypical features described in Section~\ref{sec:prototypeeffects} should be observable in the non-alternating cases as well if the theory laid out in Section~\ref{sec:analyses} is correct.
@@ -164,7 +164,7 @@ The column \textit{CI excludes 0} shows an asterisk for those intervals that do 
 Furthermore, for each regressor, a p-value was obtained by dropping the regressor from the full model, re-estimating the nested model, and comparing it to the full model.
 Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 I call the corresponding value $p_{\text{PB}}$, and it is given in the respective columns in Table~\ref{tab:smalltable}.
-Regressors which did not reach sig=0.05 in pbkrtest (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and have no coefficient estimates.
+Regressors which did not reach sig=0.05 in in the pbkrtest (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and have no coefficient estimates.
 
 
 
@@ -177,7 +177,7 @@ For the main study, each of the 2,365 noun–noun combinations was queried in th
 For the manual annotation process, a random sub-sample was generated.
 For each mass noun, the concordance was downsampled randomly to maximally 100 sentences, which resulted in 6,843 sentences without further downsampling.
 In the manual annotation process the size was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits, and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
-Given the careful sampling procedure described in this section, we can be highly certain that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
+Given the careful sampling procedure described in this section and Section~\ref{sec:bootstrappinlemmapairs}, we can be highly certain that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
 \footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were listed and queried, resulting in a sample of 871 sentences.
 As stated in Section~\ref{sec:germanmeasurenps}, the \NACa\ is virtually never used with plural kind nouns, and this sample was not used except for quantifying the frequency of occurrence of the constructions (67 times \NACa\ and 794 times \PGCa).
 The sample is distributed with the data package accompanying this paper.}
