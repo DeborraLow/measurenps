@@ -17,15 +17,12 @@ measure.glmm <- glmer(Construction~1
                  +Cardinal
                  +Genitives
                  +Measurecase
-                 +Measurenumber
 
                  +Kindattraction
-                 #+Kindcollo
                  +Kindfreq
                  +Kindgender
 
                  +Measureattraction
-                 #+Measurecollo
                  +Measureclass
                  +Measurefreq
 
@@ -56,7 +53,7 @@ measure.glmm.lemrand.names <- rownames(coef(measure.glmm)$Kindlemma)[measure.glm
 
 # PB test.
 bootcomp.regs <- c("(1|Measurelemma)", "(1|Kindlemma)", 
-                   "Badness", "Genitives", "Cardinal", "Measurecase", "Measurenumber",
+                   "Badness", "Genitives", "Cardinal", "Measurecase",
                    "Kindattraction", "Kindfreq", "Kindgender", 
                    "Measureattraction", "Measureclass", "Measurefreq")
 modelcomp <- lmer.modelcomparison(model = measure.glmm, regressors = bootcomp.regs,
@@ -87,7 +84,7 @@ if (save.persistent) sink()
 
 
 # Get the bootstrapped CIs.
-opts.ci.95 <- list(level = 0.95, method = "boot", boot.type = "perc", nsim = ci.boot.nsim, parallel="multicore", ncpus=8)
+opts.ci.95 <- list(level = 0.95, method = "boot", boot.type = "perc", nsim = ci.boot.nsim, parallel="multicore", ncpus=4)
 measure.ci.95 <- do.call(confint.merMod, c(opts.ci.95, list(object = measure.glmm, parm = names(fixef(measure.glmm)))))
 measure.ci.95 <- measure.ci.95[nrow(measure.ci.95):2,]
 
@@ -114,7 +111,7 @@ if (save.persistent) dev.off()
 
 
 # Effect plots.
-effs <- c("Badness", "Genitives", "Cardinal", "Measurecase", "Measurenumber",
+effs <- c("Badness", "Genitives", "Cardinal", "Measurecase", 
           "Kindattraction", "Kindfreq", "Kindgender", 
           "Measureattraction", "Measureclass", "Measurefreq")
 

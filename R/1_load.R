@@ -18,7 +18,6 @@ measure <- measure[,c("Measurecase",
           "Measurelemma",
           "Measureclass",
           "Measurefreq",
-          "Measurenumber",
           "Minus1pos",
           "Genitives",
           "Badness",
@@ -80,7 +79,6 @@ fax  <- c("Measurecase",
           "Kindcase",
           "Measurelemma",
           "Measureclass",
-          "Measurenumber",
           "Leftcontext")
 
 for (fak in fax) {

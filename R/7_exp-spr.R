@@ -27,6 +27,8 @@ data.files.names <- list.files(data.dir)
 data.files.names <- data.files.names[grep('csv$', data.files.names)]
 data.files       <- paste(data.dir, data.files.names, sep="")
 
+# Helpers.
+source('glmtools.R')
 
 load("output/corpus_stims_pred.RData")
 
@@ -160,13 +162,22 @@ if (save.persistent) sink()
 # Make formula and estimate model.
 # ################################
 
+# Overparametrised model with abundant random effects structure.
+formule.p1 <- paste(target, "~Construction*Modelprediction+Position+(1+Modelprediction|Participant)+(1|Item)", sep = "")
+formule.p2 <- paste(target, "~Construction*Modelprediction+Position+(1+Construction*Modelprediction|Participant)", sep = "")
+rt.model.p1 <- lmer(formule.p1, data = rt.all, REML = T,
+                 control = lmerControl(optimizer = "nloptwrap2", calc.derivs = FALSE))
+rt.model.p2 <- lmer(formule.p2, data = rt.all, REML = T,
+                    control = lmerControl(optimizer = "nloptwrap2", calc.derivs = FALSE))
+
 # Model with coprpus-based probs as input.
-#formule.rsl <- paste(target, "~Construction*Modelprediction+Position+(1+Construction*Modelprediction|Participant)", sep = "")
 formule <- paste(target, "~Construction*Modelprediction+Position+(1|Participant)+(1|Item)", sep = "")
 formule.0 <- paste(target, "~Construction+Position+(1|Participant)+(1|Item)", sep = "")
 #rt.model.rsl <- lmer(formule.rsl, data = rt.all, REML = T)
-rt.model <- lmer(formule, data = rt.all, REML = T)
-rt.model.0 <- lmer(formule.0, data = rt.all, REML = T)
+rt.model <- lmer(formule, data = rt.all, REML = T,
+                 control = lmerControl(optimizer = "nloptwrap2", calc.derivs = FALSE))
+rt.model.0 <- lmer(formule.0, data = rt.all, REML = T,
+                   control = lmerControl(optimizer = "nloptwrap2", calc.derivs = FALSE))
 
 
 # ######
@@ -175,13 +186,12 @@ rt.model.0 <- lmer(formule.0, data = rt.all, REML = T)
 
 if (save.persistent) sink(paste(out.dir, "results.txt", sep=""), append = T)
 
-#cat("\n\n##### Model w/ random slope #####\n\n")
-#print(summary(rt.model.rsl))
-#cat("\n\n Model comparison \n")
-#print(anova(rt.model, rt.model.0))
-#cat("\n\n R-squared \n")
-#cat("Full model\n")
-#print(r.squaredGLMM(rt.model.rsl))
+cat("\n\n##### Models w/ random slopes #####\n\n")
+print(summary(rt.model.p1))
+print(summary(rt.model.p2))
+cat("\n\nAs usual, dear R2, if it doesn't converge, it's for a reason, and tweaking to optimiser does not help!")
+
+
 
 cat("\n\n##### Model w/o random slope #####\n\n")
 print(summary(rt.model))

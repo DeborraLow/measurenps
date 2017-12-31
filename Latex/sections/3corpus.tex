@@ -1,85 +1,59 @@
 \section{Corpus study}
 \label{sec:corpusstudies}
 
+\subsection{Preliminiaries}
 
-\subsection{Corpus choice}
+\subsubsection{Corpus choice}
 \label{sec:gettingdata}
 
 For the present study, I used the German \textit{Corpus from the Web} (COW) in its 2014 version DECOW14A (\citealp{SchaeferBildhauer2012full}, and \citealp{Schaefer2015b}, as well as \citealp{BiemannEa2013}, and \citealp{SchaeferBildhauer2013}, for overviews of web corpora in general and the methodology of their construction), which contains almost 21 billion tokens.%
 \footnote{The COW corpora (Dutch, English, French, German, Spanish, Swedish) are made available for free at \url{https://www.webcorpora.org}.
-At the time of this writing, a newer 2016 version DECOW16 has already been released.}
+At the time of this writing, a newer 2016 version DECOW16A has already been released.}
 I chose this corpus for two main reasons.%
 \footnote{The use of web data for linguistic research does require explicit and careful justification.
 Due to the noisy nature and unknown composition of the web, only carefully designed and established web corpora like the COW corpora or the SketchEngine corpora \citep{KilgarriffEa2014} should be used.
 Clearly, using search engine results is ``bad science'' for many reasons, most prominently total non-replicability of results, as \cite{Kilgarriff2006} pointed out more than ten years ago.
 Careless use of search engine results is still found, however, see for example \citet[171--175]{DeclerckBrems2016}.}
-First, the external validity of any study is increased through a higher heterogeneity of the sample \citep[30]{MaxwellDelaney2004}, and the DECOW corpus has clearly a much more heterogeneous composition compared to the only other very large corpus of German, the DeReKo \citep{KupietzEa2010} of the Institute for the German Language (IDS), which contains almost exclusively newspaper texts.%
-\footnote{It was shown in \cite{W16-2601} that, for example, the range of topics covered is much smaller in DeReKo compared to DECOW.}
+First, the external validity of any study is increased through a higher heterogeneity of the sample \citep[30]{MaxwellDelaney2004}, and the DECOW14A corpus has clearly a much more heterogeneous composition compared to the only other very large corpus of German, the DeReKo \citep{KupietzEa2010} of the Institute for the German Language (IDS), which contains almost exclusively newspaper texts.%
+\footnote{It was shown in \cite{W16-2601} that, for example, the range of topics covered is much smaller in DeReKo compared to DECOW14A.}
 Second, it was already mentioned that normative grammars often adopt clear positions regarding the grammaticality of either the \NACa\ or the \PGCa.
 Thus, newspaper text or any other text that conforms strongly to normative grammars might not represent the alternation phenomenon fully (and without bias) because authors and proofreaders who must adhere to normative guidelines might favour one alternative or the other explicitly.
 Web corpora, on the other hand, contain at least some amount of non-standard language from forums and similar sources.
 For these or similar reasons, COW corpora have been used in a number of peer-reviewed publications, for example \cite{VanGoethemHiligsmann2014}, \cite{VanGoethemHuening2015}, \cite{MuellerS2014}, \cite{Schaefer2016c}, \cite{SchaeferSayatz2014}, \cite{SchaeferSayatz2016}, and \cite{Zimmer2015}. 
-Therefore, DECOW is a valid choice for this study.
+Therefore, DECOW14A is a valid choice for this study.
 
 
-\subsection{Pre-study: main prototype effects in the non-alternating constructions}
-
-
-\subsection{Main study: alternating constructions}
-
-\subsubsection{Sampling}
+\subsubsection{Bootstrapping pairs of lemmas}
+\label{sec:bootstrappinlemmapairs}
 
 I now turn to the sampling procedure applied to obtain concordances for manual annotation and statistical analysis.
 Among the factors potentially influencing the alternation (see Section~\ref{sec:germanmeasurenps}) were lemma-specific preference effects.
 Therefore, it was highly desirable to obtain a sample in which most of the highly frequent actually-occurring combinations of kind nouns and measure nouns were represented.
-I applied a three-stage process in order to obtain such a sample, which consisted of the following steps:
+I applied a two-stage process in order to obtain a list of actually co-occurring measure nouns and kind nouns.
+First, I generate a list of the one hundred most frequent mass nouns,
+Second, I derived a list of all measure nouns with which the mass nouns co-occurred in the \NACb.
 
-\begin{enumerate}[i.]
-  \item\label{enum:data:step1} generating a list of the one hundred most frequent mass nouns,
-  \item\label{enum:data:step2} deriving a list of all measure nouns with which the mass nouns co-occur in the \NACb, and 
-  \item\label{enum:data:step3} sampling the target constructions by querying each combination of mass noun and measure noun found in step (\ref{enum:data:step2}).
-\end{enumerate}
-
-\vspace{-1\baselineskip}
-
-In step (\ref{enum:data:step1}), I exported a list of all nouns in the DECOW14A01 sub-corpus sorted by their token frequency and manually went through it from the most frequent noun downwards, selecting the first one hundred mass nouns that occurred in the list.%
+In the first step, I exported a list of all nouns in the DECOW14A01 sub-corpus sorted by their token frequency and manually went through it from the most frequent noun downwards, selecting the first one hundred mass nouns that occurred in the list.%
 \footnote{DECOW14A01 is the first slice (roughly a twentieth) of the complete DECOW14A corpus.
 It contains just over one billion tokens.}
 Mass nouns were defined as concrete nouns which denote a substance in the broad sense, combine with uninflected mass quantifiers such as \textit{viel} `much' and \textit{wenig} `little' (\textit{viel Bier} `much beer'), and form only sortal and unit plurals (such as the plural \textit{Biere} `types of beer' or `glasses of beer').
 Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.
 The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is the 3,054th most frequent noun in the original frequency list.
 
-This list of mass nouns was used in step (\ref{enum:data:step2}) to derive a list of measure nouns co-occurring with the mass nouns. 
+This list of mass nouns was used in the second step to derive a list of measure nouns co-occurring with the mass nouns. 
 In order to generate this list, I utilised the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
-Hence, I searched for all sequences N\Sub{1}N\Sub{2} where N\Sub{2} was one of the mass noun lemmas extracted in step (\ref{enum:data:step1}).
+Hence, I searched for all sequences N\Sub{1}N\Sub{2} where N\Sub{2} was one of the mass noun lemmas extracted in in the first step.
 Then, the resulting 100 lists of noun-noun combinations were each sorted by frequency in descending order and sieved manually to remove erroneous hits.
 From each of the 100 lists, I also removed noun-noun combinations that had a frequency below 2, except if the individual list would have otherwise been shorter than 20 noun-noun combinations.
 The result was a list of the most frequent 2,365 individual combinations of a measure noun and a mass noun.
 
-In step (\ref{enum:data:step3}), each of these 2,365 noun–noun combinations was queried in the target constructions (\PGCa\ and \NACa) individually in each of the first ten slices of DECOW (roughly 10 billion tokens).
-In order to reduce the sample size for the manual annotation process, the final concordance was sampled from the results of these 2,365 queries.
-Since the mass nouns in the sample were distributed according to the usual power law (often referred to as a \textit{Zipfian} distribution), I used all hits for nouns with a frequency up to 100 and a sample of 100 of all those with higher frequency.
-The final sample contained 6,843 sentences, which was reduced to 5,063 in the manual annotation process due to removal of noisy material, erroneous hits and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
-Given the careful sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
-\footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were listed and queried, resulting in a sample of 871 sentences.
-As stated in Section~\ref{sec:germanmeasurenps}, the \NACa\ is virtually never used with plural kind nouns, and this sample was not used except for quantifying the frequency of occurrence of the constructions (67 times \NACa\ and 794 times \PGCa).
-However, the sample is distributed with the data package accompanying this paper.
-}
-
-Finally, two auxiliary samples were also drawn.
-As mentioned in Section~\ref{sec:analyses}, the distribution of the measure noun and kind noun lemmas in the \NACb\ and the \PGCd\ with a determiner will be modelled as factors influencing the alternation.
-Therefore, all noun-noun pairs from the process described above were also queried in the two non-alternating constructions, resulting in 17,252 hits for the \PGCd\ and 315,635 hits for the \NACb.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Variables and annotation}
-\label{sec:annotation}
+\label{sec:variablesandannotation}
 
-The full set of manually annotated variables for the main sample is given in Table~\ref{tab:variables}, and I briefly discuss it now.%
-\footnote{All numeric variables were also z-transformed (\ie\ centered to the mean and rescaled such that they have a standard deviation of 1) to facilitate their interpretation in the regression models reported in the next section.}
-Notice first that \textit{Construction} is the response variable (or `dependent variable') with the values \textit{PGCa} and \textit{NACa}.
+The full set of manually annotated variables for the main study given in Table~\ref{tab:variables}.%
+\footnote{All numeric variables were z-transformed (\ie\ centered to the mean and rescaled such that they have a standard deviation of 1) to facilitate their interpretation in the regression models.}
+Notice first that \textit{Construction} is the response variable with the values \textit{PGCadj} and \textit{NACadj}.
 
 \begin{table}
   \centering
@@ -89,70 +63,128 @@ Notice first that \textit{Construction} is the response variable (or `dependent 
     Document       & Badness                          & numeric &                           \\
                    & Genitives                        & numeric &                           \\
     Sentence       & Cardinal                         & factor  & Yes, No                   \\
-                   & \textbf{Construction (response)} & factor  & NACa, PGCa                \\
+                   & \textbf{Construction (response)} & factor  & NACadj, PGCadj            \\
                    & Measurecase                      & factor  & Nom, Acc, Dat             \\
     Kind lemma     & Kindattraction                   & numeric &                           \\
+                   & (Kindcollo)                      & numeric &                           \\
                    & Kindfreq                         & numeric &                           \\
+		   & Kindgender                       & factor  & MascNeut, Fem             \\
     Measure lemma  & Measureattraction                & numeric &                           \\
+                   & (Measurecollo)                   & numeric &                           \\
                    & Measureclass                     & factor  & Physical, Container,      \\
                    &                                  &         & Amount, Portion, Rest     \\
                    & Measurefreq                      & numeric &                           \\
   \end{tabular}
-  \caption{Annotated variables for the main sample}
+  \caption{Annotated variables for the main study}
   \label{tab:variables}
 \end{table}
 
 The variables \textit{Kindattraction} and \textit{Measureattraction} encode the ratio with which a given kind noun lemma or measure noun lemma occurs in the \PGCd\ and the  \NACb.
 They were calculated from the auxiliary samples described at the end of Section~\ref{sec:gettingdata} as a log-transformed quotient.
-The higher the value, the more often the noun occurs in the \PGCd (proportionally).%
-\footnote{
-  It could be argued that some more advanced measure of attraction strength should be used, as is done in Collostructional Analysis \citep{StefanowitschGries2003,GriesStefanowitsch2004}, see also \cite{Gries2015a}.
-  Three main points speak against such an approach in the present case.
-  First, the goal here is to quantify how often lemmas occur in the \PGCd\ and the \NACb, and these constructions do not compete at all but are rather mutually exclusive.
-  Collostructional approaches are not made for such scenarios.
-  Second, the attraction values will be used as regressors in a hierarchical logistic regression and the values resulting from collostructional analysis, \ie\ logarithmised Fisher p-values, have a very unfavourable distribution in the case at hand.
-  They cluster around 0 and they include values of $-\infty$.
-  Third, I tried using collexeme strength as a regressor (with smoothing to remedy the mathematical problems), and the results were unsatisfactory compared to the simple quotient used here.
-}
-Additionally, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW corpus creators on their web page.
-They were added to control for basic frequency effects.
-
+The higher the value, the more often the noun occurs in the \PGCd (proportionally).
+It could be argued that other measures of attraction strength could be used, for example those popularised in collostructional analysis (\citealp{StefanowitschGries2003,GriesStefanowitsch2004}; see also \citealp{Gries2015a}).
+However, the goal here is to quantify how often lemmas occur in the \PGCd\ and the \NACb, and these constructions do not compete at all but are rather mutually exclusive.
+While this does not preclude the use of collostructional analysis, it is an open question whether the marginals (usually called the ``expected frequencies'' in the collostructional literature) given the overall frequency of the constructions and the lemmas are cognitively relevant in this case.
+After all, the main difference between the quotient used here and the logarithmised p-values from a Fisher test is that they take these marginals into account. 
+However, using collexeme strength instead of the raw frequency quotient was tried as an alternative (variables \textit{Kindcollo} and \textit{Measurecollo}); see Sections~\ref{sec:corpushierarchicalmodel} and~\ref{sec:interpretation}.
+Additionally, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW14A corpus creators on their web page.
 In Section~\ref{sec:analyses}, it was hypothesised that classes of measure lemmas might have different preferences for the two alternants.
-To capture this, class information was annotated for measure lemmas.
-The classification was inspired by the list in \citet[530]{Koptjevskaja2001} but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
-With typical examples and their frequencies in the final sample, the classes are:
-\textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'; \textit{f=}1,968),
-\textit{Container} (\textit{Eimer} `bucket'; \textit{f=}740),
-\textit{Amount} (\textit{Menge} `amount'; \textit{f=}1,364), 
-\textit{Portion} (natural portions like \textit{Happen} `bite' or \textit{Krümel} `crumb'; \textit{f=}713).
-The lemmas that did not fit into either of these classes were labelled \textit{Rest} (\textit{f=}278).
-
-The variable \textit{Cardinal} encodes whether the measure noun is modified by a cardinal (\textit{f=}1,939) or not (\textit{f=}3,124).
-The purpose of this variable is to test whether cardinals really favour the \NACa\ as hypothesised in Section~\ref{sec:analyses}.
+To capture this, class information was annotated for measure lemmas as \textit{Measureclass}.
+The variable \textit{Cardinal} encodes whether the MNP is modified by a cardinal.
 
 To capture the influence of style mentioned in Section~\ref{sec:analyses}, two proxy variables were used.
-At the document level, the DECOW corpus has an annotation for \textit{Badness}.
+At the document level, the DECOW14A corpus has an annotation for \textit{Badness}.
 As described in \cite{SchaeferEa2013}, \textit{Badness} measures how well the distribution of highly frequent short words in the document matches a pre-generated language model for German.
+They also show that the Badness score corresponds robustly with human raters' intuitions about text coherence and text quality (see the paper for an operationalisation of this notion).
 Documents with higher Badness usually contain more incoherent language, shorter sentences, etc.
-If the \PGCa\ actually favours higher stylistic levels, a high \textit{Badness} should be correlated with fewer occurrences.
+If the \PGCa\ actually favours more elaborate stylistic levels, a high \textit{Badness} should be correlated with fewer occurrences.
 Documents in DECOW14 have also been annotated with a variable called \textit{Genitives}.
 The higher the values of this variable, the lower the proportion of genitives among all case-bearing forms is.
-A high number of genitives is indicative of higher levels of style.
+A high number of genitives is also indicative of a more formal, elaborate style close to the written standard.
 However, the use of this variable as a regressor in the present study might be considered problematic.
 Since the \PGCa\ contains a genitive itself, the regressor variable \textit{Genitive} and the document-level variable \textit{Genitives} are not fully independent.
-Since instances of the \PGCa\ make up for only a minute fraction of all genitives, I still use \textit{Genitives} as a regressor with the appropriate caveats.
+Since instances of the \PGCa\ make up for only a minute fraction of all genitives, I still use \textit{Genitives} as a regressor.%
+\footnote{A reviewer suggested that a fully fledged multidimensional analysis \citep{Biber1988} would help to improve the operationalisation of the influence of style.
+This sounds plausible, but there simply is no large corpus of German for which similar data have been published.
+In the meantime, the creators of COW and the Institut für Deutsche Sprache (IDS) Mannheim have developed a similar annotation framework (COReX), and the COW creators have pre-released a non-public beta version of the corresponding data base for DECOW16A to their users.
+This data base contains 118 automatically extracted lexico-grammatical features for each document.
+As of today, it is not recommended for use in published research, however.
+Also, the genitive is generally considered a good indicator of style in German, and its frequency is usually high enough such that the \textit{Genitives} score is a stable measure even for shorter documents (compared to first or second person pronouns, for example, which are totally absent in a majority of documents).
+The genitive is still the dominant attributive case in German.}
 
-Finally, one variable was added as nuisance variable in the context of the present study.
-It was reported in the literature that MNPs in the dative and with a masculine or neuter kind noun favour the \PGCa\ more than the corresponding nominative and accusative MNPs \citep{Hentschel1993,Zimmer2015}.
+Finally, two variables were added as nuisance variables in the context of the present study.
+First, it was reported in the literature that MNPs in the dative and with a masculine or neuter kind noun favour the \PGCa\ more than the corresponding nominative and accusative MNPs \citep{Hentschel1993,Zimmer2015}.
 As an example, \textit{mit einem Stück frischen Brots} `with a piece of fresh bread' (\PGCa) would be preferred more strongly against \textit{mit einem Stück frischem Brot} (\NACa).
 As with all the examples, native speakers of German will most likely notice that differences are subtle.
 To control for this effect, the case of the measure noun was manually annotated (variable \textit{Measurecase}).
+Second, due to differences in case syncretisms, it is possible that feminine kind nouns have slightly different preferences than masculine and neuter ones, and the appropriate variable \textit{Kindgender} was annotated.
+
+\subsection{Pre-study: main prototype effects in the non-alternating constructions}
+
+The main study to be reported below deals exclusively with the alternating constructions, as is customary in alternation modelling.
+However, the prototypical features described in Section~\ref{sec:prototypeeffects} should be observable in the non-alternating cases as well if the theory laid out in Section~\ref{sec:analyses} is correct.
+Therefore, in this section I examine the distribution of the prototypical features in the non-alternating cases to see whether they are in accord with the theoretical predictions.
+
+For this pre-study, each of the 2,365 combinations of measure noun lemma and kind noun lemma were queried in the \NACb\ and the \PGCd.
+Each of the resulting 2,365 concordances was scaled down randomly to a size of maximally 100 sentences, and from the resulting 35,766 sentences, 5,000 were randomly sampled for the statistical analysis.
+All features described in Section~\ref{sec:variablesandannotation} were annotated except for the ones which do not apply in the non-alternating case (\textit{Kindattraction} and \textit{Measureattraction} and \textit{Measurecase}).
+The aggregated counts for each concordance were analysed in the form of a multilevel logistic regression model using R \citep{R} and the \textit{lme4} package \citep{Bates2010,BatesEa2015}.%
+\footnote{An alternative \textit{BOBYQA} optimiser from the \textit{nloptr} package \citep{Johnson2017} was used for all fits with \textit{lme4} reported in this paper.}
+
+\begin{table}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{llrlrrrc}
+    Model level  & Regressor         & $\text{p}_{\text{PB}}$ & Factor level & Coefficient & CI low & CI high & CI excludes 0 \\
+    \midrule
+    First        & Badness           &                 &              &       &  &   &              \\
+                 & Cardinal          &                 & No           &       &  &   &              \\
+                 & Genitives         &                 &              &       &  &   &              \\
+    
+    Second       & (Kindfreq)        &                 &              &       &  &   &              \\
+    (Kind)       & (Kindgender)      &                 &              &       &  &   &              \\[0.5\baselineskip]
+    
+    Second       & Measureclass      &                 & Container    &       &  &   &              \\
+    (Measure)    &                   &                 & Rest         &       &  &   &              \\
+                 &                   &                 & Amount       &       &  &   &              \\
+                 &                   &                 & Portion      &       &  &   &              \\
+                 & (Measurefreq)     &                 &              &       &  &   &              \\
+
+  \end{tabular}
+  }
+  \caption{Coefficient table with 95\% bootstrap confidence intervals for the pre-study; the intercept is XXX}
+  \label{tab:smalltable}
+\end{table}
+
+The coefficient estimates are specified in Table~\ref{tab:smalltable} for each regressor (or regressor level) in the columns labelled \textit{Coefficient}.
+Given the coding of the response variable, coefficients leaning to the positive side can be interpreted as describing a context typical of the \PGCd.
+For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \mbox{\textit{confint.merMod}} function from \textit{lme4}) with 1,000 replications and using the percentile method for the calculation of the intervals.
+The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:smalltable} in the columns labelled \textit{CI low} and \textit{CI high} (= upper and lower 2.5th percentiles).
+The column \textit{CI excludes 0} shows an asterisk for those intervals that do not include 0.
+Furthermore, for each regressor, a p-value was obtained by dropping the regressor from the full model, re-estimating the nested model, and comparing it to the full model.
+Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
+I call the corresponding value $p_{\text{PB}}$, and it is given in the respective columns in Table~\ref{tab:smalltable}.
+Regressors which did not reach sig=0.05 in pbkrtest (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and have no coefficient estimates.
 
 
-\subsubsection{Model}
+
+\subsection{Main study: the alternation}
+\label{sec:annotation}
 \label{sec:corpushierarchicalmodel}
 
- using R \citep{R}, \textit{lme4} \citep{lme4}
+For the main study, each of the 2,365 noun–noun combinations was queried in the alternating constructions \PGCa\ and \NACa\ in DECOW14A.%
+\footnote{In fact, due to processing considerations with the COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
+For the manual annotation process, a random sub-sample was generated.
+For each mass noun, the concordance was downsampled randomly to maximally 100 sentences, which resulted in 6,843 sentences without further downsampling.
+In the manual annotation process the size was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
+Given the careful sampling procedure described in this section, we can be highly sure that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
+\footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were listed and queried, resulting in a sample of 871 sentences.
+As stated in Section~\ref{sec:germanmeasurenps}, the \NACa\ is virtually never used with plural kind nouns, and this sample was not used except for quantifying the frequency of occurrence of the constructions (67 times \NACa\ and 794 times \PGCa).
+The sample is distributed with the data package accompanying this paper.}
+
+Finally, two auxiliary samples were also drawn.
+As mentioned in Section~\ref{sec:analyses}, the distribution of the measure noun and kind noun lemmas in the \NACb\ and the \PGCd\ with a determiner will be modelled as factors influencing the alternation.
+Therefore, all noun-noun pairs from the process described above were also queried in the two non-alternating constructions, resulting in 17,252 hits for the \PGCd\ and 315,635 hits for the \NACb.
 
 \begin{figure}[hb!]
   \centering
@@ -161,15 +193,14 @@ To control for this effect, the case of the measure noun was manually annotated 
   \label{fig:fixeffs}
 \end{figure}
 
-In this section, I report the results of fitting a multilevel model to the alternation data.
-The purpose is to model the influence of the regressors specified in Table~\ref{tab:variables} on the probability that the \PGCa\ is chosen over the \NACa.
+Then, a multilevel logistic regression model was fit which models the influence of the regressors specified in Table~\ref{tab:variables} on the probability that the \PGCa\ is chosen over the \NACa.
 All regressors from Table~\ref{tab:variables} were included, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
 The sample size was \textit{n=}5,063 with 1,134 cases of \PGCa\ and 3,929 cases of \NACa.
 The results of the estimation are shown in Table~\ref{tab:bigtable} and in Figure~\ref{fig:fixeffs}.
 The intercept comprises \textit{Cardinal=Yes}, \textit{Measurecase=Nom}, \textit{Kindgender=Masc}, \textit{Measureclass=Physical}, and 0 for all numeric z-transformed regressors.
 It was estimated at -4.328.
 
-The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \citet[265--269,302--304]{GelmanHill2006}.
+The regressors with the measure lemma as their unit of reference have no within-measure lemma variance, and the \textit{glmer} function automatically estimates them as \textit{group level predictors} (or \textit{second-level effects}), cf.\ \citet[265--269,302--304]{GelmanHill2006} and Section~\ref{sec:itemandexemplareffects}.
 The same goes for those listed with the kind lemma as their unit of reference.
 Given the coding of the response variable, coefficients leaning to the positive side can be interpreted as favouring the \PGCa.
 
@@ -199,28 +230,33 @@ Given the coding of the response variable, coefficients leaning to the positive 
 
   \end{tabular}
   }
-  \caption{Coefficient table with 95\% bootstrap confidence intervals; the intercept is -4.328}
+  \caption{Coefficient table with 95\% bootstrap confidence intervals for the main study; the intercept is -4.328}
   \label{tab:bigtable}
 \end{table}
 
-Standard diagnostics show that the model quality is quite good.
+Standard diagnostics show that the model quality is quite good.%
+\footnote{Notice that no aggressive model selection was applied, especially not upward model selection including probing for interactions.
+I am convinced that the model should be specified based on theoretical considerations (and known nuisance effects) to avoid the dangers of data dredging and to avoid models which are difficult to interpret.
+Removal of useless regressors (judging by, for example, the pbkrtest and coefficients of determination) is the only type of model selection I allow in my research.}
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
 The rate of correct predictions is 0.843, which means a proportional reduction of error of $\lambda=0.297$.
 Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and none of the corrected $\text{GVIF}^{1/2\text{df}}$ was higher than 1.6.
 The lemma intercepts have standard deviations of $\sigma_{\text{Measurelemma}}=0.448$ and $\sigma_{\text{Kindlemma}}=0.604$.
+Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be convincing, failing at sig=0.05.
 
-The coefficient estimates are specified in Table~\ref{tab:bigtable} for each regressor (or regressor level) in the columns labelled \textit{Coefficient}.
-For a robust quantification of the precision of the estimation, I ran a parametric bootstrap (using the \mbox{\textit{confint.merMod}} function from \textit{lme4}) with 1,000 replications and using the percentile method for the calculation of the intervals.
-The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:bigtable} in the columns labelled \textit{CI low} and \textit{CI high} (= upper and lower 2.5th percentiles).
-The column \textit{CI excludes 0} shows an asterisk for those intervals that do not include 0.
-Furthermore, for each regressor, a p-value was obtained by dropping the regressor from the full model, re-estimating the nested model, and comparing it to the full model.
-Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
-I call the corresponding value $p_{\text{PB}}$, and it is given in the respective columns in Table~\ref{tab:bigtable}.
-Only \textit{Kindfreq} ($\mpPB=0.095$) can be seen as slightly too high to be convincing (non-significant).
+Using collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) was not successful.
+While the attraction measures reach satisfying sig levels, the $\text{p}_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.
+The coefficients of determination drop to $R_m^2=0.383$ and $R^2_c=0.490$.
 
 
-\subsubsection{Interpretation}
+\subsection{Interpretation}
 \label{sec:interpretation}
+
+
+%\hl{As collostructional analysis is relatively popular in some cognitively oriented areas of corpus linguistics, I tried using collexeme strength as a regressor (with smoothing to remedy the mathematical problems), and the results were unsatisfactory compared to the simple quotient used here.
+%The corresponding regressor did not even reach sig=0.1 in the pbkrtest.
+%Both the cognitive underpinnings and the math behind collostructional analysis are still much debated (see prominently \citealp{SchmidKuechenhoff2013,KuechenhoffSchmid2015}), I see this result }
+
 
 % ATTRACTION
 
@@ -293,9 +329,4 @@ While these are merely proxies to style (and partially circular in the case of \
 The influence of \textit{Measurecase} ($\mpPB=0.001$) is as predicted in previous analyses (see Section~\ref{sec:analyses}).
 A measure noun in the dative favours the \PGCa\ with $\beta_{\text{MeasurecaseDat}}=0.705$ (compared to the nominative, which is on the intercept).
 Although \textit{Measurecase} is a nuisance variable in the context of this study, convergence with previous work strengthens its validity.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 

@@ -346,9 +346,9 @@ Prototypical exemplars are given in (\ref{ex:prototypes1}) for the PGC and (\ref
 While the \PGCd\ in (\ref{ex:prototypes1}) allows an interpretation where speakers conceptualise the substance itself, \ie the medication, and a spoon used to take a quantity from the medication, the \NACb\ in (\ref{ex:prototypes2}) does not allow such an interpretation.
 While in the given examples, the effect is strongly supported by the choice of the measure noun lemmas, I argue that the meaning of the prototypes is independent of this.%
 \footnote{A reviewer asked for a specification of the \textit{schematic meaning} of the superordinate constructions in terms of \citet{Langacker1987}.
-However, none of the constructions (\PGCd, \PGCa, \NACb, and \NACa) are exclusively associated with one of the discussed meanings, and thus I do not see how one could specify schemas, for which ``membership is not a matter of degree'' and whose properties are ``fully compatible with all the members of the category'' \citep[371]{Langacker1987}.
+However, none of the constructions (\PGCd, \PGCa, \NACb, and \NACa) are exclusively associated with one of the discussed meanings, and thus I do not see how one could specify schemas (even at a superordinate level), for which ``membership is not a matter of degree'' and whose properties are ``fully compatible with all the members of the category'' \citep[371]{Langacker1987}.
 A modelling in terms of a probabilistic similarity effects is more appropriate.
-See also the argument in \citealp[70--71]{Taylor2003} and my discussion in Section~\ref{sec:cogocl}.}
+See also the argument in \citet[70--71]{Taylor2003} and my discussion in Section~\ref{sec:cogocl}.}
 The independent meanings of the prototypes are, as I will show, a result of diachronic developments and grammaticalisation processes.
 Furthermore, I argue that the prototypical meanings are reflected in their usage patterns, which will be tested in the corpus study in Section~\ref{sec:corpusstudies}.
 
@@ -367,6 +367,14 @@ As a consequence, we should expect the NAC constructions to be typical hosting c
 For example, highly grammaticalised non-referential nouns like \textit{Gramm} `gram' and \textit{Meter} `metre' should occur proportionally more often in NAC constructions than in PGC constructions.
 If such preferences can actually shown in usage patterns, it would lend strong support for the hypothesised difference in the meanings of the prototypes.
 In the corpus study, measure lemmas will therefore be annotated with appropriate semantic class labels to check whether semantic classes of measure nouns have different affinities to the two variants.
+The actual classification was inspired by the list in \citet[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was finally used.
+With typical examples, the classes are:
+\textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'),
+\textit{Container} (\textit{Eimer} `bucket'),
+\textit{Amount} (\textit{Menge} `amount'), 
+\textit{Portion} (natural portions like \textit{Happen} `bite' or \textit{Krümel} `crumb').
+The lemmas that did not fit into either of these classes were labelled \textit{Rest}.
+
 
 A second preference should also be observable as a consequence of the different meanings.
 As described above, the grammaticalisation path leads from NPs denoting individuated objects standing in a \textit{part-of} relation to a construction with a more diffuse \textit{quantity-of} relation.
@@ -401,7 +409,7 @@ This is definitely true as some dialects (such as Alemannic) tend to have no gen
 While this is an interesting aspect for further research, the main obstacle for the present study is that there are no corpora of German which are both large enough and annotated with reliable meta data about regional variants.
 In the annotation of the corpus study, documents obviously written in a regional variant were excluded.}
 
-\subsubsection{Items, exemplar effects, and hierarchical models}
+\subsubsection{Items, exemplar effects, and multilevel models}
 \label{sec:itemandexemplareffects}
 
 As discussed in Section~\ref{sec:cogocl}, prototype-based and exemplar-based approaches are merely the endpoints of a spectrum of theories allowing abstraction in cognitive representations to varying degrees.
@@ -411,30 +419,35 @@ The relative frequency with which they occur in these stable cases -- where choo
 Should this be confirmed, it would be highly implausible to conceive of such effects as prototype effects.
 In the corpus study reported in Section~\ref{sec:corpusstudies}, a measure quantifying this influence will therefore be included as the \textit{attraction strength}.
 
-It should be noted that such and exemplar-type effect would have to exist in addition to the predicted semantic prototype effect for measure lemmas described in Section~\ref{sec:prototypeeffects}, namely the effect of semantic classes of measure nouns.
+It should be noted that such and exemplar-type effect would have to be confirmed \textit{in addition} to the predicted semantic prototype effect for measure lemmas described in Section~\ref{sec:prototypeeffects}, namely the effect of semantic classes of measure nouns.
+This means that the statistical model needs to track an abstraction effect and an exemplar-like effect for measure nouns.
+Additionally, controlling for simple lemma frequency effects is always a good idea, and it should be done for kind and measure nouns.
+While, for example, very frequent kind nouns might preserve the older \PGCa, low-frequency kind nouns might tend to occur more often in the \NACa.
+For measure nouns, high frequency might lead to a higher affinity to the \NACa\ if we assume at least a tendency for highly grammaticalised items to be more frequent.
+Of course, the model must be specified in a way such that we can be sure that any detected frequency effect goes beyond the semantic effect, which is captured in the semantic classes described in Section~\ref{sec:prototypeeffects}.
+Such frequency effects would also be very difficult to describe as abstractions.
 
-
-
-To control for the possibility that a potential lemma attraction strength effect is merely an artefact of lemma-specific tendencies, such simple lemma-specific tendencies will have to be accounted for in the modelling as well.
-Additionally, 
-
-
-This leads to a more complex model structure if a generalised linear mixed model (GLMM) is specified, as is customary in alternation modelling (see \citealp{Gries2015} for an argument in favour of such models in corpus linguistic studies; \citealp{GelmanHill2006} (especially part 2) for a comprehensive text book on the subject).
+With all this, it must also be made sure that these influences at the lemma level (lemma type frequency, attraction strength, and semantic classes) are not spurious and just artefacts of mere lemma idiosyncrasies.
+This leads to a rather complex and truly multilevel model structure for the generalised linear mixed models (GLMMs) customarily used in alternation modelling.%
+\footnote{See \citet{Gries2015} for an argument in favour of varying-slope and varying-intercept models in corpus linguistic studies.
+See \citet{GelmanHill2006} (especially part 2) for a comprehensive text book on the subject including multilevel models.}
 A GLMM models the influence which several variables (\textit{predictors}) have on the probability that an alternant is chosen.
 The so-called \textit{fixed effects} are assumed to be fixed population parameters which quantify the strength and the direction of the effect which, for example, a specific feature of the syntactic context or the stylistic level of the text have on the choice of the alternants.
 The so-called \textit{random effects} are not fixed population parameters, but they vary by group.
 The simplest random effect is a varying intercept, which predicts for groups of observations defined by lemmas, genres, speakers, etc. a constant term to be added to the model.
-In a truly hierarchical model, however, the varying intercept itself comes with an additional linear model where second-level fixed effects predict the group-level effect.
-To illustrate, the simple model specification in (\ref{eq:glmm}) is a hierarchical logistic regression model.
+In a true multilevel model, however, the varying intercept itself comes with an additional linear model where second-level fixed effects predict the group-level effect, and this is exactly what is needed here.
+To illustrate, the simple model specification in (\ref{eq:glmm}) is a multilevel logistic regression model.
 
 \begin{equation}
-  Pr(y_i=1)=logit^{-1}(\beta^0_{j[i]}+\beta^1\cdot x^1_i+\beta^2\cdot x^2_i)
+  Pr(y_i=1)=logit^{-1}(\beta^0_{j[i]}+\beta^1\cdot x^1_i)
   \label{eq:glmm}
 \end{equation}
 
-The varying intercept $\beta^0_{j[i]}$ adds a constant term for group $j$ to which $i$ belongs (encoded here as $j[i]$, a notation borrowed from \citealp{GelmanHill2006}).
-Each $\beta$ is a fixed-effect coefficient, and each $x$ is an observation-level variable.
-(Here, two fixed effects are included for illustration purposes.)
+$Pr(y_1=1)$ is the predicted probability that the variable for the construction type in an observation (indexed by $i$) takes on the value 1 ($y_i=1$).
+The varying intercept $\beta^0_{j[i]}$ adds a constant for group $j$ to which $i$ belongs (encoded here as $j[i]$, a notation borrowed from \citealp{GelmanHill2006}) to the linear term.%
+\footnote{The linear term is the argument to the $logit^{-1}$ link function which transforms it into something which is interpretable as a probability.}
+Any other $\beta$ is a fixed-effect coefficient, and each $x$ is an observation-level variable.
+Here, just one fixed effect is included for illustration purposes, and $x^1$ could be, for example, the variable encoding whether a cardinal modifies the measure noun.
 The observations (for example, the lines of a concordance) are indexed by $i$ and the groups\slash random intercepts by $j$.
 Let us say the groups are defined by lemmas and we also include lemma frequency as a control variable.
 In this case, a second-level model would be given similar to (\ref{eq:level2}).
@@ -444,5 +457,10 @@ In this case, a second-level model would be given similar to (\ref{eq:level2}).
   \label{eq:level2}
 \end{equation}
 
-This says that the intercepts follow a normal distribution with a standard deviation of $\sigma$ and a mean predicted from the model $\gamma_0+\gamma^1\cdot u_j$, where $\gamma^0$ is the second-level intercept, other $\gamma$s the second-level coefficients, and each $u$ a second-level predictor variable.
-If $\beta^0_{j[i]}$ were a lemma random effect and we also included, for example, lemma frequency as a control variable, then $u_j$ could be the lemma frequency predictor which helps to predict the lemma frequency instead of just having simple per-lemma constants.
+This says that the intercepts follow a normal distribution with a standard deviation of $\sigma$ and a mean predicted from the model $\gamma_0+\gamma^1\cdot u_j$, where $\gamma^0$ is the second-level intercept, the other $\gamma$ are the second-level coefficients, and each $u$ is a second-level predictor variable.
+If $\beta^0_{j}$ were a lemma random effect, then $u_j$ would be the lemma frequency predictor which helps to predict the lemma intercept instead of just having a simple per-lemma constant.%
+\footnote{Since the standard \textit{lme4} package takes care of multilevel modelling automatically, an R formula for (\ref{eq:glmm}) and (\ref{eq:level2}) could be \texttt{Construction\textasciitilde Cardinal+Lemmafrequency+(1|Lemma)} given that in the data set, the values of \texttt{Lemmafrequency} are unique for each \texttt{Lemma}.}
+
+While multilevel models are rarely used in corpus linguistics, and \citet{Gries2015} even calls the simpler varying-intercepts and varying-slopes models ``underused'', they provide an excellent tool to describe situations where preferences at the sentence level and at lexical levels need to be integrated.
+The models do not differentiate in and of themselves between abstraction and exemplar effects, but they allow researchers to tune the degree of complexity of models incorporating both types of effects according to their theory and the phenomenon at hand.
+In Section~\ref{sec:corpushierarchicalmodel}, a full multilevel model will therefore be used.

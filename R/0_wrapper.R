@@ -1,8 +1,5 @@
-#
-# This calls all scripts in the right order to replicate results from my paper
-# 'Competing Constructions for German Measure Phrases'
 
-# Scripts for the analysis of the experiments need to be run manually.
+# Scripts for the analysis of the experiments and the pre-study need to be run manually.
 
 rm(list = ls())
 
@@ -17,11 +14,8 @@ save.persistent        <- T                # Write to files instead of screen/co
 out.dir                <- "output/"        # Put generated files here.
 precision              <- 3                # Precision in result table.
 the.nAGQ               <- 0                # 0 for speed, 1 for precision and eytremely slow computation.
-ci.boot.nsim           <- 1000             # Even 100 can be extremely slow. Set to 1000 for production.
-ci.boot.modelcomp.nsim <- 1000             # This takes ages, even with 10. Set to 1000 for for production.
-chains                 <- 4                # MCMC.
-seed                   <- 6976             # MCMC.
-iter                   <- 1000             # MCMC. Set to 1000 for production.
+ci.boot.nsim           <- 1000            # Even 100 can be extremely slow. Set to 1000 for production.
+ci.boot.modelcomp.nsim <- 1000            # This takes ages, even with 10. Set to 1000 for for production.
 
 
 # Delete old output.
@@ -47,8 +41,8 @@ source('2_attraction.R') # calculate attraction factors
 cat("\n\n GLMM ...\n")
 source('3_glmm.R')       # full GLMMs
 
-cat("\n\n GLMM with MCMC ...\n")
-source('4_glmm-mcmc.R')  # same GLMMs estimated with Stan (Bayesian/MCMC)
+cat("\n\n GLMM with collexeme strength instead of attraction...\n")
+source('3a_glmm_collo.R')       # full GLMMs will collonoscopy instead of attraction quotient.
 
 cat("\n\n Prediction for experimental stimuli ...\n")
 source('5_stimuli_predict.R')
