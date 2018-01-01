@@ -137,7 +137,7 @@ if (save.persistent) dev.off()
 
 # Descriptive plot of responses model prediction.
 if (save.persistent) pdf(paste(out.dir, "proportions.pdf", sep=""))
-par(cex.lab = 1.5, cex.axis = 1.5, mar=c(5,5,5,5))
+par(cex.lab = 1.75, cex.axis = 1.75, mar=c(5,5,5,5))
 spineplot(responses.df$Chosenconstruction~responses.df$Modelprediction,
      #main = "Forced choice: distribution of responses\nby (binned) predictions from corpus-based model",
      xlab = "Probability for PGCadj from corpus-based model",

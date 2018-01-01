@@ -121,6 +121,8 @@ Second, due to differences in case syncretisms, it is possible that feminine kin
 \subsection{Pre-study: main prototype effects in the non-alternating constructions}
 \label{sec:prestudy}
 
+\subsubsection{Sampling and annotation}
+
 The main study to be reported below deals exclusively with the alternating constructions, as is customary in alternation modelling.
 However, the prototypical features described in Section~\ref{sec:prototypeeffects} should be observable in the non-alternating cases as well if the theory laid out in Section~\ref{sec:analyses} is correct.
 Therefore, in this section I examine the distribution of the prototypical features in the non-alternating cases to see whether they are in accord with the theoretical predictions.
@@ -128,7 +130,10 @@ Therefore, in this section I examine the distribution of the prototypical featur
 For this pre-study, each of the 2,365 combinations of measure noun lemma and kind noun lemma were queried in the \NACb\ and the \PGCd.
 Each of the resulting 2,365 concordances was scaled down randomly to a size of maximally 100 sentences, and from the resulting 35,766 sentences, 5,000 were randomly sampled for the statistical analysis.
 All features described in Section~\ref{sec:variablesandannotation} were annotated except for the ones which do not apply in the non-alternating case (\textit{Kindattraction}, \textit{Measureattraction}, and \textit{Measurecase}).
-The aggregated counts for each concordance were analysed in the form of a multilevel logistic regression model using R \citep{R} and the \textit{lme4} package \citep{Bates2010,BatesEa2015}.%
+
+\subsubsection{Model}
+
+The annotated concordance was analysed in the form of a multilevel logistic regression model using R \citep{R} and the \textit{lme4} package \citep{Bates2010,BatesEa2015}.%
 \footnote{An alternative \textit{BOBYQA} optimiser from the \textit{nloptr} package \citep{Johnson2017} was used for all fits with \textit{lme4} reported in this paper.}
 
 \begin{table}
@@ -169,20 +174,25 @@ Regressors which did not reach sig=0.05 in in the PBmodcomp test (\textit{Kindfr
 The overall intercept is -5.370 and reoresents \textit{Cardinal=Yes}, \textit{Measureclass=Physical} and 0 for all (z-transformed) numeric regressors.
 The standard deviation in the random intercepts is 1.157 for \textit{Measurelemma} ($p_{\text{PB}}=0.001$) and 0.923 for \textit{Kindlemma} ($p_{\text{PB}}=0.0.002$).
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.278$ and $R^2_c=0.566$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
-This means that the effect of the fixed effects (marginal $R^2$) is weak to intermediate, and that lemma-specific effects (conditional minus marginal $R^2$) are equally strong with a difference between the two coefficients of 0.289.
 
-This show that the main prototypical factors \textit{Cardinal} and \textit{Measureclass} indeed play the predicted role
+\subsubsection{Interpretation}
+
+The coefficients of determination indicate that the effect of the fixed effects (marginal $R^2$) is weak to intermediate, and that lemma-specific effects (conditional minus marginal $R^2$) are equally strong with a difference between the two coefficients of 0.289.
+
+The main prototypical factors \textit{Cardinal} and \textit{Measureclass} bot pass the PBmodcomp test at sig=0.05 and play the expected role.
 The abstract non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACb.
 At the other end of the scale, nouns denoting natural portions like \textit{Haufen} `heap', \textit{Bündel} `bundle', \textit{Schluck} `gulp' favour the \PGCd.
 Also, The presence of a cardinal modifier clearly favours the \NACb.
 The stylistic factor \textit{Genitives} is confirmed to have an influence as predicted inasmuch as a general lack of genitives (which is encoded as a \textit{higher} value of the variable) favours the \NACb.
 \textit{Badness} points into the wrong direction, but it barely reaches sig=0.05, and its confidence interval includes 0.
 The lemma frequency regressors both clearly fail the PBmodcomp test.
-I will return to these results in Section~\ref{sec:interpretation}.
+I will return to these results in Section~\ref{sec:conclusion}.
 
 \subsection{Main study: the alternation}
 \label{sec:annotation}
 \label{sec:corpushierarchicalmodel}
+
+\subsubsection{Sampling and annotation}
 
 For the main study, each of the 2,365 noun–noun combinations was queried in the alternating constructions \PGCa\ and \NACa\ in DECOW14A.%
 \footnote{Due to processing considerations with the COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
@@ -197,6 +207,8 @@ The sample is distributed with the data package accompanying this paper.}
 Finally, two auxiliary samples were also drawn.
 As mentioned in Section~\ref{sec:analyses}, the distribution of the measure noun and kind noun lemmas in the \NACb\ and the \PGCd\ with a determiner will be modelled as factors influencing the alternation.
 Therefore, all noun-noun pairs from the process described above were also queried in the two non-alternating constructions, resulting in 17,252 hits for the \PGCd\ and 315,635 hits for the \NACb.
+
+\subsubsection{Model}
 
 \begin{figure}[hb!]
   \centering
@@ -257,20 +269,12 @@ The lemma intercepts have standard deviations of $\sigma_{\text{Measurelemma}}=0
 Only \textit{Kindfreq} ($\mpPB=0.095$) could be seen as slightly too high to be convincing, failing at sig=0.05.
 
 Using signed logarithmised collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) (with smoothing to avoid log(0) operations) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) (see Section~\ref{sec:variablesandannotation}) was not successful.
-While the attraction measures reach satisfying sig levels in the PBmodcomp test (0.020 for \textit{Kindattraction} and 0.001 for \textit{Measureattraction}), the $p_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.
+While the attraction measures reach satisfying sig levels in the PBmodcomp test (0.020 for \textit{Kindattraction} and 0.001 for \textit{Measureattraction}), the $p_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.%
+\footnote{My approach to statistical inference is essentially Fisherian \citep{Fisher1935,Fisher1959}, and hence I use the term \textit{sig level} instead of the term \textit{$\alpha$ level} known from null hypothesis significance testing (NHST).
+For overviews of systems of statistical inference with special focus on this and related questions, see \citet{Lehmann1993,Lehmann2011} or the shorter \citet{Perezgonzalez2015}.}
 The coefficients of determination drop to $R_m^2=0.135$ and $R^2_c=0.636$.
 
-
-\subsection{Interpretation}
-\label{sec:interpretation}
-
-
-%\hl{As collostructional analysis is relatively popular in some cognitively oriented areas of corpus linguistics, I tried using collexeme strength as a regressor (with smoothing to remedy the mathematical problems), and the results were unsatisfactory compared to the simple quotient used here.
-%The corresponding regressor did not even reach sig=0.1 in the PBmodcomp test.
-%Both the cognitive underpinnings and the math behind collostructional analysis are still much debated (see prominently \citealp{SchmidKuechenhoff2013,KuechenhoffSchmid2015}), I see this result }
-
-
-% ATTRACTION
+\subsubsection{Interpretation}
 
 \begin{figure}[h!]
   \centering
@@ -291,14 +295,11 @@ if a lemma appears relatively more often in the \PGCd\ (compared to its frequenc
 The effect for measure nouns is stronger, and it was estimated with higher precision.
 
 An interesting picture emerges for the lemma frequencies.
-A higher-than-average lemma frequency of measure nouns favours the \NACa\ ($\beta_{\text{Measurefreq}}=-0.231$, $\mpPB=0.005$), which is as expected if we assume at least a tendency for highly grammaticalised items to be more frequent.
-With kind nouns, higher frequency seems to favour the \PGCa ($\beta_{\text{Kindfreq}}=0.146$, $\mpPB=0.095$).
-However, there is no clear theoretical interpretation (see Section~\ref{sec:analyses}), and the estimate is imprecise (not significant at $\alpha=0.05$, see above).
+A higher-than-average lemma frequency of measure nouns favours the \NACa\, which is as expected if we assume at least a tendency for highly grammaticalised items to be more frequent.
+With kind nouns, higher frequency seems to favour the \PGCa.
+However, there is no clear theoretical interpretation (see Section~\ref{sec:analyses}), and the estimate is imprecise (not significant at sig=0.05).
 The effect can therefore be ignored or treated as a nuisance variable.
 
-
-% GRAMMATICALISATION
-% => lemmas and lemma classes
 
 \begin{figure}[h!]
   \centering
@@ -308,12 +309,10 @@ The effect can therefore be ignored or treated as a nuisance variable.
 \end{figure}
 
 In Section~\ref{sec:analyses}, it was also hypothesised that classes of measure nouns with a higher degree of grammaticalisation should favour the \NACa.
-The \textit{Measureclass} second-level predictor was successfully estimated ($\mpPB=0.001$).
+The \textit{Measureclass} second-level predictor reaches sig=0.05 in the PBmodcomp test.
 Looking at the effect plot in Figure~\ref{fig:eff:measureattraction}, it is evident that abstract non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACa.
 At the other end of the scale, nouns denoting natural portions like \textit{Haufen} `heap', \textit{Bündel} `bundle', \textit{Schluck} `gulp' favour the \PGCa.
 These are referential nouns, confirming the hypothesis that it is prototypical of the PGC to contain two referential nouns, while the NAC prototypically only contains one (the kind noun).
-
-% CARDINALS
 
 \begin{figure}[h!]
   \centering
@@ -322,23 +321,14 @@ These are referential nouns, confirming the hypothesis that it is prototypical o
   \label{fig:eff:leftcontext}
 \end{figure}
 
-I now turn to the predicted effect of cardinals as modifiers of the measure noun.
-Figure~\ref{fig:eff:leftcontext} shows that cardinals indeed influence the choice of the alternant ($\mpPB=0.001$), and that cardinals have a strong tendency to co-occur with the \NACa.
+Figure~\ref{fig:eff:leftcontext} shows that cardinals indeed influence the choice of the alternant, and that cardinals have a strong tendency to co-occur with the \NACa.
 This effect was predicted in Section~\ref{sec:analyses}.
 
-% REGISTER
-% => Badness
-% => Genitives
-
 The style-related proxy variables point in the expected direction.
-Increased \textit{Badness} of the document favours the \NACa\ ($\beta_{\text{Badness}}=-0.152$, $\mpPB=0.002$), and so does a lower density of genitives ($\beta=-0.693$, $\mpPB=0.001$).
+Increased \textit{Badness} of the document favours the \NACa, and so does a lower density of genitives.
 While these are merely proxies to style (and partially circular in the case of \textit{Genitives}), this result can at least encourage future work into stylistic effects. 
 
-% NUISANCE
-% => dative effect
-% => frequency
-
-The influence of \textit{Measurecase} ($\mpPB=0.001$) is as predicted in previous analyses (see Section~\ref{sec:analyses}).
-A measure noun in the dative favours the \PGCa\ with $\beta_{\text{MeasurecaseDat}}=0.705$ (compared to the nominative, which is on the intercept).
+The influence of \textit{Measurecase} is as predicted in previous analyses (see Section~\ref{sec:analyses}).
+A measure noun in the dative favours the \PGCa\ (compared to the nominative, which is on the intercept).
 Although \textit{Measurecase} is a nuisance variable in the context of this study, convergence with previous work strengthens its validity.
 

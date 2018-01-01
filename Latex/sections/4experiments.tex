@@ -4,6 +4,8 @@
 \subsection{Experiment 1: forced-choice}
 \label{sec:exp:fc}
 
+\subsubsection{Setup, stimuli, and participants}
+
 In the two experiments reported in this section, I use probabilities for the alternating constructions calculated for attested material, and I correlate these probabilities with the participants' reactions.
 Thus, a direct link can be established between output material found in corpora and the behaviour of linguistic agents (see also Section~\ref{sec:cogocl}).
 Both experiments use sentences containing attested MNPs from the corpus sample (embedded into simplified sentences) as stimuli.
@@ -57,6 +59,8 @@ Thus, participants saw 39 pairs of sentences and 78 sentences in total.
 They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
 The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 
+\subsubsection{Model}
+
 \begin{figure}[htbp!]
 \centering
 \includegraphics[width=0.5\textwidth]{../R/output/fc_effects}
@@ -64,7 +68,7 @@ The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 \label{fig:afc:effects}
 \end{figure}
 
-Then, a multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.%
+A multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.%
 \footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to 0, which is the mean for z-transformed variables.}
 A random intercept and slope were added for the individual sentence (item) in order to catch idiosyncrasies of single sentences.
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
@@ -83,7 +87,10 @@ On the extreme ends, one participant chose the \PGCa\ in 13 of 16 cases, and two
 The regressor \textit{Modelprediction} achieves $\mpPB=0.003$ (1,000 replications) and is estimated at 4.389 relative to an intercept of -1.270.
 The confidence interval from a parametric bootstrap (1,000 replications, percentile method) for the regressor is acceptable but slightly large with a lower bound of 1.788 and an upper bound of 6.599.
 The pseudo-coefficients of determination are $R^2_{m}=0.185$ and $R^2_{c}=0.455$, which means that roughly 19\% of the variance in the data can be explained by considering only the predictions from the corpus-based GLMM.
-This is a weak result for the fixed effects part, but clearly worthy of mention.
+
+\subsubsection{Interpretation}
+
+The coefficients of determination indicate a weak result for the fixed effects part, which is nonetheless worthy of mention (very close to 0.2).
 The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
 The higher the probability of the \PGCa\ predicted from usage data, the more often participants chose the \PGCa\ alternant in the forced-choice task.
 A closer look at the results in the form of the spineplot in Figure~\ref{fig:spines} shows, however, that it was likely idiosyncracies in the sentences with a model prediction between 0.5 and 0.6 which spoiled an otherwise much better correlation.
@@ -107,6 +114,8 @@ In summary, the forced-choice experiment succeeded in corroborating the results 
 
 \subsection{Experiment 2: self-paced reading}
 \label{sec:exp:spr}
+
+\subsubsection{Setup, stimuli, and participants}
 
 The second experiment tests preferences more implicitly.
 It is expected that reading less typical alternants (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
@@ -133,8 +142,10 @@ The experiment was conducted using \textit{PsychoPy}.
 The reading times were residualised per speaker based on the reading times of all words (not just the targets) by that speaker.
 The adjective and the kind noun (\ie\ the constituents bearing the critical case markers) were used as the target region, for instance the bracketed words in the example \textit{zwei Gläser} [\textit{spru\-deln\-des Wasser}] `two glasses of sparkling water'.
 Outliers farther than 2 inter-quartile ranges from the mean logarithmised residualised reading time were removed (64 data points), resulting in a total number of \textit{n=}1,152 observations.
-An LMM was specified with the logarithmised residual reading times as the response variable.
 
+\subsubsection{Model}
+
+An LMM was specified with the logarithmised residual reading times as the response variable.
 The probabilities derived from the corpus GLMM (\textit{Modelprediction}) were added as the main regressor of interest.
 It should be remembered that the corpus GLMM predicts the probability of the \PGCa.
 As a consequence, the higher the GLMM prediction is, the more typical the sentence is for containing the \PGCa.
@@ -163,7 +174,14 @@ Table~\ref{tab:exp:spr} shows the coefficient estimates with a 95\% parametric b
 The standard deviation of the participant intercepts is $\sigma_{\text{Participant}}=0.079$ and of the item intercepts $\sigma_{\text{Item}}=0.037$.
 Comparing the full model to a model without the main regressor \textit{Modelprediction} (and consequently also without the interaction with \textit{Construction}) in a PB test gives $\mpPB=0.036$.
 The pseudo-coefficients of determination are $R^2_m=0.239$ and $R^2_c=0.346$.
-There is thus some inter-subject variation and a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities.
+
+An alternative Gaussian generalised additive model with an identity link was also fit (see \citealp{DivjakEa2016}) using the \textit{mgcv} package \citep{Wood2011}.
+The full results are included in the data package for this paper, but the fit was not better than with the LMM reported above.
+The estimated smoother for the \textit{Modelprediction} variable is essentially linear, and the $R^2$ (corresponding to the marginal $R^2$ of the LMM) was 0.237.
+
+\subsubsection{Interpretation}
+
+The coefficients of determination indicate that there is a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities (marginal $R^2$ and that there some inter-subject variation (conditional minus marginal $R^2$).
 
 \begin{figure}[htbp!]
 \centering
