@@ -67,7 +67,7 @@ Notice first that \textit{Construction} is the response variable with the values
     Kind lemma     & Kindattraction                   & numeric &                           \\
                    & (Kindcollo)                      & numeric &                           \\
                    & Kindfreq                         & numeric &                           \\
-		   & Kindgender                       & factor  & MascNeut, Fem             \\
+		   & Kindgender                       & factor  & Masc, Neut, Fem             \\
     Measure lemma  & Measureattraction                & numeric &                           \\
                    & (Measurecollo)                   & numeric &                           \\
                    & Measureclass                     & factor  & Physical, Container,      \\
@@ -85,7 +85,7 @@ It could be argued that other measures of attraction strength could be used, for
 However, the goal here is to quantify how often lemmas occur in the \PGCd\ and the \NACb, and these constructions do not compete at all but are rather mutually exclusive.
 While this does not preclude the use of collostructional analysis, it is an open question whether the marginals (usually called the ``expected frequencies'' in the collostructional literature), given the overall frequency of the constructions and the lemmas, are cognitively relevant in this case.
 After all, the main difference between the quotient used here and the logarithmised p-values from a Fisher test is that they take these marginals into account. 
-However, using collexeme strength instead of the raw frequency quotient was tried as an alternative (variables \textit{Kindcollo} and \textit{Measurecollo}); see Sections~\ref{sec:corpushierarchicalmodel} and~\ref{sec:interpretation}.
+However, using collexeme strength instead of the raw frequency quotient was tried as an alternative (variables \textit{Kindcollo} and \textit{Measurecollo}); see Sections~\ref{sec:corpushierarchicalmodel} and~\ref{sec:interpretation:corpus}.
 Additionally, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW14A corpus creators on their web page.
 In Section~\ref{sec:analyses}, it was hypothesised that classes of measure lemmas might have different preferences for the two alternants.
 To capture this, class information was annotated for measure lemmas as \textit{Measureclass}.
@@ -131,7 +131,7 @@ For this pre-study, each of the 2,365 combinations of measure noun lemma and kin
 Each of the resulting 2,365 concordances was scaled down randomly to a size of maximally 100 sentences, and from the resulting 35,766 sentences, 5,000 were randomly sampled for the statistical analysis.
 All features described in Section~\ref{sec:variablesandannotation} were annotated except for the ones which do not apply in the non-alternating case (\textit{Kindattraction}, \textit{Measureattraction}, and \textit{Measurecase}).
 
-\subsubsection{Model}
+\subsubsection{Statistical model}
 
 The annotated concordance was analysed in the form of a multilevel logistic regression model using R \citep{R} and the \textit{lme4} package \citep{Bates2010,BatesEa2015}.%
 \footnote{An alternative \textit{BOBYQA} optimiser from the \textit{nloptr} package \citep{Johnson2017} was used for all fits with \textit{lme4} reported in this paper.}
@@ -177,7 +177,7 @@ Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.278$ an
 
 \subsubsection{Interpretation}
 
-The coefficients of determination indicate that the effect of the fixed effects (marginal $R^2$) is weak to intermediate, and that lemma-specific effects (conditional minus marginal $R^2$) are equally strong with a difference between the two coefficients of 0.289.
+The coefficients of determination indicate that the effect of the fixed effects (marginal $R^2$) is adequately strong, and that lemma-specific effects (conditional minus marginal $R^2$) are equally strong with a difference between the two coefficients of 0.289.
 
 The main prototypical factors \textit{Cardinal} and \textit{Measureclass} bot pass the PBmodcomp test at sig=0.05 and play the expected role.
 The abstract non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACb.
@@ -208,7 +208,7 @@ Finally, two auxiliary samples were also drawn.
 As mentioned in Section~\ref{sec:analyses}, the distribution of the measure noun and kind noun lemmas in the \NACb\ and the \PGCd\ with a determiner will be modelled as factors influencing the alternation.
 Therefore, all noun-noun pairs from the process described above were also queried in the two non-alternating constructions, resulting in 17,252 hits for the \PGCd\ and 315,635 hits for the \NACb.
 
-\subsubsection{Model}
+\subsubsection{Statistical model}
 
 \begin{figure}[hb!]
   \centering

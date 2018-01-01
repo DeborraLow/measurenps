@@ -4,12 +4,23 @@
 \subsection{Experiment 1: forced-choice}
 \label{sec:exp:fc}
 
-\subsubsection{Setup, stimuli, and participants}
-
 In the two experiments reported in this section, I use probabilities for the alternating constructions calculated for attested material, and I correlate these probabilities with the participants' reactions.
 Thus, a direct link can be established between output material found in corpora and the behaviour of linguistic agents (see also Section~\ref{sec:cogocl}).
 Both experiments use sentences containing attested MNPs from the corpus sample (embedded into simplified sentences) as stimuli.
 Also, the probabilities that the corpus-based model assigns to the two alternants in these sentences are used as the main regressor in both studies.
+
+Readers might wonder why the stimuli were chosen in such a way.
+Alternatively, one could have created stimuli where the features favouring the alternatives were permuted appropriately and thus tested directly.
+The answer is related to what was said in Section~\ref{sec:cogocl} about the rich multi-factorial data sets used in corpus studies and the comparatively restricted ones in experiments.
+Looking at Table~\ref{tab:variables}, we see one binary factor (\textit{Cardinal}), two three-level factors (\textit{Measurecase} and \textit{Kindgender}) and one five-level factor (\textit{Measureclass}).
+Since the dependent variable is also binary (\textit{Construction}), permuting these factors alone leads to 180 different possible permutations.
+On top of this, the numeric variables \textit{Kindattraction} and \textit{Measureattraction} would also have to be tested at at least two or three different values each.
+It is obvious that this is impossible in a controlled experiment, given that participants can usually be exposed to something in the region of one hundred sentences (including many more fillers than target stimuli) within thirty minutes to an hour.
+Thus, while the present approach only allows for a global test of the corpus-derived model, this appears to me to be the only feasible way.%
+\footnote{Obviously, the experimental data are much too sparse to perform even post-hoc analyses with respect to the single regressors in a statistically and scientifically sound way.}
+It is, in the sense of Section~\ref{sec:cogocl}, an optimal synthesis of data-rich multifactorial corpus studies and experimental validation, and it is one that has been used (although rarely; see \citealp[3--4]{DivjakEa2016a}) since the seminal \citet{BresnanEa2007} paper.
+
+\subsubsection{Setup, stimuli, and participants}
 
 The first experiment tests preferences for constructions explicitly.
 \cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute 100 points between the alternatives, assigning more points to more natural sounding alternative.
@@ -59,7 +70,7 @@ Thus, participants saw 39 pairs of sentences and 78 sentences in total.
 They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
 The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 
-\subsubsection{Model}
+\subsubsection{Statistical model}
 
 \begin{figure}[htbp!]
 \centering
@@ -73,13 +84,6 @@ A multilevel logistic regression was specified with the probability of the \PGCa
 A random intercept and slope were added for the individual sentence (item) in order to catch idiosyncrasies of single sentences.
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
 The number of observations was \textit{n=}384.
-
-\begin{figure}[htbp!]
-  \centering
-  \includegraphics[width=0.5\textwidth]{../R/output/fc_proportions}
-  \caption{Spineplot of the proportion of responses plotted against the predictions from the corpus-based model in the forced-choice experiment}
-  \label{fig:spines}
-\end{figure}
 
 A good amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Item}}=1.217$).%
 Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.412$).
@@ -95,6 +99,13 @@ The effect display for the single fixed regressor \textit{Modelprediction} is gi
 The higher the probability of the \PGCa\ predicted from usage data, the more often participants chose the \PGCa\ alternant in the forced-choice task.
 A closer look at the results in the form of the spineplot in Figure~\ref{fig:spines} shows, however, that it was likely idiosyncracies in the sentences with a model prediction between 0.5 and 0.6 which spoiled an otherwise much better correlation.
 Clearly, a revised and improved experiment might lead to a much better fit in future research.
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{../R/output/fc_proportions}
+  \caption{Spineplot of the proportion of responses plotted against the predictions from the corpus-based model in the forced-choice experiment}
+  \label{fig:spines}
+\end{figure}
 
 In principle, a per-stimulus random effect for \textit{Modelprediction} could also remedy the problem with individual stimuli at least partially.
 Therefore, a model with random slopes for \textit{Modelprediction} and both random effects (\textit{Participant} and \textit{Item}) was specified and estimated.
@@ -143,7 +154,7 @@ The reading times were residualised per speaker based on the reading times of al
 The adjective and the kind noun (\ie\ the constituents bearing the critical case markers) were used as the target region, for instance the bracketed words in the example \textit{zwei Gläser} [\textit{spru\-deln\-des Wasser}] `two glasses of sparkling water'.
 Outliers farther than 2 inter-quartile ranges from the mean logarithmised residualised reading time were removed (64 data points), resulting in a total number of \textit{n=}1,152 observations.
 
-\subsubsection{Model}
+\subsubsection{Statistical model}
 
 An LMM was specified with the logarithmised residual reading times as the response variable.
 The probabilities derived from the corpus GLMM (\textit{Modelprediction}) were added as the main regressor of interest.
