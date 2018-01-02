@@ -1,50 +1,63 @@
 \section{Conclusions}
 \label{sec:conclusion}
 
-%%% PROTOYPE VS EXEMPLARS
+The empirical studies in Sections~\ref{sec:corpusstudies} and~\ref{sec:experimental} confirm the theoretical model proposed in Section~\ref{sec:germanmeasurenps}, which predicted prototype effects and exemplar effects to jointly determine which of the two alternating constructions is chosen.
+More specifically, the pre-study and the main study provided evidence that the NAC constructions favour more strongly grammaticalised measure nouns, modification by cardinals, and styles where the genitive is underrepresented and the text is less coherently and elaborately written, as captured in the \textit{Badness} variable.%
+\footnote{Although, as pointed out in Section~\ref{sec:mainstudyinterpretation}, the \textit{Badness} effect is weak and not detected in the pre-study, probably as a consequence of its weakness.}
+The overall convergence between the pre-study and the main study and also the expected result for \textit{Measurecase} given previous research \citep{Zimmer2015} -- although it was only a control variable here, strengthen the validity of this study even without the experimental validation.
 
-% Shown how prototype and exemplar effects control the alternation.
+While the results do not \textit{prove} -- due to the intrinsic equivalence of prototype and exemplar models with respect to the output they produce -- that the model proposed in Section~\ref{sec:germanmeasurenps} is congruent with any speaker's mental representation, the two attraction features (\textit{Kindattraction} and \textit{Measureattraction}) are virtually impossible to conceive of as prototype effects.
+As discussed in Section~\ref{sec:cogocl}, it is unnecessary to follow an extreme route, be it radical prototype theory or radical exemplar theory given recent developments in cognitive science and (less prominently) cognitive linguistics.
+While it is surely an intentionally overstated comment, \citet[15]{Kapatsinski2014} suggests that ``[i]n the extreme, some speakers’ heads could host exemplar models, and some could contain fairly abstract grammars, and the produced output would be essentially identical''.
+If this is (to a probably less extreme degree) the case, pooled data from corpora might only provide (still highly informative) data averaged over levels of abstraction.
+Clearly, more research is required in this direction.
 
-% Unnecessary to follow extreme routes for no-abstraction or full-abstraction model.
+Another important aspect of the research presented here is the validation of the results derived from corpus data in two experimental paradigms.
+While such cross-validations have been done (with varying success, see Section~\ref{sec:cogocl}) for over a decade, they have not yet become standard procedure.
+As \citet[3--4]{DivjakEa2016a} put it:
 
-% Show how multilevel modelling helps to specify complex interactions between abstract features, item-specific tendencies and exemplar effects.
+\begin{quote}
+  There are now a number of published multivariate models that use data, extracted from corpora [\ldots] to predict the choice for one morpheme, lexeme or construction over another.
+  However, [\ldots] only a small number of these corpus-based studies have been cross-validated [\ldots].
+  Of these cross- validated studies, few have directly evaluated the prediction accuracy of a complex, multivariate corpus-based model on humans using authentic corpus sentences [\ldots].
+\end{quote}
 
-% All in all, clear evidence for probabilistic nature of the phenomenon.
+The question now arises whether in the present case convergence was reached, and the answer is a clear yes.
+The predictions made by the corpus-based model were a significant factor, both in the more explicit paradigm (forced choice) and the implicit paradigm (self-paced reading), showing that the model indeed predicts the variant which language users (readers in this case) expect.
+The overall effect as measured in the $R^2$ was weak (roughly 0.2) in both cases, however.
+While part of this could be traced to a suboptimally chosen stimulus, we really need to consider what kind of convergence we expect to see between corpus data and experiments.
+The main corpus study had $R^2_m=0.409$ and $R^2_c=0.495$, which is good but not anywhere near a perfect fit.%
+\footnote{See below for potentially missing variables.}
+This is also obvious from the prediction accuracy of 0.843, which corresponds to a reduction of the prediction error of 0.297.
+With the added inter-speaker variability brought into play by the experimental setup, a perfect fit cannot be expected.
+Like many phenomena in German which are often called \textit{Zweifelsfälle} (`cases of doubt') in the traditional literature \citep{Duden09,Klein2009} the MNP alternation is a case where speakers very often have no clear intuition and a lot of free variation seems to be involved.
+Rarely do speakers feel that one alternative is clearly odd or bad when presented in isolation.
+Additionally, cases of doubt involving the genitive are often a matter of fierce public debate, and especially the forced choice experiment does not prevent participants from making normative judgements.
+This might account for the slightly better fit in the self-paced reading experiment, although the difference might be too small to warrant an interpretation.
+Thus, the present study shows that what counts as convergence between corpus and experimental results should be gauged considering the nature of the phenomenon at hand, the source of the corpus data, and the experimental paradigm.
 
-%%% CONVERGENCE AND NON-CONVERGENCE
+Clearly, more case studies using diverse and different corpora are needed, and it should become standard practice to cross-validate them using experimental methods.
+Given that a single failure to achieve convergence does not provide any evidence for divergence, many more studies need to be published to the point that meta-analysis becomes possible.%
+\footnote{This is even more vital considering the variation in results from experimental work.
+See, for example, the impressive list of different reading time results from ten papers on Chinese relative clause processing in \citet[8]{Vasishth2015}.}
 
-% There are now a number of published multivariate models that use data, extracted from corpora and annotated for a multitude of morphological, syntac- tic, semantic and pragmatic parameters, to predict the choice for one morpheme, lexeme or construction over another. However, most of these studies are con- cerned with phenomena that involve binary choices (Gries 2003; De Sutter et al. 2008) and only a small number of these1 corpus-based studies have been cross-validated (Keller 2000; Wasow and Arnold 2003; Sorace and Keller 2005; Roland et al. 2006; Arppe and Järvikivi 2007; Divjak and Gries 2008).2 Of these cross- validated studies, few have directly evaluated the prediction accuracy of a complex, multivariate corpus-based model on humans using authentic corpus sentences (with the exception of Bresnan 2007; Bresnan and Ford 2010; Ford et al. 2013a; Ford et al. 2013b), and even fewer have attempted to evaluate the prediction accuracy of a polytomous corpus-based model in this way (but see Arppe and Abdulrahim 2013 for a first attempt). Below we will review the latter two types of cross-validated studies.
+On a larger methodological scale, this paper also makes a number of contributions.
+The statistical model was a true multilevel model (see Section~\ref{sec:itemandexemplareffects} and Section~\ref{sec:mainstudystatisticalmodel}), demonstrating how multilevel modelling helps to specify complex hierarchies of abstract features, item-specific tendencies, and exemplar effects at the level of observations (sentences; first level) and lemmas (second level).
+While \cite{Gries2015} still calls mixed models ``underused'' in corpus linguistics, multilevel models are at least equally underused tools.
+At the same time, the effects of overparametrisation of mixed models with varying slopes as criticised by \cite{BatesEa2015a} was demonstrated.
+Furthermore, fitting an additive model to the reading time data did not improve the fit as there were no non-linearities in the data.
+While \cite{DivjakEa2016} also use attested sentences, they find that an additive model helped to deal with non-linearities.
+This is clearly another area where only more studies can lead to clarification.
+Finally, much like \cite{Dabrowska2014} found that speakers' knowledge of collocations was not matched by a set of standard measures of collocation strength extracted from corpora, a simple quotient based on raw frequencies for the attraction strength performed much better in the present study compared to collexeme strength (see Section~\ref{sec:corpusstudies}).
+While this does not allow the conclusion that collexeme strength has no cognitive reality, it might indicate that for measuring attraction effects exerted by non-alternating constructions on alternating constructions, other measures might be more appropriate.
 
-% Pre-study and main study mostly converge, although Badness is weak in pre-study. Makes it highly likely that the postulated factors are substantial.
-% Also: Genitives is a good measure, corroborated through pre-study.
-
-% Notice that overall fit of main study is good R2m>0.4 but not anywhere near perfect predictability.
-% Due to more subtle preferences and more free variation. Rarely do speakers feel one alternative is odd or bad. => More experiments.
-
-% Important: Nuisance factor (case) in line with Zimmer2015, which improves the validity of the presented results.
-
-% Weak convergence with experiments: Consider lower R2 in main study as level to begin with. No wonder that experimental corroboration is even weaker.
-% See also extreme inter-speaker variation, and possibly problematic stimuli which marred results. => More experiments.
-% Why self-paced reading better? Less room for normative evaluations, and genitives are a hot matter of public debate.
-
-% (External) things that were NOT corroborated:
-% Collexeme strength failed against raw frequency-based measure.
-% GAM did not improve fit in reading time experiment. Effect was quite linear.
-% Overparametrisation was ill-advised as predicted by BatesEa2015a, MatuschekEa2017.
-
-% Mention pre-registration.
-
-% We need: more case studies +  diverse and different corpora + focus on register/style-specific aspects + inter-speaker similarity + focus on different experimental paradigms and what they really tell us + more clarity wrt statistical methods + ultimately fully specified mathematical models as in cognitive science
-
-Besides the methodological aspects mentioned above, future work could extend the results and provide a general picture of the constructions expressing measurements (see Section~\ref{sec:descriptive}).
+Besides the methodological aspects mentioned above, future work could extend the results presented here to provide a more general picture of the constructions expressing measurements (see Section~\ref{sec:descriptive}).
 This would be a much more complicated task given that the choices then would no longer be binary and that the meaning of the alternative ways of expressing measurements are semantically more varied.
+Also, a more in-depth look at stylistic or register effects might be possible using new Biber-style annotations which will be released with a new version of the DECOW corpus soon (see Section~\ref{sec:variablesandannotation}.
+Also, regional variation as a potentially influencing factor was already mentioned in Section~\ref{sec:prototypeeffects}.
+As it would be infeasible to examine this with existing corpora, experimental work with participants from various regions might be the ideal approach.
+A reviewer also pointed out that strongly lexicalised adjective-noun combinations like \textit{schwarzer Tee} `black tea' might have a tendency to occur in the \NACa\ because the have more compound-like qualities, blocking strong case inflection in between.
+While this potential effect was impossible to incorporate into the present study, it could be integrated into future research on the phenomenon.
 
-% Potential refinement: more detailed analysis instead of CARD vs. not CARD
-% Potential refinement: postnominal modification (= true partitives)
-% Regional variation (experiments)
-% Mention R1 and his ``lexicalised A+N combinations''
-
-Finally, I want to point out that German is mildly under-researched in the specific framework used here.
-This is quite surprising given the fact that German morpho-syntax is famous for its alternations, which are usually called \textit{Zweifelsfälle} (`cases of doubt') in the traditional literature \citep{Duden09,Klein2009}.
-Instead of being drowned in normative, descriptive, or didactic discussions, they could serve as ideal test cases in cognitive linguistics.
-
+In closing, I want to point out that the so-called \textit{case of doubt} in German morpho-syntax -- like the measure noun phrase alternation -- are in fact ideal test cases for probabilistic modelling of alternation phenomena in cognitive linguistics.
+Doing more research on them could help to provide answers to many of the fundamental and methodological issues mentioned above.

@@ -79,13 +79,14 @@ Notice first that \textit{Construction} is the response variable with the values
 \end{table}
 
 The variables \textit{Kindattraction} and \textit{Measureattraction} encode the ratio with which a given kind noun lemma or measure noun lemma occurs in the \PGCd\ and the \NACb.
-They were calculated from the auxiliary samples described at the end of Section~\ref{sec:gettingdata} as a log-transformed quotient.
+They were calculated from auxiliary samples to be described in Section~\ref{sec:mainstudysampling} as a log-transformed quotient.
 The higher the value, the more often the noun occurs in the \PGCd\ (proportionally).
 It could be argued that other measures of attraction strength could be used, for example those popularised in collostructional analysis (\citealp{StefanowitschGries2003,GriesStefanowitsch2004}; see also \citealp{Gries2015a}).
 However, the goal here is to quantify how often lemmas occur in the \PGCd\ and the \NACb, and these constructions do not compete at all but are rather mutually exclusive.
 While this does not preclude the use of collostructional analysis, it is an open question whether the marginals (usually called the ``expected frequencies'' in the collostructional literature), given the overall frequency of the constructions and the lemmas, are cognitively relevant in this case.
 After all, the main difference between the quotient used here and the logarithmised p-values from a Fisher test is that they take these marginals into account. 
-However, using collexeme strength instead of the raw frequency quotient was tried as an alternative (variables \textit{Kindcollo} and \textit{Measurecollo}); see Sections~\ref{sec:corpushierarchicalmodel} and~\ref{sec:interpretation:corpus}.
+However, using collexeme strength instead of the raw frequency quotient was tried as an alternative (variables \textit{Kindcollo} and \textit{Measurecollo}); see Section~\ref{sec:corpushierarchicalmodel} for a discussion of the negative results.
+
 Additionally, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW14A corpus creators on their web page.
 In Section~\ref{sec:analyses}, it was hypothesised that classes of measure lemmas might have different preferences for the two alternants.
 To capture this, class information was annotated for measure lemmas as \textit{Measureclass}.
@@ -170,7 +171,9 @@ The column \textit{CI excludes 0} shows an asterisk for those intervals that do 
 Furthermore, for each regressor, a p-value was obtained by dropping the regressor from the full model, re-estimating the nested model, and comparing it to the full model.
 Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 I call the corresponding value $p_{\text{PB}}$, and it is given in the respective columns in Table~\ref{tab:smalltable}.
-Regressors which did not reach sig=0.05 in in the PBmodcomp test (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and have no coefficient estimates.
+Regressors which did not reach sig=0.05 in in the PBmodcomp test (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and consequently have no coefficient estimates.%
+\footnote{My approach to statistical inference is essentially Fisherian \citep{Fisher1935,Fisher1959}, and hence I use the term \textit{sig level} instead of the term \textit{$\alpha$ level} known from null hypothesis significance testing (NHST).
+For overviews of systems of statistical inference with special focus on this and related questions, see \citet{Lehmann1993,Lehmann2011} or the shorter \citet{Perezgonzalez2015}.}
 The overall intercept is -5.370 and reoresents \textit{Cardinal=Yes}, \textit{Measureclass=Physical} and 0 for all (z-transformed) numeric regressors.
 The standard deviation in the random intercepts is 1.157 for \textit{Measurelemma} ($p_{\text{PB}}=0.001$) and 0.923 for \textit{Kindlemma} ($p_{\text{PB}}=0.0.002$).
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.278$ and $R^2_c=0.566$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
@@ -186,13 +189,14 @@ Also, The presence of a cardinal modifier clearly favours the \NACb.
 The stylistic factor \textit{Genitives} is confirmed to have an influence as predicted inasmuch as a general lack of genitives (which is encoded as a \textit{higher} value of the variable) favours the \NACb.
 \textit{Badness} points into the wrong direction, but it barely reaches sig=0.05, and its confidence interval includes 0.
 The lemma frequency regressors both clearly fail the PBmodcomp test.
-I will return to these results in Section~\ref{sec:conclusion}.
+I will return to these results in Section~\ref{sec:mainstudyinterpretation}.
 
 \subsection{Main study: the alternation}
 \label{sec:annotation}
 \label{sec:corpushierarchicalmodel}
 
 \subsubsection{Sampling and annotation}
+\label{sec:mainstudysampling}
 
 For the main study, each of the 2,365 noun–noun combinations was queried in the alternating constructions \PGCa\ and \NACa\ in DECOW14A.%
 \footnote{Due to processing considerations with the COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
@@ -209,6 +213,7 @@ As mentioned in Section~\ref{sec:analyses}, the distribution of the measure noun
 Therefore, all noun-noun pairs from the process described above were also queried in the two non-alternating constructions, resulting in 17,252 hits for the \PGCd\ and 315,635 hits for the \NACb.
 
 \subsubsection{Statistical model}
+\label{sec:mainstudystatisticalmodel}
 
 \begin{figure}[hb!]
   \centering
@@ -260,7 +265,7 @@ Given the coding of the response variable, coefficients leaning to the positive 
 
 Standard diagnostics show that the model quality is quite good.%
 \footnote{Notice that no aggressive model selection was applied, especially not upward model selection including probing for interactions.
-I am convinced that the model should be specified based on theoretical considerations (and known nuisance effects) to avoid the dangers of data dredging and to avoid models which are difficult to interpret.
+I am convinced that models should be specified based on theoretical considerations (including known nuisance effects) to avoid the dangers of data dredging and to avoid models which are difficult to interpret.
 Removal of useless regressors (judging by, for example, the PBmodcomp test and coefficients of determination) is the only type of model selection I allow in my research.}
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$.
 The rate of correct predictions is 0.843, which means a proportional reduction of error of $\lambda=0.297$.
@@ -268,13 +273,12 @@ Generalised variance inflation factors for the regressors were calculated to che
 The lemma intercepts have standard deviations of $\sigma_{\text{Measurelemma}}=0.448$ and $\sigma_{\text{Kindlemma}}=0.604$.
 Only \textit{Kindfreq} ($\mpPB=0.095$) could be seen as slightly too high to be convincing, failing at sig=0.05.
 
-Using signed logarithmised collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) (with smoothing to avoid log(0) operations) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) (see Section~\ref{sec:variablesandannotation}) was not successful.
-While the attraction measures reach satisfying sig levels in the PBmodcomp test (0.020 for \textit{Kindattraction} and 0.001 for \textit{Measureattraction}), the $p_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.%
-\footnote{My approach to statistical inference is essentially Fisherian \citep{Fisher1935,Fisher1959}, and hence I use the term \textit{sig level} instead of the term \textit{$\alpha$ level} known from null hypothesis significance testing (NHST).
-For overviews of systems of statistical inference with special focus on this and related questions, see \citet{Lehmann1993,Lehmann2011} or the shorter \citet{Perezgonzalez2015}.}
-The coefficients of determination drop to $R_m^2=0.135$ and $R^2_c=0.636$.
+Using signed logarithmised collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) (with smoothing to avoid \textit{log(0)} errors) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) (see Section~\ref{sec:variablesandannotation}) was not successful.
+While the attraction measures reach satisfying sig levels in the PBmodcomp test (0.020 for \textit{Kindattraction} and 0.001 for \textit{Measureattraction}), the $p_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.
+The coefficients of determination drop to $R_m^2=0.376$ and $R^2_c=0.480$.
 
 \subsubsection{Interpretation}
+\label{sec:mainstudyinterpretation}
 
 \begin{figure}[h!]
   \centering
@@ -295,7 +299,7 @@ if a lemma appears relatively more often in the \PGCd\ (compared to its frequenc
 The effect for measure nouns is stronger, and it was estimated with higher precision.
 
 An interesting picture emerges for the lemma frequencies.
-A higher-than-average lemma frequency of measure nouns favours the \NACa\, which is as expected if we assume at least a tendency for highly grammaticalised items to be more frequent.
+A higher-than-average lemma frequency of measure nouns favours the \NACa, which is as expected if we assume at least a tendency for highly grammaticalised items to be more frequent.
 With kind nouns, higher frequency seems to favour the \PGCa.
 However, there is no clear theoretical interpretation (see Section~\ref{sec:analyses}), and the estimate is imprecise (not significant at sig=0.05).
 The effect can therefore be ignored or treated as a nuisance variable.
@@ -332,3 +336,21 @@ The influence of \textit{Measurecase} is as predicted in previous analyses (see 
 A measure noun in the dative favours the \PGCa\ (compared to the nominative, which is on the intercept).
 Although \textit{Measurecase} is a nuisance variable in the context of this study, convergence with previous work strengthens its validity.
 
+To close this section, I now compare the results of the pre-study and the main study.
+Even though the non-alternating constructions are surely subject to additional constraints (especially because they are much less interchangeable than the alternating constructions), the coefficients align neatly in many cases.
+First of all, the intercepts encode a similar overall dominance of the NAC constructions (pre-study: -5.370; main study: -3.548).
+For the \textit{Cardinal} effect, the coefficients 1.419 (pre-study) and 1.189 (main study) have the same sign and magnitude and mostly overlapping confidence intervals.
+The levels of \textit{Measureclass} have comparable coefficients, although the divergence is larger.
+In both studies, the abstract measure nouns in the \textit{Physical} class (on the intercept) are most clearly associated with the NAC constructions.
+Also, in both cases, the \textit{Container} class is closest to \textit{Physical} with the same sign and magnitude (pre-study: 0.445; main study: 0.252).
+The main difference -- if we ignore the \textit{Rest} class which can be expected to show no clear tendency -- is that \textit{Amount} and \textit{Portion} are slightly closer together in their tendency to favour the PGC constructions in the pre-study (\textit{Amount} 1.597 and \textit{Portion} 1.782 in the pre-study vs.\ \textit{Amount} 0.831 and \textit{Portion} 1.217 in the main study).
+The difference is not huge, and the overall order of the coefficients is the same.
+The \textit{Genitives} effect also converges with -0.710 in the pre-study and -0.693 in the main study.
+The two studies do not converge with respect to the \textit{Badness} variable, which is not significant in the pre-study.
+It would, however, surprise to achieve perfectly converging results given that even real effects are missed at certain rates.
+In the case of \textit{Badness}, we see that even in the main study, the effect size is small (-0.152), and thus even at the impressive sample size of roughly 5,000 in both studies, the effect might simply be too weak to be detected reliably.
+Finally, the frequency effect \textit{Measurefreq} is detected in the main study but not in the pre-study, while the \textit{Kindfreq} effect is essentially absent in both studies.
+In connection with this, it is revealing to look at the coefficients of determination.
+In the pre-study, a much greater proportion of the variance is explained by taking the lemma random effects into account ($R^2_m=0.278$ and $R^2_c=0.566$) than it is in the main study ($R^2_m=0.376$ and $R^2_c=0.480$).
+Thus, the frequency effect for measure lemmas might be swamped by the lemma random intercepts.
+All things considered, the studies have shown that the predicted prototype effects are mostly found in usage data for both the alternating and the non-alternating constructions.
