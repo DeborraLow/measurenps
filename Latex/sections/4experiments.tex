@@ -5,15 +5,14 @@
 \label{sec:exp:fc}
 
 In the two experiments reported in this section, I use probabilities for the alternating constructions calculated for attested material, and I correlate these probabilities with the participants' reactions.
-Thus, a direct link can be established between output material found in corpora and the behaviour of linguistic agents (see also Section~\ref{sec:cogocl}).
+Thus, a direct link can be established between output material found in corpora and the behaviour of linguistic agents.
 Both experiments use sentences containing attested MNPs from the corpus sample (embedded into simplified sentences) as stimuli.
-Also, the probabilities that the corpus-based model assigns to the two alternants in these sentences are used as the main regressor in both studies.
 
 Readers might wonder why the stimuli were chosen in such a way.
 Alternatively, one could have created stimuli where the features favouring the alternatives were permuted appropriately and thus tested directly.
 The answer is related to what was said in Section~\ref{sec:cogocl} about the rich multi-factorial data sets used in corpus studies and the comparatively restricted ones in experiments.
 Looking at Table~\ref{tab:variables}, we see one binary factor (\textit{Cardinal}), two three-level factors (\textit{Measurecase} and \textit{Kindgender}) and one five-level factor (\textit{Measureclass}).
-Since the dependent variable is also binary (\textit{Construction}), permuting these factors alone leads to 180 different possible permutations.
+Since the dependent variable is binary (\textit{Construction}), permuting these factors alone leads to 180 different possible permutations.
 On top of this, the numeric variables \textit{Kindattraction} and \textit{Measureattraction} would also have to be tested at at least two or three different values each.
 It is obvious that this is impossible in a controlled experiment, given that participants can usually be exposed to something in the region of one hundred sentences (including many more fillers than target stimuli) within thirty minutes to an hour.
 Thus, while the present approach only allows for a global test of the corpus-derived model, this appears to me to be the only feasible way.%
@@ -22,17 +21,16 @@ It is, in the sense of Section~\ref{sec:cogocl}, an optimal synthesis of data-ri
 
 \subsubsection{Setup, stimuli, and participants}
 
-The first experiment tests preferences for constructions explicitly.
-\cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute 100 points between the alternatives, assigning more points to more natural sounding alternative.
-In essence, participants distribute a probability mass between two alternants, which is intended to produce more subtle results compared to a two-alternative forced-choice task such as in \cite{Rosenbach2013}, where participants have to choose one of two alternants.
-The split-100 paradigm has been criticised in \cite{ArppeJaervikivi2007}.
-The criticism was reiterated in \cite{DivjakEa2016}, where they use a forced-choice task.
-In \cite{VerhoevenTemme2017}, it was shown that results from forced-choice and split-100 experiments mostly converge (with some numeric intricacies related to the non-linear distribution of preferences for alternants).
-I present a forced-choice experiment in this Section instead of a split-100 experiment not only because of some researchers' critical attitude towards the split-100 task, but also because in a dry run of the experiment, participants complained about the unnaturalness of distributing a probability mass across two alternants and tended to produce ratings of 0 or 100 (or 50, although to a lesser degree).
+The first experiment tests preferences for constructions explicitly in a forced choice task.
+% \cite{FordBresnan2013} use the \textit{split-100} task in which participants have to distribute 100 points between the alternatives, assigning more points to more natural sounding alternative.
+% In essence, participants distribute a probability mass between two alternants, which is intended to produce more subtle results compared to a two-alternative forced-choice task such as in \cite{Rosenbach2013}, where participants have to choose one of two alternants.
+% The split-100 paradigm has been criticised in \cite{ArppeJaervikivi2007}.
+% The criticism was reiterated in \cite{DivjakEa2016}, where they use a forced-choice task.
+% In \cite{VerhoevenTemme2017}, it was shown that results from forced-choice and split-100 experiments mostly converge (with some numeric intricacies related to the non-linear distribution of preferences for alternants).
+% I present a forced-choice experiment in this section instead of a split-100 experiment not only because of some researchers' critical attitude towards the split-100 task, but also because in a dry run of the experiment, participants complained about the unnaturalness of distributing a probability mass across two alternants and tended to produce ratings of 0 or 100 (or 50, although to a lesser degree).
 Participants had to choose between two sentences that differed only in that one contained the \NACa\, and the other one contained the \PGCa.
-The analysis compares the probabilities assigned to the stimuli by the corpus-derived model with the frequency with which participants chose the alternants for the same stimuli.
-
-There were 24 participants (native speakers of German without reading or writing disabilities) aged 19 to 30 living permanently in Berlin, who were recruited from introductory linguistics courses at Freie Universität Berlin.
+The analysis compares the probabilities assigned to the stimuli by the corpus-derived model with the frequency with which participants chose the alternants.
+There were 24 participants (native speakers of German without reading or writing disabilities) aged 19 to 30 living permanently in [NAME OF CITY REDACTED], who were recruited from introductory linguistics courses at [NAME OF UNIVERSITY REDACTED].
 Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper explicit knowledge of linguistics, grammar, or experimental methods.
 None of them had ever participated in a forced-choice experiment before.
 Participation was voluntary but participants received credit in partial fulfillment of course requirements.
@@ -81,11 +79,11 @@ The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 
 A multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.%
 \footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to 0, which is the mean for z-transformed variables.}
-A random intercept and slope were added for the individual sentence (item) in order to catch idiosyncrasies of single sentences.
+A random intercept and slope were added for the individual sentence pair (item) in order to catch idiosyncrasies of single sentences.
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
 The number of observations was \textit{n=}384.
 
-A good amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Item}}=1.217$).%
+A good amount of the variance can be accounted for by idiosyncrasies of single sentences ($\sigma_{\text{Item}}=1.217$).
 Also, among participants, there are clearly different preferences ($\sigma_{\text{Participant}}=0.412$).
 On the extreme ends, one participant chose the \PGCa\ in 13 of 16 cases, and two participants only chose it in 5 of 16 cases.
 The regressor \textit{Modelprediction} achieves $\mpPB=0.003$ (1,000 replications) and is estimated at 4.389 relative to an intercept of -1.270.
@@ -116,20 +114,20 @@ This obviously influences the reactions of participants, and a revised and impro
   \label{fig:spines}
 \end{figure}
 
-In principle, random slope for \textit{Modelprediction} varying by stimulus could also remedy problems with individual stimuli at least partially.
+In principle, random slope for \textit{Modelprediction} varying by item could also remedy problems with individual stimuli at least partially.
 Therefore, a model with random slopes for \textit{Modelprediction} varying by both random effects (\textit{Participant} and \textit{Item}) was specified and estimated.
-The random slope for participants was added to comply with \citet[257]{BarrEa2013} who predict \textit{catastrophically high Type I error rates} for experimental designs with within-subject manipulations if random effects structures are not kept maximal.
+The random slope for participants was added to comply with \citet[257]{BarrEa2013} who predict ``catastrophically high Type I error rates'' for experimental designs with within-subject manipulations if random effects structures are not kept maximal.
 The coefficient of the fixed effect changed noticeably but not enough to change the interpretation (5.408 relative to an intercept of -1.304), and the marginal $R^2_m$ rises to 0.213 ($R^2_c=0.488$).
 In line with expectations, the standard deviation in the random slopes for \textit{Item} is high at 5.996.
 However, the covariance parameters were estimated at -1.0, which is a clear sign that the variance-covariance matrix could not be estimated successfully.
-The same was true for models with only \textit{Item} and \textit{Participant} random slopes.
+The same was true for models with only an \textit{Item} and a \textit{Participant} random slope.
 This is exactly the kind of model overparametrisation criticised in \citet{BatesEa2015a} and \citet{MatuschekEa2017}.
-The available data is simply insufficient to estimate the parameters of the more complex model with varying slopes.%
+The available data are insufficient to estimate the parameters of the more complex model with varying slopes.%
 \footnote{\citet[1]{BatesEa2015a} state: ``We show that failure to converge typically is not due to a suboptimal estimation algorithm, but is a consequence of attempting to fit a model that is too complex to be properly supported by the data, irrespective of whether estimation is based on maximum likelihood or on Bayesian hierarchical modeling with uninformative or weakly informative priors.
 Importantly, even under convergence, overparameterization may lead to uninterpretable models.''
 }
 
-In summary, the forced-choice experiment succeeded in corroborating the results from the corpus study in as much as the preferences extracted from usage data correspond to native speakers' choices, but the correlation is weak, likely due to problems with individual test items and\slash or too few data.
+In summary, the forced-choice experiment succeeded in corroborating the results from the corpus study inasmuch as the preferences extracted from usage data correspond to native speakers' choices, but the correlation is weak, likely at least in part due to problems with individual test items and\slash or too sparse data.
 
 
 \subsection{Experiment 2: self-paced reading}
@@ -138,7 +136,7 @@ In summary, the forced-choice experiment succeeded in corroborating the results 
 \subsubsection{Setup, stimuli, and participants}
 
 The second experiment tests preferences more implicitly.
-It is expected that reading less typical alternants (the one assigned a low probability by the corpus-derived model) in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
+It is expected that reading less typical alternants in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
 In this section, a self-paced reading experiment is therefore presented.
 In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
 The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
@@ -150,7 +148,6 @@ To minimise repetition effects, the stimuli for each participant were separated 
 In the experiment, participants first read all sentences from the first block, then all sentences from the second block.
 From each target sentence pair, one sentence was assigned to the first block and the other sentence to the other block.
 The assignment of members of the individual sentence pairs to the blocks was randomised for each participant individually, as was the order within each block.
-The sentences from each pair of alternants were kept as far apart as possible.
 The fillers also came in pairs such that the second block exclusively contained sentences to which participants had been exposed in the first block in slightly modified form.
 In total, each participant read 98 sentences.
 After each sentence, participants had to answer simple (non-metalinguistic) yes-no questions about the previous sentence as distractors.
@@ -192,7 +189,7 @@ Random intercepts were specified for \textit{Participant} and \textit{Item} (the
 
 Table~\ref{tab:exp:spr} shows the coefficient estimates with a 95\% parametric bootstrap confidence interval (1,000 replications, percentile method).
 The standard deviation of the participant intercepts is $\sigma_{\text{Participant}}=0.079$ and of the item intercepts $\sigma_{\text{Item}}=0.037$.
-Comparing the full model to a model without the main regressor \textit{Modelprediction} (and consequently also without the interaction with \textit{Construction}) in a PB test gives $\mpPB=0.036$.
+Comparing the full model to a model without the main regressor \textit{Modelprediction} (and consequently also without the interaction with \textit{Construction}) in a PBmodcomp test gives $\mpPB=0.036$.
 The pseudo-coefficients of determination are $R^2_m=0.239$ and $R^2_c=0.346$.
 
 An alternative Gaussian generalised additive model with an identity link was also fit (see \citealp{DivjakEa2016}) using the \textit{mgcv} package \citep{Wood2011}.
@@ -201,7 +198,7 @@ The estimated smoother for the \textit{Modelprediction} variable is essentially 
 
 \subsubsection{Interpretation}
 
-The coefficients of determination indicate that there is a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities (marginal $R^2$) and that there some between-subject variation (conditional minus marginal $R^2$).
+The coefficients of determination indicate that there is a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities (marginal $R^2$) and that there is some between-subject variation (conditional minus marginal $R^2$).
 
 \begin{figure}[htbp!]
 \centering
@@ -211,13 +208,13 @@ The coefficients of determination indicate that there is a noteworthy correlatio
 \end{figure}
 
 The effect plot for the interaction of interest is shown in Figure~\ref{fig:spr:effects}.
-The estimate for the sentences with \NACa\ is obviously imprecise and no significant differences in reading times are observed.
-There is a clearer effect in the sentences with \PGCa, which is also confirmed by the significant results from the bootstrapped confidence intervals (see Table~\ref{tab:exp:spr}) and from the PB test reported above.
+The estimate for the sentences with \NACa\ is obviously imprecise, and no significant differences in reading times are observed.
+There is a clearer effect in the sentences with \PGCa, which is also confirmed by the significant results from the bootstrapped confidence intervals (see Table~\ref{tab:exp:spr}) and from the PBmodcomp test reported above.
 The \PGCa\ brings about an increased reading time, which is plausible because it is the much rarer construction (see Section~\ref{sec:corpusstudies}).
-However, if it occurs in a prototypical context and with prototypical lexical material, reading times drop.
+However, if it occurs in a prototypical context and with typical lexical material, reading times drop.
 This can be seen in the downward slope in the right panel of Figure~\ref{fig:spr:effects}.
 This fits into the general picture inasmuch as the construction with the lower frequency might be developing towards a more sharply defined prototype.%
 \footnote{In this context, it should be remembered from Section~\ref{sec:corpusstudies} that even the \PGCd\ is much rarer that the \NACb\ (17,252 vs.\ 315,635 occurrences in the auxiliary corpus samples).}
 Conversely, the \NACa\ (like the NAC in general) might be the highly frequent default which does not incur a reading time penalty, even if it is not the optimal choice in the given context and with the given lexical material.
 
-In Section~\ref{sec:conclusion}, I take stock and summarise the contribution of the present study to the research on alternations in cognitive linguistics.
+In Section~\ref{sec:conclusion}, I take stock and summarise the contributions of the present study to the research on alternations in cognitive linguistics.
