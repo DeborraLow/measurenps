@@ -142,7 +142,7 @@ rt.all$rt.tt.resid     <- as.numeric(rt.all$t1.rt.resid + rt.all$t1.rt.resid)
 
 
 # Fix factor levels.
-revalue(rt.all$Construction, c("NACa" = "NACadj", "PGCa" = "PGCadj"))
+rt.all$Construction <- revalue(rt.all$Construction, c("NACa" = "NACadj", "PGCa" = "PGCadj"))
 
 
 # ################
@@ -189,7 +189,7 @@ if (save.persistent) sink(paste(out.dir, "results.txt", sep=""), append = T)
 cat("\n\n##### Models w/ random slopes #####\n\n")
 print(summary(rt.model.p1))
 print(summary(rt.model.p2))
-cat("\n\nAs usual, dear R2, if it doesn't converge, it's for a reason, and tweaking to optimiser does not help!")
+cat("\n\nAs usual, dear R2, if it doesn't converge, it's for a reason, and tweaking to optimiser does not help.")
 
 
 

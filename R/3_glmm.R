@@ -125,7 +125,7 @@ for (eff in effs) {
   p <- plot(effect(eff, measure.glmm),
             rug=F,
             main = NULL,
-            ylab = "Probability of PGCa",
+            ylab = "Probability of PGCadj",
             colors = c("black", "darkblue")
             )
   print(p)
