@@ -28,7 +28,7 @@ Therefore, DECOW14A is a valid choice for this study.
 
 Among the factors potentially influencing the alternation (see Section~\ref{sec:germanmeasurenps}) were lemma-specific preference effects.
 Therefore, it was highly desirable to obtain a sample in which most of the highly frequent actually-occurring combinations of kind nouns and measure nouns were represented.
-I applied a two-stage process in order to obtain a list of actually co-occurring measure nouns and kind nouns.
+I applied a two-stage process in order to obtain a list of co-occurring measure nouns and kind nouns.
 First, I generated a list of the one hundred most frequent genuine mass nouns.
 Second, I derived a list of all measure nouns with which the mass nouns co-occurred in the \NACb.
 
@@ -41,7 +41,7 @@ The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is th
 
 This list of mass nouns was used in the second step to derive a list of measure nouns co-occurring with the mass nouns. 
 In order to generate this list, I utilised the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
-I therefore searched for all sequences N\Sub{1}N\Sub{2} where N\Sub{2} was one of the mass noun lemmas extracted in in the first step.
+I therefore searched for all sequences N\Sub{1}N\Sub{2} where N\Sub{2} was one of the mass noun lemmas extracted in the first step.
 Then, the resulting 100 lists of noun-noun combinations were each sorted by frequency in descending order and sieved manually to remove erroneous hits.
 From each of the 100 lists, I also removed noun-noun combinations that had a frequency below 2, except if the individual list would have otherwise been shorter than 20 noun-noun combinations.
 The result was a list of the most frequent 2,365 individual combinations of a measure noun and a mass noun.
@@ -84,7 +84,7 @@ The higher the value, the more often the noun occurs in the \PGCd\ (proportional
 It could be argued that other measures of attraction strength could be used, for example those popularised in collostructional analysis (\citealp{StefanowitschGries2003,GriesStefanowitsch2004}; see also \citealp{Gries2015a}).
 However, the goal here is to quantify how often lemmas occur in the \PGCd\ and the \NACb, and these constructions do not compete at all but are rather mutually exclusive.
 While this does not preclude the use of collostructional analysis, it is an open question whether the marginals (usually called the ``expected frequencies'' in the collostructional literature), given the overall frequency of the constructions and the lemmas, are cognitively relevant in this case.
-After all, the main difference between the quotient used here and the logarithmised p-values from a Fisher test is that they take these marginals into account. 
+After all, the main difference between the quotient used here and signed logarithmised p-values from a Fisher test is that they take these marginals into account. 
 However, using collexeme strength instead of the raw frequency quotient was tried as an alternative (variables \textit{Kindcollo} and \textit{Measurecollo}); see Section~\ref{sec:mainstudystatisticalmodel} for a discussion of the negative results.
 
 Additionally, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW14A corpus creators on their web page.
@@ -122,11 +122,11 @@ Second, due to differences in case syncretisms, it is possible that feminine kin
 \subsection{Pre-study: main prototype effects in the non-alternating constructions}
 \label{sec:prestudy}
 
-\subsubsection{Sampling and annotation}
-
 The main study to be reported below deals exclusively with the alternating constructions, as is customary in alternation modelling.
 However, the prototypical features described in Section~\ref{sec:prototypeeffects} should be observable in the non-alternating cases as well if the theory laid out in Section~\ref{sec:analyses} is correct.
 Therefore, in this section I examine the distribution of the prototypical features in the non-alternating cases to see whether they are in accord with the theoretical predictions.
+
+\subsubsection{Sampling and annotation}
 
 For this pre-study, each of the 2,365 combinations of measure noun lemma and kind noun lemma were queried in the \NACb\ and the \PGCd.
 Each of the resulting 2,365 concordances was scaled down randomly to a size of maximally 100 sentences, and from the resulting 35,766 sentences, 5,000 were randomly sampled for the statistical analysis.
@@ -169,7 +169,7 @@ For a robust quantification of the precision of the estimation, I ran a parametr
 The resulting 95\% bootstrap confidence intervals are reported in Table~\ref{tab:smalltable} in the columns labelled \textit{CI low} and \textit{CI high} (= upper and lower 2.5th percentiles).
 The column \textit{CI excludes 0} shows an asterisk for those intervals that do not include 0.
 Furthermore, for each regressor, a p-value was obtained by dropping the regressor from the full model, re-estimating the nested model, and comparing it to the full model.
-Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test from the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
+Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test in the form of the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 I call the corresponding value $p_{\text{PB}}$, and it is given in the respective columns in Table~\ref{tab:smalltable}.
 Regressors which did not reach sig=0.05 in in the PBmodcomp test (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and consequently have no coefficient estimates.%
 \footnote{My approach to statistical inference is essentially Fisherian \citep{Fisher1935,Fisher1959}, and hence I use the term \textit{sig level} instead of the term \textit{$\alpha$ level} known from null hypothesis significance testing (NHST).
@@ -182,8 +182,8 @@ Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.278$ an
 
 The coefficients of determination indicate that the effect of the fixed effects (marginal $R^2$) is adequately strong, and that lemma-specific effects (conditional minus marginal $R^2$) are equally strong with a difference between the two coefficients of 0.289.
 
-The main prototypical factors \textit{Cardinal} and \textit{Measureclass} bot pass the PBmodcomp test at sig=0.05 and play the expected role.
-The abstract non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACb.
+The main prototypical factors \textit{Cardinal} and \textit{Measureclass} both pass the PBmodcomp test at sig=0.05 and play the expected role.
+The non-referential physical measure nouns (such as \textit{Gramm} `gram' or \textit{Liter} `litre') with a high degree of grammaticalisation favour the \NACb.
 At the other end of the scale, nouns denoting natural portions like \textit{Haufen} `heap', \textit{Bündel} `bundle', \textit{Schluck} `gulp' favour the \PGCd.
 Also, The presence of a cardinal modifier clearly favours the \NACb.
 The stylistic factor \textit{Genitives} is confirmed to have an influence as predicted inasmuch as a general lack of genitives (which is encoded as a \textit{higher} value of the variable) favours the \NACb.
@@ -218,7 +218,7 @@ Therefore, all noun-noun pairs from the process described above were also querie
 \begin{figure}[hb!]
   \centering
   \includegraphics[width=0.85\textwidth]{../R/output/corpus_fixeffs}
-  \caption{Coefficients with 95\% confidence intervals (for details see text); the intercept is -4.328}
+  \caption{Coefficients with 95\% confidence intervals (for details see text); the intercept is -3.548}
   \label{fig:fixeffs}
 \end{figure}
 
@@ -330,18 +330,18 @@ This effect was predicted in Section~\ref{sec:analyses}.
 
 The style-related proxy variables point in the expected direction.
 Increased \textit{Badness} of the document favours the \NACa, and so does a lower density of genitives.
-While these are merely proxies to style (and partially circular in the case of \textit{Genitives}), this result can at least encourage future work into stylistic effects. 
+While these are merely proxies to style, this result can at least encourage future work into stylistic effects. 
 
 The influence of \textit{Measurecase} is as predicted in previous analyses (see Section~\ref{sec:analyses}).
 A measure noun in the dative favours the \PGCa\ (compared to the nominative, which is on the intercept).
 Although \textit{Measurecase} is a nuisance variable in the context of this study, convergence with previous work strengthens its validity.
 
 To close this section, I now compare the results of the pre-study and the main study.
-Even though the non-alternating constructions are surely subject to additional constraints (especially because they are not interchangeable like the alternating constructions), the coefficients align neatly in many cases.
+Even though the non-alternating constructions are surely subject to additional constraints, the coefficients align neatly in many cases.
 First of all, the intercepts encode a similar overall dominance of the NAC constructions (pre-study: -5.370; main study: -3.548).
 For the \textit{Cardinal} effect, the coefficients 1.419 (pre-study) and 1.189 (main study) have the same sign and magnitude and mostly overlapping confidence intervals.
 The levels of \textit{Measureclass} have comparable coefficients, although the divergence is larger.
-In both studies, the abstract measure nouns in the \textit{Physical} class (on the intercept) are most clearly associated with the NAC constructions.
+In both studies, the non-referential measure nouns in the \textit{Physical} class (on the intercept) are most clearly associated with the NAC constructions.
 Also, in both cases, the \textit{Container} class is closest to \textit{Physical} with the same sign and magnitude (pre-study: 0.445; main study: 0.252).
 The main difference -- if we ignore the \textit{Rest} class which can be expected to show no clear tendency -- is that \textit{Amount} and \textit{Portion} are slightly closer together in their tendency to favour the PGC constructions in the pre-study (\textit{Amount} 1.597 and \textit{Portion} 1.782 in the pre-study vs.\ \textit{Amount} 0.831 and \textit{Portion} 1.217 in the main study).
 The difference is not huge, and the overall order of the coefficients is the same.

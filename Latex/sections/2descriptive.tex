@@ -1,12 +1,12 @@
 \section{Modelling the measure noun alternation}
 \label{sec:germanmeasurenps}
 
+In this section, I introduce and illustrate the relevant alternating constructions in Section~\ref{sec:descriptive}.
+I describe the narrowly defined syntactic configuration in which the alternation occurs.
+Then, I develop a model with prototype effects as well as exemplar effects based in existing research and my own theorising in Section~\ref{sec:analyses}.
+
 \subsection{Alternating and non-alternating measure NP constructions}
 \label{sec:descriptive}
-
-In this section, I introduce and illustrate the relevant alternating constructions.
-I describe the narrowly defined syntactic configuration in which the alternation occurs, and I motivate the focus on \textit{only} this narrow range rather than, for example, the whole range of nominal constructions expressing quantities.
-Finally, I develop a model with prototype effects as well as exemplar effects based in existing research and my own theorising.
 
 I use the term \textit{measure noun phrase} (MNP) to refer to a noun phrase (NP) in which a kind-denoting (count or mass) noun depends on another noun that specifies a quantity of the objects or the substance denoted by the kind-denoting noun.
 I call the kind-denoting noun the \textit{kind noun} and the quantity-denoting noun the \textit{measure noun}.
@@ -172,11 +172,11 @@ This morpho-syntactic ambiguity means that the \NACa\ is in fact a \NACb\ in dis
 This explains why the alternation arises in the first place.
 In Section~\ref{sec:analyses}, I will argue that the NAC and the PGC constructions also have semantically distinguishable prototypes, and that the alternation between \PGCa\ and \NACa\ is an alternation between these prototypes.
 
-\subsubsection{Neighbouring cases}
+\subsubsection{Minor issues}
 \label{sec:neighbouringcases}
 
 I now finally turn to some more subtle issues related to the measure noun case alternation in order to delimit the scope of the study.
-First, there is a claim found in some grammars that a generic nominative, accusative, and even dative on the kind noun are used instead of the genitive (\PGCa) or case agreement (\NACa).
+First, there is a claim found in some grammars that a generic nominative, accusative, and even dative on the kind noun can be used instead of the genitive (\PGCa) or case agreement (\NACa).
 Overviews can be found in \cite{Hentschel1993} and \cite{Zimmer2015}.
 Sentence (\ref{ex:intro:gennom}) shows a putative generic nominative on the kind noun inside an accusative MNP.
 
@@ -202,8 +202,8 @@ In Section~\ref{sec:analyses}, however, degrees of grammaticalisation as a facto
 \begin{exe}
   \ex\label{ex:uninflectedmeasures}
   \begin{xlist}
-    \ex{\label{ex:uninflectedmeasures:a} zwei Gramm brauner Zucker}
-    \ex{\label{ex:uninflectedmeasures:b}\gll zwei Gramm braunen Zuckers\\
+    \ex{\label{ex:uninflectedmeasures:a} [zwei Gramm [brauner Zucker]\Sub{Nom}]\Sub{Nom}}
+    \ex{\label{ex:uninflectedmeasures:b}\gll [zwei Gramm [braunen Zuckers]\Sub{Gen}]\Sub{Nom}\\
                                          two gram brown sugar\\
 				         two grams of brown sugar}
   \end{xlist}
@@ -269,7 +269,6 @@ I turn to a more theory-oriented discussion of the alternation in the next secti
 
 In this section, I develop my analysis of the MNP alternation and the appropriate hypotheses for the empirical studies presented in Sections~\ref{sec:corpusstudies} and \ref{sec:experimental}.
 I also review some existing analyses of the alternation and related issues.
-It should be remembered from Section~\ref{sec:syntax} that, thanks to the syntactic ambiguity of strongly inflected adjectives, the \PGCa\ is plausibly a \PGCd\ in disguise and the \NACa\ a \NACb\ in disguise.
 
 \subsubsection{Prototype effects}
 \label{sec:prototypeeffects}
@@ -318,11 +317,11 @@ If such preferences can actually be shown in usage patterns, it would lend stron
 In the corpus study, measure lemmas will therefore be annotated with appropriate semantic class labels to check whether semantic classes of measure nouns have different affinities to the two variants.
 The actual classification is based on the list in \citet[530]{Koptjevskaja2001}, but due to the low frequencies of many of the potential classes, a very coarse classification was used in the end.
 With typical examples, the classes are:
-\textit{Physical} (abstract precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'),
+\textit{Physical} (typically non-referential precisely measurable units such as \textit{Liter} `litre', \textit{Meter} `metre', \textit{Gramm} `gram'),
 \textit{Container} (\textit{Tasse} `cup'),
 \textit{Amount} (\textit{Menge} `amount'), 
 \textit{Portion} (natural portions like \textit{Happen} `bite' or \textit{Krümel} `crumb').
-Notice that \textit{Container} is the class containing words like \textit{spoon} or \textit{cup}, which often develop into partially grammaticalised abstract measure nouns.
+Notice that \textit{Container} is the class containing words like \textit{spoon} or \textit{cup}, which often develop into partially grammaticalised physical measure nouns.
 The lemmas that did not fit into either of these classes were labelled \textit{Rest}.
 
 
@@ -371,10 +370,10 @@ In the corpus study reported in Section~\ref{sec:corpusstudies}, a measure quant
 
 It should be noted that such an exemplar-type effect would have to be confirmed \textit{in addition} to the predicted semantic prototype effect for measure lemmas described in Section~\ref{sec:prototypeeffects}, namely the effect of semantic classes of measure nouns.
 This means that the statistical model needs to track an abstraction effect and an exemplar-like effect for measure nouns.
-Additionally, controlling for simple lemma frequency effects is always a good idea, and it should be done for kind and measure nouns.
+Additionally, controlling for raw lemma frequency effects is always a good idea, and it should be done for kind and measure nouns.
 While, for example, very frequent kind nouns might preserve the older \PGCa, low-frequency kind nouns might tend to occur more often in the \NACa.
 For measure nouns, high frequency might lead to a higher affinity to the \NACa\ if we assume at least a tendency for highly grammaticalised items to be more frequent.
-Of course, the model must be specified in a way such that we can be sure that any detected frequency effect also goes beyond the semantic effect, which is captured in the semantic classes described in Section~\ref{sec:prototypeeffects}.
+Of course, the model must be specified in a way such that we can be sure that any detected frequency effect also goes beyond the semantic effect which is captured in the semantic classes described in Section~\ref{sec:prototypeeffects}.
 Such frequency effects would also be very difficult to describe as abstractions.
 
 With all this, it must also be ensured that these influences at the lemma level (lemma type frequency, attraction strength, and semantic classes) are not spurious and just artefacts of mere lemma idiosyncrasies.
@@ -393,11 +392,12 @@ To illustrate, the simple model specification in (\ref{eq:glmm}) represents the 
   \label{eq:glmm}
 \end{equation}
 
-$Pr(y_1=1)$ is the predicted probability that the variable for the construction type in an observation (indexed by $i$) takes on the value 1 ($y_i=1$).
+$Pr(y_i=1)$ is the probability that the variable for the construction type in observation $i$ takes on the value 1 ($y_i=1$).
 The varying intercept $\beta^0_{j[i]}$ adds a constant for group $j$ to which $i$ belongs (encoded here as $j[i]$, a notation borrowed from \citealp{GelmanHill2006}) to the linear term.%
 \footnote{The linear term is the argument to the $logit^{-1}$ link function which transforms it into something which is interpretable as a probability.}
 Any other $\beta$ is a fixed-effect coefficient, and each $x$ is an observation-level variable.
-Here, just one fixed effect is included for illustration purposes, and $x^1$ could be, for example, the variable encoding whether a cardinal modifies the measure noun.
+Here, just one fixed effect is included for illustration purposes.
+$x^1$ could be, for example, the variable encoding whether a cardinal modifies the measure noun.
 The observations (for example, the lines of a concordance) are indexed by $i$ and the groups\slash random intercepts by $j$.
 Let us say the groups are defined by lemmas and we also include lemma frequency as a control variable.
 In this case, a second-level model would be given similar to (\ref{eq:level2}).
