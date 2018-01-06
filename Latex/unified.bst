@@ -22,7 +22,6 @@ ENTRY
     author
     booktitle
     chapter
-    doi
     edition
     editor
     eid
@@ -465,8 +464,7 @@ FUNCTION {format.doi}
 { doi "doi" bibinfo.check
   duplicate$ empty$ 'skip$
     {
-      new.block
-      "\doi{" swap$ * "}" *
+      ""
     }
   if$
 }
