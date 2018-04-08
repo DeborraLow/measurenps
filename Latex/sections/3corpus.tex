@@ -9,11 +9,7 @@
 For the present study, I used the German \textit{Corpus from the Web} (COW) in its 2014 version DECOW14A (\citealp{SchaeferBildhauer2012full}, and \citealp{Schaefer2015b}, as well as \citealp{BiemannEa2013}, and \citealp{SchaeferBildhauer2013}, for overviews of web corpora in general and the methodology of their construction), which contains almost 21 billion tokens.%
 \footnote{The COW corpora (Dutch, English, French, German, Spanish, Swedish) are made available for free at \url{https://www.webcorpora.org}.
 At the time of this writing, a newer 2016 version DECOW16A has already been released.}
-I chose this corpus for two main reasons.%
-\footnote{The use of web data for linguistic research does require explicit and careful justification.
-Due to the noisy nature and unknown composition of the web, only carefully designed and established web corpora like the COW corpora or the SketchEngine corpora \citep{KilgarriffEa2014} should be used.
-Clearly, using search engine results is ``bad science'' for many reasons, most prominently total non-replicability of results, as \cite{Kilgarriff2006} pointed out more than ten years ago.
-Careless use of search engine results is still found, however, see for example \citet[171--175]{DeclerckBrems2016}.}
+I chose this corpus for two main reasons.
 First, the external validity of any study is increased through a higher heterogeneity of the sample \citep[30]{MaxwellDelaney2004}, and the DECOW14A corpus has clearly a much more heterogeneous composition compared to the only other very large corpus of German, the DeReKo \citep{KupietzEa2010} of the Institute for the German Language (IDS), which contains almost exclusively newspaper texts.%
 \footnote{It was shown in \cite{W16-2601} that, for example, the range of topics covered is much smaller in DeReKo compared to DECOW14A.}
 Second, it was already mentioned that normative grammars often adopt clear positions regarding the grammaticality of either the \NACa\ or the \PGCa.
@@ -103,14 +99,7 @@ The higher the values of this variable, the lower the proportion of genitives am
 A high number of genitives is also indicative of a more formal, elaborate style close to the written standard.
 However, the use of this variable as a regressor in the present study might be considered problematic.
 Since the \PGCa\ contains a genitive itself, the regressor variable \textit{Genitive} and the document-level variable \textit{Genitives} are not fully independent.
-Since instances of the \PGCa\ make up for only a minute fraction of all genitives, however, I still use \textit{Genitives} as a regressor.%
-\footnote{A reviewer suggested that a fully fledged multidimensional analysis \citep{Biber1988} would help to improve the operationalisation of the influence of style.
-This sounds plausible, but there simply is no large corpus of German for which similar data have been published.
-In the meantime, the creators of COW and the Institut für Deutsche Sprache (IDS) Mannheim have developed a similar annotation framework (COReX), and the COW creators have pre-released a non-public beta version of the corresponding data base for DECOW16A to their users.
-This data base contains 118 automatically extracted lexico-grammatical features for each document.
-However, at this time, it is not recommended for use in published research.
-Also, the genitive is generally considered a good indicator of style in German, and its frequency is usually high enough such that the \textit{Genitives} score is a stable measure even for shorter documents (compared to first or second person pronouns, for example, which are totally absent in a majority of documents).
-The genitive is still the dominant attributive case in German.}
+Since instances of the \PGCa\ make up for only a minute fraction of all genitives, however, I still use \textit{Genitives} as a regressor.
 
 Finally, two variables were added as nuisance variables in the context of the present study.
 First, it was reported in the literature that MNPs in the dative and with a masculine or neuter kind noun favour the \PGCa\ more than the corresponding nominative and accusative MNPs \citep{Hentschel1993,Zimmer2015}.
@@ -171,10 +160,8 @@ The column \textit{CI excludes 0} shows an asterisk for those intervals that do 
 Furthermore, for each regressor, a p-value was obtained by dropping the regressor from the full model, re-estimating the nested model, and comparing it to the full model.
 Instead of inexact Wald approximations and Likelihood Ratio Tests, I used a drop-in bootstrap replacement for the Likelihood Ratio Test in the form of the function \textit{PBmodcomp} from the \textit{pbkrtest} package \citep{HalekohHojsgaard2014}.
 I call the corresponding value $p_{\text{PB}}$, and it is given in the respective columns in Table~\ref{tab:smalltable}.
-Regressors which did not reach sig=0.05 in in the PBmodcomp test (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and consequently have no coefficient estimates.%
-\footnote{My approach to statistical inference is essentially Fisherian \citep{Fisher1935,Fisher1959}, and hence I use the term \textit{sig level} instead of the term \textit{$\alpha$ level} known from null hypothesis significance testing (NHST).
-For overviews of systems of statistical inference with special focus on this and related questions, see \citet{Lehmann1993,Lehmann2011} or the shorter \citet{Perezgonzalez2015}.}
-The overall intercept is -5.370 and reoresents \textit{Cardinal=Yes}, \textit{Measureclass=Physical} and 0 for all (z-transformed) numeric regressors.
+Regressors which did not reach sig=0.05 in in the PBmodcomp test (\textit{Kindfreq}, \textit{Kindgender}, and \textit{Measurefreq}) were removed from the model, appear in brackets in Table~\ref{tab:smalltable}, and consequently have no coefficient estimates.
+The overall intercept is -5.370 and represents \textit{Cardinal=Yes}, \textit{Measureclass=Physical} and 0 for all (z-transformed) numeric regressors.
 The standard deviation in the random intercepts is 1.157 for \textit{Measurelemma} ($p_{\text{PB}}=0.001$) and 0.923 for \textit{Kindlemma} ($p_{\text{PB}}=0.002$).
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.278$ and $R^2_c=0.566$ (see \citealp{Gries2015} for a basic introduction to these $R^2$ measures, or else \citealp{NakagawaSchielzeth2013}).
 
@@ -199,10 +186,10 @@ I will return to these results in Section~\ref{sec:mainstudyinterpretation}.
 \label{sec:mainstudysampling}
 
 For the main study, each of the 2,365 noun–noun combinations was queried in the alternating constructions \PGCa\ and \NACa\ in DECOW14A.%
-\footnote{Due to processing considerations with the COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
+\footnote{Due to efficiency problems with the old COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
 For the manual annotation process, a random sub-sample was generated.
 For each mass noun, the concordance was downsampled randomly to maximally 100 sentences, which resulted in 6,843 sentences without further downsampling.
-In the manual annotation process the size was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits, and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
+In the manual annotation process the sample was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits, and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
 Given the careful sampling procedure described in this section and Section~\ref{sec:bootstrappinlemmapairs}, we can be highly certain that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
 \footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were listed and queried, resulting in a sample of 871 sentences.
 As stated in Section~\ref{sec:germanmeasurenps}, the \NACa\ is virtually never used with plural kind nouns, and this sample was not used except for quantifying the frequency of occurrence of the constructions (67 times \NACa\ and 794 times \PGCa).
@@ -263,10 +250,7 @@ Given the coding of the response variable, coefficients leaning to the positive 
   \label{tab:bigtable}
 \end{table}
 
-Standard diagnostics show that the model quality is quite good.%
-\footnote{Notice that no aggressive model selection was applied, especially not upward model selection including probing for interactions.
-I am convinced that models should be specified based on theoretical considerations (including known nuisance effects) to avoid the dangers of data dredging and to avoid models which are difficult to interpret.
-Removal of useless regressors (judging by, for example, the PBmodcomp test and coefficients of determination) is the only type of model selection I allow in my research.}
+Standard diagnostics show that the model quality is quite good.
 Nakagawa \& Schielzeth's pseudo-coefficient of determination is $R_m^2=0.409$ and $R^2_c=0.495$.
 The rate of correct predictions is 0.843, which means a proportional reduction of error of $\lambda=0.297$.
 Generalised variance inflation factors for the regressors were calculated to check for multicollinearity \citep{FoxMonette1992,ZuurEa2010}, and the highest corrected $\text{GVIF}^{1/2\text{df}}$ was 1.520 for \textit{Cardinal}.
@@ -289,11 +273,7 @@ The coefficients of determination drop to $R_m^2=0.376$ and $R^2_c=0.480$.
 
 The results reported in Section~\ref{sec:corpushierarchicalmodel} generally confirm the hypotheses from Section~\ref{sec:analyses}.
 First, the prototypicality effect related to the non-alternating \PGCd\ and \NACb\ can be shown (see the effect plots in Figure~\ref{fig:eff:attraction}).%
-\footnote{Effect plots were created using the \textit{effects} package \citep{Fox2003}.
-They show the changes in probability for the outcome (y-axis) dependent on values of a regressor (x-axis) at typical values of all other regressors.
-The vertical bars (categorical variables), and the grey areas (continuous variables) are asymptotic 95\% confidence intervals calculated from \textit{glmer}.
-They are not bootstrapped.
-Readers should be aware that the axes are specifically scaled so as to result in a linear plot, and that the range of the axes varies between plots.}
+\footnote{Effect plots were created using the \textit{effects} package \citep{Fox2003}.}
 The effect is as expected:
 if a lemma appears relatively more often in the \PGCd\ (compared to its frequency in the \NACb), the \PGCa\ tends to be chosen over the \NACa\ with this specific lemma.
 The effect for measure nouns is stronger, and it was estimated with higher precision.
