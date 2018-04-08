@@ -313,7 +313,7 @@ rt.gamm <- gamm(tf.rt.resid ~ s(Position) + s(Modelprediction, by = Construction
   niterPQL = 1000
 )
 
-# ... with NO different resultcompared to LMM.
+# ... with NO different result compared to LMM.
 # Notice that the relevant smoother (only significant term)
 # is virtually linear.
 

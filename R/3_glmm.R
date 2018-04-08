@@ -136,7 +136,7 @@ for (eff in effs) {
 
 
 # Selective ranef plots.
-opts.dotchart <- list(pch=19, col="black", cex=1, xlab="Estimate of intercept")
+opts.dotchart <- list(pch=19, col="black", cex=1, xlab="Prediction of conditional mode")
 n.select <- 30
 main.dotchart.meas <- "Meas. rand. eff."
 main.dotchart.kind <- "Kind rand. eff."
