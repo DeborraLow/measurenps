@@ -1,5 +1,7 @@
 ### Roland Schäfer
-## Competing Constructions for German Measure NPs
+## Abstractions and exemplars: the measure noun phrase alternation in German
 ### LaTeX, data, and scripts
 
-#### submitted to Cognitive Linguistics
+#### To appear in Cognitive Linguistics.
+
+In this paper, an alternation in German measure noun phrases is examined under a varying-abstraction perspective. In a specific measure NP construction, the embedded kind-denoting noun either agrees in case with the measure noun ("eine Tasse guter Kaffee", 'a cup of good coffee') or it stands in the genitive ("eine Tasse guten Kaffees"). Each of the two alternants is syntactically similar to a non-alternating construction. I propose a prototype model which assigns a common prototypical meaning to each of the alternants and its corresponding non-alternating construction. Based on this, I argue that lexical, morpho-syntactic, and stylistic features help to predict the choice of the alternant. A large corpus study is presented which supports this theory. However, in addition to the prototype effects, an exemplar effect is also shown to influence the choice, namely the relative frequencies with which lemmas occur in the non-alternating constructions. I argue that allowing both prototype and exemplar effects is more adequate than following radical prototype or exemplar approaches. It is also verified in two experiments that the corpus-derived model corresponds to the behaviour of native speakers. The weak effect size of the experimental validation is discussed in the context of corpus-based cognitive linguistics and the validation of corpus-derived models.
