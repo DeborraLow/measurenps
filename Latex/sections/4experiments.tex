@@ -4,41 +4,41 @@
 \subsection{Experiment 1: forced-choice}
 \label{sec:exp:fc}
 
-In the two experiments reported in this section, I use probabilities for the alternating constructions calculated for attested material, and I correlate these probabilities with the participants' reactions.
-Thus, a direct link can be established between output material found in corpora and the behaviour of linguistic agents.
-Both experiments use sentences containing attested MNPs from the corpus sample (embedded into simplified sentences) as stimuli.
+In this section, the probabilities of the alternants as calculated for attested material are correlated with the reactions of participants in controlled experiments.
+Thus, a direct link is established between output material found in corpora and the behaviour of linguistic agents.
 
-Readers might wonder why the stimuli were chosen in such a way.
+The decision to use attested material and perform a global validation of the corpus-based model was not arbitrary.
 Alternatively, one could have created stimuli where the features favouring the alternatives were permuted appropriately and thus tested directly.
 The answer is related to what was said in Section~\ref{sec:cogocl} about the rich multi-factorial data sets used in corpus studies and the comparatively restricted ones in experiments.
 Looking at Table~\ref{tab:variables}, we see one binary factor (\textit{Cardinal}), two three-level factors (\textit{Measurecase} and \textit{Kindgender}) and one five-level factor (\textit{Measureclass}).
 Since the dependent variable is binary (\textit{Construction}), permuting these factors alone leads to 180 different possible permutations.
-On top of this, the numeric variables \textit{Kindattraction} and \textit{Measureattraction} would also have to be tested at at least two or three different values each.
-It is obvious that this is impossible in a controlled experiment, given that participants can usually be exposed to something in the region of one hundred sentences (including many more fillers than target stimuli) within thirty minutes to an hour.
+On top of this, the numeric variables \textit{Kindattraction} and \textit{Measureattraction} would also have to be tested at several values.
+It is obvious that this is impossible in a controlled experiment, given that a participant can be exposed to no more than roughly one hundred sentences, most of which would be fillers rather than target sentences.
 Thus, while the present approach only allows for a global test of the corpus-derived model, this appears to me to be the only feasible way.%
-\footnote{Obviously, the experimental data are much too sparse to perform even post-hoc analyses with respect to the single regressors in a statistically and scientifically sound way.}
+\footnote{For the same reasons, the experimental data are also much too sparse to perform even post-hoc analyses with respect to the single regressors in a sound way.}
 It is, in the sense of Section~\ref{sec:cogocl}, an optimal synthesis of data-rich multifactorial corpus studies and experimental validation, and it is one that has been used (although rarely; see \citealp[3--4]{DivjakEa2016a}) at least since the seminal \citet{BresnanEa2007} paper.
 
 \subsubsection{Setup, stimuli, and participants}
 
-The first experiment tests preferences for constructions explicitly in a forced choice task.
+The first experiment tests preferences for constructions explicitly in a forced-choice task.
 Participants had to choose between two sentences that differed only in that one contained the \NACa\, and the other one contained the \PGCa.
-The analysis compares the probabilities assigned to the stimuli by the corpus-derived model with the frequency with which participants chose the alternants.
-There were 24 participants (native speakers of German without reading or writing disabilities) aged 19 to 30 living permanently in Berlin, who were recruited from introductory linguistics courses at Freie Universität Berlin.
+In the analysis, the probabilities assigned to the stimuli by the corpus-derived model were compared to the frequency with which participants chose the alternants.
+There participants were 24 native speakers of German without reading or writing disabilities, aged 19 to 30, and living permanently in Berlin.
+They were recruited from introductory linguistics courses at Freie Universität Berlin.
 Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper explicit knowledge of linguistics, grammar, or experimental methods.
 None of them had ever participated in a forced-choice experiment before.
-Participation was voluntary but participants received credit in partial fulfillment of course requirements.
+Participation was voluntary, but participants received credit in partial fulfillment of course requirements.
 
 As stimuli, attested MNPs from the corpus study were used, but the sentences were simplified to avoid influences from contextual nuisance factors as much as possible.
-The approach is also justified because according to the theoretical assessment in Section~\ref{sec:analyses}, the choice of alternants depends mostly on a very local constructional context.
-I sampled 16 MNPs from the concordance and made sure that the simplifications and normalisations did not affect any of the regressors used in the corpus study.
+16 MNPs were sampled from the concordance, making sure that any simplifications and normalisations did not affect any of the regressors used in the corpus study.
 In the simplified sentences, the case, number, etc. of the MNP remained the same as in the attested sentence, as did the choice of lexical material within the MNP.
 Eight sentences contained masculine or neuter kind nouns, and the other eight contained feminine kind nouns.
 Furthermore, in each of the masculine\slash neuter and feminine groups, four sentences originally containing the \NACa\ and four sentences originally containing the \PGCa\ were chosen.
-More precisely, the sentences were sampled as \textit{highly typical examples} of \PGCa\ (high probability assigned by GLMM) and \NACa\ (low probability assigned by GLMM), respectively.%
+Moreover, the sentences were sampled as typical examples of \PGCa\ (high probability assigned by GLMM) and \NACa\ (low probability assigned by GLMM), respectively.%
 \footnote{Remember from Section~\ref{sec:corpusstudies} that the model predicts the probability that the \PGCa\ is chosen over the \NACa.}
-High and low probabilities were defined as the top and bottom 20\% of all probabilities assigned by the GLMM.
+High and low probabilities were defined (roughly) as the top and bottom 20\% of all probabilities assigned by the GLMM.
 Lemmas and feature combinations were made unique within each group whenever possible.
+For calculating the model predictions, the document-level variables \textit{Badness} and \textit{Genitives} were set to 0, which is the mean for z-transformed variables.
 The design is summarised in Table \ref{tab:experiment1:design}.
 
 \begin{table}
@@ -56,7 +56,7 @@ The design is summarised in Table \ref{tab:experiment1:design}.
 The final pairs of stimuli were the sentence containing the attested and preferred alternant (according to the corpus GLMM) on the one hand and a modified version containing the dispreferred alternant on the other hand.
 They were presented next to each other, and a 20 second time limit for each choice was set.%
 \footnote{No participant ever exceeded the time limit.}
-The position on the screen (left\slash right) and the order of sentences were randomised for each participant.
+The order of sentences was randomised for each participant, and the position of the alternants on the screen (left\slash right) was randomised per participant and sentence.
 As fillers, 23 pairs of sentences exemplifying similar but unrelated alternation phenomena from German morpho-syntax were used.
 Thus, participants saw 39 pairs of sentences and 78 sentences in total.
 They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
@@ -64,16 +64,8 @@ The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
 
 \subsubsection{Statistical model}
 
-\begin{figure}[htbp!]
-\centering
-\includegraphics[width=0.5\textwidth]{../R/output/fc_effects}
-\caption{Effect plot for the multilevel logistic regression in the forced-choice experiment: predictability of participants' choices using the probabilities derived from the corpus-based GLMM}
-\label{fig:afc:effects}
-\end{figure}
-
-A multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.%
-\footnote{The document-level variables \textit{Badness} and \textit{Genitives} were set to 0, which is the mean for z-transformed variables.}
-A random intercept and slope were added for the individual sentence pair (item) in order to catch idiosyncrasies of single sentences.
+A multilevel logistic regression was specified with the probability of the \PGCa\ predicted for each sentence by the corpus-based GLMM as the only fixed effect \textit{Modelprediction}.
+A random intercept was added for the individual sentence pair (\textit{Item}) in order to catch idiosyncrasies of single sentences.
 Coefficients were estimated with Maximum Likelihood Estimation (\textit{lmer} function from \textit{lme4}).
 The number of observations was \textit{n=}384.
 
@@ -85,6 +77,13 @@ The confidence interval from a parametric bootstrap (1,000 replications, percent
 The pseudo-coefficients of determination are $R^2_{m}=0.185$ and $R^2_{c}=0.455$, which means that roughly 19\% of the variance in the data can be explained by considering only the predictions from the corpus-based GLMM.
 
 \subsubsection{Interpretation}
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.5\textwidth]{../R/output/fc_effects}
+\caption{Effect plot for the multilevel logistic regression in the forced-choice experiment: predictability of participants' choices using the probabilities derived from the corpus-based GLMM}
+\label{fig:afc:effects}
+\end{figure}
 
 The marginal $R^2$ indicates a weak result for the fixed effects part of the model, which is nonetheless worthy of mention (close to 0.2).
 The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
@@ -113,11 +112,11 @@ Therefore, a model with random slopes for \textit{Modelprediction} varying by bo
 The random slope for participants was added to comply with \citet[257]{BarrEa2013} who predict ``catastrophically high Type I error rates'' for experimental designs with within-subject manipulations if random effects structures are not kept maximal.
 The coefficient of the fixed effect changed noticeably but not enough to change the interpretation (5.408 relative to an intercept of -1.304), and the marginal $R^2_m$ rises to 0.213 ($R^2_c=0.488$).
 In line with expectations, the standard deviation in the random slopes for \textit{Item} is high at 5.996.
-However, the covariance parameters were estimated at -1.0, which is a clear sign that the variance-covariance matrix could not be estimated successfully.
+However, the covariance parameters were estimated at exactly -1, which is a clear sign that the variance-covariance matrix could not be estimated successfully.
 The same was true for models with only an \textit{Item} and a \textit{Participant} random slope.
 This is exactly the kind of model overparametrisation criticised in \citet{BatesEa2015a} and \citet{MatuschekEa2017}.
 The available data are insufficient to estimate the parameters of the more complex model with varying slopes.%
-\footnote{\citet[1]{BatesEa2015a} state: ``We show that failure to converge typically is not due to a suboptimal estimation algorithm, but is a consequence of attempting to fit a model that is too complex to be properly supported by the data, irrespective of whether estimation is based on maximum likelihood or on Bayesian hierarchical modeling with uninformative or weakly informative priors.
+\footnote{\citet[1]{BatesEa2015a} state: ``We show that failure to converge typically is not due to a suboptimal estimation algorithm, but is a consequence of attempting to fit a model that is too complex to be properly supported by the data, irrespective of whether estimation is based on maximum likelihood or on Bayesian hierarchical modelling with uninformative or weakly informative priors.
 Importantly, even under convergence, overparameterization may lead to uninterpretable models.''
 }
 
@@ -129,13 +128,13 @@ In summary, the forced-choice experiment succeeded in corroborating the results 
 
 \subsubsection{Setup, stimuli, and participants}
 
-The second experiment tests preferences more implicitly.
+The second experiment was conducted in a more implicit paradigm.
 It is expected that reading less typical alternants in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
 In this section, a self-paced reading experiment is therefore presented.
 In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
 The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
 
-Concretely, the exact same stimuli as in the forced-choice experiments were used.
+The exact same stimuli as in the forced-choice experiments were used.
 Each participant read both the 16 sentences with the alternant predicted by the corpus model and the 16 modified sentences with the alternant that the corpus model did not predict.%
 \footnote{Notice that lemmas and their frequencies as well as lemma classes are included as regressors in the corpus-based GLMM, and there was consequently no additional controlling of lemma frequencies, etc.}
 To minimise repetition effects, the stimuli for each participant were separated into two blocks of 16 targets and 33 fillers per block.
@@ -158,8 +157,7 @@ Outliers farther than 2 inter-quartile ranges from the mean logarithmised residu
 
 An LMM was specified with the logarithmised residual reading times as the response variable.
 The probabilities derived from the corpus GLMM (\textit{Modelprediction}) were added as the main regressor of interest.
-It should be remembered that the corpus GLMM predicts the probability of the \PGCa.
-As a consequence, the higher the GLMM prediction is, the more typical the sentence is for containing the \PGCa.
+It should be remembered that the higher the GLMM prediction is, the more typical the sentence is for containing the \PGCa.
 It is therefore expected that reading times are higher when the value of \textit{Modelprediction} is higher but the sentence contains the \NACa.
 However, when the sentence contains the \PGCa, reading times should be lower when \textit{Modelprediction} is higher.
 To account for this, an interaction between \textit{Modelprediction} and \textit{Construction} (levels \textit{PGCadj} and \textit{NACadj}) was added to the model.
@@ -192,12 +190,12 @@ The estimated smoother for the \textit{Modelprediction} variable is essentially 
 
 \subsubsection{Interpretation}
 
-The coefficients of determination indicate that there is a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities (marginal $R^2$) and that there is some between-subject variation (conditional minus marginal $R^2$).
+The coefficients of determination indicate that there is a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities (marginal $R^2$) and that there is some between-subject variation (conditional minus marginal $R^2$, which is 0.107).
 
 \begin{figure}[htbp!]
 \centering
 \includegraphics[width=0.5\textwidth]{../R/output/spr_effects}
-\caption{Effect plot for the LMM in the self-paced reading experiment: modeling participants' residualised log reading times on the probabilities given by the corpus-based GLMM}
+\caption{Effect plot for the LMM in the self-paced reading experiment: modelling participants' residualised log reading times on the probabilities given by the corpus-based GLMM}
 \label{fig:spr:effects}
 \end{figure}
 

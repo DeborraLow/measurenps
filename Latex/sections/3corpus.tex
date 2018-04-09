@@ -25,16 +25,11 @@ Therefore, DECOW14A is a valid choice for this study.
 Among the factors potentially influencing the alternation (see Section~\ref{sec:germanmeasurenps}) are lemma-specific preference effects.
 Therefore, it was desirable to obtain a sample in which most of the highly frequent actually-occurring combinations of kind nouns and measure nouns were represented.
 I applied a two-stage process in order to obtain a list of co-occurring measure nouns and kind nouns.
-First, I generated a list of the one hundred most frequent genuine mass nouns.
-Second, I derived a list of all measure nouns with which the mass nouns co-occurred in the \NACb.
 
-In the first step, I exported a list of all nouns in the DECOW14A01 sub-corpus sorted by their token frequency.
-The first one hundred mass nouns were extracted manually from this list.%
-\footnote{DECOW14A01 is the first slice (roughly a twentieth) of the complete DECOW14A corpus.
-It contains roughly one billion tokens.}
-Mass nouns were defined as concrete nouns which denote a substance genuinely (without coercion), combine with uninflected mass quantifiers such as \textit{viel} `much' and \textit{wenig} `little' (\textit{viel Bier} `much beer'), and form only sortal and unit plurals (such as the plural \textit{Biere} `types of beer' or `glasses of beer').
-Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are usually not quantified in the same way as concrete mass nouns.
-The hundredth selected mass noun was \textit{Schmuck} `jewellery’, which is the 3,054th most frequent noun in the original frequency list.
+In the first step, I exported a list of all nouns from the DECOW14A01 sub-corpus (one billion tokens large).
+The one hundred most frequent mass nouns were extracted manually from this list.
+Mass nouns were defined as concrete nouns which genuinely denote a substance, combine with uninflected mass quantifiers such as \textit{viel} `much' and \textit{wenig} `little' (\textit{viel Bier} `much beer'), and form only sortal and unit plurals (such as the plural \textit{Biere} `types of beer' or `glasses of beer').
+Abstract nouns which partially behave like mass nouns (like \textit{Spaß} `fun’ or \textit{Gefahr} `danger’) were excluded because they are not quantified in the same way as concrete mass nouns.
 
 This list of mass nouns was used in the second step to derive a list of measure nouns co-occurring with the mass nouns. 
 In order to generate this list, I utilised the fact that a direct sequence of two nouns almost always instantiates the bare-noun NAC if the second noun is a mass noun.
@@ -75,8 +70,8 @@ Notice first that \textit{Construction} is the response variable with the values
 \end{table}
 
 The variables \textit{Kindattraction} and \textit{Measureattraction} encode the ratio with which a given kind noun lemma or measure noun lemma occurs in the \PGCd\ and the \NACb.
-They were calculated from auxiliary samples described in Section~\ref{sec:mainstudysampling} as a log-transformed quotient.
-The higher the value, the more often the noun occurs in the \PGCd.
+They were calculated from auxiliary samples to be described in Section~\ref{sec:mainstudysampling} as a log-transformed quotient.
+The higher the value for some noun, the (relatively) more often this noun occurs in the \PGCd.
 It could be argued that other measures of attraction strength should be used, for example those popularised in collostructional analysis (CA; \citealp{StefanowitschGries2003,GriesStefanowitsch2004}; see also \citealp{Gries2015a}).
 However, the goal here is to quantify how often lemmas occur in the \PGCd\ and the \NACb, and these constructions do not compete at all but are rather mutually exclusive.
 While this does not preclude the use of collostructional analysis, it is an open question whether the marginals are cognitively relevant in this case.
@@ -99,13 +94,14 @@ A high number of genitives is also indicative of a more formal, elaborate style 
 However, since the \PGCa\ contains a genitive itself, the regressor variable \textit{Genitive} and the document-level variable \textit{Genitives} are not fully independent.
 Since instances of the \PGCa\ make up for only a minute fraction of all genitives, I still use \textit{Genitives} as a regressor with the appropriate caveats.
 
-Finally, to control for simple frequency effects, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW14A corpus creators on their web page.
-Also, two variables were added as nuisance variables in the context of the present study.
+Furthermore, to control for simple frequency effects, \textit{Kindfreq} and \textit{Measurefreq} are the logarithm-transformed frequencies per 1,000,000 words of each lemma, extracted from the frequency lists distributed by the DECOW14A corpus creators on their web page.
+
+Finally, two variables were added as nuisance variables in the context of the present study.
 First, it was reported in the literature that MNPs in the dative and with a masculine or neuter kind noun favour the \PGCa\ more than the corresponding nominative and accusative MNPs \citep{Hentschel1993,Zimmer2015}.
 As an example, \textit{mit einem Stück frischen Brots} `with a piece of fresh bread' (\PGCa) would be preferred more strongly against \textit{mit einem Stück frischem Brot} (\NACa).
 As with all the examples, native speakers of German will most likely notice that differences are subtle.
 The case of the measure noun was manually annotated (variable \textit{Measurecase}).
-Second, due to differences in case syncretisms, it is possible that feminine kind nouns have slightly different preferences than masculine and neuter ones, and the appropriate variable \textit{Kindgender} was annotated.
+Second, due to differences in case syncretisms, it is likely that feminine kind nouns have slightly different preferences than masculine and neuter ones, and hence the appropriate variable \textit{Kindgender} was annotated.
 
 \subsection{Pre-study: main prototype effects in the non-alternating constructions}
 \label{sec:prestudy}
@@ -116,8 +112,7 @@ Therefore, in this section I examine the distribution of the prototypical featur
 
 \subsubsection{Sampling and annotation}
 
-For this pre-study, each of the 2,365 combinations of measure noun lemma and kind noun lemma were queried in the \NACb\ and the \PGCd.
-Each of the resulting 2,365 concordances was scaled down randomly to a size of maximally 100 sentences.
+For this pre-study, each of the 2,365 combinations of measure noun lemma and kind noun lemma were queried in the \NACb\ and the \PGCd\ with a limit of 100 randomly chosen results for each single query.
 From the resulting 35,766 sentences, 5,000 were randomly sampled for the statistical analysis.
 All features described in Section~\ref{sec:variablesandannotation} were annotated except for the ones which do not apply in the non-alternating case (\textit{Kindattraction}, \textit{Measureattraction}, and \textit{Measurecase}).
 
@@ -186,12 +181,10 @@ I will return to these results in Section~\ref{sec:mainstudyinterpretation}.
 \subsubsection{Sampling and annotation}
 \label{sec:mainstudysampling}
 
-For the main study, each of the 2,365 noun–noun combinations was queried in the alternating constructions \PGCa\ and \NACa\ in DECOW14A.%
-\footnote{Due to efficiency problems with the old COW interface at the time, only ten slices of DECOW14A were used, which add up to approximately 10 billion tokens.}
-For the manual annotation process, a random sub-sample was generated.
-For each mass noun, the concordance was downsampled randomly to maximally 100 sentences, which resulted in 6,843 sentences without further downsampling.
-In the manual annotation process the sample was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits, and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.
-Given the careful sampling procedure described in this section and Section~\ref{sec:bootstrappinlemmapairs}, we can be highly certain that it contains all relevant and reasonably frequent noun–noun combinations in the target constructions.%
+For the main study, each of the 2,365 noun–noun combinations was queried in the alternating constructions \PGCa\ and \NACa\ using a sub-corpus of DECOW14A (slices DECOW14A01 to DECOW14A10 with a total size of 10 billion tokens).
+For further manual annotation, a random sub-sample was generated.
+For each mass noun, the concordance was downsampled randomly to maximally 100 sentences, which resulted in 6,843 sentences.
+In the manual annotation, the sample was further reduced to 5,063 sentences due to removal of noisy material, erroneous hits, and uninformative cases where the measure noun was in the genitive, in which case the \NACa\ cannot be distinguished from the \PGCa.%
 \footnote{In a similar fashion, the 100 most frequent measure nouns occurring with plural kind nouns were listed and queried, resulting in a sample of 871 sentences.
 As stated in Section~\ref{sec:germanmeasurenps}, the \NACa\ is virtually never used with plural kind nouns, and this sample was not used except for quantifying the frequency of occurrence of the constructions (67 times \NACa\ and 794 times \PGCa).
 The sample is distributed with the data package accompanying this paper.}
@@ -210,7 +203,7 @@ Therefore, all noun-noun pairs from the process described above were also querie
   \label{fig:fixeffs}
 \end{figure}
 
-Then, a multilevel logistic regression model was fit which models the influence of the regressors specified in Table~\ref{tab:variables} on the probability that the \PGCa\ is chosen over the \NACa.
+A multilevel logistic regression model was fit which models the influence of the regressors specified in Table~\ref{tab:variables} on the probability that the \PGCa\ is chosen over the \NACa.
 All regressors from Table~\ref{tab:variables} were included, and the measure lemma and the kind noun lemma were specified as varying-intercept random effects.
 The sample size was \textit{n=}5,063 with 1,134 cases of \PGCa\ and 3,929 cases of \NACa.
 The results of the estimation are shown in Table~\ref{tab:bigtable} and in Figure~\ref{fig:fixeffs}.
@@ -238,7 +231,7 @@ Given the coding of the response variable, coefficients leaning to the positive 
                     & Kindgender        &  0.001                 & Neut         &  0.021      & -0.367 &  0.392  &               \\
                     &                   &                        & Fem          &  1.269      &  0.800 &  1.709  & *             \\[0.5\baselineskip]
     
-    2 (Measurelemma & Measureattraction &  0.001                 &              &  0.282      &  0.106 &  0.447  & *             \\
+    2 (Measurelemma) & Measureattraction &  0.001                 &              &  0.282      &  0.106 &  0.447  & *             \\
                     & Measureclass      &  0.001                 & Container    &  0.252      & -0.265 &  0.788  &               \\
                     &                   &                        & Rest         &  0.421      & -0.209 &  1.063  &               \\
                     &                   &                        & Amount       &  0.831      &  0.215 &  1.432  & *             \\
@@ -258,7 +251,7 @@ Generalised variance inflation factors for the regressors were calculated to che
 The lemma intercepts have standard deviations of $\sigma_{\text{Measurelemma}}=0.448$ and $\sigma_{\text{Kindlemma}}=0.604$.
 Only \textit{Kindfreq} ($\mpPB=0.095$) could be seen as slightly too high to be convincing, failing at sig=0.05.
 
-Using signed logarithmised collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) (with smoothing to avoid arithmetic problems) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) (see Section~\ref{sec:variablesandannotation}) was not successful.
+Using signed logarithmised Fisher p-values as a measure of collexeme strength (\textit{Measurecollo} and \textit{Kindcollo}) instead of the quotient for the attraction strength (\textit{Measureattraction} and \textit{Kindattraction}) (see Section~\ref{sec:variablesandannotation}) was not successful.
 While the attraction measures reach satisfying sig levels in the PBmodcomp test (0.020 for \textit{Kindattraction} and 0.001 for \textit{Measureattraction}), the $p_{\text{PB}}$ value for \textit{Kindcollo} was 0.191 and the one for \textit{Measurecollo} was 0.443.
 The coefficients of determination drop to $R_m^2=0.376$ and $R^2_c=0.480$.
 
@@ -282,7 +275,7 @@ The effect for measure nouns is stronger, and it was estimated with higher preci
 An interesting picture emerges for the lemma frequencies.
 A higher-than-average lemma frequency of measure nouns favours the \NACa, which is as expected if we assume at least a tendency for highly grammaticalised items to be more frequent.
 With kind nouns, higher frequency seems to favour the \PGCa.
-However, there is no clear theoretical interpretation (see Section~\ref{sec:analyses}), and the estimate is imprecise (not significant at sig=0.05).
+However, this effect has no clear theoretical interpretation, and its coefficient estimate is imprecise (not significant at sig=0.05).
 The effect can therefore be ignored or treated as a nuisance variable.
 
 
@@ -328,10 +321,10 @@ The main difference -- if we ignore the \textit{Rest} class which can be expecte
 The difference is not huge, and the overall order of the coefficients is the same.
 The \textit{Genitives} effect also converges with -0.710 in the pre-study and -0.693 in the main study.
 The two studies do not converge with respect to the \textit{Badness} variable, which is not significant in the pre-study.
-It would, however, surprise to achieve perfectly converging results given that even real effects are missed at certain rates in empirical studies.
+However, it would be surprising if we achieved perfectly converging results given that even real effects are missed at certain rates in empirical studies.
 In the case of \textit{Badness}, we see that even in the main study, the effect size is small (-0.152), and thus even at the impressive sample size of roughly 5,000 in both studies, the effect might simply be too weak to be detected reliably.
 Finally, the frequency effect \textit{Measurefreq} is detected in the main study but not in the pre-study, while the \textit{Kindfreq} effect is essentially absent in both studies.
 In connection with this, it is revealing to look at the coefficients of determination.
 In the pre-study, a much greater proportion of the variance is explained by taking the lemma random effects into account ($R^2_m=0.278$ and $R^2_c=0.566$) than it is in the main study ($R^2_m=0.376$ and $R^2_c=0.480$).
 Thus, the frequency effect for measure lemmas might be swamped by the lemma random intercepts.
-All things considered, the studies have shown that the predicted prototype effects are found in usage data for both the alternating and the non-alternating constructions.
+All things considered, the studies have shown that the predicted prototype and exemplar effects are reflected in usage data for both the alternating and the non-alternating constructions.
