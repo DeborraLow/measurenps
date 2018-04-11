@@ -4,19 +4,19 @@
 \subsection{Experiment 1: forced-choice}
 \label{sec:exp:fc}
 
-In this section, the probabilities of the alternants as calculated for attested material are correlated with the reactions of participants in controlled experiments.
+In this section, the probabilities of the alternants (as calculated from attested material in the corpus study) are correlated with the reactions of participants in controlled experiments.
 Thus, a direct link is established between output material found in corpora and the behaviour of linguistic agents.
 
 The decision to use attested material and perform a global validation of the corpus-based model was not arbitrary.
-Alternatively, one could have created stimuli where the features favouring the alternatives were permuted appropriately and thus tested directly.
+Alternatively, one could have created stimuli where the features favouring the alternatives were permuted and thus tested directly.
 The answer is related to what was said in Section~\ref{sec:cogocl} about the rich multi-factorial data sets used in corpus studies and the comparatively restricted ones in experiments.
 Looking at Table~\ref{tab:variables}, we see one binary factor (\textit{Cardinal}), two three-level factors (\textit{Measurecase} and \textit{Kindgender}) and one five-level factor (\textit{Measureclass}).
 Since the dependent variable is binary (\textit{Construction}), permuting these factors alone leads to 180 different possible permutations.
-On top of this, the numeric variables \textit{Kindattraction} and \textit{Measureattraction} would also have to be tested at several values.
+Additionally, the numeric variables \textit{Kindattraction} and \textit{Measureattraction} would also have to be tested at several values.
 It is obvious that this is impossible in a controlled experiment, given that a participant can be exposed to no more than roughly one hundred sentences, most of which would be fillers rather than target sentences.
 Thus, while the present approach only allows for a global test of the corpus-derived model, this appears to me to be the only feasible way.%
-\footnote{For the same reasons, the experimental data are also much too sparse to perform even post-hoc analyses with respect to the single regressors in a sound way.}
-It is, in the sense of Section~\ref{sec:cogocl}, an optimal synthesis of data-rich multifactorial corpus studies and experimental validation, and it is one that has been used (although rarely; see \citealp[3--4]{DivjakEa2016a}) at least since the seminal \citet{BresnanEa2007} paper.
+\footnote{For the same reasons, the experimental data are also much too sparse to perform post-hoc analyses with respect to the single regressors in a sound way.}
+It is, in the sense of Section~\ref{sec:cogocl}, an optimal synthesis of data-rich multifactorial corpus studies and experimental validation, and it is one that has been used at least since the seminal \citet{BresnanEa2007} paper -- although rarely, as \citet[3--4]{DivjakEa2016a} point out.
 
 \subsubsection{Setup, stimuli, and participants}
 
@@ -25,7 +25,7 @@ Participants had to choose between two sentences that differed only in that one 
 In the analysis, the probabilities assigned to the stimuli by the corpus-derived model were compared to the frequency with which participants chose the alternants.
 There participants were 24 native speakers of German without reading or writing disabilities, aged 19 to 30, and living permanently in Berlin.
 They were recruited from introductory linguistics courses at Freie Universität Berlin.
-Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper explicit knowledge of linguistics, grammar, or experimental methods.
+Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper knowledge of linguistics, grammar, or experimental methods.
 None of them had ever participated in a forced-choice experiment before.
 Participation was voluntary, but participants received credit in partial fulfillment of course requirements.
 
@@ -88,7 +88,7 @@ The pseudo-coefficients of determination are $R^2_{m}=0.185$ and $R^2_{c}=0.455$
 The marginal $R^2$ indicates a weak result for the fixed effects part of the model, which is nonetheless worthy of mention (close to 0.2).
 The effect display for the single fixed regressor \textit{Modelprediction} is given in Figure \ref{fig:afc:effects}.
 The higher the probability of the \PGCa\ predicted from usage data, the more often participants chose the \PGCa\ alternant in the forced-choice task.
-A closer look at the results in the form of the spineplot in Figure~\ref{fig:spines} shows, however, that it was likely an idiosyncracy of a single sentence with a probability predicted by the model between 0.5 and 0.6 which spoiled an otherwise much better correlation.
+A closer look at the results in the form of the spineplot in Figure~\ref{fig:spines} shows, however, that it was likely an idiosyncracy of a single sentence which spoiled an otherwise much better correlation.
 The problematic sentence with a model prediction of 0.548 is given in (\ref{ex:problem}) in the \PGCa\ variant.
 
 \begin{exe}
@@ -130,7 +130,7 @@ In summary, the forced-choice experiment succeeded in corroborating the results 
 
 The second experiment was conducted in a more implicit paradigm.
 It is expected that reading less typical alternants in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
-In this section, a self-paced reading experiment is therefore presented.
+In this section, a self-paced reading experiment is presented.
 In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
 The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
 
@@ -149,7 +149,7 @@ There were 38 participants recruited in exactly the same manner as for the exper
 None of them had ever participated in any kind of reading experiment, and none of them took part in the first experiment.
 The experiment was conducted using \textit{PsychoPy}.
 
-The reading times were residualised per speaker based on the reading times of all words (not just the targets) by that speaker.
+The reading times were residualised per speaker based on the reading times of all words (not just the targets) for that speaker.
 The adjective and the kind noun (\ie\ the constituents bearing the critical case markers) were used as the target region, for instance the bracketed words in the example \textit{zwei Gläser} [\textit{spru\-deln\-des Wasser}] `two glasses of sparkling water'.
 Outliers farther than 2 inter-quartile ranges from the mean logarithmised residualised reading time were removed (64 data points), resulting in a total number of \textit{n=}1,152 observations.
 
@@ -162,7 +162,7 @@ It is therefore expected that reading times are higher when the value of \textit
 However, when the sentence contains the \PGCa, reading times should be lower when \textit{Modelprediction} is higher.
 To account for this, an interaction between \textit{Modelprediction} and \textit{Construction} (levels \textit{PGCadj} and \textit{NACadj}) was added to the model.
 
-Furthermore, the position (1--98) of the sentence in the individual experiment (\textit{Position}) was included as a fixed effect to control for the usual increase in reading speed during an experiment run.
+Furthermore, the position (1--98) of the sentence in the individual experiment (\textit{Position}) was included as a fixed effect to control for the usual increase in reading speed during an experiment.
 Random intercepts were specified for \textit{Participant} and \textit{Item} (the 16 sentence pairs are one \textit{Item} each).%
 \footnote{Again, all attempts to include random slopes resulted in the variance-covariance matrix not being properly estimated (1 or -1 covariance parameters).}
 
@@ -190,7 +190,7 @@ The estimated smoother for the \textit{Modelprediction} variable is essentially 
 
 \subsubsection{Interpretation}
 
-The coefficients of determination indicate that there is a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities (marginal $R^2$) and that there is some between-subject variation (conditional minus marginal $R^2$, which is 0.107).
+The coefficients of determination indicate that there is a noteworthy correlation between the reactions of the subjects and the corpus-derived probabilities (marginal $R^2$) and that there is some between-subject variation: the difference between $R^2_m$ and $R^2_c$ is 0.107.
 
 \begin{figure}[htbp!]
 \centering
