@@ -1,10 +1,36 @@
 require(rstanarm)
 require(rstan)
 
+rm(list = ls())
 
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
+# Set this to the location of R script sources.
+setwd('/Users/user/Workingcopies/measurenps/GitHub/R')
+
+# Load data as published in COGL (no MCMC).
+load(file=paste("output/corpus_workspace.RData", sep=""))
+
+# Set font for Habil Rahmentext (Glossa style).
+library(showtext)
+font_paths("/Library/Fonts")
+font_add("Fira Sans",
+         regular    = "FiraSans-Book.otf",
+         bold       = "FiraSans-Bold.otf",
+         italic     = "FiraSans-BookItalic.otf",
+         bolditalic = "FiraSans-BoldItalic.otf")
+showtext_auto()
+
+# Options.
+set.seed(239642)                             # Do NOT change, or results will differ.
+save.persistent        <- T                  # Write to files instead of screen/console.
+out.dir <- paste(out.dir, "mcmc_", sep="")   # Put generated files here.
+precision              <- 3                  # Precision in result table.
+
+chains <- 4
+iter <- 1000
+seed <- 2346
 
 measure.glmm.mcmc <- stan_glmer(Construction~1
                                 
@@ -15,15 +41,12 @@ measure.glmm.mcmc <- stan_glmer(Construction~1
                                 +Cardinal
                                 +Genitives
                                 +Measurecase
-                                +Measurenumber
                                 
                                 +Kindattraction
-                                #+Kindcollo
                                 +Kindfreq
                                 +Kindgender
                                 
                                 +Measureattraction
-                                #+Measurecollo
                                 +Measureclass
                                 +Measurefreq
                            ,
@@ -78,7 +101,7 @@ dotchart(rep(-100, length(measure.fixeffs)), pch=20,
          lcolor = "gray",
          cex = 1.2,
 #         main=paste("MLE and MCMC oefficient estimates\n with 95% confidence intervals", sep="")
-         main=NULL
+         main="MLE and MCMC oefficient estimates\n with 95% confidence intervals"
          )
 lines(c(0,0), c(0,length(measure.ci.95)), col="gray")
 
@@ -94,3 +117,6 @@ for (i in 1:nrow(measure.ci.95)) {
 legend(1.11, 12.5, legend = c("MLE", "MCMC"), cex = 1.2, col = c("black", "gray"), pt.bg = c("black", "gray"),
        lty = 1, lwd = 2, pch = c(25, 24), pt.cex = 0.75, bg = "white")
 if (save.persistent) dev.off()
+
+# Save workspace.
+if (save.persistent) save(list = ls(), file=paste(out.dir, "workspace.RData", sep=""))
