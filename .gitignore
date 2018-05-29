@@ -179,3 +179,8 @@ TSWLatexianTemp*
 # KBibTeX
 *~[0-9]*
 .Rproj.user
+
+# MacOS
+*.DS_Store
+.DS_Store
+
