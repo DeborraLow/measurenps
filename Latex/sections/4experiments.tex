@@ -1,7 +1,7 @@
 \section{Experiments}
 \label{sec:experimental}
 
-\subsection{Experiment 1: forced-choice}
+\subsection{Experiment 1: Forced-choice}
 \label{sec:exp:fc}
 
 In this section, the probabilities of the alternants (as calculated from attested material in the corpus study) are correlated with the reactions of participants in controlled experiments.
@@ -24,7 +24,7 @@ As \citet[3--4]{DivjakEa2016a} pointed out, however, the numbers of published st
 The first experiment tests preferences for constructions explicitly in a forced-choice task.
 Participants had to choose between two sentences that differed only in that one contained the \NACa\, and the other one contained the \PGCa.
 In the analysis, the probabilities assigned to the stimuli by the corpus-derived model were compared to the frequency with which participants chose the alternants.
-There participants were 24 native speakers of German without reading or writing disabilities, aged 19 to 30, and living permanently in Berlin.
+The participants were 24 native speakers of German without reading or writing disabilities, aged 19 to 30, and living permanently in Berlin.
 They were recruited from introductory linguistics courses at Freie Universität Berlin.
 Although the experiment was conducted in the last four weeks of their first semester, participants had no deeper knowledge of linguistics, grammar, or experimental methods.
 None of them had ever participated in a forced-choice experiment before.
@@ -44,13 +44,13 @@ The design is summarised in Table \ref{tab:experiment1:design}.
 
 \begin{table}
   \centering
+  \caption{The four groups of sentences chosen as stimuli; in each group of four sentences, combinations of important factor values were made unique whenever possible}
   \begin{tabular}[h]{lll}
      & Masculine\slash Neuter & Feminine \\
      \midrule
      \textbf{high prob.\ for PGC\Subsf{adj}} & 4 sentences & 4 sentences \\
      \textbf{low prob.\ for PGC\Subsf{adj}} & 4 sentences & 4 sentences \\
   \end{tabular}
-  \caption{The four groups of sentences chosen as stimuli; in each group of four sentences, combinations of important factor values were made unique whenever possible}
   \label{tab:experiment1:design}
 \end{table}
 
@@ -58,7 +58,7 @@ The final pairs of stimuli were the sentences containing the attested and prefer
 They were presented next to each other, and a 20 second time limit for each choice was set.%
 \footnote{No participant ever exceeded the time limit.}
 The order of sentences was randomised for each participant, and the position of the alternants on the screen (left\slash right) was randomised per participant and sentence.
-As fillers, 23 pairs of sentences exemplifying similar but unrelated alternation phenomena from German morpho-syntax were used.
+As fillers, 23 pairs of sentences exemplifying similar but unrelated alternation phenomena from German morphosyntax were used.
 Thus, participants saw 39 pairs of sentences and 78 sentences in total.
 They were instructed to select from each pair of sentences the one that seemed more natural to them in the sense that they would use it rather than the other one.
 The experiment was conducted using \textit{PsychoPy} \citep{Peirce2007}.
@@ -98,7 +98,7 @@ The problematic sentence with a model prediction of 0.548 is given in (\ref{ex:p
   \trans People made much ado about nothing once again.}
 \end{exe}
 
-In retrospect, this stimulus was badly chosen because \textit{heiße Luft} `ado' (literally `hot air') is a fixed metaphorical expression.
+\noindent In retrospect, this stimulus was badly chosen because \textit{heiße Luft} `ado' (literally `hot air') is a fixed metaphorical expression.
 This obviously influences the reactions of participants, and a revised and improved experiment might lead to a much better fit in future research.%
 \footnote{Since I am convinced that the statistical analysis of an experiment has to be determined as part of the experiment's design before the experiment is conducted, removing the data points corresponding to the problematic stimulus from the analysis is not an option.
 Future research with improved stimuli is the proper route to take.}
@@ -126,7 +126,7 @@ Importantly, even under convergence, over-parameterisation may lead to uninterpr
 In summary, the forced-choice experiment succeeded in corroborating the results from the corpus study inasmuch as the preferences extracted from usage data correspond to native speakers' choices, but the correlation is weak, likely at least in part due to problems with individual test items and\slash or too sparse data.
 
 
-\subsection{Experiment 2: self-paced reading}
+\subsection{Experiment 2: Self-paced reading}
 \label{sec:exp:spr}
 
 \subsubsection{Setup, stimuli, and participants}
@@ -134,7 +134,7 @@ In summary, the forced-choice experiment succeeded in corroborating the results 
 The second experiment was conducted in a more implicit paradigm.
 It is expected that reading less typical alternants in a given context and with given lexical material incurs a processing overhead for the reader (\citealp{Kaiser2013}).
 In this section, a self-paced reading experiment is presented.
-In a very similar fashion, \cite{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
+In a very similar fashion, \citet{DivjakEa2016} apply the self-paced reading paradigm in the validation of corpus-based models.
 The analysis compares the corpus-derived probabilities with potential lags in reading time for sentences with the preferred and the non-preferred constructions.
 
 The exact same stimuli as in the forced-choice experiments were used.
@@ -171,6 +171,7 @@ Random intercepts were specified for \textit{Participant} and \textit{Item} (the
 
 \begin{table}
   \centering
+  \caption{Fixed effect coefficient table for the LMM used to analyse the self-paced reading experiment; the intercept is 0.829}
   \begin{tabular}{lrrrc}
     Regressor & \multicolumn{1}{r}{Coefficient} & \multicolumn{1}{r}{CI low} & \multicolumn{1}{r}{CI high} & \multicolumn{1}{r}{CI excludes 0} \\ \midrule
     Construction=PGCadj                 &  0.054 &  0.012 &  0.095 &  *  \\ 
@@ -178,7 +179,6 @@ Random intercepts were specified for \textit{Participant} and \textit{Item} (the
     Position                            & -0.005 & -0.005 &  0.004 &     \\ 
     Construction=PGCadj:Modelprediction & -0.125 & -0.234 & -0.023 &  *  \\ 
   \end{tabular}
-  \caption{Fixed effect coefficient table for the LMM used to analyse the self-paced reading experiment; the intercept is 0.829}
   \label{tab:exp:spr}
 \end{table}
 

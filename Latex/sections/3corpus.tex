@@ -6,13 +6,13 @@
 \subsubsection{Corpus choice}
 \label{sec:gettingdata}
 
-For the present study, I used the 21 billion token German \textit{Corpus from the Web} (COW) in its 2014 version DECOW14A (\citealp{SchaeferBildhauer2012full}, and \citealp{Schaefer2015b}, as well as \citealp{BiemannEa2013}, and \citealp{SchaeferBildhauer2013}, for overviews of web corpora in general and the methodology of their construction).%
+For the present study, I used the 21 billion token German \textit{Corpus from the Web} (COW) in its 2014 version DECOW14A (\citealp{SchaeferBildhauer2012full}, and \citealp{Schaefer2015b}, as well as \citealp{BiemannEa2013}, and \citealp{SchaeferBildhauer2013alt}, for overviews of web corpora in general and the methodology of their construction).%
 \footnote{The COW corpora (Dutch, English, French, German, Spanish, Swedish) are made available for free at \url{https://www.webcorpora.org}.
 At the time of this writing, a newer 2016 version DECOW16A has already been released.}
 This corpus was chosen first because the external validity of any study is increased through a more heterogeneous sample \citep[30]{MaxwellDelaney2004}.
 DECOW14A clearly has a much more heterogeneous composition compared with the only other very large corpus of German, the DeReKo of the Institute for the German Language \citep{KupietzEa2010}.
 DeReKo contains almost exclusively newspaper texts.%
-\footnote{It was shown in \cite{BildhauerSchaefer2016} that, for example, the range of topics is much smaller in DeReKo than in DECOW14A.}
+\footnote{It was shown in \citet{BildhauerSchaefer2016} that, for example, the range of topics is much smaller in DeReKo than in DECOW14A.}
 The second reason for choosing this particular corpus is that normative grammars often adopt clear positions regarding the grammaticality of either the \NACa\ or the \PGCa.
 Thus, newspaper text or any other texts which conform strongly to normative grammars may not represent the alternation phenomenon fully and without bias because authors and proofreaders who must adhere to normative guidelines might explicitly favour one alternative over another.
 Web corpora, on the other hand, contain a significant amount of non-standard language from forums and similar sources.
@@ -47,6 +47,7 @@ Notice first that \textit{Construction} is the response variable with the values
 
 \begin{table}
   \centering
+  \caption{Annotated variables for the corpus studies}
   \begin{tabular}{llll}
     Unit of reference & Variable                      & Type    & Levels (for factors only) \\
     \midrule
@@ -65,7 +66,6 @@ Notice first that \textit{Construction} is the response variable with the values
                    &                                  &         & Amount, Portion, Rest     \\
                    & Measurefreq                      & numeric &                           \\
   \end{tabular}
-  \caption{Annotated variables for the corpus studies}
   \label{tab:variables}
 \end{table}
 
@@ -85,7 +85,7 @@ The variable \textit{Cardinal} encodes whether the MNP is modified by a cardinal
 
 To capture the influence of style mentioned in Section~\ref{sec:analyses}, two proxy variables were used.
 At the document level, the DECOW14A corpus has an annotation for \textit{Badness}.
-As described in \cite{SchaeferEa2013}, \textit{Badness} measures how well the distribution of highly frequent short words in the document matches a language model of standard German.
+As described in \citet{SchaeferEa2013}, \textit{Badness} measures how well the distribution of highly frequent short words in the document matches a language model of standard German.
 The paper also shows that the Badness score corresponds robustly with human raters' intuitions about text coherence and text quality.
 Documents with higher Badness usually contain more incoherent language and shorter sentences.
 If the \PGCa\ actually favours more elaborate stylistic levels, a high \textit{Badness} should be correlated with fewer occurrences.
@@ -104,7 +104,7 @@ As an example, \textit{mit einem Stück frischen Brots} `with a piece of fresh b
 As with all the examples, native speakers of German will most likely notice that differences are subtle.
 Second, due to differences in case syncretisms, it is likely that feminine kind nouns have slightly different preferences than masculine and neuter ones, and hence the appropriate variable \textit{Kindgender} was annotated.
 
-\subsection{Pre-study: main prototype effects in the non-alternating constructions}
+\subsection{Pre-study: Main prototype effects in the non-alternating constructions}
 \label{sec:prestudy}
 
 The main study to be reported below deals exclusively with the alternating constructions, as is customary in alternation modelling.
@@ -125,6 +125,7 @@ An alternative \textit{BOBYQA} optimiser from the \textit{nloptr} package \citep
 
 \begin{table}
   \centering
+  \caption{Coefficient table with 95\% bootstrap confidence intervals for the pre-study; the intercept is -5.370}
   \resizebox{\textwidth}{!}{
     \begin{tabular}{llrlrrrc}
     Model level  & Regressor         & $\text{p}_{\text{PB}}$ & Factor level & Coefficient & CI low & CI high & CI excludes 0 \\
@@ -145,7 +146,6 @@ An alternative \textit{BOBYQA} optimiser from the \textit{nloptr} package \citep
 
   \end{tabular}
   }
-  \caption{Coefficient table with 95\% bootstrap confidence intervals for the pre-study; the intercept is -5.370}
   \label{tab:smalltable}
 \end{table}
 
@@ -176,7 +176,7 @@ The stylistic factor \textit{Genitives} shows the predicted influence inasmuch a
 The lemma frequency regressors both clearly fail the PBmodcomp test.
 I will return to these results in Section~\ref{sec:mainstudyinterpretation}.
 
-\subsection{Main study: the alternation}
+\subsection{Main study: The alternation}
 \label{sec:annotation}
 \label{sec:corpushierarchicalmodel}
 
@@ -217,6 +217,7 @@ Given the coding of the response variable, coefficients leaning to the positive 
 
 \begin{table}
   \centering
+  \caption{Coefficient table with 95\% bootstrap confidence intervals for the main study; the intercept is -3.548}
   \resizebox{\textwidth}{!}{
     \begin{tabular}{llrlrrrc}
     Model level  & Regressor         & $\text{p}_{\text{PB}}$ & Factor level & Coefficient & CI low & CI high & CI excludes 0 \\
@@ -241,7 +242,6 @@ Given the coding of the response variable, coefficients leaning to the positive 
 
   \end{tabular}
   }
-  \caption{Coefficient table with 95\% bootstrap confidence intervals for the main study; the intercept is -3.548}
   \label{tab:bigtable}
 \end{table}
 

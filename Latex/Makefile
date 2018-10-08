@@ -1,6 +1,6 @@
 LX = xelatex
 MI = makeindex
-BX = bibtex
+BX = biber
 
 FILEN = article
 TEXFLAGS =

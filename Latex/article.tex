@@ -9,13 +9,6 @@
 \usepackage{colortbl}
 \usepackage{soul}
 
-\usepackage[firstpage]{draftwatermark}
-\SetWatermarkText{\parbox{12cm}{\centering\sffamily\Large Final draft, to appear in Cognitive Linguistics.\\Please quote as such until publication.\\Please do \textit{not} quote this paper using\\the projected volume\slash issue given here.}}
-\SetWatermarkColor{blue}
-\SetWatermarkHorCenter{0.65\paperwidth}
-\SetWatermarkVerCenter{0.875\paperheight}
-\SetWatermarkAngle{0}
-
 \newcommand{\eg}{e.\,g.,}
 \newcommand{\Eg}{E.\,g.,}
 \newcommand{\ie}{i.\,e.,}
@@ -37,53 +30,59 @@
 \definecolor{lg}{rgb}{.8,.8,.8}
 \newcommand{\Dim}{\cellcolor{lg}}
 
-\usepackage{gb4e-}
+\usepackage{langsci-gb4e}
 
 \usepackage{bbding}
 \newcommand{\CheckIt}{\CheckmarkBold}
 \newcommand{\CrossIt}{\XSolidBold}
 
 
-\usepackage{natbib}
-\bibliographystyle{./unified}
 
-\usepackage{lineno}
+% \usepackage{natbib}
+% \bibliographystyle{./unified}
+
+% This will most likely be changed by the typesetters.
+% I put it in to get through LaTeX-unaware copy-editing.
+\usepackage[maxbibnames=99,
+  maxcitenames=2,
+  uniquelist=false,
+  backend=biber,
+  bibstyle=biblatex-sp-unified,
+  citestyle=sp-authoryear-comp]{biblatex}
+\newcommand{\citealp}[2][]{\citealt[#1]{#2}}
+\addbibresource{article.bib}
+\DefineBibliographyStrings{english}{%
+  volume  = {Vol.},
+}
+\renewcommand*\finalnamedelim{\addspace and\space}
+\renewcommand*{\multicitedelim}{\addsemicolon\space}
+
 
 \begin{document}
 
-  %\articletype{...}
 
   \author*[1]{Roland Schäfer}
   \runningauthor{Roland Schäfer}
-  \affil[1]{Deutsche und niederländische Philologie, Freie Universität Berlin, email: roland.schaefer@fu-berlin.de}
+  \affil[1]{Deutsche und niederländische Philologie, Freie Universität Berlin, Germany, E-mail: roland.schaefer@fu-berlin.de}
 
-  \title{Abstractions and exemplars: the measure noun phrase alternation in German}
-  \runningtitle{Abstraction and exemplars: the measure noun phrase alternation German}
-  %\subtitle{...}
+  \title{Abstractions and exemplars: The measure noun phrase alternation in German}
+  \runningtitle{Abstraction and exemplars: The measure noun phrase alternation German}
 
   \abstract{In this paper, an alternation in German measure noun phrases is examined under a varying-abstraction perspective.
     In a specific measure NP construction, the embedded kind-denoting noun either agrees in case with the measure noun (\textit{eine Tasse guter Kaffee} `a cup of good coffee') or it stands in the genitive (\textit{eine Tasse guten Kaffees}).
     Each of the two alternants is syntactically similar to a non-alternating construction.
     I propose a prototype model which assigns a common prototypical meaning to each of the alternants and its corresponding non-alternating construction.
-    Based on this, I argue that lexical, morpho-syntactic, and stylistic features help to predict the choice of the alternant.
+    Based on this, I argue that lexical, morphosyntactic, and stylistic features help to predict the choice of the alternant.
     A large corpus study is presented which supports this analysis.
     However, in addition to the prototype effects, an exemplar effect is also shown to influence the choice, namely the relative frequencies with which lemmas occur in the non-alternating constructions.
     I argue that allowing both prototype and exemplar effects is more adequate than following radical prototype or exemplar approaches.
     It is also verified in two experiments that the corpus-derived model corresponds to the behaviour of native speakers.
     The weak effect size of the experimental validation is discussed in the context of corpus-based cognitive linguistics and the validation of corpus-derived models.}
-  \keywords{prototypes vs.\ exemplars, corpus methods and experimental validation, morpho-syntactic alternations, multilevel modeling, pseudo-partitives, German}
-  %\classification[PACS]{...}
-  %\communicated{...}
-  %\dedication{...}
-  \received{18 April 2017}
-  \accepted{31 May 2018}
-  \journalname{Cognitive Linguistics}
-  \journalyear{2018}
-  \journalvolume{29}
-  \journalissue{4}
-  \startpage{10000}
-  %\aop
-  %\DOI{...}
+  \keywords{prototypes vs.\ exemplars, corpus methods and experimental validation, morphosyntactic alternations, multilevel modeling, pseudo-partitives, German}
+
+  \received{April 18, 2017}
+  \revised{January 8, 2018}
+  \accepted{May 30, 2018}
 
   
 \maketitle
@@ -96,7 +95,6 @@
 \include{sections/5conclusions}
 
 
-
 \begin{acknowledgement}
   I thank (in alphabetical order) Felix Bildhauer, Susanne Flach, Elizabeth Pankratz, Samuel Reichert, Ulrike Sayatz, and Christian Zimmer for valuable discussions and comments.
   Also, I would like to thank the three reviewers for Cognitive Linguistics as well as associate editor Dagmar \mbox{Divjak} for insightful comments which helped to improve the quality of this paper significantly.
@@ -107,7 +105,9 @@
 \end{acknowledgement}
 
 
-\bibliography{rs}
+\renewcommand*\finalnamedelim{\addspace\&\space}
+%\bibliography{article}
+\printbibliography
 
 \end{document}
 
